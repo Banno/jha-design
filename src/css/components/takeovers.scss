@@ -1,0 +1,178 @@
+.has-takeover {
+  overflow: hidden;
+}
+
+.takeover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-takeover + 1;
+  visibility: hidden;
+  opacity: 0;
+  outline: 0;
+  @include transition(opacity 0.3s 0, visibility 0 0.3s);
+  -webkit-overflow-scrolling: touch;
+  will-change: opacity;
+  // this flexbox property does nothing on it's own, but a utility class depends
+  // on it and this is the most efficent way to write it
+  @include align-items(center);
+  .has-takeover & {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  &.is-visible,
+  &.in {
+    visibility: visible;
+    opacity: 1;
+    @include transition(opacity 0.3s 0, visibility 0 0);
+    .takeover_dialog {
+        @include transform(translateY(0));
+    }
+  }
+}
+
+.takeover_backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: $z-index-takeover;
+  background-color: $takeover-backdrop-color;
+  @include transition(opacity 0.3s $timing-function);
+  &.is-visible,
+  &.in {
+    opacity: $takeover-backdrop-opacity;
+  }
+}
+
+.takeover_dialog {
+  position: relative;
+  width: 90%;
+  max-width: $takeover-width-base;
+  background-color: $takeover-background;
+  margin: $spacing-unit auto;
+  cursor: auto;
+  border-radius: $takeover-radius;
+  border: 1px solid $takeover-border-color;
+  background-clip: padding-box;
+  box-shadow: 0 4px 5px rgba(#000, 0.16);
+  outline: 0;
+  will-change: transform;
+  @include transform(translateY(-30px));
+  @include transition-property(transform);
+  @include transition-duration(.3s);
+  @media (max-height: 400px) {
+    margin-top: $padding-unit;
+    margin-bottom: $padding-unit;
+    .takeover_content--fill {
+      max-height: calc(100vh - 195px);
+    }
+  }
+}
+
+.takeover_dialog--lg {
+  max-width: 900px;
+}
+
+// Vertically center modals
+/* WARNING: if the contents of the modal grow larger than the viewport much of
+   the content will be cut off
+*/
+.takeover--center-xs {
+  @include flexbox-display();
+}
+@media (min-width: $viewport-sm-min) {
+  .takeover--center-sm {
+    @include flexbox-display();
+  }
+}
+@media (min-width: $viewport-md-min) {
+  .takeover--center-md {
+    @include flexbox-display();
+  }
+}
+@media (min-width: $viewport-lg-min) {
+  .takeover--center-lg {
+    @include flexbox-display();
+  }
+}
+
+
+// Header
+.takeover_header {
+  position: relative;
+  background-color: #fff;
+  border-top-left-radius: $takeover-radius;
+  border-top-right-radius: $takeover-radius;
+  border-bottom: $border-lt;
+  text-align: center;
+}
+
+.takeover_title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.takeover_close {
+  position: absolute;
+  top: 50%;
+  right: $unit-sm;
+  @include transform(translateY(-(floor($btn-height-base / 2))));
+  opacity: 0.6;
+  @include transition(opacity 0.3s $timing-function);
+  will-change: opacity;
+  @media (hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Shared styles
+.takeover_header,
+.takeover_content,
+.takeover_footer {
+  padding: $padding-unit;
+  @include clearfix();
+  @media (min-width: $viewport-md-min) {
+    padding: $spacing-unit;
+  }
+}
+
+// Content
+.takeover_content--fill {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Lots to talk about here. We're setting an explicit height so this area
+     fills the screen as much as possible. But we also have to factor in the
+     takeover_header and takeover_footer that may be present at ~215px and the
+     top and bottom margins of ~36px each.
+  */
+  max-height: calc(100vh - 225px);
+  @media (min-width: $viewport-md-min) {
+    max-height: calc(100vh - 288px);
+  }
+}
+.takeover_content--no-padding {
+  padding: 0;
+}
+
+// Footer
+.takeover_footer {
+  text-align: center;
+}
+
+.takeover_content:not(.takeover_content--fill) + .takeover_footer {
+  padding-top: 0;
+}
+
+.takeover_content--fill + .takeover_footer {
+  background-color: #fff;
+  border-top: $border-lt;
+  border-bottom-left-radius: $takeover-radius;
+  border-bottom-right-radius: $takeover-radius;
+}

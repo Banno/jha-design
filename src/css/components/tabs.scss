@@ -1,0 +1,60 @@
+// Tabs
+.overflow-tabs {
+  position: relative;
+  margin: 0 (-$padding-unit);
+}
+.tabs {
+  margin: 0;
+  padding: 0 $spacing-unit 0 0;
+  list-style-type: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-touch-action: cross-slide-x;
+  touch-action: pan-x;
+  overflow: auto;
+  white-space: nowrap;
+  height: 71px; // magic number, 55 + 16 (height of scrollbar)
+  > li {
+    display: inline-block;
+    margin-left: $unit-base;
+    &:first-child {
+      margin-left: $spacing-unit / 2;
+    }
+  }
+}
+.tab {
+  display: inline-block;
+  cursor: pointer;
+  padding: 18px 0 14px;
+  border-bottom: 3px solid transparent;
+  color: $text-color-muted;
+  @include transition(border-color .15s $timing-function, color .15s $timing-function);
+  &:hover,
+  &:focus {
+    color: $text-color-base;
+    outline: 0;
+  }
+  &.is-active {
+    color: $text-color-base;
+    border-color: $color-primary;
+  }
+}
+
+@media (min-width: $viewport-md-min) {
+  .page-title--before-tabs {
+    margin-bottom: $spacing-unit / 2;
+  }
+  .tabs {
+    height: auto;
+    > li {
+      margin-left: $spacing-unit;
+    }
+  }
+}
+
+@media (min-width: $viewport-md-min) and (max-width: $viewport-lg-max) {
+  .overflow-tabs {
+    .tabs > li:first-child {
+      margin-left: ($spacing-unit / 2) + ($padding-unit / 2)
+    }
+  }
+}

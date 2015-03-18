@@ -1,0 +1,84 @@
+// List that contains elements like text, buttons and form fields
+// .list {
+
+// }
+
+.list--borderless {
+  .list_item,
+  .pick-list_item {
+    border-bottom: 0;
+  }
+  .list_item--inset {
+    background-image: none;
+  }
+}
+
+.list_item {
+  display: block;
+  padding-top: $padding-unit;
+  padding-bottom: $padding-unit;
+  border-bottom: $border-base;
+  color: $text-color-base; // incase its a link
+  @include clearfix();
+  &:last-of-type {
+    border-bottom: 0;
+  }
+  // title spacing
+  .text--lg + .title--sub,
+  .title + .title--sub {
+    margin-top: -2px;
+  }
+}
+.list_item--inset {
+  border-bottom: 0;
+  @include hairline(single, rgba($color-gray-base, 0.24), 72px);
+  &:last-of-type {
+    background-image: none;
+  }
+}
+
+.list_item_action {
+  width: 72px;
+  float: left;
+  padding-left: $unit-base;
+}
+.list_item_content {
+  margin-left: 72px;
+  padding-right: $padding-unit;
+  overflow: hidden;
+}
+
+
+
+// Pick list: where the list items are links
+.pick-list_item {
+  display: block;
+  padding: ($unit-base / 2) $padding-unit;
+  padding-left: 0;
+  @include clearfix();
+  color: $text-color-base;
+  font-size: $font-size-base;
+  border-bottom: $border-lt;
+}
+
+@media (min-width: $viewport-md-min) {
+  .pick-list_item {
+    padding-top: $padding-unit / 2;
+    padding-bottom: $padding-unit / 2;
+    padding-left: $padding-unit;
+    border-bottom: 0;
+    &.is-active,
+    &.active {
+      background-color: $color-primary;
+      color: #fff;
+      .badge {
+        background-color: lighten($color-primary, 24%);
+      }
+    }
+    @media (hover) {
+      &:not(.is-active):hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

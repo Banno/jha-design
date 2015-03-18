@@ -1,0 +1,16 @@
+.btn-group {
+    position: relative;
+    .btn + .btn,
+    .btn + .dropdown,
+    .dropdown + .btn,
+    .btn + .filter,
+    .filter + .btn,
+    .filter + .dropdown,
+    .dropdown + .filter {
+        margin-left: $padding-unit;
+    }
+    .dropdown {
+      display: inline-block;
+      vertical-align: middle;
+    }
+}

@@ -1,0 +1,17 @@
+// When something major didn't load show the user and ask to try again
+.error-loading {
+  color: $text-color-muted;
+  font-weight: 500;
+  padding: 40px 0;
+  text-align: center;
+}
+.error-loading_image {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: $unit-sm;
+}
+.error-loading_retry {
+  display: inline-block;
+  margin-top: 3px;
+}

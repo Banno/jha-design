@@ -1,0 +1,86 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  color: $text-color-muted;
+  th,
+  td {
+    padding: $padding-unit;
+    border-bottom: $border-lt;
+  }
+  th {
+    text-align: left;
+    font-size: $font-size-base - 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.table--sm {
+  th,
+  td {
+    padding: $padding-unit / 2;
+  }
+}
+
+.table--bordered {
+  th,
+  td {
+    border-left: $border-lt;
+  }
+  tr {
+    th:first-child,
+    td:first-child {
+      border-left: 0;
+    }
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%; // workaround for IE9 bug
+  @media screen and (max-width: $viewport-sm-max) {
+    width: 100%;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-touch-action: cross-slide-x;
+    touch-action: pan-x;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    .table {
+      th,
+      td {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+
+@media (min-width: $viewport-xl-min) {
+  .table {
+    tr {
+      td:first-child,
+      th:first-child {
+        padding-left: $padding-unit + 20;
+      }
+      td:last-child,
+      th:last-child {
+        padding-right: $padding-unit + 20;
+      }
+    }
+  }
+}
+
+
+// Table cell sizing
+// Allow for using grid classes to set percentage widths
+td,
+th {
+  &[class^="col-"] {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    position: static;
+  }
+}

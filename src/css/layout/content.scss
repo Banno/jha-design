@@ -1,0 +1,84 @@
+// The base .content class is only necessary if you want the bottom margin for free
+.content {
+  margin-bottom: $spacing-unit;
+}
+
+// Content_heading assumes that it contains a thumbnail or avatar followed by
+// text. Content_push will help align the rest of the content to the same edge
+.content_heading {
+  @include clearfix();
+  @include flexbox-display();
+  @include align-items(center);
+  margin-bottom: $unit-xs;
+  .thumbnail,
+  .avatar {
+    float: left;
+    margin-right: $padding-unit;
+  }
+}
+
+// Content_push is a class that will align the content with an artificial left edge
+
+/*
+________
+|      |
+|      |  Title
+|______|
+
+          Text aligned to the same edge as the title without being in the same
+          element. The type of content here doesn't matter. Paragraphs, tables,
+          list items are all welcome
+*/
+
+.content_push {
+  overflow: hidden;
+}
+
+.content_push,
+.content_push--md {
+  margin-left: $thumbnail-size-base + $padding-unit;
+}
+.content_push--xs {
+  margin-left: $thumbnail-size-xs + $padding-unit;
+}
+.content_push--sm {
+  margin-left: $thumbnail-size-sm + $padding-unit;
+}
+.content_push--lg {
+  margin-left: $thumbnail-size-lg + $padding-unit;
+}
+.content_push--xl {
+  margin-left: $thumbnail-size-xl + $padding-unit;
+}
+
+// Remove margin by VIEWPORT size
+.content_pull--xs {
+  @media (max-width: $viewport-xs-max) {
+    margin-left: 0;
+  }
+}
+.content_pull--sm {
+  @media (max-width: $viewport-sm-max) {
+    margin-left: 0;
+  }
+}
+.content_pull--md {
+  @media (max-width: $viewport-md-max) {
+    margin-left: 0;
+  }
+}
+.content_pull--lg {
+  @media (max-width: $viewport-lg-max) {
+    margin-left: 0;
+  }
+}
+
+.content_push {
+  // Table cells don't need left padding when inside content_push
+  .table tr {
+    td:first-child,
+    th:first-child {
+      padding-left: 0;
+    }
+  }
+}

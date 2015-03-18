@@ -1,0 +1,24 @@
+{
+  "name": "jha-design",
+  "version": "2.0.0",
+  "description": "Web Application Design Language",
+  "homepage": "https://github.com/Banno/jha-design",
+  "authors": [
+    "Josh Sadler <josh.sadler@banno.com>"
+  ],
+  "license": "Copyright (c) 2015 Banno LLC. All rights reserved.",
+  "private": true,
+  "main": "dist/**/*",
+  "keywords": [
+    "css",
+    "font",
+    "image",
+    "icon",
+    "favicon"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src"
+  ]
+}

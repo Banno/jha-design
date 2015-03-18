@@ -1,0 +1,17 @@
+CACHE MANIFEST
+
+# Version 10
+
+# /css/style.min.css
+/img/icons.svg
+/fonts/proximanova-regular-webfont.woff2
+/fonts/proximanova-regular-webfont.woff
+/fonts/proximanova-semibold-webfont.woff2
+/fonts/proximanova-semibold-webfont.woff
+/fonts/proximanova-bold-webfont.woff2
+/fonts/proximanova-bold-webfont.woff
+/fonts/proximanova-light-webfont.woff2
+/fonts/proximanova-light-webfont.woff
+
+NETWORK:
+*

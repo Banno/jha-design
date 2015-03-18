@@ -1,0 +1,119 @@
+.card {
+  background-color: $card-bg;
+  box-shadow: $card-shadow;
+  border-radius: $card-radius;
+  margin-bottom: $spacing-unit;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  &:last-of-type {
+    margin-bottom: $spacing-unit * 1.5
+  }
+}
+
+// Header
+.card_header {
+  border-bottom: $border-lt;
+  padding: $padding-unit $padding-unit $unit-sm 0;
+  margin-bottom: $unit-base;
+  line-height: $h2-size;
+  @include clearfix();
+  .btn--icon {
+    float: right;
+    margin-right: -$padding-unit;
+    margin-top: -10px;
+    margin-bottom: -5px;
+  }
+}
+.card_title {
+  font-size: $h2-size;
+  font-weight: $heading-weight;
+  margin: 0;
+  float: left;
+}
+.card_sub-title {
+  font-size: $font-size-base - 1;
+  float: right;
+  color: $text-color-muted;
+}
+
+.card_header,
+.card_content,
+.card_footer {
+  margin-left: $padding-unit;
+}
+
+// Content
+.card_content {
+  padding-bottom: $unit-base;
+  padding-right: $padding-unit;
+}
+
+.card_empty {
+  text-align: center;
+  color: $text-color-muted;
+  line-height: 20px;
+  padding: 70px 0 90px;
+}
+
+// Footer
+.card_footer {
+  border-top: $border-lt;
+  padding-top: $unit-sm;
+  padding-right: $padding-unit;
+  text-align: right;
+}
+
+// Card overrides
+.card_content .list {
+  margin-left: -$padding-unit;
+}
+.card_header + .list {
+  margin-top: -$unit-base;
+}
+.card .list_item_content {
+  padding-right: $padding-unit;
+}
+.card .section-heading {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.card hr {
+  margin-right: -$padding-unit;
+  background: none;
+  border-bottom: $border-lt;
+}
+.card_footer .btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -1px;
+  font-weight: 400;
+}
+
+@media (min-width: $viewport-lg-min) {
+  .card_header {
+    padding: $unit-base $unit-base $padding-unit 0;
+  }
+  .card_header,
+  .card_content,
+  .card_footer {
+    margin-left: $unit-base;
+  }
+  .card_content {
+    padding-right: $unit-base;
+  }
+  .card_footer {
+    padding-right: $unit-base;
+  }
+
+  .card_content .list {
+    margin-left: -$unit-base;
+  }
+  .card .list_item_content {
+    padding-right: $unit-base;
+  }
+  .card hr {
+    margin-right: -$unit-base;
+  }
+}

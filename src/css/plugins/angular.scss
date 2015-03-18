@@ -1,0 +1,10 @@
+// angular templating can be slow
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+// force a cursor when href is missing on anchors
+[ng-click]:not(.takeover), [ng-href], [ui-sref] {
+  cursor: pointer;
+  @include touch-action(manipulation);
+}

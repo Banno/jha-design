@@ -1,0 +1,44 @@
+.container {
+  @include container-fixed;
+  max-width: (1140 + $grid-gutter-width);
+  @media (min-width: $viewport-md-min) {
+    padding-left: $unit-base;
+    padding-right: $unit-base;
+  }
+}
+
+.grid {
+  @include make-row;
+}
+
+.grid--no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+  [class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@include make-grid-columns;
+
+@include make-grid(xs);
+
+@media (min-width: $viewport-sm-min) {
+  @include make-grid(sm);
+}
+
+@media (min-width: $viewport-md-min) {
+  @include make-grid(md);
+
+  /* grid--equal-height forces the columns to be the same height by using display: flex
+     this was added so that position: sticky can be used on descendants of column
+     elements, specifically the .contact element */
+  .grid--equal-height {
+    @include flexbox-display();
+  }
+}
+
+@media (min-width: $viewport-lg-min) {
+  @include make-grid(lg);
+}

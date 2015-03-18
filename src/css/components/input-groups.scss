@@ -1,0 +1,78 @@
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  &[class^="col-"] {
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .field {
+    position: relative;
+    z-index: 2;
+    float: left; // fix for IE9 placeholder fubar
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.input-group_addon,
+.input-group_btn,
+.input-group .field {
+  display: table-cell;
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+}
+
+.input-group_addon,
+.input-group_btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.input-group_addon {
+  padding: $btn-padding-vertical ($btn-padding-horizontal / 1.5);
+  font-size: $font-size-base;
+  font-weight: normal;
+  line-height: 1;
+  color: $text-color-muted;
+  text-align: center;
+  background-color: #fff;
+  border: $border-base;
+  border-radius: $border-radius-base;
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 0;
+  }
+}
+
+// Reset rounded corners
+.input-group .field:first-child,
+.input-group_addon:first-child,
+.input-group_btn:first-child > .btn,
+.input-group_btn:first-child > .btn-group > .btn,
+.input-group_btn:first-child > .dropdown_toggle,
+.input-group_btn:last-child > .btn:not(:last-child):not(.dropdown_toggle),
+.input-group_btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group_addon:first-child {
+  border-right: 0;
+}
+.input-group .field:last-child,
+.input-group_addon:last-child,
+.input-group_btn:last-child > .btn,
+.input-group_btn:last-child > .btn-group > .btn,
+.input-group_btn:last-child > .dropdown_toggle,
+.input-group_btn:first-child > .btn:not(:first-child),
+.input-group_btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.input-group_addon:last-child {
+  border-left: 0;
+}

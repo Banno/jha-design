@@ -1,0 +1,23 @@
+// Modals
+.modal-open {
+  @extend .has-takeover;
+}
+.modal-backdrop {
+  @extend .takeover_backdrop
+}
+.modal {
+  @extend .takeover;
+}
+.modal-dialog {
+  @extend .takeover_dialog;
+}
+.modal-lg {
+  @extend .takeover_dialog--lg;
+}
+
+// Make display property most important to override inline style
+.takeover--center-xs {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}

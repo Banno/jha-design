@@ -1,0 +1,22 @@
+{
+  "name": "jha-design",
+  "description": "Web Application Design Language",
+  "homepage": "https://github.com/Banno/jha-design",
+  "private": true,
+  "author": "Josh Sadler <josh.sadler@banno.com>",
+  "version": "2.0.0",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "del": "1.1.1",
+    "gulp": "3.8.11",
+    "gulp-connect": "2.2.0",
+    "gulp-header": "^1.2.2",
+    "gulp-imagemin": "2.2.1",
+    "gulp-livereload": "3.8.0",
+    "gulp-rename": "1.2.0",
+    "gulp-ruby-sass": "1.0.0-alpha.3",
+    "gulp-svgmin": "1.1.1",
+    "gulp-svgstore": "5.0.0",
+    "merge-stream": "0.1.7"
+  }
+}

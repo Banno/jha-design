@@ -1,0 +1,18 @@
+// fixing colors from angular-loading-bar
+// https://raw.githubusercontent.com/chieffancypants/angular-loading-bar/master/src/loading-bar.css
+
+#loading-bar {
+  .bar {
+    background-color: $color-primary;
+  }
+  .peg {
+    box-shadow: $color-primary 1px 0 6px 1px;
+  }
+}
+
+#loading-bar-spinner {
+  .spinner-icon {
+    border-top-color: $color-primary;
+    border-left-color: $color-primary;
+  }
+}

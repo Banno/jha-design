@@ -1,0 +1,110 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: $btn-weight;
+  text-align: center;
+  vertical-align: middle;
+  @include touch-action(manipulation);
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  background-color: rgba(0,0,0,0);
+  text-transform: $btn-text-transform;
+  color: $text-color-base;
+  padding: $btn-padding-vertical ceil($btn-padding-horizontal / 2);
+  height: $btn-height-base;
+  font-size: $font-size-base;
+  line-height: 20px;
+  border-radius: $border-radius-base;
+  @include user-select(none);
+  @include transition(box-shadow .1s $timing-function, background-color .1s $timing-function, border-color .1s $timing-function);
+  @include tab-focus;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active,
+  &.is-focused {
+    text-decoration: none;
+  }
+  &:active,
+  &:focus,
+  &.is-active,
+  &.is-focused {
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
+  }
+  > .icon {
+    margin-top: -2px;
+  }
+}
+
+.btn--default,
+.btn--muted {
+  @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
+}
+.btn--muted {
+  color: $text-color-muted;
+}
+.btn--danger {
+  @include button-color(lighten($btn-danger-background, 6%), $btn-danger-background, #fff, $btn-danger-background);
+}
+.btn--primary {
+  @include button-color(lighten($btn-primary-background, 8%), $btn-primary-background, #fff, $btn-primary-background);
+}
+.btn--success {
+  @include button-color(lighten($btn-success-background, 8%), $btn-success-background, #fff, $btn-success-background);
+}
+.btn--neutral {
+  @include button-color($btn-neutral-background, $btn-neutral-background, #fff, $btn-neutral-background);
+}
+.btn--link {
+  @include button-color(transparent, transparent, $text-color-muted);
+  font-weight: 400;
+}
+
+
+// Button sizes
+.btn--sm {
+  height: $btn-height-sm;
+  padding-top: ceil($btn-padding-vertical / 2);
+  padding-bottom: ceil($btn-padding-vertical / 2);
+}
+
+.btn--lg {
+  height: $btn-height-lg;
+  padding-left: ceil($btn-padding-horizontal * 1.5);
+  padding-right: ceil($btn-padding-horizontal * 1.5);
+  line-height: $btn-height-lg - ($btn-padding-vertical * 2);
+}
+
+
+// Button alignment adjustments, primarily for .btn--link
+// Aligns the contents of a button with the container edge
+.btn--align-left {
+  margin-left: -(ceil($btn-padding-horizontal / 2));
+}
+.btn--align-right {
+  margin-right: -(ceil($btn-padding-horizontal / 2));
+}
+
+@media (min-width: $viewport-md-min) {
+  .btn:not(.btn--lg):not(.btn--icon) {
+    padding-left: $btn-padding-horizontal;
+    padding-right: $btn-padding-horizontal;
+  }
+  .btn--align-left {
+    margin-left: -$btn-padding-horizontal;
+  }
+  .btn--align-right {
+    margin-right: -$btn-padding-horizontal;
+  }
+}
+
+// Icon buttons - perfectly round and wide enough for just an icon
+.btn--icon {
+  border-radius: 50%;
+  min-width: 35px;
+  padding-left: floor($btn-padding-horizontal / 4);
+  padding-right: floor($btn-padding-horizontal / 4);
+}

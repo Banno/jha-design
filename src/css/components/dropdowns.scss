@@ -1,0 +1,115 @@
+.dropdown {
+  position: relative;
+  &:active,
+  &.is-open,
+  // .open is deprecated, use .is-open instead
+  &.open {
+    .dropdown_menu {
+      display: block;
+    }
+    .dropdown_toggle--indicator {
+      &:before,
+      &:after {
+        display: block;
+      }
+    }
+  }
+}
+
+.dropdown_toggle {
+  display: block;
+}
+
+.dropdown_toggle--indicator {
+  &:before,
+  &:after {
+    content: '';
+    display: none;
+    position: absolute;
+    border-color: transparent;
+    border-style: dashed dashed solid;
+    border-width: 0 9px 9px;
+    left: 50%;
+    bottom: -13px;
+    z-index: $z-index-dropdown + 1;
+  }
+  &:before {
+    border-bottom-color: $dropdown-border-color;
+    margin-left: -10px;
+  }
+  &:after {
+    border-bottom-color: $dropdown-bg;
+    border-width: 0 7px 7px;
+    margin-left: -8px;
+  }
+}
+
+.dropdown_menu {
+  display: none;
+  margin: 12px 0 0;
+  padding: 6px 0;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: $dropdown-bg;
+  border-radius: $border-radius-base;
+  border: 1px solid $dropdown-border-color;
+  min-width: $dropdown-width-min;
+  max-width: $dropdown-width-max;
+  background-clip: padding-box;
+  box-shadow: 0 3px 5px rgba($color-gray-dark, 0.12);
+  z-index: $z-index-dropdown;
+  .u-float-right & {
+    left: auto;
+    right: 0;
+  }
+}
+.dropdown_menu--padding {
+  padding: $padding-unit;
+}
+.dropdown_menu--center,
+.u-float-right .dropdown_menu--center {
+  width: $dropdown-width-min;
+  left: -webkit-calc(50% - #{($dropdown-width-min / 2)});
+  left: calc(50% - #{($dropdown-width-min / 2)});
+}
+
+.dropdown_menu_title {
+  padding: $padding-unit;
+  color: $color-gray-dark;
+  font-size: $font-size-lg;
+  line-height: 1;
+  border-bottom: $border-base;
+  margin-bottom: 3px;
+}
+.dropdown_menu_divider {
+  border-top: 1px solid $color-gray-lighter;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.dropdown_empty-state {
+  min-height: 120px;
+  padding: $padding-unit;
+  color: $text-color-muted;
+  font-size: $font-size-base - 1;
+  text-align: center;
+}
+
+
+// Dropdown menu items
+.dropdown_menu_item {
+  display: block;
+  padding: ($padding-unit / 2) $padding-unit;
+  color: $text-color-muted;
+  font-size: $font-size-base - 1;
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active,
+  &.active {
+    color: $text-color-base;
+    background-color: $color-gray-lighter;
+  }
+}

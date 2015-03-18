@@ -1,0 +1,102 @@
+// assumes <div class="filter"><select class="filter_select"></select></div>
+.filter {
+  position: relative;
+  display: inline-block;
+  color: $text-color-muted;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: $padding-unit / 2;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    pointer-events: none;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+}
+.filter_select {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  touch-action: manipulation;
+  cursor: pointer;
+  padding: $btn-padding-vertical ($btn-padding-horizontal + 6) $btn-padding-vertical ceil($btn-padding-horizontal / 2);
+  height: $btn-height-base;
+  font-size: $font-size-base;
+  line-height: 1;
+  color: $text-color-muted;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  &:focus:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+  &:focus,
+  &:active {
+    color: $text-color-base;
+  }
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// media query to target Firefox only
+@-moz-document url-prefix() {
+  .filter {
+    &:after {
+      margin-top: 0;
+    }
+  }
+  .filter_select {
+    // Firefox hack to hide the arrow
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-right: 20px;
+
+    // <option> elements inherit styles from <select>, so reset them
+    options {
+      background-color: #fff;
+    }
+  }
+}
+
+// IE9 hack to hide the arrow
+@media screen and (min-width:0\0) {
+  .filter_select {
+    z-index: 1;
+    padding: $padding-unit / 2;
+  }
+  .filter {
+    &:after {
+      z-index: 5;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      display: block;
+      width: 26px; // covers the native select's arrow
+      background-color: #fff;
+    }
+    .filter_select {
+      &:hover,
+      &:focus,
+      &:active {
+        color: $text-color-base;
+      }
+    }
+  }
+}

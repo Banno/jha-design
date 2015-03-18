@@ -1,0 +1,19 @@
+{
+  "short_name": "Banno",
+  "name": "Banno",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "/img/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/app-icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+}

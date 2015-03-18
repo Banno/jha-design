@@ -1,0 +1,10 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  @include square(24px);
+  fill: currentColor;
+}
+
+.icon--sm {
+  @include square(18px);
+}

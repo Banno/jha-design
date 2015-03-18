@@ -1,0 +1,22 @@
+.badge {
+  @include square(20px);
+  display: inline-block;
+  background-color: $text-color-muted;
+  color: #fff;
+  font-size: $font-size-sm;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+}
+.badge--primary {
+  background-color: $color-primary;
+}
+.badge--success {
+  background-color: $color-success;
+}
+.badge--danger {
+  background-color: $color-danger;
+}
+.badge--warning {
+  background-color: $color-warning;
+}
