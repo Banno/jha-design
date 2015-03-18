@@ -116,9 +116,14 @@ p {
 .text--muted {
   color: $text-color-muted;
 }
-
 .text--primary {
   color: $color-primary;
+}
+.text--success {
+  color: $color-success;
+}
+.text--danger {
+  color: $color-danger;
 }
 
 
