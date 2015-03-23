@@ -1,15 +1,26 @@
 // List that contains elements like text, buttons and form fields
-// .list {
-
-// }
+.list {
+  margin-bottom: $spacing-unit;
+}
 
 .list--borderless {
-  .list_item,
-  .pick-list_item {
+  .list_item {
     border-bottom: 0;
   }
   .list_item--inset {
     background-image: none;
+  }
+}
+.list--sm {
+  .list_item {
+    padding-top: $padding-unit / 2;
+    padding-bottom: $padding-unit / 2;
+  }
+}
+.list--inset {
+  padding-left: $padding-unit;
+  @media (min-width: $viewport-lg-min) {
+    padding-left: $unit-base;
   }
 }
 
@@ -17,9 +28,18 @@
   display: block;
   padding-top: $padding-unit;
   padding-bottom: $padding-unit;
+  padding-right: $padding-unit;
   border-bottom: $border-base;
-  color: $text-color-base; // incase its a link
+  color: $text-color-base;
+  font-size: $font-size-base;
   @include clearfix();
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    color: $text-color-base;
+  }
   &:last-of-type {
     border-bottom: 0;
   }
@@ -28,57 +48,39 @@
   .title + .title--sub {
     margin-top: -2px;
   }
+  @media (min-width: $viewport-lg-min) {
+    padding-right: $unit-base;
+  }
+  &.is-active,
+  &.active {
+    background-color: $color-primary;
+    color: #fff;
+    .badge {
+      background-color: lighten($color-primary, 24%);
+    }
+    // overide .u-fill-* utility class
+    svg {
+      fill: #fff;
+    }
+  }
+}
+@media (hover) {
+  a.list_item:not(.is-active):hover {
+    color: $color-primary;
+  }
 }
 .list_item--inset {
   border-bottom: 0;
-  @include hairline(single, rgba($color-gray-base, 0.24), 72px);
+  @include hairline(single, $color-gray-light, ($thumbnail-size-sm + $padding-unit));
   &:last-of-type {
     background-image: none;
   }
 }
-
 .list_item_action {
-  width: 72px;
   float: left;
-  padding-left: $unit-base;
+  width: $thumbnail-size-sm;
+  margin-right: $padding-unit;
 }
 .list_item_content {
-  margin-left: 72px;
-  padding-right: $padding-unit;
   overflow: hidden;
-}
-
-
-
-// Pick list: where the list items are links
-.pick-list_item {
-  display: block;
-  padding: ($unit-base / 2) $padding-unit;
-  padding-left: 0;
-  @include clearfix();
-  color: $text-color-base;
-  font-size: $font-size-base;
-  border-bottom: $border-lt;
-}
-
-@media (min-width: $viewport-md-min) {
-  .pick-list_item {
-    padding-top: $padding-unit / 2;
-    padding-bottom: $padding-unit / 2;
-    padding-left: $padding-unit;
-    border-bottom: 0;
-    &.is-active,
-    &.active {
-      background-color: $color-primary;
-      color: #fff;
-      .badge {
-        background-color: lighten($color-primary, 24%);
-      }
-    }
-    @media (hover) {
-      &:not(.is-active):hover {
-        color: $color-primary;
-      }
-    }
-  }
 }

@@ -108,6 +108,13 @@ sub {
   bottom: -2px;
 }
 
+::selection {
+  background-color: rgba($color-primary, .36);
+}
+::-moz-selection {
+  background-color: rgba($color-primary, .36);
+}
+
 /* Embedded content
    ================================================================== */
 

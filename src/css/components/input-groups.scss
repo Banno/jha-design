@@ -76,3 +76,19 @@
 .input-group_addon:last-child {
   border-left: 0;
 }
+
+
+.input-group--borderless {
+  border: $border-base;
+  border-radius: $border-radius-base;
+  .input-group_addon,
+  .field {
+    border-width: 0;
+  }
+  .field {
+    padding-left: 0;
+  }
+  &.has-error {
+    border-color: $color-danger;
+  }
+}

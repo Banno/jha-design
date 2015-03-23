@@ -54,6 +54,10 @@
   margin-right: 4px;
 }
 
+.paper_content {
+  padding-top: $unit-base;
+}
+
 @media (min-width: $viewport-md-min) {
   .paper_header {
     padding-top: $unit-base;
@@ -62,10 +66,6 @@
   .paper_header--sticky {
     top: $topbar-height-base;
   }
-}
-
-
-@media (min-width: $viewport-md-min) {
   .paper {
     margin-left: $unit-base;
     margin-right: $unit-base;
@@ -74,7 +74,11 @@
   .paper_title {
     font-size: 20px;
   }
+  .paper_content {
+    padding-top: $spacing-unit;
+  }
 }
+
 @media (min-width: 1220px) {
   .paper {
     margin-left: auto;

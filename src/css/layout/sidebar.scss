@@ -4,23 +4,22 @@
 }
 
 .sidebar {
-  .pick-list {
+  .list {
     margin-right: -$padding-unit;
-    padding-bottom: $spacing-unit;
   }
-  .pick-list_item {
+  .list_item {
     padding-left: 0;
   }
 }
 
 @media (min-width: $viewport-md-min) {
   .sidebar {
-    .pick-list {
+    .list {
       margin-left: 0;
       margin-right: -1px;
       margin-left: -$unit-base - 1;
     }
-    .pick-list_item {
+    .list_item:not(.list_item--inset) {
       padding-left: $unit-base;
     }
   }

@@ -3,6 +3,7 @@
   vertical-align: middle;
   @include square(24px);
   fill: currentColor;
+  pointer-events: none;
 }
 
 .icon--sm {

@@ -94,7 +94,6 @@ p {
 
 /* Wrap your paragraphs and headings with .copy */
 .copy {
-  color: $text-color-muted;
   /* max-width enforces a maximum number of characters per line for readability */
   max-width: 700px;
 }
@@ -113,6 +112,12 @@ p {
 
 
 // Color
+.text--base {
+  color: $text-color-base;
+}
+.text--light {
+  color: $text-color-light;
+}
 .text--muted {
   color: $text-color-muted;
 }

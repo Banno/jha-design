@@ -54,24 +54,21 @@
   }
 }
 
-// IE9 hacks to accompany custom markup. We don't need to scope these via media
-// queries but I feel better doing it anyway
-@media screen and (min-width:0\0) {
-  .progress-linear {
-    background-color: $color-gray-light;
-    border-radius: $progress-radius;
-  }
-  .progress_bar {
-    display: inline-block;
-    height: $progress-height;
-    text-indent: -99999px; // simulate hiding of value in native <progress>
-    background-color: $progress-color;
-    border-top-left-radius: $progress-radius;
-    border-bottom-left-radius: $progress-radius;
-    &[width="100%"] {
-      border-top-right-radius: $progress-radius;
-      border-bottom-right-radius: $progress-radius;
-    }
+// IE9 hacks to accompany custom markup.
+.progress-linear {
+  background-color: $color-gray-light;
+  border-radius: $progress-radius;
+}
+.progress_bar {
+  display: inline-block;
+  height: $progress-height;
+  text-indent: -99999px; // simulate hiding of value in native <progress>
+  background-color: $progress-color;
+  border-top-left-radius: $progress-radius;
+  border-bottom-left-radius: $progress-radius;
+  &[width="100%"] {
+    border-top-right-radius: $progress-radius;
+    border-bottom-right-radius: $progress-radius;
   }
 }
 

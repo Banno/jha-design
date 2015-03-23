@@ -23,6 +23,38 @@
   }
 }
 
+@-webkit-keyframes fade-in-up {
+  from {
+    -webkit-transform: translateY(25vh);
+    transform: translateY(25vh);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in-up {
+  from {
+    transform: translateY(25vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-up {
+  from {
+    transform: translateY(25vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 @-webkit-keyframes scale-out {
   from {

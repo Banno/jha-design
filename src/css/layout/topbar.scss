@@ -91,6 +91,10 @@
       right: 0;
     }
   }
+  &:active,
+  &:focus {
+    outline: 0;
+  }
 }
 .navigation_link {
   display: block;
@@ -100,6 +104,7 @@
   &:hover,
   &:active,
   &:focus {
+    outline: 0;
     color: #fff;
   }
 }
@@ -165,6 +170,10 @@
   padding: 10px $padding-unit;
   color: $text-color-base;
   font-size: $font-size-base;
+  &:active,
+  &:focus {
+    outline: 0;
+  }
 }
 .app-list_icon {
   @include square(24px);

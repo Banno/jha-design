@@ -30,14 +30,35 @@ textarea.field {
   height: auto;
 }
 
+// Label
+.label {
+  margin-bottom: $unit-xs;
+  font-weight: 600;
+}
+
+// Validation
+.has-error {
+  border-color: $color-danger;
+}
+.errors {
+  color: $color-danger;
+  font-size: $font-size-base - 1;
+}
+.error_item {
+  display: block;
+  margin-top: $unit-xs;
+  margin-bottom: $unit-sm;
+}
+
 // Checkboxes and radios
 .control {
   position: relative;
   display: block;
-  padding-left: $unit-base * 2;
-  padding-top: 4px;
+  padding-left: $unit-base * 1.5;
+  padding-top: 2px;
   color: $text-color-base;
   cursor: pointer;
+  margin-bottom: $unit-xs;
   input {
     position: absolute;
     left: 0;
@@ -67,7 +88,7 @@ textarea.field {
   border-color: transparent;
 }
 
-.checkbox {
+.control--checkbox {
   .control_indicator {
     border-radius: 2px;
   }
@@ -76,7 +97,7 @@ textarea.field {
   }
 }
 
-.radio {
+.control--radio {
   .control_indicator {
     border-radius: 50%;
   }
@@ -84,7 +105,7 @@ textarea.field {
   }
 }
 
-.control_indicator--no-border {
+.control_indicator--borderless {
   border-color: transparent;
 }
 .control_indicator--lg {
@@ -188,5 +209,5 @@ textarea.field {
   margin-bottom: 0;
 }
 .fieldset_control {
-  padding-top: 6px;
+  padding-top: $unit-xs;
 }

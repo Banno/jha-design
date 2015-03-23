@@ -8,15 +8,30 @@
   line-height: 20px;
   border-radius: 50%;
 }
-.badge--primary {
+
+.chip {
+  display: inline-block;
+  white-space: nowrap;
+  color: #fff;
+  font-size: $font-size-base - 1;
+  text-align: center;
+  padding: $unit-xs $unit-sm;
+  border-radius: 500px;
+}
+
+.badge--primary,
+.chip--primary {
   background-color: $color-primary;
 }
-.badge--success {
+.badge--success,
+.chip--success {
   background-color: $color-success;
 }
-.badge--danger {
+.badge--danger,
+.chip--danger {
   background-color: $color-danger;
 }
-.badge--warning {
+.badge--warning,
+.chip--warning {
   background-color: $color-warning;
 }

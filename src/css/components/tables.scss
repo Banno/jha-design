@@ -1,7 +1,8 @@
 .table {
   width: 100%;
   max-width: 100%;
-  color: $text-color-muted;
+  margin-bottom: $spacing-unit;
+  color: $text-color-light;
   th,
   td {
     padding: $padding-unit;
@@ -37,9 +38,22 @@
   }
 }
 
+.table--align-left {
+  tr {
+    td:first-child,
+    th:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
 .table-responsive {
   overflow-x: auto;
   min-height: 0.01%; // workaround for IE9 bug
+  margin-bottom: $spacing-unit;
+  .table {
+    margin-bottom: 0;
+  }
   @media screen and (max-width: $viewport-sm-max) {
     width: 100%;
     overflow-y: hidden;
@@ -53,12 +67,16 @@
         white-space: nowrap;
       }
     }
+    // reset no padding on tables inside .table-responsive
+    .table--align-left {
+      padding-left: $padding-unit;
+    }
   }
 }
 
 
 @media (min-width: $viewport-xl-min) {
-  .table {
+  .table:not(.table--align-left) {
     tr {
       td:first-child,
       th:first-child {

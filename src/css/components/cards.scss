@@ -65,14 +65,11 @@
 }
 
 // Card overrides
-.card_content .list {
-  margin-left: -$padding-unit;
-}
-.card_header + .list {
-  margin-top: -$unit-base;
-}
-.card .list_item_content {
-  padding-right: $padding-unit;
+.card .list {
+  margin-right: -$padding-unit;
+  &:nth-child(1) {
+    margin-top: -$unit-base;
+  }
 }
 .card .section-heading {
   border-bottom: 0;
@@ -106,14 +103,10 @@
   .card_footer {
     padding-right: $unit-base;
   }
-
-  .card_content .list {
-    margin-left: -$unit-base;
-  }
-  .card .list_item_content {
-    padding-right: $unit-base;
-  }
   .card hr {
+    margin-right: -$unit-base;
+  }
+  .card .list {
     margin-right: -$unit-base;
   }
 }
