@@ -66,6 +66,7 @@
   background-color: $progress-color;
   border-top-left-radius: $progress-radius;
   border-bottom-left-radius: $progress-radius;
+  vertical-align: top;
   &[width="100%"] {
     border-top-right-radius: $progress-radius;
     border-bottom-right-radius: $progress-radius;
@@ -74,4 +75,8 @@
 
 .progress-helper {
   margin-left: $unit-sm;
+  font-size: $font-size-base - 1;
+  color: $color-gray-medium;
+  position: relative;
+  top: -4px;
 }

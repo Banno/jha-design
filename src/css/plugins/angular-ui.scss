@@ -21,3 +21,72 @@
   display: -ms-flexbox !important;
   display: flex !important;
 }
+@media (min-width: $viewport-sm-min) {
+  .takeover--center-sm {
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+@media (min-width: $viewport-md-min) {
+  .takeover--center-md {
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+@media (min-width: $viewport-lg-min) {
+  .takeover--center-lg {
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
+
+// Dropdowns
+.dropdown-menu {
+  @extend .dropdown_menu;
+}
+
+// Datepicker
+[datepicker] {
+  &:focus {
+    outline: 0;
+  }
+  table {
+    max-width: 100%;
+    &:focus {
+      outline: 0;
+    }
+    th {
+      text-align: center;
+      color: $color-gray-medium;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: $font-size-base - 1;
+    }
+  }
+  .btn.btn {
+    padding-left: $unit-sm;
+    padding-right: $unit-sm;
+    font-weight: normal;
+  }
+  .btn.btn[disabled] {
+    opacity: .6;
+    cursor: default;
+  }
+  .btn.btn.active {
+    color: #fff;
+    background-color: $color-primary;
+    .text-info {
+      color: #fff;
+    }
+  }
+  .text-info {
+    color: $color-primary;
+  }
+  .text-center {
+    text-align: center;
+  }
+}

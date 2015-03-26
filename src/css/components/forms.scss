@@ -79,6 +79,7 @@ textarea.field {
   background-size: 18px;
   background-position: center center;
   background-repeat: no-repeat;
+  cursor: pointer;
   @include user-select(none);
 }
 .control input:focus ~ .control_indicator {
@@ -86,6 +87,9 @@ textarea.field {
 }
 .control input:checked ~ .control_indicator {
   border-color: transparent;
+}
+.control input:disabled ~ .control_indicator {
+  cursor: default;
 }
 
 .control--checkbox {

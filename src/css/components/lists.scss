@@ -80,6 +80,7 @@
   float: left;
   width: $thumbnail-size-sm;
   margin-right: $padding-unit;
+  min-height: 1px;
 }
 .list_item_content {
   overflow: hidden;

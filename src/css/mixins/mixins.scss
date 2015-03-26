@@ -421,10 +421,10 @@
       color: darken($text, 12%);
     }
   }
-  &[disabled] {
+  &[disabled],
+  &.disabled {
     background-color: $bg;
     border-color: $bg;
     color: $text;
-    opacity: 0.6;
   }
 }
