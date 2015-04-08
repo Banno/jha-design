@@ -1,17 +1,40 @@
 CACHE MANIFEST
 
-# Version 10
+# Version 1000
 
-# /css/style.min.css
-/img/icons.svg
-/fonts/proximanova-regular-webfont.woff2
-/fonts/proximanova-regular-webfont.woff
-/fonts/proximanova-semibold-webfont.woff2
-/fonts/proximanova-semibold-webfont.woff
-/fonts/proximanova-bold-webfont.woff2
-/fonts/proximanova-bold-webfont.woff
-/fonts/proximanova-light-webfont.woff2
-/fonts/proximanova-light-webfont.woff
+css/style.min.css
+fonts/proximanova-regular.woff2
+fonts/proximanova-regular.woff
+fonts/proximanova-semibold.woff2
+fonts/proximanova-semibold.woff
+fonts/proximanova-bold.woff2
+fonts/proximanova-bold.woff
+fonts/proximanova-light.woff2
+fonts/proximanova-light.woff
+fonts/proximanova-regularitalic.woff2
+fonts/proximanova-regularitalic.woff
+fonts/proximanova-semibolditalic.woff2
+fonts/proximanova-semibolditalic.woff
+fonts/proximanova-bolditalic.woff2
+fonts/proximanova-bolditalic.woff
+fonts/proximanova-lightitalic.woff2
+fonts/proximanova-lightitalic.woff
+img/app-icon-144.png
+img/app-icon-192.png
+img/apple-touch-icon-precomposed-72x72.png
+img/apple-touch-icon-precomposed-76x76.png
+img/apple-touch-icon-precomposed-114x114.png
+img/apple-touch-icon-precomposed-144x144.png
+img/apple-touch-icon-precomposed-152x152.png
+img/apple-touch-icon-precomposed-180x180.png
+img/apple-touch-icon.png
+img/avatar.svg
+img/banno-logo.svg
+img/icons.svg
 
 NETWORK:
 *
+
+# FALLBACK:
+# /profile-image img/avatar.svg
+# / offline.html

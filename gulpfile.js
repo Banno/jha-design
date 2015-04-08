@@ -5,10 +5,12 @@ var merge           = require('merge-stream');
 var header          = require('gulp-header');
 var rename          = require('gulp-rename');
 var sass            = require('gulp-ruby-sass');
+var csso            = require('gulp-csso');
 var svgstore        = require('gulp-svgstore');
 var svgmin          = require('gulp-svgmin');
 var connect         = require('gulp-connect');
 var imagemin        = require('gulp-imagemin');
+var stylestats      = require('gulp-stylestats');
 var del             = require('del');
 var pkg             = require('./package.json');
 
@@ -44,10 +46,16 @@ gulp.task('styles', function() {
       style: 'compressed',
       precision: 10
     })
+    .pipe(csso())
     .pipe(header(banner, { pkg: pkg }))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(connect.reload());
+});
+
+gulp.task('stylestats', function() {
+  gulp.src('dist/css/*.css')
+    .pipe(stylestats());
 });
 
 gulp.task('images', function() {
@@ -78,4 +86,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['copy', 'styles', 'icons', 'images']);
-gulp.task('dev', ['default', 'connect', 'watch'])
+gulp.task('dev', ['default', 'connect', 'watch']);
+gulp.task('profile', ['stylestats']);

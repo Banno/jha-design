@@ -12,6 +12,7 @@
 .chip {
   display: inline-block;
   white-space: nowrap;
+  background-color: $text-color-muted;
   color: #fff;
   font-size: $font-size-base - 1;
   text-align: center;

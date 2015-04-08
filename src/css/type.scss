@@ -1,12 +1,38 @@
 // Headings
+h1,
 .h1,
+h2,
 .h2,
+h3,
 .h3,
+h4,
 .h4,
+h5,
 .h5,
+h6,
 .h6 {
+  position: relative;
+  line-height: 1.1;
   font-weight: $heading-weight;
   margin: 0;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .h1 {
@@ -30,8 +56,11 @@
 }
 
 p {
+  margin: 0 0 12px;
+}
+ul {
   margin-top: 0;
-  margin-bottom: $unit-sm;
+  margin-bottom: 12px;
 }
 
 
@@ -39,6 +68,7 @@ p {
 .section-title {
   color: $color-primary;
   font-size: 20px;
+  font-weight: 400;
   margin-bottom: $padding-unit;
   @media (min-width: $viewport-md-min) {
     margin-bottom: $unit-base;

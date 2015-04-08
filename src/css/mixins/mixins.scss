@@ -422,7 +422,8 @@
     }
   }
   &[disabled],
-  &.disabled {
+  &.disabled,
+  &.is-disabled {
     background-color: $bg;
     border-color: $bg;
     color: $text;

@@ -6,6 +6,8 @@ JHA Design is a design language for building sleek, intuitive, powerful, and per
 
 ## Quick start
 
+Several quick start options are available: 
+
 - [Download the latest release.](https://github.com/Banno/jha-design/releases)
 - Clone the repo: `git clone https://github.com/Banno/jha-design.git`.
 - Install with [Bower](http://bower.io): `bower install --save-dev git@github.com:Banno/jha-design.git`.
@@ -59,6 +61,8 @@ gulp
 ## Available Gulp commands
 
 `gulp dev` will build the project and start a web server to view documentation at [localhost:7777](http://localhost:7777).
+
+`gulp profile` will use Stylestats to report on the generated stylesheet's size, number of selectors and other valuable metrics.
 
 
 ## Contributing
