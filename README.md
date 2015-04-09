@@ -2,8 +2,6 @@
 
 JHA Design is a design language for building sleek, intuitive, powerful, and performant web apps.
 
-[JHA Design Docs](https://jha-design.herokuapp.com)
-
 ## Table of contents
 
 ## Quick start
@@ -41,7 +39,7 @@ Have a bug or feature request? Please [open a new issue](https://github.com/Bann
 
 # Documentation
 
-@TODO
+[JHA Design Docs](https://jha-design.herokuapp.com)
 
 # Compiling CSS
 
