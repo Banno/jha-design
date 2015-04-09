@@ -5,6 +5,7 @@
     .dropdown + .btn,
     .btn + .filter,
     .filter + .btn,
+    .filter + .filter,
     .filter + .dropdown,
     .dropdown + .filter {
         margin-left: $padding-unit;

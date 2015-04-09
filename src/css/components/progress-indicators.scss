@@ -77,6 +77,5 @@
   margin-left: $unit-sm;
   font-size: $font-size-base - 1;
   color: $color-gray-medium;
-  position: relative;
-  top: -4px;
+  display: inline-block;
 }

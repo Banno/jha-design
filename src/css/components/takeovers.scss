@@ -144,6 +144,11 @@
 }
 
 // Content
+.takeover_content {
+  .gallery {
+    margin-bottom: 0;
+  }
+}
 .takeover_content--fill {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
