@@ -2,6 +2,8 @@
 
 JHA Design is a design language for building sleek, intuitive, powerful, and performant web apps.
 
+[JHA Design Docs](https://jha-design.herokuapp.com)
+
 ## Table of contents
 
 ## Quick start
@@ -60,7 +62,7 @@ gulp
 
 ## Available Gulp commands
 
-`gulp dev` will build the project and start a web server to view documentation at [localhost:7777](http://localhost:7777).
+`gulp dev` will build the project and start a web server to view the example page at [localhost:7777](http://localhost:7777).
 
 `gulp profile` will use Stylestats to report on the generated stylesheet's size, number of selectors and other valuable metrics.
 
