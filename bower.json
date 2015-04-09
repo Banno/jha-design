@@ -17,8 +17,12 @@
     "favicon"
   ],
   "ignore": [
-    "**/.*",
     "node_modules",
-    "src"
+    "src",
+    "dist/index.html",
+    "bower.json",
+    "gulpfile.js",
+    "package.json",
+    "README.md"
   ]
 }

@@ -26,12 +26,10 @@ gulp.task('copy', function() {
     .pipe(connect.reload());
   var favicon = gulp.src('src/favicon.ico')
     .pipe(gulp.dest('dist'));
-  var appcache = gulp.src('src/offline.appcache')
-    .pipe(gulp.dest('dist'));
   var fonts = gulp.src('src/fonts/*', { base: 'src' })
     .pipe(gulp.dest('dist'));
 
-  return merge(html, favicon, appcache, fonts);
+  return merge(html, favicon, fonts);
 });
 
 gulp.task('styles', function() {
