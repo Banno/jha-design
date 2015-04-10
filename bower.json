@@ -24,5 +24,8 @@
     "gulpfile.js",
     "package.json",
     "README.md"
-  ]
+  ],
+  "devDependencies": {
+    "jha-design": "git@github.com:Banno/jha-design.git#~1.0.0-beta"
+  }
 }
