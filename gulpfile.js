@@ -4,8 +4,9 @@ var gulp            = require('gulp');
 var merge           = require('merge-stream');
 var header          = require('gulp-header');
 var rename          = require('gulp-rename');
-var sass            = require('gulp-ruby-sass');
+var sass            = require('gulp-sass');
 var csso            = require('gulp-csso');
+var cmq             = require('gulp-combine-media-queries');
 var svgstore        = require('gulp-svgstore');
 var svgmin          = require('gulp-svgmin');
 var connect         = require('gulp-connect');
@@ -40,10 +41,9 @@ gulp.task('styles', function() {
     '*/',
     ''].join('\n');
 
-  return sass('src/css/core.scss', {
-      style: 'compressed',
-      precision: 10
-    })
+  return gulp.src('src/css/core.scss')
+    .pipe(sass())
+    .pipe(cmq())
     .pipe(csso())
     .pipe(header(banner, { pkg: pkg }))
     .pipe(rename('style.min.css'))

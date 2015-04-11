@@ -6,7 +6,7 @@ JHA Design is a design language for building sleek, intuitive, powerful, and per
 
 ## Quick start
 
-Several quick start options are available: 
+Several quick start options are available for using JHA Design in your app: 
 
 - [Download the latest release.](https://github.com/Banno/jha-design/releases)
 - Clone the repo: `git clone https://github.com/Banno/jha-design.git`.
