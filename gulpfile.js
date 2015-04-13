@@ -29,8 +29,10 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist'));
   var fonts = gulp.src('src/fonts/*', { base: 'src' })
     .pipe(gulp.dest('dist'));
+  var js = gulp.src('src/js/*', { base: 'src' })
+    .pipe(gulp.dest('dist'));
 
-  return merge(html, favicon, fonts);
+  return merge(html, favicon, fonts, js);
 });
 
 gulp.task('styles', function() {
