@@ -199,9 +199,6 @@ textarea.field {
   @media (min-width: $viewport-md-min) {
     margin-bottom: $spacing-unit;
   }
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 }
 .fieldset_label {
   font-weight: 600;

@@ -164,6 +164,9 @@
 }
 .takeover_content--no-padding {
   padding: 0;
+  @media (min-width: $viewport-md-min) {
+    padding: 0;
+  }
 }
 
 // Footer

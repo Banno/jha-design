@@ -1,0 +1,20 @@
+// Growl
+.growl-item {
+  @extend .toast;
+  opacity: 1;
+  @include transform(translateY(0));
+  // hide the close button, toasts don't have buttons
+  .close {
+    display: none;
+  }
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+    @include transform(translateY(132px));
+  }
+  &.ng-leave,
+  &.ng-enter.ng-enter-active {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
