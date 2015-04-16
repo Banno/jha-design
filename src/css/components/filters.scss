@@ -71,7 +71,7 @@
 }
 
 // IE9 hack to hide the arrow
-@media screen and (min-width:0\0) {
+@media screen and (min-width: 0\0) {
   .filter_select {
     z-index: 1;
     padding: $padding-unit / 2;
