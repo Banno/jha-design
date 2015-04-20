@@ -55,12 +55,17 @@ h6,
   font-size: $h6-size;
 }
 
-p {
-  margin: 0 0 12px;
+p,
+.p {
+  margin: 0 0 $padding-unit;
 }
-ul {
+ul,
+.ul {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: $padding-unit;
+}
+.ul > li {
+  margin-bottom: $unit-xs;
 }
 
 

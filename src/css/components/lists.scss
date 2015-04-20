@@ -43,6 +43,9 @@
   &:last-of-type {
     border-bottom: 0;
   }
+  a:not(.btn) {
+    color: $text-color-base;
+  }
   // title spacing
   .text--lg + .title--sub,
   .title + .title--sub {

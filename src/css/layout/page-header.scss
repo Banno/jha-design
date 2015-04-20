@@ -3,6 +3,7 @@
   border-bottom: $border-base;
   padding-top: $padding-unit;
   margin-bottom: $padding-unit;
+  @include clearfix();
 }
 // specify a height for our proper scrolling tabs
 .page-header--with-tabs {
@@ -21,6 +22,7 @@
   font-size: $page-header-font-size;
   font-weight: $page-header-weight;
   margin-bottom: $spacing-unit / 2;
+  float: left;
 }
 .page-title--before-tabs {
   margin-bottom: floor($spacing-unit / 4);
