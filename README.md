@@ -68,6 +68,3 @@ gulp
 ## Contributing
 
 Pull requests, please.
-
-## Changelog
-
