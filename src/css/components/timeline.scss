@@ -1,0 +1,133 @@
+// Timeline
+.timeline {
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: -($spacing-unit * 2);
+    left: 50%;
+    width: 1px;
+    background-color: $color-gray-light;
+    content: '';
+  }
+}
+
+.timeline_item {
+  position: relative;
+  margin-bottom: $spacing-unit;
+}
+.timeline_group {
+  @include clearfix();
+  padding-top: $spacing-unit;
+}
+
+.timeline_item_date,
+.timeline_item_group {
+  display: block;
+  background-color: #fff;
+  border: 1px solid $color-gray-light;
+}
+
+.timeline_item_date {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 500px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $text-color-muted;
+  margin-left: auto;
+  margin-right: auto;
+}
+.timeline_item_dot {
+  display: none;
+  @include square(16px);
+  background-color: $color-gray-lighter;
+  border: 1px solid $color-gray-light;
+  border-radius: 50%;
+  float: left;
+  margin-left: 42px;
+  margin-top: $padding-unit;
+}
+.timeline_item_type {
+  display: none;
+  @include square(32px);
+  background-color: #fff;
+  border: 1px solid $color-gray-light;
+  border-radius: 50%;
+  float: left;
+  margin-top: 8px;
+  margin-left: 34px;
+  text-align: center;
+  padding: 3px;
+}
+
+.timeline_item_group {
+  border-radius: $border-radius-base;
+  min-height: 48px;
+  max-width: 690px;
+  padding: $padding-unit;
+  position: relative;
+}
+
+
+// Activity
+.activity_item {
+  display: table;
+  width: 100%;
+}
+.activity_item_time {
+  width: 92px;
+  color: $text-color-muted;
+}
+.activity_item_desc,
+.activity_item_time,
+.activity_item_action {
+  display: table-cell;
+  padding: $unit-xs;
+  padding-left: 0;
+}
+.activity_item_action {
+  width: 1%;
+}
+
+
+@media (min-width: $viewport-sm-min) {
+  .timeline {
+    &:before {
+      left: 50px;
+    }
+  }
+  .timeline_item_date {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .timeline_item_dot,
+  .timeline_item_type {
+    display: block;
+  }
+  .timeline_item_group {
+    margin-left: 90px;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      border-color: transparent;
+      border-style: dashed dashed solid;
+      border-width: 9px;
+      left: -19px;
+      top: 16px;
+    }
+    &:before {
+      border-right-color: $color-gray-light;
+    }
+    &:after {
+      border-right-color: #fff;
+      border-width: 8px;
+      margin-left: 1px;
+      left: -17px;
+      top: 17px;
+    }
+  }
+}

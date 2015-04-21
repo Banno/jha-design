@@ -10,6 +10,9 @@
     margin-bottom: $spacing-unit * 1.5
   }
 }
+.card--wide {
+  max-width: none;
+}
 
 // Header
 .card_header {

@@ -2,6 +2,7 @@
   position: relative;
   display: table;
   border-collapse: separate;
+  margin-bottom: $padding-unit;
   &[class^="col-"] {
     float: none;
     padding-left: 0;

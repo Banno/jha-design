@@ -194,255 +194,298 @@
       </div>
     </nav>
 
-    <header class="page-header page-header--with-tabs" id="mainContent">
+    <header class="page-header" id="mainContent">
       <div class="container">
-        <h1 class="page-title page-title--before-tabs u-hidden--xs u-hidden--sm">Mobile</h1>
-        <div class="overflow-tabs">
-          <ul class="tabs">
-            <li>
-              <a href="#" class="tab is-active">Dashboard</a>
-            </li>
-            <li>
-              <a href="#" class="tab">Users</a>
-            </li>
-            <li>
-              <a href="#" class="tab">Reports</a>
-            </li>
-            <li>
-              <a href="#" class="tab">Messages</a>
-            </li>
-            <li>
-              <a href="#" class="tab">Settings</a>
-            </li>
-          </ul>
-        </div>
+        <h1 class="page-title">Example</h1>
       </div>
     </header>
 
-    <div class="container">
-      <div class="grid">
-        <div class="col-md-6">
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">Right Now</h1>
-              <span class="card_sub-title">Last 5 minutes</span>
-            </header>
-            <div class="card_content">
-              <div class="grid">
-                <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                  <div class="stat stat--center">
-                    <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#person"></use></svg>
-                    <div class="sub-title">Logged in users</div>
-                    <span class="stat_value">5</span>
+    <div class="paper">
+      <div class="paper_content">
+
+        <div class="container">
+          <div class="timeline">
+            <div class="timeline_item">
+              <div class="timeline_item_date">Feb 1</div>
+              <div class="timeline_group">
+                <div class="timeline_item_dot"></div>
+                <div class="timeline_item_group">
+                  <div class="activity_item">
+                    <div class="activity_item_time">2:01 pm</div>
+                    <div class="activity_item_desc">All the magical things that happened go here.</div>
+                    <div class="activity_item_action"><a href="#">View</a></div>
                   </div>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                  <div class="stat stat--center">
-                    <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#person-add"></use></svg>
-                    <div class="sub-title">Sign ups today</div>
-                    <span class="stat_value">0</span>
+
+                  <div class="activity_item">
+                    <div class="activity_item_time">2:01 pm</div>
+                    <div class="activity_item_desc">All the magical things that happened go here.</div>
                   </div>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                  <div class="stat stat--center">
-                    <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#today"></use></svg>
-                    <div class="sub-title">User logins today</div>
-                    <span class="stat_value">322</span>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                  <div class="stat stat--center">
-                    <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#schedule"></use></svg>
-                    <div class="sub-title">Average session</div>
-                    <span class="stat_value">2m</span>
+
+                  <div class="activity_item">
+                    <div class="activity_item_time">2:01 pm</div>
+                    <div class="activity_item_desc">All the magical things that happened go here.</div>
+                    <div class="activity_item_action"><a href="#">View</a></div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
 
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">User Lookup</h1>
-            </header>
-            <div class="card_content">
-              <form class="input-group">
-                <input type="search" class="field" placeholder="Search by name or account number" required autocomplete="off" style="border-right:0;">
-                <span class="input-group_btn">
-                  <button type="submit" class="btn btn--primary">
-                    <svg class="icon icon--sm" role="image" title="Submit"><use xlink:href="#search"></use></svg>
+              <div class="timeline_group">
+                <div class="timeline_item_dot"></div>
+                <div class="timeline_item_group">activity group</div>
+              </div>
+
+              <div class="timeline_group">
+                <div class="timeline_item_dot"></div>
+                <div class="timeline_item_group">activity group</div>
+              </div>
+            </div>
+
+            <div class="timeline_item">
+              <div class="timeline_item_date">Jan 31</div>
+              <div class="timeline_group">
+                <div class="timeline_item_dot"></div>
+                <div class="timeline_item_group">activity group</div>
+              </div>
+
+              <div class="timeline_group">
+                <div class="timeline_item_type">
+                  <svg class="icon u-fill-success" role="presentation"><use xlink:href="#wallet"></use></svg>
+                </div>
+                <div class="timeline_item_group">activity group</div>
+              </div>
+
+              <div class="timeline_group">
+                <div class="timeline_item_dot"></div>
+                <div class="timeline_item_group">activity group</div>
+              </div>
+            </div>
+          </div>
+          <!-- div class="grid">
+            <div class="col-md-6">
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">Right Now</h1>
+                  <span class="card_sub-title">Last 5 minutes</span>
+                </header>
+                <div class="card_content">
+                  <div class="grid">
+                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
+                      <div class="stat stat--center">
+                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#person"></use></svg>
+                        <div class="sub-title">Logged in users</div>
+                        <span class="stat_value">5</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
+                      <div class="stat stat--center">
+                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#person-add"></use></svg>
+                        <div class="sub-title">Sign ups today</div>
+                        <span class="stat_value">0</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
+                      <div class="stat stat--center">
+                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#today"></use></svg>
+                        <div class="sub-title">User logins today</div>
+                        <span class="stat_value">322</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
+                      <div class="stat stat--center">
+                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#schedule"></use></svg>
+                        <div class="sub-title">Average session</div>
+                        <span class="stat_value">2m</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">User Lookup</h1>
+                </header>
+                <div class="card_content">
+                  <form class="input-group">
+                    <input type="search" class="field" placeholder="Search by name or account number" required autocomplete="off" style="border-right:0;">
+                    <span class="input-group_btn">
+                      <button type="submit" class="btn btn--primary">
+                        <svg class="icon icon--sm" role="image" title="Submit"><use xlink:href="#search"></use></svg>
+                      </button>
+                    </span>
+                  </form>
+                </div>
+              </section>
+
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">Money Movement</h1>
+                  <span class="card_sub-title">Last 30 days</span>
+                </header>
+                <div class="card_content">
+                  <div class="error-loading">
+                    <div class="error-loading_image">:'(</div>
+                    <div>Failed to get money movement stats.</div>
+                    <a href="#" class="error-loading_retry">Try again</a>
+                  </div>
+                </div>
+                <footer class="card_footer">
+                  <a href="#" class="btn btn--neutral btn--sm">More</a>
+                </footer>
+              </section>
+
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">Messages</h1>
+                  <button type="button" class="btn btn--icon">
+                    <svg class="icon icon--sm u-fill-muted" role="presentation"><use xlink:href="#add"></use></svg>
                   </button>
-                </span>
-              </form>
+                </header>
+                <div class="card_content">
+                  <div class="card_empty">
+                    There are no scheduled messages.
+                  </div>
+                </div>
+                <footer class="card_footer">
+                  <a href="#" class="btn btn--neutral btn--sm">More</a>
+                </footer>
+              </section>
+
             </div>
-          </section>
-
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">Money Movement</h1>
-              <span class="card_sub-title">Last 30 days</span>
-            </header>
-            <div class="card_content">
-              <div class="error-loading">
-                <div class="error-loading_image">:'(</div>
-                <div>Failed to get money movement stats.</div>
-                <a href="#" class="error-loading_retry">Try again</a>
-              </div>
-            </div>
-            <footer class="card_footer">
-              <a href="#" class="btn btn--neutral btn--sm">More</a>
-            </footer>
-          </section>
-
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">Messages</h1>
-              <button type="button" class="btn btn--icon">
-                <svg class="icon icon--sm u-fill-muted" role="presentation"><use xlink:href="#add"></use></svg>
-              </button>
-            </header>
-            <div class="card_content">
-              <div class="card_empty">
-                There are no scheduled messages.
-              </div>
-            </div>
-            <footer class="card_footer">
-              <a href="#" class="btn btn--neutral btn--sm">More</a>
-            </footer>
-          </section>
-
-        </div>
-        <div class="col-md-6">
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">Usage</h1>
-              <div class="card_sub-title">Last 30 days</div>
-            </header>
-            <div class="card_content">
-              <div class="grid">
-                <div class="col-sm-6 col-lg-4">
-                  <div class="section-heading">Active Users</div>
-                  <div class="stat">
-                    <span class="stat_value">638</span>
-                    <span class="stat_comparison">
-                      671
-                      <svg class="icon icon--sm icon--success" role="presentation"><use xlink:href="#arrow-drop-up"></use></svg>
-                    </span>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                  <div class="section-heading">Retention</div>
-                  <div class="stat">
-                    <span class="stat_value">93.3%</span>
-                    <span class="stat_comparison">
-                      93.1%
-                      <svg class="icon icon--sm icon--success" role="presentation"><use xlink:href="#arrow-drop-up"></use></svg>
-                    </span>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                  <div class="section-heading">Sign Ups</div>
-                  <div class="stat">
-                    <span class="stat_value">24</span>
-                    <span class="stat_comparison">
-                      27
-                      <svg class="icon icon--sm icon--danger" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <hr>
-
-              <div class="section-heading">Usage by platform</div>
-              <div class="list list--borderless">
-                <div class="list_item list_item--inset">
-                  <div class="list_item_action">
-                    <svg class="icon u-fill-neutral" role="image" title="Android"><use xlink:href="#android"></use></svg>
-                  </div>
-                  <div class="list_item_content">
-                    <progress class="progress-linear" value="65" max="100"></progress>
-                    <span class="progress-helper">64%</span>
-                  </div>
-                </div>
-                <div class="list_item list_item--inset">
-                  <div class="list_item_action">
-                    <svg class="icon u-fill-neutral" role="image" title="iOS"><use xlink:href="#apple"></use></svg>
-                  </div>
-                  <div class="list_item_content">
-                    <progress class="progress-linear" value="33" max="100"></progress>
-                    <span class="progress-helper">33%</span>
-                  </div>
-                </div>
-                <div class="list_item list_item--inset">
-                  <div class="list_item_action">
-                    <svg class="icon u-fill-neutral" role="image" title="Windows"><use xlink:href="#windows"></use></svg>
-                  </div>
-                  <div class="list_item_content">
-                    <progress class="progress-linear" value="2" max="100"></progress>
-                    <span class="progress-helper">2%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <footer class="card_footer">
-              <a href="#" class="btn btn--neutral btn--sm">More</a>
-            </footer>
-          </section>
-
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">RDC Requests</h1>
-            </header>
-            <div class="card_content">
-              <div class="list">
-                <a href="#" class="list_item list_item--inset">
-                  <div class="list_item_action">
-                    <div class="avatar avatar--sm">
-                      <img src="/img/avatar.svg" width="36" height="36">
+            <div class="col-md-6">
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">Usage</h1>
+                  <div class="card_sub-title">Last 30 days</div>
+                </header>
+                <div class="card_content">
+                  <div class="grid">
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="section-heading">Active Users</div>
+                      <div class="stat">
+                        <span class="stat_value">638</span>
+                        <span class="stat_comparison">
+                          671
+                          <svg class="icon icon--sm icon--success" role="presentation"><use xlink:href="#arrow-drop-up"></use></svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="section-heading">Retention</div>
+                      <div class="stat">
+                        <span class="stat_value">93.3%</span>
+                        <span class="stat_comparison">
+                          93.1%
+                          <svg class="icon icon--sm icon--success" role="presentation"><use xlink:href="#arrow-drop-up"></use></svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="section-heading">Sign Ups</div>
+                      <div class="stat">
+                        <span class="stat_value">24</span>
+                        <span class="stat_comparison">
+                          27
+                          <svg class="icon icon--sm icon--danger" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div class="list_item_content">
-                    <div class="sub-title u-float-right">2m ago</div>
-                    <div>Kathy Lodge</div>
-                    <div class="sub-title">Individual</div>
-                  </div>
-                </a>
-                <a href="#" class="list_item list_item--inset">
-                  <div class="list_item_action">
-                    <div class="avatar avatar--sm">
-                      <img src="/img/avatar.svg" width="36" height="36">
+                  <hr>
+
+                  <div class="section-heading">Usage by platform</div>
+                  <div class="list list--borderless">
+                    <div class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <svg class="icon u-fill-neutral" role="image" title="Android"><use xlink:href="#android"></use></svg>
+                      </div>
+                      <div class="list_item_content">
+                        <progress class="progress-linear" value="65" max="100"></progress>
+                        <span class="progress-helper">64%</span>
+                      </div>
+                    </div>
+                    <div class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <svg class="icon u-fill-neutral" role="image" title="iOS"><use xlink:href="#apple"></use></svg>
+                      </div>
+                      <div class="list_item_content">
+                        <progress class="progress-linear" value="33" max="100"></progress>
+                        <span class="progress-helper">33%</span>
+                      </div>
+                    </div>
+                    <div class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <svg class="icon u-fill-neutral" role="image" title="Windows"><use xlink:href="#windows"></use></svg>
+                      </div>
+                      <div class="list_item_content">
+                        <progress class="progress-linear" value="2" max="100"></progress>
+                        <span class="progress-helper">2%</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="list_item_content">
-                    <div class="sub-title u-float-right">3h ago</div>
-                    <div>April Prichard</div>
-                    <div class="sub-title">Individual</div>
+                </div>
+                <footer class="card_footer">
+                  <a href="#" class="btn btn--neutral btn--sm">More</a>
+                </footer>
+              </section>
+
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">RDC Requests</h1>
+                </header>
+                <div class="card_content">
+                  <div class="list">
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="/img/avatar.svg" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="sub-title u-float-right">2m ago</div>
+                        <div>Kathy Lodge</div>
+                        <div class="sub-title">Individual</div>
+                      </div>
+                    </a>
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="/img/avatar.svg" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="sub-title u-float-right">3h ago</div>
+                        <div>April Prichard</div>
+                        <div class="sub-title">Individual</div>
+                      </div>
+                    </a>
                   </div>
-                </a>
-              </div>
-            </div>
-          </section>
+                </div>
+              </section>
 
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">Locked-out Users</h1>
-            </header>
-            <div class="card_content">
-              <div class="card_empty">
-                There are no locked-out users.
-              </div>
-            </div>
-          </section>
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">Locked-out Users</h1>
+                </header>
+                <div class="card_content">
+                  <div class="card_empty">
+                    There are no locked-out users.
+                  </div>
+                </div>
+              </section>
 
-          <section class="card">
-            <header class="card_header">
-              <h1 class="card_title">Release Notes</h1>
-            </header>
-            <div class="card_content">
-              <div class="progress-circular"></div>
+              <section class="card">
+                <header class="card_header">
+                  <h1 class="card_title">Release Notes</h1>
+                </header>
+                <div class="card_content">
+                  <div class="progress-circular"></div>
+                </div>
+              </section>
             </div>
-          </section>
+          </div> -->
         </div>
+
       </div>
     </div>
 
