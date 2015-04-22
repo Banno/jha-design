@@ -73,7 +73,7 @@
 .navigation_title {
   font-size: $font-size-base + 1;
   font-weight: 600;
-  color: #fff;
+  color: $topbar-title-color;
   padding-top: 8px;
 }
 
@@ -100,12 +100,12 @@
   display: block;
   padding: 22px;
   height: $topbar-height-base;
-  color: rgba(#fff, 0.6);
+  color: $topbar-color;
   &:hover,
   &:active,
   &:focus {
     outline: 0;
-    color: #fff;
+    color: $topbar-color-focus;
   }
 }
 
@@ -119,7 +119,7 @@
   font-size: $font-size-lg;
   font-weight: 600;
   line-height: 1.75;
-  color: $color-gray-light;
+  color: $topbar-link-color-primary;
   padding-left: $spacing-unit / 2;
   padding-right: $spacing-unit;
 }
