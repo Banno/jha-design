@@ -76,6 +76,9 @@
 .activity_item {
   display: table;
   width: 100%;
+  .avatar {
+    margin-right: 4px;
+  }
 }
 .activity_item_time {
   width: 92px;
