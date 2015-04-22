@@ -1,5 +1,3 @@
-$tooltip-background: rgba($color-gray-dark, 0.8);
-
 .tooltip {
   position: relative;
   &:before {
@@ -18,7 +16,7 @@ $tooltip-background: rgba($color-gray-dark, 0.8);
     z-index: $z-index-toast;
     // display: none;
     padding: 5px 8px;
-    font-size: $font-size-sm;
+    font-size: $tooltip-font-size;
     font-weight: 400;
     color: #fff;
     text-align: center;

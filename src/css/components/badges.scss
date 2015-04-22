@@ -1,9 +1,9 @@
 .badge {
   @include square(20px);
   display: inline-block;
-  background-color: $text-color-muted;
-  color: #fff;
-  font-size: $font-size-sm;
+  background-color: $badge-background-color;
+  color: $badge-text-color;
+  font-size: $badge-font-size;
   text-align: center;
   line-height: 20px;
   border-radius: 50%;
@@ -12,9 +12,9 @@
 .chip {
   display: inline-block;
   white-space: nowrap;
-  background-color: $text-color-muted;
-  color: #fff;
-  font-size: $font-size-base - 1;
+  background-color: $chip-background-color;
+  color: $chip-text-color;
+  font-size: $chip-font-size;
   text-align: center;
   padding: $unit-xs $unit-sm;
   border-radius: 500px;
@@ -22,17 +22,17 @@
 
 .badge--primary,
 .chip--primary {
-  background-color: $color-primary;
+  background-color: $badge-color-primary;
 }
 .badge--success,
 .chip--success {
-  background-color: $color-success;
+  background-color: $badge-color-success;
 }
 .badge--danger,
 .chip--danger {
-  background-color: $color-danger;
+  background-color: $badge-color-danger;
 }
 .badge--warning,
 .chip--warning {
-  background-color: $color-warning;
+  background-color: $badge-color-warning;
 }

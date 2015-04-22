@@ -12,7 +12,7 @@
   touch-action: pan-x;
   overflow: auto;
   white-space: nowrap;
-  height: 71px; // magic number, 55 + 16 (height of scrollbar)
+  height: $tab-height;
   > li {
     display: inline-block;
     margin-left: $unit-base;
@@ -26,16 +26,16 @@
   cursor: pointer;
   padding: 18px 0 14px;
   border-bottom: 3px solid transparent;
-  color: $text-color-muted;
+  color: $tab-text-color-base;
   @include transition(border-color .15s $timing-function, color .15s $timing-function);
   &:hover,
   &:focus {
-    color: $text-color-base;
+    color: $tab-text-color-focus;
     outline: 0;
   }
   &.is-active {
-    color: $text-color-base;
-    border-color: $color-primary;
+    color: $tab-text-color-focus;
+    border-color: $tab-selected-color;
   }
 }
 

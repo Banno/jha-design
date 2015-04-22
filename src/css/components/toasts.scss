@@ -1,5 +1,5 @@
 .toast {
-  background-color: $color-gray-base;
+  background-color: $toast-background-color;
   color: #fff;
   padding: $padding-unit $unit-base;
   position: fixed;
@@ -35,7 +35,7 @@
   }
   svg {
     background-color: #fff;
-    fill: $color-gray-base;
+    fill: $toast-background-color;
     @include square(36px);
     padding: 6px;
     border-radius: 50%;

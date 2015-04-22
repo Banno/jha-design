@@ -2,7 +2,7 @@
 .filter {
   position: relative;
   display: inline-block;
-  color: $text-color-muted;
+  color: $filter-color;
   &:after {
     content: '';
     position: absolute;
@@ -43,7 +43,7 @@
   }
   &:focus,
   &:active {
-    color: $text-color-base;
+    color: $filter-focus-color;
   }
   &::-ms-expand {
     display: none;
@@ -95,7 +95,7 @@
       &:hover,
       &:focus,
       &:active {
-        color: $text-color-base;
+        color: $filter-focus-color;
       }
     }
   }

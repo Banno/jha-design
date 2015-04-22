@@ -117,9 +117,14 @@ $backdrop-opacity:          0.6 !default;
 // Buttons
 $btn-padding-vertical:      7px !default;
 $btn-padding-horizontal:    18px !default;
+$btn-border-radius-base:    $border-radius-base !default;
 
 $btn-text-transform:        none !default;
-$btn-weight:                600 !default;
+$btn-text-color-base:       $text-color-base !default;
+$btn-font-size-base:        $font-size-base !default;
+$btn-font-weight:           600 !default;
+
+$btn-line-height-base:      20px !default;
 $btn-height-base:           35px !default;
 $btn-height-sm:             30px !default;
 $btn-height-lg:             50px !default;
@@ -130,13 +135,31 @@ $btn-success-background:    $color-success !default;
 $btn-danger-background:     $color-danger !default;
 $btn-neutral-background:    $color-gray-medium !default;
 
+$btn-focus-shadow:          inset 0 1px 2px rgba(0,0,0,0.08) !default;
+
 
 // Avatars
+$avatar-background-color:   $color-gray-light !default;
 $avatar-radius:             50% !default;
 $avatar-size-xs:            24px !default;
 $avatar-size-sm:            36px !default;
 $avatar-size-base:          48px !default;
 $avatar-size-lg:            72px !default;
+
+
+// Badge & Chips
+$badge-background-color:    $text-color-muted !default;
+$badge-font-size:           $font-size-sm !default;
+$badge-text-color:          #fff !default;
+
+$chip-background-color:     $text-color-muted !default;
+$chip-font-size:            $font-size-base - 1 !default;
+$chip-text-color:           #fff !default;
+
+$badge-color-primary:       $color-primary !default;
+$badge-color-success:       $color-success !default;
+$badge-color-warning:       $color-warning !default;
+$badge-color-danger:        $color-danger !default;
 
 
 // Thumbnails
@@ -153,17 +176,33 @@ $page-header-font-size:     24px !default;
 $page-header-weight:        400 !default;
 
 
+// Cards
+$card-background-color:     #fff !default;
+$card-shadow:               0 1px 3px 0 rgba($color-gray-dark, 0.16) !default;
+$card-radius:               2px !default;
+$card-max-width:            550px !default;
+
+
 // Dropdowns
-$dropdown-bg:               #fff !default;
+$dropdown-background-color: #fff !default;
 $dropdown-border-color:     rgba($color-gray-base, 0.12) !default;
 $dropdown-width-min:        240px !default;
 $dropdown-width-max:        300px !default;
 
+$dropdown-title-color:      $color-gray-dark !default;
+$dropdown-title-font-size:  $font-size-lg !default;
+$dropdown-title-line-height: 1 !default;
 
-// Cards
-$card-bg:                   #fff !default;
-$card-shadow:               0 1px 3px 0 rgba($color-gray-dark, 0.16) !default;
-$card-radius:               2px !default;
+$dropdown-divider-color:    $color-gray-lighter !default;
+$dropdown-item-font-size:   $font-size-base - 1 !default;
+$dropdown-item-color:       $text-color-muted !default;
+$dropdown-item-hover-color: $text-color-base !default;
+$dropdown-item-hover-background: $color-gray-light !default;
+
+
+// Filters
+$filter-color:              $text-color-muted !default;
+$filter-focus-color:        $text-color-base !default;
 
 
 // Forms
@@ -171,6 +210,30 @@ $progress-color:            $color-green !default;
 $progress-height:           8px !default;
 $progress-radius:           2px !default;
 $progress-width:            180px !default;
+
+
+// Gallery
+$gallery-selected-color:    $color-primary !default;
+$gallery-item-background:   transparent !default;
+$gallery-item-color:        #fff !default;
+$gallery-item-font-size:    $font-size-sm !default;
+$gallery-overlay-color:     rgba($color-gray-dark, 0.6) !default;
+
+$gallery-item-height:       140px !default;
+
+
+// Icons
+$icon-size-base:            24px !default;
+$icon-size-sm:              18px !default;
+$icon-fill-color:           currentColor !default;
+
+
+// Tabs
+$tab-text-color-base:       $text-color-muted !default;
+$tab-text-color-focus:      $text-color-base !default;
+$tab-selected-color:        $color-primary !default;
+$tab-height:                71px !default; // magic number, 55 + 16 (height of scrollbar)
+
 
 // Takeovers
 $takeover-width-base:       550px !default;
@@ -180,3 +243,20 @@ $takeover-border-color:     rgba($color-gray-dark, 0.2) !default;
 
 $takeover-backdrop-color:   $color-gray-dark !default;
 $takeover-backdrop-opacity: 0.6 !default;
+
+
+// Tables
+$table-color-base:          $text-color-light;
+$table-heading-color:       $text-color-muted !default;
+$table-border-color:        $color-gray-lighter !default;
+$table-cell-padding-base:   $padding-unit !default;
+$table-cell-padding-sm:     ($padding-unit / 2) !default;
+
+
+// Toasts
+$toast-background-color:    $color-gray-base !default;
+
+
+// Tooltips
+$tooltip-background:        rgba($color-gray-dark, 0.8) !default;;
+$tooltip-font-size:         $font-size-sm !default;

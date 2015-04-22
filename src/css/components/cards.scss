@@ -1,9 +1,9 @@
 .card {
-  background-color: $card-bg;
+  background-color: $card-background-color;
   box-shadow: $card-shadow;
   border-radius: $card-radius;
   margin-bottom: $spacing-unit;
-  max-width: 550px;
+  max-width: $card-max-width;
   margin-left: auto;
   margin-right: auto;
   &:last-of-type {

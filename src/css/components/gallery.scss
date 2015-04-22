@@ -4,14 +4,14 @@
 
 .gallery_item {
   display: block;
-  height: 140px;
+  height: $gallery-item-height;
   position: relative;
   overflow: hidden;
-  background-color: $color-gray-light;
+  background-color: $gallery-item-background;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: $gallery-item-color;
   cursor: pointer;
   &:after {
     content: '';
@@ -20,8 +20,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba($color-gray-dark, 0.6);
-    border: 2px solid $color-primary;
+    background-color: $gallery-overlay-color;
+    border: 2px solid $gallery-selected-color;
     z-index: 1;
     opacity: 0;
     @include transition(opacity 0.3s);
@@ -60,13 +60,13 @@
   font-weight: 600;
 }
 .gallery_item_size {
-  font-size: $font-size-sm;
+  font-size: $gallery-item-font-size;
   margin-bottom: $unit-sm;
   opacity: 0.7;
 }
 
 .gallery_item_selected {
-  background-color: $color-primary;
+  background-color: $gallery-selected-color;
   @include square(24px);
   position: absolute;
   bottom: 0;

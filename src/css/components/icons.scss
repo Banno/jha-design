@@ -1,11 +1,11 @@
 .icon {
   display: inline-block;
   vertical-align: middle;
-  @include square(24px);
-  fill: currentColor;
+  @include square($icon-size-base);
+  fill: $icon-fill-color;
   pointer-events: none;
 }
 
 .icon--sm {
-  @include square(18px);
+  @include square($icon-size-sm);
 }

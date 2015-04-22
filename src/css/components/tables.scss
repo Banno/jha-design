@@ -2,11 +2,11 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: $spacing-unit;
-  color: $text-color-light;
+  color: $table-color-base;
   th,
   td {
-    padding: $padding-unit;
-    border-bottom: $border-lt;
+    padding: $table-cell-padding-base;
+    border-bottom: 1px solid $table-border-color;
   }
   th {
     text-align: left;
@@ -15,20 +15,21 @@
     text-transform: uppercase;
     padding-top: 20px;
     padding-bottom: 20px;
+    color: $table-heading-color;
   }
 }
 
 .table--sm {
   th,
   td {
-    padding: $padding-unit / 2;
+    padding: $table-cell-padding-sm;
   }
 }
 
 .table--bordered {
   th,
   td {
-    border-left: $border-lt;
+    border-left: 1px solid $table-border-color;
   }
   tr {
     th:first-child,
