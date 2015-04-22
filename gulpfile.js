@@ -51,6 +51,24 @@ gulp.task('styles', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('symitar-theme', ['styles'], function() {
+  var banner = ['/*!',
+    ' * <%= pkg.name %> - <%= pkg.description %>',
+    ' * @version v<%= pkg.version %>',
+    ' * @link <%= pkg.homepage %>',
+    ' * @theme Symitar',
+    '*/',
+    ''].join('\n');
+
+  return gulp.src('src/css/themes/symitar.scss')
+    .pipe(sass())
+    .pipe(cssmin())
+    .pipe(header(banner, { pkg: pkg }))
+    .pipe(rename('style-symitar.min.css'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload());
+});
+
 gulp.task('stylestats', function() {
   gulp.src('dist/css/*.css')
     .pipe(stylestats());
@@ -89,6 +107,6 @@ gulp.task('watch', function() {
   return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'images']);
 });
 
-gulp.task('default', ['copy', 'styles', 'icons', 'file-icons', 'images']);
+gulp.task('default', ['copy', 'styles', 'icons', 'file-icons', 'images', 'symitar-theme']);
 gulp.task('dev', ['default', 'connect', 'watch']);
 gulp.task('profile', ['stylestats']);
