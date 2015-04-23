@@ -64,6 +64,8 @@ gulp
 
 `gulp profile` will use Stylestats to report on the generated stylesheet's size, number of selectors and other valuable metrics.
 
+`gulp test` will start a web server and run PhantomCSS to take screenshots of components on the page to test for regressions.
+
 
 ## Contributing
 
