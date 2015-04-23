@@ -11,6 +11,7 @@ var svgmin          = require('gulp-svgmin');
 var connect         = require('gulp-connect');
 var imagemin        = require('gulp-imagemin');
 var stylestats      = require('gulp-stylestats');
+var phantomcss      = require('gulp-phantomcss');
 var del             = require('del');
 var pkg             = require('./package.json');
 
@@ -103,6 +104,27 @@ gulp.task('connect', function() {
   });
 });
 
+// Tests
+gulp.task('test-server', function() {
+  return connect.server({
+    root: 'dist',
+    port: 7777
+  });
+})
+
+gulp.task('phantomcss', ['test-server'], function() {
+  return gulp.src('testsuite.js')
+    .pipe(phantomcss({
+      screenshots: 'tests/screenshots',
+      results: 'test/results',
+      viewportSize: [1280, 800]
+    }));
+});
+
+gulp.task('stop-test-server', ['phantomcss'], function() {
+  connect.serverClose();
+})
+
 gulp.task('watch', function() {
   return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'images']);
 });
@@ -110,3 +132,4 @@ gulp.task('watch', function() {
 gulp.task('default', ['copy', 'styles', 'icons', 'file-icons', 'images', 'symitar-theme']);
 gulp.task('dev', ['default', 'connect', 'watch']);
 gulp.task('profile', ['stylestats']);
+gulp.task('test', ['stop-test-server']);
