@@ -1,12 +1,12 @@
 .thumbnail {
   display: inline-block;
+  @include square($thumbnail-size-base);
   border-radius: $thumbnail-radius;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   text-align: center;
   vertical-align: middle;
-  @include square($thumbnail-size-base);
   img {
     width: 100%;
     height: auto;

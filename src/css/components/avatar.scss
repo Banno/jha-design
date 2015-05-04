@@ -1,5 +1,6 @@
 .avatar {
   display: inline-block;
+  @include square($avatar-size-base);
   border-radius: $avatar-radius;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,6 +35,9 @@
 }
 .avatar--lg {
   @include square($avatar-size-lg);
+}
+.avatar--xl {
+  @include square($avatar-size-xl);
 }
 
 // Special snowflake, logged in user's avatar
