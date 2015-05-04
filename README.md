@@ -2,8 +2,6 @@
 
 JHA Design is a design language for building sleek, intuitive, powerful, and performant web apps.
 
-## Table of contents
-
 ## Quick start
 
 Several quick start options are available for using JHA Design in your app: 
@@ -19,17 +17,19 @@ Within the download you'll find the following directories and files:
 ```
 jha-design/
 ├── css/
-│   ├── style.css
 │   ├── style.min.css
 ├── fonts/
-│   ├── proximanova-regular-webfont.eot
-│   ├── proximanova-regular-webfont.ttf
-│   ├── proximanova-regular-webfont.woff
-│   ├── proximanova-regular-webfont.woff2
+│   ├── proximanova-regular.eot
+│   ├── proximanova-regular.ttf
+│   ├── proximanova-regular.woff
+│   ├── proximanova-regular.woff2
 │   ├── ...
-└── img/
-    ├── apple-touch-icon.png
-    ├── icons.svg
+├── img/
+│   ├── apple-touch-icon.png
+│   ├── icons.svg
+│   ├── ...
+└── js/
+    ├── icons.js
     └── ...
 ```
 
