@@ -1,0 +1,356 @@
+.navigation {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $topbar-height-base;
+  background-color: $topbar-background;
+  color: $topbar-color;
+  z-index: $z-index-topbar + 1;
+}
+.navigation_item {
+  height: 100%;
+  line-height: $topbar-height-base;
+  padding-left: $padding-unit;
+  padding-right: $padding-unit;
+  color: $topbar-color;
+  .dropdown_menu {
+    width: $dropdown-width-max;
+  }
+}
+.navigation_item--last {
+  padding-right: 0;
+}
+.navigation_link {
+  color: $topbar-link-color;
+  @include transition(color .3s $timing-function);
+  &:hover,
+  .is-open &,
+  .open & {
+    color: $topbar-link-color-focus;
+    opacity: 1;
+  }
+  .avatar {
+    position: relative;
+    top: -2px;
+  }
+}
+
+.current-application {
+  height: 100%;
+  float: left;
+}
+.current-application_badge {
+  @include square($topbar-height-base);
+  background-color: $color-gray-lighter;
+  color: #fff;
+  text-align: center;
+  line-height: $topbar-height-base;
+  float: left;
+  margin-right: $padding-unit;
+  .icon {
+    @include square($thumbnail-size-sm);
+  }
+}
+.current-application_title {
+  font-weight: bold;
+  font-size: $font-size-lg;
+  float: left;
+  line-height: $topbar-height-base;
+}
+
+.current-institution {
+  position: absolute;
+  line-height: $topbar-height-base;
+  text-align: center;
+  left: 50%;
+  @include translate(-50%, 0);
+  a {
+    color: $text-color-dark;
+    .icon {
+      fill: $text-color-light;
+    }
+  }
+}
+
+.current-user {
+  margin-bottom: $padding-unit;
+  @include clearfix();
+}
+
+@media (min-width: $viewport-md-min) {
+  .navigation {
+    display: block;
+    .container {
+      height: 100%;
+    }
+  }
+  .navigation_inner {
+    height: 100%;
+    @include faux-border(bottom, $color-gray-light);
+  }
+}
+
+
+// Tab bar
+.tab-bar {
+  display: block;
+  position: fixed;
+  z-index: $z-index-topbar;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $tabbar-height-sm;
+  background-color: #fff;
+  @include faux-border(top, $faux-border-color);
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
+    @include flexbox-display();
+    flex-direction: row;
+    @include justify-content(center);
+    @include align-items(stretch);
+  }
+}
+.tab_item {
+  @include flex(1 0 0);
+  max-width: 100px;
+  text-align: center;
+  padding-top: 6px;
+  color: $color-gray-medium;
+  cursor: pointer;
+  @include faux-border(left, $color-gray-light);
+  &:active,
+  &:focus {
+    color: $topbar-color;
+  }
+  &.is-active {
+    color: $color-primary;
+  }
+  &:first-child {
+    @include reset-faux-border(left);
+  }
+}
+.tab_label {
+  display: block;
+  font-size: 11px;
+}
+
+@media (min-width: $viewport-md-min) {
+  .tab-bar {
+    bottom: auto;
+    top: $topbar-height-base;
+    height: $topbar-height-base;
+    @include reset-faux-border(top);
+    @include faux-border(bottom, $faux-border-color);
+    .container {
+      padding-left: $unit-base;
+      padding-right: $unit-base;
+      @include justify-content(flex-start);
+    }
+  }
+  .tab_item {
+    @include flex(0 auto);
+    max-width: none;
+    @include reset-faux-border(left);
+    padding: $unit-base 0;
+    margin-right: $spacing-unit;
+    height: $tabbar-height-base;
+    border-bottom: 1px solid transparent;
+    &.is-active {
+      border-bottom-color: currentColor;
+    }
+    .icon {
+      @include square(18px);
+      position: relative;
+      top: -1px;
+      margin-right: 3px;
+    }
+  }
+  .tab_label {
+    display: inline-block;
+    font-size: $font-size-base;
+  }
+}
+
+
+
+// Page header
+.page-header {
+  position: fixed;
+  z-index: $z-index-topbar;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $topbar-height-sm;
+  padding-top: 6px;
+  background-color: #fff;
+  @include faux-border(bottom, $faux-border-color);
+  text-align: center;
+  @include transition-transform(.3s $timing-function);
+  will-change: transform;
+  .standalone & {
+    height: $topbar-height-standalone;
+    padding-top: 26px;
+  }
+  .container {
+    position: relative;
+  }
+  .btn:last-of-type {
+    float: right;
+  }
+  .btn:first-of-type {
+    float: left;
+  }
+  &.is-hidden {
+    display: none;
+  }
+  .search {
+    display: none;
+  }
+}
+.page-title {
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  @include translate(-50%, 10px);
+  width: calc(100% - 120px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1;
+  @include transition-transform(.3s $timing-function);
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .tab-bar,
+  .page-header {
+    background-color: rgba($topbar-background, 0.90);
+    -webkit-backdrop-filter: blur(5px);
+  }
+}
+
+// use max-width so we don't have to reset button styles again
+@media (max-width: $viewport-sm-max) {
+  .page-header {
+    .btn {
+      // can't use @extend because these styles have to be scoped to the
+      // media query
+      // btn--link
+      @include button-color(transparent, transparent, $color-gray-medium);
+      font-weight: 400;
+      // btn--icon
+      border-radius: 50%;
+      min-width: 35px;
+      padding-left: floor($btn-padding-horizontal / 4);
+      padding-right: floor($btn-padding-horizontal / 4);
+    }
+  }
+}
+
+@media (min-width: $viewport-md-min) {
+  .page-header {
+    position: static;
+    height: auto;
+    padding-top: $spacing-unit;
+    padding-bottom: $padding-unit;
+    text-align: left;
+    background-color: transparent;
+    z-index: $z-index-topbar - 1;
+    @include reset-faux-border(bottom);
+    .standalone & {
+      height: auto;
+    }
+    .container {
+      padding-left: $unit-base;
+      padding-right: $unit-base;
+    }
+    .search {
+      display: block;
+    }
+  }
+  .page-title {
+    position: static;
+    left: auto;
+    width: auto;
+    @include translate(0, 0);
+    font-size: $h1-size;
+    line-height: $line-height-base;
+    font-weight: 400;
+  }
+
+  .page-header--profile {
+    min-height: 180px;
+    background-color: $color-gray-base;
+    background-image: url(../img/profile-backdrop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include box-shadow(inset 0 2px 2px rgba(0, 0, 0, 0.06));
+    color: #fff;
+    h1,
+    .h1 {
+      color: #fff;
+    }
+    .btn--link {
+      color: rgba(#fff, 0.6);
+      &:hover,
+      &:active,
+      &:focus,
+      &.is-active,
+      &.is-focused {
+        color: rgba(#fff, 0.8);
+      }
+    }
+  }
+}
+
+// Standard horizontal nav
+.nav {
+  display: block;
+  width: 100%;
+  height: $tabbar-height-sm;
+  background-color: #fff;
+  @include faux-border(bottom, $faux-border-color);
+  .container,
+  .grid,
+  [class^="col-"] {
+    height: $tabbar-height-sm;
+  }
+  .tab_item {
+    display: inline-block;
+    max-width: none;
+    @include reset-faux-border(left);
+    padding: $padding-unit 0;
+    margin-right: $spacing-unit;
+    .icon {
+      @include square(18px);
+      position: relative;
+      top: -2px;
+    }
+  }
+  .tab_label {
+    display: inline;
+    font-size: $font-size-base;
+  }
+  @media (min-width: $viewport-md-min) {
+    height: $topbar-height-base;
+    .container,
+    .grid,
+    [class^="col-"] {
+      height: $topbar-height-base;
+    }
+    .tab_item {
+      padding: $unit-base 0;
+    }
+  }
+}
+
+.viewport {
+  padding-bottom: $tabbar-height-sm; // magic number
+  min-height: 80vh;
+}

@@ -1,0 +1,37 @@
+.app-list {
+  min-height: 270px;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  @include clearfix();
+}
+.app-list_item {
+  float: left;
+  width: 33.33333%;
+  height: 90px;
+  text-align: center;
+  border-bottom: $border-lt;
+  &:nth-child(3n+2) {
+    border-left: $border-lt;
+    border-right: $border-lt;
+  }
+}
+.app-list_link {
+  display: block;
+  font-size: $font-size-base - 1;
+  color: $text-color-light;
+  height: 100%;
+  padding-top: $padding-unit;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: rgba($color-gray-lighter, 0.36);
+  }
+}
+.app-list_icon {
+  display: block;
+  margin: 0 auto 2px;
+  @include square(36px);
+}

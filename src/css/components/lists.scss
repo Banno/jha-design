@@ -1,6 +1,9 @@
 // List that contains elements like text, buttons and form fields
 .list {
-  margin-bottom: $spacing-unit;
+  margin-bottom: $unit-xs;
+  @media (min-width: $viewport-md-min) {
+    margin-bottom: $unit-sm;
+  }
 }
 
 .list--borderless {
@@ -26,10 +29,11 @@
 
 .list_item {
   display: block;
+  @include flexbox-display();
   padding-top: $padding-unit;
   padding-bottom: $padding-unit;
   padding-right: $padding-unit;
-  border-bottom: $border-base;
+  @include faux-border(bottom, $color-gray-light);
   color: $text-color-base;
   font-size: $font-size-base;
   @include clearfix();
@@ -86,5 +90,8 @@
   min-height: 1px;
 }
 .list_item_content {
+  width: 100%;
   overflow: hidden;
+  position: relative;
+  @include align-self(center);
 }

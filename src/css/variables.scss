@@ -15,17 +15,18 @@ $color-warning:             $color-yellow !default;
 
 $color-gray-lighter:        #eef1f4 !default;
 $color-gray-light:          #e4e7ea !default;
-$color-gray-medium:         #b3bfc9 !default;
+$color-gray-medium:         #8d99a0 !default;
 $color-gray-base:           #455564 !default;
 $color-gray-dark:           #25313E !default;
 
 $color-neutral:             $color-gray-medium !default;
 
-$background-color:          $color-gray-lighter !default;
+$background-color:          #f9fafb !default;
 
-$text-color-light:          #6B757B !default;
-$text-color-base:           $color-gray-base !default;
-$text-color-muted:          #8d99a0 !default;
+$text-color-light:          #8c989f !default;
+$text-color-base:           #6b757b !default;
+$text-color-dark:           $color-gray-base !default;
+$text-color-muted:          #b3bfc9 !default;
 $link-color-base:           $color-primary !default;
 
 
@@ -40,10 +41,11 @@ $font-size-lg:              ($font-size-base + 2) !default;
 $line-height-base:          1.428571429 !default;
 $line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
 
-$heading-weight:            400 !default;
+$heading-color:             $color-gray-base !default;
+$heading-weight:            600 !default;
 $h1-size:                   24px !default;
-$h2-size:                   20px !default;
-$h3-size:                   17px !default;
+$h2-size:                   21px !default;
+$h3-size:                   18px !default;
 $h4-size:                   16px !default;
 $h5-size:                   15px !default;
 $h6-size:                   14px !default;
@@ -84,6 +86,7 @@ $timing-function:           cubic-bezier(.1,.5,.1,1) !default;
 $border-base:               1px solid $color-gray-light !default;
 $border-lt:                 1px solid $color-gray-lighter !default;
 $border-radius-base:        3px !default;
+$faux-border-color:         #d8e1eb !default;;
 
 
 // Z-index
@@ -103,13 +106,15 @@ $shadow-key-light:          0 19px 19px rgba(#000, 0.3), 0 15px 6px rgba(#000, 0
 
 // Topbar
 $topbar-height-base:        70px !default;
-$topbar-height-sm:          56px !default;
-$topbar-height-standalone:  76px !default;
-$topbar-background:         $color-gray-dark !default;
-$topbar-color:              rgba(#fff, 0.6) !default;
-$topbar-color-focus:        #fff !default;
-$topbar-link-color-primary: $color-gray-light !default;
-$topbar-title-color:        #fff !default;
+$topbar-height-sm:          44px !default;
+$topbar-height-standalone:  64px !default;
+$topbar-background:         #fff !default;
+$topbar-color:              $text-color-dark !default;
+$topbar-link-color:         rgba($text-color-dark, 0.6) !default;
+$topbar-link-color-focus:   rgba($text-color-dark, 1) !default;
+
+$tabbar-height-base:        70px !default;
+$tabbar-height-sm:          49px !default;
 
 $drawer-background:         #fff !default;
 
@@ -120,15 +125,15 @@ $backdrop-opacity:          0.6 !default;
 // Buttons
 $btn-padding-vertical:      7px !default;
 $btn-padding-horizontal:    18px !default;
-$btn-border-radius-base:    $border-radius-base !default;
+$btn-border-radius-base:    500px !default;
 
 $btn-text-transform:        none !default;
 $btn-text-color-base:       $text-color-base !default;
 $btn-font-size-base:        $font-size-base !default;
-$btn-font-weight:           600 !default;
+$btn-font-weight:           400 !default;
 
 $btn-line-height-base:      20px !default;
-$btn-height-base:           35px !default;
+$btn-height-base:           36px !default;
 $btn-height-sm:             30px !default;
 $btn-height-lg:             50px !default;
 
@@ -182,7 +187,7 @@ $page-header-weight:        400 !default;
 
 // Cards
 $card-background-color:     #fff !default;
-$card-shadow:               0 1px 3px 0 rgba($color-gray-dark, 0.16) !default;
+$card-shadow:               0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px rgba($color-gray-dark, 0.12) !default;
 $card-radius:               2px !default;
 $card-max-width:            550px !default;
 
@@ -192,6 +197,7 @@ $dropdown-background-color: #fff !default;
 $dropdown-border-color:     rgba($color-gray-base, 0.12) !default;
 $dropdown-width-min:        240px !default;
 $dropdown-width-max:        300px !default;
+$dropdown-box-shadow:       0 1px 1px 0 rgba($color-gray-dark, 0.06), 0 1px 2px rgba($color-gray-dark, 0.03) !default;
 
 $dropdown-title-color:      $color-gray-dark !default;
 $dropdown-title-font-size:  $font-size-lg !default;
@@ -199,14 +205,14 @@ $dropdown-title-line-height: 1 !default;
 
 $dropdown-divider-color:    $color-gray-lighter !default;
 $dropdown-item-font-size:   $font-size-base - 1 !default;
-$dropdown-item-color:       $text-color-muted !default;
-$dropdown-item-hover-color: $text-color-base !default;
-$dropdown-item-hover-background: $color-gray-light !default;
+$dropdown-item-color:       $text-color-base !default;
+$dropdown-item-hover-color: $text-color-dark !default;
+$dropdown-item-hover-background: $color-gray-lighter !default;
 
 
 // Filters
-$filter-color:              $text-color-muted !default;
-$filter-focus-color:        $text-color-base !default;
+$filter-color:              $text-color-base !default;
+$filter-focus-color:        $text-color-dark !default;
 
 
 // Forms
@@ -232,16 +238,9 @@ $icon-size-sm:              18px !default;
 $icon-fill-color:           currentColor !default;
 
 
-// Tabs
-$tab-text-color-base:       $text-color-muted !default;
-$tab-text-color-focus:      $text-color-base !default;
-$tab-selected-color:        $color-primary !default;
-$tab-height:                71px !default; // magic number, 55 + 16 (height of scrollbar)
-
-
 // Takeovers
 $takeover-width-base:       550px !default;
-$takeover-background:       #f7f8fa !default;
+$takeover-background:       #fff !default;
 $takeover-radius:           2px !default;
 $takeover-border-color:     rgba($color-gray-dark, 0.2) !default;
 
@@ -250,11 +249,12 @@ $takeover-backdrop-opacity: 0.6 !default;
 
 
 // Tables
-$table-color-base:          $text-color-light;
-$table-heading-color:       $text-color-muted !default;
+$table-color-base:          $text-color-base !default;
+$table-heading-color:       $text-color-light !default;
 $table-border-color:        $color-gray-lighter !default;
 $table-cell-padding-base:   $padding-unit !default;
 $table-cell-padding-sm:     ($padding-unit / 2) !default;
+$table-font-size:           $font-size-base - 1 !default;
 
 
 // Toasts

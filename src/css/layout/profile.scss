@@ -1,0 +1,16 @@
+.profile-identity {
+    padding-top: $padding-unit;
+    height: $topbar-height-base;
+}
+
+.profile-identity_avatar {
+  @include square(140px);
+  @include translate(0, -75%);
+  @include box-shadow($card-shadow);
+}
+
+.login-container {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}

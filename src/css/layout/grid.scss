@@ -1,10 +1,11 @@
 .container {
   @include container-fixed;
-  max-width: (1140 + $grid-gutter-width);
+  max-width: ($column-width-max);
   @media (min-width: $viewport-md-min) {
     padding-left: $unit-base;
     padding-right: $unit-base;
   }
+  @include clearfix();
 }
 
 .grid {

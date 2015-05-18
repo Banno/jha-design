@@ -10,10 +10,12 @@
   height: 100%;
   z-index: $z-index-takeover + 1;
   visibility: hidden;
+  overflow-y: auto;
   opacity: 0;
   outline: 0;
   @include transition(opacity 0.3s 0, visibility 0 0.3s);
   -webkit-overflow-scrolling: touch;
+  -webkit-backdrop-filter: blur(5px); // webkit nightly
   will-change: opacity;
   // this flexbox property does nothing on it's own, but a utility class depends
   // on it and this is the most efficent way to write it
@@ -47,30 +49,50 @@
   &.in {
     opacity: $takeover-backdrop-opacity;
   }
+  @media (min-width: $viewport-sm-min) {
+    display: block;
+  }
+}
+.takeover_backdrop--opaque {
+  background-color: $background-color;
+  opacity: 1;
+  &.is-visible,
+  &.in {
+    opacity: 1;
+  }
 }
 
 .takeover_dialog {
   position: relative;
-  width: 90%;
-  max-width: $takeover-width-base;
+  @include flexbox-display();
+  @include flex-direction(column);
+  width: 100%;
+  height: 100%;
+  height: 100vh;
   background-color: $takeover-background;
-  margin: $spacing-unit auto;
   cursor: auto;
-  border-radius: $takeover-radius;
-  border: 1px solid $takeover-border-color;
-  background-clip: padding-box;
-  box-shadow: 0 4px 5px rgba(#000, 0.16);
   outline: 0;
   will-change: transform;
-  @include transform(translateY(-30px));
+  @include transform(translateY(100vh));
   @include transition-property(transform);
   @include transition-duration(.3s);
-  @media (max-height: 400px) {
-    margin-top: $padding-unit;
-    margin-bottom: $padding-unit;
-    .takeover_content--fill {
-      max-height: calc(100vh - 195px);
-    }
+  // @media (max-height: 400px) {
+  //   margin-top: $padding-unit;
+  //   margin-bottom: $padding-unit;
+  //   .takeover_content--fill {
+  //     max-height: calc(100vh - 195px);
+  //   }
+  // }
+  @media (min-width: $viewport-sm-min) {
+    display: block;
+    width: 90%;
+    max-width: $takeover-width-base;
+    height: auto;
+    margin: $spacing-unit auto;
+    border-radius: $takeover-radius;
+    border: 1px solid $takeover-border-color;
+    background-clip: padding-box;
+    box-shadow: $dropdown-box-shadow;
   }
 }
 
@@ -101,20 +123,46 @@
   }
 }
 
+// Shared styles
+.takeover_header,
+.takeover_content,
+.takeover_footer {
+  padding: $padding-unit;
+  @include clearfix();
+  @media (min-width: $viewport-md-min) {
+    padding: $spacing-unit;
+  }
+}
+
 
 // Header
 .takeover_header {
   position: relative;
   background-color: #fff;
-  border-top-left-radius: $takeover-radius;
-  border-top-right-radius: $takeover-radius;
+  border-top-left-radius: $takeover-radius - 1;
+  border-top-right-radius: $takeover-radius - 1;
   border-bottom: $border-lt;
   text-align: center;
+  .search {
+    margin-bottom: -$padding-unit;
+  }
+}
+.takeover_header--borderless {
+  border-bottom-width: 0;
+  padding-bottom: 0;
+  .takeover_title {
+    margin-bottom: $unit-base;
+  }
 }
 
 .takeover_title {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: bold;
+  color: $text-color-dark;
+  @media (min-width: $viewport-md-min) {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 .takeover_close {
@@ -132,19 +180,9 @@
   }
 }
 
-// Shared styles
-.takeover_header,
-.takeover_content,
-.takeover_footer {
-  padding: $padding-unit;
-  @include clearfix();
-  @media (min-width: $viewport-md-min) {
-    padding: $spacing-unit;
-  }
-}
-
 // Content
 .takeover_content {
+  @include flex(1 0 0);
   .gallery {
     margin-bottom: 0;
   }
@@ -157,7 +195,9 @@
      takeover_header and takeover_footer that may be present at ~215px and the
      top and bottom margins of ~36px each.
   */
-  max-height: calc(100vh - 225px);
+  @media (min-width: $viewport-sm-min) {
+    max-height: calc(100vh - 225px);
+  }
   @media (min-width: $viewport-md-min) {
     max-height: calc(100vh - 288px);
   }
@@ -183,4 +223,52 @@
   border-top: $border-lt;
   border-bottom-left-radius: $takeover-radius;
   border-bottom-right-radius: $takeover-radius;
+}
+
+
+// Profile takeover
+// special snowflake
+.takeover_header--profile {
+  background-color: $color-gray-base;
+  background-image: url(../img/profile-backdrop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: rgba(#fff, 0.6);
+  .takeover_title {
+    display: block;
+    color: #fff;
+  }
+  .avatar {
+    @include box-shadow($card-shadow);
+    margin-bottom: $unit-sm;
+  }
+  .btn--icon,
+  .btn--link {
+    @extend .takeover_close;
+    top: $unit-base;;
+  }
+  .btn--icon {
+    right: auto;
+    left: $unit-sm;
+    .icon {
+      fill: #fff;
+    }
+  }
+  .btn--link {
+    color: #fff;
+  }
+}
+.takeover_content--profile {
+  background-color: #fff;
+}
+
+@media (max-width: $viewport-sm-max) {
+  .standalone .takeover_header--profile {
+    padding-top: $spacing-unit;
+    .btn--icon,
+    .btn--link {
+      top: $unit-base + 20;
+    }
+  }
 }

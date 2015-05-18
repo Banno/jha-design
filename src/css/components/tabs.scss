@@ -5,56 +5,18 @@
 }
 .tabs {
   margin: 0;
-  padding: 0 $spacing-unit 0 0;
+  padding: 0;
   list-style-type: none;
   -webkit-overflow-scrolling: touch;
   -ms-touch-action: cross-slide-x;
   touch-action: pan-x;
   overflow: auto;
   white-space: nowrap;
-  height: $tab-height;
-  > li {
-    display: inline-block;
-    margin-left: $unit-base;
-    &:first-child {
-      margin-left: $spacing-unit / 2;
-    }
+  height: $tabbar-height-sm + 16;
+  .tab_item:first-child {
+    margin-left: $padding-unit;
   }
-}
-.tab {
-  display: inline-block;
-  cursor: pointer;
-  padding: 18px 0 14px;
-  border-bottom: 3px solid transparent;
-  color: $tab-text-color-base;
-  @include transition(border-color .15s $timing-function, color .15s $timing-function);
-  &:hover,
-  &:focus {
-    color: $tab-text-color-focus;
-    outline: 0;
-  }
-  &.is-active {
-    color: $tab-text-color-focus;
-    border-color: $tab-selected-color;
-  }
-}
-
-@media (min-width: $viewport-md-min) {
-  .page-title--before-tabs {
-    margin-bottom: $spacing-unit / 2;
-  }
-  .tabs {
-    height: auto;
-    > li {
-      margin-left: $spacing-unit;
-    }
-  }
-}
-
-@media (min-width: $viewport-md-min) and (max-width: $viewport-lg-max) {
-  .overflow-tabs {
-    .tabs > li:first-child {
-      margin-left: ($spacing-unit / 2) + ($padding-unit / 2)
-    }
+  @media (min-width: $viewport-md-min) {
+    height: $tabbar-height-base;
   }
 }
