@@ -198,10 +198,10 @@
   .container {
     position: relative;
   }
-  .btn:last-of-type {
+  .btn {
     float: right;
   }
-  .btn:first-of-type {
+  .btn:first-child {
     float: left;
   }
   &.is-hidden {

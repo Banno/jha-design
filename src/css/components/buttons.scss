@@ -40,10 +40,9 @@
     opacity: 0.6;
     cursor: default;
   }
-  > .icon {
+  &:not(.icon--btn) > .icon {
     position: relative;
     top: -2px;
-    left: -4px;
   }
 }
 

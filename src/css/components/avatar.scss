@@ -6,11 +6,11 @@
   background-position: center;
   background-size: cover;
   background-color: $avatar-background-color;
+  vertical-align: middle;
   img {
     width: 100%;
     height: auto;
     border-radius: $avatar-radius;
-    vertical-align: middle;
   }
 }
 
