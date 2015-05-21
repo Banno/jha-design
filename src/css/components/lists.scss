@@ -81,5 +81,6 @@
 .list_item_content {
   overflow: hidden;
   position: relative;
+  @include flex(1 1 auto);
   @include align-self(center);
 }
