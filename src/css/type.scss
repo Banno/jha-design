@@ -202,7 +202,8 @@ ul,
 }
 .stat_value {
   font-size: 30px;
-  color: $color-primary;
+  color: $text-color-dark;
+  font-weight: 300;
 }
 .stat_comparison {
   font-size: $font-size-base + 1;

@@ -1,12 +1,10 @@
 .btn-group {
   position: relative;
-  display: table;
-  table-layout: fixed;
-  border-collapse: separate;
   margin-bottom: $padding-unit;
+  @include clearfix();
   > .btn {
-    display: table-cell;
-    width: 1%;
+    float: left;
+    position: relative;
     border-radius: 0;
     border-left-width: 0;
     &:first-child {
