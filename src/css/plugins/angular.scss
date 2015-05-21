@@ -4,7 +4,7 @@
 }
 
 // force a cursor when href is missing on anchors
-[ng-click]:not(.takeover):not(.modal), [ng-href], [ui-sref] {
+[ng-click]:not(.dialog):not(.modal), [ng-href], [ui-sref] {
   cursor: pointer;
   @include touch-action(manipulation);
 }
