@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="/offline.appcache">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -40,82 +40,45 @@
   <body>
     <a href="#mainContent" class="u-sr-only u-sr-only--focusable accessibility-aid" tabindex="1">Skip to content</a>
 
-    <!-- mobile header -->
-    <header class="navigation navigation--topbar">
-      <button id="menuBtn" type="button" class="btn btn--icon">
-        <svg class="icon" role="img" title="Menu"><use xlink:href="#menu"></use></svg>
-      </button>
-
-      <!-- application title -->
-      <div class="navigation_title">Mobile</div>
-    </header>
-
-    <!-- desktop header / mobile drawer -->
-    <nav class="navigation navigation--drawer">
+    <header class="navigation">
       <div class="container">
-        <a href="/" class="navigation_item navigation_link navigation_link--logo">
-          <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" width="32" height="32" title="Banno">
-            <path fill="#15548C" d="M17.8,29.7c0.6-0.8,1.1-2.3,1.7-4.1c-4.9-3.9-10.1-9.2-13-13.1 c-1.7,0.5-3.1,1-4,1.5c-1.4,0.8-2.1,1.8-2.4,3c-0.1,1.3,0,2.5,0.3,3.2c0.6,1.7,2.7,3.8,4.9,6c2.2,2.2,4.6,4.4,6.2,5.3 c0.7,0.4,1.9,0.5,3.3,0.5C15.9,31.7,16.9,31,17.8,29.7z"></path>
-            <path fill="#247BB1" d="M28.7,27.8c1.8-2.2,4.2-14.1,2.9-17.1c-0.1-0.2-0.2-0.4-0.3-0.6 c-0.5-0.5-1.3-0.6-2.5-0.6c-1.1,0-3.6,0.1-6.7,0.5c-0.2,5.8-2.2,16.9-4.2,19.7c-1,1.3-2,2.1-3,2.3C19.7,31.9,27.3,29.5,28.7,27.8 z"></path>
-            <path fill="#41B0D9" d="M28.8,9.5c1.2,0,2,0.1,2.5,0.6c-1.9-3.2-8.1-8.8-10.1-9.8 C19.2-0.8,5.7,1.7,3.8,3.7C2.3,5.3,0.3,12.3,0,17c0.3-1.1,1.1-2.1,2.4-3C7.4,11.1,25.4,9.4,28.8,9.5z"></path>
-          </svg>
-        </a>
-
-        <div class="navigation_user">
-          <div class="avatar avatar--md">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
+        <div class="navigation_inner">
+          <div class="current-application">
+            <div class="current-application_badge" style="background-color: #ffac52;">
+              <svg class="icon" role="presentation">
+                <use xlink:href="#mobile"></use>
+              </svg>
+            </div>
+            <span class="current-application_title">Mobile</span>
           </div>
-          <div class="user_details">
-            <button type="button" class="btn btn--link btn--icon u-float-right" id="profileBtn">
-              <svg class="icon u-fill-muted navigation_user_toggle" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
-            </button>
-            <div class="user_details_name">Sarah Flanders</div>
-            <div class="user_details_username">sarah.flanders@your-fi.com</div>
-          </div>
-        </div>
 
-        <div class="navigation_apps is-open">
-          <div class="navigation_item">
-            <a href="#" id="switchInstitution" class="navigation_link navigation_link--primary">
-              <svg class="icon u-visible--xs--inline-block u-fill-muted app-list_icon" role="presentation"><use xlink:href="#bank"></use></svg>
-              Your FI
-              <!-- optional caret -->
+          <div class="current-institution dropdown">
+            <a href="#" class="dropdown_toggle" id="switchInstitution">
+              <svg class="icon icon--sm" role="presentation"><use xlink:href="#bank"></use></svg>
+              Symitar FCU
               <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
             </a>
           </div>
 
-          <div class="navigation_item navigation_item--user u-float-right dropdown">
+          <div class="navigation_item navigation_item--last u-float-right dropdown">
             <a href="#" class="navigation_link dropdown_toggle dropdown_toggle--indicator">
-              <div class="avatar avatar--you">
+              <div class="avatar avatar--sm">
                 <span class="u-sr-only">Sarah Flanders</span>
-                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
               </div>
             </a>
             <div class="dropdown_menu dropdown_menu--padding">
-              <div class="u-clearfix">
-                <div class="avatar avatar--you avatar--you--lg avatar--left">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
+              <div class="current-user">
+                <div class="avatar avatar--lg avatar--you avatar--left">
+                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="72" height="72">
                 </div>
-                <div class="user_details">
-                  <div class="user_details_name">Sarah Flanders</div>
-                  <div class="user_details_username">sarah.flanders@your-fi.com</div>
+                <div class="u-overflow-hidden">
+                  <div class="title">Sarah Flanders</div>
+                  <div class="sub-title">sarah.flanders@your-fi.com</div>
                 </div>
               </div>
               <button type="button" class="btn btn--primary btn--sm">View Profile</button>
-              <button id="signoutBtnLg" type="button" class="btn btn--muted btn--sm u-float-right">Sign Out</button>
-            </div>
-          </div>
-
-          <div class="navigation_item navigation_item--notifications u-float-right dropdown">
-            <a href="#" class="navigation_link dropdown_toggle dropdown_toggle--indicator">
-              <span class="u-sr-only">Notifications</span>
-              <div class="badge badge--danger">1</div>
-            </a>
-            <div class="dropdown_menu">
-              <div class="dropdown_menu_title">Notifications</div>
-              <div class="dropdown_empty-state">
-                You haven't received any notifications
-              </div>
+              <button id="signoutBtnLg" type="button" class="btn btn--default btn--sm u-float-right">Sign Out</button>
             </div>
           </div>
 
@@ -176,1391 +139,781 @@
             </ul>
           </div>
         </div>
+      </div>
+    </header>
 
-        <div class="navigation_manage">
-          <ul class="dropdown_menu app-list">
+    <nav class="tab-bar">
+      <div class="container">
+        <a href="#" class="tab_item">
+          <svg class="icon" role="presentation">
+            <use xlink:href="#dashboard"></use>
+          </svg>
+          <span class="tab_label">Dashboard</span>
+        </a>
+        <a href="#" class="tab_item is-active" style="color: #ffac52;">
+          <svg class="icon" role="presentation">
+            <use xlink:href="#group"></use>
+          </svg>
+          <span class="tab_label">Users</span>
+        </a>
+        <a href="#" class="tab_item">
+          <svg class="icon" role="presentation">
+            <use xlink:href="#conversation"></use>
+          </svg>
+          <span class="tab_label">Messages</span>
+        </a>
+        <a href="#" class="tab_item">
+          <svg class="icon" role="presentation">
+            <use xlink:href="#dashboard"></use>
+          </svg>
+          <span class="tab_label">Reports</span>
+        </a>
+        <a href="#" class="tab_item">
+          <svg class="icon" role="presentation">
+            <use xlink:href="#settings"></use>
+          </svg>
+          <span class="tab_label">Settings</span>
+        </a>
+      </div>
+    </nav>
+
+
+    <div class="viewport">
+      <header class="page-header" id="usersHeader">
+        <div class="container">
+          <button id="appsListdialogBtn" type="button" class="btn btn--link btn--icon u-visible--mobile">
+            <svg class="icon" role="image" title="Apps">
+              <use xlink:href="#apps"></use>
+            </svg>
+          </button>
+          <button type="button" class="btn btn--success">
+            <svg class="icon" role="image" title="Add">
+              <use xlink:href="#add"></use>
+              <span class="u-hidden--mobile">Invite Users</span>
+            </svg>
+          </button>
+          <h1 class="page-title u-visible--mobile">Users</h1>
+          <div class="grid">
+            <div class="col-md-5">
+              <form class="search">
+                <label class="search_bar">
+                  <span class="search_icon">
+                    <svg class="icon" role="presentation">
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </span>
+                  <input type="search" class="search_input" placeholder="Search">
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <header class="page-header page-header--profile" id="userHeader">
+        <div class="container">
+          <button type="button" class="btn btn--link btn--icon" id="backBtn">
+            <svg class="icon" role="image" title="Back">
+              <use xlink:href="#chevron-left"></use>
+            </svg>
+          </button>
+          <div class="u-float-right dropdown">
+            <button type="button" class="btn btn--link btn--icon dropdown_toggle dropdown_toggle--indicator">
+              <svg class="icon" role="image" title="More">
+                <use xlink:href="#ellipsis"></use>
+              </svg>
+            </button>
+            <div class="dropdown_menu">
+              <a href="#" class="dropdown_menu_item">Edit profile</a>
+              <a href="#" class="dropdown_menu_item text-danger">Delete this user</a>
+            </div>
+          </div>
+          <h1 class="page-title">Josh Sadler</h1>
+        </div>
+      </header>
+
+
+      <div id="users" style="display: none;">
+        <div class="container">
+          <form class="search u-visible--mobile">
+            <label class="search_bar">
+              <span class="search_icon">
+                <svg class="icon" role="presentation">
+                  <use xlink:href="#search"></use>
+                </svg>
+              </span>
+              <input type="search" class="search_input" placeholder="Search">
+            </label>
+          </form>
+          <div class="content">
+            <div class="grid">
+              <div class="col-md-8">
+                <section class="card card--wide card--reset">
+                  <div class="card_content content">
+                    <div class="list">
+                      <a id="userLink" href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Joshua Sadler</div>
+                          <div class="sub-title">joshsadler@me.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Stella Sadler</div>
+                          <div class="sub-title">stellasadler@gmail.com</div>
+                        </div>
+                      </a>
+                      <a href="#" class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <div class="avatar avatar--sm">
+                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                          </div>
+                        </div>
+                        <div class="list_item_content">
+                          <div class="title">Addie Sadler</div>
+                          <div class="sub-title">addiesadler@yahoo.com</div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="col-md-4 u-hidden--mobile">
+                <div class="h2">5,392 active users</div>
+                <p class="u-vertical-rhythm--xl">Want a list of active users in a given date range? <a href="#">Generate one</a> in CSV format.</p>
+
+                <hr class="u-vertical-rhythm--xl">
+
+                <div class="h6">Tip</div>
+                <p>You can search by name or username.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="user">
+        <nav class="toolbar">
+          <div class="container">
+            <div class="grid">
+              <div class="col-md-3 u-hidden--mobile">
+                <div class="profile-identity">
+                  <div class="avatar profile-identity_avatar">
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/whale/128.jpg" width="140" height="140">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-9">
+                <div class="overflow-tabs">
+                  <div class="tabs">
+                    <a href="#" class="tab_item">
+                      <svg class="icon" role="presentation">
+                        <use xlink:href="#dashboard"></use>
+                      </svg>
+                      <span class="tab_label">Accounts</span>
+                    </a>
+                    <a href="#" class="tab_item is-active">
+                      <svg class="icon" role="presentation">
+                        <use xlink:href="#bullets"></use>
+                      </svg>
+                      <span class="tab_label">Activity</span>
+                    </a>
+                    <a href="#" class="tab_item">
+                      <svg class="icon" role="presentation">
+                        <use xlink:href="#lock"></use>
+                      </svg>
+                      <span class="tab_label">Security</span>
+                    </a>
+                    <a href="#" class="tab_item">
+                      <svg class="icon" role="presentation">
+                        <use xlink:href="#conversation"></use>
+                      </svg>
+                      <span class="tab_label">Messages</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </nav>
+
+        <div class="content">
+          <div class="container">
+            <div class="grid">
+
+              <div class="col-lg-3">
+                <div class="grid">
+                  <div class="col-sm-4 col-lg-12">
+                    <h2 class="h3">Josh Sadler</h2>
+                    <div class="u-vertical-rhythm">josh.sadler</div>
+
+                    <div class="u-vertical-rhythm--lg">
+                      Last seen 18m ago<br>
+                      Registered April 3, 2014
+                    </div>
+
+                    <div class="u-vertical-rhythm--lg">
+                      <button type="button" class="btn btn--primary">
+                        <svg class="icon icon--sm" role="presentation">
+                          <use xlink:href="#edit"></use>
+                        </svg>
+                        Edit Profile
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-8 col-lg-12">
+                    <div class="list list--borderless">
+                      <div class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <svg class="icon icon--sm u-fill-muted" role="image" title="Address">
+                            <use xlink:href="#home"></use>
+                          </svg>
+                        </div>
+                        <div class="list_item_content">
+                          4122 Clearview Drive<br>
+                          Cedar Falls, IA 50613
+                        </div>
+                      </div>
+                      <div class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <svg class="icon icon--sm u-fill-muted" role="image" title="Phone">
+                            <use xlink:href="#mobile"></use>
+                          </svg>
+                        </div>
+                        <div class="list_item_content">(319) 504-6430</div>
+                      </div>
+                      <div class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <svg class="icon icon--sm u-fill-muted" role="image" title="Email">
+                            <use xlink:href="#email"></use>
+                          </svg>
+                        </div>
+                        <div class="list_item_content">joshsadler@me.com</div>
+                      </div>
+                      <div class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <svg class="icon icon--sm u-fill-muted" role="image" title="Social Security Number">
+                            <use xlink:href="#lock-alt"></use>
+                          </svg>
+                        </div>
+                        <div class="list_item_content">&bull;&bull;&bull; &bull;&bull; 2803</div>
+                      </div>
+                      <div class="list_item list_item--inset">
+                        <div class="list_item_action">
+                          <svg class="icon icon--sm u-fill-muted" role="image" title="Birth date">
+                            <use xlink:href="#cake"></use>
+                          </svg>
+                        </div>
+                        <div class="list_item_content">November 9, 1989 <span class="text--muted">(25)</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-lg-9">
+                <div class="card card--wide card--reset">
+                  <header class="card_header">
+                    <div class="filter">
+                      <select class="field field--borderless">
+                        <option value="">All activity</option>
+                      </select>
+                    </div>
+                  </header>
+                  <div class="card_content">
+                    <div class="timeline">
+                      <div class="timeline_item">
+                        <div class="timeline_item_date">Feb 1</div>
+                        <div class="timeline_group">
+                          <div class="timeline_item_dot"></div>
+                          <div class="timeline_item_group">
+                            <div class="activity_item">
+                              <div class="activity_item_time">2:01 pm</div>
+                              <div class="activity_item_desc">All the magical things that happened go here.</div>
+                              <div class="activity_item_action"><a href="#">View</a></div>
+                            </div>
+
+                            <div class="activity_item">
+                              <div class="activity_item_time">2:01 pm</div>
+                              <div class="activity_item_desc">All the magical things that happened go here.</div>
+                            </div>
+
+                            <div class="activity_item">
+                              <div class="activity_item_time">2:01 pm</div>
+                              <div class="activity_item_desc">All the magical things that happened go here.</div>
+                              <div class="activity_item_action"><a href="#">View</a></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="timeline_group">
+                          <div class="timeline_item_dot"></div>
+                          <div class="timeline_item_group">activity group</div>
+                        </div>
+
+                        <div class="timeline_group">
+                          <div class="timeline_item_dot"></div>
+                          <div class="timeline_item_group">activity group</div>
+                        </div>
+                      </div>
+
+                      <div class="timeline_item">
+                        <div class="timeline_item_date">Jan 31</div>
+                        <div class="timeline_group">
+                          <div class="timeline_item_dot"></div>
+                          <div class="timeline_item_group">activity group</div>
+                        </div>
+
+                        <div class="timeline_group">
+                          <div class="timeline_item_type">
+                            <svg class="icon u-fill-success" role="presentation"><use xlink:href="#wallet"></use></svg>
+                          </div>
+                          <div class="timeline_item_group">activity group</div>
+                        </div>
+
+                        <div class="timeline_group">
+                          <div class="timeline_item_dot"></div>
+                          <div class="timeline_item_group">activity group</div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="dialog_backdrop" style="display: none;"></div>
+
+
+    <!-- App options dialog -->
+    <div id="profiledialog" class="dialog" role="dialog">
+      <div class="dialog_inner">
+        <header class="dialog_header dialog_header--profile">
+          <button type="button" class="btn btn--icon">
+            <svg class="icon icon--sm" role="presentation"><use xlink:href="#close"></use></svg>
+          </button>
+          <button type="button" class="btn btn--link">
+            Sign out
+          </button>
+          <a href="#" class="avatar avatar--xl">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/whale/128.jpg" width="96" height="96">
+          </a>
+          <a href="#" class="dialog_title">
+            Josh Sadler
+            <svg class="icon icon--sm" role="presentation">
+              <use xlink:href="#chevron-right"></use>
+            </svg>
+          </a>
+        </header>
+        <div class="dialog_content dialog_content--no-padding dialog_content--profile">
+          <header class="section-heading">Selected institution</header>
+          <div class="list--inset">
+            <a href="#" class="list_item list_item--inset">
+              <span class="list_item_action">
+                <svg class="icon" role="presentation">
+                  <use xlink:href="#bank"></use>
+                </svg>
+              </span>
+              <div class="list_item_content">
+                <svg class="icon icon--navigation" role="presentation">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+                Symitar FCU
+              </div>
+            </a>
+          </div>
+
+          <header class="section-heading">Your apps</header>
+          <ul class="app-list">
             <li class="app-list_item">
-              <a href="#" class="app-list_link app-list_link--no-icon">
-                Manage your account
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #fb6b5b;"><use xlink:href="#target"></use></svg>
+                Kernel
               </a>
             </li>
             <li class="app-list_item">
-              <a href="#" id="signoutBtnSm" class="app-list_link app-list_link--no-icon">
-                Sign Out
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #ffac52;"><use xlink:href="#mobile"></use></svg>
+                Mobile
+              </a>
+            </li>
+            <li class="app-list_item">
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #4cc0c1;"><use xlink:href="#security"></use></svg>
+                Sentinel
+              </a>
+            </li>
+            <li class="app-list_item">
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #4cc0c1;"><use xlink:href="#history"></use></svg>
+                History
+              </a>
+            </li>
+            <li class="app-list_item">
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #67bd48;"><use xlink:href="#photo"></use></svg>
+                Assets
+              </a>
+            </li>
+            <li class="app-list_item">
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #7b75cb;"><use xlink:href="#place"></use></svg>
+                Locations
+              </a>
+            </li>
+            <li class="app-list_item">
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #3aaeda;"><use xlink:href="#conversation"></use></svg>
+                Messages
+              </a>
+            </li>
+            <li class="app-list_item">
+              <a href="#" class="app-list_link">
+                <svg class="icon app-list_icon" role="presentation" style="fill: #455564;"><use xlink:href="#group"></use></svg>
+                People
               </a>
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
-
-    <header class="page-header" id="mainContent">
-      <div class="container">
-        <h1 class="page-title">App title</h1>
-        <div class="btn-group u-float-right">
-          <button type="button" class="btn btn--success">Action item</button>
-        </div>
-      </div>
-    </header>
-
-    <div class="paper">
-      <div class="paper_content">
-
-        <div class="container">
-          <div class="timeline">
-            <div class="timeline_item">
-              <div class="timeline_item_date">Feb 1</div>
-              <div class="timeline_group">
-                <div class="timeline_item_dot"></div>
-                <div class="timeline_item_group">
-                  <div class="activity_item">
-                    <div class="activity_item_time">2:01 pm</div>
-                    <div class="activity_item_desc">All the magical things that happened go here.</div>
-                    <div class="activity_item_action"><a href="#">View</a></div>
-                  </div>
-
-                  <div class="activity_item">
-                    <div class="activity_item_time">2:01 pm</div>
-                    <div class="activity_item_desc">All the magical things that happened go here.</div>
-                  </div>
-
-                  <div class="activity_item">
-                    <div class="activity_item_time">2:01 pm</div>
-                    <div class="activity_item_desc">All the magical things that happened go here.</div>
-                    <div class="activity_item_action"><a href="#">View</a></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="timeline_group">
-                <div class="timeline_item_dot"></div>
-                <div class="timeline_item_group">activity group</div>
-              </div>
-
-              <div class="timeline_group">
-                <div class="timeline_item_dot"></div>
-                <div class="timeline_item_group">activity group</div>
-              </div>
-            </div>
-
-            <div class="timeline_item">
-              <div class="timeline_item_date">Jan 31</div>
-              <div class="timeline_group">
-                <div class="timeline_item_dot"></div>
-                <div class="timeline_item_group">activity group</div>
-              </div>
-
-              <div class="timeline_group">
-                <div class="timeline_item_type">
-                  <svg class="icon u-fill-success" role="presentation"><use xlink:href="#wallet"></use></svg>
-                </div>
-                <div class="timeline_item_group">activity group</div>
-              </div>
-
-              <div class="timeline_group">
-                <div class="timeline_item_dot"></div>
-                <div class="timeline_item_group">activity group</div>
-              </div>
-            </div>
-          </div>
-          <!-- div class="grid">
-            <div class="col-md-6">
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">Right Now</h1>
-                  <span class="card_sub-title">Last 5 minutes</span>
-                </header>
-                <div class="card_content">
-                  <div class="grid">
-                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                      <div class="stat stat--center">
-                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#person"></use></svg>
-                        <div class="sub-title">Logged in users</div>
-                        <span class="stat_value">5</span>
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                      <div class="stat stat--center">
-                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#person-add"></use></svg>
-                        <div class="sub-title">Sign ups today</div>
-                        <span class="stat_value">0</span>
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                      <div class="stat stat--center">
-                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#today"></use></svg>
-                        <div class="sub-title">User logins today</div>
-                        <span class="stat_value">322</span>
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-6 col-lg-3">
-                      <div class="stat stat--center">
-                        <svg class="icon u-fill-neutral" role="presentation"><use xlink:href="#schedule"></use></svg>
-                        <div class="sub-title">Average session</div>
-                        <span class="stat_value">2m</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">User Lookup</h1>
-                </header>
-                <div class="card_content">
-                  <form class="input-group">
-                    <input type="search" class="field" placeholder="Search by name or account number" required autocomplete="off" style="border-right:0;">
-                    <span class="input-group_btn">
-                      <button type="submit" class="btn btn--primary">
-                        <svg class="icon icon--sm" role="image" title="Submit"><use xlink:href="#search"></use></svg>
-                      </button>
-                    </span>
-                  </form>
-                </div>
-              </section>
-
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">Money Movement</h1>
-                  <span class="card_sub-title">Last 30 days</span>
-                </header>
-                <div class="card_content">
-                  <div class="error-loading">
-                    <div class="error-loading_image">:'(</div>
-                    <div>Failed to get money movement stats.</div>
-                    <a href="#" class="error-loading_retry">Try again</a>
-                  </div>
-                </div>
-                <footer class="card_footer">
-                  <a href="#" class="btn btn--neutral btn--sm">More</a>
-                </footer>
-              </section>
-
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">Messages</h1>
-                  <button type="button" class="btn btn--icon">
-                    <svg class="icon icon--sm u-fill-muted" role="presentation"><use xlink:href="#add"></use></svg>
-                  </button>
-                </header>
-                <div class="card_content">
-                  <div class="card_empty">
-                    There are no scheduled messages.
-                  </div>
-                </div>
-                <footer class="card_footer">
-                  <a href="#" class="btn btn--neutral btn--sm">More</a>
-                </footer>
-              </section>
-
-            </div>
-            <div class="col-md-6">
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">Usage</h1>
-                  <div class="card_sub-title">Last 30 days</div>
-                </header>
-                <div class="card_content">
-                  <div class="grid">
-                    <div class="col-sm-6 col-lg-4">
-                      <div class="section-heading">Active Users</div>
-                      <div class="stat">
-                        <span class="stat_value">638</span>
-                        <span class="stat_comparison">
-                          671
-                          <svg class="icon icon--sm icon--success" role="presentation"><use xlink:href="#arrow-drop-up"></use></svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                      <div class="section-heading">Retention</div>
-                      <div class="stat">
-                        <span class="stat_value">93.3%</span>
-                        <span class="stat_comparison">
-                          93.1%
-                          <svg class="icon icon--sm icon--success" role="presentation"><use xlink:href="#arrow-drop-up"></use></svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                      <div class="section-heading">Sign Ups</div>
-                      <div class="stat">
-                        <span class="stat_value">24</span>
-                        <span class="stat_comparison">
-                          27
-                          <svg class="icon icon--sm icon--danger" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <hr>
-
-                  <div class="section-heading">Usage by platform</div>
-                  <div class="list list--borderless">
-                    <div class="list_item list_item--inset">
-                      <div class="list_item_action">
-                        <svg class="icon u-fill-neutral" role="image" title="Android"><use xlink:href="#android"></use></svg>
-                      </div>
-                      <div class="list_item_content">
-                        <progress class="progress-linear" value="65" max="100"></progress>
-                        <span class="progress-helper">64%</span>
-                      </div>
-                    </div>
-                    <div class="list_item list_item--inset">
-                      <div class="list_item_action">
-                        <svg class="icon u-fill-neutral" role="image" title="iOS"><use xlink:href="#apple"></use></svg>
-                      </div>
-                      <div class="list_item_content">
-                        <progress class="progress-linear" value="33" max="100"></progress>
-                        <span class="progress-helper">33%</span>
-                      </div>
-                    </div>
-                    <div class="list_item list_item--inset">
-                      <div class="list_item_action">
-                        <svg class="icon u-fill-neutral" role="image" title="Windows"><use xlink:href="#windows"></use></svg>
-                      </div>
-                      <div class="list_item_content">
-                        <progress class="progress-linear" value="2" max="100"></progress>
-                        <span class="progress-helper">2%</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <footer class="card_footer">
-                  <a href="#" class="btn btn--neutral btn--sm">More</a>
-                </footer>
-              </section>
-
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">RDC Requests</h1>
-                </header>
-                <div class="card_content">
-                  <div class="list">
-                    <a href="#" class="list_item list_item--inset">
-                      <div class="list_item_action">
-                        <div class="avatar avatar--sm">
-                          <img src="/img/avatar.svg" width="36" height="36">
-                        </div>
-                      </div>
-                      <div class="list_item_content">
-                        <div class="sub-title u-float-right">2m ago</div>
-                        <div>Kathy Lodge</div>
-                        <div class="sub-title">Individual</div>
-                      </div>
-                    </a>
-                    <a href="#" class="list_item list_item--inset">
-                      <div class="list_item_action">
-                        <div class="avatar avatar--sm">
-                          <img src="/img/avatar.svg" width="36" height="36">
-                        </div>
-                      </div>
-                      <div class="list_item_content">
-                        <div class="sub-title u-float-right">3h ago</div>
-                        <div>April Prichard</div>
-                        <div class="sub-title">Individual</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </section>
-
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">Locked-out Users</h1>
-                </header>
-                <div class="card_content">
-                  <div class="card_empty">
-                    There are no locked-out users.
-                  </div>
-                </div>
-              </section>
-
-              <section class="card">
-                <header class="card_header">
-                  <h1 class="card_title">Release Notes</h1>
-                </header>
-                <div class="card_content">
-                  <div class="progress-circular"></div>
-                </div>
-              </section>
-            </div>
-          </div> -->
-        </div>
 
       </div>
     </div>
 
 
-    <!-- <div class="paper">
-
-      <div class="paper_header paper_header--border paper_header--sticky">
-        <div class="container">
-          <h2 class="paper_title">Users</h2>
-          <form class="header-search">
-            <label>
-              <svg class="icon icon--sm header-search_icon" role="presentation"><use xlink:href="#search"></use></svg>
-              <input type="search" class="form-control header-search_control" placeholder="Search">
-            </label>
-          </form>
-          <button type="button" class="btn btn--primary u-float-right">
-            <span class="u-hidden--xs">Export</span>
-            <svg class="icon icon--sm u-visible--xs--inline-block" role="presentation"><use xlink:href="#download"></use></svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="container">
-
-        <div>
-          <p>Page content</p>
-        </div>
-
-      </div>
-    </div> -->
-
-    <!-- <div class="paper">
-      <div class="paper_header">
-        <div class="container">
-          <h2 class="paper_title">
-            Reports
-          </h2>
-          <a href="#" class="header-content u-hidden--xs">
-            <div class="thumbnail thumbnail--xs">
-              <img src="http://your-fi.com/img/apple-touch-icon-120.png">
-            </div>
-            <div class="thumbnail thumbnail--xs">
-              <svg class="icon" role="image" title="More"><use xlink:href="#ellipsis"></use></svg>
-            </div>
-            Ovation Bank & 2 other institutions
-            <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
-          </a>
-        </div>
-      </div>
-      <div class="container">
-        <div class="grid grid--equal-height">
-          <div class="col-md-4 col-lg-3">
-            <div class="sidebar sidebar--left sidebar--sticky">
-              <div class="section-heading">
-                Engagement
-              </div>
-              <nav class="list list--borderless list--sm">
-                <a href="#" class="list_item is-active">Retention</a>
-                <a href="#" class="list_item">Device Breakdown</a>
-                <a href="#" class="list_item">Money Movement</a>
-              </nav>
-
-              <div class="section-heading">
-                People
-              </div>
-              <nav class="list list--borderless list--sm">
-                <a href="#" class="list_item">Explore</a>
-              </nav>
-
-              <div class="section-heading">
-                Your Reports
-              </div>
-              <nav class="list list--borderless list--sm">
-                <div class="list_item">
-                  <em class="text--muted">You haven't created any yet</em>
-                </div>
-              </nav>
-            </div>
+    <!-- Login dialog -->
+    <div id="loginModal" class="dialog" role="dialog">
+      <div class="dialog_inner">
+        <header class="dialog_header dialog_header--borderless">
+          <h2 class="dialog_title">Sign in with your Banno account</h2>
+          <div class="avatar avatar--xl">
+            <img src="/img/avatar.svg" width="96" height="96">
           </div>
-          <div class="col-md-8 col-lg-9">
-            <div class="btn-group u-float-right">
-              <button type="button" class="btn btn--default">
-                <svg class="icon u-fill-muted" role="image" title="Options"><use xlink:href="#ellipsis"></use></svg>
-              </button>
-              <button type="button" class="btn btn--default">
-                <svg class="icon u-fill-muted" role="image" title="Print"><use xlink:href="#print"></use></svg>
-              </button>
-            </div>
-            <div class="section-title">Retention</div>
-            <p class="copy copy--spacing">Do most people continue using your app? This report will show you the number of active users over time along with the number of recurring users and sign ups.</p>
-
-            <div class="content">
-              <div class="content_heading">
-                <div class="thumbnail thumbnail--sm">
-                  <img src="http://your-fi.com/img/apple-touch-icon-120.png">
-                </div>
-                <div class="title">Your FI</div>
-              </div>
-
-              <div class="content_push content_push--sm content_pull--sm">
-                <div class="table-responsive">
-                  <table class="table table--sm table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Test</th>
-                        <th>Testing</th>
-                        <th>3</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Test</td>
-                        <td>Testing</td>
-                        <th>3</th>
-                      </tr>
-                      <tr>
-                        <td>Test</td>
-                        <td>Testing</td>
-                        <th>3</th>
-                      </tr>
-                      <tr>
-                        <td>Test</td>
-                        <td>Testing</td>
-                        <th>3</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            <div class="content">
-              <div class="content_heading">
-                <div class="thumbnail thumbnail--sm">
-                  <img src="/img/apple-touch-icon-precomposed-72x72.png">
-                </div>
-                <div class="title">Ovation Bank</div>
-              </div>
-
-              <div class="content_push content_push--sm content_pull--md">
-                <div class="table-responsive">
-                  <table class="table table--sm table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Test</th>
-                        <th>Testing</th>
-                        <th>3</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Test</td>
-                        <td>Testing</td>
-                        <th>3</th>
-                      </tr>
-                      <tr>
-                        <td>Test</td>
-                        <td>Testing</td>
-                        <th>3</th>
-                      </tr>
-                      <tr>
-                        <td>Test</td>
-                        <td>Testing</td>
-                        <th>3</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-
-    <!-- <div class="paper">
-      <div class="paper_header">
-        <div class="container">
-          <div class="btn-group u-float-right u-hidden--xs">
-            <div class="dropdown">
-              <button type="button" class="btn btn--muted dropdown_toggle dropdown_toggle--indicator">
-                <svg class="icon u-fill-muted" role="image" title="More"><use xlink:href="#ellipsis"></use></svg>
-              </button>
-              <div class="dropdown_menu dropdown_menu--center">
-                <a href="#" class="dropdown_menu_item">Unlock</a>
-                <a href="#" class="dropdown_menu_item">Revoke Access</a>
-                <div class="dropdown_menu_divider"></div>
-                <a href="#" class="dropdown_menu_item">Delete User</a>
-              </div>
-            </div>
-            <button type="button" class="btn btn--success">Send a Message</button>
-          </div>
-          <h2 class="paper_title paper_title--overflow">
-            <a href="#">Users</a>
-            <svg class="icon icon--sm u-fill-muted paper_title_breadcrumb" role="presentation"><use xlink:href="#chevron-right"></use></svg>
-            James Anderson
-          </h2>
-        </div>
-      </div>
-      <div class="container">
-        <div class="grid grid--equal-height">
-          <div class="col-md-4 col-lg-3">
-            <div class="sidebar sidebar--left sidebar--sticky">
-              <div class="contact">
-                <div class="avatar avatar--lg">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
-                </div>
-                <div class="contact_detail">
-                  <div class="h4">James Anderson</div>
-                  <div class="text--muted">james.anderson</div>
-
-                  <p class="text--muted">
-                    Last seen today at 11:23 am<br>
-                    Registered April 3, 2014
-                  </p>
-                </div>
-              </div>
-
-              <nav class="list list--borderless list--sm">
-                <a href="#profileTab" class="list_item is-active">Profile</a>
-                <a href="#" class="list_item">Activity</a>
-                <a href="#accountsTab" class="list_item">
-                  Accounts
-                  <span class="badge badge--warning u-float-right">1</span>
-                </a>
-                <a href="#" class="list_item">Security</a>
-                <a href="#" class="list_item">Messages</a>
-              </nav>
-            </div>
-          </div>
-          <div class="col-md-8 col-lg-9">
-            <div id="profileTab" class="js-tab-content">
-              <div class="section-title">Profile</div>
-
-              <div class="fieldset">
-                <div class="section-heading section-heading--sticky section-heading--gutter">
-                  About
-                  <a href="#" class="section-heading_link">Edit</a>
-                </div>
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Name
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">James Anderson</div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Username
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">james.anderson</div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Customer ID
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">MD00003</div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Customer Type
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">Individual</div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Address
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">
-                      4122 Clearview Drive<br>
-                      Cedar Falls, Iowa 50613
-                    </div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Prefered Phone
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">319-504-6430</div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Prefered Email
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">james.anderson@gmail.com</div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    SSN
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">&bull;&bull;&bull; &bull;&bull; 2803</div>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Birthday
-                  </label>
-                  <div class="col-xs-8 col-sm-9">
-                    <div class="fieldset_static">Nov 9, 1989 <span class="text--muted">(25)</span></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="fieldset">
-                <div class="section-heading section-heading--sticky section-heading--gutter">
-                  Features
-                  <a href="#" class="section-heading_link">View Accounts</a>
-                </div>
-
-                <p class="text--muted">Visit <a href="#" class="tooltip tooltip--n" aria-label="Accounts are thata way">Accounts</a> to set individual account access and limits.</p>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    RDC
-                  </label>
-                  <div class="col-xs-8 col-sm-9 fieldset_control">
-                    <label class="switch">
-                      <input type="checkbox" class="switch_checkbox" checked>
-                      <div class="switch_toggle"></div>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Bill Pay
-                  </label>
-                  <div class="col-xs-8 col-sm-9 fieldset_control">
-                    <label class="switch">
-                      <input type="checkbox" class="switch_checkbox" checked>
-                      <div class="switch_toggle"></div>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    P2P Transfers
-                  </label>
-                  <div class="col-xs-8 col-sm-9 fieldset_control">
-                    <label class="switch">
-                      <input type="checkbox" class="switch_checkbox" checked>
-                      <div class="switch_toggle"></div>
-                    </label>
-                  </div>
-                </div>
-
-                <div class="grid">
-                  <label class="col-xs-4 col-sm-3 fieldset_label">
-                    Card Management
-                  </label>
-                  <div class="col-xs-8 col-sm-9 fieldset_control">
-                    <label class="switch">
-                      <input type="checkbox" class="switch_checkbox">
-                      <div class="switch_toggle"></div>
-                    </label>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div id="accountsTab" class="js-tab-content u-hidden">
-              <div class="section-title">Accounts</div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-
-<!--     <div class="paper">
-      <header class="paper_header paper_header--border">
-        <div class="container">
-          <h2 class="paper_title paper_title--sm">
-            Audience matches
-            <select>
-              <option value="">any</option>
-              <option value="">all</option>
-            </select>
-            of the following on
-            <input type="datetime">
-          </h2>
-        </div>
-      </header>
-      <div class="container">
-        <div class="list">
-          <div class="list_item">
-            <button type="button" class="btn btn--icon u-float-right">
-              <svg class="icon icon--sm u-fill-muted" role="presentation"><use xlink:href="#close"></use></svg>
-            </button>
-            <select>
-              <option>Logged in</option>
-            </select>
-            during the selected date range
-          </div>
-        </div>
-      </div>
-      <footer class="paper_header paper_header--footer">
-        <div class="container">
-          <div class="u-float-right">
-            <button type="button" class="btn btn--muted">Export</button>
-            <button type="button" class="btn btn--success">Run Report</button>
-          </div>
-
-          <button type="button" class="btn btn--link u-float-left btn--align-left">
-            <svg class="icon u-fill-success" role="presentation"><use xlink:href="#line-add"></use></svg>
-            Add a new line
-          </button>
-        </div>
-      </footer>
-    </div> -->
-
-    <!-- <div class="paper">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th width="48"></th>
-              <th>Customer</th>
-              <th>Email</th>
-              <th>Location</th>
-              <th>First seen</th>
-              <th>Last activity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="avatar avatar--md">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/73.jpg">
-                </div>
-              </td>
-              <td>
-                <div class="title h3">James Anderson</div>
-                james.anderson
-              </td>
-              <td>james.anderson@gmail.com</td>
-              <td>Missouri Valley, Iowa</td>
-              <td>13 days ago</td>
-              <td>a day ago</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div> -->
-
-    <div class="takeover_backdrop" style="display: none;"></div>
-
-    <!-- Deauthorize takeover -->
-    <!-- <div class="takeover is-visible takeover--center-xs" role="dialog">
-      <div class="takeover_dialog">
-        <header class="takeover_header">
-          <button type="button" class="btn btn--icon takeover_close">
-            <svg class="icon icon--sm u-fill-muted" role="presentation"><use xlink:href="#close"></use></svg>
-          </button>
-          <div class="takeover_title">Deauthorize Device?</div>
+          <div class="h4" style="margin-bottom:4px;"><b>Joshua Sadler</b></div>
+          <div>josh.sadler@banno.com</div>
         </header>
-        <div class="takeover_content">
-          <div class="text--lg">Are you sure you want to deauthorize James’s iPad Air?</div>
-          <p class="copy">Deauthorizing will force James to fully reauthenticate to gain access to account  data from this device.</p>
-        </div>
-        <footer class="takeover_footer btn-group">
-          <button type="button" class="btn btn--danger btn--lg">Deauthorize</button>
-          <button type="button" class="btn btn--muted btn--lg">Cancel</button>
-        </footer>
-      </div>
-    </div> -->
-
-    <!-- Asset selection takeover -->
-    <!-- <div class="takeover takeover--center-xs is-visible" role="dialog">
-      <div class="takeover_dialog takeover_dialog--lg">
-        <header class="takeover_header">
-          <div class="btn-group u-float-right">
-            <div class="filter u-hidden--xs u-hidden--sm">
-              <select class="filter_select">
-                <option value="">Date uploaded</option>
-              </select>
+        <div class="dialog_content">
+          <form class="login-container">
+            <div class="form-row">
+              <label class="form-group">
+                <input type="password" class="field field--single" placeholder="Password">
+              </label>
+              <button type="button" class="btn btn--link form-addon" tabindex="-1">Show pass</button>
             </div>
-            <button type="button" class="btn btn--success">
-              Upload Files
-            </button>
-          </div>
-          <h2 class="paper_title">
-            Images
-          </h2>
-          <form class="header-search">
-            <label>
-              <svg class="icon icon--sm header-search_icon" role="presentation"><use xlink:href="#search"></use></svg>
-              <input type="search" class="form-control header-search_control" placeholder="Search">
-            </label>
+
+            <button type="submit" class="btn btn--primary btn--wide">Sign in</button>
           </form>
-        </header>
-        <div class="takeover_content takeover_content--no-padding takeover_content--fill">
-          <div class="grid grid--no-gutter">
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRM-d1lIOoEFHAj4emCTr5N96rVj98kBw4S132A5SjN7-oy031PuQ);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://ad009cdnb.archdaily.net/wp-content/uploads/2012/12/1355381787-kpf-meixi-lake-01-528x253.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item is-selected" style="background-image: url(https://d2fijpsef22722.cloudfront.net/photos/massive/847187872-san-francisco.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQGrXL8SctykWOnGkwo32IR1vhMUf40k-2e1tpfWEmjTVA1HcjdZg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSErfCIT4GwyR-UsklvbgY_2zWwc8-wolH5dVELGg9vqqaEy09tcw);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://media-1.web.britannica.com/eb-media/30/94430-004-614DC535.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQt7FUP0gda__mj2pc2EZdaPtUzNE571KMeb96QzzpzG0Lnur4y);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://gowild.wwf.org.uk/wp-content/uploads/factfiles_lion_01.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToOISA8EMiCPCHIwDvGFgaffCKYNqcNvpWbLetdxKctbuiHjHq);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTpLknb3YAya1o4vpmtjmqEUXwlc8iEUrX7L_NFnpVassSeyw7Y8w);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://s-media-cache-ak0.pinimg.com/736x/62/86/b2/6286b24d02d963876d6c62a86c8427d3.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://fuzfeed.com/wp-content/uploads/2015/02/Galapagos-6-1-09-Santiago-Puerto-Egas-Sally-Lightfoot-Crab.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONSqYTJbO8qLkmOgPDq62ZLHSBI8wgX78NDkxfSM-ITA6uj9t);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://www.wildlifehotline.com/wp-content/uploads/2011/10/babybeaver.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/0/07/Giraffe08_-_melbourne_zoo.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://www.3d-hdwallpaper.com/wp-content/uploads/2014/12/Apple-hd-Wallpaper-Download-for-Desktop.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://a2889z1.americdn.com/wp-content/uploads/2013/04/Kiwi-Natural-remedy-against-many-diseases1.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnke6gLLsetivL6gSSgCAf5tD-v4v0rjoopk-TzEqAxN5rzPSG);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://d1fkw8life356y.cloudfront.net/content/wp-content/uploads/2013/12/24238400_l.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-4 col-md-3">
-              <div class="gallery_item" style="background-image: url(http://img1.wikia.nocookie.net/__cb20130820205210/recipes/images/c/cd/Spinach.jpg);">
-                <div class="gallery_item_details">
-                  <div class="gallery_item_selected">
-                    <svg class="icon" role="presentation"><use xlink:href="#check"></use></svg>
-                  </div>
-                  <div class="gallery_item_title">filename.jpg</div>
-                  <div class="gallery_item_size">250.9 kB</div>
-                  <div class="avatar avatar--xs">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
-        <footer class="takeover_footer btn-group">
-          <button type="button" class="btn btn--muted btn--lg">Cancel</button>
-          <button type="button" class="btn btn--primary btn--lg">Continue</button>
-        </footer>
-      </div>
-    </div> -->
-
-    <!-- Institution selection takeover -->
-    <div id="institutionModal" class="takeover takeover--center-xs" role="dialog">
-      <div class="takeover_dialog">
-        <header class="takeover_header">
-          <h2 class="paper_title">
-            Institutions
-          </h2>
-          <form class="header-search">
-            <label>
-              <svg class="icon icon--sm header-search_icon" role="presentation"><use xlink:href="#search"></use></svg>
-              <input type="search" class="form-control header-search_control" placeholder="Search">
-            </label>
-          </form>
-        </header>
-        <div class="takeover_content takeover_content--no-padding takeover_content--fill">
-          <div class="list list--inset">
-            <label class="list_item list_item--inset">
-              <div class="list_item_action">
-                <div class="control control--checkbox">
-                  <input type="radio" name="institutionRadio">
-                  <span class="control_indicator control_indicator--lg control_indicator--borderless"></span>
-                </div>
-              </div>
-              <div class="list_item_content">
-                <div class="text--lg u-ellipsis">Artemis Bank</div>
-                <div class="sub-title">artemisbank.com</div>
-              </div>
-            </label>
-
-            <label class="list_item list_item--inset">
-              <div class="list_item_action">
-                <div class="control control--checkbox">
-                  <input type="radio" name="institutionRadio">
-                  <span class="control_indicator control_indicator--lg control_indicator--borderless"></span>
-                </div>
-              </div>
-              <div class="list_item_content">
-                <div class="text--lg u-ellipsis">Ovation Bank</div>
-                <div class="sub-title">ovationbank.com</div>
-              </div>
-            </label>
-
-            <label class="list_item list_item--inset">
-              <div class="list_item_action">
-                <div class="control control--checkbox">
-                  <input type="radio" name="institutionRadio">
-                  <span class="control_indicator control_indicator--lg control_indicator--borderless"></span>
-                </div>
-              </div>
-              <div class="list_item_content">
-                <div class="text--lg u-ellipsis">Symitar Federal Credit Union</div>
-                <div class="sub-title">symitarfcu.org</div>
-              </div>
-            </label>
-
-            <label class="list_item list_item--inset">
-              <div class="list_item_action">
-                <div class="control control--checkbox">
-                  <input type="radio" name="institutionRadio">
-                  <span class="control_indicator control_indicator--lg control_indicator--borderless"></span>
-                </div>
-              </div>
-              <div class="list_item_content">
-                <div class="text--lg u-ellipsis">Your FI</div>
-                <div class="sub-title">your-fi.com</div>
-              </div>
-            </label>
-          </div>
-        </div>
-        <footer class="takeover_footer">
-          <button type="button" class="btn btn--primary">Continue</button>
+        <footer class="dialog_footer">
+          <button type="button" class="btn btn--link">Forgot password?</button>
         </footer>
       </div>
     </div>
 
 
-    <!-- Login takeover -->
-    <div id="loginModal" class="takeover takeover--center-xs" role="dialog">
-      <div class="takeover_dialog">
-        <header class="takeover_header">
-          <img src="/img/banno-logo.svg" width="165" height="45">
+
+
+
+    <!-- Complete profile dialog -->
+    <div id="complateProfileModal" class="dialog" role="dialog">
+      <div class="dialog_inner">
+        <header class="dialog_header dialog_header--borderless">
+          <h2 class="dialog_title">Complete your profile</h2>
         </header>
-        <form>
-          <div class="takeover_content">
-            <div class="fieldset">
-              <label class="fieldset_label u-sr-only" for="loginEmail">Email</label>
-              <label class="input-group input-group--borderless">
-                <span class="input-group_addon">
-                  <svg class="icon icon--sm u-fill-muted" role="presentation"><use xlink:href="#email"></use></svg>
-                </span>
-                <input type="email" class="field field--lg has-error" id="loginEmail" name="loginEmail" required placeholder="Email">
-              </label>
+        <div class="dialog_content">
+
+          <div class="content">
+            <div class="avatar avatar--xl avatar--left">
+              <img src="../img/avatar.svg" width="96" height="96">
             </div>
-            <div class="fieldset">
-              <label class="fieldset_label u-sr-only" for="loginPassword">Password</label>
-              <label class="input-group input-group--borderless">
-                <span class="input-group_addon">
-                  <svg class="icon icon--sm u-fill-muted" role="presentation"><use xlink:href="#key"></use></svg>
-                </span>
-                <input type="password" class="field field--lg" id="loginPassword" name="loginPassword" required placeholder="Password">
-              </label>
+            <div class="content_push">
+              <div class="u-vertical-rhythm">
+                <button type="button" class="btn btn--default">Upload photo</button>
+                <button type="button" class="btn btn--default">Take photo</button>
+              </div>
+              <p class="text--light">This photo is your identity on Banno and appears with your activity.</p>
             </div>
           </div>
-          <footer class="takeover_footer">
-            <button type="submit" class="btn btn--primary btn--lg u-float-left">Login</button>
-            <button type="button" class="btn btn--link btn--lg btn--align-right u-float-right">Forgot password?</button>
-          </footer>
-        </form>
+
+          <form>
+            <div class="form-row">
+              <label class="form-group">
+                <div class="label">First name <span class="label_required">*</span></div>
+                <input type="text" class="field" required>
+              </label>
+              <label class="form-group">
+                <div class="label">Last name <span class="label_required">*</span></div>
+                <input type="text" class="field" required>
+              </label>
+            </div>
+
+            <label class="form-group">
+              <div class="label">Phone number <span class="label_required">*</span></div>
+              <input type="tel" class="field" required>
+            </label>
+
+            <label class="form-group">
+              <div class="label">Job title</div>
+              <input type="text" class="field">
+            </label>
+
+            <label class="form-group">
+              <div class="label">Timezone <span class="label_required">*</span></div>
+              <div class="filter">
+                <select class="field" required>
+                  <option value="">America/Chicago</option>
+                </select>
+              </div>
+            </label>
+          </form>
+
+        </div>
+        <footer class="dialog_footer">
+          <button type="submit" class="btn btn--success btn--block">Save &amp; Continue</button>
+        </footer>
       </div>
     </div>
 
@@ -1582,6 +935,31 @@
         <div class="sub-title">You seem to have dropped your internet connection.</div>
       </div>
     </div>
+
+    <script>
+      var usersHeader = document.getElementById('usersHeader');
+      var userHeader = document.getElementById('userHeader');
+      var userLink = document.getElementById('userLink');
+      var usersPage = document.getElementById('users');
+      var userPage = document.getElementById('user');
+      var backBtn = document.getElementById('backBtn');
+
+      userLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        usersHeader.classList.add('is-hidden');
+        users.style.display = 'none';
+        userHeader.classList.remove('is-hidden');
+        user.style.display = '';
+      });
+
+      backBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        userHeader.classList.add('is-hidden');
+        user.style.display = 'none';
+        usersHeader.classList.remove('is-hidden');
+        users.style.display = '';
+      });
+    </script>
 
     <script>
       (function(document, navigator, standalone) {
@@ -1613,44 +991,18 @@
         }
       })(document, window.navigator, 'standalone');
 
-      var appNavigation = document.getElementsByClassName('navigation_apps')[0];
-      var userNavigation = document.getElementsByClassName('navigation_manage')[0];
-      var toggle = document.getElementsByClassName('navigation_user_toggle')[0];
-      var navigation = document.getElementsByClassName('navigation--drawer')[0];
       var dropdownToggles = document.getElementsByClassName('dropdown_toggle');
       var tabs = document.getElementsByClassName('pick-list_item');
-      var galleryItems = document.getElementsByClassName('gallery_item')
+      var galleryItems = document.getElementsByClassName('gallery_item');
+      var appsModalBtn = document.getElementById('appsListdialogBtn');
+      var backdrop = document.getElementsByClassName('dialog_backdrop')[0];
+      var appsModal = document.getElementById('profiledialog');
 
-      // mobile menu backdrop
-      document.getElementById('menuBtn').addEventListener('click', toggleMenu, false);
-
-      function toggleMenu () {
-        if (navigation.classList.contains('is-open')) {
-          var backdrop = document.getElementsByClassName('navigation_backdrop')[0];
-          backdrop.parentNode.removeChild(backdrop);
-        } else {
-          var backdrop = document.createElement('div');
-          backdrop.className = 'navigation_backdrop';
-          document.getElementsByTagName('body')[0].appendChild(backdrop);
-          backdrop.addEventListener('click', toggleMenu, false);
-        }
-        navigation.classList.toggle('is-open');
-        document.getElementsByTagName('body')[0].classList.toggle('u-overflow-hidden');
-      }
-
-      // mobile menu profile toggle
-      document.getElementById('profileBtn').addEventListener('click', toggleProfileDrawer, false);
-
-      function toggleProfileDrawer () {
-        toggle.classList.toggle('is-inverted');
-        if (appNavigation.classList.contains('is-open')) {
-          appNavigation.classList.remove('is-open');
-          userNavigation.classList.add('is-open');
-        } else {
-          userNavigation.classList.remove('is-open');
-          appNavigation.classList.add('is-open');
-        }
-      }
+      appsModalBtn.addEventListener('click', function() {
+        backdrop.style.display = '';
+        backdrop.classList.add('is-visible');
+        appsModal.classList.add('is-visible');
+      })
 
       // dropdowns
       document.addEventListener('click', clearMenus, false);
@@ -1674,37 +1026,6 @@
           openDropdowns[i].classList.remove('is-open');
         }
       }
-
-      // tabs
-      for(var i=0; i < tabs.length; i++) {
-        tabs[i].addEventListener('click', toggleTabs, true);
-      }
-
-      function toggleTabs (event) {
-        event.preventDefault();
-        if (!this.classList.contains('is-active')) {
-          var tabNodes = this.parentNode.children;
-          var tabContent = this.getAttribute('href');
-          if (tabContent === '' || tabContent === '#') {
-            return
-          }
-          var tabContentElement = document.querySelector(tabContent);
-          for (var i=0; i < tabNodes.length; i++) {
-            tabNodes[i].classList.remove('is-active');
-          }
-          this.classList.add('is-active');
-          hideTabContent();
-          tabContentElement.classList.remove('u-hidden');
-        }
-      }
-
-      function hideTabContent () {
-        var contentAreas = document.getElementsByClassName('js-tab-content');
-        for(var i=0; i < contentAreas.length; i++) {
-          contentAreas[i].classList.add('u-hidden');
-        }
-      }
-
 
       // gallery items
       for(var i=0; i < galleryItems.length; i++) {
@@ -1734,13 +1055,10 @@
         }
       }
 
-      // Show login takeover
-      var loginBtnSm = document.getElementById('signoutBtnSm');
+      // Show login dialog
       var loginBtnLg = document.getElementById('signoutBtnLg');
       var loginModal = document.getElementById('loginModal');
-      var backdrop = document.getElementsByClassName('takeover_backdrop')[0];
 
-      loginBtnSm.addEventListener('click', openLoginModal, false);
       loginBtnLg.addEventListener('click', openLoginModal, false);
 
       function openLoginModal () {
@@ -1749,7 +1067,7 @@
         loginModal.classList.add('is-visible');
       }
 
-      // Show institution selection takeover
+      // Show institution selection dialog
       var switchInstBtn = document.getElementById('switchInstitution');
       var instModal = document.getElementById('institutionModal');
 
@@ -1796,15 +1114,7 @@
     </script>
 
     <!-- load up our svg icons from either localStorage or via XHR -->
-    <script src="/js/icons.js" data-load-icons="/img/icons.svg"></script>
-
-
-    <script>
-      // service workers
-      // if ('serviceWorker' in navigator) {
-      //   navigator.serviceWorker.register('sw.js');
-      // }
-    </script>
+    <script src="/js/icons.js" async data-load-icons="/img/icons.svg"></script>
 
   </body>
 </html>

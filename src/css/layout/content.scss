@@ -1,6 +1,8 @@
 // The base .content class is only necessary if you want the bottom margin for free
 .content {
+  padding-top: $padding-unit;
   margin-bottom: $spacing-unit;
+  @include clearfix();
 }
 
 // Content_heading assumes that it contains a thumbnail or avatar followed by

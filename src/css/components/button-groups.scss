@@ -1,17 +1,22 @@
 .btn-group {
-    position: relative;
-    .btn + .btn,
-    .btn + .dropdown,
-    .dropdown + .btn,
-    .btn + .filter,
-    .filter + .btn,
-    .filter + .filter,
-    .filter + .dropdown,
-    .dropdown + .filter {
-        margin-left: $padding-unit;
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  border-collapse: separate;
+  margin-bottom: $padding-unit;
+  > .btn {
+    display: table-cell;
+    width: 1%;
+    border-radius: 0;
+    border-left-width: 0;
+    &:first-child {
+      border-left-width: 1px;
+      border-top-left-radius: $border-radius-base;
+      border-bottom-left-radius: $border-radius-base;
     }
-    .dropdown {
-      display: inline-block;
-      vertical-align: middle;
+    &:last-child {
+      border-top-right-radius: $border-radius-base;
+      border-bottom-right-radius: $border-radius-base;
     }
+  }
 }

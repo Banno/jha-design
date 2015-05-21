@@ -89,16 +89,54 @@
 
 // Flexbox
 @mixin flexbox-display() {
-  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+}
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  @if $direction == row {
+    -ms-box-orient: horizontal;
+  } @else {
+    -ms-box-orient: vertical;
+  }
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
 }
 @mixin align-items($alignment) {
   -webkit-box-align: $alignment;
   -moz-box-align: $alignment;
+  @if $alignment == flex-start {
+    -ms-box-align: start;
+  } @else if $alignment == flex-end {
+    -ms-box-align: end;
+  }
   -ms-flex-align: $alignment;
   -webkit-align-items: $alignment;
   align-items: $alignment;
+}
+@mixin align-self($alignment) {
+  -ms-flex-item-align: $alignment;
+  -webkit-align-self: $alignment;
+  align-self: $alignment;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+          -ms-flex: $values;
+              flex: $values;
+}
+@mixin justify-content($value) {
+  -webkit-justify-content: $value;
+  @if $value == flex-start {
+    -ms-box-pack: start;
+  } @else if $value == flex-end {
+    -ms-box-pack: end;
+  }
+          justify-content: $value;
 }
 
 // Placeholder text
@@ -351,16 +389,50 @@
 }
 
 // Hairlines
-@mixin hairline($type, $color, $offset) {
+
+$hl-dark-top:       "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEnPjxyZWN0IGZpbGw9JyNkOGUxZWInIHg9JzAnIHk9JzAnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzAuNScvPjwvc3ZnPg==";
+$hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEnPjxyZWN0IGZpbGw9JyNkOGUxZWInIHg9JzAnIHk9JzAuNScgd2lkdGg9JzEwMCUnIGhlaWdodD0nMC41Jy8+PC9zdmc+";
+
+@mixin hairline($type, $color, $offset:0) {
   @if $type == single {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+    background-image: url($hl-dark-bottom);
     background-position: $offset 100%;
   } @else if $type == double {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>"),
-                      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+    background-image: url($hl-dark-bottom),
+                      url($hl-dark-top);
     background-position: $offset 100%, $offset 0;
   }
   background-repeat: no-repeat;
+}
+
+@mixin faux-border($position, $color) {
+  border-#{$position}: 1px solid lighten($color, 5%);
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+         (min-resolution: 192dpi) {
+    border-#{$position}-width: 0;
+    @if $position == top {
+      background-position: 0 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+    } @else if $position == bottom {
+      background-position: 0 100%;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0.5' width='100%' height='0.5'/></svg>");
+    } @else if $position == left {
+      background-position: 0 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='100%'><rect fill='#{$color}' x='0' y='0' width='0.5' height='100%'/></svg>");
+    } @else if $position == right {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='100%'><rect fill='#{$color}' x='0.5' y='0' width='0.5' height='100%'/></svg>");
+    }
+    background-repeat: no-repeat;
+  }
+  @media (-webkit-min-device-pixel-ratio: 3) {
+    background-image: none;
+    border-#{$position}-width: 1px;
+  }
+}
+
+@mixin reset-faux-border($position) {
+  background-image: none;
+  border-#{$position}-width: 0;
 }
 
 // Shadow depth

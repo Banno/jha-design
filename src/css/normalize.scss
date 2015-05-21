@@ -24,20 +24,17 @@ body {
   scrollbar-arrow-color: $color-primary;
   // prevent 300ms click delay
   @include touch-action(manipulation);
-  // if viewport size changes when the navigation drawer is open
-  @media (min-width: $viewport-md-min) {
-    &.u-overflow-hidden {
-      overflow: auto;
-    }
-  }
   // standalone mode requires additional padding
   .standalone & {
     padding-top: $topbar-height-standalone;
   }
   @media (min-width: $viewport-md-min) {
-    padding-top: $topbar-height-base;
+    padding-top: $topbar-height-base * 2;
     .standalone & {
-      padding-top: $topbar-height-standalone;
+      padding-top: $topbar-height-base * 2;
+    }
+    &.u-overflow-hidden {
+      overflow: auto;
     }
   }
 }
@@ -134,7 +131,7 @@ figure {
 
 hr {
   @include box-sizing(content-box);
-  height: 2px;
+  height: 1px;
   background-color: $color-gray-light;
   border: 0;
   margin-top: $padding-unit;
@@ -248,6 +245,8 @@ textarea {
 optgroup {
   font-weight: bold;
 }
+
+@include placeholder($text-color-light);
 
 /* Tables
    ================================================================== */

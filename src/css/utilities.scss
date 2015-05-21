@@ -42,6 +42,17 @@
 }
 
 // Only display content to screen readers
+.accessibility-aid {
+  &:focus,
+  &:active {
+    position: absolute !important;
+    line-height: 48px;
+    padding: 0 6px;
+    font-weight: 600;
+    background-color: rgba(#fff, 0.6);
+  }
+}
+
 .u-sr-only {
   position: absolute;
   width: 1px;
@@ -97,6 +108,7 @@
 @include responsive-invisibility('.u-visible--sm');
 @include responsive-invisibility('.u-visible--md');
 @include responsive-invisibility('.u-visible--lg');
+@include responsive-invisibility('.u-visible--mobile');
 
 .u-visible--xs--block,
 .u-visible--xs--inline,
@@ -187,6 +199,16 @@
   @media (min-width: $viewport-lg-min) {
     display: inline-block !important;
   }
+}
+
+// Device shortcuts
+.u-visible--mobile {
+  @media (max-width: $viewport-sm-max) {
+    display: block !important;
+  }
+}
+@media (max-width: $viewport-sm-max) {
+  @include responsive-invisibility('.u-hidden--mobile');
 }
 
 

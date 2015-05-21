@@ -8,4 +8,12 @@
 
 .icon--sm {
   @include square($icon-size-sm);
+  position: relative;
+  top: -2px;
+}
+
+.icon--navigation {
+  position: absolute;
+  top: -3px;
+  right: 0;
 }

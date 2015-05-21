@@ -1,55 +1,235 @@
-// Input
+// clean house
+::-ms-reveal {
+  display: none;
+}
+::-ms-clear {
+  display: none;
+}
+
+.form-row {
+  @include flexbox-display();
+  -ms-flex-flow: row nowrap;
+  margin-bottom: $unit-base;
+  .form-group {
+    margin-bottom: 0;
+  }
+}
+.form-group {
+  @include flex(1 1 auto);
+  display: block;
+  position: relative;
+  margin-bottom: $unit-base;
+  .error {
+    position: absolute;
+    bottom: -$padding-unit;
+  }
+  .label {
+    position: relative;
+    top: $unit-xs;
+  }
+  .field + .field,
+  .form-row & + & {
+    @include faux-border(left, $color-gray-light);
+    padding-left: $unit-sm;
+  }
+  .form-row & + & {
+    padding-left: 0;
+    .field,
+    .label,
+    .filter_select {
+      padding-left: $unit-sm;
+    }
+  }
+  .filter {
+    display: block;
+  }
+  select.field {
+    display: block;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.form-group--single {
+  margin-bottom: 0;
+}
+.form-addon {
+  height: auto;
+  border-radius: 0;
+  border: 0;
+  border-bottom: $border-base;
+  padding-left: $unit-sm;
+  padding-right: $unit-sm;
+  text-transform: uppercase;
+  font-size: $font-size-sm;
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active,
+  &.is-focused {
+    border-bottom: $border-base;
+  }
+}
+
+.error {
+  color: $color-danger;
+  font-size: $font-size-sm;
+}
+
+// Label
+.label {
+  font-size: $font-size-sm;
+  color: $text-color-light;
+  font-weight: 600;
+  text-align: left;
+}
 .field {
   display: block;
   width: 100%;
-  height: $btn-height-base;
-  padding: $btn-padding-vertical ($btn-padding-horizontal / 1.5);
-  margin-bottom: $padding-unit;
+  height: $field-height;
+  padding: $unit-xs 0 0;
+  border: 0;
   font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $text-color-muted;
-  background-color: #fff;
-  border: $border-base;
-  border-radius: $border-radius-base;
-  box-shadow: none;
-  &[disabled],
-  fieldset[disabled] & {
-    background-color: $color-gray-lighter;
-    opacity: 1; // iOS fix for unreadable disabled content
-    cursor: not-allowed;
-  }
+  background-color: transparent;
+  border-radius: 0;
+  color: $text-color-dark;
+  border-bottom: $border-base;
+  @include transition(border-bottom .2s $timing-function);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   &:focus {
-    border-color: $color-primary;
-    color: $text-color-base;
-    outline: none;
+    outline: 0;
+    border-bottom-color: $color-primary;
   }
-}
-.field--lg {
-  height: $btn-height-lg;
+  &[disabled],
+  &.is-disabled {
+    border-bottom-color: darken($color-gray-light, 5%);
+    border-bottom-style: dotted;
+  }
 }
 textarea.field {
   height: auto;
 }
 
-// Label
-.label {
-  margin-bottom: $unit-xs;
-  font-weight: 600;
+.field--single {
+  padding-top: $unit-sm;
+  padding-bottom: $unit-sm;
+}
+.field--borderless {
+  border-bottom: 0;
+}
+.field--lg {
+  font-size: $h2-size;
 }
 
-// Validation
-.has-error {
-  border-color: $color-danger;
+.has-error,
+.has-error:focus {
+  border-bottom-color: $color-danger;
 }
-.errors {
+
+.label_required {
   color: $color-danger;
-  font-size: $font-size-base - 1;
 }
-.error_item {
-  display: block;
-  margin-top: $unit-xs;
-  margin-bottom: $unit-sm;
+
+
+.filter {
+  position: relative;
+  display: inline-block;
+  color: $filter-color;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: $padding-unit / 2;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    pointer-events: none;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
 }
+select.field {
+  display: inline-block;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-color: #fff;
+  padding-right: $unit-base;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  &:focus:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// media query to target Firefox only
+@-moz-document url-prefix() {
+  .filter {
+    &:after {
+      margin-top: 0;
+    }
+  }
+  select.field {
+    // Firefox hack to hide the arrow
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-right: 20px;
+
+    // <option> elements inherit styles from <select>, so reset them
+    options {
+      background-color: #fff;
+    }
+  }
+}
+
+// IE9 hack to hide the arrow
+@media screen and (min-width: 0\0) {
+  select.field {
+    z-index: 1;
+    padding: $padding-unit / 2;
+  }
+  .filter {
+    &:after {
+      z-index: 5;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      display: block;
+      width: 26px; // covers the native select's arrow
+      background-color: #fff;
+    }
+    select.field {
+      &:hover,
+      &:focus,
+      &:active {
+        color: $filter-focus-color;
+      }
+    }
+  }
+  .form-row {
+    margin-bottom: 0;
+    .form-group {
+      margin-bottom: $unit-base;
+    }
+  }
+}
+
+
+
 
 // Checkboxes and radios
 .control {

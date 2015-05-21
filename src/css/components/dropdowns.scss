@@ -1,6 +1,6 @@
 .dropdown {
   position: relative;
-  &:active,
+  &.is-active,
   &.is-open,
   // .open is deprecated, use .is-open instead
   &.open {
@@ -18,7 +18,14 @@
 
 .dropdown_toggle {
   display: block;
+  &:active + .dropdown_menu,
+  &.dropdown_toggle--indicator:active:before,
+  &.dropdown_toggle--indicator:active:after {
+    display: block;
+  }
 }
+
+
 
 .dropdown_toggle--indicator {
   &:before,
@@ -30,7 +37,7 @@
     border-style: dashed dashed solid;
     border-width: 0 9px 9px;
     left: 50%;
-    bottom: -13px;
+    bottom: -5px;
     z-index: $z-index-dropdown + 1;
   }
   &:before {
@@ -46,7 +53,7 @@
 
 .dropdown_menu {
   display: none;
-  margin: 12px 0 0;
+  margin: 4px 0 0;
   padding: 6px 0;
   list-style: none;
   position: absolute;
@@ -58,11 +65,18 @@
   min-width: $dropdown-width-min;
   max-width: $dropdown-width-max;
   background-clip: padding-box;
-  box-shadow: 0 3px 5px rgba($color-gray-dark, 0.12);
+  box-shadow: $dropdown-box-shadow;
   z-index: $z-index-dropdown;
+  text-align: left;
+  line-height: $line-height-base;
+  color: $text-color-base;
   .u-float-right & {
     left: auto;
     right: 0;
+  }
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    background-color: rgba($dropdown-background-color, 0.90);
+    -webkit-backdrop-filter: blur(5px);
   }
 }
 .dropdown_menu--padding {
@@ -111,5 +125,15 @@
   &.active {
     color: $dropdown-item-hover-color;
     background-color: $dropdown-item-hover-background;
+  }
+  &.text-danger {
+    color: $color-danger;
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active,
+    &.active {
+      color: darken($color-danger, 8%);
+    }
   }
 }

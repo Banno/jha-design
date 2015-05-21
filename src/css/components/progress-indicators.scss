@@ -6,7 +6,9 @@
   border-radius: 100%;
   @include animation(scale-out 1.0s infinite ease-in-out);
 }
-
+.progress-circular--center {
+  margin-top: calc(50vh - 100px);
+}
 
 .progress-linear {
   display: inline-block;

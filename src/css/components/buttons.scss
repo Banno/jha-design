@@ -11,7 +11,7 @@
   background-color: rgba(0,0,0,0);
   text-transform: $btn-text-transform;
   color: $btn-text-color-base;
-  padding: $btn-padding-vertical ceil($btn-padding-horizontal / 2);
+  padding: $btn-padding-vertical $btn-padding-horizontal;
   height: $btn-height-base;
   font-weight: $btn-font-weight;
   font-size: $btn-font-size-base;
@@ -40,17 +40,14 @@
     opacity: 0.6;
     cursor: default;
   }
-  > .icon {
-    margin-top: -2px;
+  &:not(.icon--btn) > .icon {
+    position: relative;
+    top: -2px;
   }
 }
 
-.btn--default,
-.btn--muted {
+.btn--default {
   @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
-}
-.btn--muted {
-  color: $text-color-muted;
 }
 .btn--danger {
   @include button-color(lighten($btn-danger-background, 6%), $btn-danger-background, #fff, $btn-danger-background);
@@ -61,12 +58,20 @@
 .btn--success {
   @include button-color(lighten($btn-success-background, 8%), $btn-success-background, #fff, $btn-success-background);
 }
+.btn--muted,
 .btn--neutral {
-  @include button-color($btn-neutral-background, $btn-neutral-background, #fff, $btn-neutral-background);
+  @include button-color($btn-neutral-background, $btn-neutral-background, $text-color-light, $btn-neutral-background);
 }
 .btn--link {
-  @include button-color(transparent, transparent, $text-color-muted);
+  @include button-color(transparent, transparent, $color-gray-medium);
   font-weight: 400;
+}
+
+.btn--primary,
+.btn--danger,
+.btn--success,
+.btn--neutral {
+  -webkit-font-smoothing: auto;
 }
 
 
@@ -84,33 +89,45 @@
   line-height: $btn-height-lg - ($btn-padding-vertical * 2);
 }
 
+.btn--wide {
+  padding-left: ceil($btn-padding-horizontal * 1.5);
+  padding-right: ceil($btn-padding-horizontal * 1.5);
+}
+
 
 // Button alignment adjustments, primarily for .btn--link
 // Aligns the contents of a button with the container edge
 .btn--align-left {
-  margin-left: -(ceil($btn-padding-horizontal / 2));
+  margin-left: -$btn-padding-horizontal;
 }
 .btn--align-right {
-  margin-right: -(ceil($btn-padding-horizontal / 2));
-}
-
-@media (min-width: $viewport-md-min) {
-  .btn:not(.btn--lg):not(.btn--icon) {
-    padding-left: $btn-padding-horizontal;
-    padding-right: $btn-padding-horizontal;
-  }
-  .btn--align-left {
-    margin-left: -$btn-padding-horizontal;
-  }
-  .btn--align-right {
-    margin-right: -$btn-padding-horizontal;
-  }
+  margin-right: -$btn-padding-horizontal;
 }
 
 // Icon buttons - perfectly round and wide enough for just an icon
 .btn--icon {
   border-radius: 50%;
-  min-width: 35px;
+  min-width: $btn-height-base;
   padding-left: floor($btn-padding-horizontal / 4);
   padding-right: floor($btn-padding-horizontal / 4);
+}
+
+
+// Block button
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.btn--block + .btn--block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn--block {
+    width: 100%;
+  }
 }

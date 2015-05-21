@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: $spacing-unit;
+  font-size: $table-font-size;
   color: $table-color-base;
   th,
   td {
@@ -10,12 +11,16 @@
   }
   th {
     text-align: left;
-    font-size: $font-size-base - 1;
+    font-size: $table-font-size - 1;
     font-weight: 600;
     text-transform: uppercase;
     padding-top: 20px;
     padding-bottom: 20px;
     color: $table-heading-color;
+  }
+  tr:active,
+  tr:focus {
+    outline: 0;
   }
 }
 

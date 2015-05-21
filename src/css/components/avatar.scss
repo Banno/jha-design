@@ -6,11 +6,11 @@
   background-position: center;
   background-size: cover;
   background-color: $avatar-background-color;
+  vertical-align: middle;
   img {
     width: 100%;
     height: auto;
     border-radius: $avatar-radius;
-    vertical-align: middle;
   }
 }
 
@@ -43,16 +43,8 @@
 // Special snowflake, logged in user's avatar
 
 .avatar--you {
-  @include square(34px);
-  margin-top: -3px;
   border-radius: $border-radius-base;
   img {
     border-radius: $border-radius-base;
   }
-}
-
-.avatar--you--lg {
-  @include square(60px);
-  margin-top: 0;
-  margin-bottom: $padding-unit;
 }

@@ -31,13 +31,15 @@
   "components/badges",
   "components/buttons",
   "components/button-groups",
-  "components/takeovers",
+  "components/dialogs",
   "components/pagination",
   "components/contact",
   "components/forms",
   "components/input-groups",
   "components/icons",
   "components/dropdowns",
+  "components/app-list",
+  "components/search.scss",
   "components/tables",
   "components/tabs",
   "components/timeline",
@@ -52,11 +54,9 @@
 
   // layout
   "layout/grid",
-  "layout/topbar",
-  "layout/page-header",
-  "layout/paper",
-  "layout/sidebar",
+  "layout/navigation",
   "layout/content",
+  "layout/profile",
 
   // plugins
   "plugins/angular",
