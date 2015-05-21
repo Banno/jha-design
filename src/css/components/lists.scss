@@ -9,8 +9,6 @@
 .list--borderless {
   .list_item {
     border-bottom: 0;
-  }
-  .list_item--inset {
     background-image: none;
   }
 }
@@ -45,30 +43,19 @@
     color: $text-color-base;
   }
   &:last-of-type {
+    background-image: none;
     border-bottom: 0;
   }
   a:not(.btn) {
     color: $text-color-base;
-  }
-  // title spacing
-  .text--lg + .title--sub,
-  .title + .title--sub {
-    margin-top: -2px;
   }
   @media (min-width: $viewport-lg-min) {
     padding-right: $unit-base;
   }
   &.is-active,
   &.active {
-    background-color: $color-primary;
-    color: #fff;
-    .badge {
-      background-color: lighten($color-primary, 24%);
-    }
-    // overide .u-fill-* utility class
-    svg {
-      fill: #fff;
-    }
+    color: $color-primary;
+    font-weight: 600;
   }
 }
 @media (hover) {
@@ -80,9 +67,11 @@
   border-bottom: 0;
   @include hairline(single, $color-gray-light, ($thumbnail-size-sm + $padding-unit));
   &:last-of-type {
+    border-bottom: 0;
     background-image: none;
   }
 }
+
 .list_item_action {
   float: left;
   width: $thumbnail-size-sm;
@@ -90,7 +79,6 @@
   min-height: 1px;
 }
 .list_item_content {
-  width: 100%;
   overflow: hidden;
   position: relative;
   @include align-self(center);

@@ -1,5 +1,14 @@
+// clean house
+::-ms-reveal {
+  display: none;
+}
+::-ms-clear {
+  display: none;
+}
+
 .form-row {
   @include flexbox-display();
+  -ms-flex-flow: row nowrap;
   margin-bottom: $unit-base;
   .form-group {
     margin-bottom: 0;
@@ -13,6 +22,10 @@
   .error {
     position: absolute;
     bottom: -$padding-unit;
+  }
+  .label {
+    position: relative;
+    top: $unit-xs;
   }
   .field + .field,
   .form-row & + & {
@@ -32,8 +45,9 @@
   }
   select.field {
     display: block;
-    height: 41px; // magic number
     background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .form-group--single {
@@ -72,7 +86,8 @@
 .field {
   display: block;
   width: 100%;
-  padding: $unit-xs 0;
+  height: $field-height;
+  padding: $unit-xs 0 0;
   border: 0;
   font-size: $font-size-base;
   background-color: transparent;
@@ -93,12 +108,19 @@
     border-bottom-style: dotted;
   }
 }
+textarea.field {
+  height: auto;
+}
+
 .field--single {
   padding-top: $unit-sm;
   padding-bottom: $unit-sm;
 }
 .field--borderless {
   border-bottom: 0;
+}
+.field--lg {
+  font-size: $h2-size;
 }
 
 .has-error,
@@ -111,7 +133,6 @@
 }
 
 
-// assumes <div class="filter"><select class="filter_select"></select></div>
 .filter {
   position: relative;
   display: inline-block;
@@ -197,6 +218,12 @@ select.field {
       &:active {
         color: $filter-focus-color;
       }
+    }
+  }
+  .form-row {
+    margin-bottom: 0;
+    .form-group {
+      margin-bottom: $unit-base;
     }
   }
 }

@@ -1,7 +1,6 @@
 // Color
 
 $color-blue:                #3aaeda !default;
-$color-blue-dark:           #257ab0 !default;
 $color-green:               #67bd48 !default;
 $color-red:                 #fb6b5b !default;
 $color-yellow:              #ffac52 !default;
@@ -27,6 +26,7 @@ $text-color-light:          #8c989f !default;
 $text-color-base:           #6b757b !default;
 $text-color-dark:           $color-gray-base !default;
 $text-color-muted:          #b3bfc9 !default;
+
 $link-color-base:           $color-primary !default;
 
 
@@ -91,7 +91,7 @@ $faux-border-color:         #d8e1eb !default;;
 
 // Z-index
 $z-index-toast:             1060 !default;
-$z-index-takeover:          1050 !default;
+$z-index-dialog:          1050 !default;
 $z-index-drawer:            1030 !default;
 $z-index-topbar:            1020 !default;
 $z-index-dropdown:          1010 !default;
@@ -141,7 +141,7 @@ $btn-default-background:    #fff !default;
 $btn-primary-background:    $color-primary !default;
 $btn-success-background:    $color-success !default;
 $btn-danger-background:     $color-danger !default;
-$btn-neutral-background:    $color-gray-medium !default;
+$btn-neutral-background:    $color-gray-lighter !default;
 
 $btn-focus-shadow:          inset 0 1px 2px rgba(0,0,0,0.08) !default;
 
@@ -190,6 +190,9 @@ $card-background-color:     #fff !default;
 $card-shadow:               0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px rgba($color-gray-dark, 0.12) !default;
 $card-radius:               2px !default;
 $card-max-width:            550px !default;
+$card-title-color:          $text-color-dark !default;
+$card-title-size:           20px !default;
+$card-title-weight:         400 !default;
 
 
 // Dropdowns
@@ -216,6 +219,8 @@ $filter-focus-color:        $text-color-dark !default;
 
 
 // Forms
+$field-height:              40px !default;
+
 $progress-color:            $color-green !default;
 $progress-height:           8px !default;
 $progress-radius:           2px !default;
@@ -238,14 +243,14 @@ $icon-size-sm:              18px !default;
 $icon-fill-color:           currentColor !default;
 
 
-// Takeovers
-$takeover-width-base:       550px !default;
-$takeover-background:       #fff !default;
-$takeover-radius:           2px !default;
-$takeover-border-color:     rgba($color-gray-dark, 0.2) !default;
+// dialogs
+$dialog-width-base:       550px !default;
+$dialog-background:       #fff !default;
+$dialog-radius:           2px !default;
+$dialog-border-color:     rgba($color-gray-dark, 0.2) !default;
 
-$takeover-backdrop-color:   $color-gray-dark !default;
-$takeover-backdrop-opacity: 0.6 !default;
+$dialog-backdrop-color:   $color-gray-dark !default;
+$dialog-backdrop-opacity: 0.6 !default;
 
 
 // Tables

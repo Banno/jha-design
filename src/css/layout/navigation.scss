@@ -115,6 +115,7 @@
   }
 }
 .tab_item {
+  display: inline-block;
   @include flex(1 0 0);
   max-width: 100px;
   text-align: center;
@@ -309,8 +310,8 @@
   }
 }
 
-// Standard horizontal nav
-.nav {
+// Standard horizontal toolbar
+.toolbar {
   display: block;
   width: 100%;
   height: $tabbar-height-sm;
@@ -321,6 +322,7 @@
   [class^="col-"] {
     height: $tabbar-height-sm;
   }
+  .toolbar_item,
   .tab_item {
     display: inline-block;
     max-width: none;
@@ -344,6 +346,7 @@
     [class^="col-"] {
       height: $topbar-height-base;
     }
+    .toolbar_item,
     .tab_item {
       padding: $unit-base 0;
     }

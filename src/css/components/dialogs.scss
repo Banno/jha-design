@@ -1,14 +1,14 @@
-.has-takeover {
+.has-dialog {
   overflow: hidden;
 }
 
-.takeover {
+.dialog {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: $z-index-takeover + 1;
+  z-index: $z-index-dialog + 1;
   visibility: hidden;
   overflow-y: auto;
   opacity: 0;
@@ -20,7 +20,7 @@
   // this flexbox property does nothing on it's own, but a utility class depends
   // on it and this is the most efficent way to write it
   @include align-items(center);
-  .has-takeover & {
+  .has-dialog & {
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -29,31 +29,31 @@
     visibility: visible;
     opacity: 1;
     @include transition(opacity 0.3s 0, visibility 0 0);
-    .takeover_dialog {
+    .dialog_inner {
         @include transform(translateY(0));
     }
   }
 }
 
-.takeover_backdrop {
+.dialog_backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  z-index: $z-index-takeover;
-  background-color: $takeover-backdrop-color;
+  z-index: $z-index-dialog;
+  background-color: $dialog-backdrop-color;
   @include transition(opacity 0.3s $timing-function);
   &.is-visible,
   &.in {
-    opacity: $takeover-backdrop-opacity;
+    opacity: $dialog-backdrop-opacity;
   }
   @media (min-width: $viewport-sm-min) {
     display: block;
   }
 }
-.takeover_backdrop--opaque {
+.dialog_backdrop--opaque {
   background-color: $background-color;
   opacity: 1;
   &.is-visible,
@@ -62,41 +62,33 @@
   }
 }
 
-.takeover_dialog {
+.dialog_inner {
   position: relative;
   @include flexbox-display();
   @include flex-direction(column);
   width: 100%;
   height: 100%;
-  height: 100vh;
-  background-color: $takeover-background;
+  background-color: $dialog-background;
   cursor: auto;
   outline: 0;
   will-change: transform;
-  @include transform(translateY(100vh));
+  @include transform(translateY(100%));
   @include transition-property(transform);
   @include transition-duration(.3s);
-  // @media (max-height: 400px) {
-  //   margin-top: $padding-unit;
-  //   margin-bottom: $padding-unit;
-  //   .takeover_content--fill {
-  //     max-height: calc(100vh - 195px);
-  //   }
-  // }
   @media (min-width: $viewport-sm-min) {
     display: block;
     width: 90%;
-    max-width: $takeover-width-base;
+    max-width: $dialog-width-base;
     height: auto;
     margin: $spacing-unit auto;
-    border-radius: $takeover-radius;
-    border: 1px solid $takeover-border-color;
+    border-radius: $dialog-radius;
+    border: 1px solid $dialog-border-color;
     background-clip: padding-box;
     box-shadow: $dropdown-box-shadow;
   }
 }
 
-.takeover_dialog--lg {
+.dialog_inner--lg {
   max-width: 900px;
 }
 
@@ -104,29 +96,29 @@
 /* WARNING: if the contents of the modal grow larger than the viewport much of
    the content will be cut off
 */
-.takeover--center-xs {
+.dialog--center-xs {
   @include flexbox-display();
 }
 @media (min-width: $viewport-sm-min) {
-  .takeover--center-sm {
+  .dialog--center-sm {
     @include flexbox-display();
   }
 }
 @media (min-width: $viewport-md-min) {
-  .takeover--center-md {
+  .dialog--center-md {
     @include flexbox-display();
   }
 }
 @media (min-width: $viewport-lg-min) {
-  .takeover--center-lg {
+  .dialog--center-lg {
     @include flexbox-display();
   }
 }
 
 // Shared styles
-.takeover_header,
-.takeover_content,
-.takeover_footer {
+.dialog_header,
+.dialog_content,
+.dialog_footer {
   padding: $padding-unit;
   @include clearfix();
   @media (min-width: $viewport-md-min) {
@@ -136,26 +128,26 @@
 
 
 // Header
-.takeover_header {
+.dialog_header {
   position: relative;
   background-color: #fff;
-  border-top-left-radius: $takeover-radius - 1;
-  border-top-right-radius: $takeover-radius - 1;
+  border-top-left-radius: $dialog-radius - 1;
+  border-top-right-radius: $dialog-radius - 1;
   border-bottom: $border-lt;
   text-align: center;
   .search {
     margin-bottom: -$padding-unit;
   }
 }
-.takeover_header--borderless {
+.dialog_header--borderless {
   border-bottom-width: 0;
   padding-bottom: 0;
-  .takeover_title {
+  .dialog_title {
     margin-bottom: $unit-base;
   }
 }
 
-.takeover_title {
+.dialog_title {
   font-size: 16px;
   font-weight: bold;
   color: $text-color-dark;
@@ -165,7 +157,7 @@
   }
 }
 
-.takeover_close {
+.dialog_close {
   position: absolute;
   top: 50%;
   right: $unit-sm;
@@ -181,20 +173,15 @@
 }
 
 // Content
-.takeover_content {
+.dialog_content {
   @include flex(1 0 0);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   .gallery {
     margin-bottom: 0;
   }
 }
-.takeover_content--fill {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  /* Lots to talk about here. We're setting an explicit height so this area
-     fills the screen as much as possible. But we also have to factor in the
-     takeover_header and takeover_footer that may be present at ~215px and the
-     top and bottom margins of ~36px each.
-  */
+.dialog_content--fill {
   @media (min-width: $viewport-sm-min) {
     max-height: calc(100vh - 225px);
   }
@@ -202,7 +189,7 @@
     max-height: calc(100vh - 288px);
   }
 }
-.takeover_content--no-padding {
+.dialog_content--no-padding {
   padding: 0;
   @media (min-width: $viewport-md-min) {
     padding: 0;
@@ -210,32 +197,32 @@
 }
 
 // Footer
-.takeover_footer {
+.dialog_footer {
   text-align: center;
 }
 
-.takeover_content:not(.takeover_content--fill) + .takeover_footer {
+.dialog_content:not(.dialog_content--fill) + .dialog_footer {
   padding-top: 0;
 }
 
-.takeover_content--fill + .takeover_footer {
+.dialog_content--fill + .dialog_footer {
   background-color: #fff;
   border-top: $border-lt;
-  border-bottom-left-radius: $takeover-radius;
-  border-bottom-right-radius: $takeover-radius;
+  border-bottom-left-radius: $dialog-radius;
+  border-bottom-right-radius: $dialog-radius;
 }
 
 
-// Profile takeover
+// Profile dialog
 // special snowflake
-.takeover_header--profile {
+.dialog_header--profile {
   background-color: $color-gray-base;
   background-image: url(../img/profile-backdrop.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   color: rgba(#fff, 0.6);
-  .takeover_title {
+  .dialog_title {
     display: block;
     color: #fff;
   }
@@ -245,7 +232,7 @@
   }
   .btn--icon,
   .btn--link {
-    @extend .takeover_close;
+    @extend .dialog_close;
     top: $unit-base;;
   }
   .btn--icon {
@@ -259,12 +246,12 @@
     color: #fff;
   }
 }
-.takeover_content--profile {
+.dialog_content--profile {
   background-color: #fff;
 }
 
 @media (max-width: $viewport-sm-max) {
-  .standalone .takeover_header--profile {
+  .standalone .dialog_header--profile {
     padding-top: $spacing-unit;
     .btn--icon,
     .btn--link {

@@ -46,13 +46,8 @@
   }
 }
 
-.btn--default,
-.btn--muted {
+.btn--default {
   @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
-}
-// deprecated
-.btn--muted {
-  color: $text-color-muted;
 }
 .btn--danger {
   @include button-color(lighten($btn-danger-background, 6%), $btn-danger-background, #fff, $btn-danger-background);
@@ -63,8 +58,9 @@
 .btn--success {
   @include button-color(lighten($btn-success-background, 8%), $btn-success-background, #fff, $btn-success-background);
 }
+.btn--muted,
 .btn--neutral {
-  @include button-color($btn-neutral-background, $btn-neutral-background, #fff, $btn-neutral-background);
+  @include button-color($btn-neutral-background, $btn-neutral-background, $text-color-light, $btn-neutral-background);
 }
 .btn--link {
   @include button-color(transparent, transparent, $color-gray-medium);

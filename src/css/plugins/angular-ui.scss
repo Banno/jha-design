@@ -1,42 +1,47 @@
 // Modals
 .modal-open {
-  @extend .has-takeover;
+  @extend .has-dialog;
 }
 .modal-backdrop {
-  @extend .takeover_backdrop
+  @extend .dialog_backdrop
 }
 .modal {
-  @extend .takeover;
+  @extend .dialog;
 }
 .modal-dialog {
-  @extend .takeover_dialog;
+  @extend .dialog_inner;
 }
 .modal-lg {
-  @extend .takeover_dialog--lg;
+  @extend .dialog_inner--lg;
+}
+.modal-content {
+  @include flexbox-display();
+  @include flex-direction(column);
+  min-height: 100%;
 }
 
 // Make display property most important to override inline style
-.takeover--center-xs {
+.dialog--center-xs {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
 }
 @media (min-width: $viewport-sm-min) {
-  .takeover--center-sm {
+  .dialog--center-sm {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
   }
 }
 @media (min-width: $viewport-md-min) {
-  .takeover--center-md {
+  .dialog--center-md {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
   }
 }
 @media (min-width: $viewport-lg-min) {
-  .takeover--center-lg {
+  .dialog--center-lg {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
