@@ -133,3 +133,21 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+
+// Increasing sibling button spacing
+// ------------------------------------
+
+// totally not floated
+.btn:not(.u-float-left):not(.u-float-right) + .btn:not(.u-float-left):not(.u-float-right) {
+  margin-left: $padding-unit;
+}
+
+.btn.u-float-left + .btn.u-float-left {
+  margin-left: $padding-unit;
+}
+
+.btn.u-float-right + .btn.u-float-right {
+  margin-right: $padding-unit;
+}
+

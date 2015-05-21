@@ -10,6 +10,7 @@ var svgstore        = require('gulp-svgstore');
 var svgmin          = require('gulp-svgmin');
 var connect         = require('gulp-connect');
 var imagemin        = require('gulp-imagemin');
+var uglify          = require('gulp-uglify');
 var stylestats      = require('gulp-stylestats');
 var phantomcss      = require('gulp-phantomcss');
 var del             = require('del');
@@ -29,10 +30,8 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist'));
   var fonts = gulp.src('src/fonts/*', { base: 'src' })
     .pipe(gulp.dest('dist'));
-  var js = gulp.src('src/js/*', { base: 'src' })
-    .pipe(gulp.dest('dist'));
 
-  return merge(html, favicon, fonts, js);
+  return merge(html, favicon, fonts);
 });
 
 gulp.task('styles', function() {
@@ -68,6 +67,14 @@ gulp.task('symitar-theme', ['styles'], function() {
     .pipe(rename('style-symitar.min.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(connect.reload());
+});
+
+gulp.task('compress', function() {
+  return gulp.src('src/js/*.js')
+    .pipe(uglify({
+      mangle: false
+    }))
+    .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('stylestats', function() {
@@ -126,10 +133,10 @@ gulp.task('stop-test-server', ['phantomcss'], function() {
 })
 
 gulp.task('watch', function() {
-  return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'images']);
+  return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'images', 'compress']);
 });
 
-gulp.task('default', ['copy', 'styles', 'icons', 'file-icons', 'images', 'symitar-theme']);
+gulp.task('default', ['copy', 'styles', 'icons', 'file-icons', 'images', 'compress', 'symitar-theme']);
 gulp.task('dev', ['default', 'connect', 'watch']);
 gulp.task('profile', ['stylestats']);
 gulp.task('test', ['stop-test-server']);
