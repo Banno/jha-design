@@ -467,6 +467,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
     &:hover,
     &:active,
     &:focus,
+    &.active,
     &.is-active,
     &.is-focused {
       background-color: $hover;
@@ -476,6 +477,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
     &:hover,
     &:active,
     &:focus,
+    &.active,
     &.is-active,
     &.is-focused {
       background-color: darken($bg, 8%);
@@ -487,6 +489,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
     &:hover,
     &:active,
     &:focus,
+    &.active,
     &.is-active,
     &.is-focused {
       box-shadow: none;

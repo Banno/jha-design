@@ -74,7 +74,7 @@
 
 .list_item_action {
   float: left;
-  width: $thumbnail-size-sm;
+  min-width: $thumbnail-size-sm;
   margin-right: $padding-unit;
   min-height: 1px;
 }

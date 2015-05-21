@@ -24,12 +24,14 @@
   &:hover,
   &:active,
   &:focus,
+  &.active,
   &.is-active,
   &.is-focused {
     text-decoration: none;
   }
   &:active,
   &:focus,
+  &.active,
   &.is-active,
   &.is-focused {
     box-shadow: $btn-focus-shadow;
