@@ -14,31 +14,48 @@
 .card--wide {
   max-width: none;
 }
+// optionally remove card appearance for mobile-sized devices
+@media (max-width: $viewport-sm-max) {
+  .card--reset {
+    border-radius: 0;
+    margin-left: -$grid-gutter-width / 2;
+    margin-right: -$grid-gutter-width / 2;
+    @include box-shadow(none);
+    @include hairline(double, $color-gray-light);
+  }
+}
+
 
 // Header
 .card_header {
   border-bottom: $border-lt;
   padding: $padding-unit $padding-unit $unit-sm 0;
-  margin-bottom: $unit-base;
   line-height: $h2-size;
-  @include clearfix();
   .btn--icon {
     float: right;
     margin-right: -$padding-unit;
     margin-top: -10px;
     margin-bottom: -5px;
   }
+  .avatar {
+    position: relative;
+    top: -$unit-xs;
+  }
+}
+.card_header--borderless {
+  border-bottom-width: 0;
 }
 .card_title {
-  font-size: $h2-size;
-  font-weight: $heading-weight;
+  font-size: $card-title-size;
+  font-weight: $card-title-weight;
+  color: $card-title-color;
   margin: 0;
   float: left;
 }
 .card_sub-title {
   font-size: $font-size-base - 1;
   float: right;
-  color: $text-color-muted;
+  color: $text-color-light;
 }
 
 .card_header,
@@ -50,8 +67,12 @@
 
 // Content
 .card_content {
-  padding-bottom: $unit-base;
   padding-right: $padding-unit;
+  padding-top: $padding-unit;
+  padding-bottom: $padding-unit;
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .card_empty {
@@ -69,19 +90,21 @@
   text-align: right;
 }
 
+// Media
+.card_media {
+  background-color: $color-gray-medium;
+  overflow: hidden;
+  &:first-child {
+    border-radius: $border-radius-base $border-radius-base 0 0;
+  }
+  img {
+    vertical-align: top;
+  }
+}
+
 // Card overrides
 .card .list {
   margin-right: -$padding-unit;
-}
-.card_header + .card_content {
-  &:nth-child(1) {
-    margin-top: -$unit-base;
-  }
-}
-.card .section-heading {
-  border-bottom: 0;
-  padding-bottom: 0;
-  margin-bottom: 0;
 }
 .card hr {
   margin-right: -$padding-unit;
@@ -91,8 +114,8 @@
 .card_footer .btn {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  margin-bottom: -1px;
-  font-weight: 400;
+  border-top-left-radius: $border-radius-base;
+  border-top-right-radius: $border-radius-base;
 }
 
 @media (min-width: $viewport-lg-min) {
@@ -104,15 +127,11 @@
   .card_footer {
     margin-left: $unit-base;
   }
-  .card_content {
-    padding-right: $unit-base;
-  }
+  .card_content,
   .card_footer {
     padding-right: $unit-base;
   }
-  .card hr {
-    margin-right: -$unit-base;
-  }
+  .card hr,
   .card .list {
     margin-right: -$unit-base;
   }
