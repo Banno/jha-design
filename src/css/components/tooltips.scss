@@ -15,7 +15,7 @@
     position: absolute;
     z-index: $z-index-toast;
     // display: none;
-    padding: 5px 8px;
+    padding: $tooltip-padding;
     font-size: $tooltip-font-size;
     font-weight: 400;
     color: #fff;
