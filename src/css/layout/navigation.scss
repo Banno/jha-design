@@ -12,17 +12,19 @@
 .navigation_item {
   height: 100%;
   line-height: $topbar-height-base;
-  padding-left: $padding-unit;
-  padding-right: $padding-unit;
   color: $topbar-color;
   .dropdown_menu {
     width: $dropdown-width-max;
   }
 }
 .navigation_item--last {
-  padding-right: 0;
+  .navigation_link {
+    padding-right: 0;
+  }
 }
 .navigation_link {
+  padding-left: $padding-unit;
+  padding-right: $padding-unit;
   color: $topbar-link-color;
   @include transition(color .3s $timing-function);
   &:hover,
@@ -67,6 +69,8 @@
   left: 50%;
   @include translate(-50%, 0);
   a {
+    padding-left: $padding-unit;
+    padding-right: $padding-unit;
     color: $text-color-dark;
     .icon {
       fill: $text-color-light;
