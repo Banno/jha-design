@@ -259,7 +259,7 @@
 
 @media (min-width: $viewport-md-min) {
   .page-header {
-    position: static;
+    position: relative;
     height: auto;
     padding-top: $spacing-unit;
     padding-bottom: $padding-unit;
