@@ -72,7 +72,7 @@
   cursor: auto;
   outline: 0;
   will-change: transform;
-  @include transform(translateY(100%));
+  @include transform(translateY(-100%));
   @include transition-property(transform);
   @include transition-duration(.3s);
   @media (min-width: $viewport-sm-min) {
@@ -85,7 +85,6 @@
     border: 1px solid $dialog-border-color;
     background-clip: padding-box;
     box-shadow: $dropdown-box-shadow;
-    @include transform(translateY(-100%));
   }
 }
 
