@@ -103,16 +103,20 @@ ul,
 .title {
   color: $text-color-dark;
   font-weight: normal;
+  font-size: $font-size-lg;
+}
+.title--xs {
+  font-size: $font-size-base;
+}
+.title--sm {
   font-size: $font-size-lg - 1;
 }
 .title--lg {
-  font-size: $font-size-lg;
+  font-size: $font-size-lg + 2;
 }
 .sub-title {
   color: $text-color-light;
   font-size: $font-size-base - 1;
-  position: relative;
-  top: -3px;
 }
 
 /* Wrap your paragraphs and headings with .copy */
@@ -120,25 +124,6 @@ ul,
   /* max-width enforces a maximum number of characters per line for readability */
   max-width: 700px;
 }
-
-.u-vertical-rhythm--xs {
-  margin-bottom: $unit-xs;
-}
-.u-vertical-rhythm--sm {
-  margin-bottom: $unit-sm;
-}
-.u-vertical-rhythm,
-.u-vertical-rhythm--md {
-  margin-bottom: $padding-unit;
-}
-.u-vertical-rhythm--lg {
-  margin-bottom: $unit-base;
-}
-.copy--spacing, // deprecated
-.u-vertical-rhythm--xl {
-  margin-bottom: $spacing-unit;
-}
-
 
 
 // Text size

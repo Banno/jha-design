@@ -9,7 +9,7 @@
 .form-row {
   @include flexbox-display();
   -ms-flex-flow: row nowrap;
-  margin-bottom: $unit-base;
+  margin-bottom: $padding-unit;
   .form-group {
     margin-bottom: 0;
   }
@@ -18,7 +18,7 @@
   @include flex(1 1 auto);
   display: block;
   position: relative;
-  margin-bottom: $unit-base;
+  margin-bottom: $padding-unit;
   .error {
     position: absolute;
     bottom: -$padding-unit;

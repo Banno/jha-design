@@ -27,7 +27,6 @@
 
 .list_item {
   display: block;
-  @include flexbox-display();
   padding-top: $padding-unit;
   padding-bottom: $padding-unit;
   padding-right: $padding-unit;
@@ -58,11 +57,6 @@
     font-weight: 600;
   }
 }
-@media (hover) {
-  a.list_item:not(.is-active):hover {
-    color: $color-primary;
-  }
-}
 .list_item--inset {
   border-bottom: 0;
   @include hairline(single, $color-gray-light, ($thumbnail-size-sm + $padding-unit));
@@ -81,6 +75,4 @@
 .list_item_content {
   overflow: hidden;
   position: relative;
-  @include flex(1 1 auto);
-  @include align-self(center);
 }

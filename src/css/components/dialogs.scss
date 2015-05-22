@@ -85,6 +85,7 @@
     border: 1px solid $dialog-border-color;
     background-clip: padding-box;
     box-shadow: $dropdown-box-shadow;
+    @include transform(translateY(-100%));
   }
 }
 

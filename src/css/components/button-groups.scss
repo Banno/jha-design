@@ -4,6 +4,7 @@
   @include clearfix();
   > .btn {
     float: left;
+    margin-left: 0 !important;
     position: relative;
     border-radius: 0;
     border-left-width: 0;

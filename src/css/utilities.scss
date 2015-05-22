@@ -101,6 +101,26 @@
 }
 
 
+// Vertical rhythm
+.u-vertical-rhythm--xs {
+  margin-bottom: $unit-xs;
+}
+.u-vertical-rhythm--sm {
+  margin-bottom: $unit-sm;
+}
+.u-vertical-rhythm,
+.u-vertical-rhythm--md {
+  margin-bottom: $padding-unit;
+}
+.u-vertical-rhythm--lg {
+  margin-bottom: $unit-base;
+}
+.copy--spacing, // deprecated
+.u-vertical-rhythm--xl {
+  margin-bottom: $spacing-unit;
+}
+
+
 
 // Responsive utilities
 @-ms-viewport {
