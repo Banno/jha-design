@@ -12,6 +12,14 @@
   top: -2px;
 }
 
+.icon--lg {
+  @include square($icon-size-lg);
+}
+
+.icon--xl {
+  @include square($icon-size-xl);
+}
+
 .icon--navigation {
   position: absolute;
   top: -3px;
