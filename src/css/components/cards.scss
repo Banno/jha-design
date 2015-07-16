@@ -31,7 +31,7 @@
   border-bottom: $border-lt;
   padding: $padding-unit $padding-unit $unit-sm 0;
   line-height: $h2-size;
-  .btn--icon {
+  > .btn--icon {
     float: right;
     margin-right: -$padding-unit;
     margin-top: -10px;

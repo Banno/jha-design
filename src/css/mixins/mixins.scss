@@ -96,6 +96,11 @@
   display: flex;
 }
 @mixin flex-direction($direction) {
+  @if $direction == row {
+    -webkit-box-orient: horizontal;
+  } @else {
+    -webkit-box-orient: vertical;
+  }
   -webkit-flex-direction: $direction;
   @if $direction == row {
     -ms-box-orient: horizontal;
@@ -130,13 +135,17 @@
               flex: $values;
 }
 @mixin justify-content($value) {
+  -webkit-box-pack: $value;
+  -moz-box-pack: $value;
   -webkit-justify-content: $value;
   @if $value == flex-start {
-    -ms-box-pack: start;
+    -ms-flex-pack: end;
   } @else if $value == flex-end {
-    -ms-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == center {
+    -ms-flex-pack: center;
   }
-          justify-content: $value;
+  justify-content: $value;
 }
 
 // Placeholder text

@@ -27,6 +27,9 @@
     position: relative;
     top: $unit-xs;
   }
+  .label + .form-control {
+    margin-top: $unit-xs + 2;
+  }
   .field + .field,
   .form-row & + & {
     @include faux-border(left, $color-gray-light);
@@ -393,3 +396,28 @@ select.field {
 .fieldset_control {
   padding-top: $unit-xs;
 }
+
+
+
+.form-control {
+  display: block;
+  width: 100%;
+  border: 1px solid transparent;
+  color: $text-color-dark;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  height: $btn-height-base;
+  font-size: $btn-font-size-base;
+  line-height: $btn-line-height-base;
+  padding: 8px;
+  background-color: $color-gray-lighter;
+  border-radius: $border-radius-base;
+  &:focus {
+    outline: 0;
+    border-color: $color-primary;
+  }
+  &.disabled,
+  &[disabled] {
+    opacity: 0.8;
+  }
+}
+

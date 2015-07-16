@@ -50,6 +50,11 @@
 
 .btn--default {
   @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
+  &[disabled],
+  &.is-disabled,
+  &.disabled {
+    border-color: $color-gray-light;
+  }
 }
 .btn--danger {
   @include button-color(lighten($btn-danger-background, 6%), $btn-danger-background, #fff, $btn-danger-background);

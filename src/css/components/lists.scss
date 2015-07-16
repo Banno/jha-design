@@ -45,7 +45,7 @@
     background-image: none;
     border-bottom: 0;
   }
-  a:not(.btn) {
+  a:not(.btn):not(.title) {
     color: $text-color-base;
   }
   @media (min-width: $viewport-lg-min) {

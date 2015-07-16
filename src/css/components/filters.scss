@@ -26,13 +26,7 @@
   touch-action: manipulation;
   cursor: pointer;
   padding: $btn-padding-vertical ($btn-padding-horizontal + 6) $btn-padding-vertical ceil($btn-padding-horizontal / 2);
-  height: $btn-height-base;
-  font-size: $font-size-base;
-  line-height: 1;
-  color: $filter-color;
-  background-color: #fff;
-  border: 0;
-  border-radius: 0;
+
   outline: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -47,6 +41,15 @@
   }
   &::-ms-expand {
     display: none;
+  }
+  &:not(.form-control) {
+    height: $btn-height-base;
+    font-size: $font-size-base;
+    line-height: 1;
+    color: $filter-color;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
   }
 }
 

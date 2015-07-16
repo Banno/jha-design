@@ -4,18 +4,26 @@
   @include clearfix();
   > .btn {
     float: left;
-    margin-left: 0 !important;
+    margin-left: -1px !important;
     position: relative;
+    z-index: 1;
     border-radius: 0;
-    border-left-width: 0;
     &:first-child {
-      border-left-width: 1px;
+      margin-left: 0 !important;
       border-top-left-radius: $border-radius-base;
       border-bottom-left-radius: $border-radius-base;
     }
     &:last-child {
       border-top-right-radius: $border-radius-base;
       border-bottom-right-radius: $border-radius-base;
+    }
+    &:hover,
+    &:active,
+    &:focus,
+    &.active,
+    &.is-active,
+    &.is-focused {
+      z-index: 2;
     }
   }
 }

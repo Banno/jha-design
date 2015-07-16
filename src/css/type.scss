@@ -189,6 +189,9 @@ ul,
   font-size: 30px;
   color: $text-color-dark;
   font-weight: 300;
+  &:empty:before {
+    content: '--';
+  }
 }
 .stat_comparison {
   font-size: $font-size-base + 1;
