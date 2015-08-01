@@ -111,7 +111,8 @@
     border-bottom-style: dotted;
   }
 }
-textarea.field {
+textarea.field,
+textarea.form-control {
   height: auto;
 }
 
@@ -317,11 +318,12 @@ select.field {
   visibility: hidden;
 }
 .switch_toggle {
-  display: block;
+  display: inline-block;
   position: relative;
   cursor: pointer;
   outline: none;
   user-select: none;
+  vertical-align: middle;
   width: 56px;
   height: 30px;
   border-radius: 15px;
@@ -409,8 +411,9 @@ select.field {
   font-size: $btn-font-size-base;
   line-height: $btn-line-height-base;
   padding: 8px;
-  background-color: $color-gray-lighter;
+  background-color: $color-gray-light;
   border-radius: $border-radius-base;
+  @include transition(border-color .2s $timing-function);
   &:focus {
     outline: 0;
     border-color: $color-primary;

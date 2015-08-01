@@ -161,6 +161,7 @@
   position: absolute;
   top: 50%;
   right: $unit-sm;
+  z-index: 1;
   @include transform(translateY(-(floor($btn-height-base / 2))));
   opacity: 0.6;
   @include transition(opacity 0.3s $timing-function);
