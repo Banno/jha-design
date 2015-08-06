@@ -54,22 +54,22 @@ ________
 }
 
 // Remove margin by VIEWPORT size
-.content_pull--xs {
+.content_pull\@xs {
   @media (max-width: $viewport-xs-max) {
     margin-left: 0;
   }
 }
-.content_pull--sm {
+.content_pull\@sm {
   @media (max-width: $viewport-sm-max) {
     margin-left: 0;
   }
 }
-.content_pull--md {
+.content_pull\@md {
   @media (max-width: $viewport-md-max) {
     margin-left: 0;
   }
 }
-.content_pull--lg {
+.content_pull\@lg {
   @media (max-width: $viewport-lg-max) {
     margin-left: 0;
   }
