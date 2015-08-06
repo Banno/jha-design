@@ -11,6 +11,7 @@
   Block:              .component {}
   Element             .component_descendant {}
   Modifier            .component--modifier {}
+  Responsive modifier .component@lg {}
   Element modifier    .component_descendant--modifier {}
   State:              .component.is-state {}
   Utility:            .u-utility-name {}
