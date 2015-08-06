@@ -127,123 +127,123 @@
   width: device-width;
 }
 
-@include responsive-invisibility('.u-visible--xs');
-@include responsive-invisibility('.u-visible--sm');
-@include responsive-invisibility('.u-visible--md');
-@include responsive-invisibility('.u-visible--lg');
-@include responsive-invisibility('.u-visible--mobile');
+@include responsive-invisibility('.u-visible\@xs');
+@include responsive-invisibility('.u-visible\@sm');
+@include responsive-invisibility('.u-visible\@md');
+@include responsive-invisibility('.u-visible\@lg');
+@include responsive-invisibility('.u-visible\@mobile');
 
-.u-visible--xs--block,
-.u-visible--xs--inline,
-.u-visible--xs--inline-block,
-.u-visible--sm--block,
-.u-visible--sm-inline,
-.u-visible--sm-inline-block,
-.u-visible--md--block,
-.u-visible--md--inline,
-.u-visible--md--inline-block,
-.u-visible--lg--block,
-.u-visible--lg--inline,
-.u-visible--lg--inline-block {
+.u-visible\@xs--block,
+.u-visible\@xs--inline,
+.u-visible\@xs--inline-block,
+.u-visible\@sm--block,
+.u-visible\@sm-inline,
+.u-visible\@sm-inline-block,
+.u-visible\@md--block,
+.u-visible\@md--inline,
+.u-visible\@md--inline-block,
+.u-visible\@lg--block,
+.u-visible\@lg--inline,
+.u-visible\@lg--inline-block {
   display: none !important;
 }
 
 @media (max-width: $viewport-xs-max) {
-  @include responsive-visibility('.u-visible--xs');
+  @include responsive-visibility('.u-visible\@xs');
 }
-.u-visible--xs--block {
+.u-visible\@xs--block {
   @media (max-width: $viewport-xs-max) {
     display: block !important;
   }
 }
-.u-visible--xs--inline {
+.u-visible\@xs--inline {
   @media (max-width: $viewport-xs-max) {
     display: inline !important;
   }
 }
-.u-visible--xs--inline-block {
+.u-visible\@xs--inline-block {
   @media (max-width: $viewport-xs-max) {
     display: inline-block !important;
   }
 }
 
 @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
-  @include responsive-visibility('.u-visible--sm');
+  @include responsive-visibility('.u-visible\@sm');
 }
-.u-visible--sm--block {
+.u-visible\@sm--block {
   @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
     display: block !important;
   }
 }
-.u-visible--sm--inline {
+.u-visible\@sm--inline {
   @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
     display: inline !important;
   }
 }
-.u-visible--sm--inline-block {
+.u-visible\@sm--inline-block {
   @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
     display: inline-block !important;
   }
 }
 
 @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
-  @include responsive-visibility('.u-visible--md');
+  @include responsive-visibility('.u-visible\@md');
 }
-.u-visible--md--block {
+.u-visible\@md--block {
   @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
     display: block !important;
   }
 }
-.u-visible--md--inline {
+.u-visible\@md--inline {
   @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
     display: inline !important;
   }
 }
-.u-visible--md--inline-block {
+.u-visible\@md--inline-block {
   @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
     display: inline-block !important;
   }
 }
 
 @media (min-width: $viewport-lg-min) {
-  @include responsive-visibility('.u-visible--lg');
+  @include responsive-visibility('.u-visible\@lg');
 }
-.u-visible--lg--block {
+.u-visible\@lg--block {
   @media (min-width: $viewport-lg-min) {
     display: block !important;
   }
 }
-.u-visible--lg--inline {
+.u-visible\@lg--inline {
   @media (min-width: $viewport-lg-min) {
     display: inline !important;
   }
 }
-.u-visible--lg--inline-block {
+.u-visible\@lg--inline-block {
   @media (min-width: $viewport-lg-min) {
     display: inline-block !important;
   }
 }
 
 // Device shortcuts
-.u-visible--mobile {
+.u-visible\@mobile {
   @media (max-width: $viewport-sm-max) {
     display: block !important;
   }
 }
 @media (max-width: $viewport-sm-max) {
-  @include responsive-invisibility('.u-hidden--mobile');
+  @include responsive-invisibility('.u-hidden\@mobile');
 }
 
 
 @media (max-width: $viewport-xs-max) {
-  @include responsive-invisibility('.u-hidden--xs');
+  @include responsive-invisibility('.u-hidden\@xs');
 }
 @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
-  @include responsive-invisibility('.u-hidden--sm');
+  @include responsive-invisibility('.u-hidden\@sm');
 }
 @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
-  @include responsive-invisibility('.u-hidden--md');
+  @include responsive-invisibility('.u-hidden\@md');
 }
 @media (min-width: $viewport-lg-min) {
-  @include responsive-invisibility('.u-hidden--lg');
+  @include responsive-invisibility('.u-hidden\@lg');
 }

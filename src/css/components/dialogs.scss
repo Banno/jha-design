@@ -96,21 +96,21 @@
 /* WARNING: if the contents of the modal grow larger than the viewport much of
    the content will be cut off
 */
-.dialog--center-xs {
+.dialog--center\@xs {
   @include flexbox-display();
 }
 @media (min-width: $viewport-sm-min) {
-  .dialog--center-sm {
+  .dialog--center\@sm {
     @include flexbox-display();
   }
 }
 @media (min-width: $viewport-md-min) {
-  .dialog--center-md {
+  .dialog--center\@md {
     @include flexbox-display();
   }
 }
 @media (min-width: $viewport-lg-min) {
-  .dialog--center-lg {
+  .dialog--center\@lg {
     @include flexbox-display();
   }
 }

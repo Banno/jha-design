@@ -1,8 +1,8 @@
 // Framework grid generation
 
-@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+@mixin make-grid-columns($i: 1, $list: ".grid_#{$i}\@xs, .grid_#{$i}\@sm, .grid_#{$i}\@md, .grid_#{$i}\@lg") {
   @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+    $list: "#{$list}, .grid_#{$i}\@xs, .grid_#{$i}\@sm, .grid_#{$i}\@md, .grid_#{$i}\@lg";
   }
   #{$list} {
     position: relative;
@@ -13,9 +13,9 @@
 }
 
 
-@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+@mixin float-grid-columns($class, $i: 1, $list: ".grid_#{$i}\@#{$class}") {
   @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .col-#{$class}-#{$i}";
+    $list: "#{$list}, .grid_#{$i}\@#{$class}";
   }
   #{$list} {
     float: left;
@@ -25,32 +25,32 @@
 
 @mixin calc-grid-column($index, $class, $type) {
   @if ($type == width) and ($index > 0) {
-    .col-#{$class}-#{$index} {
+    .grid_#{$index}\@#{$class} {
       width: percentage(($index / $grid-columns));
     }
   }
   @if ($type == push) and ($index > 0) {
-    .col-#{$class}-push-#{$index} {
+    .grid_#{$index}-push\@#{$class} {
       left: percentage(($index / $grid-columns));
     }
   }
   @if ($type == push) and ($index == 0) {
-    .col-#{$class}-push-0 {
+    .grid_#{$index}-push0\@#{$class} {
       left: auto;
     }
   }
   @if ($type == pull) and ($index > 0) {
-    .col-#{$class}-pull-#{$index} {
+    .grid_#{$index}-pull\@#{$class} {
       right: percentage(($index / $grid-columns));
     }
   }
   @if ($type == pull) and ($index == 0) {
-    .col-#{$class}-pull-0 {
+    .grid_#{$index}-pull0\@#{$class} {
       right: auto;
     }
   }
   @if ($type == offset) {
-    .col-#{$class}-offset-#{$index} {
+    .grid_#{$index}-offset\@#{$class} {
       margin-left: percentage(($index / $grid-columns));
     }
   }
