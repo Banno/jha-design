@@ -411,7 +411,7 @@ select.field {
   font-size: $btn-font-size-base;
   line-height: $btn-line-height-base;
   padding: 8px;
-  background-color: $color-gray-light;
+  background-color: $color-gray-lighter;
   border-radius: $border-radius-base;
   @include transition(border-color .2s $timing-function);
   &:focus {
@@ -423,4 +423,6 @@ select.field {
     opacity: 0.8;
   }
 }
-
+.form-control--dark {
+  background-color: $color-gray-light;
+}

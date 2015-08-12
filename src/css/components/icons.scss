@@ -3,7 +3,6 @@
   vertical-align: middle;
   @include square($icon-size-base);
   fill: $icon-fill-color;
-  pointer-events: none;
 }
 
 .icon--sm {
