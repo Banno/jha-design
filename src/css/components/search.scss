@@ -3,6 +3,11 @@
   padding: 8px $padding-unit;
   margin-left: -$padding-unit;
   margin-right: -$padding-unit;
+  @media (max-width: ($viewport-md-min - 1)) {
+    &.u-visible\@mobile + .content {
+      padding-top: 0;
+    }
+  }
   @media (min-width: $viewport-md-min) {
     padding: 0;
     margin-left: 0;

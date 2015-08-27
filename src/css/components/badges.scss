@@ -1,21 +1,24 @@
+.badge,
+.chip {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .badge {
   @include square(20px);
-  display: inline-block;
   background-color: $badge-background-color;
   color: $badge-text-color;
   font-size: $badge-font-size;
-  text-align: center;
   line-height: 20px;
   border-radius: 50%;
 }
 
 .chip {
-  display: inline-block;
-  white-space: nowrap;
   background-color: $chip-background-color;
   color: $chip-text-color;
   font-size: $chip-font-size;
-  text-align: center;
   padding: $unit-xs $unit-sm;
   border-radius: 500px;
 }
