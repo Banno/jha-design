@@ -1,0 +1,93 @@
+.has-drawer {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.drawer-backdrop {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: $z-index-drawer;
+  background-color: $dialog-backdrop-color;
+  @include transition(opacity 0.3s $timing-function);
+  &.is-visible,
+  &.in {
+    opacity: $dialog-backdrop-opacity;
+  }
+}
+
+.drawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: $z-index-drawer + 1;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  outline: 0;
+  @include transition(opacity 0.3s 0, visibility 0 0.3s);
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+    @include transition(opacity 0.3s 0, visibility 0 0);
+    .drawer_inner {
+      @include translateX(0);
+    }
+  }
+}
+
+.drawer_inner {
+  position: relative;
+  @include flexbox-display();
+  @include flex-direction(column);
+  height: 100%;
+  background-color: $drawer-background;
+  outline: 0;
+  will-change: transform;
+  box-shadow: $drawer-shadow;
+  @include translateX(100%);
+  @include transition-property(transform);
+  @include transition-duration(.3s);
+  @include transition-timing-function(cubic-bezier(.15,.8,.3,1.2));
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: calc(100vw - 24%);
+  }
+}
+.drawer_content {
+  @include flex(1 1 auto);
+  overflow-y: auto;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drawer_header {
+  @include flex-shrink(0);
+  padding: 36px 0 18px;
+  @include faux-border(bottom, $faux-border-color);
+  .btn:first-child {
+    float: left;
+  }
+  .btn + .page-title {
+    margin-left: 8px;
+  }
+}
+
+.drawer_footer {
+  @include faux-border(top, $faux-border-color);
+  @include flex-shrink(0);
+}
+
+@media (min-width: 736px) {
+  .drawer_inner {
+    margin-left: 24%;
+  }
+}

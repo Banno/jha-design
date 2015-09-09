@@ -94,6 +94,13 @@
     height: 100%;
     @include faux-border(bottom, $color-gray-light);
   }
+  // with a scroll handler shift the navigation and tab-bar up. navigation
+  // will be hidden and tab-bar will be at the top edge of the viewport
+  .navigation--shift-up,
+  .tab-bar--shift-up {
+    @include transition-transform(.2s $timing-function);
+    @include translateY(-100%);
+  }
 }
 
 

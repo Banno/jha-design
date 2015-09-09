@@ -147,6 +147,14 @@
   }
   justify-content: $value;
 }
+@mixin flex-shrink($value) {
+  -webkit-flex-shrink: $value;
+          flex-shrink: $value;
+}
+@mixin flex-grow($value) {
+  -webkit-flex-grow: $value;
+          flex-grow: $value
+}
 
 // Placeholder text
 @mixin placeholder($color: lighten($base-text-color, 30%)) {
@@ -200,6 +208,18 @@
       -ms-transform: translate($x, $y);
        -o-transform: translate($x, $y);
           transform: translate($x, $y);
+}
+@mixin translateX($x) {
+  -webkit-transform: translateX($x);
+      -ms-transform: translateX($x);
+       -o-transform: translateX($x);
+          transform: translateX($x);
+}
+@mixin translateY($y) {
+  -webkit-transform: translateY($y);
+      -ms-transform: translateY($y);
+       -o-transform: translateY($y);
+          transform: translateY($y);
 }
 @mixin translate3d($x, $y, $z) {
   -webkit-transform: translate3d($x, $y, $z);

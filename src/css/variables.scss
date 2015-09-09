@@ -91,8 +91,8 @@ $faux-border-color:         #d8e1eb !default;;
 
 // Z-index
 $z-index-toast:             1060 !default;
-$z-index-dialog:          1050 !default;
-$z-index-drawer:            1030 !default;
+$z-index-dialog:            1050 !default;
+$z-index-drawer:            1040 !default;
 $z-index-topbar:            1020 !default;
 $z-index-dropdown:          1010 !default;
 $z-index-sticky:            1000 !default;
@@ -245,14 +245,22 @@ $icon-size-xl:              60px !default;
 $icon-fill-color:           currentColor !default;
 
 
-// dialogs
-$dialog-width-base:       550px !default;
-$dialog-background:       #fff !default;
-$dialog-radius:           2px !default;
-$dialog-border-color:     rgba($color-gray-dark, 0.2) !default;
+// Dialogs
+$dialog-width-base:         550px !default;
+$dialog-background:         #fff !default;
+$dialog-radius:             2px !default;
+$dialog-border-color:       rgba($color-gray-dark, 0.2) !default;
 
-$dialog-backdrop-color:   $color-gray-dark !default;
-$dialog-backdrop-opacity: 0.6 !default;
+$dialog-backdrop-color:     $color-gray-dark !default;
+$dialog-backdrop-opacity:   0.6 !default;
+
+
+// Drawers
+$drawer-width-base:         calc(100% - $topbar-height-base);
+$drawer-background:         #fff;
+$drawer-backdrop-color:     $color-gray-dark;
+$drawer-backdrop-opacity:   0.6 !default;
+$drawer-shadow:             0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px rgba($color-gray-dark, 0.12) !default;
 
 
 // Tables
