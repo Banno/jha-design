@@ -275,6 +275,7 @@ $drawer-shadow:             0 0 24px rgba($color-gray-dark, 0.24), 0 0 12px rgba
 
 $drawer-edge-offset:        56px !default;
 $drawer-max-width-sm:       360px !default;
+$drawer-max-width-md:       400px !default;
 $drawer-max-width-lg:       calc(76vw - ((100vw - #{$column-width-max}) / 2)) !default;
 
 
