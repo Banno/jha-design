@@ -1,3 +1,4 @@
+// typically placed on the body
 .has-drawer {
   overflow: hidden;
   position: fixed;
@@ -43,6 +44,14 @@
   }
 }
 
+// Drawer inner
+// --------------------------------
+/*
+  Makes up the visible canvas of the drawer.
+  Has directionality and size:
+    - opens from --left or --right
+    - can be --sm or --lg
+*/
 .drawer_inner {
   position: relative;
   @include flexbox-display();
@@ -52,16 +61,52 @@
   outline: 0;
   will-change: transform;
   box-shadow: $drawer-shadow;
-  @include translateX(100%);
   @include transition-property(transform);
   @include transition-duration(.3s);
-  @include transition-timing-function(cubic-bezier(.15,.8,.3,1.2));
-  .container {
-    margin-left: 0;
+  @include transition-timing-function($timing-function);
+}
+
+.drawer_inner--left {
+  @include translateX(-100%);
+}
+.drawer_inner--right {
+  @include translateX(100%);
+}
+
+.drawer_inner--sm {
+  max-width: $drawer-max-width-sm;
+  width: calc(100vw - #{$drawer-edge-offset});
+  &.drawer_inner--right {
+    @include translateX(100%);
+    margin-left: auto;
     margin-right: 0;
-    max-width: calc(100vw - 24%);
   }
 }
+.drawer_inner--lg {
+  max-width: none;
+  .container {
+    max-width: $drawer-max-width-lg;
+  }
+  @media (min-width: $viewport-md-min) {
+    &.drawer_inner--left {
+      margin-right: 24%;
+      .container {
+        margin-right: 0;
+      }
+    }
+    &.drawer_inner--right {
+      margin-left: 24%;
+      .container {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+
+
 .drawer_content {
   @include flex(1 1 auto);
   overflow-y: auto;
@@ -72,6 +117,7 @@
 .drawer_header {
   @include flex-shrink(0);
   padding: 36px 0 18px;
+  position: relative;
   @include faux-border(bottom, $faux-border-color);
   .btn:first-child {
     float: left;
@@ -81,13 +127,11 @@
   }
 }
 
+.drawer_close {
+  @extend .dialog_close;
+}
+
 .drawer_footer {
   @include faux-border(top, $faux-border-color);
   @include flex-shrink(0);
-}
-
-@media (min-width: 736px) {
-  .drawer_inner {
-    margin-left: 24%;
-  }
 }

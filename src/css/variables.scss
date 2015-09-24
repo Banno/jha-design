@@ -247,6 +247,7 @@ $icon-fill-color:           currentColor !default;
 
 // Dialogs
 $dialog-width-base:         550px !default;
+$dialog-width-lg:           900px !default;
 $dialog-background:         #fff !default;
 $dialog-radius:             2px !default;
 $dialog-border-color:       rgba($color-gray-dark, 0.2) !default;
@@ -256,11 +257,14 @@ $dialog-backdrop-opacity:   0.6 !default;
 
 
 // Drawers
-$drawer-width-base:         calc(100% - $topbar-height-base);
-$drawer-background:         #fff;
-$drawer-backdrop-color:     $color-gray-dark;
+$drawer-background:         #fff !default;
+$drawer-backdrop-color:     $color-gray-dark !default;
 $drawer-backdrop-opacity:   0.6 !default;
-$drawer-shadow:             0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px rgba($color-gray-dark, 0.12) !default;
+$drawer-shadow:             0 0 24px rgba($color-gray-dark, 0.24), 0 0 12px rgba($color-gray-dark, 0.12) !default;
+
+$drawer-edge-offset:        56px !default;
+$drawer-max-width-sm:       360px !default;
+$drawer-max-width-lg:       calc(76vw - ((100vw - #{$column-width-max}) / 2)) !default;
 
 
 // Tables
@@ -277,6 +281,6 @@ $toast-background-color:    $color-gray-base !default;
 
 
 // Tooltips
-$tooltip-background:        rgba($color-gray-dark, 0.8) !default;;
+$tooltip-background:        rgba($color-gray-dark, 0.8) !default;
 $tooltip-font-size:         $font-size-sm !default;
 $tooltip-padding:           8px 12px !default;

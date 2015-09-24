@@ -91,7 +91,7 @@
 }
 
 .dialog_inner--lg {
-  max-width: 900px;
+  max-width: $dialog-width-lg;
 }
 
 // Vertically center modals
@@ -141,6 +141,11 @@
     margin-bottom: -$padding-unit;
   }
 }
+.dialog_header,
+.dialog_footer {
+  @include flex-shrink(0);
+}
+
 .dialog_header--borderless {
   border-bottom-width: 0;
   padding-bottom: 0;

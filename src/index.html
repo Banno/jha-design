@@ -942,42 +942,23 @@
     <div class="drawer-backdrop is-visible"></div>
 
     <div class="drawer is-visible">
-      <div class="drawer_inner">
+      <div class="drawer_inner drawer_inner--right drawer_inner--sm">
         <header class="drawer_header">
           <div class="container">
-            <button type="button" class="btn btn--link btn--icon">
-              <svg class="icon" role="image" title="Back">
-                <use xlink:href="#chevron-left"></use>
+            <button type="button" class="btn btn--link btn--icon drawer_close">
+              <svg class="icon icon--sm">
+                <use xlink:href="#close"></use>
               </svg>
             </button>
-            <div class="u-float-right">
-              <button type="button" class="btn btn--link btn--icon">
-                <svg class="icon" role="image" title="Export">
-                  <use xlink:href="#download"></use>
-                </svg>
-              </button>
-              <button type="button" class="btn btn--link btn--icon">
-                <svg class="icon" role="image" title="Delete">
-                  <use xlink:href="#delete"></use>
-                </svg>
-              </button>
-              <button type="button" class="btn btn--link btn--icon">
-                <svg class="icon" role="image" title="blarg">
-                  <use xlink:href="#menu"></use>
-                </svg>
-              </button>
-              <button type="button" class="btn btn--link btn--icon">
-                <svg class="icon" role="image" title="blarg">
-                  <use xlink:href="#help"></use>
-                </svg>
-              </button>
-            </div>
-            <h1 class="page-title">Loan Options</h1>
           </div>
         </header>
         <div class="drawer_content">
-
-
+          <div class="list list--inset">
+            <a href="#" class="list_item">Dashboard</a>
+            <a href="#" class="list_item">Accounts</a>
+            <a href="#" class="list_item">Transfer</a>
+            <a href="#" class="list_item">Deposit</a>
+          </div>
         </div>
         <footer class="drawer_footer">
 
