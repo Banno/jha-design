@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/proximanova-lightitalic.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/proximanova-lightitalic.woff2') format('woff2'),
-       url('#{$font-path}/proximanova-lightitalic.woff') format('woff'),
-       url('#{$font-path}/proximanova-lightitalic.ttf') format('truetype');
+  src: url('#{$font-path}/pn-lightitalic.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-lightitalic.woff2') format('woff2'),
+       url('#{$font-path}/pn-lightitalic.woff') format('woff'),
+       url('#{$font-path}/pn-lightitalic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
 }
@@ -11,70 +11,70 @@
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/proximanova-light.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/proximanova-light.woff2') format('woff2'),
-       url('#{$font-path}/proximanova-light.woff') format('woff'),
-       url('#{$font-path}/proximanova-light.ttf') format('truetype');
+  src: url('#{$font-path}/pn-light.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-light.woff2') format('woff2'),
+       url('#{$font-path}/pn-light.woff') format('woff'),
+       url('#{$font-path}/pn-light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/proximanova-regular.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/proximanova-regular.woff2') format('woff2'),
-       url('#{$font-path}/proximanova-regular.woff') format('woff'),
-       url('#{$font-path}/proximanova-regular.ttf') format('truetype');
+  src: url('#{$font-path}/pn-regular.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-regular.woff2') format('woff2'),
+       url('#{$font-path}/pn-regular.woff') format('woff'),
+       url('#{$font-path}/pn-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/proximanova-regularitalic.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/proximanova-regularitalic.woff2') format('woff2'),
-       url('#{$font-path}/proximanova-regularitalic.woff') format('woff'),
-       url('#{$font-path}/proximanova-regularitalic.ttf') format('truetype');
+  src: url('#{$font-path}/pn-regularitalic.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-regularitalic.woff2') format('woff2'),
+       url('#{$font-path}/pn-regularitalic.woff') format('woff'),
+       url('#{$font-path}/pn-regularitalic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/proximanova-semibold.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/proximanova-semibold.woff2') format('woff2'),
-       url('#{$font-path}/proximanova-semibold.woff') format('woff'),
-       url('#{$font-path}/proximanova-semibold.ttf') format('truetype');
+  src: url('#{$font-path}/pn-semibold.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-semibold.woff2') format('woff2'),
+       url('#{$font-path}/pn-semibold.woff') format('woff'),
+       url('#{$font-path}/pn-semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
     font-family: 'proxima-nova';
-    src: url('#{$font-path}/proximanova-semibolditalic.eot?#iefix') format('embedded-opentype'),
-         url('#{$font-path}/proximanova-semibolditalic.woff2') format('woff2'),
-         url('#{$font-path}/proximanova-semibolditalic.woff') format('woff'),
-         url('#{$font-path}/proximanova-semibolditalic.ttf') format('truetype');
+    src: url('#{$font-path}/pn-semibolditalic.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/pn-semibolditalic.woff2') format('woff2'),
+         url('#{$font-path}/pn-semibolditalic.woff') format('woff'),
+         url('#{$font-path}/pn-semibolditalic.ttf') format('truetype');
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/proximanova-bolditalic.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/proximanova-bolditalic.woff2') format('woff2'),
-       url('#{$font-path}/proximanova-bolditalic.woff') format('woff'),
-       url('#{$font-path}/proximanova-bolditalic.ttf') format('truetype');
+  src: url('#{$font-path}/pn-bolditalic.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-bolditalic.woff2') format('woff2'),
+       url('#{$font-path}/pn-bolditalic.woff') format('woff'),
+       url('#{$font-path}/pn-bolditalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/proximanova-bold.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/proximanova-bold.woff2') format('woff2'),
-       url('#{$font-path}/proximanova-bold.woff') format('woff'),
-       url('#{$font-path}/proximanova-bold.ttf') format('truetype');
+  src: url('#{$font-path}/pn-bold.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-bold.woff2') format('woff2'),
+       url('#{$font-path}/pn-bold.woff') format('woff'),
+       url('#{$font-path}/pn-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
