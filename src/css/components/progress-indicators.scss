@@ -1,20 +1,34 @@
 .progress-circular {
-  width: 40px;
-  height: 40px;
+  @include animation-duration($progress-circular-speed);
+  @include animation-iteration-count(infinite);
+  @include animation-name(rotate-forever);
+  @include animation-timing-function(linear);
+  @include square($progress-circular-size-base);
+  border: $progress-circular-thickness-base solid $progress-circular-color;
+  border-right-color: transparent;
+  border-radius: 50%;
   margin: 80px auto;
-  background-color: $color-gray-medium;
-  border-radius: 100%;
-  @include animation(scale-out 1.0s infinite ease-in-out);
 }
 .progress-circular--center {
   margin-top: calc(50vh - 100px);
 }
+.progress-circular--inline {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: $unit-sm;
+  vertical-align: middle;
+}
+.progress-circular--sm {
+  border-width: $progress-circular-thickness-sm;
+  @include square($progress-circular-size-sm);
+}
 
 .progress-linear {
   display: inline-block;
-  width: $progress-width;
+  width: $progress-linear-width;
   max-width: 100%;
-  height: $progress-height;
+  height: $progress-linear-height;
   &[value] {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -22,20 +36,20 @@
     // remove Firefox and Opera border
     border: 0;
     // IE10 uses `color` to set the bar background-color
-    color: $progress-color;
+    color: $progress-linear-color;
     &::-webkit-progress-bar {
       background-color: $color-gray-light;
-      border-radius: $progress-radius;
+      border-radius: $progress-linear-radius;
     }
     &::-webkit-progress-value {
-      background-color: $progress-color;
-      border-top-left-radius: $progress-radius;
-      border-bottom-left-radius: $progress-radius;
+      background-color: $progress-linear-color;
+      border-top-left-radius: $progress-linear-radius;
+      border-bottom-left-radius: $progress-linear-radius;
     }
   }
   &[value="100"]::-webkit-progress-value {
-    border-top-right-radius: $progress-radius;
-    border-bottom-right-radius: $progress-radius;
+    border-top-right-radius: $progress-linear-radius;
+    border-bottom-right-radius: $progress-linear-radius;
   }
 }
 
@@ -43,35 +57,35 @@
 @-moz-document url-prefix() {
   .progress-linear[value] {
     background-color: $color-gray-light;
-    border-radius: $progress-radius;
+    border-radius: $progress-linear-radius;
     &::-moz-progress-bar {
-      background-color: $progress-color;
-      border-top-left-radius: $progress-radius;
-      border-bottom-left-radius: $progress-radius;
+      background-color: $progress-linear-color;
+      border-top-left-radius: $progress-linear-radius;
+      border-bottom-left-radius: $progress-linear-radius;
     }
   }
   .progress-linear[value="100"]::-moz-progress-bar {
-    border-top-right-radius: $progress-radius;
-    border-bottom-right-radius: $progress-radius;
+    border-top-right-radius: $progress-linear-radius;
+    border-bottom-right-radius: $progress-linear-radius;
   }
 }
 
 // IE9 hacks to accompany custom markup.
 .progress-linear {
   background-color: $color-gray-light;
-  border-radius: $progress-radius;
+  border-radius: $progress-linear-radius;
 }
 .progress_bar {
   display: inline-block;
-  height: $progress-height;
+  height: $progress-linear-height;
   text-indent: -99999px; // simulate hiding of value in native <progress>
-  background-color: $progress-color;
-  border-top-left-radius: $progress-radius;
-  border-bottom-left-radius: $progress-radius;
+  background-color: $progress-linear-color;
+  border-top-left-radius: $progress-linear-radius;
+  border-bottom-left-radius: $progress-linear-radius;
   vertical-align: top;
   &[width="100%"] {
-    border-top-right-radius: $progress-radius;
-    border-bottom-right-radius: $progress-radius;
+    border-top-right-radius: $progress-linear-radius;
+    border-bottom-right-radius: $progress-linear-radius;
   }
 }
 

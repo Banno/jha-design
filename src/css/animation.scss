@@ -56,30 +56,11 @@
   }
 }
 
-@-webkit-keyframes scale-out {
-  from {
-    -webkit-transform: scale(0.0);
-  }
-  to {
-    -webkit-transform: scale(1.0);
-    opacity: 0;
-  }
+@mixin rotate-forever {
+  0%    { @include transform(rotate(0deg)); }
+  100%  { @include transform(rotate(360deg)); }
 }
-@-moz-keyframes scale-out {
-  from {
-    transform: scale(0.0);
-  }
-  to {
-    transform: scale(1.0);
-    opacity: 0;
-  }
-}
-@keyframes scale-out {
-  from {
-    transform: scale(0.0);
-  }
-  to {
-    transform: scale(1.0);
-    opacity: 0;
-  }
-}
+@-webkit-keyframes rotate-forever { @include rotate-forever; }
+   @-moz-keyframes rotate-forever { @include rotate-forever; }
+        @keyframes rotate-forever { @include rotate-forever; }
+

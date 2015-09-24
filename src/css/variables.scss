@@ -221,10 +221,21 @@ $filter-focus-color:        $text-color-dark !default;
 // Forms
 $field-height:              40px !default;
 
-$progress-color:            $color-green !default;
-$progress-height:           8px !default;
-$progress-radius:           2px !default;
-$progress-width:            180px !default;
+
+// Progress indicators
+// Circular
+$progress-circular-speed:   0.75s !default;
+$progress-circular-thickness-base: 2px !default;
+$progress-circular-thickness-sm: 2px !default;
+$progress-circular-size-base: 30px !default;
+$progress-circular-size-sm: 16px !default;
+$progress-circular-color:   $text-color-muted !default;
+
+// Linear
+$progress-linear-color:     $color-green !default;
+$progress-linear-height:    8px !default;
+$progress-linear-radius:    2px !default;
+$progress-linear-width:     180px !default;
 
 
 // Gallery
