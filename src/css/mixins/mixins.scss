@@ -519,10 +519,45 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
       color: darken($text, 12%);
     }
   }
-  &[disabled],
+  &:disabled,
   &.is-disabled {
     background-color: $bg;
     border-color: $bg;
     color: $text;
+  }
+}
+
+@mixin button-outline($color) {
+  background-image: none;
+  background-color: transparent;
+  color: $color;
+  border-color: $color;
+  @if $color == #fff {
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      box-shadow: none;
+      background-color: transparent;
+      color: #fff;
+      border-color: $color;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      background-color: $color;
+      color: #fff;
+      border-color: $color;
+    }
+    &:disabled,
+    &.is-disabled {
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: lighten($color, 20%);
+      }
+    }
   }
 }

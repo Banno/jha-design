@@ -31,20 +31,20 @@
   &.is-active {
     box-shadow: $btn-focus-shadow;
   }
-  &[disabled]
+  &:disabled
   &.is-disabled {
     opacity: 0.6;
     cursor: default;
   }
   &:not(.icon--btn) > .icon {
     position: relative;
-    top: -2px;
+    top: -1px;
   }
 }
 
 .btn--default {
   @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
-  &[disabled],
+  &:disabled,
   &.is-disabled {
     border-color: $color-gray-light;
   }
@@ -63,8 +63,24 @@
 }
 .btn--link {
   @include button-color(transparent, transparent, $color-gray-medium);
-  font-weight: 400;
 }
+
+.btn--default-outline {
+  @include button-outline(#fff);
+}
+.btn--danger-outline {
+  @include button-outline($btn-danger-background);
+}
+.btn--primary-outline {
+  @include button-outline($btn-primary-background);
+}
+.btn--success-outline {
+  @include button-outline($btn-success-background);
+}
+.btn--neutral-outline {
+  @include button-outline($btn-neutral-background);
+}
+
 
 .btn--primary,
 .btn--danger,
