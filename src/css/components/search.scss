@@ -40,3 +40,58 @@
     outline: 0;
   }
 }
+
+
+// Global search
+// Used in place of tabbar
+.global-search {
+  width: calc(100% - 70px);
+  border: 0;
+  height: $topbar-height-base - 1;
+  font-size: $font-size-lg;
+  background-color: transparent;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.global-search::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: $font-size-base;
+}
+.global-search::-moz-placeholder {
+  font-style: italic;
+  font-size: $font-size-base;
+}
+.global-search::-ms-input-placeholder {
+  font-style: italic;
+  font-size: $font-size-base;
+}
+
+.global-search_icon {
+  @include square(70px);
+  padding: 22px;
+  .icon {
+    @include square(24px);
+  }
+}
+
+.global-search_dropdown {
+  @extend .dropdown_menu;
+  display: block;
+  max-width: none;
+  width: 100%;
+  margin-top: 1px;
+  border-top-width: 0;
+  order-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow-y: auto;
+  max-height: 395px;
+  -webkit-overflow-scrolling: touch;
+  .list_item {
+    padding-left: 16px;
+  }
+  .avatar {
+    @include square(32px);
+  }
+}

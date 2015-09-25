@@ -18,26 +18,20 @@
   line-height: $btn-line-height-base;
   border-radius: $btn-border-radius-base;
   @include user-select(none);
-  @include transition(box-shadow .1s $timing-function, background-color .1s $timing-function, border-color .1s $timing-function);
+  @include transition(all .1s $timing-function);
   @include tab-focus;
-
   &:hover,
   &:active,
   &:focus,
-  &.active,
-  &.is-active,
-  &.is-focused {
+  &.is-active {
     text-decoration: none;
   }
   &:active,
   &:focus,
-  &.active,
-  &.is-active,
-  &.is-focused {
+  &.is-active {
     box-shadow: $btn-focus-shadow;
   }
-  &[disabled],
-  &.disabled,
+  &[disabled]
   &.is-disabled {
     opacity: 0.6;
     cursor: default;
@@ -51,8 +45,7 @@
 .btn--default {
   @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
   &[disabled],
-  &.is-disabled,
-  &.disabled {
+  &.is-disabled {
     border-color: $color-gray-light;
   }
 }
@@ -65,7 +58,6 @@
 .btn--success {
   @include button-color(lighten($btn-success-background, 8%), $btn-success-background, #fff, $btn-success-background);
 }
-.btn--muted,
 .btn--neutral {
   @include button-color($btn-neutral-background, $btn-neutral-background, $text-color-light, $btn-neutral-background);
 }

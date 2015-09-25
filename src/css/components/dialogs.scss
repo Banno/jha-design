@@ -260,13 +260,3 @@
 .dialog_content--profile {
   background-color: #fff;
 }
-
-@media (max-width: $viewport-sm-max) {
-  .standalone .dialog_header--profile {
-    padding-top: $spacing-unit;
-    .btn--icon,
-    .btn--link {
-      top: $unit-base + 20;
-    }
-  }
-}

@@ -157,6 +157,9 @@ ul,
 .text--danger {
   color: $color-danger;
 }
+.text--warning {
+  color: $color-warning;
+}
 
 // Align
 .text--left {
@@ -189,6 +192,12 @@ ul,
   margin-bottom: $unit-sm;
   @media (min-width: $viewport-md-min) {
     margin-bottom: 0;
+  }
+  .sub-title {
+    margin-bottom: 6px;
+  }
+  .icon {
+    margin-bottom: 3px;
   }
 }
 .stat--center {

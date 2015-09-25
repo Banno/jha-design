@@ -203,10 +203,6 @@
   text-align: center;
   @include transition-transform(.3s $timing-function);
   will-change: transform;
-  .standalone & {
-    height: $topbar-height-standalone;
-    padding-top: 26px;
-  }
   .container {
     position: relative;
   }
@@ -275,9 +271,6 @@
     background-color: transparent;
     z-index: $z-index-topbar - 1;
     @include reset-faux-border(bottom);
-    .standalone & {
-      height: auto;
-    }
     .container {
       padding-left: $unit-base;
       padding-right: $unit-base;
@@ -297,7 +290,7 @@
   }
 
   .page-header--profile {
-    min-height: 180px;
+    min-height: 120px;
     background-color: $color-gray-base;
     background-image: url(../img/profile-backdrop.jpg);
     background-repeat: no-repeat;
@@ -319,10 +312,10 @@
         color: rgba(#fff, 0.8);
       }
     }
-  }
-  & + .toolbar {
-    position: relative;
-    z-index: $z-index-topbar - 1;
+    & + .toolbar {
+      position: relative;
+      z-index: $z-index-topbar - 1;
+    }
   }
 }
 
@@ -333,6 +326,7 @@
   height: $tabbar-height-sm;
   background-color: #fff;
   @include faux-border(bottom, $faux-border-color);
+  @include clearfix();
   .container,
   .grid,
   [class^="col-"] {

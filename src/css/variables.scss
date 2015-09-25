@@ -109,7 +109,6 @@ $shadow-key-light:          0 19px 19px rgba(#000, 0.3), 0 15px 6px rgba(#000, 0
 // Topbar
 $topbar-height-base:        70px !default;
 $topbar-height-sm:          44px !default;
-$topbar-height-standalone:  64px !default;
 $topbar-background:         #fff !default;
 $topbar-color:              $text-color-dark !default;
 $topbar-link-color:         rgba($text-color-dark, 0.6) !default;
@@ -156,6 +155,9 @@ $avatar-size-sm:            36px !default;
 $avatar-size-base:          48px !default;
 $avatar-size-lg:            72px !default;
 $avatar-size-xl:            96px !default;
+
+$avatar-badge-size:         20px !default;
+$avatar-badge-background-color: #fff !default;
 
 
 // Badge & Chips

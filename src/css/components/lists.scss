@@ -76,3 +76,14 @@
   overflow: hidden;
   position: relative;
 }
+
+
+.list_heading {
+  color: $text-color-light;
+  text-transform: uppercase;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $color-gray-light;
+  font-size: $font-size-base - 1;
+  font-weight: 600;
+}

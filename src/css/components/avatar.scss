@@ -7,6 +7,7 @@
   background-size: cover;
   background-color: $avatar-background-color;
   vertical-align: middle;
+  position: relative;
   img {
     width: 100%;
     height: auto;
@@ -46,5 +47,20 @@
   border-radius: $border-radius-base;
   img {
     border-radius: $border-radius-base;
+  }
+}
+
+
+.avatar_badge {
+  position: absolute;
+  @include square($avatar-badge-size);
+  border-radius: 50%;
+  background-color: $avatar-badge-background-color;
+  padding: 2px;
+  bottom: -6px;
+  right: -6px;
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

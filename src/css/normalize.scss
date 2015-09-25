@@ -24,15 +24,8 @@ body {
   scrollbar-arrow-color: $color-primary;
   // prevent 300ms click delay
   @include touch-action(manipulation);
-  // standalone mode requires additional padding
-  .standalone & {
-    padding-top: $topbar-height-standalone;
-  }
   @media (min-width: $viewport-md-min) {
     padding-top: $topbar-height-base * 2;
-    .standalone & {
-      padding-top: $topbar-height-base * 2;
-    }
     &.u-overflow-hidden {
       overflow: auto;
     }

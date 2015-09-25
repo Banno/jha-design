@@ -4,10 +4,7 @@
 #loading-bar{
   pointer-events: none;
   -webkit-pointer-events: none;
-  -webkit-transition: 350ms linear opacity;
-  -moz-transition: 350ms linear opacity;
-  -o-transition: 350ms linear opacity;
-  transition: 350ms linear opacity;
+  @include transition(opacity 350ms linear);
 }
 
 #loading-bar.ng-enter,
@@ -21,11 +18,7 @@
 }
 
 #loading-bar .bar {
-  -webkit-transition: width 350ms;
-  -moz-transition: width 350ms;
-  -o-transition: width 350ms;
-  transition: width 350ms;
-
+  @include transition(width 350ms linear);
   background: $color-primary;
   position: fixed;
   z-index: 10002;

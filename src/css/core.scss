@@ -18,6 +18,7 @@
 
 */
 
+$enable-plugins: true !default;
 
 @import
   "variables",
@@ -35,7 +36,6 @@
   "components/dialogs",
   "components/drawer",
   "components/pagination",
-  "components/contact",
   "components/forms",
   "components/input-groups",
   "components/icons",
@@ -60,15 +60,19 @@
   "layout/content",
   "layout/profile",
 
-  // plugins
-  "plugins/angular",
-  "plugins/angular-ui",
-  "plugins/highcharts",
-  "plugins/loading-bar",
-  "plugins/angular-growl",
-
   // everything else
   "animation",
   "utilities",
   "hacks"
 ;
+
+// plugins
+@if $enable-plugins {
+  @import
+    "plugins/angular",
+    "plugins/angular-ui",
+    "plugins/highcharts",
+    "plugins/loading-bar",
+    "plugins/angular-growl"
+  ;
+}

@@ -115,7 +115,6 @@
 .u-vertical-rhythm--lg {
   margin-bottom: $unit-base;
 }
-.copy--spacing, // deprecated
 .u-vertical-rhythm--xl {
   margin-bottom: $spacing-unit;
 }
@@ -134,17 +133,9 @@
 @include responsive-invisibility('.u-visible\@mobile');
 
 .u-visible\@xs--block,
-.u-visible\@xs--inline,
-.u-visible\@xs--inline-block,
 .u-visible\@sm--block,
-.u-visible\@sm-inline,
-.u-visible\@sm-inline-block,
 .u-visible\@md--block,
-.u-visible\@md--inline,
-.u-visible\@md--inline-block,
-.u-visible\@lg--block,
-.u-visible\@lg--inline,
-.u-visible\@lg--inline-block {
+.u-visible\@lg--block {
   display: none !important;
 }
 
@@ -156,16 +147,6 @@
     display: block !important;
   }
 }
-.u-visible\@xs--inline {
-  @media (max-width: $viewport-xs-max) {
-    display: inline !important;
-  }
-}
-.u-visible\@xs--inline-block {
-  @media (max-width: $viewport-xs-max) {
-    display: inline-block !important;
-  }
-}
 
 @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
   @include responsive-visibility('.u-visible\@sm');
@@ -173,16 +154,6 @@
 .u-visible\@sm--block {
   @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
     display: block !important;
-  }
-}
-.u-visible\@sm--inline {
-  @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
-    display: inline !important;
-  }
-}
-.u-visible\@sm--inline-block {
-  @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
-    display: inline-block !important;
   }
 }
 
@@ -194,16 +165,6 @@
     display: block !important;
   }
 }
-.u-visible\@md--inline {
-  @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
-    display: inline !important;
-  }
-}
-.u-visible\@md--inline-block {
-  @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
-    display: inline-block !important;
-  }
-}
 
 @media (min-width: $viewport-lg-min) {
   @include responsive-visibility('.u-visible\@lg');
@@ -211,16 +172,6 @@
 .u-visible\@lg--block {
   @media (min-width: $viewport-lg-min) {
     display: block !important;
-  }
-}
-.u-visible\@lg--inline {
-  @media (min-width: $viewport-lg-min) {
-    display: inline !important;
-  }
-}
-.u-visible\@lg--inline-block {
-  @media (min-width: $viewport-lg-min) {
-    display: inline-block !important;
   }
 }
 

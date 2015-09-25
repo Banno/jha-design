@@ -87,6 +87,7 @@
 .card_footer {
   border-top: $border-lt;
   padding-top: $unit-sm;
+  padding-bottom: $unit-sm;
   padding-right: $padding-unit;
   text-align: right;
 }
@@ -111,12 +112,6 @@
   margin-right: -$padding-unit;
   background: none;
   border-bottom: $border-lt;
-}
-.card_footer .btn {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: $border-radius-base;
-  border-top-right-radius: $border-radius-base;
 }
 
 @media (min-width: $viewport-lg-min) {

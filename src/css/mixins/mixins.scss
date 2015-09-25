@@ -496,9 +496,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
     &:hover,
     &:active,
     &:focus,
-    &.active,
-    &.is-active,
-    &.is-focused {
+    &.is-active {
       background-color: $hover;
       border-color: darken($border, 8%);
     }
@@ -506,9 +504,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
     &:hover,
     &:active,
     &:focus,
-    &.active,
-    &.is-active,
-    &.is-focused {
+    &.is-active {
       background-color: darken($bg, 8%);
       border-color: darken($border, 8%);
     }
@@ -518,15 +514,12 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
     &:hover,
     &:active,
     &:focus,
-    &.active,
-    &.is-active,
-    &.is-focused {
+    &.is-active {
       box-shadow: none;
       color: darken($text, 12%);
     }
   }
   &[disabled],
-  &.disabled,
   &.is-disabled {
     background-color: $bg;
     border-color: $bg;

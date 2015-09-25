@@ -83,6 +83,7 @@
   border-top-left-radius: $progress-linear-radius;
   border-bottom-left-radius: $progress-linear-radius;
   vertical-align: top;
+  @include transition(width .3s $timing-function);
   &[width="100%"] {
     border-top-right-radius: $progress-linear-radius;
     border-bottom-right-radius: $progress-linear-radius;
