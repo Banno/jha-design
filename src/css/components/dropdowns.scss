@@ -18,11 +18,7 @@
 
 .dropdown_toggle {
   display: block;
-  &:active + .dropdown_menu,
-  &.dropdown_toggle--indicator:active:before,
-  &.dropdown_toggle--indicator:active:after {
-    display: block;
-  }
+  outline: 0;
 }
 
 

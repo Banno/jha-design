@@ -32,7 +32,9 @@ $link-color-base:           $color-primary !default;
 
 // Typography
 $font-path:                 "../fonts" !default;
-$font-family-base:          proxima-nova, "Open Sans", "Helvetica Neue", sans-serif !default;
+// by default, lets use San Francisco by Apple for iOS and Safari on OS X El Capitan and iOS 9+
+// this typeface provides a reasonable fallback and prevents web font loading to make for a faster app
+$font-family-base:          -apple-system, proxima-nova, "Open Sans", "Helvetica Neue", sans-serif !default;
 
 $font-size-base:            14px !default;
 $font-size-sm:              floor(($font-size-base * 0.875)) !default;

@@ -1,5 +1,7 @@
 .has-dialog {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .dialog {
@@ -237,6 +239,7 @@
   .avatar {
     @include box-shadow($card-shadow);
     margin-bottom: $unit-sm;
+    background-color: #fff;
   }
   .btn--icon,
   .btn--link {
