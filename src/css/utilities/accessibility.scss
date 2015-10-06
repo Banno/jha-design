@@ -1,0 +1,34 @@
+// Only display content to screen readers
+.accessibility-aid {
+  &:focus,
+  &:active {
+    position: absolute !important;
+    line-height: 48px;
+    padding: 0 6px;
+    font-weight: 600;
+    background-color: rgba(#fff, 0.6);
+  }
+}
+
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.u-sr-only--focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}

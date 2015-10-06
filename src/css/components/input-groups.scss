@@ -1,60 +1,18 @@
-.input-group {
-  position: relative;
-  display: table;
-  border-collapse: separate;
-  border-bottom: $border-base;
-  margin-bottom: $padding-unit;
-  &[class^="col-"] {
-    float: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  &.is-focused {
-    border-bottom-color: $color-primary;
-  }
-  &.has-error {
-    border-bottom-color: $color-danger;
-  }
-
-  .field {
-    position: relative;
-    z-index: 2;
-    float: left; // fix for IE9 placeholder fubar
-    width: 100%;
+.inline-group {
+  @include flexbox-display();
+  .field,
+  .form-control {
     margin-bottom: 0;
-    border-bottom-width: 0;
+    @include flex(1);
+    @include flex-grow(1);
+  }
+  *:not(:first-child) {
+    margin-left: $unit-xs;
   }
 }
 
-.input-group_addon,
-.input-group .field {
-  display: table-cell;
-}
-
-.input-group_addon {
-  width: 1%;
+.inline-group_btn {
   white-space: nowrap;
   vertical-align: middle;
-  .icon {
-    @include square(18px);
-  }
-}
-
-.input-group_addon {
-  padding: $btn-padding-vertical ($btn-padding-horizontal / 1.5);
-  font-size: $font-size-base;
-  font-weight: normal;
-  line-height: 1;
-  color: $text-color-light;
-  text-align: center;
-  input[type="radio"],
-  input[type="checkbox"] {
-    margin-top: 0;
-  }
-  &:first-child {
-    padding-left: 0;
-  }
-  &:last-child {
-    padding-right: 0;
-  }
+  @include flex-shrink(0);
 }

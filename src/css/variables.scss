@@ -77,6 +77,17 @@ $unit-base:                 24px !default;
 $spacing-unit:              32px !default;
 $padding-unit:              16px !default;
 
+$spacing:                   $padding-unit !default;
+$spacing-y:                 $spacing !default;
+$spacing-x:                 $spacing !default;
+
+$spacing-lg:                $unit-base !default;
+$spacing-y-lg:              $spacing-lg !default;
+$spacing-x-lg:              $spacing-lg !default;
+
+$spacing-xl:                $spacing-unit !default;
+$spacing-y-xl:              $spacing-xl !default;
+$spacing-x-xl:              $spacing-xl !default;
 
 // Grid system
 $grid-columns:              12 !default;
@@ -146,10 +157,12 @@ $backdrop-opacity:          0.6 !default;
 
 
 // Build mode
-$build-mode-background:     $color-gray-light !default;
+$build-mode-background:       $color-gray-light !default;
 $build-mode-panel-background: #fff !default;
-$build-mode-panel-width:    375px !default;
-$build-mode-panel-shadow:   0 -5px 6px rgba(0,0,0,.16),0 0 1px 0 rgba(0,0,0,.08) !default;
+$build-mode-panel-width:      375px !default;
+$build-mode-panel-width-min:  250px !default;
+$build-mode-panel-shadow:     0 -5px 6px rgba(0,0,0,.16),0 0 1px 0 rgba(0,0,0,.08) !default;
+$build-mode-title-font-size:  20px !default;
 
 
 // Buttons
@@ -174,6 +187,12 @@ $btn-danger-background:     $color-danger !default;
 $btn-neutral-background:    $color-gray-lighter !default;
 
 $btn-focus-shadow:          inset 0 1px 2px rgba(0,0,0,0.08) !default;
+
+$btn-toggle-color:          $text-color-light !default;
+$btn-toggle-transform:      uppercase !default;
+$btn-toggle-font-size:      13px !default;
+$btn-toggle-weight:         600 !default;
+$btn-toggle-active-color:   $color-primary !default;
 
 
 // Avatars
@@ -223,7 +242,7 @@ $card-background-color:     #fff !default;
 $card-shadow:               0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px rgba($color-gray-dark, 0.12) !default;
 $card-radius:               2px !default;
 $card-max-width:            550px !default;
-$card-margin-bottom:        $spacing-unit !default;
+$card-margin-bottom:        $padding-unit !default;
 $card-spacing-left-base:    $padding-unit !default;
 $card-spacing-left-lg:      $unit-base !default;
 $card-item-margin-bottom:   $spacing-unit * 1.5 !default;
@@ -239,6 +258,7 @@ $card-title-weight:         400 !default;
 $card-sub-title-color:      $text-color-light !default;
 $card-sub-title-size:       $font-size-base - 1 !default;
 
+$card-content-padding-sm:   ($padding-unit / 2) ($padding-unit / 2) ($padding-unit / 2) 0 !default;
 $card-content-padding-base: $padding-unit $padding-unit $padding-unit 0 !default;
 $card-content-padding-lg:   $padding-unit $unit-base $padding-unit 0 !default;
 
@@ -253,7 +273,6 @@ $card-media-background:     $color-gray-medium !default;
 
 $card-hr-right-offset-base: -$padding-unit !default;
 $card-hr-right-offset-lg:   -$unit-base !default;
-
 
 
 // Drawers
@@ -304,6 +323,7 @@ $filter-focus-color:        $text-color-dark !default;
 
 // Forms
 $field-height:              40px !default;
+$fieldset-color:            $color-gray-base !default;
 
 
 // Progress indicators
@@ -374,6 +394,20 @@ $list-item-muted-opacity:   0.6 !default;
 $list-item-muted-opacity-hover: 1 !default;
 
 
+// Message
+$message-border-color:      $color-gray-light !default;
+$message-padding-top:       32px !default;
+$message-margin-bottom:     32px !default;
+$message-date-color:        $text-color-light !default;
+$message-date-font-size:    13px !default;
+
+$message-note-background:   #fff8ea !default;
+$message-note-border-color: #f4e9ce !default;
+$message-note-color:        #70695b !default;
+$message-note-date-color:   #9c9587 !default;
+$message-note-heading-color: #585143 !default;
+
+
 // Sortable
 $sortable-opacity:          0.9 !default;
 $sortable-shadow:           0 1px 7px 0 rgba($color-gray-dark, 0.36), 0 1px 3px rgba($color-gray-dark, 0.16) !default;
@@ -390,6 +424,14 @@ $table-border-color:        $color-gray-lighter !default;
 $table-cell-padding-base:   $padding-unit !default;
 $table-cell-padding-sm:     ($padding-unit / 2) !default;
 $table-font-size:           $font-size-base - 1 !default;
+
+
+// Timeline
+$timeline-line-color:       $color-gray-light !default;
+$timeline-item-margin-bottom: $spacing-unit !default;
+$timeline-group-padding-top:  $spacing-unit !default;
+$timeline-date-color:       $text-color-light !default;
+$timeline-dot-background:   $color-gray-lighter !default;
 
 
 // Toasts

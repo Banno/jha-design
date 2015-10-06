@@ -50,23 +50,27 @@
               </svg>
             </a>
           </div>
-
-          <div class="current-institution dropdown">
-            <a href="#" class="dropdown_toggle" id="switchInstitution">
-              <svg class="icon icon--sm" role="presentation"><use xlink:href="#bank"></use></svg>
-              Your FI
-              <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
-            </a>
+          <div class="navigation_item u-float-left">
+          <div class="build-mode_title">Contact Us</div>
           </div>
 
-          <div class="navigation_item u-float-right dropdown">
+          <div class="build-mode_actions">
+            <button type="button" class="btn">
+              Save
+            </button>
+            <button type="button" class="btn">
+              Form Settings
+            </button>
+          </div>
+
+          <div class="navigation_item u-float-right dropdown u-hidden@mobile">
             <a href="#" class="navigation_link dropdown_toggle dropdown_toggle--indicator">
               <div class="avatar avatar--sm">
                 <span class="u-sr-only">Sarah Flanders</span>
                 <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
               </div>
             </a>
-            <div class="dropdown_menu dropdown_menu--padding">
+            <div class="dropdown_menu dropdown_menu--padding u-hidden@mobile">
               <div class="current-user">
                 <div class="avatar avatar--lg avatar--you avatar--left">
                   <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="72" height="72">
@@ -81,7 +85,7 @@
             </div>
           </div>
 
-          <div class="navigation_item u-float-right dropdown">
+          <div class="navigation_item u-float-right dropdown u-hidden@mobile">
             <a href="#" class="navigation_link dropdown_toggle dropdown_toggle--indicator">
               <span class="u-sr-only">Apps</span>
               <svg class="icon" role="presentation"><use xlink:href="#apps"></use></svg>
@@ -388,13 +392,40 @@
         <div class="fluid-container">
           <div class="content" id="cards">
             <div class="card sortable">
-              <div class="card_content">
-                <span class="sortable_handle">
-                  <svg class="icon u-fill-muted">
-                    <use xlink:href="#grip"></use>
-                  </svg>
-                </span>
-                1.
+              <div class="card_content card_content--sm">
+                <div class="inline-group">
+                  <span class="sortable_handle inline-group_addon">
+                    <svg class="icon u-fill-muted">
+                      <use xlink:href="#grip"></use>
+                    </svg>
+                  </span>
+                  <input type="text" class="form-control form-control--transparent" value="Name">
+                  <button type="button" class="btn btn--toggle inline-group_addon">Edit</button>
+                  <button type="button" class="btn btn--icon inline-group_addon">
+                    <svg class="icon icon--sm u-fill-light">
+                      <use xlink:href="#delete"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card_content card_content--border">
+                inside the card.
+
+                <hr>
+
+                <div class="floating-group">
+                  <input type="text" class="field" required>
+                  <div class="label">
+                    <span>Are you afraid of the dark?</span>
+                  </div>
+                </div>
+
+                <div class="floating-group">
+                  <input type="text" class="field" required>
+                  <div class="label">
+                    <span>Are you afraid of the dark?</span>
+                  </div>
+                </div>
               </div>
             </div>
 

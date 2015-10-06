@@ -1,0 +1,35 @@
+.message {
+  @include faux-border(bottom, $message-border-color);
+}
+.message--note {
+  background-color: $message-note-background;
+  border-bottom: 1px solid $message-note-border-color;
+  color: $message-note-color;
+  background-image: none;
+  .message_date {
+    color: $message-note-date-color;
+  }
+  .message_heading,
+  .message_title {
+    color: $message-note-heading-color;
+  }
+}
+
+.message_heading {
+  @extend .content_heading;
+}
+
+.message_content {
+  padding-top: $message-padding-top;
+  margin-bottom: $message-margin-bottom;
+}
+
+.message_date {
+  color: $message-date-color;
+  float: right;
+  margin-top: 12px;
+  font-size: $message-date-font-size;
+  svg {
+    margin-left: 4px;
+  }
+}

@@ -7,11 +7,44 @@
   height: 100vh;
 }
 .build-mode_navigation {
+  display: block;
   position: relative;
   @include flex-shrink(0);
   .container {
     max-width: none;
   }
+  .navigation_item:first-child {
+    margin-left: -($grid-gutter-width / 2);
+  }
+}
+
+.build-mode_actions {
+  @extend .current-institution;
+  @media (max-width: $viewport-sm-max) {
+    position: static;
+    @include translateX(0);
+    float: right;
+  }
+  .btn {
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 0 !important;
+    opacity: 0.8;
+    will-change: opacity;
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      opacity: 1;
+      box-shadow: none;
+    }
+  }
+}
+
+.build-mode_title {
+  font-size: $build-mode-title-font-size;
 }
 
 .build-mode_viewport {
@@ -24,6 +57,7 @@
 .build-mode_panel {
   background-color: $build-mode-panel-background;
   max-width: $build-mode-panel-width;
+  min-width: $build-mode-panel-width-min;
   box-shadow: $build-mode-panel-shadow;
 }
 

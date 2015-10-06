@@ -32,6 +32,14 @@ body {
   }
 }
 
+@at-root {
+  @-moz-viewport      { width: device-width; }
+  @-ms-viewport       { width: device-width; }
+  @-o-viewport        { width: device-width; }
+  @-webkit-viewport   { width: device-width; }
+  @viewport           { width: device-width; }
+}
+
 /* HTML5 display definitions
    ================================================================== */
 
@@ -119,7 +127,7 @@ svg:not(:root) {
 }
 
 figure {
-  margin: 1em 40px;
+  margin: 0 0 $unit-sm;
 }
 
 hr {
@@ -220,19 +228,25 @@ input[type="color"] {
 }
 
 fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
   border: 0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
+  display: block;
   border: 0;
   padding: 0;
+  width: 100%;
+  margin-bottom: $unit-sm;
+  font-size: $font-size-lg;
+  line-height: inherit;
 }
 
 textarea {
   overflow: auto;
-  resize: none;
+  resize: vertical;
 }
 
 optgroup {

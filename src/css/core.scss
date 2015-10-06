@@ -54,6 +54,7 @@ $enable-plugins: true !default;
   "components/gallery",
   "components/progress-indicators",
   "components/errors",
+  "components/message",
 
   // layout
   "layout/grid",
@@ -62,9 +63,16 @@ $enable-plugins: true !default;
   "layout/content",
   "layout/profile",
 
+  // utilities
+  "utilities/accessibility",
+  "utilities/floats",
+  "utilities/overflow",
+  "utilities/spacing",
+  "utilities/color",
+  "utilities/responsive-visibility",
+
   // everything else
   "animation",
-  "utilities",
   "hacks"
 ;
 

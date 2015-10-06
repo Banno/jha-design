@@ -1,0 +1,62 @@
+// Toggling content
+.u-shown {
+  display: block !important;
+}
+
+.u-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.u-invisible {
+  visibility: hidden;
+}
+
+
+// Responsive utilities
+@include responsive-invisibility('.u-visible', 'xs');
+@include responsive-invisibility('.u-visible', 'sm');
+@include responsive-invisibility('.u-visible', 'md');
+@include responsive-invisibility('.u-visible', 'lg');
+@include responsive-invisibility('.u-visible', 'mobile');
+
+@media (max-width: $viewport-xs-max) {
+  @include responsive-visibility('.u-visible', 'xs');
+}
+
+@media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
+  @include responsive-visibility('.u-visible', 'sm');
+}
+
+@media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
+  @include responsive-visibility('.u-visible', 'md');
+}
+
+@media (min-width: $viewport-lg-min) {
+  @include responsive-visibility('.u-visible', 'lg');
+}
+
+// Device shortcuts
+.u-visible\@mobile {
+  @media (max-width: $viewport-sm-max) {
+    display: block !important;
+  }
+}
+
+@media (max-width: $viewport-sm-max) {
+  @include responsive-invisibility('.u-hidden', 'mobile');
+}
+
+
+@media (max-width: $viewport-xs-max) {
+  @include responsive-invisibility('.u-hidden', 'xs');
+}
+@media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
+  @include responsive-invisibility('.u-hidden', 'sm');
+}
+@media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
+  @include responsive-invisibility('.u-hidden', 'md');
+}
+@media (min-width: $viewport-lg-min) {
+  @include responsive-invisibility('.u-hidden', 'lg');
+}

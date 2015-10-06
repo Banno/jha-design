@@ -95,9 +95,15 @@
     }
   }
 }
+.card_content--sm {
+  padding: $card-content-padding-sm;
+}
 .card_content--no-spacing {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+.card_content--border {
+  border-top: $border-lt;
 }
 
 .card_empty {
@@ -148,7 +154,7 @@
   .card_footer {
     margin-left: $card-spacing-left-lg;
   }
-  .card_content {
+  .card_content:not(.card_content--sm):not(.card_content--no-spacing) {
     padding: $card-content-padding-lg;
     .list_item {
       margin-left: -$card-spacing-left-lg;

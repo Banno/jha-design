@@ -109,6 +109,23 @@
   padding-right: ceil($btn-padding-horizontal * 1.5);
 }
 
+.btn--toggle {
+  color: $btn-toggle-color;
+  font-weight: $btn-toggle-weight;
+  text-transform: $btn-toggle-transform;
+  font-size: $btn-toggle-font-size;
+  &.is-active {
+    color: $btn-toggle-active-color;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active {
+    color: darken($btn-toggle-color, 10%);
+    box-shadow: none;
+  }
+}
+
 
 // Button alignment adjustments, primarily for .btn--link
 // Aligns the contents of a button with the container edge
@@ -152,9 +169,9 @@ input[type="button"] {
 // ------------------------------------
 
 // totally not floated
-.btn:not(.u-float-left):not(.u-float-right) + .btn:not(.u-float-left):not(.u-float-right) {
-  margin-left: $padding-unit;
-}
+// .btn:not(.u-float-left):not(.u-float-right) + .btn:not(.u-float-left):not(.u-float-right) {
+//   margin-left: $padding-unit;
+// }
 
 .btn.u-float-left + .btn.u-float-left {
   margin-left: $padding-unit;

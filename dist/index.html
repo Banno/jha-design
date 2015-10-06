@@ -964,7 +964,7 @@
     <div class="drawer-backdrop is-visible" style="display: none;"></div>
 
     <div class="drawer is-visible" style="display: none;">
-      <div class="drawer_inner drawer_inner--left drawer_inner--sm">
+      <div class="drawer_inner drawer_inner--right drawer_inner--lg">
         <header class="drawer_header">
           <div class="container">
             <button type="button" class="btn btn--link btn--icon drawer_close">
@@ -975,16 +975,90 @@
           </div>
         </header>
         <div class="drawer_content">
-          <div class="list list--inset">
-            <a href="#" class="list_item">Dashboard</a>
-            <a href="#" class="list_item">Accounts</a>
-            <a href="#" class="list_item">Transfer</a>
-            <a href="#" class="list_item">Deposit</a>
+          <div class="container message">
+            <div class="message_content">
+              <div class="message_date">
+                10/06/2015
+                <svg class="icon icon--sm" role="presentation">
+                  <use xlink:href="#email"></use>
+                </svg>
+              </div>
+              <header class="message_heading">
+                <div class="avatar avatar--sm">
+                  <img src="img/avatar.svg">
+                </div>
+                <div class="h4 message_title">Josh Sadler</div>
+              </header>
+              <div class="content_push content_push--sm content_pull@xs">
+                <div class="u-m-b">
+                  <p>Message text</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container message message--note">
+            <div class="message_content">
+              <div class="message_date">
+                10/06/2015
+                <svg class="icon icon--sm" role="presentation">
+                  <use xlink:href="#email"></use>
+                </svg>
+              </div>
+              <header class="message_heading">
+                <div class="avatar avatar--sm">
+                  <img src="img/avatar.svg">
+                </div>
+                <div class="h4 message_title">Josh Sadler</div>
+              </header>
+              <div class="content_push content_push--sm content_pull@xs">
+                <div class="u-m-b">
+                  <p>Message text</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container message">
+            <div class="message_content">
+              <div class="message_date">
+                10/06/2015
+                <svg class="icon icon--sm" role="presentation">
+                  <use xlink:href="#email"></use>
+                </svg>
+              </div>
+              <header class="message_heading">
+                <div class="avatar avatar--sm">
+                  <img src="img/avatar.svg">
+                </div>
+                <div class="h4 message_title">Josh Sadler</div>
+              </header>
+              <div class="content_push content_push--sm content_pull@xs">
+                <div class="u-m-b">
+                  <p>Message text</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="content u-m-b-0">
+              <div class="content_push--xs content_pull@xs">
+                <div class="btn-group btn--align-left u-m-b-0">
+                  <button type="button" class="btn btn--link message_toggle is-active">Reply</button>
+                  <button type="button" class="btn btn--link message_toggle">Note</button>
+                </div>
+              </div>
+            </div>
+            <form name="replyForm" ng-submit="sendMessage()" class="content">
+              <div class="avatar avatar--xs u-float-left u-hidden@mobile">
+                <img src="img/avatar.svg">
+              </div>
+              <div class="content_push--xs content_pull@xs">
+                <textarea class="form-control form-control--light u-m-b" required></textarea>
+              </div>
+            </form>
           </div>
         </div>
-        <footer class="drawer_footer">
-
-        </footer>
       </div>
     </div>
 

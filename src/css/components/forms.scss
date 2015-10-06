@@ -358,6 +358,7 @@ select.field {
     background-color: $color-green;
   }
   .switch_checkbox[disabled] + & {
+    opacity: 0.6;
     cursor: default;
   }
   .switch_checkbox:checked + &:before {
@@ -395,6 +396,9 @@ select.field {
   padding-bottom: $unit-base / 2;
   margin-bottom: 0;
 }
+.fieldset_static {
+  color: $fieldset-color;
+}
 .fieldset_control {
   padding-top: $unit-xs;
 }
@@ -413,7 +417,7 @@ select.field {
   padding: 8px;
   background-color: $color-gray-lighter;
   border-radius: $border-radius-base;
-  @include transition(border-color .2s $timing-function);
+  @include transition(all .2s $timing-function);
   &:focus {
     outline: 0;
     border-color: $color-primary;
@@ -423,7 +427,47 @@ select.field {
     opacity: 0.8;
   }
 }
-
 .form-control--dark {
   background-color: $color-gray-light;
+}
+.form-control--transparent {
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    // add the background color back in
+    background-color: $color-gray-lighter;
+  }
+}
+.form-control--inline {
+  width: auto;
+  max-width: 100%;
+}
+
+
+// Floating label
+// only applies to .field, never to .form-control
+
+.floating-group {
+  position: relative;
+  padding-top: 12px;
+  margin-bottom: $padding-unit;
+  .label {
+    position: absolute;
+    pointer-events: none;
+    font-size: $font-size-base;
+    color: $text-color-base;
+    font-weight: normal;
+    left: 0;
+    top: 26px;
+    @include transition(all .2s $timing-function);
+  }
+}
+
+.floating-group.has-value .label,
+.field:focus ~ .label,
+.field:valid ~ .label {
+  font-size: $font-size-sm;
+  color: $text-color-light;
+  font-weight: 600;
+  top: 0;
 }

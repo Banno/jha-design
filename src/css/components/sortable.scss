@@ -17,7 +17,16 @@
 
 .sortable_handle {
   display: inline-block;
+  position: relative;
+  vertical-align: middle;
   min-width: $sortable-handle-min-width;
+  min-height: $icon-size-base;
   cursor: -webkit-grab;
   cursor: grab;
+  touch-action: cross-slide-y;
+  svg {
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+  }
 }
