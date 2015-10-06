@@ -1,8 +1,8 @@
 // List that contains elements like text, buttons and form fields
 .list {
-  margin-bottom: $unit-xs;
+  margin-bottom: $list-margin-bottom-base;
   @media (min-width: $viewport-md-min) {
-    margin-bottom: $unit-sm;
+    margin-bottom: $list-margin-bottom-lg;
   }
 }
 
@@ -14,8 +14,8 @@
 }
 .list--sm {
   .list_item {
-    padding-top: $padding-unit / 2;
-    padding-bottom: $padding-unit / 2;
+    padding-top: $list-item-padding-top-sm;
+    padding-bottom: $list-item-padding-bottom-sm;
   }
 }
 .list--inset {
@@ -27,34 +27,35 @@
 
 .list_item {
   display: block;
-  padding-top: $padding-unit;
-  padding-bottom: $padding-unit;
-  padding-right: $padding-unit;
+  position: relative;
+  padding-top: $list-item-padding-top-base;
+  padding-bottom: $list-item-padding-bottom-base;
+  padding-right: $list-item-padding-right-base;
   @include faux-border(bottom, $color-gray-light);
-  color: $text-color-base;
-  font-size: $font-size-base;
+  color: $list-item-color;
+  font-size: $list-item-font-size;
   @include clearfix();
   &:active,
   &:focus {
     outline: 0;
   }
   &:hover {
-    color: $text-color-base;
+    color: $list-item-hover-color;
   }
   &:last-of-type {
     background-image: none;
     border-bottom: 0;
   }
   a:not(.btn):not(.title) {
-    color: $text-color-base;
+    color: $list-item-color;
   }
   @media (min-width: $viewport-lg-min) {
-    padding-right: $unit-base;
+    padding-right: $list-item-padding-right-lg;
   }
   &.is-active,
   &.active {
-    color: $color-primary;
-    font-weight: 600;
+    color: $list-item-active-color;
+    font-weight: $list-item-active-weight;
   }
 }
 .list_item--inset {
@@ -65,6 +66,31 @@
     background-image: none;
   }
 }
+.list_item--sortable {
+  .card & {
+    background-color: $card-background-color;
+  }
+  border-bottom: 0;
+  @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
+    @include hairline(single, $color-gray-light, ($sortable-handle-width + $sortable-handle-spacing));
+  } @else {
+    @include hairline(single, $color-gray-light, $sortable-handle-min-width);
+  }
+  .sortable_handle {
+    float: left;
+    width: $sortable-handle-width + $sortable-handle-spacing;
+  }
+}
+.list_item--muted {
+  font-style: $list-item-muted-font-style;
+  will-change: opacity;
+  opacity: $list-item-muted-opacity;
+  @include transition(opacity .2s $timing-function);
+  &:hover {
+    opacity: $list-item-muted-opacity-hover;
+  }
+}
+
 
 .list_item_action {
   float: left;
@@ -79,11 +105,11 @@
 
 
 .list_heading {
-  color: $text-color-light;
-  text-transform: uppercase;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid $color-gray-light;
-  font-size: $font-size-base - 1;
-  font-weight: 600;
+  color: $list-heading-color;
+  text-transform: $list-heading-transform;
+  padding-top: $list-heading-padding-top;
+  padding-bottom: $list-heading-padding-bottom;
+  border-bottom: $list-heading-border;
+  font-size: $list-heading-font-size;
+  font-weight: $list-heading-weight;
 }

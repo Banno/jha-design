@@ -1,73 +1,80 @@
 // Headings
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
   margin: 0;
   position: relative;
   line-height: 1.1;
-  font-weight: $heading-weight;
   color: $heading-color;
 }
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3 {
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
   margin-top: 24px;
   margin-bottom: 12px;
 }
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
-h1,
-.h1 {
+h1, .h1 {
   font-size: $h1-size;
+  font-weight: $h1-weight;
 }
-h2,
-.h2 {
+h2, .h2 {
   font-size: $h2-size;
+  font-weight: $h2-weight;
 }
-h3,
-.h3 {
+h3, .h3 {
   font-size: $h3-size;
+  font-weight: $h3-weight;
 }
-h4,
-.h4 {
+h4, .h4 {
   font-size: $h4-size;
+  font-weight: $h4-weight;
 }
-h5,
-.h5 {
+h5, .h5 {
   font-size: $h5-size;
+  font-weight: $h5-weight;
 }
-h6,
-.h6 {
+h6, .h6 {
   font-size: $h6-size;
+  font-weight: $h6-weight;
   text-transform: uppercase;
 }
 
-p,
-.p {
+// Type display classes
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  color: $display-color;
+}
+.display-1 {
+  font-size: $display1-size;
+  font-weight: $display1-weight;
+}
+.display-2 {
+  font-size: $display2-size;
+  font-weight: $display2-weight;
+}
+.display-3 {
+  font-size: $display3-size;
+  font-weight: $display3-weight;
+}
+.display-4 {
+  font-size: $display4-size;
+  font-weight: $display4-weight;
+}
+
+p, .p {
   margin: 0 0 $padding-unit;
 }
-ul,
-.ul {
+ul, .ul {
   margin-top: 0;
   margin-bottom: $padding-unit;
 }
@@ -87,18 +94,27 @@ ul,
   color: $text-color-light;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: $font-size-base - 1;
-  padding-top: $unit-sm;
-  padding-bottom: $unit-xs;
+  font-size: $font-size-base - 2;
+  padding-top: 20px;
+  padding-bottom: 8px;
   background-color: $color-gray-lighter;
-  text-align: center;
+  padding-left: $padding-unit;
 }
+.section-heading--sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .section-heading_link {
   text-transform: none;
   font-size: $font-size-base;
   font-weight: normal;
   float: right;
 }
+
+
 
 .title {
   color: $text-color-dark;
@@ -184,6 +200,20 @@ ul,
 }
 .text--capitalize {
   text-transform: capitalize;
+}
+
+// Weight
+.text--light {
+  font-weight: 300;
+}
+.text--regular {
+  font-weight: 400;
+}
+.text--semibold {
+  font-weight: 600;
+}
+.text--bold {
+  font-weight: 700;
 }
 
 // Stats

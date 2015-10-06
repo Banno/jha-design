@@ -3,12 +3,12 @@
   background-color: $card-background-color;
   @include box-shadow($card-shadow);
   border-radius: $card-radius;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $card-margin-bottom;
   max-width: $card-max-width;
   margin-left: auto;
   margin-right: auto;
   &:last-of-type {
-    margin-bottom: $spacing-unit * 1.5
+    margin-bottom: $card-item-margin-bottom;
   }
 }
 .card--wide {
@@ -30,8 +30,8 @@
 // Header
 .card_header {
   border-bottom: $border-lt;
-  padding: $padding-unit $padding-unit $unit-sm 0;
-  line-height: $h2-size;
+  padding: $card-header-padding-base;
+  line-height: $card-header-line-height;
   > .btn--icon {
     float: right;
     margin-right: -$padding-unit;
@@ -54,42 +54,67 @@
   float: left;
 }
 .card_sub-title {
-  font-size: $font-size-base - 1;
+  font-size: $card-sub-title-size;
   float: right;
-  color: $text-color-light;
+  color: $card-sub-title-color;
 }
 
 .card_header,
 .card_content,
 .card_footer {
-  margin-left: $padding-unit;
+  margin-left: $card-spacing-left-base;
   @include clearfix();
 }
 
 // Content
 .card_content {
-  padding-right: $padding-unit;
-  padding-top: $padding-unit;
-  padding-bottom: $padding-unit;
+  padding: $card-content-padding-base;
   p:last-child {
     margin-bottom: 0;
   }
+  .list_item {
+    border-bottom: 0;
+    margin-left: -$card-spacing-left-base;
+    padding-left: $card-spacing-left-base;
+    @include hairline(single, $color-gray-light, $card-spacing-left-base);
+  }
+  .list_item--inset {
+    @include hairline(single, $color-gray-light, ($card-spacing-left-base + $thumbnail-size-sm + $padding-unit));
+  }
+  .list_item--sortable {
+    @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
+      @include hairline(single, $color-gray-light, ($card-spacing-left-base + $sortable-handle-width + $sortable-handle-spacing));
+    } @else {
+      @include hairline(single, $color-gray-light, ($card-spacing-left-base + $sortable-handle-min-width));
+    }
+  }
+  .list--borderless {
+    .list_item {
+      border-width: 0;
+      background-image: none;
+    }
+  }
+}
+.card_content--no-spacing {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .card_empty {
   text-align: center;
-  color: $text-color-muted;
+  color: $card-empty-color;
   line-height: 20px;
-  padding: 70px 0 90px;
+  padding: $card-empty-padding;
 }
 
 // Footer
 .card_footer {
   border-top: $border-lt;
-  padding-top: $unit-sm;
-  padding-bottom: $unit-sm;
-  padding-right: $padding-unit;
-  text-align: right;
+  padding: $card-footer-padding-base;
+  text-align: $card-footer-alignment;
+}
+.card_footer--borderless {
+  border-top-width: 0;
 }
 
 // Media
@@ -97,7 +122,7 @@
   background-color: $color-gray-medium;
   overflow: hidden;
   &:first-child {
-    border-radius: $border-radius-base $border-radius-base 0 0;
+    border-radius: $card-radius $card-radius 0 0;
   }
   img {
     vertical-align: top;
@@ -109,26 +134,43 @@
   margin-right: -$padding-unit;
 }
 .card hr {
-  margin-right: -$padding-unit;
+  margin-right: $card-hr-right-offset-base;
   background: none;
   border-bottom: $border-lt;
 }
 
 @media (min-width: $viewport-lg-min) {
   .card_header {
-    padding: $unit-base $unit-base $padding-unit 0;
+    padding: $card-header-padding-lg;
   }
   .card_header,
   .card_content,
   .card_footer {
-    margin-left: $unit-base;
+    margin-left: $card-spacing-left-lg;
   }
-  .card_content,
+  .card_content {
+    padding: $card-content-padding-lg;
+    .list_item {
+      margin-left: -$card-spacing-left-lg;
+      padding-left: $card-spacing-left-lg;
+      @include hairline(single, $color-gray-light, $card-spacing-left-lg);
+    }
+    .list_item--inset {
+      @include hairline(single, $color-gray-light, ($card-spacing-left-lg + $thumbnail-size-sm + $padding-unit));
+    }
+    .list_item--sortable {
+      @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
+        @include hairline(single, $color-gray-light, ($card-spacing-left-lg + $sortable-handle-width + $sortable-handle-spacing));
+      } @else {
+        @include hairline(single, $color-gray-light, ($card-spacing-left-lg + $sortable-handle-min-width));
+      }
+    }
+  }
   .card_footer {
-    padding-right: $unit-base;
+    padding: $card-footer-padding-lg;
   }
   .card hr,
   .card .list {
-    margin-right: -$unit-base;
+    margin-right: $card-hr-right-offset-lg;
   }
 }

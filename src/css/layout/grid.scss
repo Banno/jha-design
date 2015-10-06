@@ -1,11 +1,15 @@
 .container {
-  @include container-fixed;
+  @include make-container;
   max-width: $column-width-max;
   @media (min-width: $viewport-md-min) {
     padding-left: $unit-base;
     padding-right: $unit-base;
   }
   @include clearfix();
+}
+
+.fluid-container {
+  @include make-container;
 }
 
 .grid {

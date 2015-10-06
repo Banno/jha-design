@@ -24,3 +24,20 @@
   top: -3px;
   right: 0;
 }
+
+
+// Icon container
+.icon-container {
+  display: inline-block;
+  vertical-align: middle;
+  @include square(36px);
+  background-color: $color-gray-lighter;
+  border-radius: 50%;
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+  }
+}

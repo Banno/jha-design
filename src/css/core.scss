@@ -50,6 +50,7 @@ $enable-plugins: true !default;
   "components/lists",
   "components/filters",
   "components/cards",
+  "components/sortable.scss",
   "components/gallery",
   "components/progress-indicators",
   "components/errors",
@@ -57,6 +58,7 @@ $enable-plugins: true !default;
   // layout
   "layout/grid",
   "layout/navigation",
+  "layout/build-mode",
   "layout/content",
   "layout/profile",
 

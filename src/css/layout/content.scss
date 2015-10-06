@@ -1,7 +1,7 @@
 // The base .content class is only necessary if you want the bottom margin for free
 .content {
   padding-top: $padding-unit;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $padding-unit;
   @include clearfix();
 }
 

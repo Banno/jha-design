@@ -1,0 +1,23 @@
+.sortable {
+  will-change: opacity;
+  @include transition(opacity .2s $timing-function, box-shadow .2s $timing-function);
+}
+.sortable--ghost {
+  opacity: $sortable-opacity;
+  box-shadow: $sortable-shadow;
+}
+.sortable--chosen {
+  z-index: 1;
+  box-shadow: $sortable-shadow;
+  .sortable_handle {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+}
+
+.sortable_handle {
+  display: inline-block;
+  min-width: $sortable-handle-min-width;
+  cursor: -webkit-grab;
+  cursor: grab;
+}

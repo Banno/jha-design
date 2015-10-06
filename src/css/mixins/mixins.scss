@@ -52,18 +52,18 @@
 }
 
 // Responsive visibility
-@mixin responsive-visibility($parent) {
-  #{$parent} {
+@mixin responsive-visibility($parent, $size) {
+  #{$parent}\@#{$size} {
     display: block !important;
   }
-  table#{$parent}  { display: table; }
-  tr#{$parent}     { display: table-row !important; }
-  th#{$parent},
-  td#{$parent}     { display: table-cell !important; }
+  table#{$parent}\@#{$size}  { display: table; }
+  tr#{$parent}\@#{$size}     { display: table-row !important; }
+  th#{$parent}\@#{$size},
+  td#{$parent}\@#{$size}     { display: table-cell !important; }
 }
 
-@mixin responsive-invisibility($parent) {
-  #{$parent} {
+@mixin responsive-invisibility($parent, $size) {
+  #{$parent}\@#{$size} {
     display: none !important;
   }
 }

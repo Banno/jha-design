@@ -1,0 +1,48 @@
+.build-mode {
+  padding-top: 0;
+  background-color: $build-mode-background;
+  overflow: hidden;
+  @include flexbox-display();
+  @include flex-direction(column);
+  height: 100vh;
+}
+.build-mode_navigation {
+  position: relative;
+  @include flex-shrink(0);
+  .container {
+    max-width: none;
+  }
+}
+
+.build-mode_viewport {
+  @include flexbox-display();
+  @include flex-direction(row);
+  @include flex(1);
+  min-height: 0; // Firefox flex bug
+}
+
+.build-mode_panel {
+  background-color: $build-mode-panel-background;
+  max-width: $build-mode-panel-width;
+  box-shadow: $build-mode-panel-shadow;
+}
+
+.build-mode_panel,
+.build-mode_canvas {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0; // Firefox flex bug
+}
+
+.build-mode_canvas {
+  @include flex-grow(1);
+}
+
+@media (min-width: $viewport-md-min) {
+  .build-mode_panel {
+    @include flex(1 0 0);
+  }
+  .build-mode_canvas {
+    @include flex(3 0 0);
+  }
+}

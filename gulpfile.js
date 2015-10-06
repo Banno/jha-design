@@ -23,7 +23,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('copy', function() {
-  var html = gulp.src('src/index.html')
+  var html = gulp.src('src/*.html')
     .pipe(gulp.dest('dist'))
     .pipe(connect.reload());
   var favicon = gulp.src('src/favicon.ico')

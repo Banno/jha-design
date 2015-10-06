@@ -126,53 +126,26 @@
   width: device-width;
 }
 
-@include responsive-invisibility('.u-visible\@xs');
-@include responsive-invisibility('.u-visible\@sm');
-@include responsive-invisibility('.u-visible\@md');
-@include responsive-invisibility('.u-visible\@lg');
-@include responsive-invisibility('.u-visible\@mobile');
-
-.u-visible\@xs--block,
-.u-visible\@sm--block,
-.u-visible\@md--block,
-.u-visible\@lg--block {
-  display: none !important;
-}
+@include responsive-invisibility('.u-visible', 'xs');
+@include responsive-invisibility('.u-visible', 'sm');
+@include responsive-invisibility('.u-visible', 'md');
+@include responsive-invisibility('.u-visible', 'lg');
+@include responsive-invisibility('.u-visible', 'mobile');
 
 @media (max-width: $viewport-xs-max) {
-  @include responsive-visibility('.u-visible\@xs');
-}
-.u-visible\@xs--block {
-  @media (max-width: $viewport-xs-max) {
-    display: block !important;
-  }
+  @include responsive-visibility('.u-visible', 'xs');
 }
 
 @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
-  @include responsive-visibility('.u-visible\@sm');
-}
-.u-visible\@sm--block {
-  @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
-    display: block !important;
-  }
+  @include responsive-visibility('.u-visible', 'sm');
 }
 
 @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
-  @include responsive-visibility('.u-visible\@md');
-}
-.u-visible\@md--block {
-  @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
-    display: block !important;
-  }
+  @include responsive-visibility('.u-visible', 'md');
 }
 
 @media (min-width: $viewport-lg-min) {
-  @include responsive-visibility('.u-visible\@lg');
-}
-.u-visible\@lg--block {
-  @media (min-width: $viewport-lg-min) {
-    display: block !important;
-  }
+  @include responsive-visibility('.u-visible', 'lg');
 }
 
 // Device shortcuts
@@ -181,20 +154,21 @@
     display: block !important;
   }
 }
+
 @media (max-width: $viewport-sm-max) {
-  @include responsive-invisibility('.u-hidden\@mobile');
+  @include responsive-invisibility('.u-hidden', 'mobile');
 }
 
 
 @media (max-width: $viewport-xs-max) {
-  @include responsive-invisibility('.u-hidden\@xs');
+  @include responsive-invisibility('.u-hidden', 'xs');
 }
 @media (min-width: $viewport-sm-min) and (max-width: $viewport-sm-max) {
-  @include responsive-invisibility('.u-hidden\@sm');
+  @include responsive-invisibility('.u-hidden', 'sm');
 }
 @media (min-width: $viewport-md-min) and (max-width: $viewport-md-max) {
-  @include responsive-invisibility('.u-hidden\@md');
+  @include responsive-invisibility('.u-hidden', 'md');
 }
 @media (min-width: $viewport-lg-min) {
-  @include responsive-invisibility('.u-hidden\@lg');
+  @include responsive-invisibility('.u-hidden', 'lg');
 }
