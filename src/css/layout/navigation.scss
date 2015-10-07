@@ -254,6 +254,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   line-height: 1;
+  min-height: 28px; // since overflow is hidden
   @include transition-transform(.3s $timing-function);
 }
 
@@ -306,6 +307,7 @@
     position: static;
     left: auto;
     width: auto;
+    min-height: 0;
     @include translate(0, 0);
     font-size: $h1-size;
     line-height: $line-height-base;

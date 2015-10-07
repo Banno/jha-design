@@ -86,9 +86,7 @@
     height: auto;
     margin: $spacing-unit auto;
     border-radius: $dialog-radius;
-    border: 1px solid $dialog-border-color;
-    background-clip: padding-box;
-    box-shadow: $dropdown-box-shadow;
+    box-shadow: $dialog-shadow;
   }
 }
 

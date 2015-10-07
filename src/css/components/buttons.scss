@@ -92,13 +92,13 @@
 
 // Button sizes
 .btn--sm {
-  height: $btn-height-sm;
+  line-height: $btn-line-height-sm;
   padding-top: ceil($btn-padding-vertical / 2);
   padding-bottom: ceil($btn-padding-vertical / 2);
 }
 
 .btn--lg {
-  height: $btn-height-lg;
+  line-height: $btn-line-height-lg;
   padding-left: ceil($btn-padding-horizontal * 1.5);
   padding-right: ceil($btn-padding-horizontal * 1.5);
   line-height: $btn-height-lg - ($btn-padding-vertical * 2);
