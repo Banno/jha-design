@@ -400,8 +400,10 @@ $list-item-muted-opacity-hover: 1 !default;
 
 // Message
 $message-border-color:      $color-gray-light !default;
-$message-padding-top:       32px !default;
-$message-margin-bottom:     32px !default;
+$message-padding-top-sm:    16px !default;
+$message-padding-bottom-sm: 16px !default;
+$message-padding-top-lg:    32px !default;
+$message-padding-bottom-lg: 32px !default;
 $message-date-color:        $text-color-light !default;
 $message-date-font-size:    13px !default;
 

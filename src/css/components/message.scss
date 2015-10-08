@@ -19,9 +19,17 @@
   @extend .content_heading;
 }
 
-.message_content {
-  padding-top: $message-padding-top;
-  margin-bottom: $message-margin-bottom;
+.message_title {
+  @extend .h4;
+}
+
+.message_inner {
+  padding-top: $message-padding-top-sm;
+  padding-bottom: $message-padding-bottom-sm;
+  @media (min-width: $viewport-md-min) {
+    padding-top: $message-padding-top-lg;
+    padding-bottom: $message-padding-bottom-lg;
+  }
 }
 
 .message_date {
