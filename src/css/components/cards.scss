@@ -157,7 +157,7 @@
   .card_footer {
     margin-left: $card-spacing-left-lg;
   }
-  .card_content:not(.card_content--sm):not(.card_content--no-spacing) {
+  .card_content:not(.card_content--sm) {
     padding: $card-content-padding-lg;
     .list_item {
       margin-left: -$card-spacing-left-lg;
@@ -178,8 +178,8 @@
   .card_footer {
     padding: $card-footer-padding-lg;
   }
-  // .card hr,
-  // .card .list {
-  //   margin-right: $card-hr-right-offset-lg;
-  // }
+  .card_content hr,
+  .card_content .list {
+    margin-right: $card-hr-right-offset-lg;
+  }
 }
