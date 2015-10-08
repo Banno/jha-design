@@ -2,14 +2,3 @@
 // -----------------------
 // Nobody wants to use hacks, but these are browsers we're dealing with.
 // Any hack that goes here should have a valid description of why it needs to exist.
-
-
-// IE10+ Funky Zoom due to background-clip
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .dialog_inner,
-    .modal-dialog,
-    .dropdown_menu,
-    .dropdown-menu {
-        background-clip: border-box;
-    }
-}
