@@ -19,10 +19,10 @@ jha-design/
 ├── css/
 │   ├── style.min.css
 ├── fonts/
-│   ├── proximanova-regular.eot
-│   ├── proximanova-regular.ttf
-│   ├── proximanova-regular.woff
-│   ├── proximanova-regular.woff2
+│   ├── pn-r.eot
+│   ├── pn-r.ttf
+│   ├── pn-r.woff
+│   ├── pn-r.woff2
 │   ├── ...
 ├── img/
 │   ├── apple-touch-icon.png
