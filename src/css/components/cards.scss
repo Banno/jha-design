@@ -140,7 +140,7 @@
 
 // Card overrides
 .card .list {
-  margin-right: -$padding-unit;
+  margin-right: $card-hr-right-offset-base;
 }
 .card hr {
   margin-right: $card-hr-right-offset-base;
@@ -178,8 +178,8 @@
   .card_footer {
     padding: $card-footer-padding-lg;
   }
-  .card hr,
-  .card .list {
-    margin-right: $card-hr-right-offset-lg;
-  }
+  // .card hr,
+  // .card .list {
+  //   margin-right: $card-hr-right-offset-lg;
+  // }
 }

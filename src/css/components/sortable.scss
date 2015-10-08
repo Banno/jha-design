@@ -2,11 +2,11 @@
   will-change: opacity;
   @include transition(opacity .2s $timing-function, box-shadow .2s $timing-function);
 }
-.sortable--ghost {
+.sortable.is-ghost {
   opacity: $sortable-opacity;
   box-shadow: $sortable-shadow;
 }
-.sortable--chosen {
+.sortable.is-chosen {
   z-index: 1;
   box-shadow: $sortable-shadow;
   .sortable_handle {

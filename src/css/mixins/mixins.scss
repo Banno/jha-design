@@ -530,6 +530,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
     background-color: $bg;
     border-color: $bg;
     color: $text;
+    opacity: $btn-disabled-opacity;
   }
 }
 
@@ -563,6 +564,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
       &:active,
       &:focus {
         border-color: lighten($color, 20%);
+        opacity: $btn-disabled-opacity;
       }
     }
   }

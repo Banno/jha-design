@@ -125,8 +125,18 @@
   .btn:first-child {
     float: left;
   }
-  .btn + .page-title {
+  .btn + .drawer_title {
     margin-left: 8px;
+  }
+}
+
+.drawer_title {
+  font-size: 16px;
+  font-weight: bold;
+  color: $text-color-dark;
+  @media (min-width: $viewport-md-min) {
+    font-size: 18px;
+    font-weight: 400;
   }
 }
 

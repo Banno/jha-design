@@ -1,4 +1,4 @@
-.inline-group {
+.input-group {
   @include flexbox-display();
   .field,
   .form-control {
@@ -11,7 +11,7 @@
   }
 }
 
-.inline-group_btn {
+.input-group_addon {
   white-space: nowrap;
   vertical-align: middle;
   @include flex-shrink(0);

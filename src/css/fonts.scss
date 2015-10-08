@@ -31,10 +31,10 @@
 
 @font-face {
   font-family: 'proxima-nova';
-  src: url('#{$font-path}/pn-i.eot?#iefix') format('embedded-opentype'),
-       url('#{$font-path}/pn-i.woff2') format('woff2'),
-       url('#{$font-path}/pn-i.woff') format('woff'),
-       url('#{$font-path}/pn-i.ttf') format('truetype');
+  src: url('#{$font-path}/pn-ri.eot?#iefix') format('embedded-opentype'),
+       url('#{$font-path}/pn-ri.woff2') format('woff2'),
+       url('#{$font-path}/pn-ri.woff') format('woff'),
+       url('#{$font-path}/pn-ri.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
 }

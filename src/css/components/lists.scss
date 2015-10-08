@@ -43,7 +43,7 @@
     color: $list-item-hover-color;
   }
   &:last-of-type {
-    background-image: none;
+    background-image: none !important;
     border-bottom: 0;
   }
   a:not(.btn):not(.title) {

@@ -270,9 +270,9 @@ select.field {
 .control input:focus ~ .control_indicator {
   border-color: $color-primary;
 }
-.control input:checked ~ .control_indicator {
-  border-color: transparent;
-}
+// .control input:checked ~ .control_indicator {
+//   border-color: transparent;
+// }
 .control input:disabled ~ .control_indicator {
   cursor: default;
 }
@@ -290,7 +290,14 @@ select.field {
   .control_indicator {
     border-radius: 50%;
   }
-  input:checked ~ .control_indicator {
+  input:checked ~ .control_indicator:before {
+    content: '';
+    display: block;
+    @include square(8px);
+    margin-top: 4px;
+    margin-left: 4px;
+    background-color: $color-primary;
+    border-radius: 50%;
   }
 }
 
