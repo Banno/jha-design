@@ -19,12 +19,20 @@
 */
 
 $enable-plugins: true !default;
+$enable-fonts:   true !default;
 
 @import
   "variables",
   "mixins/mixins",
-  "normalize",
-  "fonts",
+  "normalize";
+
+@if $enable-fonts {
+  @import
+    "fonts"
+  ;
+}
+
+@import
   "type",
 
   // components

@@ -292,10 +292,11 @@ select.field {
   }
   input:checked ~ .control_indicator:before {
     content: '';
-    display: block;
-    @include square(8px);
-    margin-top: 4px;
-    margin-left: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include square(50%);
+    @include translate(-50%, -50%);
     background-color: $color-primary;
     border-radius: 50%;
   }
@@ -455,6 +456,7 @@ select.field {
 // only applies to .field, never to .form-control
 
 .floating-group {
+  display: block;
   position: relative;
   padding-top: 12px;
   margin-bottom: $padding-unit;
