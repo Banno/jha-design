@@ -209,10 +209,6 @@
   text-align: center;
 }
 
-.dialog_content:not(.dialog_content--fill) + .dialog_footer {
-  padding-top: 0;
-}
-
 .dialog_content--fill + .dialog_footer {
   background-color: #fff;
   border-top: $border-lt;
