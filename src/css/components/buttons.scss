@@ -1,5 +1,6 @@
 .btn {
   display: inline-block;
+  position: relative;
   margin-bottom: 0;
   text-align: center;
   vertical-align: middle;
@@ -12,7 +13,6 @@
   text-transform: $btn-text-transform;
   color: $btn-text-color-base;
   padding: $btn-padding-vertical $btn-padding-horizontal;
-  // height: $btn-height-base;
   font-weight: $btn-font-weight;
   font-size: $btn-font-size-base;
   line-height: $btn-line-height-base;
@@ -33,7 +33,7 @@
   }
   &:disabled
   &.is-disabled {
-    opacity: 0.6;
+    opacity: $btn-disabled-opacity;
     cursor: default;
   }
   &:not(.icon--btn) > .icon {
@@ -114,15 +114,49 @@
   font-weight: $btn-toggle-weight;
   text-transform: $btn-toggle-transform;
   font-size: $btn-toggle-font-size;
-  &.is-active {
-    color: $btn-toggle-active-color;
-  }
   &:hover,
   &:active,
   &:focus,
   &.is-active {
-    color: darken($btn-toggle-color, 10%);
+    color: $btn-toggle-active-color;
     box-shadow: none;
+  }
+}
+
+// Loading feedback on button
+.btn.is-loading {
+  // reset the opacity incase the field is disabled
+  opacity: 1;
+  .btn_progress {
+    opacity: 1;
+    visibility: visible;
+  }
+  .btn_content {
+    opacity: 0;
+  }
+}
+
+.btn_content,
+.btn_progress {
+  @include transition(opacity .2s $timing-function);
+}
+
+.btn_content {
+  opacity: 1; // for good measure
+}
+
+.btn_progress {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  .progress-circular {
+    margin: 0;
+    border-color: currentColor;
+    border-right-color: transparent;
   }
 }
 
@@ -143,7 +177,6 @@
   padding-left: floor($btn-padding-horizontal / 4);
   padding-right: floor($btn-padding-horizontal / 4);
 }
-
 
 // Block button
 .btn--block {

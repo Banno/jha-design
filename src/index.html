@@ -186,11 +186,16 @@
               <use xlink:href="#apps"></use>
             </svg>
           </button>
-          <button type="button" class="btn btn--success">
-            <svg class="icon" role="image" title="Add">
-              <use xlink:href="#add"></use>
+          <button type="button" class="btn btn--success is-loading">
+            <div class="btn_content">
+              <svg class="icon" role="image" title="Add">
+                <use xlink:href="#add"></use>
+              </svg>
               <span class="u-hidden@mobile">Invite Users</span>
-            </svg>
+            </div>
+            <div class="btn_progress">
+              <div class="progress-circular progress-circular--sm"></div>
+            </div>
           </button>
           <h1 class="page-title u-visible@mobile">Users</h1>
           <div class="grid">

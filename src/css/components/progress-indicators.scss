@@ -3,6 +3,7 @@
   @include animation-iteration-count(infinite);
   @include animation-name(rotate-forever);
   @include animation-timing-function(linear);
+  @include transform-origin(center);
   @include square($progress-circular-size-base);
   border: $progress-circular-thickness-base solid $progress-circular-color;
   border-right-color: transparent;
