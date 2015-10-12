@@ -159,6 +159,7 @@
   @include faux-border(left, $color-gray-light);
   &:active,
   &:focus {
+    outline: 0;
     color: $topbar-color;
   }
   &.is-active {

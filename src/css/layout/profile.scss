@@ -1,6 +1,6 @@
 .profile-identity {
-    padding-top: $padding-unit;
-    height: $topbar-height-base;
+  padding-top: $padding-unit;
+  height: $topbar-height-base;
 }
 
 .profile-identity_avatar {
@@ -14,4 +14,10 @@
   max-width: 300px;
   margin: 0 auto;
   text-align: center;
+}
+
+@media (min-width: $viewport-md-min) {
+  .profile_name {
+    margin: 30px 0 0 130px;
+  }
 }

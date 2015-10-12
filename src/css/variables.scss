@@ -1,5 +1,54 @@
-// Color
+// Opt-in or out of features and components
+$enable-normalize:          true !default;
+$enable-fonts:              true !default;
+$enable-type:               true !default;
+// components
+$enable-avatars:            true !default;
+$enable-thumbnails:         true !default;
+$enable-badges:             true !default;
+$enable-buttons:            true !default;
+$enable-button-groups:      true !default;
+$enable-dialogs:            true !default;
+$enable-drawers:            true !default;
+$enable-pagination:         true !default;
+$enable-forms:              true !default;
+$enable-input-groups:       true !default;
+$enable-icons:              true !default;
+$enable-dropdowns:          true !default;
+$enable-app-list:           true !default;
+$enable-search:             true !default;
+$enable-tables:             true !default;
+$enable-tabs:               true !default;
+$enable-timelines:          true !default;
+$enable-toasts:             true !default;
+$enable-tooltips:           true !default;
+$enable-lists:              true !default;
+$enable-filters:            true !default;
+$enable-cards:              true !default;
+$enable-sortable:           true !default;
+$enable-gallery:            true !default;
+$enable-progress:           true !default;
+$enable-errors:             true !default;
+$enable-messages:           true !default;
+// layout
+$enable-grid:               true !default;
+$enable-navigation:         true !default;
+$enable-build-mode:         true !default;
+$enable-content:            true !default;
+$enable-profile:            true !default;
+// utilities
+$enable-accessibility:      true !default;
+$enable-floats:             true !default;
+$enable-overflow:           true !default;
+$enable-spacing:            true !default;
+$enable-color:              true !default;
+$enable-visibility:         true !default;
+// everything else
+$enable-hacks:              true !default;
+$enable-plugins:            true !default;
 
+
+// Color
 $color-blue:                #3aaeda !default;
 $color-green:               #67bd48 !default;
 $color-red:                 #fb6b5b !default;

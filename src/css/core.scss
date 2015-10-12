@@ -18,72 +18,59 @@
 
 */
 
-$enable-plugins: true !default;
-$enable-fonts:   true !default;
-
 @import
   "variables",
-  "mixins/mixins",
-  "normalize";
-
-@if $enable-fonts {
-  @import
-    "fonts"
-  ;
-}
-
-@import
-  "type",
-
-  // components
-  "components/avatar",
-  "components/thumbnails",
-  "components/badges",
-  "components/buttons",
-  "components/button-groups",
-  "components/dialogs",
-  "components/drawer",
-  "components/pagination",
-  "components/forms",
-  "components/input-groups",
-  "components/icons",
-  "components/dropdowns",
-  "components/app-list",
-  "components/search.scss",
-  "components/tables",
-  "components/tabs",
-  "components/timeline",
-  "components/toasts",
-  "components/tooltips",
-  "components/lists",
-  "components/filters",
-  "components/cards",
-  "components/sortable.scss",
-  "components/gallery",
-  "components/progress-indicators",
-  "components/errors",
-  "components/message",
-
-  // layout
-  "layout/grid",
-  "layout/navigation",
-  "layout/build-mode",
-  "layout/content",
-  "layout/profile",
-
-  // utilities
-  "utilities/accessibility",
-  "utilities/floats",
-  "utilities/overflow",
-  "utilities/spacing",
-  "utilities/color",
-  "utilities/responsive-visibility",
-
-  // everything else
-  "animation",
-  "hacks"
+  "mixins/mixins"
 ;
 
+@if $enable-normalize       { @import "normalize"; }
+@if $enable-fonts           { @import "fonts"; }
+@if $enable-type            { @import "type"; }
+// components
+@if $enable-avatars         { @import "components/avatar"; }
+@if $enable-thumbnails      { @import "components/thumbnails"; }
+@if $enable-badges          { @import "components/badges"; }
+@if $enable-buttons         { @import "components/buttons"; }
+@if $enable-button-groups   { @import "components/button-groups"; }
+@if $enable-dialogs         { @import "components/dialogs"; }
+@if $enable-drawers         { @import "components/drawer"; }
+@if $enable-pagination      { @import "components/pagination"; }
+@if $enable-forms           { @import "components/forms"; }
+@if $enable-input-groups    { @import "components/input-groups"; }
+@if $enable-icons           { @import "components/icons"; }
+@if $enable-dropdowns       { @import "components/dropdowns"; }
+@if $enable-app-list        { @import "components/app-list"; }
+@if $enable-search          { @import "components/search"; }
+@if $enable-tables          { @import "components/tables"; }
+@if $enable-tabs            { @import "components/tabs"; }
+@if $enable-timelines       { @import "components/timeline"; }
+@if $enable-toasts          { @import "components/toasts"; }
+@if $enable-tooltips        { @import "components/tooltips"; }
+@if $enable-lists           { @import "components/lists"; }
+@if $enable-filters         { @import "components/filters"; }
+@if $enable-cards           { @import "components/cards"; }
+@if $enable-sortable        { @import "components/sortable"; }
+@if $enable-gallery         { @import "components/gallery"; }
+@if $enable-progress        { @import "components/progress-indicators"; }
+@if $enable-errors          { @import "components/errors"; }
+@if $enable-messages        { @import "components/message"; }
+// layout
+@if $enable-grid            { @import "layout/grid"; }
+@if $enable-navigation      { @import "layout/navigation"; }
+@if $enable-build-mode      { @import "layout/build-mode"; }
+@if $enable-content         { @import "layout/content"; }
+@if $enable-profile         { @import "layout/profile"; }
+// utilities
+@if $enable-accessibility   { @import "utilities/accessibility"; }
+@if $enable-floats          { @import "utilities/floats"; }
+@if $enable-overflow        { @import "utilities/overflow"; }
+@if $enable-spacing         { @import "utilities/spacing"; }
+@if $enable-color           { @import "utilities/color"; }
+@if $enable-visibility      { @import "utilities/responsive-visibility"; }
+// animation
+@if $enable-progress        { @import "animation"; }
+// hacks
+@if $enable-hacks           { @import "hacks"; }
 // plugins
 @if $enable-plugins {
   @import

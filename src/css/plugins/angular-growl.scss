@@ -1,6 +1,25 @@
 // Growl
+.growl-container {
+  position: fixed;
+  z-index: $z-index-toast;
+  left: 0;
+  bottom: $tabbar-height-sm - 1;
+  width: 100%;
+  @media (min-width: 415px) {
+    bottom: $padding-unit;
+    left: $padding-unit;
+    width: auto;
+  }
+  @media (min-width: $viewport-md-min) {
+    bottom: $spacing-unit;
+    left: $spacing-unit;
+    width: auto;
+  }
+}
 .growl-item {
   @extend .toast;
+  position: relative;
+  margin-top: $padding-unit;
   opacity: 1;
   @include transform(translateY(0));
   // hide the close button, toasts don't have buttons
