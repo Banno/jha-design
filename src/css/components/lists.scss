@@ -55,7 +55,7 @@
   }
 }
 .list_item--inset {
-  @include hairline-offset(thumbnail-size-sm + $padding-unit);
+  @include hairline-offset($thumbnail-size-sm + $padding-unit);
   &:last-of-type {
     @include reset-hairline();
   }
