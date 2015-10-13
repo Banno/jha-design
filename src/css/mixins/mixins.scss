@@ -418,26 +418,83 @@
 }
 
 // Hairlines
-
-$hl-dark-top:       "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEnPjxyZWN0IGZpbGw9JyNkOGUxZWInIHg9JzAnIHk9JzAnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzAuNScvPjwvc3ZnPg==";
-$hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEnPjxyZWN0IGZpbGw9JyNkOGUxZWInIHg9JzAnIHk9JzAuNScgd2lkdGg9JzEwMCUnIGhlaWdodD0nMC41Jy8+PC9zdmc+";
-
-@mixin hairline($type, $color, $offset:0) {
-  @if $type == single {
-    background-image: url($hl-dark-bottom);
-    background-position: $offset 100%;
-  } @else if $type == double {
-    background-image: url($hl-dark-bottom),
-                      url($hl-dark-top);
-    background-position: $offset 100%, $offset 0;
+@mixin hairline($type, $color, $offset:0, $position:relative) {
+  position: $position;
+  &:before,
+  &:after {
+    content: '';
+    display: block !important;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: $offset;
+    right: 0;
+    border-bottom: 1px solid $color;
   }
-  background-repeat: no-repeat;
-  @supports (-ms-accelerator: true) {
-    background-image: none;
-    border-bottom: 1px solid lighten($color, 5%);
+  &:after {
+    clear: both;
+  }
+  @if $type == double {
+    &:before {
+      bottom: auto;
+      top: 0;
+    }
+  }
+  @media
+    // yes, 1.5 for webkit and 192dpi for non-webkit. this is because firefox is a jerk
+    (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 192dpi) {
+    &:before,
+    &:after {
+      @include scaleY(0.5);
+      @include transform-origin(0 100%);
+    }
   }
 }
 
+@mixin hairline-top($color, $offset:0, $position:relative) {
+  position: $position;
+  &:before {
+    content: '';
+    display: block !important;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    left: $offset;
+    right: 0;
+    border-top: 1px solid $color;
+    @include scaleY(0.5);
+    @include transform-origin(0 0);
+  }
+}
+
+@mixin hairline-offset($offset:0) {
+  &:before,
+  &:after {
+    left: $offset;
+  }
+}
+
+@mixin hairline-color($color) {
+  &:before,
+  &:after {
+    border-bottom-color: $color;
+  }
+}
+
+@mixin reset-hairline() {
+  &:before,
+  &:after {
+    display: none !important;
+  }
+}
+
+@mixin reset-hairline-top() {
+  &:before {
+    display: none !important;
+  }
+}
+
+// deprecated
 @mixin faux-border($position, $color) {
   border-#{$position}: 1px solid lighten($color, 5%);
   @media (-webkit-min-device-pixel-ratio: 1.5) {
@@ -470,7 +527,7 @@ $hl-dark-bottom:    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53M
   border-#{$position}-width: 0;
 }
 
-// Shadow depth
+// Shadow depth (deprecated)
 @mixin shadow-depth($depth, $inset:false) {
   $inset-shadow: inset 0 0 0 1px rgba(#fff, 0.75);
   @if $inset != false {

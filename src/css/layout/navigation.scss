@@ -115,7 +115,7 @@
   }
   .navigation:not(.navigation--inverse) .navigation_inner {
     height: 100%;
-    @include faux-border(bottom, $color-gray-light);
+    @include hairline(single, $color-gray-light);
   }
   // with a scroll handler shift the navigation and tab-bar up. navigation
   // will be hidden and tab-bar will be at the top edge of the viewport
@@ -130,14 +130,13 @@
 // Tab bar
 .tab-bar {
   display: block;
-  position: fixed;
   z-index: $z-index-topbar;
   bottom: 0;
   left: 0;
   width: 100%;
   height: $tabbar-height-sm;
   background-color: #fff;
-  @include faux-border(top, $faux-border-color);
+  @include hairline-top($faux-border-color, 0, fixed);
   .container {
     padding-left: 0;
     padding-right: 0;
@@ -179,8 +178,8 @@
     bottom: auto;
     top: $topbar-height-base;
     height: $topbar-height-base;
-    @include reset-faux-border(top);
-    @include faux-border(bottom, $faux-border-color);
+    @include hairline(single, $faux-border-color, 0, fixed);
+    @include reset-hairline-top();
     .container {
       padding-left: $unit-base;
       padding-right: $unit-base;
@@ -351,7 +350,7 @@
   width: 100%;
   height: $tabbar-height-sm;
   background-color: #fff;
-  @include faux-border(bottom, $faux-border-color);
+  @include hairline(single, $faux-border-color);
   @include clearfix();
   .container,
   .grid,

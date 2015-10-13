@@ -1,9 +1,9 @@
 .message {
-  @include faux-border(bottom, $message-border-color);
+  @include hairline(single, $message-border-color);
 }
 .message--note {
   background-color: $message-note-background;
-  border-bottom: 1px solid $message-note-border-color;
+  @include hairline-color($message-note-border-color);
   color: $message-note-color;
   background-image: none;
   .message_date {

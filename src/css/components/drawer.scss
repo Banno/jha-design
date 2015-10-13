@@ -120,8 +120,7 @@
 .drawer_header {
   @include flex-shrink(0);
   padding: 36px 0 18px;
-  position: relative;
-  @include faux-border(bottom, $faux-border-color);
+  @include hairline(single, $faux-border-color);
   .btn:first-child {
     float: left;
   }
@@ -145,6 +144,9 @@
 }
 
 .drawer_footer {
-  @include faux-border(top, $faux-border-color);
+  @include hairline(single, $faux-border-color);
   @include flex-shrink(0);
+  &:after {
+    display: none !important;
+  }
 }

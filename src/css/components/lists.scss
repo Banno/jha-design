@@ -8,8 +8,7 @@
 
 .list--borderless {
   .list_item {
-    border-bottom: 0 !important;
-    background-image: none !important;
+    @include reset-hairline();
   }
 }
 .list--sm {
@@ -27,14 +26,12 @@
 
 .list_item {
   display: block;
-  position: relative;
   padding-top: $list-item-padding-top-base;
   padding-bottom: $list-item-padding-bottom-base;
   padding-right: $list-item-padding-right-base;
-  @include faux-border(bottom, $color-gray-light);
+  @include hairline(single, $color-gray-light, 0);
   color: $list-item-color;
   font-size: $list-item-font-size;
-  @include clearfix();
   &:active,
   &:focus {
     outline: 0;
@@ -43,8 +40,7 @@
     color: $list-item-hover-color;
   }
   &:last-of-type {
-    background-image: none !important;
-    border-bottom: 0;
+    @include reset-hairline();
   }
   a:not(.btn):not(.title) {
     color: $list-item-color;
@@ -59,22 +55,19 @@
   }
 }
 .list_item--inset {
-  border-bottom: 0;
-  @include hairline(single, $color-gray-light, ($thumbnail-size-sm + $padding-unit));
+  @include hairline-offset(thumbnail-size-sm + $padding-unit);
   &:last-of-type {
-    border-bottom: 0;
-    background-image: none;
+    @include reset-hairline();
   }
 }
 .list_item--sortable {
   .card & {
     background-color: $card-background-color;
   }
-  border-bottom: 0;
   @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
-    @include hairline(single, $color-gray-light, ($sortable-handle-width + $sortable-handle-spacing));
+    @include hairline-offset($sortable-handle-width + $sortable-handle-spacing);
   } @else {
-    @include hairline(single, $color-gray-light, $sortable-handle-min-width);
+    @include hairline-offset($sortable-handle-min-width);
   }
   .sortable_handle {
     float: left;

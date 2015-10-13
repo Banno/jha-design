@@ -10,14 +10,31 @@
   background-color: $color-gray-lighter;
 }
 
+@media (min-width: $viewport-md-min) {
+  .profile_name {
+    margin: 30px 0 0 130px;
+  }
+}
+
+
 .login-container {
   max-width: 300px;
   margin: 0 auto;
   text-align: center;
 }
 
-@media (min-width: $viewport-md-min) {
-  .profile_name {
-    margin: 30px 0 0 130px;
+.login {
+  @include flexbox-display();
+  @include align-items(center);
+  @include justify-content(stretch);
+  @include flex-direction(row);
+  min-height: 100vh;
+  margin-top: -$topbar-height-sm; /* body padding */
+  @media (min-width: $viewport-md-min) {
+    margin-top: -($topbar-height-base * 2); /* body padding */
   }
+}
+.login_inner {
+  @include flex(1);
+  @include align-self(center);
 }
