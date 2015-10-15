@@ -21,30 +21,51 @@
 }
 
 // Make display property most important to override inline style
-.dialog--center-xs {
+.dialog--center\@xs {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
+  .modal-content {
+    min-height: 0;
+    max-height: calc(100vh);
+  }
 }
 @media (min-width: $viewport-sm-min) {
-  .dialog--center-sm {
+  .dialog--center\@sm {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
+    .modal-content {
+      min-height: 0;
+      max-height: calc(100vh - 64px);
+    }
+  }
+  .dialog--center\@xs {
+    .modal-content {
+      max-height: calc(100vh - 64px);
+    }
   }
 }
 @media (min-width: $viewport-md-min) {
-  .dialog--center-md {
+  .dialog--center\@md {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
+    .modal-content {
+      min-height: 0;
+      max-height: calc(100vh - 64px);
+    }
   }
 }
 @media (min-width: $viewport-lg-min) {
-  .dialog--center-lg {
+  .dialog--center\@lg {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
     display: flex !important;
+    .modal-content {
+      min-height: 0;
+      max-height: calc(100vh - 64px);
+    }
   }
 }
 

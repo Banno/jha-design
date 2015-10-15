@@ -446,7 +446,7 @@
     &:before,
     &:after {
       @include scaleY(0.5);
-      @include transform-origin(0 100%);
+      @include transform-origin(0 0);
     }
   }
 }

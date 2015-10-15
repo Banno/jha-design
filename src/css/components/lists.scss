@@ -102,7 +102,7 @@
   text-transform: $list-heading-transform;
   padding-top: $list-heading-padding-top;
   padding-bottom: $list-heading-padding-bottom;
-  border-bottom: $list-heading-border;
+  @include hairline(single, $list-heading-border-color);
   font-size: $list-heading-font-size;
   font-weight: $list-heading-weight;
 }

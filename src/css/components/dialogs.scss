@@ -144,6 +144,7 @@
 .dialog_header,
 .dialog_footer {
   @include flex-shrink(0);
+  @include flex-grow(0);
 }
 
 .dialog_header--borderless {
@@ -182,21 +183,21 @@
 
 // Content
 .dialog_content {
-  @include flex(1 1 auto);
+  @include flex(1);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   .gallery {
     margin-bottom: 0;
   }
 }
-.dialog_content--fill {
-  @media (min-width: $viewport-sm-min) {
-    max-height: calc(100vh - 225px);
-  }
-  @media (min-width: $viewport-md-min) {
-    max-height: calc(100vh - 288px);
-  }
-}
+// .dialog_content--fill {
+//   @media (min-width: $viewport-sm-min) {
+//     max-height: calc(100vh - 254px);
+//   }
+//   @media (min-width: $viewport-md-min) {
+//     max-height: calc(100vh - 312px);
+//   }
+// }
 .dialog_content--no-padding {
   padding: 0;
   @media (min-width: $viewport-md-min) {
