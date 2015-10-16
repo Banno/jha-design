@@ -31,7 +31,7 @@
   &.is-active {
     box-shadow: $btn-focus-shadow;
   }
-  &:disabled
+  &:disabled,
   &.is-disabled {
     opacity: $btn-disabled-opacity;
     cursor: default;

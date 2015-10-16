@@ -156,6 +156,7 @@
   color: $color-gray-medium;
   cursor: pointer;
   @include faux-border(left, $color-gray-light);
+  z-index: 1;
   &:active,
   &:focus {
     outline: 0;
