@@ -15,4 +15,5 @@
   white-space: nowrap;
   vertical-align: middle;
   @include flex-shrink(0);
+  @include align-self(center);
 }
