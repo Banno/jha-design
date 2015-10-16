@@ -420,7 +420,6 @@
 // Hairlines
 @mixin hairline($type, $color, $offset:0, $position:relative) {
   position: $position;
-  &:before,
   &:after {
     content: '';
     display: block !important;
@@ -433,8 +432,14 @@
   }
   @if $type == double {
     &:before {
-      bottom: auto;
+      content: '';
+      display: block !important;
+      position: absolute;
       top: 0;
+      bottom: auto;
+      left: $offset;
+      right: 0;
+      border-top: 1px solid $color;
     }
   }
   @media
