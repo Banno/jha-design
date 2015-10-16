@@ -431,9 +431,6 @@
     right: 0;
     border-bottom: 1px solid $color;
   }
-  &:after {
-    clear: both;
-  }
   @if $type == double {
     &:before {
       bottom: auto;
@@ -446,7 +443,12 @@
     &:before,
     &:after {
       @include scaleY(0.5);
+    }
+    &:before {
       @include transform-origin(0 0);
+    }
+    &:after {
+      @include transform-origin(0 100%);
     }
   }
 }
