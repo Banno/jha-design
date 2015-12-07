@@ -4,13 +4,15 @@
   margin-bottom: $spacing-unit;
   font-size: $table-font-size;
   color: $table-color-base;
+  thead {
+    text-align: left;
+  }
   th,
   td {
     padding: $table-cell-padding-base;
     border-bottom: 1px solid $table-border-color;
   }
   th {
-    text-align: left;
     font-size: $table-font-size - 1;
     font-weight: 600;
     text-transform: uppercase;
