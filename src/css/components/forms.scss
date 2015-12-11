@@ -447,6 +447,7 @@ select.field {
   }
 }
 .form-control--inline {
+  display: inline-block;
   width: auto;
   max-width: 100%;
 }

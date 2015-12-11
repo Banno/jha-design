@@ -1,0 +1,21 @@
+.help-launcher {
+  @extend .btn;
+  @extend .btn--icon;
+  display: none;
+  position: fixed;
+  right: $spacing-unit;
+  bottom: $spacing-unit;
+  font-size: 24px;
+  color: #fff;
+  background-color: $help-launcher-background;
+  opacity: $help-launcher-opacity-default;
+  &:hover {
+    opacity: $help-launcher-opacity-hover;
+  }
+  @media (min-width: $viewport-md-min) {
+    display: block;
+  }
+  &:before {
+    content: '?';
+  }
+}

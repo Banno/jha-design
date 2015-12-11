@@ -54,6 +54,7 @@
 @if $enable-progress        { @import "components/progress-indicators"; }
 @if $enable-errors          { @import "components/errors"; }
 @if $enable-messages        { @import "components/message"; }
+@if $enable-help            { @import "components/help"; }
 // layout
 @if $enable-grid            { @import "layout/grid"; }
 @if $enable-navigation      { @import "layout/navigation"; }

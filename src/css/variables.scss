@@ -12,6 +12,7 @@ $enable-dialogs:            true !default;
 $enable-drawers:            true !default;
 $enable-pagination:         true !default;
 $enable-forms:              true !default;
+$enable-help:               true !default;
 $enable-input-groups:       true !default;
 $enable-icons:              true !default;
 $enable-dropdowns:          true !default;
@@ -403,6 +404,11 @@ $gallery-item-font-size:    $font-size-sm !default;
 $gallery-overlay-color:     rgba($color-gray-dark, 0.6) !default;
 $gallery-item-height:       140px !default;
 
+
+// Help launcher
+$help-launcher-background:  $color-gray-dark !default;
+$help-launcher-opacity-default: 0.8 !default;
+$help-launcher-opacity-hover:   0.9 !default;
 
 // Icons
 $icon-size-sm:              18px !default;
