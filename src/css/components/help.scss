@@ -11,13 +11,10 @@
   padding: $help-launcher-padding;
   border-radius: $help-launcher-radius;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: $help-launcher-opacity-default;
   @include transition(opacity .2s $timing-function);
   @if $help-launcher-square != false {
     @include square($help-launcher-square-size);
-  }
-  &:before {
-    content: '?';
   }
   &:hover {
     opacity: $help-launcher-opacity-hover;
