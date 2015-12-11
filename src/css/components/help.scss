@@ -1,4 +1,6 @@
 .help-launcher {
+  @extend .btn;
+  @extend .btn--icon;
   display: none;
   position: fixed;
   right: $spacing-unit;
@@ -6,20 +8,14 @@
   font-size: 24px;
   color: #fff;
   background-color: $help-launcher-background;
-  text-align: center;
-  line-height: 1;
-  padding: $help-launcher-padding;
-  border-radius: $help-launcher-radius;
-  cursor: pointer;
   opacity: $help-launcher-opacity-default;
-  @include transition(opacity .2s $timing-function);
-  @if $help-launcher-square != false {
-    @include square($help-launcher-square-size);
-  }
   &:hover {
     opacity: $help-launcher-opacity-hover;
   }
   @media (min-width: $viewport-md-min) {
     display: block;
+  }
+  &:before {
+    content: '?';
   }
 }
