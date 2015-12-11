@@ -17,7 +17,7 @@
   outline: 0;
   @include transition(opacity 0.3s 0, visibility 0 0.3s);
   -webkit-overflow-scrolling: touch;
-  -webkit-backdrop-filter: blur(5px);
+  @include backdrop-filter(blur(5px));
   will-change: opacity;
   // this flexbox property does nothing on it's own, but a utility class depends
   // on it and this is the most efficent way to write it

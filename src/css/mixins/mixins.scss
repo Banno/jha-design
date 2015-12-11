@@ -384,6 +384,12 @@
      border-top-left-radius: $radius;
 }
 
+// Backdrop filter
+@mixin backdrop-filter($filter) {
+  -webkit-backdrop-filter: $filter;
+          backdrop-filter: $filter;
+}
+
 // Sizing shortcuts
 @mixin size($width, $height) {
   width: $width;
