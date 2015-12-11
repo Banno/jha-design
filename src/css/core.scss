@@ -36,6 +36,7 @@
 @if $enable-drawers         { @import "components/drawer"; }
 @if $enable-pagination      { @import "components/pagination"; }
 @if $enable-forms           { @import "components/forms"; }
+@if $enable-help            { @import "components/help"; }
 @if $enable-input-groups    { @import "components/input-groups"; }
 @if $enable-icons           { @import "components/icons"; }
 @if $enable-dropdowns       { @import "components/dropdowns"; }

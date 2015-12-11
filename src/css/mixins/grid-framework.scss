@@ -1,8 +1,8 @@
 // Framework grid generation
 
-@mixin make-grid-columns($i: 1, $list: ".grid_#{$i}\@xs, .grid_#{$i}\@sm, .grid_#{$i}\@md, .grid_#{$i}\@lg") {
+@mixin make-grid-columns($i: 1, $list: ".grid_#{$i}\\@xs, .grid_#{$i}\\@sm, .grid_#{$i}\\@md, .grid_#{$i}\\@lg") {
   @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .grid_#{$i}\@xs, .grid_#{$i}\@sm, .grid_#{$i}\@md, .grid_#{$i}\@lg";
+    $list: "#{$list}, .grid_#{$i}\\@xs, .grid_#{$i}\\@sm, .grid_#{$i}\\@md, .grid_#{$i}\\@lg";
   }
   #{$list} {
     position: relative;
@@ -13,9 +13,9 @@
 }
 
 
-@mixin float-grid-columns($class, $i: 1, $list: ".grid_#{$i}\@#{$class}") {
+@mixin float-grid-columns($class, $i: 1, $list: ".grid_#{$i}\\@#{$class}") {
   @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .grid_#{$i}\@#{$class}";
+    $list: "#{$list}, .grid_#{$i}\\@#{$class}";
   }
   #{$list} {
     float: left;
