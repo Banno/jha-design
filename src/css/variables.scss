@@ -469,6 +469,12 @@ $message-note-date-color:   #9c9587 !default;
 $message-note-heading-color: #585143 !default;
 
 
+// Pagination
+$pagination-button-class:   '.btn--default' !default;
+$pagination-active-background: $color-primary !default;
+$pagination-active-color:   #fff !default;
+$pagination-min-width:      44px !default;
+
 // Sortable
 $sortable-opacity:          0.9 !default;
 $sortable-shadow:           0 1px 7px 0 rgba($color-gray-dark, 0.36), 0 1px 3px rgba($color-gray-dark, 0.16) !default;

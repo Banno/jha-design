@@ -8,3 +8,6 @@
 .u-clearfix {
   @include clearfix();
 }
+.u-clear {
+  clear: both;
+}

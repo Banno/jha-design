@@ -1,44 +1,46 @@
 .pagination {
-  @include clearfix();
-  margin-bottom: $spacing-unit;
-  border-radius: $border-radius-base;
+  @extend .btn-group;
   @include flexbox-display();
+  @include justify-content(center);
 }
-
 .pagination_item {
-  position: relative;
-  float: left;
-  padding: $btn-padding-vertical ($btn-padding-horizontal - 2);
-  line-height: $line-height-base;
-  text-deocration: none;
-  color: $text-color-muted;
-  background-color: #fff;
-  border: $border-lt;
-  margin-left: -1px;
-  &:first-child {
-    margin-left: 0;
-    border-top-left-radius: $border-radius-base;
-    border-bottom-left-radius: $border-radius-base;
-  }
-  &:last-child {
-    border-top-right-radius: $border-radius-base;
-    border-bottom-right-radius: $border-radius-base;
-  }
-  &.is-active,
-  &.active {
-    border-color: $color-primary;
-    background-color: $color-primary;
-    color: #fff;
-  }
-  &.is-active + .pagination_item {
-    border-left-color: $color-primary;
-  }
-  @media (hover) {
-    &:not(.is-active):hover {
-      color: $color-primary;
+  @extend .btn;
+  @extend #{$pagination-button-class};
+  display: none; // for responsive limiting
+  min-width: $pagination-min-width;
+  padding-left: 0;
+  padding-right: 0;
+  &.is-active {
+    background-color: $pagination-active-background;
+    color: $pagination-active-color;
+    border-color: darken($pagination-active-background, 5%);
+    & + .pagination_item {
+      border-left-color: darken($pagination-active-background, 5%);
     }
   }
-  svg {
-    @include square(18px);
+  &:first-child,
+  &:last-child,
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4),
+  &:nth-child(5) {
+    display: inline-block;
+  }
+}
+
+@media (min-width: $viewport-sm-min) {
+  .pagination_item {
+    &:first-child, // previous button
+    &:last-child, // next button
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9) {
+      display: inline-block;
+    }
   }
 }
