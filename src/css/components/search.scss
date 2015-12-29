@@ -45,6 +45,9 @@
 // Global search
 // Used in place of tabbar
 .global-search {
+  position: relative;
+}
+.global-search_input {
   width: calc(100% - 70px);
   border: 0;
   height: $topbar-height-base - 1;
@@ -55,15 +58,15 @@
   }
 }
 
-.global-search::-webkit-input-placeholder {
+.global-search_input::-webkit-input-placeholder {
   font-style: italic;
   font-size: $font-size-base;
 }
-.global-search::-moz-placeholder {
+.global-search_input::-moz-placeholder {
   font-style: italic;
   font-size: $font-size-base;
 }
-.global-search::-ms-input-placeholder {
+.global-search_input::-ms-input-placeholder {
   font-style: italic;
   font-size: $font-size-base;
 }
@@ -72,7 +75,7 @@
   @include square(70px);
   padding: 22px;
   .icon {
-    @include square(24px);
+    @include square($avatar-size-sm);
   }
 }
 
@@ -82,15 +85,13 @@
   max-width: none;
   width: 100%;
   margin-top: 1px;
+  padding-left: $padding-unit;
   border-top-width: 0;
-  order-top-left-radius: 0;
+  border-top-left-radius: 0;
   border-top-right-radius: 0;
   overflow-y: auto;
   max-height: 395px;
   -webkit-overflow-scrolling: touch;
-  .list_item {
-    padding-left: 16px;
-  }
   .avatar {
     @include square(32px);
   }
