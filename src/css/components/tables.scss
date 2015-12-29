@@ -62,7 +62,7 @@
   .table {
     margin-bottom: 0;
   }
-  @media screen and (max-width: $viewport-sm-max) {
+  @media (max-width: $viewport-sm-max) {
     width: 100%;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
@@ -83,30 +83,62 @@
 }
 
 
-@media (min-width: $viewport-xl-min) {
-  .table:not(.table--align-left) {
-    tr {
-      td:first-child,
-      th:first-child {
-        padding-left: $padding-unit + 20;
-      }
-      td:last-child,
-      th:last-child {
-        padding-right: $padding-unit + 20;
-      }
-    }
-  }
-}
-
-
 // Table cell sizing
 // Allow for using grid classes to set percentage widths
 td,
 th {
-  &[class^="col-"] {
+  &[class^="grid_"] {
     float: none;
     margin-left: 0;
     margin-right: 0;
     position: static;
+  }
+}
+
+
+// Stacked tables
+@media (max-width: $viewport-sm-max) {
+  .table--stacked {
+    thead {
+      position: absolute;
+      top: 0;
+      left: -99999px;
+    }
+    th {
+      border-bottom-width: 0;
+    }
+    tr {
+      display: block;
+      border-bottom: 1px solid $table-border-color;
+    }
+    td {
+      display: block;
+      padding: $unit-sm 0;
+      width: 100%;
+      clear: both;
+      white-space: normal;
+      overflow: hidden;
+      text-align: left;
+      &:before {
+        display: block;
+        padding-bottom: $unit-xs;
+        content: attr(data-label);
+        font-size: $table-font-size - 1;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $table-heading-color;
+      }
+    }
+  }
+
+  .table--stacked-horizontal {
+    @extend .table--stacked;
+    td {
+      text-align: right;
+      &:before {
+        float: left;
+        padding-bottom: 0;
+      }
+    }
   }
 }
