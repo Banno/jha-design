@@ -135,7 +135,7 @@ th {
     @extend .table--stacked;
     td {
       text-align: right;
-      &:before {
+      &::before {
         float: left;
         padding-bottom: 0;
       }
