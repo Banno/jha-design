@@ -402,12 +402,12 @@
 
 // Clearfix
 @mixin clearfix() {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: " "; // 1
     display: table; // 2
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -426,7 +426,7 @@
 // Hairlines
 @mixin hairline($type, $color, $offset:0, $position:relative) {
   position: $position;
-  &:after {
+  &::after {
     content: '';
     display: block !important;
     position: absolute;
@@ -437,7 +437,7 @@
     border-bottom: 1px solid $color;
   }
   @if $type == double {
-    &:before {
+    &::before {
       content: '';
       display: block !important;
       position: absolute;
@@ -451,14 +451,14 @@
   @media
     // yes, 1.5 for webkit and 192dpi for non-webkit. this is because firefox is a jerk
     (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 192dpi) {
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       @include scaleY(0.5);
     }
-    &:before {
+    &::before {
       @include transform-origin(0 0);
     }
-    &:after {
+    &::after {
       @include transform-origin(0 100%);
     }
   }
@@ -466,7 +466,7 @@
 
 @mixin hairline-top($color, $offset:0, $position:relative) {
   position: $position;
-  &:before {
+  &::before {
     content: '';
     display: block !important;
     position: absolute;
@@ -481,28 +481,28 @@
 }
 
 @mixin hairline-offset($offset:0) {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     left: $offset;
   }
 }
 
 @mixin hairline-color($color) {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     border-bottom-color: $color;
   }
 }
 
 @mixin reset-hairline() {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     display: none !important;
   }
 }
 
 @mixin reset-hairline-top() {
-  &:before {
+  &::before {
     display: none !important;
   }
 }

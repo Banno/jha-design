@@ -1,7 +1,7 @@
 // Timeline
 .timeline {
   position: relative;
-  &:before {
+  &::before {
     position: absolute;
     top: 0;
     bottom: -58px;
@@ -98,7 +98,7 @@
 
 @media (min-width: $viewport-sm-min) {
   .timeline {
-    &:before {
+    &::before {
       left: 50px;
     }
   }
@@ -112,8 +112,8 @@
   }
   .timeline_item_group {
     margin-left: 90px;
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       border-color: transparent;
@@ -122,10 +122,10 @@
       left: -19px;
       top: 16px;
     }
-    &:before {
+    &::before {
       border-right-color: $color-gray-light;
     }
-    &:after {
+    &::after {
       border-right-color: #fff;
       border-width: 8px;
       margin-left: 1px;

@@ -1,22 +1,80 @@
 .pagination {
-  @extend .btn-group;
+  position: relative;
+  margin-bottom: $padding-unit;
+  @include clearfix();
   @include flexbox-display();
   @include justify-content(center);
 }
 .pagination_item {
-  @extend .btn;
-  @extend #{$pagination-button-class};
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  @include touch-action(manipulation);
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  text-transform: $btn-text-transform;
+  color: $btn-text-color-base;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  font-weight: $btn-font-weight;
+  font-size: $btn-font-size-base;
+  line-height: $btn-line-height-base;
+  @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
   display: none; // for responsive limiting
   min-width: $pagination-min-width;
   padding-left: 0;
   padding-right: 0;
+  margin-left: -1px !important;
+  z-index: 1;
+  border-radius: 0;
+  @include user-select(none);
+  @include transition(all .1s $timing-function);
+  @include tab-focus;
+  &:hover,
+  &:active,
+  &:focus,
   &.is-active {
+    text-decoration: none;
+  }
+  &:active,
+  &:focus,
+  &.is-active {
+    box-shadow: $btn-focus-shadow;
     background-color: $pagination-active-background;
     color: $pagination-active-color;
     border-color: darken($pagination-active-background, 5%);
     & + .pagination_item {
       border-left-color: darken($pagination-active-background, 5%);
     }
+  }
+  &:disabled,
+  &.is-disabled {
+    opacity: $btn-disabled-opacity;
+    cursor: default;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &.active,
+  &.is-active,
+  &.is-focused {
+    z-index: 2;
+  }
+  &:not(.icon--btn) > .icon {
+    position: relative;
+    top: -1px;
+  }
+  &:first-child {
+    margin-left: 0 !important;
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+  }
+  &:last-child {
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
   }
   &:first-child,
   &:last-child,

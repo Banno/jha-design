@@ -3,7 +3,7 @@
   position: relative;
   display: inline-block;
   color: $filter-color;
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -56,7 +56,7 @@
 // media query to target Firefox only
 @-moz-document url-prefix() {
   .filter {
-    &:after {
+    &::after {
       margin-top: 0;
     }
   }
@@ -80,10 +80,10 @@
     padding: $padding-unit / 2;
   }
   .filter {
-    &:after {
+    &::after {
       z-index: 5;
     }
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       top: 0;

@@ -1,21 +1,30 @@
 .help-launcher {
-  @extend .btn;
-  @extend .btn--icon;
   display: none;
   position: fixed;
   right: $spacing-unit;
   bottom: $spacing-unit;
   font-size: 24px;
+  font-weight: normal;
   color: #fff;
+  background-image: none;
   background-color: $help-launcher-background;
   opacity: $help-launcher-opacity-default;
+  text-align: center;
+  @include touch-action(manipulation);
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: $btn-padding-vertical floor($btn-padding-horizontal / 4);
+  line-height: $btn-line-height-base;
+  border-radius: 50%;
+  min-width: $btn-height-base;
+  @include user-select(none);
   &:hover {
     opacity: $help-launcher-opacity-hover;
   }
   @media (min-width: $viewport-md-min) {
-    display: block;
+    display: inline-block;
   }
-  &:before {
+  &::before {
     content: '?';
   }
 }

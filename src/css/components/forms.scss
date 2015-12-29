@@ -141,7 +141,7 @@ textarea.form-control {
   position: relative;
   display: inline-block;
   color: $filter-color;
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -178,7 +178,7 @@ select.field {
 // media query to target Firefox only
 @-moz-document url-prefix() {
   .filter {
-    &:after {
+    &::after {
       margin-top: 0;
     }
   }
@@ -202,10 +202,10 @@ select.field {
     padding: $padding-unit / 2;
   }
   .filter {
-    &:after {
+    &::after {
       z-index: 5;
     }
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       top: 0;
@@ -290,7 +290,7 @@ select.field {
   .control_indicator {
     border-radius: 50%;
   }
-  input:checked ~ .control_indicator:before {
+  input:checked ~ .control_indicator::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -338,12 +338,12 @@ select.field {
   padding: 1px;
   background-color: $color-gray-light;
   @include transition(background-color 0.36s $timing-function);
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
   }
-  &:before {
+  &::before {
     top: 1px;
     bottom: 1px;
     left: 1px;
@@ -352,7 +352,7 @@ select.field {
     border-radius: 15px;
     @include transition(background-color 0.36s $timing-function);
   }
-  &:after {
+  &::after {
     top: 0;
     bottom: 0;
     left: 0;
@@ -369,10 +369,10 @@ select.field {
     opacity: 0.6;
     cursor: default;
   }
-  .switch_checkbox:checked + &:before {
+  .switch_checkbox:checked + &::before {
     background-color: lighten($color-green, 12%);
   }
-  .switch_checkbox:checked + &:after {
+  .switch_checkbox:checked + &::after {
     border-color: $color-green;
     margin-left: 26px;
   }

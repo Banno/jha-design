@@ -8,7 +8,7 @@
       display: block;
     }
     .dropdown_toggle--indicator {
-      &:after {
+      &::after {
         display: block;
       }
     }
@@ -23,7 +23,7 @@
 
 
 .dropdown_toggle--indicator {
-  &:after {
+  &::after {
     content: '';
     display: none;
     position: absolute;
@@ -34,7 +34,7 @@
     bottom: -5px;
     z-index: $z-index-dropdown + 1;
   }
-  &:after {
+  &::after {
     border-bottom-color: $dropdown-background-color;
     border-width: 0 7px 7px;
     margin-left: -8px;

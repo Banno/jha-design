@@ -16,11 +16,25 @@
 }
 
 .message_heading {
-  @extend .content_heading;
+  @include clearfix();
+  @include flexbox-display();
+  @include align-items(center);
+  margin-bottom: $unit-xs;
+  .thumbnail,
+  .avatar {
+    float: left;
+    margin-right: $padding-unit;
+  }
 }
 
 .message_title {
-  @extend .h4;
+  position: relative;
+  line-height: 1.1;
+  color: $heading-color;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: $h4-size;
+  font-weight: $h4-weight;
 }
 
 .message_inner {
