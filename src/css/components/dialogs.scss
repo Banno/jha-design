@@ -106,20 +106,24 @@
 // of by viewport
 .dialog--center\@xs {
   @include flexbox-display();
+  max-height: calc(100vh - ($spacing-unit * 2));
 }
 @media (min-width: $viewport-sm-min) {
   .dialog--center\@sm {
     @include flexbox-display();
+    max-height: calc(100vh - ($spacing-unit * 2));
   }
 }
 @media (min-width: $viewport-md-min) {
   .dialog--center\@md {
     @include flexbox-display();
+    max-height: calc(100vh - ($spacing-unit * 2));
   }
 }
 @media (min-width: $viewport-lg-min) {
   .dialog--center\@lg {
     @include flexbox-display();
+    max-height: calc(100vh - ($spacing-unit * 2));
   }
 }
 

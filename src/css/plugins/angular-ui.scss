@@ -27,7 +27,6 @@
   display: flex !important;
   .modal-content {
     min-height: 0;
-    max-height: calc(100vh);
   }
 }
 @media (min-width: $viewport-sm-min) {
@@ -37,6 +36,11 @@
     display: flex !important;
     .modal-content {
       min-height: 0;
+    }
+  }
+  .dialog--center\@xs {
+    .modal-content {
+      max-height: calc(100vh - 64px);
     }
   }
 }
