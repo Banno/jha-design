@@ -109,7 +109,10 @@ th {
     }
     tr {
       display: block;
-      border-bottom: 1px solid $table-border-color;
+      border-bottom: 1px solid darken($table-border-color, 5%);
+    }
+    tr:last-child {
+      border-bottom-width: 0;
     }
     td {
       display: block;
@@ -128,6 +131,9 @@ th {
         text-transform: uppercase;
         color: $table-heading-color;
       }
+    }
+    tr:not(:last-child) td:last-child {
+      border-bottom-color: darken($table-border-color, 5%);
     }
   }
 

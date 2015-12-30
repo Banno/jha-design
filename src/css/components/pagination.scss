@@ -6,7 +6,7 @@
   @include justify-content(center);
 }
 .pagination_item {
-  display: inline-block;
+  display: none;
   position: relative;
   margin-bottom: 0;
   text-align: center;
@@ -23,7 +23,6 @@
   font-size: $btn-font-size-base;
   line-height: $btn-line-height-base;
   @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
-  display: none; // for responsive limiting
   min-width: $pagination-min-width;
   padding-left: 0;
   padding-right: 0;
@@ -39,8 +38,6 @@
   &.is-active {
     text-decoration: none;
   }
-  &:active,
-  &:focus,
   &.is-active {
     box-shadow: $btn-focus-shadow;
     background-color: $pagination-active-background;
@@ -76,28 +73,16 @@
     border-top-right-radius: $border-radius-base;
     border-bottom-right-radius: $border-radius-base;
   }
-  &:first-child,
-  &:last-child,
-  &:nth-child(2),
-  &:nth-child(3),
-  &:nth-child(4),
-  &:nth-child(5) {
+  &:nth-child(-n+5),
+  &:last-child {
     display: inline-block;
   }
 }
 
 @media (min-width: $viewport-sm-min) {
   .pagination_item {
-    &:first-child, // previous button
-    &:last-child, // next button
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5),
-    &:nth-child(6),
-    &:nth-child(7),
-    &:nth-child(8),
-    &:nth-child(9) {
+    &:nth-child(-n+9),
+    &:last-child {
       display: inline-block;
     }
   }
