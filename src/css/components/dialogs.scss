@@ -86,7 +86,7 @@
   @include transition-duration(.3s);
   @media (min-width: $viewport-sm-min) {
     width: 90%;
-    min-height: auto;
+    min-height: 0;
     max-height: none;
     max-width: $dialog-width-base;
     border-radius: $dialog-radius;
@@ -106,24 +106,20 @@
 // of by viewport
 .dialog--center\@xs {
   @include flexbox-display();
-  max-height: calc(100vh - ($spacing-unit * 2));
 }
 @media (min-width: $viewport-sm-min) {
   .dialog--center\@sm {
     @include flexbox-display();
-    max-height: calc(100vh - ($spacing-unit * 2));
   }
 }
 @media (min-width: $viewport-md-min) {
   .dialog--center\@md {
     @include flexbox-display();
-    max-height: calc(100vh - ($spacing-unit * 2));
   }
 }
 @media (min-width: $viewport-lg-min) {
   .dialog--center\@lg {
     @include flexbox-display();
-    max-height: calc(100vh - ($spacing-unit * 2));
   }
 }
 
@@ -131,6 +127,7 @@
 .dialog_header,
 .dialog_content,
 .dialog_footer {
+  background-color: #fff;
   padding: $padding-unit;
   @include clearfix();
   @media (min-width: $viewport-md-min) {
@@ -142,7 +139,6 @@
 // Header
 .dialog_header {
   position: relative;
-  background-color: #fff;
   border-top-left-radius: $dialog-radius - 1;
   border-top-right-radius: $dialog-radius - 1;
   border-bottom: $border-lt;
@@ -210,7 +206,6 @@
 
 // Footer
 .dialog_footer {
-  background-color: #fff;
   border-top: $border-lt;
   border-bottom-left-radius: $dialog-radius;
   border-bottom-right-radius: $dialog-radius;
