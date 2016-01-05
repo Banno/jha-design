@@ -8,6 +8,7 @@ $enable-thumbnails:         true !default;
 $enable-badges:             true !default;
 $enable-buttons:            true !default;
 $enable-button-groups:      true !default;
+$enable-wells:              true !default;
 $enable-dialogs:            true !default;
 $enable-drawers:            true !default;
 $enable-pagination:         true !default;
@@ -513,3 +514,12 @@ $tooltip-background:        rgba($color-gray-dark, 0.8) !default;
 $tooltip-font-size:         $font-size-sm !default;
 $tooltip-padding:           8px 12px !default;
 $tooltip-line-height:       $line-height-base !default;
+
+
+// Wells
+$well-background:           #f5f6f8 !default;
+$well-radius:               $border-radius-base !default;
+$well-padding-x-base:       24px !default;
+$well-padding-y-base:       16px !default;
+$well-padding-y-lg:         24px !default;
+$well-border:               $border-base !default;
