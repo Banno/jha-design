@@ -146,27 +146,18 @@
     @include justify-content(center);
     @include align-items(stretch);
   }
-}
-.tab_item {
-  display: inline-block;
-  @include flex(1 0 0);
-  max-width: 100px;
-  text-align: center;
-  padding-top: 6px;
-  color: $color-gray-medium;
-  cursor: pointer;
-  @include faux-border(left, $color-gray-light);
-  z-index: 1;
-  &:active,
-  &:focus {
-    outline: 0;
-    color: $topbar-color;
-  }
-  &.is-active {
-    color: $color-primary;
-  }
-  &:first-child {
-    @include reset-faux-border(left);
+  .tab_item {
+    @include flex(1 0 0);
+    max-width: 100px;
+    padding-top: 6px;
+    line-height: 1;
+    text-align: center;
+    @include faux-border(left, $color-gray-light);
+    border-bottom-width: 0;
+    margin-right: 0;
+    &:first-child {
+      @include reset-faux-border(left);
+    }
   }
 }
 .tab_label {
@@ -186,23 +177,22 @@
       padding-right: $unit-base;
       @include justify-content(flex-start);
     }
-  }
-  .tab_item {
-    @include flex(0 auto);
-    max-width: none;
-    @include reset-faux-border(left);
-    padding: $unit-base 0;
-    margin-right: $spacing-unit;
-    height: $tabbar-height-base;
-    border-bottom: 1px solid transparent;
-    &.is-active {
-      border-bottom-color: currentColor;
-    }
-    .icon {
-      @include square(18px);
-      position: relative;
-      top: -1px;
-      margin-right: 3px;
+    .tab_item {
+      @include flex(0 auto);
+      max-width: none;
+      @include reset-faux-border(left);
+      padding-top: 0;
+      padding-bottom: 0;
+      height: $tabbar-height-base;
+      line-height: $tabbar-height-base;
+      border-bottom-width: 1px;
+      margin-right: $spacing-unit;
+      .icon {
+        @include square(18px);
+        position: relative;
+        top: -1px;
+        margin-right: 3px;
+      }
     }
   }
   .tab_label {
@@ -355,7 +345,9 @@
   @include clearfix();
   .container,
   .grid,
-  [class^="col-"] {
+  [class^="grid_"],
+  .toolbar_item,
+  .tab_item {
     height: $tabbar-height-sm;
   }
   .toolbar_item,
@@ -363,8 +355,10 @@
     display: inline-block;
     max-width: none;
     @include reset-faux-border(left);
-    padding: $padding-unit 0;
+    padding: 0;
     margin-right: $spacing-unit;
+    height: $tabbar-height-sm;
+    line-height: $tabbar-height-sm;
     .icon {
       @include square(18px);
       position: relative;
@@ -379,12 +373,15 @@
     height: $topbar-height-base;
     .container,
     .grid,
-    [class^="col-"] {
+    [class^="grid_"],
+    .tab_item,
+    .toolbar_item {
       height: $topbar-height-base;
     }
     .toolbar_item,
     .tab_item {
-      padding: $unit-base 0;
+      padding: 0;
+      line-height: $topbar-height-base;
     }
   }
 }

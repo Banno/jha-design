@@ -36,7 +36,7 @@
   .title {
     font-weight: $toast-title-weight;
   }
-  svg {
+  .icon {
     background-color: #fff;
     fill: $toast-background-color;
     @include square(36px);
@@ -47,7 +47,7 @@
 
 .toast--danger {
   background-color: $color-danger;
-  svg {
+  .icon {
     fill: $color-danger;
   }
 }

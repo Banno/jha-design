@@ -2,6 +2,10 @@
 .overflow-tabs {
   position: relative;
   margin: 0 (-$padding-unit);
+  max-width: calc(100% + #{$padding-unit * 2});
+  .tab_item:first-child {
+    margin-left: $padding-unit;
+  }
 }
 .tabs {
   margin: 0;
@@ -12,11 +16,28 @@
   touch-action: pan-x;
   overflow: auto;
   white-space: nowrap;
-  height: $tabbar-height-sm + 16;
-  .tab_item:first-child {
-    margin-left: $padding-unit;
+}
+
+.tab_item {
+  display: inline-block;
+  color: $color-gray-medium;
+  cursor: pointer;
+  z-index: 1;
+  border-bottom: 1px solid transparent;
+  line-height: 48px;
+  padding-bottom: 3px;
+  margin-right: $padding-unit;
+  &:active,
+  &:focus {
+    outline: 0;
+    color: $topbar-color;
+  }
+  &.is-active {
+    color: $color-primary;
+    border-bottom-color: currentColor;
   }
   @media (min-width: $viewport-md-min) {
-    height: $tabbar-height-base;
+    margin-right: $spacing-unit;
+    border-bottom: 1px solid transparent;
   }
 }

@@ -27,7 +27,8 @@
     position: relative;
     top: $unit-xs;
   }
-  .label + .form-control {
+  .label + .form-control,
+  .label + .filter {
     margin-top: $unit-xs + 2;
   }
   .field + .field,
