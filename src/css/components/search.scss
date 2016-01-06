@@ -75,7 +75,7 @@
   @include square(70px);
   padding: 22px;
   .icon {
-    @include square($avatar-size-sm);
+    @include square($avatar-size-xs);
   }
 }
 

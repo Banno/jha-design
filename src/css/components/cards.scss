@@ -96,6 +96,12 @@
       padding-left: $card-spacing-left-base;
       @include hairline-offset($card-spacing-left-base);
     }
+    @if $enable-wells {
+      .well--escape-list {
+        margin-left: -$card-spacing-left-base;
+        padding-left: $card-spacing-left-base;
+      }
+    }
     .list_item--inset {
       @include hairline-offset($card-spacing-left-base + $thumbnail-size-sm + $padding-unit);
     }
@@ -167,7 +173,6 @@
 @media (min-width: $viewport-lg-min) {
   @if $enable-wells {
     .card .well {
-      // margin-left: -$card-spacing-left-lg;
       padding-left: $card-spacing-left-lg;
     }
   }
@@ -193,6 +198,12 @@
         margin-left: -$card-spacing-left-lg;
         padding-left: $card-spacing-left-lg;
         @include hairline-offset($card-spacing-left-lg);
+      }
+      @if $enable-wells {
+        .well--escape-list {
+          margin-left: -$card-spacing-left-lg;
+          padding-left: $card-spacing-left-lg;
+        }
       }
       .list_item--inset {
         @include hairline-offset($card-spacing-left-lg + $thumbnail-size-sm + $padding-unit);
