@@ -196,45 +196,6 @@ select.field {
   }
 }
 
-// IE9 hack to hide the arrow
-@media screen and (min-width: 0\0) {
-  select.field {
-    z-index: 1;
-    padding: $padding-unit / 2;
-  }
-  .filter {
-    &::after {
-      z-index: 5;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 2;
-      display: block;
-      width: 26px; // covers the native select's arrow
-      background-color: #fff;
-    }
-    select.field {
-      &:hover,
-      &:focus,
-      &:active {
-        color: $filter-focus-color;
-      }
-    }
-  }
-  .form-row {
-    margin-bottom: 0;
-    .form-group {
-      margin-bottom: $unit-base;
-    }
-  }
-}
-
-
-
 
 // Checkboxes and radios
 .control {

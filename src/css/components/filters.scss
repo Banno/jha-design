@@ -72,34 +72,3 @@
     }
   }
 }
-
-// IE9 hack to hide the arrow
-@media screen and (min-width: 0\0) {
-  .filter_select {
-    z-index: 1;
-    padding: $padding-unit / 2;
-  }
-  .filter {
-    &::after {
-      z-index: 5;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 2;
-      display: block;
-      width: 26px; // covers the native select's arrow
-      background-color: #fff;
-    }
-    .filter_select {
-      &:hover,
-      &:focus,
-      &:active {
-        color: $filter-focus-color;
-      }
-    }
-  }
-}
