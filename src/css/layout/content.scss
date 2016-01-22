@@ -33,7 +33,7 @@ ________
 */
 
 .content_push {
-  overflow: hidden;
+  @include clearfix();
 }
 
 .content_push,

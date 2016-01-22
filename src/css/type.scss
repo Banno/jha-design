@@ -233,6 +233,13 @@ ul, .ul {
 .stat--center {
   text-align: center;
 }
+.stat--bordered-left {
+  border-left: $border-lt;
+}
+.stat--bordered-right {
+  border-right: $border-lt;
+}
+
 .stat_value {
   font-size: 30px;
   color: $text-color-dark;

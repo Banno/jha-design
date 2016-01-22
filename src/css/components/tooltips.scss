@@ -3,7 +3,6 @@
   &::before {
     position: absolute;
     z-index: $z-index-toast + 1;
-    // display: none;
     width: 0;
     height: 0;
     color: $tooltip-background;
@@ -14,11 +13,10 @@
   &::after {
     position: absolute;
     z-index: $z-index-toast;
-    // display: none;
     padding: $tooltip-padding;
     font-size: $tooltip-font-size;
     font-weight: 400;
-    font-style: none;
+    font-style: normal;
     color: #fff;
     line-height: $tooltip-line-height;
     text-align: center;
