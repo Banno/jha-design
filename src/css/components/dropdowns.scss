@@ -62,10 +62,6 @@
     left: auto;
     right: 0;
   }
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    background-color: rgba($dropdown-background-color, 0.90);
-    @include backdrop-filter(blur(5px));
-  }
 }
 .dropdown_menu--padding {
   padding: $padding-unit;
