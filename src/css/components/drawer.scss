@@ -13,11 +13,13 @@
   width: 100%;
   height: 100%;
   opacity: 0;
+  visibility: hidden;
   z-index: $z-index-drawer;
   background-color: $dialog-backdrop-color;
-  @include transition(opacity 0.3s $timing-function);
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
   &.is-visible,
   &.in {
+    visibility: visible;
     opacity: $dialog-backdrop-opacity;
   }
 }
@@ -33,11 +35,11 @@
   visibility: hidden;
   opacity: 0;
   outline: 0;
-  @include transition(opacity 0.3s 0, visibility 0 0.3s);
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
   &.is-visible {
     visibility: visible;
     opacity: 1;
-    @include transition(opacity 0.3s 0, visibility 0 0);
+    @include transition(opacity 0.3s 0s, visibility 0s 0s);
     .drawer_inner {
       @include translateX(0);
     }

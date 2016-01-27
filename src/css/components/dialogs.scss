@@ -15,9 +15,9 @@
   overflow-y: auto;
   opacity: 0;
   outline: 0;
-  @include transition(opacity 0.3s 0, visibility 0 0.3s);
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
   -webkit-overflow-scrolling: touch;
-  will-change: opacity;
+  will-change: visibility;
   // this flexbox property does nothing on it's own, but a utility class depends
   // on it and this is the most efficent way to write it
   @include align-items(center);
@@ -29,7 +29,7 @@
   &.in {
     visibility: visible;
     opacity: 1;
-    @include transition(opacity 0.3s 0, visibility 0 0);
+    @include transition(opacity 0.3s 0s, visibility 0s 0s);
     .dialog_inner {
         @include transform(translateY(0));
     }
@@ -48,12 +48,15 @@
   width: 100%;
   height: 100%;
   opacity: 0;
+  visibility: hidden;
   z-index: $z-index-dialog;
   background-color: $dialog-backdrop-color;
-  @include transition(opacity 0.3s $timing-function);
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
   &.is-visible,
   &.in {
+    visibility: visible;
     opacity: $dialog-backdrop-opacity;
+    @include transition(opacity 0.3s 0s, visibility 0s 0s);
   }
   @media (min-width: $viewport-sm-min) {
     display: block;
@@ -81,10 +84,11 @@
   cursor: auto;
   outline: 0;
   will-change: transform;
-  @include transform(translateY(-100%));
+  @include transform(translateY(100%));
   @include transition-property(transform);
   @include transition-duration(.3s);
   @media (min-width: $viewport-sm-min) {
+    @include transform(translateY(-100%));
     width: 90%;
     min-height: 0;
     max-height: none;

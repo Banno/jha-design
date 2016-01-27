@@ -818,7 +818,7 @@
     <div id="profiledialog" class="dialog" role="dialog">
       <div class="dialog_inner">
         <header class="dialog_header dialog_header--profile">
-          <button type="button" class="btn btn--icon">
+          <button type="button" class="btn btn--icon" id="closeProfileBtn">
             <svg class="icon icon--sm" role="presentation"><use xlink:href="#close"></use></svg>
           </button>
           <button type="button" class="btn btn--link">
@@ -1208,11 +1208,18 @@
       var appsModalBtn = document.getElementById('appsListdialogBtn');
       var backdrop = document.getElementsByClassName('dialog_backdrop')[0];
       var appsModal = document.getElementById('profiledialog');
+      var appsModalCloseBtn = document.getElementById('closeProfileBtn');
 
       appsModalBtn.addEventListener('click', function() {
         backdrop.style.display = '';
         backdrop.classList.add('is-visible');
         appsModal.classList.add('is-visible');
+      })
+
+      appsModalCloseBtn.addEventListener('click', function() {
+        backdrop.classList.remove('is-visible');
+        appsModal.classList.remove('is-visible');
+        backdrop.style.display = 'none';
       })
 
       // dropdowns

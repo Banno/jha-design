@@ -44,7 +44,7 @@
 }
 
 .gallery_item_details {
-  @include transition(opacity 0.3s 0, visibility 0 0.3s, transform 0.2s 0);
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s, transform 0.2s 0s);
   @include transform(translateY($spacing-unit));
   opacity: 0;
   position: relative;
