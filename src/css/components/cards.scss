@@ -7,9 +7,6 @@
   max-width: $card-max-width;
   margin-left: auto;
   margin-right: auto;
-  &:last-of-type {
-    margin-bottom: $card-item-margin-bottom;
-  }
   @media (min-width: $viewport-md-min) {
     margin-bottom: $card-margin-bottom * 2;
   }

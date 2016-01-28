@@ -1,0 +1,15 @@
+.rotate {
+  @include transition-transform(.2s ease);
+}
+.is-rotated-90 {
+  @include rotate(90deg);
+}
+.is-rotated-90r {
+  @include rotate(-90deg);
+}
+.is-rotated-180 {
+  @include rotate(180deg);
+}
+.is-rotated-180r {
+  @include rotate(-180deg);
+}

@@ -69,6 +69,7 @@
 @if $enable-spacing         { @import "utilities/spacing"; }
 @if $enable-color           { @import "utilities/color"; }
 @if $enable-visibility      { @import "utilities/responsive-visibility"; }
+@if $enable-motion          { @import "utilities/motion"; }
 // animation
 @if $enable-progress        { @import "animation"; }
 // hacks
