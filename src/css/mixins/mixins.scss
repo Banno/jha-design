@@ -599,7 +599,7 @@
   &.is-disabled {
     background-color: $bg;
     border-color: $bg;
-    color: $text;
+    color: rgba($text, .7);
     opacity: $btn-disabled-opacity;
   }
 }
