@@ -123,8 +123,8 @@
   .navigation.will-shift + .tab-bar {
     @include transition-transform(.2s ease);
   }
-  .is-shift-up,
-  .navigation.is-shift-up + .tab-bar {
+  .is-shifted-up,
+  .navigation.is-shifted-up + .tab-bar {
     @include translateY(-100%);
   }
 }
