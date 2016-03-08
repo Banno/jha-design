@@ -22,6 +22,7 @@
     "dist/index.html",
     "dist/build-mode.html",
     "dist/reports.html",
+    "dist/banno-web.html",
     "bower.json",
     "failures",
     "gulpfile.js",

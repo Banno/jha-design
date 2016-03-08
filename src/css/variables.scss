@@ -195,6 +195,7 @@ $z-index-toast:             1060 !default;
 $z-index-dialog:            1050 !default;
 $z-index-help:              1050 !default;
 $z-index-drawer:            1038 !default;
+$z-index-action-toolbar:    1030 !default;
 $z-index-topbar:            1020 !default;
 $z-index-dropdown:          1010 !default;
 $z-index-sticky:            1000 !default;
@@ -224,6 +225,14 @@ $tabbar-height-base:        70px !default;
 $tabbar-height-sm:          49px !default;
 $tabbar-shadow:             0 0 3px rgba($color-gray-dark, 0.24) !default;
 
+$toolbar-height-base:       70px !default;
+$toolbar-background:        #fff !default;
+$toolbar-border:            1px solid rgba(0,0,0,0.05) !default;
+$toolbar-shadow:            0 0 5px rgba(0,0,0,0.1) !default;
+$toolbar-padding:           20px !default;
+
+$toolbar-button-right:      16px !default;
+$toolbar-button-top:        $toolbar-button-right !default;
 
 // Build mode
 $build-mode-background:       $color-gray-light !default;

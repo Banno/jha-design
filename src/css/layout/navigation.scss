@@ -385,6 +385,40 @@
   }
 }
 
+
+// Action toolbar
+.action-toolbar {
+  position: fixed;
+  z-index: $z-index-action-toolbar;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $toolbar-height-base;
+  background-color: $toolbar-background;
+  border-top: $toolbar-border;
+  padding-top: $toolbar-padding;
+  @include transition-transform(.3s ease);
+  @include translateY(200%);
+  box-shadow: $toolbar-shadow;
+  background-clip: padding-box;
+}
+.action-toolbar.is-visible {
+  @include translateY(0);
+}
+.action-toolbar_buttons {
+  position: absolute;
+  right: $toolbar-button-right;
+  top: $toolbar-button-top;
+}
+@media (min-width: 768px) {
+  .action-toolbar_buttons {
+    left: 50%;
+    right: auto;
+    @include translateX(-50%);
+  }
+}
+
+
 .viewport {
   padding-bottom: $tabbar-height-sm; // magic number
   min-height: 80vh;
