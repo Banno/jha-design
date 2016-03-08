@@ -16,6 +16,14 @@
 .u-m-y { margin-top:        $spacing-y !important; margin-bottom: $spacing-y !important; }
 .u-m-auto { margin-right:   auto !important; margin-left: auto !important; }
 
+.u-m-a-sm { margin:            $spacing-sm !important; }
+.u-m-t-sm { margin-top:        $spacing-y-sm !important; }
+.u-m-r-sm { margin-right:      $spacing-x-sm !important; }
+.u-m-b-sm { margin-bottom:     $spacing-y-sm !important; }
+.u-m-l-sm { margin-left:       $spacing-x-sm !important; }
+.u-m-x-sm { margin-right:      $spacing-x-sm !important; margin-left: $spacing-x-sm !important; }
+.u-m-y-sm { margin-top:        $spacing-y-sm !important; margin-bottom: $spacing-y-sm !important; }
+
 .u-m-a-lg { margin:            $spacing-lg !important; }
 .u-m-t-lg { margin-top:        $spacing-y-lg !important; }
 .u-m-r-lg { margin-right:      $spacing-x-lg !important; }

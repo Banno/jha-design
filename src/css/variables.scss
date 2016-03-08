@@ -122,6 +122,20 @@ $display3-weight:           300 !default;
 $display4-weight:           400 !default;
 
 
+$title-color:               $text-color-dark !default;
+$title-weight-base:         normal !default;
+$title-weight-lg:           normal !default;
+$title-size:                $font-size-lg !default;
+$title-size-xs:             $font-size-base !default;
+$title-size-sm:             $font-size-lg - 1 !default;
+$title-size-lg:             $font-size-lg + 2 !default;
+
+$sub-title-color:           $text-color-light !default;
+$sub-title-size:            $font-size-base - 1 !default;
+
+$copy-max-width:            700px !default;
+
+
 // Spacing units
 $unit-xs:                   6px !default;
 $unit-sm:                   12px !default;
@@ -132,6 +146,10 @@ $padding-unit:              16px !default;
 $spacing:                   $padding-unit !default;
 $spacing-y:                 $spacing !default;
 $spacing-x:                 $spacing !default;
+
+$spacing-sm:                $padding-unit / 2 !default;
+$spacing-y-sm:              $spacing-sm !default;
+$spacing-x-sm:              $spacing-sm !default;
 
 $spacing-lg:                $unit-base !default;
 $spacing-y-lg:              $spacing-lg !default;
@@ -144,6 +162,7 @@ $spacing-x-xl:              $spacing-xl !default;
 // Grid system
 $grid-columns:              12 !default;
 $grid-gutter-width:         $spacing-unit !default;
+$grid-gutter-width-tight:   16px !default;
 $column-width-max:          1170px !default;
 
 
@@ -174,7 +193,8 @@ $faux-border-color:         #d8e1eb !default;;
 // Z-index
 $z-index-toast:             1060 !default;
 $z-index-dialog:            1050 !default;
-$z-index-drawer:            1040 !default;
+$z-index-help:              1050 !default;
+$z-index-drawer:            1038 !default;
 $z-index-topbar:            1020 !default;
 $z-index-dropdown:          1010 !default;
 $z-index-sticky:            1000 !default;
@@ -187,6 +207,7 @@ $shadow-key-light:          0 19px 19px rgba(#000, 0.3), 0 15px 6px rgba(#000, 0
 
 
 // Topbar
+$topbar-fixed:              true !default;
 $topbar-height-base:        70px !default;
 $topbar-height-sm:          44px !default;
 $topbar-background:         #fff !default;
@@ -201,11 +222,7 @@ $topbar-link-color-focus-inverse: #fff !default;
 
 $tabbar-height-base:        70px !default;
 $tabbar-height-sm:          49px !default;
-
-$drawer-background:         #fff !default;
-
-$backdrop-background:       $color-gray-dark !default;
-$backdrop-opacity:          0.6 !default;
+$tabbar-shadow:             0 0 3px rgba($color-gray-dark, 0.24) !default;
 
 
 // Build mode
@@ -220,10 +237,11 @@ $build-mode-title-font-size:  20px !default;
 // Buttons
 $btn-padding-vertical:      0 !default;
 $btn-padding-horizontal:    18px !default;
-$btn-border-radius-base:    500px !default;
+$btn-border-radius-base:    $border-radius-base !default;
 
 $btn-text-transform:        none !default;
 $btn-text-color-base:       $text-color-base !default;
+$btn-icon-fill-color:       inherit !default;
 $btn-font-size-base:        $font-size-base !default;
 $btn-font-weight:           400 !default;
 
@@ -297,7 +315,8 @@ $card-background-color:     #fff !default;
 $card-shadow:               0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px rgba($color-gray-dark, 0.12) !default;
 $card-radius:               2px !default;
 $card-max-width:            550px !default;
-$card-margin-bottom:        $padding-unit !default;
+$card-margin-bottom-base:   $padding-unit !default;
+$card-margin-bottom-lg:     $padding-unit * 2 !default;
 $card-spacing-left-base:    $padding-unit !default;
 $card-spacing-left-lg:      $unit-base !default;
 $card-item-margin-bottom:   $spacing-unit * 1.5 !default;
@@ -413,6 +432,7 @@ $help-launcher-opacity-default: 0.8 !default;
 $help-launcher-opacity-hover:   0.9 !default;
 
 // Icons
+$icon-size-xs:              14px !default;
 $icon-size-sm:              18px !default;
 $icon-size-base:            24px !default;
 $icon-size-lg:              36px !default;
@@ -427,15 +447,20 @@ $list-margin-bottom-lg:     $unit-sm !default;
 $list-item-padding-left-base: $card-spacing-left-base !default;
 $list-item-padding-left-lg: $card-spacing-left-lg !default;
 
-$list-item-padding-top-base: $padding-unit !default;
-$list-item-padding-top-sm:  $padding-unit / 2 !default;
+$list-item-padding-top-base:    $padding-unit !default;
 $list-item-padding-bottom-base: $padding-unit !default;
-$list-item-padding-bottom-sm: $padding-unit / 2 !default;
+
+$list-item-padding-top-xs:      4px !default;
+$list-item-padding-bottom-xs:   4px !default;
+
+$list-item-padding-top-sm:      $padding-unit / 2 !default;
+$list-item-padding-bottom-sm:   $padding-unit / 2 !default;
 
 $list-item-padding-right-base: $padding-unit !default;
 $list-item-padding-right-lg: $unit-base !default;
 
 $list-item-color:           $text-color-base !default;
+$list-item-focus-outline:   1px solid $color-primary !default;
 $list-item-hover-color:     $list-item-color !default;
 $list-item-hover-background: rgba(#f1f3f5, .5) !default;
 $list-item-active-color:    $color-primary !default;
@@ -448,6 +473,7 @@ $list-heading-color:        $text-color-light !default;
 $list-heading-transform:    uppercase !default;
 $list-heading-padding-top:  24px !default;
 $list-heading-padding-bottom: 8px !default;
+$list-heading-margin-bottom: 8px !default;
 $list-heading-font-size:    $font-size-base - 1 !default;
 $list-heading-weight:       600 !default;
 $list-heading-border-color: $color-gray-light !default;
@@ -455,6 +481,9 @@ $list-heading-border-color: $color-gray-light !default;
 $list-item-muted-font-style: italic !default;
 $list-item-muted-opacity:   0.6 !default;
 $list-item-muted-opacity-hover: 1 !default;
+
+$list-divider-margin-top:   8px !default;
+$list-divider-margin-bottom: $list-divider-margin-top !default;
 
 
 // Message

@@ -3,16 +3,15 @@
   background-color: $card-background-color;
   @include box-shadow($card-shadow);
   border-radius: $card-radius;
-  margin-bottom: $card-margin-bottom;
+  margin-bottom: $card-margin-bottom-base;
   max-width: $card-max-width;
   margin-left: auto;
   margin-right: auto;
   @media (min-width: $viewport-md-min) {
-    margin-bottom: $card-margin-bottom * 2;
+    margin-bottom: $card-margin-bottom-lg;
   }
   @if $enable-wells {
     .well {
-      // margin-left: -$card-spacing-left-base;
       padding-left: $card-spacing-left-base;
     }
   }
@@ -40,7 +39,7 @@
   line-height: $card-header-line-height;
   > .btn--icon {
     float: right;
-    margin-right: -$padding-unit;
+    margin-right: -($padding-unit / 2);
     margin-top: -10px;
     margin-bottom: -5px;
   }

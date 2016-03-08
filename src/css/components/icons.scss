@@ -5,6 +5,11 @@
   fill: $icon-fill-color;
 }
 
+.icon--xs {
+  @include square($icon-size-xs);
+  position: relative;
+  top: -2px;
+}
 .icon--sm {
   @include square($icon-size-sm);
   position: relative;

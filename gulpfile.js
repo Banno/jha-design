@@ -51,6 +51,24 @@ gulp.task('styles', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('banno-web-styles', function() {
+  var banner = ['/*!',
+    ' * <%= pkg.name %> - <%= pkg.description %>',
+    ' * @theme Banno Web',
+    ' * @version v<%= pkg.version %>',
+    ' * @link <%= pkg.homepage %>',
+    '*/',
+    ''].join('\n');
+
+  return gulp.src('src/css/themes/banno-web.scss')
+    .pipe(sass())
+    .pipe(cssmin())
+    .pipe(header(banner, { pkg: pkg }))
+    .pipe(rename('banno-web.min.css'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload());
+});
+
 gulp.task('compress', function() {
   return gulp.src('src/js/*.js')
     .pipe(uglify({
@@ -115,10 +133,10 @@ gulp.task('stop-test-server', ['phantomcss'], function() {
 })
 
 gulp.task('watch', function() {
-  return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'images', 'compress']);
+  return gulp.watch(allSrc, ['copy', 'styles', 'banno-web-styles', 'icons', 'images', 'compress']);
 });
 
-gulp.task('default', ['copy', 'styles', 'icons', 'file-icons', 'images', 'compress']);
+gulp.task('default', ['copy', 'styles', 'banno-web-styles', 'icons', 'file-icons', 'images', 'compress']);
 gulp.task('dev', ['default', 'connect', 'watch']);
 gulp.task('profile', ['stylestats']);
 gulp.task('test', ['stop-test-server']);

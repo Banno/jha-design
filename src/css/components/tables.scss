@@ -11,6 +11,7 @@
   td {
     padding: $table-cell-padding-base;
     border-bottom: 1px solid $table-border-color;
+    outline: 0;
   }
   th {
     font-size: $table-font-size - 1;
@@ -23,6 +24,14 @@
   tr:active,
   tr:focus {
     outline: 0;
+  }
+
+  // checkbox help
+  .control {
+    padding-left: 0;
+  }
+  .control_indicator {
+    top: -5px;
   }
 }
 
@@ -93,6 +102,22 @@ th {
     margin-right: 0;
     position: static;
   }
+}
+
+
+// Stateful table rows
+.table-row {
+  font-size: 14px;
+}
+.table-row--muted {
+  background-color: #f8f8f8;
+  color: #8d99a0;
+  font-weight: normal;
+}
+.table-row--standout {
+  background-color: #fff;
+  color: #455564;
+  font-weight: 600;
 }
 
 

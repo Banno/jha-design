@@ -1,4 +1,5 @@
 .well {
+  display: block;
   background-color: $well-background;
   padding: $well-padding-y-base $well-padding-x-base;
   @include clearfix();

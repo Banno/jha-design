@@ -214,6 +214,9 @@ select.field {
     z-index: -1; // put the input behind the label so it doesn't overlay text
   }
 }
+.control--inline {
+  display: inline-block;
+}
 .control_indicator {
   position: absolute;
   top: 3px;
@@ -232,9 +235,6 @@ select.field {
 .control input:focus ~ .control_indicator {
   border-color: $color-primary;
 }
-// .control input:checked ~ .control_indicator {
-//   border-color: transparent;
-// }
 .control input:disabled ~ .control_indicator {
   cursor: default;
 }
@@ -245,6 +245,16 @@ select.field {
   }
   input:checked ~ .control_indicator {
     background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4NCiAgICA8cGF0aCBkPSJNOSAxNi4xN2wtNC4xNy00LjE3LTEuNDIgMS40MSA1LjU5IDUuNTkgMTItMTItMS40MS0xLjQxeiIgZmlsbD0iIzNBQUVEQSIgLz4NCjwvc3ZnPg==);
+  }
+  input:indeterminate ~ .control_indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    @include translate(-50%, -50%);
+    background-color: $color-primary;
   }
 }
 

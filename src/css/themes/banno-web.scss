@@ -1,0 +1,93 @@
+$enable-fonts:              false;
+$enable-thumbnails:         false;
+$enable-button-groups:      false;
+$enable-pagination:         false;
+$enable-app-list:           false;
+$enable-search:             false;
+$enable-tabs:               false;
+$enable-timelines:          false;
+$enable-filters:            false;
+$enable-sortable:           false;
+$enable-gallery:            false;
+$enable-progress:           false;
+$enable-messages:           false;
+$enable-help:               false;
+$enable-navigation:         false;
+$enable-build-mode:         false;
+$enable-profile:            false;
+$enable-spacing:            false;
+$enable-hacks:              false;
+$enable-plugins:            false;
+
+// Theme values
+$color-blue:                #398cc9;
+$color-green:               #67bd48;
+$color-yellow:              #f7941e;
+$color-red:                 #fb6b5b;
+
+$background-color:          #ecedef;
+
+$font-family-base:          Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+$font-size-base:            14px;
+
+$line-height-base:          1.5;
+
+$text-color-light:          #b0b8b7;
+$text-color-dark:           #060606;
+
+$display1-size:             36px;
+$display2-size:             32px;
+$display3-size:             28px;
+$display4-size:             22px;
+
+$display1-weight:           300;
+$display2-weight:           300;
+$display3-weight:           300;
+$display4-weight:           400;
+
+$title-weight-base:         400;
+$title-weight-lg:           300;
+$title-size-lg:             20px;
+
+$sub-title-size:            12px;
+
+// Grid system
+$grid-gutter-width:         20px;
+
+
+// Topbar
+$topbar-fixed:              false;
+
+// Buttons
+$btn-text-color-base:       $color-blue;
+
+// Cards
+$card-shadow:               0 1px 1px 0 rgba(0,0,0,.24),0 1px 4px rgba(0,0,0,.12);
+$card-margin-bottom-base:   10px;
+$card-margin-bottom-lg:     20px;
+
+$card-header-padding-lg:    24px 24px 20px 0;
+
+$card-title-size:           22px;
+$card-title-weight:         400;
+
+$card-footer-padding-base:  12px 16px 24px 0;
+$card-footer-padding-lg:    12px 24px 24px 0;
+
+
+// Icons
+$icon-size-sm:              18px;
+$icon-size-base:            20px;
+
+// Lists
+$list-item-hover-background: rgba(#f1f6f9, .4);
+
+$list-item-muted-opacity:   0.5;
+
+// Wells
+$well-background:           #f1f6f9;
+$well-padding-y-base:       12px;
+$well-padding-y-lg:         18px;
+
+
+@import "../core";

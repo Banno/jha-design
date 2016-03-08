@@ -19,6 +19,7 @@
 .growl-item {
   @extend .toast;
   position: relative;
+  bottom: 0;
   margin-top: $padding-unit;
   opacity: 1;
   @include transform(translateY(0));

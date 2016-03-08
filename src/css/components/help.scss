@@ -1,6 +1,7 @@
 .help-launcher {
   display: none;
   position: fixed;
+  z-index: $z-index-help;
   right: $spacing-unit;
   bottom: $spacing-unit;
   font-size: 24px;

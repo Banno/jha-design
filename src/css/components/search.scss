@@ -18,7 +18,7 @@
   display: block;
   padding: 8px;
   background-color: $color-gray-light;
-  border-radius: 5px;
+  border-radius: $border-radius-base;
   @include clearfix();
 }
 .search_icon {

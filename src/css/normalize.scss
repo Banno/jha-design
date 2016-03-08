@@ -18,14 +18,18 @@ html {
 
 body {
   margin: 0;
-  padding-top: $topbar-height-sm;
+  @if ($topbar-fixed) {
+    padding-top: $topbar-height-sm;
+  }
   background-color: $background-color;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scrollbar-arrow-color: $color-primary;
   // prevent 300ms click delay
   @include touch-action(manipulation);
   @media (min-width: $viewport-md-min) {
-    padding-top: $topbar-height-base * 2;
+    @if ($topbar-fixed) {
+      padding-top: $topbar-height-base * 2;
+    }
     &.u-overflow-hidden {
       overflow: auto;
     }

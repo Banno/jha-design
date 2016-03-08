@@ -19,18 +19,18 @@
 .grid--no-gutter {
   margin-left: 0;
   margin-right: 0;
-  [class^="grid_"] {
+  & > [class^="grid_"] {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 .grid--tight {
-  margin-left: 8px;
-  margin-right: 8px;
-  [class^="grid_"] {
-    padding-left: 8px;
-    padding-right: 8px;
+  margin-left: -$grid-gutter-width-tight / 2;
+  margin-right: -$grid-gutter-width-tight / 2;
+  & > [class^="grid_"] {
+    padding-left: $grid-gutter-width-tight / 2;
+    padding-right: $grid-gutter-width-tight / 2;
   }
 }
 

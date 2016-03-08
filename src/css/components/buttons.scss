@@ -42,21 +42,30 @@
   }
 }
 
+// Icon buttons - perfectly round and wide enough for just an icon
+.btn--icon {
+  border-radius: 50%;
+  min-width: $btn-height-base;
+  padding-left: floor($btn-padding-horizontal / 4);
+  padding-right: floor($btn-padding-horizontal / 4);
+  color: $btn-icon-fill-color;
+}
+
 .btn--default {
-  @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
+  @include button-color($btn-default-background, $color-gray-light, $btn-text-color-base, #fff);
   &:disabled,
   &.is-disabled {
     border-color: $color-gray-light;
   }
 }
 .btn--danger {
-  @include button-color(lighten($btn-danger-background, 6%), $btn-danger-background, #fff, $btn-danger-background);
+  @include button-color($btn-danger-background, $btn-danger-background, #fff, $btn-danger-background);
 }
 .btn--primary {
-  @include button-color(lighten($btn-primary-background, 8%), $btn-primary-background, #fff, $btn-primary-background);
+  @include button-color($btn-primary-background, $btn-primary-background, #fff, $btn-primary-background);
 }
 .btn--success {
-  @include button-color(lighten($btn-success-background, 8%), $btn-success-background, #fff, $btn-success-background);
+  @include button-color($btn-success-background, $btn-success-background, #fff, $btn-success-background);
 }
 .btn--neutral {
   @include button-color($btn-neutral-background, $btn-neutral-background, $text-color-light, $btn-neutral-background);
@@ -168,14 +177,6 @@
 }
 .btn--align-right {
   margin-right: -$btn-padding-horizontal;
-}
-
-// Icon buttons - perfectly round and wide enough for just an icon
-.btn--icon {
-  border-radius: 50%;
-  min-width: $btn-height-base;
-  padding-left: floor($btn-padding-horizontal / 4);
-  padding-right: floor($btn-padding-horizontal / 4);
 }
 
 // Block button

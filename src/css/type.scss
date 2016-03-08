@@ -85,6 +85,7 @@ ul, .ul {
 
 // Section titles
 .section-title {
+  color: $title-color;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: $unit-xs;
@@ -117,28 +118,31 @@ ul, .ul {
 
 
 .title {
-  color: $text-color-dark;
-  font-weight: normal;
-  font-size: $font-size-lg;
+  color: $title-color;
+  font-weight: $title-weight-base;
+  font-size: $title-size;
 }
 .title--xs {
-  font-size: $font-size-base;
+  font-size: $title-size-xs;
 }
 .title--sm {
-  font-size: $font-size-lg - 1;
+  font-size: $title-size-sm;
 }
 .title--lg {
-  font-size: $font-size-lg + 2;
+  font-size: $title-size-lg;
+  @if ($title-weight-base != $title-weight-lg) {
+    font-weight: $title-weight-lg;
+  }
 }
 .sub-title {
-  color: $text-color-light;
-  font-size: $font-size-base - 1;
+  color: $sub-title-color;
+  font-size: $sub-title-size;
 }
 
 /* Wrap your paragraphs and headings with .copy */
 .copy {
   /* max-width enforces a maximum number of characters per line for readability */
-  max-width: 700px;
+  max-width: $copy-max-width;
 }
 
 

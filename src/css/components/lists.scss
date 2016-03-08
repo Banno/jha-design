@@ -17,6 +17,12 @@
     padding-bottom: $list-item-padding-bottom-sm;
   }
 }
+.list--xs {
+  .list_item {
+    padding-top: $list-item-padding-top-xs;
+    padding-bottom: $list-item-padding-bottom-xs;
+  }
+}
 .list--inset {
   padding-left: $padding-unit;
   @media (min-width: $viewport-lg-min) {
@@ -36,8 +42,8 @@
   @include hairline(single, $color-gray-light, 0);
   color: $list-item-color;
   font-size: $list-item-font-size;
-  &:active,
-  &:focus {
+  &:focus,
+  &:active {
     outline: 0;
   }
   &:hover {
@@ -88,11 +94,14 @@
 }
 .list_item--muted {
   font-style: $list-item-muted-font-style;
-  will-change: opacity;
-  opacity: $list-item-muted-opacity;
-  @include transition(opacity .2s $timing-function);
+  & > * {
+    opacity: $list-item-muted-opacity;
+    @include transition(opacity .2s $timing-function);
+  }
   &:hover {
-    opacity: $list-item-muted-opacity-hover;
+    & > * {
+      opacity: $list-item-muted-opacity-hover;
+    }
   }
 }
 
@@ -120,4 +129,12 @@
   @include hairline(single, $list-heading-border-color);
   font-size: $list-heading-font-size;
   font-weight: $list-heading-weight;
+  margin-bottom: $list-heading-margin-bottom;
+}
+
+.list_divider {
+  @include hairline(single, $list-heading-border-color);
+  height: 1px;
+  margin-top: $list-divider-margin-top;
+  margin-bottom: $list-divider-margin-bottom;
 }

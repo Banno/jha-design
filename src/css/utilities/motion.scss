@@ -1,6 +1,10 @@
 .rotate {
-  @include transition-transform(.2s ease);
+  @include transition-transform(.3s $timing-function);
 }
+.rotate--inline {
+  display: inline-block;
+}
+
 .is-rotated-90 {
   @include rotate(90deg);
 }
