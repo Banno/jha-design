@@ -4,7 +4,6 @@ $enable-button-groups:      false;
 $enable-pagination:         false;
 $enable-app-list:           false;
 $enable-search:             false;
-$enable-tabs:               false;
 $enable-timelines:          false;
 $enable-filters:            false;
 $enable-sortable:           false;
@@ -12,10 +11,8 @@ $enable-gallery:            false;
 $enable-progress:           false;
 $enable-messages:           false;
 $enable-help:               false;
-$enable-navigation:         false;
 $enable-build-mode:         false;
 $enable-profile:            false;
-$enable-spacing:            false;
 $enable-hacks:              false;
 $enable-plugins:            false;
 
@@ -25,7 +22,9 @@ $color-green:               #67bd48;
 $color-yellow:              #f7941e;
 $color-red:                 #fb6b5b;
 
-$background-color:          #ecedef;
+$color-primary:             #63a113;
+
+$background-color:          #e6e6e6;
 
 $font-family-base:          Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 $font-size-base:            14px;
@@ -33,7 +32,7 @@ $font-size-base:            14px;
 $line-height-base:          1.5;
 
 $text-color-light:          #b0b8b7;
-$text-color-dark:           #060606;
+$text-color-dark:           #3d454d;
 
 $display1-size:             36px;
 $display2-size:             32px;
@@ -50,6 +49,7 @@ $title-weight-lg:           300;
 $title-size-lg:             20px;
 
 $sub-title-size:            12px;
+$sub-title-color:           #808b96;
 
 // Grid system
 $grid-gutter-width:         20px;
@@ -59,7 +59,8 @@ $grid-gutter-width:         20px;
 $topbar-fixed:              false;
 
 // Buttons
-$btn-text-color-base:       $color-blue;
+$btn-border-radius-base:    500px;
+$btn-text-color-base:       $color-primary;
 
 // Cards
 $card-shadow:               0 1px 1px 0 rgba(0,0,0,.24),0 1px 4px rgba(0,0,0,.12);
@@ -80,12 +81,12 @@ $icon-size-sm:              18px;
 $icon-size-base:            20px;
 
 // Lists
-$list-item-hover-background: rgba(#f1f6f9, .4);
+$list-item-hover-background: rgba(#f5f5f5, .6);
 
 $list-item-muted-opacity:   0.5;
 
 // Wells
-$well-background:           #f1f6f9;
+$well-background:           #f5f5f5;
 $well-padding-y-base:       12px;
 $well-padding-y-lg:         18px;
 
