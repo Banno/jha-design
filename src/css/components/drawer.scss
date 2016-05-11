@@ -123,10 +123,16 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.drawer_header {
+.drawer_header,
+.drawer_footer {
   @include flex-shrink(0);
-  padding: 36px 0 18px;
-  @include hairline(single, $faux-border-color);
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.drawer_header {
+  border-bottom: $border-lt;
   .btn:first-child {
     float: left;
   }
@@ -137,7 +143,7 @@
 
 .drawer_title {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   color: $heading-color;
   @media (min-width: $viewport-md-min) {
     font-size: 18px;
@@ -150,9 +156,5 @@
 }
 
 .drawer_footer {
-  @include hairline(single, $faux-border-color);
-  @include flex-shrink(0);
-  &::after {
-    display: none !important;
-  }
+  border-top: $border-lt;
 }

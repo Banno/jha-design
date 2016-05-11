@@ -19,7 +19,7 @@
 
 #loading-bar .bar {
   @include transition(width 350ms linear);
-  background: $color-primary;
+  background: #fff;
   position: fixed;
   z-index: 10002;
   top: 0;
@@ -38,6 +38,6 @@
   top: 0;
   height: 2px;
   opacity: .45;
-  box-shadow: $color-primary 1px 0 6px 1px;
+  box-shadow: #fff 1px 0 6px 1px;
   border-radius: 100%;
 }

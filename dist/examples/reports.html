@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta http-equiv="cleartype" content="on">
+
+    <title>Banno Reports</title>
+
+    <meta name="viewport" content="initial-scale=1.001, minimum-scale=1.001, maximum-scale=1.001, user-scalable=no">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Banno">
+    <meta name="application-name" content="Banno">
+    <meta name="theme-color" content="#F3AF0D">
+
+    <link href="/css/style.min.css" rel="stylesheet">
+
+    <link rel="icon" sizes="192x192" href="/img/app-icon-192.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+    <style>
+      :root {
+        --primaryAppColor: #F3AF0D;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#mainContent" class="u-sr-only u-sr-only--focusable accessibility-aid" tabindex="1">Skip to content</a>
+
+    <header class="navigation navigation--header">
+      <div class="container">
+        <div class="navigation_inner">
+          <div class="navigation_item">
+            <a href="#" class="navigation_item_link brand">
+              <svg class="icon" role="presentation">
+                <use xlink:href="#reports"></use>
+              </svg>
+              Banno <span class="brand_product">Reports</span>
+            </a>
+          </div>
+
+          <div class="navigation_item">
+            <a href="#" class="navigation_item_link dropdown_toggle" id="switchInstitution">
+              Your FI
+              <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
+            </a>
+          </div>
+
+          <div class="navigation_group">
+            <div class="navigation_item dropdown">
+              <a href="#" class="navigation_item_link navigation_item_link--light dropdown_toggle dropdown_toggle--indicator">
+                <span class="u-sr-only">Apps</span>
+                <svg class="icon" role="presentation"><use xlink:href="#apps"></use></svg>
+              </a>
+              <div class="dropdown_menu dropdown_menu--lg dropdown_menu--no-spacing dropdown_menu--right">
+                <div class="app-list u-m-b">
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #fb6b5b;"><use xlink:href="#target"></use></svg>
+                      Marketing
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #7b75cb;"><use xlink:href="#group"></use></svg>
+                      People
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #257AB0;"><use xlink:href="#web"></use></svg>
+                      Content
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #67bd48;"><use xlink:href="#conversation"></use></svg>
+                      Support
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #ffac52;"><use xlink:href="#reports"></use></svg>
+                      Reports
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #8d99a0;"><use xlink:href="#settings"></use></svg>
+                      Settings
+                    </a>
+                  </div>
+                </div>
+                <div class="dropdown_menu_heading">Your FI</div>
+                <a href="#" class="dropdown_menu_item">Activity</a>
+                <a href="#" class="dropdown_menu_item">Assets</a>
+                <a href="#" class="dropdown_menu_item">Locations</a>
+                <a href="#" class="dropdown_menu_item">Monitor</a>
+                <div class="dropdown_menu_divider"></div>
+                <a href="#" class="dropdown_menu_item u-m-b">Help</a>
+              </div>
+            </div>
+
+            <div class="navigation_item dropdown">
+              <a href="#" class="navigation_item_link dropdown_toggle dropdown_toggle--indicator">
+                <div class="avatar avatar--sm">
+                  <span class="u-sr-only">Sarah Flanders</span>
+                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                </div>
+              </a>
+              <div class="dropdown_menu dropdown_menu--padding dropdown_menu--lg dropdown_menu--right">
+                <div class="u-overflow-hidden u-m-b">
+                  <div class="avatar avatar--lg avatar--you avatar--left">
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="72" height="72">
+                  </div>
+                  <div class="u-overflow-hidden">
+                    <div class="title">Sarah Flanders</div>
+                    <div class="sub-title">sarah.flanders@your-fi.com</div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn--primary btn--sm">View Profile</button>
+                <button id="signoutBtnLg" type="button" class="btn btn--default btn--sm u-float-right">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navigation navigation--tab-bar">
+      <div class="container">
+        <div class="navigation_inner"></div>
+      </div>
+    </nav>
+
+
+    <div class="viewport">
+      <header class="page-header u-visible@mobile">
+        <div class="container">
+          <button id="appsListdialogBtn" type="button" class="btn btn--link btn--icon">
+            <svg class="icon" role="image" title="Apps">
+              <use xlink:href="#apps"></use>
+            </svg>
+          </button>
+          <h1 class="page-header_title">Reports</h1>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="grid grid--no-gutter">
+          <div class="grid_3@md">
+            <nav class="list list--sm list--borderless">
+              <div class="list_heading">Engagement</div>
+              <a href="#" class="list_item is-active ">App usage</a>
+              <div class="list_heading">Money Movement</div>
+              <a href="#" class="list_item">Bill Pay</a>
+              <a href="#" class="list_item">Transfers</a>
+              <a href="#" class="list_item">RDC</a>
+              <div class="list_heading"></div>
+              <a href="#" class="list_item">Exports</a>
+            </nav>
+          </div>
+          <div class="grid_9@md content u-hidden@mobile">
+            <section class="card card--wide card--reset">
+              <header class="card_header card_header--borderless">
+                <div class="card_title">App usage</div>
+              </header>
+              <div class="card_content">
+                <div class="grid u-m-b">
+                  <div class="grid_6@xs grid_3@md">
+                    <div class="stat stat--bordered-right">
+                      <div class="text--semibold text--light">Active users</div>
+                      <div class="stat_value">1,160</div>
+                    </div>
+                  </div>
+                  <div class="grid_6@xs grid_3@md">
+                    <div class="stat stat--bordered-right">
+                      <div class="text--semibold text--light">Total users</div>
+                      <div class="stat_value">1,248</div>
+                    </div>
+                  </div>
+                  <div class="grid_6@xs grid_3@md">
+                    <div class="stat stat--bordered-right">
+                      <div class="text--semibold text--light">Sign ups</div>
+                      <div class="stat_value">16</div>
+                    </div>
+                  </div>
+                  <div class="grid_6@xs grid_3@md">
+                    <div class="stat">
+                      <div class="text--semibold text--light">Retention</div>
+                      <div class="stat_value">93.3%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card card--wide card--reset">
+              <header class="card_header card_header--borderless">
+                <div class="card_title">Logins</div>
+                <div class="btn-group u-m-b-0 u-float-right">
+                  <button type="button" class="btn btn--toggle is-active">Day</button>
+                  <button type="button" class="btn btn--toggle">Week</button>
+                  <button type="button" class="btn btn--toggle" disabled>Month</button>
+                </div>
+              </header>
+              <div class="card_content">
+                <div style="height: 250px;">highchart</div>
+              </div>
+              <div class="well well--lg">
+                <div class="grid">
+                  <div class="grid_6@lg">
+                    <div class="grid">
+                      <div class="grid_6@xs">
+                        <div class="stat stat--bordered-right">
+                          <div class="title">
+                            <span style="display: inline-block; width: 14px; height: 14px; border: 2px solid #3aaeda; background-color: #fff; vertical-align: middle; border-radius: 50%; margin-right: 3px;"></span>
+                            Logins
+                          </div>
+                          <div class="stat_value">70,246</div>
+                        </div>
+                      </div>
+                      <div class="grid_6@xs">
+                        <div class="stat stat--bordered-right">
+                          <div class="title">
+                            <span style="display: inline-block; width: 14px; height: 14px; border: 2px solid #67bd48; background-color: #fff; vertical-align: middle; border-radius: 50%; margin-right: 3px;"></span>
+                            Unique logins
+                          </div>
+                          <div class="stat_value">1,133</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid_6@lg">
+                    <ul class="list--unstyled">
+                      <li>There were <b>95</b> logins by <b>82</b> users.</li>
+                      <li>The average user logged in <b>2.1</b> times.</li>
+                      <li>There were an average of <b>2,379.3</b> logins per day.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card_content">
+                <h3>Average logins by time of day</h3>
+                <div class="content">
+                  <div style="height: 250px;">highchart</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card card--wide card--reset">
+              <header class="card_header">
+                <button type="button" class="btn btn--toggle u-float-right">
+                  <svg class="icon u-visible@mobile" role="presentation">
+                    <use xlink:href="#download"></use>
+                  </svg>
+                  <span class="u-hidden@mobile">Export</span>
+                </button>
+                <div class="tabs">
+                  <a href="#" class="tab_item is-active">Sign ups</a>
+                  <a href="#" class="tab_item">Active users</a>
+                </div>
+              </header>
+              <div class="well text--center">
+                This list is really big. You can <a href="#">export this list</a> to a CSV file.
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="u-hidden@xs">
+                    <tr>
+                      <th></th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th class="u-hidden@sm u-hidden@md">Last seen</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="width: 36px;">
+                        <div class="avatar avatar--sm">
+                          <img src="/img/avatar.svg">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="title">Josh Sadler</div>
+                        <div class="sub-title">joshsadler</div>
+                      </td>
+                      <td class="u-hidden@xs">josh.sadler@banno.com</td>
+                      <td class="u-hidden@xs">+1 319-504-6430</td>
+                      <td class="u-hidden@xs u-hidden@sm u-hidden@md">20 minutes ago</td>
+                    </tr>
+                    <tr>
+                      <td style="width: 36px;">
+                        <div class="avatar avatar--sm">
+                          <img src="/img/avatar.svg">
+                        </div>
+                      </td>
+                      <td>
+                        <div class="title">Longname McLongington</div>
+                        <div class="sub-title">longnamemclongington2016</div>
+                      </td>
+                      <td class="u-hidden@xs">josh.sadler@banno.com</td>
+                      <td class="u-hidden@xs">+1 319-504-6430</td>
+                      <td class="u-hidden@xs u-hidden@sm u-hidden@md">20 minutes ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card_content">
+                <div class="pagination">
+                  <button type="button" class="pagination_item is-active">1</button>
+                  <button type="button" class="pagination_item">2</button>
+                  <button type="button" class="pagination_item">3</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="card card--wide card--reset">
+              <header class="card_header">
+                <div class="card_title">Exports</div>
+              </header>
+              <div class="card_content card_content--no-spacing">
+                <div class="list">
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon u-fill-warning">
+                        <use xlink:href="#time"></use>
+                      </svg>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title u-ellipsis">Active users 12/01/2015 - 12/27/2015 Export</div>
+                      <div class="sub-title">Exporting as CSV &bull; Dec 16, 2015 08:23 am by Josh Sadler</div>
+                    </div>
+                  </div>
+
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon u-fill-muted">
+                        <use xlink:href="#check"></use>
+                      </svg>
+                    </div>
+                    <div class="list_item_content">
+                      <button type="button" class="btn btn--neutral u-float-right u-hidden@xs">Download</button>
+                      <button type="button" class="btn btn--icon u-float-right u-visible@xs">
+                        <svg class="icon">
+                          <use xlink:href="#arrow-drop-down"></use>
+                        </svg>
+                      </button>
+                      <div class="title u-ellipsis">Sign ups 12/01/2015 - 12/27/2015 Export</div>
+                      <div class="sub-title">Exported as CSV &bull; Dec 16, 2015 08:14 am by Josh Sadler</div>
+                    </div>
+                  </div>
+
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon u-fill-muted">
+                        <use xlink:href="#check"></use>
+                      </svg>
+                    </div>
+                    <div class="list_item_content">
+                      <button type="button" class="btn btn--neutral u-float-right u-hidden@xs">Download</button>
+                      <button type="button" class="btn btn--icon u-float-right u-visible@xs">
+                        <svg class="icon">
+                          <use xlink:href="#arrow-drop-down"></use>
+                        </svg>
+                      </button>
+                      <div class="title u-ellipsis">Sign ups 12/01/2015 - 12/27/2015 Export</div>
+                      <div class="sub-title">Exported as CSV &bull; Dec 16, 2015 08:14 am by Josh Sadler</div>
+                    </div>
+                  </div>
+
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon u-fill-muted">
+                        <use xlink:href="#check"></use>
+                      </svg>
+                    </div>
+                    <div class="list_item_content">
+                      <button type="button" class="btn btn--neutral u-float-right u-hidden@xs">Download</button>
+                      <button type="button" class="btn btn--icon u-float-right u-visible@xs">
+                        <svg class="icon">
+                          <use xlink:href="#arrow-drop-down"></use>
+                        </svg>
+                      </button>
+                      <div class="title u-ellipsis">Sign ups 12/01/2015 - 12/27/2015 Export</div>
+                      <div class="sub-title">Exported as CSV &bull; Dec 16, 2015 08:14 am by Josh Sadler</div>
+
+                      <div class="u-clearfix u-visible@xs u-m-t">
+                        <button type="button" class="btn btn--neutral btn--block">Download</button>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="toast">Exporting your report...</div>
+
+    <div class="toast toast--danger" id="batteryError">
+      <svg class="icon u-float-left" role="presentation"><use xlink:href="#battery-alert"></use></svg>
+      <div class="content_push content_push--sm">
+        <div class="title">Low Battery</div>
+        <div class="sub-title">Charge your device to keep using Banno.</div>
+      </div>
+    </div>
+
+    <div class="toast toast--danger" id="connectionError">
+      <svg class="icon u-float-left" role="presentation"><use xlink:href="#no-wifi"></use></svg>
+      <div class="content_push content_push--sm">
+        <div class="title">No Connection</div>
+        <div class="sub-title">You seem to have dropped your internet connection.</div>
+      </div>
+    </div>
+
+    <a href="#" class="help-launcher">
+      <span class="u-sr-only">Help</span>
+    </a>
+
+    <script>
+      var usersHeader = document.getElementById('usersHeader');
+      var userHeader = document.getElementById('userHeader');
+      var userLink = document.getElementById('userLink');
+      var usersPage = document.getElementById('users');
+      var userPage = document.getElementById('user');
+      var backBtn = document.getElementById('backBtn');
+
+      userLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        usersHeader.classList.add('is-hidden');
+        users.style.display = 'none';
+        userHeader.classList.remove('is-hidden');
+        user.style.display = '';
+      });
+
+      backBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        userHeader.classList.add('is-hidden');
+        user.style.display = 'none';
+        usersHeader.classList.remove('is-hidden');
+        users.style.display = '';
+      });
+    </script>
+
+    <script src="/js/icons.js" async data-load-icons="/img/icons.svg"></script>
+
+    <script src="//cdn.jsdelivr.net/sortable/latest/Sortable.min.js"></script>
+
+    <script>
+      var listItems = document.getElementById('listItems');
+      var sortable = Sortable.create(listItems, {
+        group: 'form',
+        handle: '.sortable_handle',
+        ghostClass: 'sortable--ghost',
+        chosenClass: 'sortable--chosen',
+        animation: 150,
+        scroll: true
+      });
+    </script>
+
+
+    <script>
+      (function(document, navigator, standalone) {
+        // prevents links from apps from oppening in mobile safari
+        // this javascript must be the first script in your <head>
+        if ((standalone in navigator) && navigator[standalone]) {
+          var curnode, location=document.location, stop=/^(a|html)$/i;
+          var html = document.getElementsByTagName('html')[0];
+          var statusBar = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+          statusBar.parentNode.removeChild(statusBar);
+          html.className = html.className + ' standalone';
+          document.addEventListener('click', function(e) {
+            curnode=e.target;
+            while (!(stop).test(curnode.nodeName)) {
+              curnode=curnode.parentNode;
+            }
+            // Condidions to do this only on links to your own app
+            // if you want all links, use if('href' in curnode) instead.
+            if(
+              'href' in curnode && // is a link
+              (chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
+              ( !(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
+                chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
+            ) {
+              e.preventDefault();
+              location.href = curnode.href;
+            }
+          },false);
+        }
+      })(document, window.navigator, 'standalone');
+
+      var dropdownToggles = document.getElementsByClassName('dropdown_toggle');
+      var tabs = document.getElementsByClassName('pick-list_item');
+      var galleryItems = document.getElementsByClassName('gallery_item');
+      var appsModalBtn = document.getElementById('appsListdialogBtn');
+      var backdrop = document.getElementsByClassName('dialog_backdrop')[0];
+      var appsModal = document.getElementById('profiledialog');
+
+      appsModalBtn.addEventListener('click', function() {
+        backdrop.style.display = '';
+        backdrop.classList.add('is-visible');
+        appsModal.classList.add('is-visible');
+      })
+
+      // dropdowns
+      document.addEventListener('click', clearMenus, false);
+
+      for(var i=0; i < dropdownToggles.length; i++) {
+        dropdownToggles[i].addEventListener('click', openDropdown, true);
+      }
+
+      function openDropdown (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        clearMenus()
+        if (this.parentNode && this.parentNode.classList.contains('dropdown')) {
+          this.parentNode.classList.add('is-open');
+        }
+      }
+
+      function clearMenus () {
+        var openDropdowns = document.getElementsByClassName('dropdown is-open');
+        for(var i=0; i < openDropdowns.length; i++) {
+          openDropdowns[i].classList.remove('is-open');
+        }
+      }
+
+      // gallery items
+      for(var i=0; i < galleryItems.length; i++) {
+        galleryItems[i].addEventListener('click', selectGalleryItem, true);
+      }
+
+      function selectGalleryItem (event) {
+        event.preventDefault();
+        if (!this.classList.contains('is-selected')) {
+          for (var i=0; i < galleryItems.length; i++) {
+            galleryItems[i].classList.remove('is-selected');
+          }
+          this.classList.add('is-selected');
+        }
+      }
+
+      // Toasts
+      setTimeout(showToast, 5000);
+
+      function showToast () {
+        var toastElement = document.getElementsByClassName('toast')[0];
+        toastElement.classList.add('is-visible');
+        setTimeout(hideToast, 5000);
+
+        function hideToast () {
+          toastElement.classList.remove('is-visible');
+        }
+      }
+
+      // Show login dialog
+      var loginBtnLg = document.getElementById('signoutBtnLg');
+      var loginModal = document.getElementById('loginModal');
+
+      loginBtnLg.addEventListener('click', openLoginModal, false);
+
+      function openLoginModal () {
+        backdrop.style.display = 'block';
+        backdrop.classList.add('is-visible');
+        loginModal.classList.add('is-visible');
+      }
+
+      // Show institution selection dialog
+      var switchInstBtn = document.getElementById('switchInstitution');
+      var instModal = document.getElementById('institutionModal');
+
+      switchInstBtn.addEventListener('click', openInstModal, false);
+
+      function openInstModal () {
+        backdrop.style.display = 'block';
+        backdrop.classList.add('is-visible');
+        instModal.classList.add('is-visible');
+      }
+
+
+      // Battery life error
+      if ("getBattery" in navigator) {
+        navigator.getBattery().then(function (battery) {
+          battery.addEventListener('levelchange', checkBatteryLevel);
+          battery.addEventListener('chargingchange', checkBatteryLevel);
+
+          checkBatteryLevel();
+
+          function checkBatteryLevel () {
+            var batteryNotification = document.getElementById('batteryError');
+            if (battery.level < 0.1 && !battery.charging) {
+              batteryNotification.classList.add('is-visible');
+            } else {
+              batteryNotification.classList.remove('is-visible');
+            }
+          }
+        });
+      }
+
+      // Online error
+      if ("onLine" in navigator) {
+        var connectionNotification = document.getElementById('connectionError');
+        window.addEventListener('offline', function () {
+          connectionNotification.classList.add('is-visible');
+        });
+
+        window.addEventListener('online', function () {
+          connectionNotification.classList.remove('is-visible');
+        });
+      }
+
+    </script>
+
+    <!-- load up our svg icons from either localStorage or via XHR -->
+    <script src="/js/icons.js" async data-load-icons="/img/icons.svg"></script>
+
+  </body>
+</html>

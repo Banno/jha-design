@@ -84,6 +84,13 @@ ul, .ul {
 
 
 // Section titles
+.heading {
+  color: $text-color-light;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: $font-size-base - 2;
+}
+
 .section-title {
   color: $title-color;
   font-size: 18px;
@@ -150,6 +157,9 @@ ul, .ul {
 .text--lg {
   font-size: $font-size-lg;
 }
+.text--md {
+  font-size: $font-size-md;
+}
 .text--sm {
   font-size: $font-size-sm;
 }
@@ -170,6 +180,9 @@ ul, .ul {
 }
 .text--primary {
   color: $color-primary;
+  @if $enable-css-variables {
+    color: var(--primaryAppColor, $color-primary);
+  }
 }
 .text--success {
   color: $color-success;
@@ -208,16 +221,31 @@ ul, .ul {
 
 // Weight
 .text--thin {
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }
 .text--regular {
-  font-weight: 400;
+  font-weight: $font-weight-normal;
+}
+.text--medium {
+  font-weight: $font-weight-medium;
 }
 .text--semibold {
-  font-weight: 600;
+  font-weight: $font-weight-semibold;
 }
 .text--bold {
-  font-weight: 700;
+  font-weight: $font-weight-bold;
+}
+
+// Text Overflow
+.u-ellipsis, // deprecated
+.text--ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text--wrap {
+  @include word-wrap();
 }
 
 // Stats

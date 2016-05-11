@@ -226,10 +226,12 @@ select.field {
   line-height: 18px;
   text-align: center;
   border: $border-base;
+  background-color: #fff;
   background-size: 18px;
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
+  @include transition(all .2s ease);
   @include user-select(none);
 }
 .control input:focus ~ .control_indicator {
@@ -243,8 +245,13 @@ select.field {
   .control_indicator {
     border-radius: 2px;
   }
+  input:checked ~ .control_indicator,
+  input:indeterminate ~ .control_indicator {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
   input:checked ~ .control_indicator {
-    background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4NCiAgICA8cGF0aCBkPSJNOSAxNi4xN2wtNC4xNy00LjE3LTEuNDIgMS40MSA1LjU5IDUuNTkgMTItMTItMS40MS0xLjQxeiIgZmlsbD0iIzNBQUVEQSIgLz4NCjwvc3ZnPg==);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4gICAgPHBhdGggZD0iTTkgMTYuMTdsLTQuMTctNC4xNy0xLjQyIDEuNDEgNS41OSA1LjU5IDEyLTEyLTEuNDEtMS40MXoiLz48L3N2Zz4=);
   }
   input:indeterminate ~ .control_indicator::before {
     content: '';
@@ -254,13 +261,17 @@ select.field {
     width: 50%;
     height: 2px;
     @include translate(-50%, -50%);
-    background-color: $color-primary;
+    background-color: #fff;
   }
 }
 
 .control--radio {
   .control_indicator {
     border-radius: 50%;
+  }
+  input:checked ~ .control_indicator {
+    background-color: $color-primary;
+    border-color: $color-primary;
   }
   input:checked ~ .control_indicator::before {
     content: '';
@@ -269,14 +280,11 @@ select.field {
     left: 50%;
     @include square(50%);
     @include translate(-50%, -50%);
-    background-color: $color-primary;
+    background-color: #fff;
     border-radius: 50%;
   }
 }
 
-.control_indicator--borderless {
-  border-color: transparent;
-}
 .control_indicator--lg {
   @include square($unit-base);
   line-height: $unit-base;
@@ -437,7 +445,7 @@ select.field {
     position: absolute;
     pointer-events: none;
     font-size: $font-size-base;
-    color: $text-color-base;
+    color: $text-color-light;
     font-weight: normal;
     left: 0;
     top: 26px;
@@ -449,7 +457,6 @@ select.field {
 .field:focus ~ .label,
 .field:valid ~ .label {
   font-size: $font-size-sm;
-  color: $text-color-light;
   font-weight: 600;
   top: 0;
 }

@@ -5,181 +5,226 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta http-equiv="cleartype" content="on">
 
-    <title>Banno</title>
+    <title>JHA Design Prototype</title>
 
-    <meta name="viewport" content="initial-scale=1.001, minimum-scale=1.001, maximum-scale=1.001, user-scalable=no">
-    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta rel="manifest" href="/manifest.json">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-cabaple" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Banno">
     <meta name="application-name" content="Banno">
-    <meta name="theme-color" content="#3aaeda">
+    <meta name="theme-color" content="#7b75cb">
 
     <link href="/css/style.min.css" rel="stylesheet">
 
-    <link rel="icon" sizes="192x192" href="/img/app-icon-192.png">
+    <link rel="icon" sizes="192x192" href="/img/icons/support/android-icon-192x192.png">
+
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/img/tile-144x144.png">
-    <meta name="msapplication-square70x70logo" content="/img/tile-70x70.png">
-    <meta name="msapplication-square150x150logo" content="/img/tile-150x150.png">
-    <meta name="msapplication-wide310x150logo" content="/img/tile-310x150.png">
-    <meta name="msapplication-square310x310logo" content="/img/tile-310x310.png">
+    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-76x76.png" sizes="76x76">
 
-    <link href="/img/startup-iphone6.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-    <link href="/img/startup-iphone6plus.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image">
-    <link href="/img/startup-iphone6plus-landscape.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" rel="apple-touch-startup-image">
-    <link href="/img/startup-iphone5.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-    <link href="/img/startup-iphone4.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-    <link href="/img/startup-ipad.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" rel="apple-touch-startup-image">
-    <link href="/img/startup-ipad-landscape.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" rel="apple-touch-startup-image">
-
+    <style>
+      :root {
+        --primaryAppColor: #7b75cb;
+      }
+    </style>
   </head>
   <body>
     <a href="#mainContent" class="u-sr-only u-sr-only--focusable accessibility-aid" tabindex="1">Skip to content</a>
 
-    <header class="navigation">
+    <header class="navigation navigation--header">
       <div class="container">
         <div class="navigation_inner">
-          <div class="current-application">
-            <div class="current-application_badge" style="background-color: #3AAEDA;">
+          <div class="navigation_item">
+            <a href="#" class="navigation_item_link brand">
               <svg class="icon" role="presentation">
-                <use xlink:href="#conversation"></use>
+                <use xlink:href="#devices"></use>
               </svg>
-            </div>
-            <span class="current-application_title">Example App</span>
+              Design <span class="brand_product">Prototype</span>
+            </a>
           </div>
 
-          <div class="current-institution dropdown">
-            <a href="#" class="dropdown_toggle" id="switchInstitution">
-              <svg class="icon icon--sm" role="presentation"><use xlink:href="#bank"></use></svg>
+          <div class="navigation_item navigation_item--center">
+            <a href="#" class="navigation_item_link dropdown_toggle" id="switchInstitution">
               Your FI
               <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
             </a>
           </div>
 
-          <div class="navigation_item navigation_item--last u-float-right dropdown">
-            <a href="#" class="navigation_link dropdown_toggle dropdown_toggle--indicator">
-              <div class="avatar avatar--sm">
-                <span class="u-sr-only">Sarah Flanders</span>
-                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-              </div>
-            </a>
-            <div class="dropdown_menu dropdown_menu--padding">
-              <div class="current-user">
-                <div class="avatar avatar--lg avatar--you avatar--left">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="72" height="72">
+          <div class="navigation_group">
+            <div class="navigation_item dropdown">
+              <a href="#" class="navigation_item_link navigation_item_link--light dropdown_toggle dropdown_toggle--indicator">
+                <span class="u-sr-only">Apps</span>
+                <svg class="icon" role="presentation"><use xlink:href="#apps"></use></svg>
+              </a>
+              <div class="dropdown_menu dropdown_menu--lg dropdown_menu--no-spacing dropdown_menu--right">
+                <div class="app-list u-m-b">
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #fb6b5b;"><use xlink:href="#target"></use></svg>
+                      Marketing
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #7b75cb;"><use xlink:href="#group"></use></svg>
+                      People
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #257AB0;"><use xlink:href="#web"></use></svg>
+                      Content
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #67bd48;"><use xlink:href="#conversation"></use></svg>
+                      Support
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #ffac52;"><use xlink:href="#reports"></use></svg>
+                      Reports
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #8d99a0;"><use xlink:href="#settings"></use></svg>
+                      Settings
+                    </a>
+                  </div>
                 </div>
-                <div class="u-overflow-hidden">
-                  <div class="title">Sarah Flanders</div>
-                  <div class="sub-title">sarah.flanders@your-fi.com</div>
-                </div>
+                <div class="dropdown_menu_heading">Your FI</div>
+                <a href="#" class="dropdown_menu_item">Activity</a>
+                <a href="#" class="dropdown_menu_item">Assets</a>
+                <a href="#" class="dropdown_menu_item">Locations</a>
+                <a href="#" class="dropdown_menu_item">Monitor</a>
+                <div class="dropdown_menu_divider"></div>
+                <a href="#" class="dropdown_menu_item u-m-b">Help</a>
               </div>
-              <button type="button" class="btn btn--primary btn--sm">View Profile</button>
-              <button id="signoutBtnLg" type="button" class="btn btn--default btn--sm u-float-right">Sign Out</button>
             </div>
-          </div>
 
-          <div class="navigation_item u-float-right dropdown">
-            <a href="#" class="navigation_link dropdown_toggle dropdown_toggle--indicator">
-              <span class="u-sr-only">Apps</span>
-              <svg class="icon" role="presentation"><use xlink:href="#apps"></use></svg>
-            </a>
-            <ul class="dropdown_menu app-list">
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #fb6b5b;"><use xlink:href="#target"></use></svg>
-                  Kernel
-                </a>
-              </li>
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #ffac52;"><use xlink:href="#mobile"></use></svg>
-                  Mobile
-                </a>
-              </li>
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #4cc0c1;"><use xlink:href="#security"></use></svg>
-                  Sentinel
-                </a>
-              </li>
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #4cc0c1;"><use xlink:href="#history"></use></svg>
-                  History
-                </a>
-              </li>
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #67bd48;"><use xlink:href="#photo"></use></svg>
-                  Assets
-                </a>
-              </li>
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #7b75cb;"><use xlink:href="#place"></use></svg>
-                  Locations
-                </a>
-              </li>
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #3aaeda;"><use xlink:href="#conversation"></use></svg>
-                  Messages
-                </a>
-              </li>
-              <li class="app-list_item">
-                <a href="#" class="app-list_link">
-                  <svg class="icon app-list_icon" role="presentation" style="fill: #455564;"><use xlink:href="#group"></use></svg>
-                  People
-                </a>
-              </li>
-            </ul>
+            <div class="navigation_item dropdown">
+              <a href="#" class="navigation_item_link dropdown_toggle dropdown_toggle--indicator">
+                <div class="avatar avatar--sm">
+                  <span class="u-sr-only">Sarah Flanders</span>
+                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                </div>
+              </a>
+              <div class="dropdown_menu dropdown_menu--padding dropdown_menu--lg dropdown_menu--right">
+                <div class="u-overflow-hidden u-m-b">
+                  <div class="avatar avatar--lg avatar--you avatar--left">
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="72" height="72">
+                  </div>
+                  <div class="u-overflow-hidden">
+                    <div class="title">Sarah Flanders</div>
+                    <div class="sub-title">sarah.flanders@your-fi.com</div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn--primary btn--sm">View Profile</button>
+                <button id="signoutBtnLg" type="button" class="btn btn--default btn--sm u-float-right">Sign Out</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <nav class="tab-bar">
-      <div class="container">
-        <a href="#" class="tab_item">
-          <svg class="icon" role="presentation">
-            <use xlink:href="#dashboard"></use>
-          </svg>
-          <span class="tab_label">Dashboard</span>
-        </a>
-        <a href="#" class="tab_item is-active" style="color: #3AAEDA;">
-          <svg class="icon" role="presentation">
-            <use xlink:href="#group"></use>
-          </svg>
-          <span class="tab_label">Users</span>
-        </a>
-        <a href="#" class="tab_item">
-          <svg class="icon" role="presentation">
-            <use xlink:href="#conversation"></use>
-          </svg>
-          <span class="tab_label">Messages</span>
-        </a>
-        <a href="#" class="tab_item">
-          <svg class="icon" role="presentation">
-            <use xlink:href="#dashboard"></use>
-          </svg>
-          <span class="tab_label">Reports</span>
-        </a>
-        <a href="#" class="tab_item">
-          <svg class="icon" role="presentation">
-            <use xlink:href="#settings"></use>
-          </svg>
-          <span class="tab_label">Settings</span>
-        </a>
-      </div>
-    </nav>
-
-
-    <div class="viewport">
-      <header class="page-header" id="usersHeader">
+    <div class="viewport" id="users">
+      <nav class="navigation navigation--search">
+        <div class="container">
+          <div class="navigation_inner">
+            <label class="global-search">
+              <style>.global-search_input:focus ~ .global-search_dropdown { display: block; }</style>
+              <input type="search" class="global-search_input" placeholder="Search for people">
+              <div class="global-search_icon">
+                <svg class="icon u-fill-light">
+                  <use xlink:href="#search"></use>
+                </svg>
+              </div>
+              <div class="dropdown_menu global-search_dropdown">
+                <div class="list">
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Addie Sadler</div>
+                      <div class="sub-title">addiesadler@yahoo.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Stella Sadler</div>
+                      <div class="sub-title">stellasadler@gmail.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Addie Sadler</div>
+                      <div class="sub-title">addiesadler@yahoo.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Stella Sadler</div>
+                      <div class="sub-title">stellasadler@gmail.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Addie Sadler</div>
+                      <div class="sub-title">addiesadler@yahoo.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Stella Sadler</div>
+                      <div class="sub-title">stellasadler@gmail.com</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </nav>
+      <header class="page-header">
         <div class="container">
           <button id="appsListdialogBtn" type="button" class="btn btn--link btn--icon u-visible@mobile">
             <svg class="icon" role="image" title="Apps">
@@ -192,7 +237,7 @@
             </svg>
             <span class="u-hidden@mobile">Invite Users</span>
           </button>
-          <h1 class="page-title u-visible@mobile">Users</h1>
+          <h1 class="page-header_title u-visible@mobile">Users</h1>
           <div class="grid">
             <div class="grid_5@md">
               <form class="search">
@@ -210,32 +255,9 @@
         </div>
       </header>
 
-      <header class="page-header page-header--profile is-hidden" id="userHeader">
-        <div class="container">
-          <button type="button" class="btn btn--link btn--icon" id="backBtn">
-            <svg class="icon" role="image" title="Back">
-              <use xlink:href="#chevron-left"></use>
-            </svg>
-          </button>
-          <div class="u-float-right dropdown">
-            <button type="button" class="btn btn--link btn--icon dropdown_toggle dropdown_toggle--indicator">
-              <svg class="icon" role="image" title="More">
-                <use xlink:href="#ellipsis"></use>
-              </svg>
-            </button>
-            <div class="dropdown_menu">
-              <a href="#" class="dropdown_menu_item">Edit profile</a>
-              <a href="#" class="dropdown_menu_item text-danger">Delete this user</a>
-            </div>
-          </div>
-          <h1 class="page-title">Josh Sadler</h1>
-        </div>
-      </header>
-
-
       <div id="users">
         <div class="container">
-          <form class="search u-visible@mobile">
+          <form class="search u-visible@mobile invert-viewport">
             <label class="search_bar">
               <span class="search_icon">
                 <svg class="icon" role="presentation">
@@ -245,567 +267,480 @@
               <input type="search" class="search_input" placeholder="Search">
             </label>
           </form>
-          <div class="content">
-            <div class="grid">
-              <div class="grid_8@md">
-
-                <section class="card card--wide card--reset">
-                  <header class="card_header">
-                    <button type="button" class="btn btn--toggle u-float-right">Export</button>
-                    <div class="tabs">
-                      <a href="#" class="tab_item is-active">Active users</a>
-                      <a href="#" class="tab_item">Inactive users</a>
-                    </div>
-                  </header>
-                  <div class="well well--rounded-top">
-                    well - rounded top
-                  </div>
-                  <div class="card_content">
-                    <div class="well">
-                      content well
-                      <div class="list">
-                        <div class="list_item">1</div>
-                        <div class="list_item">2</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="well well--rounded-bottom">
-                    well - rounded bottom
-                  </div>
-                </section>
-
-                <section class="card card--wide card--reset">
-                  <div class="well">Lots of good stuff here</div>
-                  <div class="card_content content">
-                    <div class="list" id="listItems">
-                      <div class="list_item">
-                        <div class="title">Josh's credit card</div>
-                        <div class="sub-title">132456789</div>
-                      </div>
-                      <div class="well well--escape-list">
-                        hellooo
-                      </div>
-
-                      <a id="userLink" href="#" class="list_item list_item--sortable">
-                        <div class="sortable_handle">
-                          <svg class="icon u-fill-muted">
-                            <use xlink:href="#grip"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Joshua Sadler</div>
-                          <div class="sub-title">joshsadler@me.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--sortable">
-                        <div class="sortable_handle">
-                          <svg class="icon u-fill-muted">
-                            <use xlink:href="#grip"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Joshua Sadler</div>
-                          <div class="sub-title">joshsadler@me.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--sortable">
-                        <div class="sortable_handle">
-                          <svg class="icon u-fill-muted">
-                            <use xlink:href="#grip"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Joshua Sadler</div>
-                          <div class="sub-title">joshsadler@me.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--sortable">
-                        <div class="sortable_handle">
-                          <svg class="icon u-fill-muted">
-                            <use xlink:href="#grip"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Joshua Sadler</div>
-                          <div class="sub-title">joshsadler@me.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Stella Sadler</div>
-                          <div class="sub-title">stellasadler@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="#" class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <div class="avatar avatar--sm">
-                            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
-                          </div>
-                        </div>
-                        <div class="list_item_content">
-                          <div class="title">Addie Sadler</div>
-                          <div class="sub-title">addiesadler@yahoo.com</div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </section>
-
-                <div class="pagination" role="menu">
-                  <button type="button" class="pagination_item" disabled>
-                    <svg class="icon">
-                      <use xlink:href="#chevron-left"></use>
-                    </svg>
-                  </button>
-                  <button type="button" class="pagination_item is-active">1</button>
-                  <button type="button" class="pagination_item">2</button>
-                  <button type="button" class="pagination_item">3</button>
-                  <button type="button" class="pagination_item">4</button>
-                  <button type="button" class="pagination_item">5</button>
-                  <button type="button" class="pagination_item">
-                    <svg class="icon">
-                      <use xlink:href="#ellipsis"></use>
-                    </svg>
-                  </button>
-                  <button type="button" class="pagination_item">21</button>
-                  <button type="button" class="pagination_item">22</button>
-                  <button type="button" class="pagination_item">23</button>
-                  <button type="button" class="pagination_item">24</button>
-                  <button type="button" class="pagination_item">25</button>
-                  <button type="button" class="pagination_item">
-                    <svg class="icon">
-                      <use xlink:href="#chevron-right"></use>
-                    </svg>
-                  </button>
-                </div>
+          <div class="grid grid--no-gutter">
+            <div class="grid_4@md grid_3@lg u-hidden@mobile">
+              <div class="list list--borderless list--sm">
+                <header class="list_heading">Filters</header>
+                <a href="#" class="list_item is-active">Planes</a>
+                <a href="#" class="list_item">Trains</a>
+                <a href="#" class="list_item">Automobiles</a>
+                <a href="#" class="list_item">Maglev</a>
               </div>
-              <div class="grid_4@md u-hidden@mobile">
-                <div class="h2">5,392 active users</div>
-                <p class="u-vertical-rhythm--xl">Want a list of active users in a given date range? <a href="#">Generate one</a> in CSV format.</p>
+            </div>
+            <div class="grid_8@md grid_9@lg">
+              <section class="card card--wide card--reset">
+                <div class="card_content card_content--no-spacing">
+                  <div class="list" id="listItems">
+                    <a id="userLink" href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="title">Joshua Sadler</div>
+                        <div class="sub-title">joshsadler@me.com</div>
+                      </div>
+                    </a>
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="title">Addie Sadler</div>
+                        <div class="sub-title">addiesadler@yahoo.com</div>
+                      </div>
+                    </a>
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="title">Stella Sadler</div>
+                        <div class="sub-title">stellasadler@gmail.com</div>
+                      </div>
+                    </a>
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="title">Addie Sadler</div>
+                        <div class="sub-title">addiesadler@yahoo.com</div>
+                      </div>
+                    </a>
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="title">Stella Sadler</div>
+                        <div class="sub-title">stellasadler@gmail.com</div>
+                      </div>
+                    </a>
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="title">Addie Sadler</div>
+                        <div class="sub-title">addiesadler@yahoo.com</div>
+                      </div>
+                    </a>
+                    <a href="#" class="list_item list_item--inset">
+                      <div class="list_item_action">
+                        <div class="avatar avatar--sm">
+                          <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                        </div>
+                      </div>
+                      <div class="list_item_content">
+                        <div class="title">Stella Sadler</div>
+                        <div class="sub-title">stellasadler@gmail.com</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </section>
 
-                <hr class="u-vertical-rhythm--xl">
-
-                <div class="h6">Tip</div>
-                <p>You can search by name or username.</p>
+              <div class="pagination" role="menu">
+                <button type="button" class="pagination_item" disabled>
+                  <svg class="icon">
+                    <use xlink:href="#chevron-left"></use>
+                  </svg>
+                </button>
+                <button type="button" class="pagination_item is-active">1</button>
+                <button type="button" class="pagination_item">2</button>
+                <button type="button" class="pagination_item">3</button>
+                <button type="button" class="pagination_item">4</button>
+                <button type="button" class="pagination_item">5</button>
+                <button type="button" class="pagination_item">
+                  <svg class="icon">
+                    <use xlink:href="#ellipsis"></use>
+                  </svg>
+                </button>
+                <button type="button" class="pagination_item">21</button>
+                <button type="button" class="pagination_item">22</button>
+                <button type="button" class="pagination_item">23</button>
+                <button type="button" class="pagination_item">24</button>
+                <button type="button" class="pagination_item">25</button>
+                <button type="button" class="pagination_item">
+                  <svg class="icon">
+                    <use xlink:href="#chevron-right"></use>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-
-      <div id="user" style="display: none;">
-        <nav class="toolbar">
-          <div class="container">
-            <div class="grid">
-              <div class="grid_3@md u-hidden@mobile">
-                <div class="profile-identity">
-                  <div class="avatar profile-identity_avatar">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/whale/128.jpg" width="140" height="140">
-                  </div>
+    <div class="viewport" id="user" style="display: none;">
+      <nav class="navigation navigation--tab-bar">
+        <div class="container">
+          <div class="navigation_inner">
+            <div class="navigation_group" id="navLinks">
+              <a href="#" class="navigation_item_link is-active">
+                <svg class="icon tab_icon">
+                  <use xlink:href="#dashboard"></use>
+                </svg>
+                <span class="tab_label">Overview</span>
+              </a>
+              <a href="#" class="navigation_item_link">
+                <svg class="icon tab_icon">
+                  <use xlink:href="#wallet"></use>
+                </svg>
+                <span class="tab_label">Accounts</span>
+              </a>
+              <a href="#" class="navigation_item_link">
+                <svg class="icon tab_icon">
+                  <use xlink:href="#history"></use>
+                </svg>
+                <span class="tab_label">Activity</span>
+              </a>
+              <a href="#" class="navigation_item_link">
+                <svg class="icon tab_icon">
+                  <use xlink:href="#conversation"></use>
+                </svg>
+                <span class="tab_label">Messages</span>
+              </a>
+              <a href="#" class="navigation_item_link">
+                <svg class="icon tab_icon">
+                  <use xlink:href="#settings"></use>
+                </svg>
+                <span class="tab_label">Settings</span>
+              </a>
+            </div>
+            <label class="global-search is-condensed" id="searchContainer">
+              <input type="search" class="global-search_input" placeholder="Search for people" id="searchInput">
+              <div class="global-search_icon">
+                <svg class="icon u-fill-light">
+                  <use xlink:href="#search"></use>
+                </svg>
+              </div>
+              <div class="dropdown_menu global-search_dropdown">
+                <div class="list">
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Addie Sadler</div>
+                      <div class="sub-title">addiesadler@yahoo.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Stella Sadler</div>
+                      <div class="sub-title">stellasadler@gmail.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Addie Sadler</div>
+                      <div class="sub-title">addiesadler@yahoo.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Stella Sadler</div>
+                      <div class="sub-title">stellasadler@gmail.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Addie Sadler</div>
+                      <div class="sub-title">addiesadler@yahoo.com</div>
+                    </div>
+                  </a>
+                  <a href="#" class="list_item list_item--inset list_item--hover">
+                    <div class="list_item_action">
+                      <div class="avatar avatar--sm">
+                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
+                      </div>
+                    </div>
+                    <div class="list_item_content">
+                      <div class="title title--sm">Stella Sadler</div>
+                      <div class="sub-title">stellasadler@gmail.com</div>
+                    </div>
+                  </a>
                 </div>
               </div>
+            </label>
+          </div>
+        </div>
+      </nav>
 
-              <div class="grid_9@md">
-                <div class="overflow-tabs">
-                  <div class="tabs">
-                    <a href="#" class="tab_item">
-                      <svg class="icon" role="presentation">
-                        <use xlink:href="#dashboard"></use>
+      <div class="page-header u-visible@mobile">
+        <div class="container">
+          <button type="button" id="backBtn2" class="btn btn--link btn--icon">
+            <svg class="icon" role="presentation">
+              <use xlink:href="#chevron-left"></use>
+            </svg>
+          </button>
+          <h1 class="page-header_title">Josh Sadler</h1>
+        </div>
+      </div>
+
+      <div class="accordion accordion--primary">
+        <button type="button" class="accordion_toggle">
+          <svg class="icon icon--sm">
+            <use xlink:href="#arrow-drop-down"></use>
+          </svg>
+        </button>
+        <header class="accordion_heading text--center">
+          <div class="avatar avatar--center avatar--lg u-m-b">
+            <img src="/img/avatar.svg">
+          </div>
+          <p class="text--light">josh.sadler</p>
+        </header>
+        <section class="accordion_body">
+          <div class="accordion_body_inner">
+            <div class="u-m-b-lg">
+              Last seen 18m ago<br>
+              Registered April 3, 2014
+            </div>
+            <div class="list list--borderless">
+              <div class="list_item">
+                <div class="list_item_action">
+                  <svg class="icon icon--sm u-fill-muted" role="image" title="Address">
+                    <use xlink:href="#home"></use>
+                  </svg>
+                </div>
+                <div class="list_item_content">
+                  4122 Clearview Drive<br>
+                  Cedar Falls, IA 50613
+                </div>
+              </div>
+              <div class="list_item">
+                <div class="list_item_action">
+                  <svg class="icon icon--sm u-fill-muted" role="image" title="Phone">
+                    <use xlink:href="#mobile"></use>
+                  </svg>
+                </div>
+                <div class="list_item_content">(319) 504-6430</div>
+              </div>
+              <div class="list_item">
+                <div class="list_item_action">
+                  <svg class="icon icon--sm u-fill-muted" role="image" title="Email">
+                    <use xlink:href="#email"></use>
+                  </svg>
+                </div>
+                <div class="list_item_content">joshsadler@me.com</div>
+              </div>
+              <div class="list_item">
+                <div class="list_item_action">
+                  <svg class="icon icon--sm u-fill-muted" role="image" title="Social Security Number">
+                    <use xlink:href="#lock-alt"></use>
+                  </svg>
+                </div>
+                <div class="list_item_content">&bull;&bull;&bull; &bull;&bull; 2803</div>
+              </div>
+              <div class="list_item">
+                <div class="list_item_action">
+                  <svg class="icon icon--sm u-fill-muted" role="image" title="Birth date">
+                    <use xlink:href="#cake"></use>
+                  </svg>
+                </div>
+                <div class="list_item_content">November 9, 1989 <span class="text--light">(25)</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="container">
+        <div class="grid grid--no-gutter">
+          <div class="grid_3@lg u-hidden@mobile sticky">
+
+            <div class="grid">
+              <div class="grid_4@sm grid_12@lg">
+                <h2 class="h3 u-m-b-0 text--semibold">Josh Sadler</h2>
+                <div class="text--light u-m-b-lg">josh.sadler</div>
+
+                <div class="u-m-b-lg">
+                  Last seen 18m ago<br>
+                  Registered April 3, 2014
+                </div>
+
+                <hr>
+              </div>
+
+              <div class="grid_8@sm grid_12@lg">
+                <div class="list list--borderless">
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon icon--sm u-fill-light" role="image" title="Address">
+                        <use xlink:href="#home"></use>
                       </svg>
-                      <span class="tab_label">Accounts</span>
-                    </a>
-                    <a href="#" class="tab_item is-active">
-                      <svg class="icon" role="presentation">
-                        <use xlink:href="#bullets"></use>
+                    </div>
+                    <div class="list_item_content text--md">
+                      4122 Clearview Drive<br>
+                      Cedar Falls, IA 50613
+                    </div>
+                  </div>
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon icon--sm u-fill-light" role="image" title="Phone">
+                        <use xlink:href="#mobile"></use>
                       </svg>
-                      <span class="tab_label">Activity</span>
-                    </a>
-                    <a href="#" class="tab_item">
-                      <svg class="icon" role="presentation">
-                        <use xlink:href="#lock"></use>
+                    </div>
+                    <div class="list_item_content text--md">(319) 504-6430</div>
+                  </div>
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon icon--sm u-fill-light" role="image" title="Email">
+                        <use xlink:href="#email"></use>
                       </svg>
-                      <span class="tab_label">Security</span>
-                    </a>
-                    <a href="#" class="tab_item">
-                      <svg class="icon" role="presentation">
-                        <use xlink:href="#conversation"></use>
+                    </div>
+                    <div class="list_item_content text--md text--wrap">joshhasa.longname@reallyextralongemail.com</div>
+                  </div>
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon icon--sm u-fill-light" role="image" title="Social Security Number">
+                        <use xlink:href="#lock-alt"></use>
                       </svg>
-                      <span class="tab_label">Messages</span>
-                    </a>
+                    </div>
+                    <div class="list_item_content text--md">&bull;&bull;&bull; &bull;&bull; 2803</div>
+                  </div>
+                  <div class="list_item">
+                    <div class="list_item_action">
+                      <svg class="icon icon--sm u-fill-light" role="image" title="Birth date">
+                        <use xlink:href="#cake"></use>
+                      </svg>
+                    </div>
+                    <div class="list_item_content text--md">November 9, 1989 <span class="text--light">(26)</span></div>
                   </div>
                 </div>
               </div>
 
             </div>
+
           </div>
-        </nav>
 
-        <div class="content">
-          <div class="container">
+          <div class="grid_9@lg">
             <div class="grid">
-
-              <div class="grid_3@lg">
-                <div class="grid">
-                  <div class="grid_4@sm grid_12@lg">
-                    <h2 class="h3">Josh Sadler</h2>
-                    <div class="u-vertical-rhythm">josh.sadler</div>
-
-                    <div class="u-vertical-rhythm--lg">
-                      Last seen 18m ago<br>
-                      Registered April 3, 2014
-                    </div>
-
-                    <div class="u-vertical-rhythm--lg">
-                      <button type="button" class="btn btn--primary">
-                        <svg class="icon icon--sm" role="presentation">
-                          <use xlink:href="#edit"></use>
-                        </svg>
-                        Edit Profile
-                      </button>
-                    </div>
+              <div class="grid_6@md">
+                <section class="card">
+                  <div class="card_media">
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=1870+Prairie+Road,Riverton,WY&zoom=12&size=400x200&scale=2&markers=1870+Prairie+Road,Riverton,WY">
                   </div>
-
-                  <div class="grid_8@sm grid_12@lg">
-                    <div class="list list--borderless">
-                      <div class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <svg class="icon icon--sm u-fill-muted" role="image" title="Address">
-                            <use xlink:href="#home"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">
-                          4122 Clearview Drive<br>
-                          Cedar Falls, IA 50613
-                        </div>
-                      </div>
-                      <div class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <svg class="icon icon--sm u-fill-muted" role="image" title="Phone">
-                            <use xlink:href="#mobile"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">(319) 504-6430</div>
-                      </div>
-                      <div class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <svg class="icon icon--sm u-fill-muted" role="image" title="Email">
-                            <use xlink:href="#email"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">joshsadler@me.com</div>
-                      </div>
-                      <div class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <svg class="icon icon--sm u-fill-muted" role="image" title="Social Security Number">
-                            <use xlink:href="#lock-alt"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">&bull;&bull;&bull; &bull;&bull; 2803</div>
-                      </div>
-                      <div class="list_item list_item--inset">
-                        <div class="list_item_action">
-                          <svg class="icon icon--sm u-fill-muted" role="image" title="Birth date">
-                            <use xlink:href="#cake"></use>
-                          </svg>
-                        </div>
-                        <div class="list_item_content">November 9, 1989 <span class="text--muted">(25)</span></div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="grid_9@lg">
-                <div class="card card--wide card--reset">
                   <header class="card_header">
-                    <div class="filter">
-                      <select class="field field--borderless">
-                        <option value="">All activity</option>
-                      </select>
+                    <div class="card_title">Demographics</div>
+                  </header>
+                  <div class="card_content card_content--no-spacing">
+                    <div class="list list--sm list--borderless">
+                      <div class="list_item">1</div>
+                      <div class="list_item">2</div>
+                      <div class="list_item">3</div>
                     </div>
+                  </div>
+                </section>
+                <section class="card">
+                  <header class="card_header">
+                    <div class="card_title">Accounts</div>
+                  </header>
+                  <div class="card_content card_content--no-spacing">
+                    <div class="list">
+                      <div class="list_item">1</div>
+                      <div class="list_item">2</div>
+                      <div class="list_item">3</div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="card">
+                  <header class="card_header">
+                    <div class="card_title">Payments</div>
+                  </header>
+                  <div class="card_content card_content--no-spacing">
+                    <div class="list">
+                      <div class="list_item">1</div>
+                      <div class="list_item">2</div>
+                      <div class="list_item">3</div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="grid_6@md">
+                <section class="card">
+                  <header class="card_header">
+                    <div class="card_title">Conversations</div>
+                  </header>
+                  <div class="card_content card_content--no-spacing">
+                    <div class="list">
+                      <div class="list_item">1</div>
+                      <div class="list_item">2</div>
+                      <div class="list_item">3</div>
+                    </div>
+                  </div>
+                </section>
+                <section class="card">
+                  <header class="card_header">
+                    <div class="card_title">Permissions</div>
                   </header>
                   <div class="card_content">
-                    <div class="timeline">
-                      <div class="timeline_item">
-                        <div class="timeline_item_date">Feb 1</div>
-                        <div class="timeline_group">
-                          <div class="timeline_item_dot"></div>
-                          <div class="timeline_item_group">
-                            <div class="activity_item">
-                              <div class="activity_item_time">2:01 pm</div>
-                              <div class="activity_item_desc">All the magical things that happened go here.</div>
-                              <div class="activity_item_action"><a href="#">View</a></div>
-                            </div>
-
-                            <div class="activity_item">
-                              <div class="activity_item_time">2:01 pm</div>
-                              <div class="activity_item_desc">All the magical things that happened go here.</div>
-                            </div>
-
-                            <div class="activity_item">
-                              <div class="activity_item_time">2:01 pm</div>
-                              <div class="activity_item_desc">All the magical things that happened go here.</div>
-                              <div class="activity_item_action"><a href="#">View</a></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="timeline_group">
-                          <div class="timeline_item_dot"></div>
-                          <div class="timeline_item_group">activity group</div>
-                        </div>
-
-                        <div class="timeline_group">
-                          <div class="timeline_item_dot"></div>
-                          <div class="timeline_item_group">activity group</div>
-                        </div>
-                      </div>
-
-                      <div class="timeline_item">
-                        <div class="timeline_item_date">Jan 31</div>
-                        <div class="timeline_group">
-                          <div class="timeline_item_dot"></div>
-                          <div class="timeline_item_group">activity group</div>
-                        </div>
-
-                        <div class="timeline_group">
-                          <div class="timeline_item_type">
-                            <svg class="icon u-fill-success" role="presentation"><use xlink:href="#wallet"></use></svg>
-                          </div>
-                          <div class="timeline_item_group">activity group</div>
-                        </div>
-
-                        <div class="timeline_group">
-                          <div class="timeline_item_dot"></div>
-                          <div class="timeline_item_group">activity group</div>
-                        </div>
-                      </div>
-                    </div>
-
-
+                    <div class="progress-circular"></div>
                   </div>
-                </div>
+                </section>
+                <section class="card">
+                  <header class="card_header">
+                    <div class="card_title">Activity</div>
+                  </header>
+                  <div class="card_content card_content--no-spacing">
+                    <div class="list">
+                      <div class="list_item">1</div>
+                      <div class="list_item">2</div>
+                      <div class="list_item">3</div>
+                    </div>
+                  </div>
+                </section>
               </div>
-
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -815,7 +750,7 @@
 
 
     <!-- App options dialog -->
-    <div id="profiledialog" class="dialog" role="dialog">
+    <div id="profiledialog" class="dialog" role="dialog" style="display: none;">
       <div class="dialog_inner">
         <header class="dialog_header dialog_header--profile">
           <button type="button" class="btn btn--icon" id="closeProfileBtn">
@@ -910,7 +845,7 @@
 
 
     <!-- Login dialog -->
-    <div id="loginModal" class="dialog" role="dialog">
+    <div id="loginModal" class="dialog" role="dialog" style="display: none;">
       <div class="dialog_inner">
         <header class="dialog_header dialog_header--borderless">
           <h2 class="dialog_title">Sign in with your Banno account</h2>
@@ -943,7 +878,7 @@
 
 
     <!-- Complete profile dialog -->
-    <div id="complateProfileModal" class="dialog" role="dialog">
+    <div id="complateProfileModal" class="dialog" role="dialog" style="display: none;">
       <div class="dialog_inner">
         <header class="dialog_header dialog_header--borderless">
           <h2 class="dialog_title">Complete your profile</h2>
@@ -1131,28 +1066,16 @@
     </a>
 
     <script>
-      var usersHeader = document.getElementById('usersHeader');
-      var userHeader = document.getElementById('userHeader');
       var userLink = document.getElementById('userLink');
       var usersPage = document.getElementById('users');
       var userPage = document.getElementById('user');
-      var backBtn = document.getElementById('backBtn');
 
       userLink.addEventListener('click', function(event) {
         event.preventDefault();
-        usersHeader.classList.add('is-hidden');
-        users.style.display = 'none';
-        userHeader.classList.remove('is-hidden');
-        user.style.display = '';
+        usersPage.style.display = 'none';
+        userPage.style.display = '';
       });
 
-      backBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        userHeader.classList.add('is-hidden');
-        user.style.display = 'none';
-        usersHeader.classList.remove('is-hidden');
-        users.style.display = '';
-      });
     </script>
 
     <script src="/js/icons.js" async data-load-icons="/img/icons.svg"></script>
@@ -1328,6 +1251,16 @@
           connectionNotification.classList.remove('is-visible');
         });
       }
+
+
+      // accordion
+      var accordionToggle = document.getElementsByClassName('accordion_toggle')[0];
+      var accordion = document.getElementsByClassName('accordion')[0];
+
+      accordionToggle.addEventListener('click', function() {
+        console.log('clicked toggle');
+        accordion.classList.toggle('is-open');
+      }, false);
 
     </script>
 

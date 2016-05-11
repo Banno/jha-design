@@ -7,9 +7,6 @@
   max-width: $card-max-width;
   margin-left: auto;
   margin-right: auto;
-  @media (min-width: $viewport-md-min) {
-    margin-bottom: $card-margin-bottom-lg;
-  }
   @if $enable-wells {
     .well {
       padding-left: $card-spacing-left-base;
@@ -24,8 +21,8 @@
   .card--reset {
     max-width: none;
     border-radius: 0;
-    margin-left: -$grid-gutter-width / 2;
-    margin-right: -$grid-gutter-width / 2;
+    margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
     @include box-shadow(none);
     @include hairline(double, $color-gray-light);
   }

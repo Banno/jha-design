@@ -1,6 +1,6 @@
 .search {
   background-color: $background-color;
-  padding: 8px $padding-unit;
+  padding: $padding-unit / 2;
   margin-left: -$padding-unit;
   margin-right: -$padding-unit;
   @media (max-width: ($viewport-md-min - 1)) {
@@ -25,7 +25,7 @@
   float: left;
   .icon {
     @include square(18px);
-    fill: $text-color-muted;
+    fill: $text-color-light;
   }
 }
 .search_input {
@@ -33,66 +33,84 @@
   background: none;
   padding: 0 0 0 8px;
   font-size: 13px;
-  color: $text-color-light;
+  color: $text-color-dark;
   width: calc(100% - 18px);
   &:focus {
-    color: $text-color-dark;
     outline: 0;
   }
 }
 
-
 // Global search
-// Used in place of tabbar
 .global-search {
+  @include flexbox-display();
+  @include justify-content(stretch);
+  @include flex(1);
   position: relative;
+  &.is-condensed {
+    max-width: 180px;
+    margin-left: auto;
+    .global-search_icon {
+      padding-right: $unit-xs;
+    }
+  }
 }
+
 .global-search_input {
-  width: calc(100% - 70px);
+  @include flex(1);
   border: 0;
-  height: $topbar-height-base - 1;
-  font-size: $font-size-lg;
+  font-size: $font-size-base;
+  color: $text-color-base;
   background-color: transparent;
+  @include order(2);
   &:focus {
     outline: 0;
+    & ~ .global-search_icon {
+      .icon {
+        fill: $color-gray-base;
+      }
+    }
   }
 }
 
 .global-search_input::-webkit-input-placeholder {
+  color: $text-color-light;
   font-style: italic;
-  font-size: $font-size-base;
 }
 .global-search_input::-moz-placeholder {
+  color: $text-color-light;
   font-style: italic;
-  font-size: $font-size-base;
 }
 .global-search_input::-ms-input-placeholder {
+  color: $text-color-light;
   font-style: italic;
-  font-size: $font-size-base;
 }
 
 .global-search_icon {
-  @include square(70px);
-  padding: 22px;
+  @include flex(none);
+  @include order(1);
+  padding: 18px $padding-unit;
   .icon {
     @include square($avatar-size-xs);
+    @include transition(all .2s ease);
   }
 }
 
 .global-search_dropdown {
-  @extend .dropdown_menu;
-  display: block;
+  $search-height: "100vh - 120px";
   max-width: none;
-  width: 100%;
-  margin-top: 1px;
+  width: auto;
+  // because .dropdown_menu is position absolute;
+  z-index: $z-index-topbar - 1;
+  left: 0;
+  right: 0;
   padding-left: $padding-unit;
-  border-top-width: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
   overflow-y: auto;
-  max-height: 395px;
+  max-height: calc(#{$search-height});
+  height: calc(#{$search-height});
   -webkit-overflow-scrolling: touch;
-  .avatar {
-    @include square(32px);
+  @media (min-width: $viewport-md-min) {
+    left: -$unit-sm;
+    right: -$unit-sm;
+    max-height: 400px;
   }
 }

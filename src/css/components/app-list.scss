@@ -12,21 +12,23 @@
   height: 90px;
   text-align: center;
   border-bottom: $border-lt;
-  &:nth-child(3n+2) {
-    border-left: $border-lt;
-    border-right: $border-lt;
+  border-right: $border-lt;
+  &:nth-child(3n) {
+    border-left-width: 0;
+    border-right-width: 0;
   }
 }
 .app-list_link {
   display: block;
   font-size: $font-size-base - 1;
-  color: $text-color-light;
+  color: $dropdown-item-color;
   height: 100%;
   padding-top: $padding-unit;
   &:hover,
   &:active,
   &:focus {
-    background-color: rgba($color-gray-lighter, 0.36);
+    color: $dropdown-item-hover-color;
+    background-color: $dropdown-item-hover-background;
     .icon-container {
       background-color: $color-primary;
       color: #fff;

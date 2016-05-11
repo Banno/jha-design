@@ -61,6 +61,9 @@
   &.is-active,
   &.active {
     color: $list-item-active-color;
+    @if $enable-css-variables {
+      color: var(--primaryAppColor, $list-item-active-color);
+    }
     font-weight: $list-item-active-weight;
   }
 }
@@ -74,6 +77,12 @@
 }
 .list_item--inset {
   @include hairline-offset($thumbnail-size-sm + $padding-unit);
+  &:last-of-type {
+    @include reset-hairline();
+  }
+}
+.list_item--inset.list_item--hover {
+  @include hairline-offset($thumbnail-size-sm + $padding-unit + $padding-unit);
   &:last-of-type {
     @include reset-hairline();
   }

@@ -23,15 +23,17 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('copy', function() {
-  var html = gulp.src('src/*.html')
+  var html = gulp.src('src/**/*.html')
     .pipe(gulp.dest('dist'))
     .pipe(connect.reload());
+  var manifest = gulp.src('src/manifest.json')
+    .pipe(gulp.dest('dist/'));
   var favicon = gulp.src('src/favicon.ico')
     .pipe(gulp.dest('dist'));
   var fonts = gulp.src('src/fonts/*', { base: 'src' })
     .pipe(gulp.dest('dist'));
 
-  return merge(html, favicon, fonts);
+  return merge(html, manifest, favicon, fonts);
 });
 
 gulp.task('styles', function() {
@@ -90,6 +92,14 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/img'));
 });
 
+gulp.task('app-icons', function() {
+  return gulp.src('src/img/icons/**/*')
+    .pipe(imagemin({
+      progressive: true
+    }))
+    .pipe(gulp.dest('dist/img/icons'));
+});
+
 gulp.task('icons', function() {
   return gulp.src('src/icons/*.svg')
     .pipe(svgmin())
@@ -133,10 +143,10 @@ gulp.task('stop-test-server', ['phantomcss'], function() {
 })
 
 gulp.task('watch', function() {
-  return gulp.watch(allSrc, ['copy', 'styles', 'banno-web-styles', 'icons', 'images', 'compress']);
+  return gulp.watch(allSrc, ['copy', 'styles', 'banno-web-styles', 'icons', 'app-icons', 'images', 'compress']);
 });
 
-gulp.task('default', ['copy', 'styles', 'banno-web-styles', 'icons', 'file-icons', 'images', 'compress']);
+gulp.task('default', ['copy', 'styles', 'banno-web-styles', 'icons', 'app-icons', 'file-icons', 'images', 'compress']);
 gulp.task('dev', ['default', 'connect', 'watch']);
 gulp.task('profile', ['stylestats']);
 gulp.task('test', ['stop-test-server']);

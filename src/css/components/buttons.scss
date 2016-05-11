@@ -90,17 +90,9 @@
   @include button-outline($btn-neutral-background);
 }
 
-
-.btn--primary,
-.btn--danger,
-.btn--success,
-.btn--neutral {
-  -webkit-font-smoothing: auto;
-}
-
-
 // Button sizes
 .btn--sm {
+  font-size: $btn-font-size-sm;
   line-height: $btn-line-height-sm;
   padding-top: ceil($btn-padding-vertical / 2);
   padding-bottom: ceil($btn-padding-vertical / 2);
@@ -118,7 +110,8 @@
   padding-right: ceil($btn-padding-horizontal * 1.5);
 }
 
-.btn--toggle {
+.btn--toggle,
+.btn--toggle-danger {
   color: $btn-toggle-color;
   font-weight: $btn-toggle-weight;
   text-transform: $btn-toggle-transform;
@@ -128,7 +121,19 @@
   &:focus,
   &.is-active {
     color: $btn-toggle-active-color;
+    @if ($enable-css-variables) {
+      color: var(--primaryAppColor, $btn-toggle-active-color);
+    }
     box-shadow: none;
+  }
+}
+
+.btn--toggle-danger {
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active {
+    color: $btn-danger-background;
   }
 }
 

@@ -28,4 +28,7 @@
     top: 50%;
     @include translateY(-50%);
   }
+  .input-group & {
+    min-width: $icon-size-base;
+  }
 }

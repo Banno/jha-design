@@ -1,11 +1,14 @@
 .build-mode {
-  padding-top: 0;
   background-color: $build-mode-background;
   overflow: hidden;
   @include flexbox-display();
   @include flex-direction(column);
   height: 100vh;
 }
+.build-mode--no-toolbar {
+  padding-top: $topbar-height-base;
+}
+
 .build-mode_navigation {
   display: block;
   position: relative;
@@ -19,32 +22,39 @@
 }
 
 .build-mode_actions {
-  @extend .current-institution;
   @media (max-width: $viewport-sm-max) {
     position: static;
     @include translateX(0);
     float: right;
   }
-  .btn {
+  .navigation_item_link {
     text-transform: uppercase;
-    background-color: transparent;
-    color: #fff;
     font-weight: 600;
-    margin-left: 0 !important;
-    opacity: 0.8;
-    will-change: opacity;
-    &:hover,
-    &:focus,
-    &:active,
-    &.is-active {
-      opacity: 1;
-      box-shadow: none;
-    }
   }
+}
+.build-mode_actions .dropdown {
+  display: inline-block;
+  vertical-align: middle;
+}
+.build-mode_actions .dropdown_menu {
+  width: 270px;
+  left: -webkit-calc(50% - 135px);
+  left: calc(50% - 135px);
+}
+.build-mode_actions .dropdown_menu_item .icon {
+  margin-top: 2px;
+  margin-bottom: 16px;
 }
 
 .build-mode_title {
   font-size: $build-mode-title-font-size;
+}
+.build-mode_title--multiline {
+  line-height: 1;
+  padding-top: 14px;
+  .sub-title {
+    color: rgba($topbar-color, .6);
+  }
 }
 
 .build-mode_viewport {

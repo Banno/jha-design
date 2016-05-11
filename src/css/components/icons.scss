@@ -37,6 +37,7 @@
   vertical-align: middle;
   @include square(36px);
   background-color: $color-gray-lighter;
+  color: $text-color-light;
   border-radius: 50%;
   position: relative;
   .icon {

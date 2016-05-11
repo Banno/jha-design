@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta http-equiv="cleartype" content="on">
+
+    <title>JHA Design &middot; Build Mode</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Banno">
+    <meta name="application-name" content="Banno">
+    <meta name="theme-color" content="#3aaeda">
+
+    <link href="/css/style.min.css" rel="stylesheet">
+
+    <link rel="icon" sizes="192x192" href="/img/app-icon-192.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+  </head>
+  <body class="build-mode build-mode--no-toolbar">
+    <a href="#mainContent" class="u-sr-only u-sr-only--focusable accessibility-aid" tabindex="1">Skip to content</a>
+
+    <header class="navigation navigation--header">
+      <div class="fluid-container">
+        <div class="navigation_inner">
+          <div class="navigation_group">
+            <div class="navigation_item">
+              <a href="#" class="navigation_item_link">
+                <svg class="icon">
+                  <use xlink:href="#chevron-left"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="navigation_item">
+              <div class="navigation_item_content navigation_item_content--no-padding build-mode_title build-mode_title--multiline">
+                Build Mode
+                <div class="sub-title">Sub title</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="navigation_group build-mode_actions">
+            <div class="navigation_item dropdown">
+              <a href="#" class="navigation_item_link dropdown_toggle dropdown_toggle--indicator">
+                Save
+                <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
+              </a>
+              <div class="dropdown_menu">
+                <a href="#" class="dropdown_menu_item">Save now</a>
+                <a href="#" class="dropdown_menu_item">Save &amp; publish</a>
+                <div class="dropdown_menu_divider"></div>
+                <a href="#" class="dropdown_menu_item">Discard</a>
+              </div>
+            </div>
+            <div class="navigation_item">
+              <a href="#" class="navigation_item_link">
+                Options
+              </a>
+            </div>
+          </div>
+
+          <div class="navigation_group">
+            <div class="navigation_item dropdown">
+              <a href="#" class="navigation_item_link navigation_item_link--light dropdown_toggle dropdown_toggle--indicator">
+                <span class="u-sr-only">Apps</span>
+                <svg class="icon" role="presentation"><use xlink:href="#apps"></use></svg>
+              </a>
+              <div class="dropdown_menu dropdown_menu--lg dropdown_menu--no-spacing dropdown_menu--right">
+                <div class="app-list u-m-b">
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #fb6b5b;"><use xlink:href="#target"></use></svg>
+                      Marketing
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #7b75cb;"><use xlink:href="#group"></use></svg>
+                      People
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #257AB0;"><use xlink:href="#web"></use></svg>
+                      Content
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #67bd48;"><use xlink:href="#conversation"></use></svg>
+                      Support
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #ffac52;"><use xlink:href="#reports"></use></svg>
+                      Reports
+                    </a>
+                  </div>
+                  <div class="app-list_item">
+                    <a href="#" class="app-list_link">
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #8d99a0;"><use xlink:href="#settings"></use></svg>
+                      Settings
+                    </a>
+                  </div>
+                </div>
+                <div class="dropdown_menu_heading">Your FI</div>
+                <a href="#" class="dropdown_menu_item">Activity</a>
+                <a href="#" class="dropdown_menu_item">Assets</a>
+                <a href="#" class="dropdown_menu_item">Locations</a>
+                <a href="#" class="dropdown_menu_item">Monitor</a>
+                <div class="dropdown_menu_divider"></div>
+                <a href="#" class="dropdown_menu_item u-m-b">Help</a>
+              </div>
+            </div>
+
+            <div class="navigation_item dropdown">
+              <a href="#" class="navigation_item_link dropdown_toggle dropdown_toggle--indicator">
+                <div class="avatar avatar--sm">
+                  <span class="u-sr-only">Sarah Flanders</span>
+                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
+                </div>
+              </a>
+              <div class="dropdown_menu dropdown_menu--padding dropdown_menu--lg dropdown_menu--right">
+                <div class="u-overflow-hidden u-m-b">
+                  <div class="avatar avatar--lg avatar--you avatar--left">
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="72" height="72">
+                  </div>
+                  <div class="u-overflow-hidden">
+                    <div class="title">Sarah Flanders</div>
+                    <div class="sub-title">sarah.flanders@your-fi.com</div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn--primary btn--sm">View Profile</button>
+                <button id="signoutBtnLg" type="button" class="btn btn--default btn--sm u-float-right">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="build-mode_viewport">
+      <div class="build-mode_panel u-hidden@mobile">
+        <div class="content">
+          <div class="fluid-container">
+            <div class="display-4">Add a field</div>
+          </div>
+        </div>
+        <div class="app-list">
+          <header class="section-heading section-heading--sticky">Smart fields</header>
+          <section id="fields">
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#person"></use>
+                  </svg>
+                </div>
+                Name
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#email"></use>
+                  </svg>
+                </div>
+                Email
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#place"></use>
+                  </svg>
+                </div>
+                Address
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#mobile"></use>
+                  </svg>
+                </div>
+                Phone
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#today"></use>
+                  </svg>
+                </div>
+                Date
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#time"></use>
+                  </svg>
+                </div>
+                Time
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#money"></use>
+                  </svg>
+                </div>
+                Currency
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#star-half"></use>
+                  </svg>
+                </div>
+                Star rating
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#account"></use>
+                  </svg>
+                </div>
+                SSN
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#link"></use>
+                  </svg>
+                </div>
+                Website
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="app-list">
+          <header class="section-heading section-heading--sticky">Basic fields</header>
+          <section>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#text"></use>
+                  </svg>
+                </div>
+                Text
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#text-wrap"></use>
+                  </svg>
+                </div>
+                Text area
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#arrow-drop-down-circle"></use>
+                  </svg>
+                </div>
+                Dropdown
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#checkbox"></use>
+                  </svg>
+                </div>
+                Checkbox
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#radio"></use>
+                  </svg>
+                </div>
+                Multiple choice
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#number"></use>
+                  </svg>
+                </div>
+                Number
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#password"></use>
+                  </svg>
+                </div>
+                Masked
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#upload-file"></use>
+                  </svg>
+                </div>
+                Upload
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#visibility-off"></use>
+                  </svg>
+                </div>
+                Hidden
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="app-list">
+          <header class="section-heading section-heading--sticky">Presentational</header>
+          <section>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#view-block"></use>
+                  </svg>
+                </div>
+                Section
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#paragraph"></use>
+                  </svg>
+                </div>
+                Paragraph
+              </div>
+            </div>
+            <div class="app-list_item">
+              <div class="app-list_link">
+                <div class="icon-container app-list_icon">
+                  <svg class="icon icon--sm" role="presentation">
+                    <use xlink:href="#line"></use>
+                  </svg>
+                </div>
+                Line
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="build-mode_canvas">
+        <div class="fluid-container">
+          <div class="content" id="cards">
+            <div class="card sortable">
+              <div class="card_content card_content--sm">
+                <div class="input-group">
+                  <span class="sortable_handle input-group_addon">
+                    <svg class="icon u-fill-muted">
+                      <use xlink:href="#grip"></use>
+                    </svg>
+                  </span>
+                  <input type="text" class="form-control form-control--transparent" value="Name">
+                  <button type="button" class="btn btn--toggle input-group_addon">Edit</button>
+                  <button type="button" class="btn btn--icon input-group_addon">
+                    <svg class="icon icon--sm u-fill-light">
+                      <use xlink:href="#delete"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card_content card_content--border">
+                <p>Paragraph inside the card.</p>
+
+                <div class="floating-group">
+                  <input type="text" class="field" required>
+                  <div class="label">
+                    <span>Floating label</span>
+                  </div>
+                </div>
+
+                <div class="floating-group">
+                  <input type="text" class="field" required>
+                  <div class="label">
+                    <span>Floating label</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card sortable">
+              <div class="card_content">
+                <span class="sortable_handle">
+                  <svg class="icon u-fill-muted">
+                    <use xlink:href="#grip"></use>
+                  </svg>
+                </span>
+                2.
+              </div>
+            </div>
+
+            <div class="card sortable">
+              <div class="card_content">
+                <span class="sortable_handle">
+                  <svg class="icon u-fill-muted">
+                    <use xlink:href="#grip"></use>
+                  </svg>
+                </span>
+                3.
+              </div>
+            </div>
+
+            <div class="card sortable">
+              <div class="card_content">
+                <span class="sortable_handle">
+                  <svg class="icon u-fill-muted">
+                    <use xlink:href="#grip"></use>
+                  </svg>
+                </span>
+                4.
+              </div>
+            </div>
+
+            <div class="card sortable">
+              <div class="card_content">
+                <span class="sortable_handle">
+                  <svg class="icon u-fill-muted">
+                    <use xlink:href="#grip"></use>
+                  </svg>
+                </span>
+                5.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="/js/icons.js" async data-load-icons="/img/icons.svg"></script>
+
+    <script src="//cdn.jsdelivr.net/sortable/latest/Sortable.min.js"></script>
+
+    <script>
+      var fields = document.getElementById('fields');
+      var cards = document.getElementById('cards');
+      var sortable = Sortable.create(cards, {
+        group: 'form',
+        handle: '.sortable_handle',
+        ghostClass: 'sortable--ghost',
+        chosenClass: 'sortable--chosen',
+        animation: 150
+      });
+
+      var sortable2 = Sortable.create(fields, {
+        group: { name: 'smart', put: ['form']},
+        handle: '.sortable_handle',
+        animation: 150,
+        scroll: true
+      });
+
+
+      var dropdownToggles = document.getElementsByClassName('dropdown_toggle');
+
+      // dropdowns
+      document.addEventListener('click', clearMenus, false);
+
+      for(var i=0; i < dropdownToggles.length; i++) {
+        dropdownToggles[i].addEventListener('click', openDropdown, true);
+      }
+
+      function openDropdown (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        clearMenus()
+        if (this.parentNode && this.parentNode.classList.contains('dropdown')) {
+          this.parentNode.classList.add('is-open');
+        }
+      }
+
+      function clearMenus () {
+        var openDropdowns = document.getElementsByClassName('dropdown is-open');
+        for(var i=0; i < openDropdowns.length; i++) {
+          openDropdowns[i].classList.remove('is-open');
+        }
+      }
+
+    </script>
+  </body>
+</html>

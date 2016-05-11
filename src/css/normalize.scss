@@ -20,6 +20,9 @@ body {
   margin: 0;
   @if ($topbar-fixed) {
     padding-top: $topbar-height-sm;
+    .standalone & {
+      padding-top: $topbar-height-sm + 20;
+    }
   }
   background-color: $background-color;
   -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -32,6 +35,13 @@ body {
     }
     &.u-overflow-hidden {
       overflow: auto;
+    }
+  }
+}
+@if ($topbar-fixed) {
+  @media (min-width: $viewport-md-min) {
+    .standalone body {
+      padding-top: ($topbar-height-base * 2) + 20;
     }
   }
 }
@@ -81,6 +91,9 @@ template {
 a {
   background-color: transparent;
   color: $link-color-base;
+  @if $enable-css-variables {
+    color: var(--primaryAppColor, $link-color-base);
+  }
   text-decoration: none;
   @include touch-action(manipulation);
 }
@@ -254,7 +267,7 @@ textarea {
 }
 
 optgroup {
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 @include placeholder($text-color-light);

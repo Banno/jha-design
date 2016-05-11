@@ -23,10 +23,19 @@
   "mixins/mixins"
 ;
 
+@if $enable-css-variables   { @import "css-variables"; }
 @if $enable-normalize       { @import "normalize"; }
 @if $enable-fonts           { @import "fonts"; }
 @if $enable-type            { @import "type"; }
+// layout
+@if $enable-grid            { @import "layout/grid"; }
+@if $enable-navigation      { @import "layout/navigation"; }
+@if $enable-build-mode      { @import "layout/build-mode"; }
+@if $enable-content         { @import "layout/content"; }
+@if $enable-login           { @import "layout/login"; }
+@if $enable-sticky          { @import "layout/sticky"; }
 // components
+@if $enable-accordions      { @import "components/accordion"; }
 @if $enable-avatars         { @import "components/avatar"; }
 @if $enable-thumbnails      { @import "components/thumbnails"; }
 @if $enable-badges          { @import "components/badges"; }
@@ -56,12 +65,6 @@
 @if $enable-errors          { @import "components/errors"; }
 @if $enable-messages        { @import "components/message"; }
 @if $enable-help            { @import "components/help"; }
-// layout
-@if $enable-grid            { @import "layout/grid"; }
-@if $enable-navigation      { @import "layout/navigation"; }
-@if $enable-build-mode      { @import "layout/build-mode"; }
-@if $enable-content         { @import "layout/content"; }
-@if $enable-profile         { @import "layout/profile"; }
 // utilities
 @if $enable-accessibility   { @import "utilities/accessibility"; }
 @if $enable-floats          { @import "utilities/floats"; }

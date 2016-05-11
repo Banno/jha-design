@@ -1,8 +1,9 @@
 // Opt-in or out of features and components
 $enable-normalize:          true !default;
-$enable-fonts:              true !default;
+$enable-fonts:              false !default;
 $enable-type:               true !default;
 // components
+$enable-accordions:         true !default;
 $enable-avatars:            true !default;
 $enable-thumbnails:         true !default;
 $enable-badges:             true !default;
@@ -37,7 +38,8 @@ $enable-grid:               true !default;
 $enable-navigation:         true !default;
 $enable-build-mode:         true !default;
 $enable-content:            true !default;
-$enable-profile:            true !default;
+$enable-login:              true !default;
+$enable-sticky:             true !default;
 // utilities
 $enable-accessibility:      true !default;
 $enable-floats:             true !default;
@@ -49,6 +51,7 @@ $enable-motion:             true !default;
 // everything else
 $enable-hacks:              true !default;
 $enable-plugins:            true !default;
+$enable-css-variables:      true !default;
 
 
 // Color
@@ -79,6 +82,12 @@ $text-color-base:           #6b757b !default;
 $text-color-dark:           $color-gray-base !default;
 $text-color-muted:          #b3bfc9 !default;
 
+$font-weight-light:         300 !default;
+$font-weight-normal:        400 !default;
+$font-weight-medium:        500 !default;
+$font-weight-semibold:      600 !default;
+$font-weight-bold:          600 !default;
+
 $link-color-base:           $color-primary !default;
 
 
@@ -86,11 +95,12 @@ $link-color-base:           $color-primary !default;
 $font-path:                 "../fonts" !default;
 // by default, lets use San Francisco by Apple for iOS and Safari on OS X El Capitan and iOS 9+
 // this typeface provides a reasonable fallback and prevents web font loading to make for a faster app
-$font-family-base:          -apple-system, proxima-nova, BlinkMacSystemFont, "Helvetica Neue", sans-serif !default;
+$font-family-base:          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !default;
 
 $font-size-base:            14px !default;
 $font-size-sm:              floor(($font-size-base * 0.875)) !default;
-$font-size-lg:              ($font-size-base + 2) !default;
+$font-size-md:              $font-size-base - 1 !default;
+$font-size-lg:              $font-size-base + 2 !default;
 
 $line-height-base:          1.428571429 !default;
 $line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
@@ -103,12 +113,12 @@ $h4-size:                   16px !default;
 $h5-size:                   15px !default;
 $h6-size:                   14px !default;
 
-$h1-weight:                 600 !default;
-$h2-weight:                 600 !default;
-$h3-weight:                 600 !default;
-$h4-weight:                 600 !default;
-$h5-weight:                 600 !default;
-$h6-weight:                 600 !default;
+$h1-weight:                 500 !default;
+$h2-weight:                 500 !default;
+$h3-weight:                 500 !default;
+$h4-weight:                 500 !default;
+$h5-weight:                 500 !default;
+$h6-weight:                 500 !default;
 
 $display-color:             $color-gray-base !default;
 $display1-size:             36px !default;
@@ -123,8 +133,8 @@ $display4-weight:           400 !default;
 
 
 $title-color:               $text-color-dark !default;
-$title-weight-base:         normal !default;
-$title-weight-lg:           normal !default;
+$title-weight-base:         400 !default;
+$title-weight-lg:           400 !default;
 $title-size:                $font-size-lg !default;
 $title-size-xs:             $font-size-base !default;
 $title-size-sm:             $font-size-lg - 1 !default;
@@ -161,15 +171,15 @@ $spacing-x-xl:              $spacing-xl !default;
 
 // Grid system
 $grid-columns:              12 !default;
-$grid-gutter-width:         $spacing-unit !default;
-$grid-gutter-width-tight:   16px !default;
+$grid-gutter-width:         16px !default;
+$grid-gutter-width-tight:   8px !default;
 $column-width-max:          1170px !default;
 
 
 // Normalized media queries
 $viewport-xs-min:           360px !default;
 $viewport-sm-min:           480px !default;
-$viewport-md-min:           736px !default;
+$viewport-md-min:           740px !default;
 $viewport-lg-min:           992px !default;
 $viewport-xl-min:           1200px !default;
 
@@ -209,30 +219,42 @@ $shadow-key-light:          0 19px 19px rgba(#000, 0.3), 0 15px 6px rgba(#000, 0
 
 // Topbar
 $topbar-fixed:              true !default;
-$topbar-height-base:        70px !default;
+$topbar-height-base:        60px !default;
 $topbar-height-sm:          44px !default;
-$topbar-background:         #fff !default;
-$topbar-color:              $text-color-dark !default;
-$topbar-link-color:         rgba($text-color-dark, 0.6) !default;
-$topbar-link-color-focus:   rgba($text-color-dark, 1) !default;
+$topbar-background:         #2D4057 !default;
+$topbar-color:              #fff !default;
+$topbar-link-color:         #fff !default;
+$topbar-link-color-focus:   #fff !default;
+$topbar-link-color-light:   rgba(#fff, 0.7) !default;
+$topbar-link-color-light-focus: #fff !default;
+$topbar-item-padding-h:     $padding-unit !default;
 
-$topbar-background-inverse: #2d4057 !default;
+$brand-color:               $topbar-color !default;
+$brand-font-size:           16px !default;
+$brand-font-weight:         600 !default;
+$brand-font-weight-modifier: 300 !default;
+
+$topbar-background-inverse: #7b75cb !default;
 $topbar-color-inverse:      #fff !default;
-$topbar-link-color-inverse: rgba(#fff, 0.6) !default;
-$topbar-link-color-focus-inverse: #fff !default;
+$topbar-link-color-inverse: $topbar-color-inverse !default;
+$topbar-link-color-focus-inverse: rgba($topbar-color-inverse, 0.7) !default;
 
-$tabbar-height-base:        70px !default;
-$tabbar-height-sm:          49px !default;
-$tabbar-shadow:             0 0 3px rgba($color-gray-dark, 0.24) !default;
+$tabbar-height-base:        60px !default;
+$tabbar-height-sm:          50px !default;
 
-$toolbar-height-base:       70px !default;
+$toolbar-height-base:       60px !default;
+$toolbar-height-sm:         56px !default;
 $toolbar-background:        #fff !default;
+$toolbar-color:             $text-color-light !default;
+$toolbar-color-hover:       $text-color-base !default;
 $toolbar-border:            1px solid rgba(0,0,0,0.05) !default;
-$toolbar-shadow:            0 0 5px rgba(0,0,0,0.1) !default;
-$toolbar-padding:           20px !default;
+$toolbar-shadow:            0 1px 3px rgba($color-gray-dark, 0.24) !default;
+$toolbar-padding-base:      20px !default;
+$toolbar-padding-sm:        12px !default;
 
 $toolbar-button-right:      16px !default;
-$toolbar-button-top:        $toolbar-button-right !default;
+$toolbar-button-top-base:   $toolbar-button-right !default;
+$toolbar-button-top-sm:     8px !default;
 
 // Build mode
 $build-mode-background:       $color-gray-light !default;
@@ -252,6 +274,7 @@ $btn-text-transform:        none !default;
 $btn-text-color-base:       $text-color-base !default;
 $btn-icon-fill-color:       inherit !default;
 $btn-font-size-base:        $font-size-base !default;
+$btn-font-size-sm:          $font-size-base - 1 !default;
 $btn-font-weight:           400 !default;
 
 $btn-line-height-base:      34px !default;
@@ -325,7 +348,6 @@ $card-shadow:               0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px 
 $card-radius:               2px !default;
 $card-max-width:            550px !default;
 $card-margin-bottom-base:   $padding-unit !default;
-$card-margin-bottom-lg:     $padding-unit * 2 !default;
 $card-spacing-left-base:    $padding-unit !default;
 $card-spacing-left-lg:      $unit-base !default;
 $card-item-margin-bottom:   $spacing-unit * 1.5 !default;
@@ -378,16 +400,19 @@ $dialog-radius:             2px !default;
 $dialog-shadow:             0 3px 12px 0 rgba($color-gray-dark, 0.24), 0 3px 24px rgba($color-gray-dark, 0.12) !default;
 
 $dialog-backdrop-color:     $color-gray-dark !default;
-$dialog-backdrop-opacity:   0.6 !default;
+$dialog-backdrop-opacity:   0.32 !default;
 
 
 // Dropdowns
 $dropdown-background-color: #fff !default;
-$dropdown-border-color:     rgba($color-gray-base, 0.12) !default;
+$dropdown-shadow-color:     rgba($color-gray-dark, 0.12) !default;
 $dropdown-width-min:        240px !default;
 $dropdown-width-max:        300px !default;
+$dropdown-width-min-lg:     320px !default;
+$dropdown-width-max-lg:     400px !default;
 $dropdown-box-shadow:       0 1px 4px 0 rgba($color-gray-dark, 0.24), 0 1px 3px rgba($color-gray-dark, 0.12) !default;
 $dropdown-radius:           2px !default;
+$dropdown-menu-distance:    5px !default;
 
 $dropdown-title-color:      $color-gray-dark !default;
 $dropdown-title-font-size:  $font-size-lg !default;
@@ -397,7 +422,7 @@ $dropdown-divider-color:    $color-gray-lighter !default;
 $dropdown-item-font-size:   $font-size-base - 1 !default;
 $dropdown-item-color:       $text-color-base !default;
 $dropdown-item-hover-color: $text-color-dark !default;
-$dropdown-item-hover-background: $color-gray-lighter !default;
+$dropdown-item-hover-background: rgba(#f1f3f5, .5) !default;
 
 
 // Filters
@@ -485,7 +510,7 @@ $list-heading-padding-bottom: 8px !default;
 $list-heading-margin-bottom: 8px !default;
 $list-heading-font-size:    $font-size-base - 1 !default;
 $list-heading-weight:       600 !default;
-$list-heading-border-color: $color-gray-light !default;
+$list-heading-border-color: darken($faux-border-color, 3%) !default;
 
 $list-item-muted-font-style: italic !default;
 $list-item-muted-opacity:   0.6 !default;
@@ -544,7 +569,7 @@ $timeline-dot-background:   $color-gray-lighter !default;
 
 
 // Toasts
-$toast-background-color:    $color-gray-base !default;
+$toast-background-color:    rgba($color-gray-dark, 0.9) !default;
 $toast-title-weight:        600 !default;
 
 

@@ -12,7 +12,6 @@
 // Animations
 @mixin animation($animation) {
   -webkit-animation: $animation;
-       -o-animation: $animation;
           animation: $animation;
 }
 @mixin animation-name($name) {
@@ -70,8 +69,7 @@
 
 // Drop shadows
 @mixin box-shadow($shadow) {
-  -webkit-box-shadow: $shadow;
-          box-shadow: $shadow;
+  box-shadow: $shadow;
 }
 
 // Sticky position
@@ -155,6 +153,13 @@
   -webkit-flex-grow: $value;
           flex-grow: $value
 }
+@mixin order($value) {
+  -webkit-box-ordinal-group: $value;
+     -moz-box-ordinal-group: $value;
+             -ms-flex-order: $value;
+              -webkit-order: $value;
+                      order: $value;
+}
 
 // Placeholder text
 @mixin placeholder($color: lighten($base-text-color, 30%)) {
@@ -173,52 +178,36 @@
 // Transformations
 @mixin transform($transformation) {
   -webkit-transform: $transformation;
-      -ms-transform: $transformation;
-       -o-transform: $transformation;
           transform: $transformation;
 }
 
 @mixin scale($ratio...) {
   -webkit-transform: scale($ratio);
-      -ms-transform: scale($ratio);
-       -o-transform: scale($ratio);
           transform: scale($ratio);
 }
 
 @mixin scaleX($ratio) {
   -webkit-transform: scaleX($ratio);
-      -ms-transform: scaleX($ratio);
-       -o-transform: scaleX($ratio);
           transform: scaleX($ratio);
 }
 @mixin scaleY($ratio) {
   -webkit-transform: scaleY($ratio);
-      -ms-transform: scaleY($ratio);
-       -o-transform: scaleY($ratio);
           transform: scaleY($ratio);
 }
 @mixin skew($x, $y) {
   -webkit-transform: skewX($x) skewY($y);
-      -ms-transform: skewX($x) skewY($y);
-       -o-transform: skewX($x) skewY($y);
           transform: skewX($x) skewY($y);
 }
 @mixin translate($x, $y) {
   -webkit-transform: translate($x, $y);
-      -ms-transform: translate($x, $y);
-       -o-transform: translate($x, $y);
           transform: translate($x, $y);
 }
 @mixin translateX($x) {
   -webkit-transform: translateX($x);
-      -ms-transform: translateX($x);
-       -o-transform: translateX($x);
           transform: translateX($x);
 }
 @mixin translateY($y) {
   -webkit-transform: translateY($y);
-      -ms-transform: translateY($y);
-       -o-transform: translateY($y);
           transform: translateY($y);
 }
 @mixin translate3d($x, $y, $z) {
@@ -227,20 +216,14 @@
 }
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
-      -ms-transform: rotate($degrees);
-       -o-transform: rotate($degrees);
           transform: rotate($degrees);
 }
 @mixin rotateX($degrees) {
   -webkit-transform: rotateX($degrees);
-      -ms-transform: rotateX($degrees);
-       -o-transform: rotateX($degrees);
           transform: rotateX($degrees);
 }
 @mixin rotateY($degrees) {
   -webkit-transform: rotateY($degrees);
-      -ms-transform: rotateY($degrees);
-       -o-transform: rotateY($degrees);
           transform: rotateY($degrees);
 }
 @mixin perspective($perspective) {
@@ -256,7 +239,6 @@
 @mixin transform-origin($origin) {
   -webkit-transform-origin: $origin;
      -moz-transform-origin: $origin;
-      -ms-transform-origin: $origin;
           transform-origin: $origin;
 }
 
@@ -264,7 +246,6 @@
 // Transitions
 @mixin transition($transition...) {
   -webkit-transition: $transition;
-       -o-transition: $transition;
           transition: $transition;
 }
 @mixin transition-property($transition-property...) {
@@ -286,7 +267,6 @@
 @mixin transition-transform($transition...) {
   -webkit-transition: -webkit-transform $transition;
      -moz-transition: -moz-transform $transition;
-       -o-transition: -o-transform $transition;
           transition: transform $transition;
 }
 
@@ -300,10 +280,8 @@
 // Color stops are not available in IE9 and below.
 @mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
-  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
   background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
 }
 
 // Vertical gradient, from top to bottom
@@ -312,31 +290,24 @@
 // Color stops are not available in IE9 and below.
 @mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
-  background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Opera 12
   background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
 }
 
 @mixin gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg) {
   background-repeat: repeat-x;
   background-image: -webkit-linear-gradient($deg, $start-color, $end-color); // Safari 5.1-6, Chrome 10+
-  background-image: -o-linear-gradient($deg, $start-color, $end-color); // Opera 12
   background-image: linear-gradient($deg, $start-color, $end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
 }
 @mixin gradient-horizontal-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
   background-image: -webkit-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
-  background-image: -o-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
   background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
   background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down, gets no color-stop at all for proper fallback
 }
 @mixin gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
   background-image: -webkit-linear-gradient($start-color, $mid-color $color-stop, $end-color);
-  background-image: -o-linear-gradient($start-color, $mid-color $color-stop, $end-color);
   background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
   background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
 }
 @mixin gradient-radial($inner-color: #555, $outer-color: #333) {
   background-image: -webkit-radial-gradient(circle, $inner-color, $outer-color);
@@ -345,7 +316,6 @@
 }
 @mixin gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) {
   background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
-  background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
   background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
 }
 
@@ -416,6 +386,17 @@
 @mixin scrollable() {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 // Tab focus

@@ -1,0 +1,96 @@
+.accordion {
+  display: block;
+  margin-bottom: 24px;
+  .viewport & {
+    margin-top: -24px;
+  }
+  @media (min-width: $viewport-md-min) {
+    display: none;
+  }
+}
+.accordion--primary {
+  background-color: $topbar-background;
+  @if $enable-css-variables {
+    background-color: var(--primaryAppColor, $topbar-background);
+  }
+  color: $topbar-color;
+  position: relative;
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  .title,
+  .display-1, .display-2, .display-3, .display-4,
+  .list_item, .list_item:hover,
+  .list_item a:not(.btn):not(.title),
+  a {
+    color: $topbar-color;
+  }
+  .sub-title,
+  .text--light,
+  .text--muted {
+    color: rgba($topbar-color, 0.7);
+  }
+  .u-fill-muted,
+  .icon {
+    fill: rgba($topbar-color, 0.6);
+  }
+}
+
+.accordion_toggle {
+  @include square(24px);
+  position: absolute;
+  z-index: 1;
+  bottom: -12px;
+  left: 50%;
+  margin-left: -12px;
+  border: 0;
+  background-image: none;
+  background-color: $color-primary;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  @include transform-origin(center);
+  @include transition-transform(.3 ease);
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($color-primary, 5%);
+    outline: 0;
+  }
+  .is-open & {
+    @include rotate(-180deg);
+  }
+}
+
+.accordion_heading {
+  padding: $unit-sm $padding-unit;
+}
+
+.accordion_body {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    @include gradient-vertical(rgba($color-gray-dark, 0.16), rgba($color-gray-dark, 0));
+  }
+}
+.is-open .accordion_body {
+  height: auto;
+  .accordion_body_inner {
+    @include translateY(0);
+    opacity: 1;
+  }
+}
+.accordion_body_inner {
+  will-change: transform, opacity;
+  @include translateY(100px);
+  opacity: 0.3;
+  @include transition(all .3s $timing-function);
+  padding: $padding-unit;
+}
