@@ -133,12 +133,6 @@
 
 .drawer_header {
   border-bottom: $border-lt;
-  .btn:first-child {
-    float: left;
-  }
-  .btn + .drawer_title {
-    margin-left: 8px;
-  }
 }
 
 .drawer_title {

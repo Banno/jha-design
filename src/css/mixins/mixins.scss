@@ -547,21 +547,30 @@
 // Button color
 @mixin button-color($bg, $border, $text, $hover:"") {
   background-color: $bg;
+  @include gradient-vertical(saturate(lighten($bg, 4%), 5%), $bg);
   border-color: $border;
   color: $text;
+  &:focus {
+    box-shadow: 0 1px 5px rgba($bg, .72);
+  }
+  &:active,
+  &.is-active {
+    box-shadow: $btn-focus-shadow;
+  }
   @if $hover != "" {
     &:hover,
     &:active,
     &:focus,
     &.is-active {
+      background-image: none;
       background-color: $hover;
       border-color: darken($border, 8%);
     }
   } @else {
     &:hover,
     &:active,
-    &:focus,
     &.is-active {
+      background-image: none;
       background-color: darken($bg, 8%);
       border-color: darken($border, 8%);
     }
@@ -578,6 +587,7 @@
   }
   &:disabled,
   &.is-disabled {
+    background-image: none;
     background-color: $bg;
     border-color: $bg;
     color: rgba($text, .7);
@@ -601,19 +611,28 @@
       border-color: $color;
     }
   } @else {
-    &:hover,
+    &:hover {
+      background-color: rgba(saturate($color, 5%), .12);
+      color: darken($color, 8%);
+      border-color: darken($color, 8%);
+    }
+    &:focus {
+      box-shadow: 0 1px 5px rgba($color, .72);
+    }
     &:active,
-    &:focus,
     &.is-active {
+      box-shadow: $btn-focus-shadow;
       background-color: $color;
       color: #fff;
-      border-color: $color;
+      border-color: darken($color, 8%);
     }
     &:disabled,
     &.is-disabled {
       &:hover,
       &:active,
       &:focus {
+        background-color: transparent;
+        color: rgba($color, .7);
         border-color: lighten($color, 20%);
         opacity: $btn-disabled-opacity;
       }

@@ -296,7 +296,7 @@ select.field {
   position: relative;
   display: inline-block;
   margin: 0;
-  padding: 0;
+  padding: 2px 0;
   line-height: 1;
   vertical-align: middle;
 }
@@ -312,12 +312,12 @@ select.field {
   outline: none;
   user-select: none;
   vertical-align: middle;
-  width: 56px;
-  height: 30px;
-  border-radius: 15px;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
   padding: 1px;
   background-color: $color-gray-light;
-  @include transition(background-color 0.36s $timing-function);
+  @include transition(background-color 0.3s $timing-function);
   &::before,
   &::after {
     content: '';
@@ -329,18 +329,18 @@ select.field {
     left: 1px;
     right: 1px;
     background-color: $color-gray-lighter;
-    border-radius: 15px;
-    @include transition(background-color 0.36s $timing-function);
+    border-radius: 13px;
+    @include transition(background-color 0.3s $timing-function);
   }
   &::after {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 30px;
+    width: 26px;
     background-color: #fff;
     border: 1px solid $color-gray-light;
     border-radius: 100%;
-    @include transition(all 0.36s $timing-function);
+    @include transition(all 0.3s $timing-function);
   }
   .switch_checkbox:checked + & {
     background-color: $color-green;
@@ -354,18 +354,9 @@ select.field {
   }
   .switch_checkbox:checked + &::after {
     border-color: $color-green;
-    margin-left: 26px;
+    @include translateX(24px);
   }
 }
-
-
-// Radio
-
-
-// Select
-
-
-// Textarea
 
 
 // Fieldsets
@@ -396,19 +387,21 @@ select.field {
 .form-control {
   display: block;
   width: 100%;
-  border: 1px solid transparent;
+  border: 1px solid $color-gray-light;
   color: $text-color-dark;
   padding: $btn-padding-vertical $btn-padding-horizontal;
   height: $btn-height-base;
   font-size: $btn-font-size-base;
   line-height: $line-height-base;
   padding: 8px;
-  background-color: $color-gray-lighter;
+  background-color: #fff;
   border-radius: $border-radius-base;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
   @include transition(all .2s $timing-function);
   &:focus {
     outline: 0;
     border-color: $color-primary;
+    box-shadow: 0 0 3px rgba($color-primary, 0.6)
   }
   &.disabled,
   &[disabled] {

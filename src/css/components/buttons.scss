@@ -26,11 +26,6 @@
   &.is-active {
     text-decoration: none;
   }
-  &:active,
-  &:focus,
-  &.is-active {
-    box-shadow: $btn-focus-shadow;
-  }
   &:disabled,
   &.is-disabled {
     opacity: $btn-disabled-opacity;
@@ -52,7 +47,7 @@
 }
 
 .btn--default {
-  @include button-color($btn-default-background, $color-gray-light, $btn-text-color-base, #fff);
+  @include button-color($btn-default-background, $color-gray-light, $btn-text-color-base, $btn-default-background);
   &:disabled,
   &.is-disabled {
     border-color: $color-gray-light;
@@ -67,11 +62,13 @@
 .btn--success {
   @include button-color($btn-success-background, $btn-success-background, #fff, $btn-success-background);
 }
-.btn--neutral {
-  @include button-color($btn-neutral-background, $btn-neutral-background, $text-color-light, $btn-neutral-background);
-}
 .btn--link {
   @include button-color(transparent, transparent, $color-gray-medium);
+}
+// Deprecated in v1.4.0
+// Will remove in upcoming release but for now it's using the btn--default class
+.btn--neutral {
+  @extend .btn--default;
 }
 
 .btn--default-outline {
@@ -85,9 +82,6 @@
 }
 .btn--success-outline {
   @include button-outline($btn-success-background);
-}
-.btn--neutral-outline {
-  @include button-outline($btn-neutral-background);
 }
 
 // Button sizes
@@ -125,6 +119,10 @@
       color: var(--primaryAppColor, $btn-toggle-active-color);
     }
     box-shadow: none;
+  }
+  &:disabled,
+  &.is-disabled {
+    color: rgba($btn-toggle-color, .7);
   }
 }
 

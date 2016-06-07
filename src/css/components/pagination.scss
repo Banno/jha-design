@@ -22,7 +22,7 @@
   font-weight: $btn-font-weight;
   font-size: $btn-font-size-base;
   line-height: $btn-line-height-base;
-  @include button-color($btn-default-background, $color-gray-light, $text-color-base, #fff);
+  @include button-color($btn-default-background, $color-gray-light, $text-color-base, $btn-default-background);
   min-width: $pagination-min-width;
   padding-left: 0;
   padding-right: 0;

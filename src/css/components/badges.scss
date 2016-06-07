@@ -4,8 +4,6 @@
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
-  font-weight: normal;
-  border-radius: 500px;
 }
 
 .badge {
@@ -16,28 +14,44 @@
   background-color: $badge-background-color;
   color: $badge-text-color;
   font-size: $badge-font-size;
+  font-weight: normal;
+  border-radius: 10px;
 }
+
+.badge--primary {
+  background-color: $badge-color-primary;
+}
+.badge--success {
+  background-color: $badge-color-success;
+}
+.badge--danger {
+  background-color: $badge-color-danger;
+}
+.badge--warning {
+  background-color: $badge-color-warning;
+}
+
 
 .chip {
   background-color: $chip-background-color;
-  color: $chip-text-color;
+  border: 1px solid currentColor;
+  color: $chip-color;
   font-size: $chip-font-size;
-  padding: $unit-xs $unit-sm;
+  text-transform: uppercase;
+  padding: $chip-padding;
+  font-weight: $chip-font-weight;
+  border-radius: $chip-radius;
 }
 
-.badge--primary,
 .chip--primary {
-  background-color: $badge-color-primary;
+  color: $badge-color-primary;
 }
-.badge--success,
 .chip--success {
-  background-color: $badge-color-success;
+  color: $badge-color-success;
 }
-.badge--danger,
 .chip--danger {
-  background-color: $badge-color-danger;
+  color: $badge-color-danger;
 }
-.badge--warning,
 .chip--warning {
-  background-color: $badge-color-warning;
+  color: $badge-color-warning;
 }

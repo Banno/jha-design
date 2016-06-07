@@ -124,10 +124,10 @@ sub {
 }
 
 ::selection {
-  background-color: rgba($color-primary, .36);
+  background-color: $highlight-color;
 }
 ::-moz-selection {
-  background-color: rgba($color-primary, .36);
+  background-color: $highlight-color;
 }
 
 /* Embedded content

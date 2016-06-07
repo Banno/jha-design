@@ -1,29 +1,43 @@
 .btn-group {
+  @include flexbox-display;
   position: relative;
   margin-bottom: $padding-unit;
   @include clearfix();
-  > .btn {
-    float: left;
-    margin-left: -1px !important;
+  & > .form-control,
+  & > .btn {
     position: relative;
+    float: left;
+    margin-left: -1px;
     z-index: 1;
     border-radius: 0;
-    &:first-child {
-      margin-left: 0 !important;
-      border-top-left-radius: $border-radius-base;
-      border-bottom-left-radius: $border-radius-base;
-    }
-    &:last-child {
-      border-top-right-radius: $border-radius-base;
-      border-bottom-right-radius: $border-radius-base;
-    }
     &:hover,
     &:active,
     &:focus,
     &.active,
-    &.is-active,
-    &.is-focused {
+    &.is-active {
       z-index: 2;
     }
+  }
+  & :first-child {
+    margin-left: 0;
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+  }
+  & :last-child {
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+  }
+}
+.btn-group:not(.btn-group--flex) {
+  & > .form-control {
+    width: auto;
+    min-width: 220px;
+  }
+}
+
+.btn-group--flex {
+  > .btn {
+    float: none;
+    @include flex(1);
   }
 }

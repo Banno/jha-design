@@ -164,6 +164,9 @@
       }
       &.is-active {
         font-weight: normal;
+        &::after {
+          display: none;
+        }
       }
     }
     .tab_label {
@@ -226,11 +229,22 @@
     color: $toolbar-color-hover;
   }
   &.is-active {
+    position: relative;
     color: $color-primary;
     @if $enable-css-variables {
       color: var(--primaryAppColor, $color-primary);
     }
     font-weight: $font-weight-semibold;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      @include translateX(-50%);
+      border-bottom: 4px solid currentColor;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+    }
   }
 }
 .navigation_item--center,
@@ -357,6 +371,9 @@
       &:active,
       &:focus {
         color: $topbar-link-color-focus;
+      }
+      .icon {
+        display: inline-block !important;
       }
     }
   }

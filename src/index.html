@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Banno">
     <meta name="application-name" content="Banno">
-    <meta name="theme-color" content="#7b75cb">
+    <meta name="theme-color" content="#213B63">
 
     <link href="/css/style.min.css" rel="stylesheet">
 
@@ -31,7 +31,7 @@
 
     <style>
       :root {
-        --primaryAppColor: #7b75cb;
+        --primaryAppColor: #213B63;
       }
     </style>
   </head>
@@ -46,7 +46,7 @@
               <svg class="icon" role="presentation">
                 <use xlink:href="#devices"></use>
               </svg>
-              Design <span class="brand_product">Prototype</span>
+              Banno <span class="brand_product">Prototype</span>
             </a>
           </div>
 
@@ -232,7 +232,7 @@
             </svg>
           </button>
           <button type="button" class="btn btn--success">
-            <svg class="icon" role="image" title="Add">
+            <svg class="icon u-visible@mobile" role="image" title="Add">
               <use xlink:href="#add"></use>
             </svg>
             <span class="u-hidden@mobile">Invite Users</span>
@@ -684,7 +684,12 @@
                   </header>
                   <div class="card_content card_content--no-spacing">
                     <div class="list">
-                      <div class="list_item">1</div>
+                      <div class="list_item">
+                        <label class="switch">
+                          <input type="checkbox" class="switch_checkbox">
+                          <div class="switch_toggle"></div>
+                        </label>
+                      </div>
                       <div class="list_item">2</div>
                       <div class="list_item">3</div>
                     </div>
@@ -716,6 +721,9 @@
                       <div class="list_item">3</div>
                     </div>
                   </div>
+                  <footer class="card_footer">
+                    <button type="button" class="btn btn--default">View all</button>
+                  </footer>
                 </section>
                 <section class="card">
                   <header class="card_header">

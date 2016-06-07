@@ -77,6 +77,8 @@ $color-neutral:             $color-gray-medium !default;
 
 $background-color:          #f1f3f5 !default;
 
+$highlight-color:           #faffbd !default;
+
 $text-color-light:          #8c989f !default;
 $text-color-base:           #6b757b !default;
 $text-color-dark:           $color-gray-base !default;
@@ -102,7 +104,7 @@ $font-size-sm:              floor(($font-size-base * 0.875)) !default;
 $font-size-md:              $font-size-base - 1 !default;
 $font-size-lg:              $font-size-base + 2 !default;
 
-$line-height-base:          1.428571429 !default;
+$line-height-base:          1.5 !default;
 $line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
 
 $heading-color:             $color-gray-base !default;
@@ -284,7 +286,7 @@ $btn-height-sm:             30px !default;
 $btn-line-height-lg:        48px !default;
 $btn-height-lg:             50px !default;
 
-$btn-default-background:    #fff !default;
+$btn-default-background:    #F9FAFB !default;
 $btn-primary-background:    $color-primary !default;
 $btn-success-background:    $color-success !default;
 $btn-danger-background:     $color-danger !default;
@@ -318,9 +320,12 @@ $badge-background-color:    $text-color-muted !default;
 $badge-font-size:           $font-size-sm !default;
 $badge-text-color:          #fff !default;
 
-$chip-background-color:     $text-color-muted !default;
-$chip-font-size:            $font-size-base - 1 !default;
-$chip-text-color:           #fff !default;
+$chip-background-color:     #fff !default;
+$chip-font-size:            $font-size-base - 2 !default;
+$chip-font-weight:          600 !default;
+$chip-color:                $text-color-light !default;
+$chip-radius:               $border-radius-base !default;
+$chip-padding:              4px 8px !default;
 
 $badge-color-primary:       $color-primary !default;
 $badge-color-success:       $color-success !default;
@@ -372,7 +377,7 @@ $card-empty-color:          $text-color-light !default;
 
 $card-footer-padding-base:  $unit-sm $padding-unit $unit-sm 0 !default;
 $card-footer-padding-lg:    $unit-sm $unit-base $unit-sm 0 !default;
-$card-footer-alignment:     right !default;
+$card-footer-alignment:     left !default;
 
 $card-media-background:     $color-gray-medium !default;
 
