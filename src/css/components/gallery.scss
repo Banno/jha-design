@@ -4,6 +4,7 @@
 
 .gallery_item {
   display: block;
+  margin: $gallery-item-margin;
   height: $gallery-item-height;
   position: relative;
   overflow: hidden;

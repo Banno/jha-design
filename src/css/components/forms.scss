@@ -1,11 +1,4 @@
-// clean house
-::-ms-reveal {
-  display: none;
-}
-::-ms-clear {
-  display: none;
-}
-
+// Inline field elements
 .form-row {
   @include flexbox-display();
   -ms-flex-flow: row nowrap;
@@ -24,12 +17,7 @@
     bottom: -$padding-unit;
   }
   .label {
-    position: relative;
-    top: $unit-xs;
-  }
-  .label + .form-control,
-  .label + .filter {
-    margin-top: $unit-xs + 2;
+    margin-bottom: 2px;
   }
   .field + .field,
   .form-row & + & {
@@ -69,8 +57,7 @@
   &:hover,
   &:active,
   &:focus,
-  &.is-active,
-  &.is-focused {
+  &.is-active {
     border-bottom: $border-base;
   }
 }
@@ -87,6 +74,12 @@
   font-weight: 600;
   text-align: left;
 }
+.label_required {
+  color: $color-danger;
+}
+
+// Field
+// Underlined input
 .field {
   display: block;
   width: 100%;
@@ -106,10 +99,16 @@
     outline: 0;
     border-bottom-color: $color-primary;
   }
-  &[disabled],
+  &:disabled,
   &.is-disabled {
     border-bottom-color: darken($color-gray-light, 5%);
     border-bottom-style: dotted;
+  }
+  &:invalid {
+    box-shadow: none; // FF reset
+  }
+  .label + & {
+    margin-top: -8px;
   }
 }
 textarea.field,
@@ -133,8 +132,308 @@ textarea.form-control {
   border-bottom-color: $color-danger;
 }
 
-.label_required {
-  color: $color-danger;
+
+// Checkboxes and radios
+.control {
+  position: relative;
+  display: block;
+  padding-left: $unit-base * 1.5;
+  padding-top: 2px;
+  color: $text-color-base;
+  cursor: pointer;
+  margin-bottom: $unit-xs;
+  input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1; // put the input behind the label so it doesn't overlay text
+  }
+}
+.control--inline {
+  display: inline-block;
+}
+.control_indicator {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  display: block;
+  @include square(18px);
+  line-height: 18px;
+  text-align: center;
+  border: $border-base;
+  background-color: #fff;
+  background-size: 18px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  @include transition(all .2s ease);
+  @include user-select(none);
+}
+.control input:focus ~ .control_indicator {
+  border-color: $color-primary;
+  box-shadow: 0 0 3px rgba($color-primary, 0.6);
+}
+.control input:disabled ~ .control_indicator {
+  cursor: default;
+}
+
+.control--checkbox {
+  .control_indicator {
+    border-radius: 2px;
+  }
+  input:checked ~ .control_indicator,
+  input:indeterminate ~ .control_indicator {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+  input:checked ~ .control_indicator {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4gICAgPHBhdGggZD0iTTkgMTYuMTdsLTQuMTctNC4xNy0xLjQyIDEuNDEgNS41OSA1LjU5IDEyLTEyLTEuNDEtMS40MXoiLz48L3N2Zz4=);
+  }
+  input:indeterminate ~ .control_indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    @include translate(-50%, -50%);
+    background-color: #fff;
+  }
+}
+
+.control--radio {
+  .control_indicator {
+    border-radius: 50%;
+  }
+  input:checked ~ .control_indicator {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+  input:checked ~ .control_indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include square(50%);
+    @include translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
+
+.control_indicator--lg {
+  @include square($unit-base);
+  line-height: $unit-base;
+  background-size: $unit-base;
+}
+
+// Switches
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 2px 0;
+  line-height: 1;
+  vertical-align: middle;
+}
+.switch_checkbox {
+  position: absolute;
+  margin-left: -9999px;
+  opacity: 0;
+}
+.switch_toggle {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  vertical-align: middle;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  padding: 1px;
+  background-color: $color-gray-light;
+  @include transition(background-color 0.3s $timing-function);
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+  &::before {
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    background-color: $color-gray-lighter;
+    border-radius: 13px;
+    @include transition(background-color 0.3s $timing-function);
+  }
+  &::after {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 26px;
+    background-color: #fff;
+    border: 1px solid $color-gray-light;
+    border-radius: 100%;
+    @include transition(all 0.3s $timing-function);
+  }
+  .switch_checkbox:checked + & {
+    background-color: $color-green;
+  }
+  .switch_checkbox:disabled + & {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .switch_checkbox:checked + &::before {
+    background-color: lighten($color-green, 12%);
+  }
+  .switch_checkbox:checked + &::after {
+    border-color: $color-green;
+    @include translateX(24px);
+  }
+  .switch_checkbox:focus + &::after {
+    box-shadow: 0 0 0 4px rgba($color-gray-light, .32);
+  }
+  .switch_checkbox:checked:focus + &::after {
+    box-shadow: 0 0 0 4px rgba($color-green, .2);
+  }
+}
+
+
+// Fieldsets
+.fieldset {
+  margin-bottom: $padding-unit;
+  @media (min-width: $viewport-md-min) {
+    margin-bottom: $spacing-unit;
+  }
+}
+.fieldset_label {
+  font-weight: $font-weight-semibold;
+}
+.fieldset_label,
+.fieldset_static {
+  padding-top: $unit-base / 2;
+  padding-bottom: $unit-base / 2;
+  margin-bottom: 0;
+}
+.fieldset_static {
+  color: $fieldset-color;
+}
+.fieldset_control {
+  padding-top: $unit-xs;
+}
+
+
+// Primary input field
+.form-control {
+  display: block;
+  width: 100%;
+  border: 1px solid $color-gray-light;
+  color: $text-color-dark;
+  height: $btn-height-base;
+  font-size: $btn-font-size-base;
+  line-height: $line-height-base;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: $border-radius-base;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+  @include transition(all .2s $timing-function);
+  &:focus {
+    outline: 0;
+    border-color: $color-primary;
+    box-shadow: 0 0 3px rgba($color-primary, 0.6);
+  }
+  &.disabled,
+  &:disabled {
+    background-color: $btn-default-background;
+    border-color: $color-gray-light;
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+    color: $color-gray-medium;
+  }
+}
+.form-control--inline {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+}
+
+
+// Floating label
+// only applies to .field, never to .form-control
+.floating-group {
+  display: block;
+  position: relative;
+  padding-top: 12px;
+  margin-bottom: $padding-unit;
+  .label {
+    position: absolute;
+    pointer-events: none;
+    font-size: $font-size-base;
+    color: $text-color-light;
+    font-weight: normal;
+    left: 0;
+    top: 26px;
+    @include transition(all .2s $timing-function);
+  }
+}
+
+.floating-group.has-value .label,
+.field:focus ~ .label,
+.field:valid ~ .label {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  top: 0;
+}
+
+
+// Select
+.select {
+  $arrow-background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjQjRCOUJDIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNyAxMGw1IDUgNS01eiIvPjwvc3ZnPgo=);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  font-weight: $btn-font-weight;
+  font-size: $btn-font-size-base;
+  line-height: $btn-line-height-base;
+  border-radius: $btn-border-radius-base;
+  padding: $btn-padding-vertical 8px;
+  padding-right: 12px + 18px; // margin + icon background size
+  -webkit-padding-end: 12px + 18px;
+  -webkit-padding-start: 8px;
+  border: 1px solid;
+  @include button-color($btn-default-background, $color-gray-light, $btn-text-color-base, $btn-default-background);
+  background: $arrow-background no-repeat right 8px center,
+              linear-gradient(saturate(lighten($btn-default-background, 4%), 5%), $btn-default-background);
+  background-size: 18px, auto; // have to add due to "right 8px center" position
+  height: $btn-height-base;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @include tab-focus;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $btn-text-color-base;
+    background: $arrow-background no-repeat right 8px center, $btn-default-background;
+    background-size: 18px, auto; // have to repeat due to "right 8px center" position
+  }
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 3px rgba($color-primary, 0.6);
+  }
+  &:focus:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
 }
 
 
@@ -194,262 +493,4 @@ select.field {
       background-color: #fff;
     }
   }
-}
-
-
-// Checkboxes and radios
-.control {
-  position: relative;
-  display: block;
-  padding-left: $unit-base * 1.5;
-  padding-top: 2px;
-  color: $text-color-base;
-  cursor: pointer;
-  margin-bottom: $unit-xs;
-  input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    z-index: -1; // put the input behind the label so it doesn't overlay text
-  }
-}
-.control--inline {
-  display: inline-block;
-}
-.control_indicator {
-  position: absolute;
-  top: 3px;
-  left: 0;
-  display: block;
-  @include square(18px);
-  line-height: 18px;
-  text-align: center;
-  border: $border-base;
-  background-color: #fff;
-  background-size: 18px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  @include transition(all .2s ease);
-  @include user-select(none);
-}
-.control input:focus ~ .control_indicator {
-  border-color: $color-primary;
-}
-.control input:disabled ~ .control_indicator {
-  cursor: default;
-}
-
-.control--checkbox {
-  .control_indicator {
-    border-radius: 2px;
-  }
-  input:checked ~ .control_indicator,
-  input:indeterminate ~ .control_indicator {
-    background-color: $color-primary;
-    border-color: $color-primary;
-  }
-  input:checked ~ .control_indicator {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4gICAgPHBhdGggZD0iTTkgMTYuMTdsLTQuMTctNC4xNy0xLjQyIDEuNDEgNS41OSA1LjU5IDEyLTEyLTEuNDEtMS40MXoiLz48L3N2Zz4=);
-  }
-  input:indeterminate ~ .control_indicator::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 2px;
-    @include translate(-50%, -50%);
-    background-color: #fff;
-  }
-}
-
-.control--radio {
-  .control_indicator {
-    border-radius: 50%;
-  }
-  input:checked ~ .control_indicator {
-    background-color: $color-primary;
-    border-color: $color-primary;
-  }
-  input:checked ~ .control_indicator::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    @include square(50%);
-    @include translate(-50%, -50%);
-    background-color: #fff;
-    border-radius: 50%;
-  }
-}
-
-.control_indicator--lg {
-  @include square($unit-base);
-  line-height: $unit-base;
-  background-size: $unit-base;
-}
-
-// Switch
-.switch {
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  padding: 2px 0;
-  line-height: 1;
-  vertical-align: middle;
-}
-.switch_checkbox {
-  position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
-}
-.switch_toggle {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  user-select: none;
-  vertical-align: middle;
-  width: 50px;
-  height: 26px;
-  border-radius: 13px;
-  padding: 1px;
-  background-color: $color-gray-light;
-  @include transition(background-color 0.3s $timing-function);
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-  }
-  &::before {
-    top: 1px;
-    bottom: 1px;
-    left: 1px;
-    right: 1px;
-    background-color: $color-gray-lighter;
-    border-radius: 13px;
-    @include transition(background-color 0.3s $timing-function);
-  }
-  &::after {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 26px;
-    background-color: #fff;
-    border: 1px solid $color-gray-light;
-    border-radius: 100%;
-    @include transition(all 0.3s $timing-function);
-  }
-  .switch_checkbox:checked + & {
-    background-color: $color-green;
-  }
-  .switch_checkbox[disabled] + & {
-    opacity: 0.6;
-    cursor: default;
-  }
-  .switch_checkbox:checked + &::before {
-    background-color: lighten($color-green, 12%);
-  }
-  .switch_checkbox:checked + &::after {
-    border-color: $color-green;
-    @include translateX(24px);
-  }
-}
-
-
-// Fieldsets
-.fieldset {
-  margin-bottom: $padding-unit;
-  @media (min-width: $viewport-md-min) {
-    margin-bottom: $spacing-unit;
-  }
-}
-.fieldset_label {
-  font-weight: 600;
-}
-.fieldset_label,
-.fieldset_static {
-  padding-top: $unit-base / 2;
-  padding-bottom: $unit-base / 2;
-  margin-bottom: 0;
-}
-.fieldset_static {
-  color: $fieldset-color;
-}
-.fieldset_control {
-  padding-top: $unit-xs;
-}
-
-
-
-.form-control {
-  display: block;
-  width: 100%;
-  border: 1px solid $color-gray-light;
-  color: $text-color-dark;
-  padding: $btn-padding-vertical $btn-padding-horizontal;
-  height: $btn-height-base;
-  font-size: $btn-font-size-base;
-  line-height: $line-height-base;
-  padding: 8px;
-  background-color: #fff;
-  border-radius: $border-radius-base;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
-  @include transition(all .2s $timing-function);
-  &:focus {
-    outline: 0;
-    border-color: $color-primary;
-    box-shadow: 0 0 3px rgba($color-primary, 0.6)
-  }
-  &.disabled,
-  &[disabled] {
-    opacity: 0.8;
-  }
-}
-.form-control--dark {
-  background-color: $color-gray-light;
-}
-.form-control--transparent {
-  background-color: transparent;
-  &:hover,
-  &:focus {
-    // add the background color back in
-    background-color: $color-gray-lighter;
-  }
-}
-.form-control--inline {
-  display: inline-block;
-  width: auto;
-  max-width: 100%;
-}
-
-
-// Floating label
-// only applies to .field, never to .form-control
-
-.floating-group {
-  display: block;
-  position: relative;
-  padding-top: 12px;
-  margin-bottom: $padding-unit;
-  .label {
-    position: absolute;
-    pointer-events: none;
-    font-size: $font-size-base;
-    color: $text-color-light;
-    font-weight: normal;
-    left: 0;
-    top: 26px;
-    @include transition(all .2s $timing-function);
-  }
-}
-
-.floating-group.has-value .label,
-.field:focus ~ .label,
-.field:valid ~ .label {
-  font-size: $font-size-sm;
-  font-weight: 600;
-  top: 0;
 }

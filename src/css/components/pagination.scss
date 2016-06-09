@@ -37,6 +37,7 @@
   &:focus,
   &.is-active {
     text-decoration: none;
+    z-index: 2;
   }
   &.is-active {
     box-shadow: $btn-focus-shadow;
@@ -49,16 +50,7 @@
   }
   &:disabled,
   &.is-disabled {
-    opacity: $btn-disabled-opacity;
-    cursor: default;
-  }
-  &:hover,
-  &:active,
-  &:focus,
-  &.active,
-  &.is-active,
-  &.is-focused {
-    z-index: 2;
+    border-color: $color-gray-light;
   }
   &:not(.icon--btn) > .icon {
     position: relative;

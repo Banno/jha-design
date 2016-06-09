@@ -100,7 +100,7 @@ a {
 
 b,
 strong {
-  font-weight: bold;
+  font-weight: $font-weight-bold;
 }
 
 small {
@@ -271,6 +271,13 @@ optgroup {
 }
 
 @include placeholder($text-color-light);
+
+::-ms-reveal {
+  display: none;
+}
+::-ms-clear {
+  display: none;
+}
 
 /* Tables
    ================================================================== */

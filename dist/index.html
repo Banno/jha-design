@@ -28,21 +28,15 @@
     <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-152x152.png" sizes="152x152">
     <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-120x120.png" sizes="120x120">
     <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-76x76.png" sizes="76x76">
-
-    <style>
-      :root {
-        --primaryAppColor: #213B63;
-      }
-    </style>
   </head>
   <body>
     <a href="#mainContent" class="u-sr-only u-sr-only--focusable accessibility-aid" tabindex="1">Skip to content</a>
 
-    <header class="navigation navigation--header">
+    <header class="nav nav--header">
       <div class="container">
-        <div class="navigation_inner">
-          <div class="navigation_item">
-            <a href="#" class="navigation_item_link brand">
+        <div class="nav_inner">
+          <div class="nav_item">
+            <a href="#" class="nav_item_link brand">
               <svg class="icon" role="presentation">
                 <use xlink:href="#devices"></use>
               </svg>
@@ -50,16 +44,16 @@
             </a>
           </div>
 
-          <div class="navigation_item navigation_item--center">
-            <a href="#" class="navigation_item_link dropdown_toggle" id="switchInstitution">
+          <div class="nav_item nav_item--center">
+            <a href="#" class="nav_item_link dropdown_toggle" id="switchInstitution">
               Your FI
               <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
             </a>
           </div>
 
-          <div class="navigation_group">
-            <div class="navigation_item dropdown">
-              <a href="#" class="navigation_item_link navigation_item_link--light dropdown_toggle dropdown_toggle--indicator">
+          <div class="nav_group">
+            <div class="nav_item dropdown">
+              <a href="#" class="nav_item_link nav_item_link--light dropdown_toggle dropdown_toggle--indicator">
                 <span class="u-sr-only">Apps</span>
                 <svg class="icon" role="presentation"><use xlink:href="#apps"></use></svg>
               </a>
@@ -112,8 +106,8 @@
               </div>
             </div>
 
-            <div class="navigation_item dropdown">
-              <a href="#" class="navigation_item_link dropdown_toggle dropdown_toggle--indicator">
+            <div class="nav_item dropdown">
+              <a href="#" class="nav_item_link dropdown_toggle dropdown_toggle--indicator">
                 <div class="avatar avatar--sm">
                   <span class="u-sr-only">Sarah Flanders</span>
                   <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="36" height="36">
@@ -139,9 +133,9 @@
     </header>
 
     <div class="viewport" id="users">
-      <nav class="navigation navigation--search">
+      <nav class="nav nav--search">
         <div class="container">
-          <div class="navigation_inner">
+          <div class="nav_inner">
             <label class="global-search">
               <style>.global-search_input:focus ~ .global-search_dropdown { display: block; }</style>
               <input type="search" class="global-search_input" placeholder="Search for people">
@@ -240,16 +234,16 @@
           <h1 class="page-header_title u-visible@mobile">Users</h1>
           <div class="grid">
             <div class="grid_5@md">
-              <form class="search">
+              <div class="search">
                 <label class="search_bar">
                   <span class="search_icon">
                     <svg class="icon" role="presentation">
                       <use xlink:href="#search"></use>
                     </svg>
                   </span>
-                  <input type="search" class="search_input" placeholder="Search">
+                  <input type="search" class="form-control search_input is-first" placeholder="Search">
                 </label>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -257,14 +251,14 @@
 
       <div id="users">
         <div class="container">
-          <form class="search u-visible@mobile invert-viewport">
+          <form class="search u-visible@mobile">
             <label class="search_bar">
               <span class="search_icon">
                 <svg class="icon" role="presentation">
                   <use xlink:href="#search"></use>
                 </svg>
               </span>
-              <input type="search" class="search_input" placeholder="Search">
+              <input type="search" class="form-control search_input" placeholder="Search">
             </label>
           </form>
           <div class="grid grid--no-gutter">
@@ -396,35 +390,35 @@
     </div>
 
     <div class="viewport" id="user" style="display: none;">
-      <nav class="navigation navigation--tab-bar">
+      <nav class="nav nav--tab-bar">
         <div class="container">
-          <div class="navigation_inner">
-            <div class="navigation_group" id="navLinks">
-              <a href="#" class="navigation_item_link is-active">
+          <div class="nav_inner">
+            <div class="nav_group" id="navLinks">
+              <a href="#" class="nav_item_link is-active">
                 <svg class="icon tab_icon">
                   <use xlink:href="#dashboard"></use>
                 </svg>
                 <span class="tab_label">Overview</span>
               </a>
-              <a href="#" class="navigation_item_link">
+              <a href="#" class="nav_item_link">
                 <svg class="icon tab_icon">
                   <use xlink:href="#wallet"></use>
                 </svg>
                 <span class="tab_label">Accounts</span>
               </a>
-              <a href="#" class="navigation_item_link">
+              <a href="#" class="nav_item_link">
                 <svg class="icon tab_icon">
                   <use xlink:href="#history"></use>
                 </svg>
                 <span class="tab_label">Activity</span>
               </a>
-              <a href="#" class="navigation_item_link">
+              <a href="#" class="nav_item_link">
                 <svg class="icon tab_icon">
                   <use xlink:href="#conversation"></use>
                 </svg>
                 <span class="tab_label">Messages</span>
               </a>
-              <a href="#" class="navigation_item_link">
+              <a href="#" class="nav_item_link">
                 <svg class="icon tab_icon">
                   <use xlink:href="#settings"></use>
                 </svg>
@@ -722,7 +716,7 @@
                     </div>
                   </div>
                   <footer class="card_footer">
-                    <button type="button" class="btn btn--default">View all</button>
+                    <button type="button" class="btn btn--toggle btn--align-left">View all</button>
                   </footer>
                 </section>
                 <section class="card">
@@ -787,7 +781,7 @@
                 </svg>
               </span>
               <div class="list_item_content">
-                <svg class="icon icon--navigation" role="presentation">
+                <svg class="icon icon--nav" role="presentation">
                   <use xlink:href="#chevron-right"></use>
                 </svg>
                 Your FI
@@ -898,11 +892,11 @@
               <img src="../img/avatar.svg" width="96" height="96">
             </div>
             <div class="content_push">
-              <div class="u-vertical-rhythm">
+              <div class="btn-group u-m-b">
                 <button type="button" class="btn btn--default">Upload photo</button>
                 <button type="button" class="btn btn--default">Take photo</button>
               </div>
-              <p class="text--light">This photo is your identity on Banno and appears with your activity.</p>
+              <p class="text--light text--sm">This photo is your identity on Banno and appears with your activity.</p>
             </div>
           </div>
 
@@ -940,7 +934,7 @@
 
         </div>
         <footer class="dialog_footer">
-          <button type="submit" class="btn btn--success btn--block">Save &amp; Continue</button>
+          <button type="submit" class="btn btn--success btn--wide">Save &amp; Continue</button>
         </footer>
       </div>
     </div>

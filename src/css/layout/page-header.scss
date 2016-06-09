@@ -1,0 +1,114 @@
+// Page header
+.page-header {
+  position: fixed;
+  z-index: $z-index-topbar;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $topbar-height-sm;
+  padding-top: 4px;
+  background-color: $topbar-background;
+  @if $enable-css-variables {
+    background-color: var(--primaryAppColor, $topbar-background);
+  }
+  text-align: center;
+  .container {
+    position: relative;
+  }
+  .btn {
+    float: right;
+  }
+  .btn:first-child {
+    float: left;
+  }
+  &.is-hidden {
+    display: none;
+  }
+}
+.page-header_title {
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  color: $topbar-color;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, -50%);
+  -webkit-font-smoothing: antialiased;
+  width: calc(100% - 120px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
+// use max-width so we don't have to reset button styles again
+@media (max-width: $viewport-sm-max) {
+  .page-header {
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid rgba($color-gray-dark, 0.24);
+      @include scaleY(0.5);
+      @include transform-origin(0 100%);
+    }
+    .container {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    .btn {
+      @include button-color(transparent, transparent, $topbar-link-color);
+      background: transparent;
+      font-weight: $font-weight-medium;
+      border-radius: 50%;
+      min-width: 35px;
+      padding-left: floor($btn-padding-horizontal / 4);
+      padding-right: floor($btn-padding-horizontal / 4);
+      &:hover,
+      &:active,
+      &:focus {
+        background: transparent;
+        border-color: transparent;
+        color: $topbar-link-color-focus;
+      }
+      .icon {
+        display: inline-block !important;
+      }
+    }
+    .search {
+      display: none;
+    }
+  }
+  .standalone {
+    .page-header {
+      height: $topbar-height-sm + 20;
+      padding-top: 24px;
+    }
+  }
+}
+
+@media (min-width: $viewport-md-min) {
+  .page-header {
+    position: relative;
+    height: auto;
+    padding-bottom: $unit-base;
+    text-align: left;
+    background-color: transparent !important;
+    z-index: $z-index-topbar - 1;
+  }
+  .page-header_title {
+    position: static;
+    left: auto;
+    width: auto;
+    min-height: 0;
+    @include translate(0, 0);
+    color: $text-color-dark;
+    font-size: $h1-size;
+    line-height: $line-height-base;
+    font-weight: $font-weight-normal;
+  }
+}

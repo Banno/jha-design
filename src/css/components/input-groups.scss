@@ -1,19 +1,38 @@
 .input-group {
   @include flexbox-display();
   .field,
-  .form-control {
+  .form-control,
+  .select,
+  .btn {
     margin-bottom: 0;
+    position: relative;
+    margin-left: -1px;
+    z-index: 1;
+    border-radius: 0;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active,
+    &.is-active {
+      z-index: 2;
+    }
+  }
+  & > :first-child {
+    margin-left: 0;
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+  }
+  & > :last-child {
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+  }
+  .field,
+  .form-control {
+    width: auto;
+    min-width: 60px;
     @include flex(1);
-    @include flex-grow(1);
   }
-  *:not(:first-child) {
-    margin-left: $unit-xs;
+  .select {
+    max-width: 33%;
   }
-}
-
-.input-group_addon {
-  white-space: nowrap;
-  vertical-align: middle;
-  @include flex-shrink(0);
-  @include align-self(center);
 }

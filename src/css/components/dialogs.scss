@@ -17,7 +17,7 @@
   outline: 0;
   @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
   -webkit-overflow-scrolling: touch;
-  will-change: visibility;
+  will-change: visibility, opacity;
   // this flexbox property does nothing on it's own, but a utility class depends
   // on it and this is the most efficent way to write it
   @include align-items(center);
@@ -214,11 +214,11 @@
 
 .dialog_title {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   color: $text-color-dark;
   @media (min-width: $viewport-md-min) {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: $font-weight-normal;
   }
 }
 
@@ -230,7 +230,6 @@
   @include transform(translateY(-(floor($btn-height-base / 2))));
   opacity: 0.6;
   @include transition(opacity 0.3s $timing-function);
-  will-change: opacity;
   @media (hover) {
     &:hover {
       opacity: 1;
@@ -268,10 +267,6 @@
 // special snowflake
 .dialog_header--profile {
   background-color: $color-gray-base;
-  background-image: url(../img/profile-backdrop.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   color: rgba(#fff, 0.6);
   .dialog_title {
     display: block;
@@ -297,7 +292,4 @@
   .btn--link {
     color: #fff;
   }
-}
-.dialog_content--profile {
-  background-color: #fff;
 }

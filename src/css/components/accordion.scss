@@ -1,37 +1,14 @@
 .accordion {
   display: block;
+  position: relative;
   margin-bottom: 24px;
+  background-color: #fff;
+  box-shadow: $card-shadow;
   .viewport & {
-    margin-top: -24px;
+    margin-top: -$padding-unit;
   }
   @media (min-width: $viewport-md-min) {
     display: none;
-  }
-}
-.accordion--primary {
-  background-color: $topbar-background;
-  @if $enable-css-variables {
-    background-color: var(--primaryAppColor, $topbar-background);
-  }
-  color: $topbar-color;
-  position: relative;
-  h1, h2, h3, h4, h5, h6,
-  .h1, .h2, .h3, .h4, .h5, .h6,
-  .title,
-  .display-1, .display-2, .display-3, .display-4,
-  .list_item, .list_item:hover,
-  .list_item a:not(.btn):not(.title),
-  a {
-    color: $topbar-color;
-  }
-  .sub-title,
-  .text--light,
-  .text--muted {
-    color: rgba($topbar-color, 0.7);
-  }
-  .u-fill-muted,
-  .icon {
-    fill: rgba($topbar-color, 0.6);
   }
 }
 
@@ -55,7 +32,6 @@
   &:focus,
   &:active {
     background-color: darken($color-primary, 5%);
-    outline: 0;
   }
   .is-open & {
     @include rotate(-180deg);
@@ -63,22 +39,13 @@
 }
 
 .accordion_heading {
-  padding: $unit-sm $padding-unit;
+  padding: $padding-unit;
 }
 
 .accordion_body {
   position: relative;
   height: 0;
   overflow: hidden;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    @include gradient-vertical(rgba($color-gray-dark, 0.16), rgba($color-gray-dark, 0));
-  }
 }
 .is-open .accordion_body {
   height: auto;

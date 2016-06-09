@@ -144,6 +144,10 @@
 .card_footer--borderless {
   border-top-width: 0;
 }
+.card_footer--no-spacing {
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
 
 // Media
 .card_media {
@@ -220,5 +224,25 @@
   .card_content hr,
   .card_content .list {
     margin-right: $card-hr-right-offset-lg;
+  }
+}
+
+
+// Card columns
+
+@media (min-width: $viewport-md-min) {
+  .card-columns {
+    -webkit-perspective: 1;
+    @include column-count(2);
+    @include column-gap(16px);
+    .card {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+@media (min-width: $viewport-lg-min) {
+  .card-columns--3 {
+    @include column-count(3);
   }
 }

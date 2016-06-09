@@ -30,6 +30,8 @@
 // layout
 @if $enable-grid            { @import "layout/grid"; }
 @if $enable-navigation      { @import "layout/navigation"; }
+@if $enable-page-header     { @import "layout/page-header"; }
+@if $enable-viewport        { @import "layout/viewport"; }
 @if $enable-build-mode      { @import "layout/build-mode"; }
 @if $enable-content         { @import "layout/content"; }
 @if $enable-login           { @import "layout/login"; }

@@ -36,6 +36,8 @@ $enable-messages:           true !default;
 // layout
 $enable-grid:               true !default;
 $enable-navigation:         true !default;
+$enable-page-header:        true !default;
+$enable-viewport:           true !default;
 $enable-build-mode:         true !default;
 $enable-content:            true !default;
 $enable-login:              true !default;
@@ -452,6 +454,7 @@ $progress-circular-color:   $text-color-muted !default;
 // Linear
 $progress-linear-color:     $color-green !default;
 $progress-linear-height:    8px !default;
+$progress-linear-height-sm: 4px !default;
 $progress-linear-radius:    2px !default;
 $progress-linear-width:     180px !default;
 
@@ -462,6 +465,7 @@ $gallery-item-background:   transparent !default;
 $gallery-item-color:        #fff !default;
 $gallery-item-font-size:    $font-size-sm !default;
 $gallery-overlay-color:     rgba($color-gray-dark, 0.6) !default;
+$gallery-item-margin:       2px !default;
 $gallery-item-height:       140px !default;
 
 

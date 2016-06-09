@@ -3,7 +3,6 @@
   position: relative;
   margin-bottom: $padding-unit;
   @include clearfix();
-  & > .form-control,
   & > .btn {
     position: relative;
     float: left;
@@ -18,20 +17,14 @@
       z-index: 2;
     }
   }
-  & :first-child {
+  & > :first-child {
     margin-left: 0;
     border-top-left-radius: $border-radius-base;
     border-bottom-left-radius: $border-radius-base;
   }
-  & :last-child {
+  & > :last-child {
     border-top-right-radius: $border-radius-base;
     border-bottom-right-radius: $border-radius-base;
-  }
-}
-.btn-group:not(.btn-group--flex) {
-  & > .form-control {
-    width: auto;
-    min-width: 220px;
   }
 }
 

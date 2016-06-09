@@ -1,0 +1,18 @@
+.viewport {
+  $calc: "100vh - 120px";
+  padding-top: $padding-unit;
+  padding-bottom: $toolbar-height-base + $unit-sm; // magic number
+  min-height: calc(#{$calc});
+}
+.invert-viewport {
+  margin-top: -$padding-unit;
+}
+
+@media (min-width: $viewport-md-min) {
+  .viewport {
+    padding-top: $unit-base;
+  }
+  .invert-viewport {
+    margin-top: -$unit-base;
+  }
+}

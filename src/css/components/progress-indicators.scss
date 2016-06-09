@@ -53,6 +53,12 @@
     border-bottom-right-radius: $progress-linear-radius;
   }
 }
+.progress-linear--sm {
+  &,
+  & .progress_bar {
+    height: $progress-linear-height-sm;
+  }
+}
 
 // Firefox styles must be entirely separate or it busts Webkit styles.
 @-moz-document url-prefix() {
