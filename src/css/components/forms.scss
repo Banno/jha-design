@@ -107,9 +107,6 @@
   &:invalid {
     box-shadow: none; // FF reset
   }
-  .label + & {
-    margin-top: -8px;
-  }
 }
 textarea.field,
 textarea.form-control {
@@ -132,6 +129,10 @@ textarea.form-control {
   border-bottom-color: $color-danger;
 }
 
+.label + .field,
+.label + .filter {
+  margin-top: -8px;
+}
 
 // Checkboxes and radios
 .control {

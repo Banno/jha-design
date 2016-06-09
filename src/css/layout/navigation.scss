@@ -211,6 +211,8 @@
 .nav_item_link {
   display: block;
   height: 100%;
+  background: none; // reset incase button
+  border: 0; // reset incase button
   line-height: $topbar-height-base;
   padding-left: $topbar-item-padding-h;
   padding-right: $topbar-item-padding-h;

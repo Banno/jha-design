@@ -3,7 +3,9 @@
   position: relative;
   margin-bottom: $padding-unit;
   .is-first,
-  & > :first-child {
+  & > :first-child,
+  // specificity with input-group
+  & > :first-child .search_input {
     border-top-left-radius: ($btn-height-base / 2);
     border-bottom-left-radius: ($btn-height-base / 2);
   }
@@ -18,6 +20,7 @@
   position: relative;
   width: 100%;
   .input-group & {
+    flex: 3;
     .search_input {
       margin-left: 0;
       width: 100%;
