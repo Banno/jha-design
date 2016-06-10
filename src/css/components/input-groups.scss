@@ -36,3 +36,7 @@
     flex: 1;
   }
 }
+
+.input-group_addon {
+  @include align-self(center);
+}

@@ -3,7 +3,7 @@
   position: fixed;
   z-index: $z-index-toast;
   left: 0;
-  bottom: $tabbar-height-sm - 1;
+  bottom: 0;
   width: 100%;
   @media (min-width: 415px) {
     bottom: $padding-unit;
@@ -30,7 +30,7 @@
   &.ng-enter,
   &.ng-leave.ng-leave-active {
     opacity: 0;
-    @include transform(translateY(132px));
+    @include transform(translateY(105%));
   }
   &.ng-leave,
   &.ng-enter.ng-enter-active {
