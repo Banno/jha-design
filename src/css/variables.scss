@@ -36,6 +36,7 @@ $enable-messages:           true !default;
 // layout
 $enable-grid:               true !default;
 $enable-navigation:         true !default;
+$enable-navigation-noise:   true !default;
 $enable-page-header:        true !default;
 $enable-viewport:           true !default;
 $enable-build-mode:         true !default;
@@ -177,7 +178,9 @@ $spacing-x-xl:              $spacing-xl !default;
 $grid-columns:              12 !default;
 $grid-gutter-width:         16px !default;
 $grid-gutter-width-tight:   8px !default;
-$column-width-max:          1170px !default;
+$column-width-max:          940px !default;
+$column-width-lg:           1170px !default;
+$column-width-xl:           1286px !default;
 
 
 // Normalized media queries
@@ -223,20 +226,20 @@ $shadow-key-light:          0 19px 19px rgba(#000, 0.3), 0 15px 6px rgba(#000, 0
 
 // Topbar
 $topbar-fixed:              true !default;
-$topbar-height-base:        60px !default;
+$topbar-height-base:        66px !default;
 $topbar-height-sm:          44px !default;
-$topbar-background:         #2D4057 !default;
-$topbar-color:              #fff !default;
+$topbar-background:         #282e33 !default;
+$topbar-color:              rgba(255,255,255,0.7) !default;
 $topbar-link-color:         #fff !default;
 $topbar-link-color-focus:   #fff !default;
 $topbar-link-color-light:   rgba(#fff, 0.7) !default;
 $topbar-link-color-light-focus: #fff !default;
 $topbar-item-padding-h:     $padding-unit !default;
 
-$brand-color:               $topbar-color !default;
-$brand-font-size:           16px !default;
+$brand-color:               #fff !default;
+$brand-font-size:           18px !default;
 $brand-font-weight:         600 !default;
-$brand-font-weight-modifier: 300 !default;
+$brand-font-weight-modifier: 400 !default;
 
 $topbar-background-inverse: #7b75cb !default;
 $topbar-color-inverse:      #fff !default;

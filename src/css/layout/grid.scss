@@ -53,6 +53,14 @@
   }
 }
 
-@media (min-width: $viewport-lg-min) {
+@media (min-width: 1280px) {
+  .container {
+    max-width: $column-width-lg;
+  }
   @include make-grid(lg);
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: $column-width-xl;
+  }
 }

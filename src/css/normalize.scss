@@ -31,7 +31,7 @@ body {
   @include touch-action(manipulation);
   @media (min-width: $viewport-md-min) {
     @if ($topbar-fixed) {
-      padding-top: $topbar-height-base * 2;
+      padding-top: $topbar-height-base + $tabbar-height-base;
     }
     &.u-overflow-hidden {
       overflow: auto;
@@ -41,7 +41,7 @@ body {
 @if ($topbar-fixed) {
   @media (min-width: $viewport-md-min) {
     .standalone body {
-      padding-top: ($topbar-height-base * 2) + 20;
+      padding-top: $topbar-height-base + $tabbar-height-base + 20;
     }
   }
 }

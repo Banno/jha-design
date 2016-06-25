@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Banno">
     <meta name="application-name" content="Banno">
-    <meta name="theme-color" content="#213B63">
+    <meta name="theme-color" content="#0070b7">
 
     <link href="/css/style.min.css" rel="stylesheet">
 
@@ -24,10 +24,17 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-180x180.png" sizes="180x180">
-    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-152x152.png" sizes="152x152">
-    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-120x120.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="/img/icons/support/apple-touch-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/img/icons/content/apple-touch-icon-180x180.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="/img/icons/content/apple-touch-icon-167x167.png" sizes="167x167">
+    <link rel="apple-touch-icon" href="/img/icons/content/apple-touch-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/img/icons/content/apple-touch-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/img/icons/content/apple-touch-icon-76x76.png" sizes="76x76">
+
+    <style>
+      :root {
+        --primaryAppColor: #0070b7;
+      }
+    </style>
   </head>
   <body>
     <a href="#mainContent" class="u-sr-only u-sr-only--focusable accessibility-aid" tabindex="1">Skip to content</a>
@@ -37,9 +44,7 @@
         <div class="nav_inner">
           <div class="nav_item">
             <a href="#" class="nav_item_link brand">
-              <svg class="icon" role="presentation">
-                <use xlink:href="#devices"></use>
-              </svg>
+              <img src="/img/app-icon-content.png" srcset="/img/app-icon-content@2x.png 2x" class="icon icon--lg">
               Banno <span class="brand_product">Prototype</span>
             </a>
           </div>
@@ -47,7 +52,7 @@
           <div class="nav_item nav_item--center">
             <a href="#" class="nav_item_link dropdown_toggle" id="switchInstitution">
               Your FI
-              <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
+              <svg class="icon icon--sm" role="presentation"><use xlink:href="#chevron-down"></use></svg>
             </a>
           </div>
 
@@ -61,31 +66,31 @@
                 <div class="app-list u-m-b">
                   <div class="app-list_item">
                     <a href="#" class="app-list_link">
-                      <svg class="icon app-list_icon" role="presentation" style="fill: #fb6b5b;"><use xlink:href="#target"></use></svg>
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #E53935;"><use xlink:href="#target"></use></svg>
                       Marketing
                     </a>
                   </div>
                   <div class="app-list_item">
                     <a href="#" class="app-list_link">
-                      <svg class="icon app-list_icon" role="presentation" style="fill: #7b75cb;"><use xlink:href="#group"></use></svg>
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #7D57C1;"><use xlink:href="#group"></use></svg>
                       People
                     </a>
                   </div>
                   <div class="app-list_item">
                     <a href="#" class="app-list_link">
-                      <svg class="icon app-list_icon" role="presentation" style="fill: #257AB0;"><use xlink:href="#web"></use></svg>
+                      <img src="/img/app-icon-content.png" srcset="/img/app-icon-content@2x.png 2x" class="app-list_icon">
                       Content
                     </a>
                   </div>
                   <div class="app-list_item">
                     <a href="#" class="app-list_link">
-                      <svg class="icon app-list_icon" role="presentation" style="fill: #67bd48;"><use xlink:href="#conversation"></use></svg>
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #4CAF50;"><use xlink:href="#conversation"></use></svg>
                       Support
                     </a>
                   </div>
                   <div class="app-list_item">
                     <a href="#" class="app-list_link">
-                      <svg class="icon app-list_icon" role="presentation" style="fill: #ffac52;"><use xlink:href="#reports"></use></svg>
+                      <svg class="icon app-list_icon" role="presentation" style="fill: #faa800;"><use xlink:href="#reports"></use></svg>
                       Reports
                     </a>
                   </div>
@@ -132,92 +137,7 @@
       </div>
     </header>
 
-    <div class="viewport" id="users">
-      <nav class="nav nav--search">
-        <div class="container">
-          <div class="nav_inner">
-            <label class="global-search">
-              <style>.global-search_input:focus ~ .global-search_dropdown { display: block; }</style>
-              <input type="search" class="global-search_input" placeholder="Search for people">
-              <div class="global-search_icon">
-                <svg class="icon u-fill-light">
-                  <use xlink:href="#search"></use>
-                </svg>
-              </div>
-              <div class="dropdown_menu global-search_dropdown">
-                <div class="list">
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Addie Sadler</div>
-                      <div class="sub-title">addiesadler@yahoo.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Stella Sadler</div>
-                      <div class="sub-title">stellasadler@gmail.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Addie Sadler</div>
-                      <div class="sub-title">addiesadler@yahoo.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Stella Sadler</div>
-                      <div class="sub-title">stellasadler@gmail.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Addie Sadler</div>
-                      <div class="sub-title">addiesadler@yahoo.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Stella Sadler</div>
-                      <div class="sub-title">stellasadler@gmail.com</div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </label>
-          </div>
-        </div>
-      </nav>
+    <div class="viewport no-navbar" id="users">
       <header class="page-header">
         <div class="container">
           <button id="appsListdialogBtn" type="button" class="btn btn--link btn--icon u-visible@mobile">
@@ -425,84 +345,6 @@
                 <span class="tab_label">Settings</span>
               </a>
             </div>
-            <label class="global-search is-condensed" id="searchContainer">
-              <input type="search" class="global-search_input" placeholder="Search for people" id="searchInput">
-              <div class="global-search_icon">
-                <svg class="icon u-fill-light">
-                  <use xlink:href="#search"></use>
-                </svg>
-              </div>
-              <div class="dropdown_menu global-search_dropdown">
-                <div class="list">
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Addie Sadler</div>
-                      <div class="sub-title">addiesadler@yahoo.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Stella Sadler</div>
-                      <div class="sub-title">stellasadler@gmail.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Addie Sadler</div>
-                      <div class="sub-title">addiesadler@yahoo.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Stella Sadler</div>
-                      <div class="sub-title">stellasadler@gmail.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Addie Sadler</div>
-                      <div class="sub-title">addiesadler@yahoo.com</div>
-                    </div>
-                  </a>
-                  <a href="#" class="list_item list_item--inset list_item--hover">
-                    <div class="list_item_action">
-                      <div class="avatar avatar--sm">
-                        <img src="img/avatar.svg" alt="Josh Sadler" width="36" height="36">
-                      </div>
-                    </div>
-                    <div class="list_item_content">
-                      <div class="title title--sm">Stella Sadler</div>
-                      <div class="sub-title">stellasadler@gmail.com</div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </label>
           </div>
         </div>
       </nav>
@@ -511,7 +353,7 @@
         <div class="container">
           <button type="button" id="backBtn2" class="btn btn--link btn--icon">
             <svg class="icon" role="presentation">
-              <use xlink:href="#chevron-left"></use>
+              <use xlink:href="#arrow-back"></use>
             </svg>
           </button>
           <h1 class="page-header_title">Josh Sadler</h1>
@@ -521,7 +363,7 @@
       <div class="accordion accordion--primary">
         <button type="button" class="accordion_toggle">
           <svg class="icon icon--sm">
-            <use xlink:href="#arrow-drop-down"></use>
+            <use xlink:href="#chevron-down"></use>
           </svg>
         </button>
         <header class="accordion_heading text--center">

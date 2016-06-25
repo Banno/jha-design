@@ -135,8 +135,6 @@
   color: $list-heading-color;
   text-transform: $list-heading-transform;
   padding-top: $list-heading-padding-top;
-  padding-bottom: $list-heading-padding-bottom;
-  @include hairline(single, $list-heading-border-color);
   font-size: $list-heading-font-size;
   font-weight: $list-heading-weight;
   margin-bottom: $list-heading-margin-bottom;

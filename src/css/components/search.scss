@@ -51,13 +51,6 @@
   @include justify-content(stretch);
   @include flex(1);
   position: relative;
-  &.is-condensed {
-    max-width: 180px;
-    margin-left: auto;
-    .global-search_icon {
-      padding-right: $unit-xs;
-    }
-  }
 }
 
 .global-search_input {

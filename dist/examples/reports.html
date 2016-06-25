@@ -13,7 +13,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Banno">
     <meta name="application-name" content="Banno">
-    <meta name="theme-color" content="#F3AF0D">
+    <meta name="theme-color" content="#faa800">
 
     <link href="/css/style.min.css" rel="stylesheet">
 
@@ -23,7 +23,7 @@
 
     <style>
       :root {
-        --primaryAppColor: #F3AF0D;
+        --primaryAppColor: #faa800;
       }
     </style>
   </head>
@@ -42,10 +42,10 @@
             </a>
           </div>
 
-          <div class="nav_item">
+          <div class="nav_item nav_item--center">
             <a href="#" class="nav_item_link dropdown_toggle" id="switchInstitution">
               Your FI
-              <svg class="icon icon--sm" role="presentation"><use xlink:href="#arrow-drop-down"></use></svg>
+              <svg class="icon icon--sm" role="presentation"><use xlink:href="#chevron-down"></use></svg>
             </a>
           </div>
 
@@ -132,7 +132,18 @@
 
     <nav class="nav nav--tab-bar">
       <div class="container">
-        <div class="nav_inner"></div>
+        <div class="nav_inner">
+          <div class="nav_item nav_item--center dropdown">
+            <a href="#" class="nav_item_link dropdown_toggle">
+              <svg class="icon icon--sm" role="presentation"><use xlink:href="#date-range"></use></svg>
+              June 19, 2016 – June 23, 2016
+              <svg class="icon icon--sm" role="presentation"><use xlink:href="#chevron-down"></use></svg>
+            </a>
+            <div class="dropdown_menu dropdown_menu--lg dropdown_menu--center">
+              picker
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -151,7 +162,7 @@
 
       <div class="container">
         <div class="grid grid--no-gutter">
-          <div class="grid_3@md">
+          <div class="grid_3@md sticky">
             <nav class="list list--sm list--borderless">
               <div class="list_heading">Engagement</div>
               <a href="#" class="list_item is-active ">App usage</a>

@@ -43,8 +43,8 @@
   font-size: $build-mode-title-font-size;
 }
 .build-mode_title--multiline {
-  line-height: 1;
-  padding-top: 14px;
+  line-height: 1 !important;
+  padding-top: 16px;
   .sub-title {
     color: rgba($topbar-color, .6);
   }
