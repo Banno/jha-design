@@ -1,8 +1,7 @@
 {
-  "name": "jha-design",
+  "name": "@banno/jha-design",
   "description": "Web Application Design Language",
   "homepage": "https://github.com/Banno/jha-design",
-  "private": true,
   "author": "Josh Sadler <josh.sadler@banno.com>",
   "version": "1.4.0",
   "main": "Gruntfile.js",
