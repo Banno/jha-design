@@ -36,7 +36,6 @@ $enable-messages:           true !default;
 // layout
 $enable-grid:               true !default;
 $enable-navigation:         true !default;
-$enable-navigation-noise:   true !default;
 $enable-page-header:        true !default;
 $enable-viewport:           true !default;
 $enable-build-mode:         true !default;
@@ -59,11 +58,11 @@ $enable-css-variables:      true !default;
 
 // Color
 $color-blue:                #3aaeda !default;
-$color-green:               #67bd48 !default;
-$color-red:                 #fb6b5b !default;
-$color-yellow:              #ffac52 !default;
-$color-purple:              #7b75cb !default;
-$color-teal:                #4cc0c1 !default;
+$color-green:               #4caf50 !default;
+$color-red:                 #e7362d !default;
+$color-yellow:              #fca902 !default;
+$color-purple:              #7d57c1 !default;
+$color-teal:                #00acc3 !default;
 
 $color-primary:             $color-blue !default;
 $color-success:             $color-green !default;
@@ -74,11 +73,11 @@ $color-gray-lighter:        #eef1f4 !default;
 $color-gray-light:          #e4e7ea !default;
 $color-gray-medium:         #8d99a0 !default;
 $color-gray-base:           #455564 !default;
-$color-gray-dark:           #25313E !default;
+$color-gray-dark:           #272d33 !default;
 
 $color-neutral:             $color-gray-medium !default;
 
-$background-color:          #f1f3f5 !default;
+$background-color:          darken(desaturate(#f1f3f5, 10%), 3%) !default;
 
 $highlight-color:           #faffbd !default;
 
@@ -227,7 +226,7 @@ $shadow-key-light:          0 19px 19px rgba(#000, 0.3), 0 15px 6px rgba(#000, 0
 // Topbar
 $topbar-fixed:              true !default;
 $topbar-height-base:        66px !default;
-$topbar-height-sm:          44px !default;
+$topbar-height-sm:          56px !default;
 $topbar-background:         #282e33 !default;
 $topbar-color:              rgba(255,255,255,0.7) !default;
 $topbar-link-color:         #fff !default;
@@ -291,7 +290,7 @@ $btn-height-sm:             30px !default;
 $btn-line-height-lg:        48px !default;
 $btn-height-lg:             50px !default;
 
-$btn-default-background:    #F9FAFB !default;
+$btn-default-background:    #fff !default;
 $btn-primary-background:    $color-primary !default;
 $btn-success-background:    $color-success !default;
 $btn-danger-background:     $color-danger !default;
@@ -536,8 +535,8 @@ $list-divider-margin-bottom: $list-divider-margin-top !default;
 $message-border-color:      $color-gray-light !default;
 $message-padding-top-sm:    16px !default;
 $message-padding-bottom-sm: 16px !default;
-$message-padding-top-lg:    32px !default;
-$message-padding-bottom-lg: 32px !default;
+$message-padding-top-lg:    24px !default;
+$message-padding-bottom-lg: 24px !default;
 $message-date-color:        $text-color-light !default;
 $message-date-font-size:    13px !default;
 

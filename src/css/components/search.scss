@@ -6,13 +6,13 @@
   & > :first-child,
   // specificity with input-group
   & > :first-child .search_input {
-    border-top-left-radius: ($btn-height-base / 2);
-    border-bottom-left-radius: ($btn-height-base / 2);
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
   }
   .is-last,
   & > :last-child {
-    border-top-right-radius: ($btn-height-base / 2);
-    border-bottom-right-radius: ($btn-height-base / 2);
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
   }
 }
 .search_bar {
@@ -29,7 +29,12 @@
 }
 .search_input {
   padding-left: 36px;
-  border-radius: ($btn-height-base / 2);
+  background-color: $background-color;
+  border-color: darken($background-color, 1%);
+}
+.search_input--dark {
+  background-color: darken($background-color, 5%);
+  border-color: darken($background-color, 6%);
 }
 .search_icon {
   position: absolute;

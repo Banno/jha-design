@@ -6,11 +6,7 @@
   left: 0;
   width: 100%;
   height: $topbar-height-sm;
-  padding-top: 4px;
-  @if $enable-navigation-noise {
-    background-image: url(../img/noise.png);
-    background-size: 129px auto;
-  }
+  padding-top: 9px;
   background-color: $topbar-background;
   @if $enable-css-variables {
     background-color: var(--primaryAppColor, $topbar-background);
@@ -49,27 +45,6 @@
 // use max-width so we don't have to reset button styles again
 @media (max-width: $viewport-sm-max) {
   .page-header {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      @include gradient-vertical(rgba(255,255,255,0.1), transparent);
-      z-index: 1;
-    }
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border-bottom: 1px solid rgba($color-gray-dark, 0.24);
-      @include scaleY(0.5);
-      @include transform-origin(0 100%);
-    }
     .container {
       padding-left: 4px;
       padding-right: 4px;
@@ -102,7 +77,7 @@
   .standalone {
     .page-header {
       height: $topbar-height-sm + 20;
-      padding-top: 24px;
+      padding-top: 29px;
     }
   }
 }

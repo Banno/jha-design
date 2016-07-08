@@ -559,7 +559,6 @@
 // Button color
 @mixin button-color($bg, $border, $text, $hover:"") {
   background-color: $bg;
-  @include gradient-vertical(saturate(lighten($bg, 4%), 5%), $bg);
   border-color: $border;
   color: $text;
   &:focus {
@@ -574,7 +573,6 @@
     &:active,
     &:focus,
     &.is-active {
-      background-image: none;
       background-color: $hover;
       border-color: darken($border, 8%);
     }
@@ -582,7 +580,6 @@
     &:hover,
     &:active,
     &.is-active {
-      background-image: none;
       background-color: darken($bg, 8%);
       border-color: darken($border, 8%);
     }
@@ -599,7 +596,6 @@
   }
   &:disabled,
   &.is-disabled {
-    background-image: none;
     background-color: $bg;
     border-color: $bg;
     color: rgba($text, .7);
@@ -608,7 +604,6 @@
 }
 
 @mixin button-outline($color) {
-  background-image: none;
   background-color: transparent;
   color: $color;
   border-color: $color;

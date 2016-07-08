@@ -201,7 +201,6 @@
 .dialog_header,
 .dialog_footer {
   @include flex-shrink(0);
-  // @include flex-grow(0);
 }
 
 .dialog_header--borderless {
@@ -259,7 +258,6 @@
   border-top: $border-lt;
   border-bottom-left-radius: $dialog-radius;
   border-bottom-right-radius: $dialog-radius;
-  text-align: center;
 }
 
 

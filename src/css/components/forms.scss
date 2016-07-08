@@ -339,16 +339,15 @@ textarea.form-control {
   padding: 8px;
   background-color: #fff;
   border-radius: $border-radius-base;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
   @include transition(all .2s $timing-function);
   &:focus {
     outline: 0;
     border-color: $color-primary;
-    box-shadow: 0 0 3px rgba($color-primary, 0.6);
+    box-shadow: 0 0 2px rgba($color-primary, 0.7);
   }
   &.disabled,
   &:disabled {
-    background-color: $btn-default-background;
+    background-color: rgba($color-gray-lighter, .7);
     border-color: $color-gray-light;
     opacity: $btn-disabled-opacity;
     box-shadow: none;
@@ -410,9 +409,10 @@ textarea.form-control {
   -webkit-padding-start: 8px;
   border: 1px solid;
   @include button-color($btn-default-background, $color-gray-light, $btn-text-color-base, $btn-default-background);
-  background: $arrow-background no-repeat right 8px center,
-              linear-gradient(saturate(lighten($btn-default-background, 4%), 5%), $btn-default-background);
-  background-size: 18px, auto; // have to add due to "right 8px center" position
+  background-image: $arrow-background;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 18px;
   height: $btn-height-base;
   width: 100%;
   max-width: 100%;
@@ -424,8 +424,6 @@ textarea.form-control {
   &:active,
   &:focus {
     color: $btn-text-color-base;
-    background: $arrow-background no-repeat right 8px center, $btn-default-background;
-    background-size: 18px, auto; // have to repeat due to "right 8px center" position
   }
   &:focus {
     border-color: $color-primary;

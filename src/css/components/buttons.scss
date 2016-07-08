@@ -135,6 +135,15 @@
   }
 }
 
+.btn--toggle-success {
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active {
+    color: $btn-success-background;
+  }
+}
+
 // Loading feedback on button
 .btn.is-loading {
   // reset the opacity incase the field is disabled

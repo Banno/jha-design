@@ -22,7 +22,12 @@
   }
   .nav_item_link {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
+    font-size: $btn-font-size-sm;
+    .icon--sm {
+      position: relative;
+      top: -2px;
+    }
   }
 }
 .build-mode_actions .dropdown {
