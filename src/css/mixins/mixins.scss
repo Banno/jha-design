@@ -562,7 +562,7 @@
   border-color: $border;
   color: $text;
   &:focus {
-    box-shadow: 0 1px 5px rgba($bg, .72);
+    box-shadow: 0 0 0 2px rgba($bg, .2);
   }
   &:active,
   &.is-active {
@@ -574,14 +574,14 @@
     &:focus,
     &.is-active {
       background-color: $hover;
-      border-color: darken($border, 8%);
+      border-color: darken($border, 6%);
     }
   } @else {
     &:hover,
     &:active,
     &.is-active {
-      background-color: darken($bg, 8%);
-      border-color: darken($border, 8%);
+      background-color: darken($bg, 6%);
+      border-color: darken($border, 6%);
     }
   }
   // special case for transparent buttons
@@ -618,20 +618,21 @@
       border-color: $color;
     }
   } @else {
+    &:focus,
     &:hover {
       background-color: rgba(saturate($color, 5%), .12);
       color: darken($color, 8%);
       border-color: darken($color, 8%);
     }
     &:focus {
-      box-shadow: 0 1px 5px rgba($color, .72);
+      box-shadow: 0 0 0 2px rgba(darken($color, 6%), .2);
     }
     &:active,
     &.is-active {
       box-shadow: $btn-focus-shadow;
       background-color: $color;
       color: #fff;
-      border-color: darken($color, 8%);
+      border-color: darken($color, 6%);
     }
     &:disabled,
     &.is-disabled {

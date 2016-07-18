@@ -173,7 +173,7 @@ textarea.form-control {
 }
 .control input:focus ~ .control_indicator {
   border-color: $color-primary;
-  box-shadow: 0 0 3px rgba($color-primary, 0.6);
+  box-shadow: 0 0 0 2px rgba($color-primary, .2);
 }
 .control input:disabled ~ .control_indicator {
   cursor: default;
@@ -343,7 +343,7 @@ textarea.form-control {
   &:focus {
     outline: 0;
     border-color: $color-primary;
-    box-shadow: 0 0 2px rgba($color-primary, 0.7);
+    box-shadow: 0 0 0 2px rgba($color-primary, .2);
   }
   &.disabled,
   &:disabled {
@@ -427,7 +427,7 @@ textarea.form-control {
   }
   &:focus {
     border-color: $color-primary;
-    box-shadow: 0 0 3px rgba($color-primary, 0.6);
+    box-shadow: 0 0 0 2px rgba($color-primary, .2);
   }
   &:focus:-moz-focusring {
     color: transparent;
