@@ -18,12 +18,6 @@ Within the download you'll find the following directories and files:
 jha-design/
 ├── css/
 │   ├── style.min.css
-├── fonts/
-│   ├── pn-r.eot
-│   ├── pn-r.ttf
-│   ├── pn-r.woff
-│   ├── pn-r.woff2
-│   ├── ...
 ├── img/
 │   ├── apple-touch-icon.png
 │   ├── icons.svg
