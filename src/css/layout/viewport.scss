@@ -1,5 +1,5 @@
 .viewport {
-  $calc: "100vh - 120px";
+  $calc: "100vh - 126px";
   padding-top: $padding-unit;
   padding-bottom: $toolbar-height-base + $unit-sm; // magic number
   min-height: calc(#{$calc});

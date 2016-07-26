@@ -1,6 +1,7 @@
 // Base nav
 .nav {
   display: block;
+  contain: layout;
   z-index: $z-index-topbar;
   .dropdown_menu {
     margin-top: 0;
@@ -65,8 +66,7 @@
     padding-top: 20px;
     height: $topbar-height-base + 20;
   }
-  .nav--toolbar,
-  .nav--search {
+  .nav--toolbar {
     top: $topbar-height-base + 20;
   }
   @media (min-width: $viewport-md-min) {
@@ -76,7 +76,6 @@
   }
 }
 .nav--toolbar,
-.nav--search,
 .nav--actions {
   z-index: $z-index-topbar;
   position: fixed;
@@ -87,8 +86,7 @@
   color: $toolbar-color;
 }
 
-.nav--toolbar,
-.nav--search {
+.nav--toolbar {
   top: $topbar-height-base;
 }
 
@@ -122,19 +120,12 @@
   }
 }
 
-.nav--search {
-  display: none;
-  @media(min-width: $viewport-md-min) {
-    display: block;
-  }
-}
-
 .nav--tab-bar {
   bottom: 0;
   top: auto;
   @media (max-width: $viewport-sm-max) {
     box-shadow: none;
-    background-color: #fff;
+    background-color: #fff !important;
     &::before {
       content: '';
       display: block;
@@ -187,7 +178,7 @@
       display: block;
       font-size: 11px;
     }
-    .global-search {
+    .nav_search {
       display: none;
     }
   }
@@ -231,9 +222,20 @@
 .nav_item {
   height: 100%;
 }
-.nav_group {
+.nav_group,
+.nav_search {
   @include flexbox-display();
   @include align-items(center);
+}
+.nav_search {
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 320px;
+  @include flex(1);
+  .search {
+    width: 100%;
+    margin-bottom: 0;
+  }
 }
 .nav_item_content,
 .nav_item_link {
@@ -288,9 +290,23 @@
   color: $brand-color !important;
   white-space: nowrap;
   text-transform: none;
+}
+.brand_icon-container {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.2);
   .icon {
-    vertical-align: middle;
-    margin-right: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
   }
 }
 .brand_product {
@@ -300,6 +316,12 @@
 @media (min-width: $viewport-md-min) {
   .nav--header {
     display: block;
+    &.will-shift .nav_inner {
+      @include transition(opacity .2s ease);
+    }
+    &.is-shifted-up .nav_inner {
+      opacity: 0;
+    }
   }
   .will-shift,
   .nav.will-shift + .nav {

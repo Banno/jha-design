@@ -234,8 +234,10 @@ textarea.form-control {
   position: relative;
   display: inline-block;
   margin: 0;
-  padding: 2px 0;
+  margin-left: -4px;
+  padding: 4px;
   line-height: 1;
+  contain: content;
   vertical-align: middle;
 }
 .switch_checkbox {
@@ -391,7 +393,7 @@ textarea.form-control {
 
 // Select
 .select {
-  $arrow-background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjQjRCOUJDIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNyAxMGw1IDUgNS01eiIvPjwvc3ZnPgo=);
+  $arrow-background: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjYjRiOWJjIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTYuNTkgOC41OUwxMiAxMy4xNyA3LjQxIDguNTkgNiAxMGw2IDYgNi02eiIvPjwvc3ZnPgo=);
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;

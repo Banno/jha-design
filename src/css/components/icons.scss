@@ -3,6 +3,7 @@
   vertical-align: middle;
   @include square($icon-size-base);
   fill: $icon-fill-color;
+  contain: size;
 }
 
 .icon--xs {
@@ -20,7 +21,7 @@
   @include square($icon-size-xl);
 }
 
-.icon--navigation {
+.icon--nav {
   position: absolute;
   top: -3px;
   right: 0;
@@ -30,6 +31,7 @@
 // Icon container
 .icon-container {
   display: inline-block;
+  contain: strict;
   vertical-align: middle;
   @include square(36px);
   background-color: $color-gray-lighter;

@@ -60,6 +60,7 @@
 */
 .drawer_inner {
   position: relative;
+  contain: content;
   @include flexbox-display();
   @include flex-direction(column);
   height: 100%;

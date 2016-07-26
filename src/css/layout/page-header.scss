@@ -42,6 +42,10 @@
   line-height: 1.6;
 }
 
+.page-header_back {
+  margin-right: $unit-sm;
+}
+
 // use max-width so we don't have to reset button styles again
 @media (max-width: $viewport-sm-max) {
   .page-header {

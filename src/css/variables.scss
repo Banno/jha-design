@@ -59,7 +59,7 @@ $enable-css-variables:      true !default;
 // Color
 $color-blue:                #3aaeda !default;
 $color-green:               #4caf50 !default;
-$color-red:                 #e7362d !default;
+$color-red:                 #f44336 !default;
 $color-yellow:              #fca902 !default;
 $color-purple:              #7d57c1 !default;
 $color-teal:                #00acc3 !default;
@@ -407,6 +407,7 @@ $dialog-width-lg:           900px !default;
 $dialog-background:         #fff !default;
 $dialog-radius:             2px !default;
 $dialog-shadow:             0 3px 12px 0 rgba($color-gray-dark, 0.24), 0 3px 24px rgba($color-gray-dark, 0.12) !default;
+$dialog-footer-alignment:   center !default;
 
 $dialog-backdrop-color:     $color-gray-dark !default;
 $dialog-backdrop-opacity:   0.32 !default;
@@ -572,11 +573,11 @@ $table-font-size:           $font-size-base - 1 !default;
 
 
 // Timeline
-$timeline-line-color:       $color-gray-light !default;
+$timeline-line-color:       rgba(#313649, 0.12) !default;
 $timeline-item-margin-bottom: $spacing-unit !default;
 $timeline-group-padding-top:  $spacing-unit !default;
 $timeline-date-color:       $text-color-light !default;
-$timeline-dot-background:   $color-gray-lighter !default;
+$timeline-dot-background:   lighten($background-color, 4%) !default;
 
 
 // Toasts
@@ -592,7 +593,7 @@ $tooltip-line-height:       $line-height-base !default;
 
 
 // Wells
-$well-background:           #f5f6f8 !default;
+$well-background:           lighten($background-color, 3%) !default;
 $well-radius:               $border-radius-base !default;
 $well-padding-x-base:       24px !default;
 $well-padding-y-base:       16px !default;

@@ -6,6 +6,19 @@
   @extend .dialog_backdrop
 }
 
+.dialog--center\@xs {
+  display: -webkit-box !important;
+  display: -moz-box !important;
+  display: -ms-flexbox !important;
+  display: -webkit-flex !important;
+  display: flex !important;
+}
+
+// Dropdowns
+.dropdown-menu {
+  @extend .dropdown_menu;
+}
+
 // Datepicker
 div[datepicker] {
   &:focus {

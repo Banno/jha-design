@@ -46,6 +46,7 @@
 
 .dropdown_menu {
   display: none;
+  contain: content;
   margin: $dropdown-menu-distance 0 0;
   padding: 6px 0;
   list-style: none;

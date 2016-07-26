@@ -1,0 +1,187 @@
+// Datepicker styles
+// --------------------------------------------
+
+.daterangepicker.dropdown-menu {
+	display: none;
+  z-index: 3000;
+  max-width: none;
+  // requires angular-ui plugin
+  &.opensleft {
+    .ranges,
+    .calendar {
+      float: left;
+    }
+  }
+  &.opensright {
+    .ranges,
+    .calendar {
+      float: right;
+    }
+  }
+  .ranges {
+    max-width: 240px;
+    text-align: left;
+    .list {
+      margin-left: 0;
+      padding-left: $padding-unit;
+    }
+    li {
+      cursor: pointer;
+    }
+  }
+}
+
+.daterangepicker {
+  .calendar {
+    display: none;
+    max-width: 270px;
+  }
+  &.show-calendar .calendar {
+    display: block;
+  }
+  .calendar {
+    &.single {
+      .calendar-date {
+        border: 0;
+      }
+    }
+    th, td {
+      white-space: nowrap;
+      text-align: center;
+      min-width: 32px;
+    }
+  }
+  .daterangepicker_start_input,
+  .daterangepicker_start_input {
+    display: none;
+  }
+
+  .icon-arrow-left,
+  .icon-arrow-right {
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1;
+    font-family: $font-family-base;
+    &:before {
+      content: '';
+    }
+  }
+  .icon-arrow-left {
+    &:after {
+      content: '\2039';
+    }
+  }
+  .icon-arrow-right {
+    &:after {
+      content: '\203A';
+    }
+  }
+
+  .calendar-date {
+    padding: 6px;
+  }
+  .calendar-time {
+    text-align: center;
+    margin: 8px auto 0;
+    line-height: 30px;
+  }
+}
+
+
+.range_inputs {
+  padding: 0 12px 12px;
+  > div {
+    float: left;
+  }
+  > div:nth-child(2) {
+    padding-left: 11px;
+  }
+}
+
+
+.daterangepicker table {
+  width: 100%;
+  margin: 0;
+}
+
+.daterangepicker td,
+.daterangepicker th {
+  text-align: center;
+  width: 32px;
+  height: 28px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.daterangepicker td.off {
+  color: rgba(0,0,0,0.24);
+}
+
+.daterangepicker td.disabled {
+  color: rgba(0,0,0,0.24);
+}
+
+.daterangepicker td.available:hover,
+.daterangepicker th.available:hover {
+  background-color: rgba($color-primary, 0.24);
+}
+
+.daterangepicker td.in-range {
+  background: rgba($color-primary, 0.14);
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: #fff;
+}
+
+.daterangepicker select.monthselect,
+.daterangepicker select.yearselect {
+  font-size: 12px;
+  padding: 1px;
+  height: auto;
+  margin: 0;
+  cursor: default;
+}
+
+.daterangepicker select.monthselect {
+  margin-right: 2%;
+  width: 56%;
+}
+
+.daterangepicker select.yearselect {
+  width: 40%;
+}
+
+.daterangepicker select.hourselect,
+.daterangepicker select.minuteselect,
+.daterangepicker select.ampmselect {
+  width: 50px;
+  margin-bottom: 0;
+}
+
+.daterangepicker th.month {
+  width: auto;
+}
+
+@supports ( (--a: 0)) {
+  .daterangepicker td.available:hover,
+  .daterangepicker th.available:hover {
+    $local-color: 'rgba(var(--primaryAppColorR), var(--primaryAppColorG), var(--primaryAppColorB), 0.24)';
+    background-color: unquote($local-color);
+  }
+
+  .daterangepicker td.in-range {
+    $local-color: 'rgba(var(--primaryAppColorR), var(--primaryAppColorG), var(--primaryAppColorB), 0.14)';
+    background-color: unquote($local-color);
+  }
+
+  .daterangepicker td.active,
+  .daterangepicker td.active:hover {
+    $local-color: 'rgba(var(--primaryAppColorR), var(--primaryAppColorG), var(--primaryAppColorB), 1)';
+    background-color: unquote($local-color);
+    border-color: unquote($local-color);
+  }
+}

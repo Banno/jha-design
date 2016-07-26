@@ -74,6 +74,7 @@
 
 .dialog_inner {
   position: relative;
+  contain: content;
   @include flexbox-display();
   @include flex-direction(column);
   width: 100%;
@@ -258,6 +259,7 @@
   border-top: $border-lt;
   border-bottom-left-radius: $dialog-radius;
   border-bottom-right-radius: $dialog-radius;
+  text-align: $dialog-footer-alignment;
 }
 
 

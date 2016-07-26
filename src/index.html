@@ -44,7 +44,11 @@
         <div class="nav_inner">
           <div class="nav_item">
             <a href="#" class="nav_item_link brand">
-              <img src="/img/app-icon-content.png" srcset="/img/app-icon-content@2x.png 2x" class="icon icon--lg">
+              <span class="brand_icon-container">
+                <svg class="icon">
+                  <use xlink:href="#devices"></use>
+                </svg>
+              </span>
               Banno <span class="brand_product">Prototype</span>
             </a>
           </div>
@@ -154,14 +158,14 @@
           <h1 class="page-header_title u-visible@mobile">Users</h1>
           <div class="grid">
             <div class="grid_5@md">
-              <div class="search">
+              <div class="search search--dark">
                 <label class="search_bar">
                   <span class="search_icon">
                     <svg class="icon" role="presentation">
                       <use xlink:href="#search"></use>
                     </svg>
                   </span>
-                  <input type="search" class="form-control search_input is-first" placeholder="Search">
+                  <input type="search" class="form-control search_input" placeholder="Search">
                 </label>
               </div>
             </div>
@@ -171,7 +175,7 @@
 
       <div id="users">
         <div class="container">
-          <form class="search u-visible@mobile">
+          <form class="search search--dark u-visible@mobile">
             <label class="search_bar">
               <span class="search_icon">
                 <svg class="icon" role="presentation">
@@ -344,6 +348,19 @@
                 </svg>
                 <span class="tab_label">Settings</span>
               </a>
+            </div>
+
+            <div class="nav_search">
+              <div class="search search--light">
+                <label class="search_bar">
+                  <span class="search_icon">
+                    <svg class="icon" role="presentation">
+                      <use xlink:href="#search"></use>
+                    </svg>
+                  </span>
+                  <input type="search" class="form-control search_input" placeholder="Search">
+                </label>
+              </div>
             </div>
           </div>
         </div>

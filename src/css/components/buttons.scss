@@ -5,6 +5,7 @@
   text-align: center;
   vertical-align: middle;
   @include touch-action(manipulation);
+  contain: layout, paint;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;

@@ -1,5 +1,6 @@
 .toast {
   background-color: $toast-background-color;
+  contain: content;
   color: #fff;
   padding: $unit-sm $unit-base;
   position: fixed;

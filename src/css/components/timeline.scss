@@ -21,10 +21,10 @@
   padding-top: $timeline-group-padding-top;
 }
 
-.timeline_item_date,
-.timeline_item_group {
+.timeline_item_date{
   display: block;
   background-color: #fff;
+  background-clip: padding-box;
   border: 1px solid $timeline-line-color;
 }
 
@@ -44,41 +44,56 @@
   display: none;
   @include square(16px);
   background-color: $timeline-dot-background;
+  background-clip: padding-box;
   border: 1px solid $timeline-line-color;
   border-radius: 50%;
   float: left;
   margin-left: 42px;
-  margin-top: $padding-unit;
+  margin-top: 22px;
 }
 .timeline_item_type {
   display: none;
-  @include square(32px);
+  position: relative;
+  @include square(28px);
   background-color: #fff;
+  background-clip: padding-box;
   border: 1px solid $timeline-line-color;
   border-radius: 50%;
   float: left;
-  margin-top: 8px;
-  margin-left: 34px;
+  margin-top: 16px;
+  margin-left: 36px;
   text-align: center;
-  padding: 3px;
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+  }
 }
 
 .timeline_item_group {
+  box-shadow: $card-shadow;
+  background-color: #fff;
   border-radius: $border-radius-base;
-  min-height: 48px;
-  max-width: 690px;
-  padding: $padding-unit;
   position: relative;
+  .well {
+    border-radius: 0 0 $border-radius-base $border-radius-base;
+  }
 }
 
 
 // Activity
 .activity_item {
   display: table;
+  padding: $padding-unit;
   width: 100%;
   .avatar {
     margin-right: 4px;
   }
+}
+.activity_item--sm {
+  padding-top: $padding-unit / 2;
+  padding-bottom: $padding-unit / 2;
 }
 .activity_item_time {
   width: 92px;
@@ -88,8 +103,6 @@
 .activity_item_time,
 .activity_item_action {
   display: table-cell;
-  padding: $unit-xs;
-  padding-left: 0;
 }
 .activity_item_action {
   width: 1%;
@@ -111,26 +124,24 @@
     display: block;
   }
   .timeline_item_group {
+    position: relative;
     margin-left: 90px;
     &::before,
     &::after {
       content: '';
       position: absolute;
-      border-color: transparent;
-      border-style: dashed dashed solid;
-      border-width: 9px;
-      left: -19px;
-      top: 16px;
+      // border-color: transparent;
+      // border-style: dashed dashed solid;
+      // border-width: 9px;
+      @include square(14px);
+      @include rotate(-45deg);
+      background-color: #fff;
+      left: -7px;
+      top: 24px;
     }
     &::before {
-      border-right-color: $color-gray-light;
-    }
-    &::after {
-      border-right-color: #fff;
-      border-width: 8px;
-      margin-left: 1px;
-      left: -17px;
-      top: 17px;
+      z-index: -1;
+      box-shadow: -1px 1px 1px 0 rgba($color-gray-dark, 0.16), -1px 1px 2px rgba($color-gray-dark, 0.08);
     }
   }
 }
