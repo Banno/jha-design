@@ -53,7 +53,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: $viewport-lg-min) {
   .container {
     max-width: $column-width-lg;
   }

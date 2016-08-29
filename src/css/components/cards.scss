@@ -27,7 +27,30 @@
     @include hairline(double, $color-gray-light);
   }
 }
-
+// smaller card with a modified .card_media layout
+.card--summary {
+  margin-left: 0;
+  margin-right: 0;
+  @include flexbox-display();
+  @include flex-direction(row);
+  .card_media {
+    position: relative;
+    min-width: 120px;
+    border-radius: $card-radius 0 0 $card-radius;
+    .icon,
+    .thumbnail,
+    .avatar {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      fill: #fff;
+    }
+  }
+  .card_content {
+    @include flex(1);
+  }
+}
 
 // Header
 .card_header {
@@ -155,6 +178,15 @@
   overflow: hidden;
   &:first-child {
     border-radius: $card-radius $card-radius 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 $card-radius $card-radius;
+  }
+  .card--summary &:first-child {
+    border-radius: $card-radius 0 0 $card-radius;
+  }
+  .card--summary &:last-child {
+    border-radius: 0 $card-radius $card-radius 0;
   }
   img {
     vertical-align: top;

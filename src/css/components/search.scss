@@ -30,12 +30,12 @@
   .search_select {
     background-color: rgba(255,255,255,0.16);
     border-color: transparent;
-    color: rgba(255,255,255,0.6);
+    color: #fff;
     @include placeholder(rgba(255,255,255,0.6));
     &:focus {
       box-shadow: none;
       border-color: transparent;
-      color: rgba(255,255,255,1);
+      color: #fff;
     }
   }
   option {

@@ -314,12 +314,14 @@ textarea.form-control {
 }
 .fieldset_label {
   font-weight: $font-weight-semibold;
+  color: $text-color-dark;
 }
 .fieldset_label,
 .fieldset_static {
   padding-top: $unit-base / 2;
   padding-bottom: $unit-base / 2;
   margin-bottom: 0;
+  font-size: $font-size-base - 1;
 }
 .fieldset_static {
   color: $fieldset-color;
