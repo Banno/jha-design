@@ -133,10 +133,10 @@
       // border-color: transparent;
       // border-style: dashed dashed solid;
       // border-width: 9px;
-      @include square(14px);
+      @include square(12px);
       @include rotate(-45deg);
       background-color: #fff;
-      left: -7px;
+      left: -6px;
       top: 24px;
     }
     &::before {
