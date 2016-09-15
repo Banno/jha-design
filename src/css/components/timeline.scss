@@ -60,7 +60,7 @@
   border: 1px solid $timeline-line-color;
   border-radius: 50%;
   float: left;
-  margin-top: 16px;
+  margin-top: 12px;
   margin-left: 36px;
   text-align: center;
   .icon {
@@ -137,7 +137,7 @@
       @include rotate(-45deg);
       background-color: #fff;
       left: -6px;
-      top: 24px;
+      top: 19px;
     }
     &::before {
       z-index: -1;

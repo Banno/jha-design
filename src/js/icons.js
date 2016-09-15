@@ -1,7 +1,7 @@
 (function (window, document) {
   'use strict';
 
-  var version = 22;
+  var version = 23;
 
   var scripts = document.getElementsByTagName('script');
   var iconFile;
