@@ -200,10 +200,10 @@ $timing-function:           cubic-bezier(.1,.5,.1,1) !default;
 
 
 // Borders
-$border-base:               1px solid $color-gray-light !default;
-$border-lt:                 1px solid $color-gray-lighter !default;
+$border-base:               1px solid rgba($color-gray-dark, 0.1) !default;
+$border-lt:                 1px solid rgba($color-gray-dark, 0.08) !default;
 $border-radius-base:        3px !default;
-$faux-border-color:         #d8e1eb !default;;
+$faux-border-color:         rgba($color-gray-dark, 0.1) !default;;
 
 
 // Z-index
@@ -411,6 +411,9 @@ $dialog-footer-alignment:   center !default;
 
 $dialog-backdrop-color:     $color-gray-dark !default;
 $dialog-backdrop-opacity:   0.32 !default;
+$dialog-backdrop-fill-image:    '../img/brand-background@2x.png' !default;
+$dialog-backdrop-fill-repeat:   repeat !default;
+$dialog-backdrop-fill-size:     308px auto !default;
 
 
 // Dropdowns
@@ -517,10 +520,10 @@ $list-item-action-width:    $icon-size-sm !default;
 
 $list-heading-color:        $text-color-light !default;
 $list-heading-transform:    uppercase !default;
-$list-heading-padding-top:  24px !default;
-$list-heading-padding-bottom: 8px !default;
-$list-heading-margin-bottom: 8px !default;
-$list-heading-font-size:    $font-size-base - 1 !default;
+$list-heading-padding-top:  32px !default;
+$list-heading-padding-bottom: 6px !default;
+$list-heading-margin-bottom: 4px !default;
+$list-heading-font-size:    $font-size-base - 2 !default;
 $list-heading-weight:       600 !default;
 $list-heading-border-color: darken($faux-border-color, 3%) !default;
 

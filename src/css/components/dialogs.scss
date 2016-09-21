@@ -71,6 +71,17 @@
     opacity: 1;
   }
 }
+.dialog-backdrop--fill,
+.dialog_backdrop--fill {
+  opacity: 0;
+  background-image: url($dialog-backdrop-fill-image);
+  background-repeat: $dialog-backdrop-fill-repeat;
+  background-size: $dialog-backdrop-fill-size;
+  &.is-visible,
+  &.in {
+    opacity: 1;
+  }
+}
 
 .dialog_inner {
   position: relative;
@@ -102,13 +113,19 @@
 .dialog_inner--lg {
   max-width: $dialog-width-lg;
 }
-
+.dialog_inner--sm {
+  width: 90%;
+  min-height: 0;
+  max-height: none;
+  max-width: $dialog-width-base;
+  border-radius: $dialog-radius;
+  box-shadow: $dialog-shadow;
+}
 // Make the dialog fill the vertical space
 .dialog_inner--fill {
-  min-height: 100%;
   max-height: 100%;
 }
-// of by viewport
+// by viewport
 .dialog--center\@xs {
   @include flexbox-display();
   // Hack for IE 10, 11 which both have quirky flexbox support
@@ -198,6 +215,9 @@
   .search {
     margin-bottom: -$padding-unit;
   }
+  .standalone &:not(.dialog_header--profile) {
+    margin-top: 20px;
+  }
 }
 .dialog_header,
 .dialog_footer {
@@ -216,6 +236,8 @@
   font-size: 16px;
   font-weight: $font-weight-bold;
   color: $text-color-dark;
+  margin-top: $unit-sm;
+  margin-bottom: $unit-sm;;
   @media (min-width: $viewport-md-min) {
     font-size: 18px;
     font-weight: $font-weight-normal;
@@ -268,6 +290,8 @@
 .dialog_header--profile {
   background-color: $color-gray-base;
   color: rgba(#fff, 0.6);
+  border-radius: $dialog-radius $dialog-radius 0 0;
+  border-bottom: 0;
   .dialog_title {
     display: block;
     color: #fff;
