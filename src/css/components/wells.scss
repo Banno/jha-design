@@ -35,3 +35,15 @@
 .well--bordered-bottom {
   border-bottom: $well-border;
 }
+
+
+// Color modifers
+.well--primary {
+  background-color: rgba($color-primary, .1);
+}
+.well--success {
+  background-color: rgba($color-success, .1);
+}
+.well--danger {
+  background-color: rgba($color-danger, .1);
+}

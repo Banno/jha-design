@@ -9,6 +9,7 @@ $enable-thumbnails:         true !default;
 $enable-badges:             true !default;
 $enable-buttons:            true !default;
 $enable-button-groups:      true !default;
+$enable-date:               true !default;
 $enable-wells:              true !default;
 $enable-dialogs:            true !default;
 $enable-drawers:            true !default;
@@ -387,6 +388,16 @@ $card-media-background:     $color-gray-medium !default;
 
 $card-hr-right-offset-base: -$padding-unit !default;
 $card-hr-right-offset-lg:   -$unit-base !default;
+
+
+// Date badge
+$date-background:           #fff !default;
+$date-width:                32px !default;
+$date-border:               1px solid #eef1f4 !default;
+$date-radius:               5px !default;
+$date-color:                $color-gray-medium !default;
+$date-header-size:          9px !default;
+$date-content-size:         18px !default;
 
 
 // Drawers

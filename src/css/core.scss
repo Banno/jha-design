@@ -44,6 +44,7 @@
 @if $enable-buttons         { @import "components/buttons"; }
 @if $enable-button-groups   { @import "components/button-groups"; }
 @if $enable-wells           { @import "components/wells"; }
+@if $enable-date            { @import "components/date"; }
 @if $enable-dialogs         { @import "components/dialogs"; }
 @if $enable-drawers         { @import "components/drawer"; }
 @if $enable-pagination      { @import "components/pagination"; }

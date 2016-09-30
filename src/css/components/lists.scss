@@ -140,6 +140,18 @@
   font-weight: $list-heading-weight;
   margin-bottom: $list-heading-margin-bottom;
   @include hairline(single, $list-heading-border-color);
+  &.section-heading {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: $card-spacing-left-base;
+    margin-left: -$card-spacing-left-base;
+    margin-bottom: 0;
+    @include reset-hairline();
+    @media (min-width: $viewport-lg-min) {
+      margin-left: -$card-spacing-left-lg;
+      padding-left: $card-spacing-left-lg;
+    }
+  }
 }
 
 .list_divider {
