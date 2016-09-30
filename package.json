@@ -3,7 +3,7 @@
   "description": "Web Application Design Language",
   "homepage": "https://github.com/Banno/jha-design",
   "author": "Josh Sadler <josh.sadler@banno.com>",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "main": "Gruntfile.js",
   "devDependencies": {
     "casperjs": "1.1.0-beta3",
