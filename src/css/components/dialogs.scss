@@ -236,8 +236,8 @@
   font-size: 16px;
   font-weight: $font-weight-bold;
   color: $text-color-dark;
-  margin-top: $unit-sm;
-  margin-bottom: $unit-sm;;
+  margin-top: 0;
+  margin-bottom: 0; // reset margin if the title is h1-h6
   @media (min-width: $viewport-md-min) {
     font-size: 18px;
     font-weight: $font-weight-normal;
