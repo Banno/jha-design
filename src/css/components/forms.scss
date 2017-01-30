@@ -358,11 +358,6 @@ textarea.form-control {
     color: $color-gray-medium;
   }
 }
-.form-control--inline {
-  display: inline-block;
-  width: auto;
-  max-width: 100%;
-}
 
 
 // Floating label
@@ -498,4 +493,10 @@ select.field {
       background-color: #fff;
     }
   }
+}
+
+.form-control--inline {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
 }

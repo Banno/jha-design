@@ -85,7 +85,6 @@
 
 .dialog_inner {
   position: relative;
-  contain: content;
   @include flexbox-display();
   @include flex-direction(column);
   width: 100%;
