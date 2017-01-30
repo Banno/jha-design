@@ -47,6 +47,8 @@
   color: $btn-icon-fill-color;
 }
 
+// Param order: $bg, $border, $text, $hover
+
 .btn--default {
   @include button-color($btn-default-background, $color-gray-light, $btn-text-color-base, $btn-default-background);
   &:disabled,
@@ -67,7 +69,7 @@
   @include button-color(transparent, transparent, $color-gray-medium);
 }
 .btn--neutral {
-  @include button-color($btn-neutral-background, $btn-neutral-background, $btn-text-color-base, $btn-neutral-background);
+  @include button-color($btn-neutral-background, $btn-neutral-border, $btn-text-color-base, $btn-neutral-background);
 }
 
 .btn--default-outline {

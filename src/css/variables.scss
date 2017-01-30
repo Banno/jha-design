@@ -236,7 +236,8 @@ $btn-default-background:    #fff !default;
 $btn-primary-background:    $color-primary !default;
 $btn-success-background:    $color-success !default;
 $btn-danger-background:     $color-danger !default;
-$btn-neutral-background:    $color-gray-lighter !default;
+$btn-neutral-background:    darken($background-color, 5%) !default;
+$btn-neutral-border:        darken($background-color, 7%) !default;
 
 $btn-focus-shadow:          inset 0 1px 2px rgba(0,0,0,0.08) !default;
 $btn-disabled-opacity:      0.7 !default;
