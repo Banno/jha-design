@@ -82,11 +82,12 @@ gulp.task('icons', function() {
     .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('file-icons', function() {
-  return gulp.src('src/img/file-types/*.svg')
+
+gulp.task('svgs', function() {
+  return gulp.src('src/img/**/*.svg')
     .pipe(svgmin())
-    .pipe(gulp.dest('dist/img/file-types'));
-})
+    .pipe(gulp.dest('dist/img'));
+});
 
 gulp.task('connect', function() {
   return connect.server({
@@ -100,5 +101,5 @@ gulp.task('watch', function() {
   return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'app-icons', 'images', 'compress']);
 });
 
-gulp.task('default', ['copy', 'styles', 'icons', 'app-icons', 'file-icons', 'images', 'compress']);
+gulp.task('default', ['copy', 'styles', 'icons', 'app-icons', 'svgs', 'images', 'compress']);
 gulp.task('dev', ['default', 'connect', 'watch']);
