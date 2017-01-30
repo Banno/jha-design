@@ -35,9 +35,7 @@
   &.is-active {
     font-weight: $font-weight-semibold;
     color: $color-primary;
-    @if $enable-css-variables {
-      color: var(--primaryAppColor, $color-primary);
-    }
+    color: var(--primaryAppColor, $color-primary);
     border-bottom-color: currentColor;
   }
   @media (min-width: $viewport-md-min) {

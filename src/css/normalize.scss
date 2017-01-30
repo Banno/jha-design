@@ -91,9 +91,7 @@ template {
 a {
   background-color: transparent;
   color: $link-color-base;
-  @if $enable-css-variables {
-    color: var(--primaryAppColor, $link-color-base);
-  }
+  color: var(--primaryAppColor, $link-color-base);
   text-decoration: none;
   @include touch-action(manipulation);
 }

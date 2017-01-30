@@ -176,31 +176,25 @@
   background-color: #fff;
   padding: $padding-unit;
   @include clearfix();
-  @if $enable-wells {
-    .well {
-      margin-left: -$padding-unit;
-      margin-right: -$padding-unit;
-    }
+  .well {
+    margin-left: -$padding-unit;
+    margin-right: -$padding-unit;
   }
   @media (min-width: $viewport-md-min) {
     padding: $spacing-unit;
-    @if $enable-wells {
-      .well {
-        margin-left: -$spacing-unit;
-        margin-right: -$spacing-unit;
-      }
+    .well {
+      margin-left: -$spacing-unit;
+      margin-right: -$spacing-unit;
     }
   }
 }
 
-@if $enable-wells {
-  .dialog .well {
-    padding-left: $padding-unit;
-    padding-right: $padding-unit;
-    @media (min-width: $viewport-md-min) {
-      padding-left: $spacing-unit;
-      padding-right: $spacing-unit;
-    }
+.dialog .well {
+  padding-left: $padding-unit;
+  padding-right: $padding-unit;
+  @media (min-width: $viewport-md-min) {
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
   }
 }
 

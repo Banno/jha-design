@@ -11,8 +11,6 @@ var svgmin          = require('gulp-svgmin');
 var connect         = require('gulp-connect');
 var imagemin        = require('gulp-imagemin');
 var uglify          = require('gulp-uglify');
-var stylestats      = require('gulp-stylestats');
-var phantomcss      = require('gulp-phantomcss');
 var del             = require('del');
 var pkg             = require('./package.json');
 
@@ -53,35 +51,12 @@ gulp.task('styles', function() {
     .pipe(connect.reload());
 });
 
-gulp.task('banno-web-styles', function() {
-  var banner = ['/*!',
-    ' * <%= pkg.name %> - <%= pkg.description %>',
-    ' * @theme Banno Web',
-    ' * @version v<%= pkg.version %>',
-    ' * @link <%= pkg.homepage %>',
-    '*/',
-    ''].join('\n');
-
-  return gulp.src('src/css/themes/banno-web.scss')
-    .pipe(sass())
-    .pipe(cssmin())
-    .pipe(header(banner, { pkg: pkg }))
-    .pipe(rename('banno-web.min.css'))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(connect.reload());
-});
-
 gulp.task('compress', function() {
   return gulp.src('src/js/*.js')
     .pipe(uglify({
       mangle: false
     }))
     .pipe(gulp.dest('dist/js'));
-});
-
-gulp.task('stylestats', function() {
-  gulp.src('dist/css/*.css')
-    .pipe(stylestats());
 });
 
 gulp.task('images', function() {
@@ -121,32 +96,9 @@ gulp.task('connect', function() {
   });
 });
 
-// Tests
-gulp.task('test-server', function() {
-  return connect.server({
-    root: 'dist',
-    port: 7777
-  });
-})
-
-gulp.task('phantomcss', ['test-server'], function() {
-  return gulp.src('testsuite.js')
-    .pipe(phantomcss({
-      screenshots: 'tests/screenshots',
-      results: 'test/results',
-      viewportSize: [1280, 800]
-    }));
-});
-
-gulp.task('stop-test-server', ['phantomcss'], function() {
-  connect.serverClose();
-})
-
 gulp.task('watch', function() {
-  return gulp.watch(allSrc, ['copy', 'styles', 'banno-web-styles', 'icons', 'app-icons', 'images', 'compress']);
+  return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'app-icons', 'images', 'compress']);
 });
 
-gulp.task('default', ['copy', 'styles', 'banno-web-styles', 'icons', 'app-icons', 'file-icons', 'images', 'compress']);
+gulp.task('default', ['copy', 'styles', 'icons', 'app-icons', 'file-icons', 'images', 'compress']);
 gulp.task('dev', ['default', 'connect', 'watch']);
-gulp.task('profile', ['stylestats']);
-gulp.task('test', ['stop-test-server']);

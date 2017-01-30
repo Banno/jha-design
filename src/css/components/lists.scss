@@ -61,9 +61,7 @@
   &.is-active,
   &.active {
     color: $list-item-active-color;
-    @if $enable-css-variables {
-      color: var(--primaryAppColor, $list-item-active-color);
-    }
+    color: var(--primaryAppColor, $list-item-active-color);
     font-weight: $list-item-active-weight;
   }
 }

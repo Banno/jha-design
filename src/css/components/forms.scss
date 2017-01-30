@@ -412,7 +412,9 @@ textarea.form-control {
   -webkit-padding-end: 12px + 18px;
   -webkit-padding-start: 8px;
   border: 1px solid;
-  @include button-color($btn-default-background, $color-gray-light, $btn-text-color-base, $btn-default-background);
+  background-color: $btn-default-background;
+  border-color: $color-gray-light;
+  color: $btn-text-color-base;
   background-image: $arrow-background;
   background-repeat: no-repeat;
   background-position: right 8px center;

@@ -66,10 +66,8 @@
 .btn--link {
   @include button-color(transparent, transparent, $color-gray-medium);
 }
-// Deprecated in v1.4.0
-// Will remove in upcoming release but for now it's using the btn--default class
 .btn--neutral {
-  @extend .btn--default;
+  @include button-color($btn-neutral-background, $btn-neutral-background, $btn-text-color-base, $btn-neutral-background);
 }
 
 .btn--default-outline {
@@ -116,9 +114,7 @@
   &:focus,
   &.is-active {
     color: $btn-toggle-active-color;
-    @if ($enable-css-variables) {
-      color: var(--primaryAppColor, $btn-toggle-active-color);
-    }
+    color: var(--primaryAppColor, $btn-toggle-active-color);
     box-shadow: none;
   }
   &:disabled,
@@ -227,4 +223,3 @@ input[type="button"] {
 .btn.u-float-right + .btn.u-float-right {
   margin-right: $padding-unit;
 }
-

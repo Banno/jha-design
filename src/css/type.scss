@@ -180,9 +180,7 @@ ul, .ul {
 }
 .text--primary {
   color: $color-primary;
-  @if $enable-css-variables {
-    color: var(--primaryAppColor, $color-primary);
-  }
+  color: var(--primaryAppColor, $color-primary);
 }
 .text--success {
   color: $color-success;

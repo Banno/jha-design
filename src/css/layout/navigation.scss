@@ -43,9 +43,7 @@
   left: 0;
   width: 100%;
   background-color: $topbar-background;
-  @if $enable-css-variables {
-    background-color: var(--primaryAppColor, $topbar-background);
-  }
+  background-color: var(--primaryAppColor, $topbar-background);
   color: $topbar-color;
   @include transition(background-color .2s ease);
   .nav_item_content {
@@ -166,9 +164,7 @@
       &:focus,
       &.is-active {
         color: $color-primary;
-        @if $enable-css-variables {
-          color: var(--primaryAppColor, $color-primary);
-        }
+        color: var(--primaryAppColor, $color-primary);
         &::after {
           display: none;
         }

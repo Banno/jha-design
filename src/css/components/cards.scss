@@ -7,10 +7,8 @@
   max-width: $card-max-width;
   margin-left: auto;
   margin-right: auto;
-  @if $enable-wells {
-    .well {
-      padding-left: $card-spacing-left-base;
-    }
+  .well {
+    padding-left: $card-spacing-left-base;
   }
 }
 .card--wide {
@@ -109,34 +107,30 @@
   p:last-child {
     margin-bottom: 0;
   }
-  @if $enable-lists {
+  .list_item {
+    border-bottom: 0;
+    margin-left: -$card-spacing-left-base;
+    padding-left: $card-spacing-left-base;
+    @include hairline-offset($card-spacing-left-base);
+  }
+  .well--escape-list {
+    margin-left: -$card-spacing-left-base;
+    padding-left: $card-spacing-left-base;
+  }
+  .list_item--inset {
+    @include hairline-offset($card-spacing-left-base + $thumbnail-size-sm + $padding-unit);
+  }
+  .list_item--sortable {
+    @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
+      @include hairline-offset($card-spacing-left-base + $sortable-handle-width + $sortable-handle-spacing);
+    } @else {
+      @include hairline-offset($card-spacing-left-base + $sortable-handle-min-width);
+    }
+  }
+  .list--borderless {
     .list_item {
-      border-bottom: 0;
-      margin-left: -$card-spacing-left-base;
-      padding-left: $card-spacing-left-base;
-      @include hairline-offset($card-spacing-left-base);
-    }
-    @if $enable-wells {
-      .well--escape-list {
-        margin-left: -$card-spacing-left-base;
-        padding-left: $card-spacing-left-base;
-      }
-    }
-    .list_item--inset {
-      @include hairline-offset($card-spacing-left-base + $thumbnail-size-sm + $padding-unit);
-    }
-    .list_item--sortable {
-      @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
-        @include hairline-offset($card-spacing-left-base + $sortable-handle-width + $sortable-handle-spacing);
-      } @else {
-        @include hairline-offset($card-spacing-left-base + $sortable-handle-min-width);
-      }
-    }
-    .list--borderless {
-      .list_item {
-        border-width: 0;
-        background-image: none;
-      }
+      border-width: 0;
+      background-image: none;
     }
   }
 }
@@ -204,10 +198,8 @@
 }
 
 @media (min-width: $viewport-lg-min) {
-  @if $enable-wells {
-    .card .well {
-      padding-left: $card-spacing-left-lg;
-    }
+  .card .well {
+    padding-left: $card-spacing-left-lg;
   }
   .card_header {
     padding: $card-header-padding-lg;
@@ -226,27 +218,23 @@
   }
   .card_content:not(.card_content--sm) {
     padding: $card-content-padding-lg;
-    @if $enable-lists {
-      .list_item {
-        margin-left: -$card-spacing-left-lg;
-        padding-left: $card-spacing-left-lg;
-        @include hairline-offset($card-spacing-left-lg);
-      }
-      @if $enable-wells {
-        .well--escape-list {
-          margin-left: -$card-spacing-left-lg;
-          padding-left: $card-spacing-left-lg;
-        }
-      }
-      .list_item--inset {
-        @include hairline-offset($card-spacing-left-lg + $thumbnail-size-sm + $padding-unit);
-      }
-      .list_item--sortable {
-        @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
-          @include hairline-offset($card-spacing-left-lg + $sortable-handle-width + $sortable-handle-spacing);
-        } @else {
-          @include hairline-offset($card-spacing-left-lg + $sortable-handle-min-width);
-        }
+    .list_item {
+      margin-left: -$card-spacing-left-lg;
+      padding-left: $card-spacing-left-lg;
+      @include hairline-offset($card-spacing-left-lg);
+    }
+    .well--escape-list {
+      margin-left: -$card-spacing-left-lg;
+      padding-left: $card-spacing-left-lg;
+    }
+    .list_item--inset {
+      @include hairline-offset($card-spacing-left-lg + $thumbnail-size-sm + $padding-unit);
+    }
+    .list_item--sortable {
+      @if $sortable-handle-width + $sortable-handle-spacing >= $sortable-handle-min-width {
+        @include hairline-offset($card-spacing-left-lg + $sortable-handle-width + $sortable-handle-spacing);
+      } @else {
+        @include hairline-offset($card-spacing-left-lg + $sortable-handle-min-width);
       }
     }
   }

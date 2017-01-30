@@ -8,9 +8,7 @@
   height: $topbar-height-sm;
   padding-top: 9px;
   background-color: $topbar-background;
-  @if $enable-css-variables {
-    background-color: var(--primaryAppColor, $topbar-background);
-  }
+  background-color: var(--primaryAppColor, $topbar-background);
   text-align: center;
   .container {
     position: relative;
