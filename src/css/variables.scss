@@ -41,7 +41,7 @@ $link-color-base:           $color-primary !default;
 $font-path:                 "../fonts" !default;
 // by default, lets use San Francisco by Apple for iOS and Safari on OS X El Capitan and iOS 9+
 // this typeface provides a reasonable fallback and prevents web font loading to make for a faster app
-$font-family-base:          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !default;
+$font-family-base:          -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !default;
 
 $font-size-base:            14px !default;
 $font-size-sm:              floor(($font-size-base * 0.875)) !default;
@@ -361,6 +361,7 @@ $dialog-background:         #fff !default;
 $dialog-radius:             2px !default;
 $dialog-shadow:             0 3px 12px 0 rgba($color-gray-dark, 0.24), 0 3px 24px rgba($color-gray-dark, 0.12) !default;
 $dialog-footer-alignment:   center !default;
+$dialog-title-margin:       12px !default;
 
 $dialog-backdrop-color:     $color-gray-dark !default;
 $dialog-backdrop-opacity:   0.32 !default;

@@ -1,6 +1,6 @@
 {
   "name": "jha-design",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Web Application Design Language",
   "homepage": "https://github.com/Banno/jha-design",
   "authors": [
@@ -21,6 +21,7 @@
     "src",
     "dist/index.html",
     "dist/examples",
+    "design",
     "bower.json",
     "failures",
     "gulpfile.js",
