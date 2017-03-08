@@ -124,11 +124,6 @@ textarea.form-control {
   font-size: $h2-size;
 }
 
-.has-error,
-.has-error:focus {
-  border-bottom-color: $color-danger;
-}
-
 .label + .field,
 .label + .filter {
   margin-top: -8px;
@@ -499,4 +494,14 @@ select.field {
   display: inline-block;
   width: auto;
   max-width: 100%;
+}
+
+.has-error {
+  border-color: $field-invalid-color;
+  &:focus,
+  &.form-control:focus,
+  &.select:focus {
+    border-color: $field-invalid-focus-color;
+    box-shadow: 0 0 0 2px rgba($field-invalid-focus-color, .2);
+  }
 }

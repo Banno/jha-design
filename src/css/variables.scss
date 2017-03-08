@@ -400,6 +400,8 @@ $filter-focus-color:        $text-color-dark !default;
 // Forms
 $field-height:              40px !default;
 $fieldset-color:            $color-gray-base !default;
+$field-invalid-color:       rgba($color-danger, .6) !default;
+$field-invalid-focus-color: $color-danger !default;
 
 
 // Progress indicators
