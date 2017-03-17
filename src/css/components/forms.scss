@@ -171,6 +171,7 @@ textarea.form-control {
   box-shadow: 0 0 0 2px rgba($color-primary, .2);
 }
 .control input:disabled ~ .control_indicator {
+  opacity: 0.6;
   cursor: default;
 }
 

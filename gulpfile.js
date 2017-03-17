@@ -77,7 +77,28 @@ gulp.task('app-icons', function() {
 
 gulp.task('icons', function() {
   return gulp.src('src/icons/*.svg')
-    .pipe(svgmin())
+    .pipe(svgmin({
+      plugins: [
+        {
+          removePrefixedAttributes: {
+            type: 'perItem',
+            fn: (item) => {
+              item.eachAttr((attr) => {
+                if (attr.prefix && attr.local) {
+                  item.removeAttr(attr.name);
+                }
+              });
+            }
+          }
+        },
+        {
+          removeAttrs: {
+            attrs: '(xmlns)'
+          }
+        }
+      ]
+    }))
+    .pipe(gulp.dest('dist/icons'))
     .pipe(svgstore())
     .pipe(gulp.dest('dist/img'));
 });
@@ -85,7 +106,27 @@ gulp.task('icons', function() {
 
 gulp.task('svgs', function() {
   return gulp.src('src/img/**/*.svg')
-    .pipe(svgmin())
+    .pipe(svgmin({
+      plugins: [
+        {
+          removePrefixedAttributes: {
+            type: 'perItem',
+            fn: (item) => {
+              item.eachAttr((attr) => {
+                if (attr.prefix && attr.local) {
+                  item.removeAttr(attr.name);
+                }
+              });
+            }
+          }
+        },
+        {
+          removeAttrs: {
+            attrs: '(xmlns)'
+          }
+        }
+      ]
+    }))
     .pipe(gulp.dest('dist/img'));
 });
 
