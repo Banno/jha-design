@@ -423,7 +423,7 @@ $progress-linear-width:     180px !default;
 
 // Gallery
 $gallery-selected-color:    $color-primary !default;
-$gallery-item-background:   transparent !default;
+$gallery-item-background:   $color-gray-lighter !default;
 $gallery-item-color:        #fff !default;
 $gallery-item-font-size:    $font-size-sm !default;
 $gallery-overlay-color:     rgba($color-gray-dark, 0.6) !default;
