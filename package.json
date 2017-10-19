@@ -3,7 +3,7 @@
   "description": "Web Application Design Language",
   "homepage": "https://github.com/Banno/jha-design",
   "author": "Josh Sadler <josh.sadler@banno.com>",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "main": "Gruntfile.js",
   "license": "UNLICENSED",
   "devDependencies": {
