@@ -248,12 +248,10 @@ textarea.form-control {
   outline: none;
   user-select: none;
   vertical-align: middle;
-  width: 50px;
+  width: 58px;
   height: 26px;
   border-radius: 13px;
   padding: 1px;
-  background-color: $color-gray-light;
-  @include transition(background-color 0.3s $timing-function);
   &::before,
   &::after {
     content: '';
@@ -269,34 +267,32 @@ textarea.form-control {
     @include transition(background-color 0.3s $timing-function);
   }
   &::after {
-    top: 0;
+    top: 4px;
     bottom: 0;
-    left: 0;
-    width: 26px;
+    left: 5px;
+    width: 18px;
+    height: 18px;
     background-color: #fff;
-    border: 1px solid $color-gray-light;
+    border: none;
+    box-shadow: 0 1px 1px 0px rgba(0,0,0,.2);
     border-radius: 100%;
     @include transition(all 0.3s $timing-function);
-  }
-  .switch_checkbox:checked + & {
-    background-color: $color-green;
   }
   .switch_checkbox:disabled + & {
     opacity: 0.6;
     cursor: default;
   }
   .switch_checkbox:checked + &::before {
-    background-color: lighten($color-green, 12%);
+    background-color: $color-green;
   }
   .switch_checkbox:checked + &::after {
-    border-color: $color-green;
-    @include translateX(24px);
+    @include translateX(30px);
   }
   .switch_checkbox:focus + &::after {
-    box-shadow: 0 0 0 4px rgba($color-gray-light, .32);
+    box-shadow: 0 0 0px 1px $color-gray-medium;
   }
   .switch_checkbox:checked:focus + &::after {
-    box-shadow: 0 0 0 4px rgba($color-green, .2);
+    box-shadow: 0 0 0px 1px lighten($color-green, 12%);
   }
 }
 
