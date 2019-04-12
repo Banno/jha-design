@@ -1,41 +1,41 @@
 'use strict';
 
-var gulp            = require('gulp');
-var merge           = require('merge-stream');
-var header          = require('gulp-header');
-var rename          = require('gulp-rename');
-var sass            = require('gulp-sass');
-var cssmin          = require('gulp-cssmin');
-var svgstore        = require('gulp-svgstore');
-var svgmin          = require('gulp-svgmin');
-var connect         = require('gulp-connect');
-var imagemin        = require('gulp-imagemin');
-var uglify          = require('gulp-uglify');
-var del             = require('del');
-var pkg             = require('./package.json');
+const gulp = require('gulp');
+const merge = require('merge-stream');
+const header = require('gulp-header');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const cssmin = require('gulp-cssmin');
+const svgstore = require('gulp-svgstore');
+const svgmin = require('gulp-svgmin');
+const connect = require('gulp-connect');
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify');
+const del = require('del');
+const pkg = require('./package.json');
 
-var allSrc          = ['src/**'];
+const allSrc = ['src/**'];
 
-gulp.task('clean', function (cb) {
+const clean = cb => {
   return del(['dist/**'], cb);
-});
+};
 
-gulp.task('copy', function() {
-  var html = gulp.src('src/**/*.html')
+const copy = () => {
+  const html = gulp.src('src/**/*.html')
     .pipe(gulp.dest('dist'))
     .pipe(connect.reload());
-  var manifest = gulp.src('src/manifest.json')
+  const manifest = gulp.src('src/manifest.json')
     .pipe(gulp.dest('dist/'));
-  var favicon = gulp.src('src/favicon.ico')
+  const favicon = gulp.src('src/favicon.ico')
     .pipe(gulp.dest('dist'));
-  var fonts = gulp.src('src/fonts/*', { base: 'src' })
+  const fonts = gulp.src('src/fonts/*', { base: 'src' })
     .pipe(gulp.dest('dist'));
 
   return merge(html, manifest, favicon, fonts);
-});
+};
 
-gulp.task('styles', function() {
-  var banner = ['/*!',
+const styles = () => {
+  const banner = ['/*!',
     ' * <%= pkg.name %> - <%= pkg.description %>',
     ' * @version v<%= pkg.version %>',
     ' * @link <%= pkg.homepage %>',
@@ -49,33 +49,33 @@ gulp.task('styles', function() {
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(connect.reload());
-});
+};
 
-gulp.task('compress', function() {
+const compress = () => {
   return gulp.src('src/js/*.js')
     .pipe(uglify({
       mangle: false
     }))
     .pipe(gulp.dest('dist/js'));
-});
+};
 
-gulp.task('images', function() {
+const images = () => {
   return gulp.src('src/img/*')
     .pipe(imagemin({
       progressive: true
     }))
     .pipe(gulp.dest('dist/img'));
-});
+};
 
-gulp.task('app-icons', function() {
+const appIcons = () => {
   return gulp.src('src/img/icons/**/*')
     .pipe(imagemin({
       progressive: true
     }))
     .pipe(gulp.dest('dist/img/icons'));
-});
+};
 
-gulp.task('icons', function() {
+const icons = () => {
   return gulp.src('src/icons/*.svg')
     .pipe(svgmin({
       plugins: [
@@ -101,10 +101,10 @@ gulp.task('icons', function() {
     .pipe(gulp.dest('dist/icons'))
     .pipe(svgstore())
     .pipe(gulp.dest('dist/img'));
-});
+};
 
 
-gulp.task('svgs', function() {
+const svgs = () => {
   return gulp.src('src/img/**/*.svg')
     .pipe(svgmin({
       plugins: [
@@ -128,19 +128,22 @@ gulp.task('svgs', function() {
       ]
     }))
     .pipe(gulp.dest('dist/img'));
-});
+};
 
-gulp.task('connect', function() {
+const serverConnect = () => {
   return connect.server({
     root: 'dist',
     port: 7777,
     livereload: true
   });
-});
+};
 
-gulp.task('watch', function() {
-  return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'app-icons', 'images', 'compress']);
-});
+const watch = () => {
+  return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'appIcons', 'images', 'compress']);
+};
 
-gulp.task('default', ['copy', 'styles', 'icons', 'app-icons', 'svgs', 'images', 'compress']);
-gulp.task('dev', ['default', 'connect', 'watch']);
+module.exports.dev = gulp.series(clean, copy, styles, icons, appIcons, svgs, images, compress, serverConnect, watch);
+
+const defaultTasks = gulp.series(clean, copy, styles, icons, appIcons, svgs, images, compress);
+
+module.exports.default = defaultTasks;
