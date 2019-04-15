@@ -373,7 +373,7 @@ textarea.form-control {
 
 .floating-group.has-value .label,
 .field:focus ~ .label,
-.field:valid ~ .label {
+.field:required:valid ~ .label {
   font-size: $font-size-sm;
   font-weight: 600;
   top: 0;
