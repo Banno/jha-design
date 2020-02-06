@@ -1,0 +1,48 @@
+@import '../../../../styles/abstracts/_variables';
+@import '../../../../components/02-blocks/chip/chip';
+html {
+  color: #272d33;
+}
+
+a {
+  color: #0070b7;
+}
+
+a:hover {
+  color: #0070b7;
+}
+
+.Header {
+  background-color: #3aaeda;
+}
+
+.Browser-tab.is-active a {
+  border-bottom-color: #0070b7;
+}
+
+.Pen-previewLink svg {
+  fill: #0070b7;
+}
+
+.Status-label {
+  color: #8d99a0;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #fff;
+}
+
+.Tree-title {
+  color: #272d33;
+  font-weight: 700;
+}
+
+.Browser-isEmptyNote {
+  color: #272d33;
+  opacity: 1;
+}
+
+.Meta-key {
+  color: #272d33;
+}
+
+@import 'syntax-accessible';
