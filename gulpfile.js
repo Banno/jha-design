@@ -218,6 +218,10 @@ function watch(done) {
   gulp.watch(['src/images/**/*.svg'], imagesSvg);
   gulp.watch(['src/images/*'], imagesCompress);
   gulp.watch('src/scripts/**/*', scriptsCompress);
+  gulp.watch(
+    'src/themes/custom-mandelbrot/**/*',
+    gulp.parallel(themeCopy, themeSass)
+  );
   done();
 }
 
