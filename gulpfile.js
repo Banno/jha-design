@@ -1,146 +1,258 @@
-'use strict';
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const csscomb = require('gulp-csscomb');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('autoprefixer');
+const gcmq = require('gulp-group-css-media-queries');
+const postcss = require('gulp-postcss');
+const fractal = require('./fractal.js');
+const logger = fractal.cli.console;
+const imagemin = require('gulp-imagemin');
+const mozjpeg = require('imagemin-mozjpeg');
+const del = require('del');
+const log = require('fancy-log');
+const chalk = require('chalk');
+const merge = require('merge-stream');
+const svgstore = require('gulp-svgstore');
+const svgmin = require('gulp-svgmin');
+const header = require('gulp-header');
+const uglify = require('gulp-uglify');
 
-var gulp            = require('gulp');
-var merge           = require('merge-stream');
-var header          = require('gulp-header');
-var rename          = require('gulp-rename');
-var sass            = require('gulp-sass');
-var cssmin          = require('gulp-cssmin');
-var svgstore        = require('gulp-svgstore');
-var svgmin          = require('gulp-svgmin');
-var connect         = require('gulp-connect');
-var imagemin        = require('gulp-imagemin');
-var uglify          = require('gulp-uglify');
-var del             = require('del');
-var pkg             = require('./package.json');
+const pkg = require('./package.json');
 
-var allSrc          = ['src/**'];
+// Utilities
 
-gulp.task('clean', function (cb) {
-  return del(['dist/**'], cb);
-});
+function logMessage(message) {
+  return log(chalk.green(message));
+}
 
-gulp.task('copy', function() {
-  var html = gulp.src('src/**/*.html')
-    .pipe(gulp.dest('dist'))
-    .pipe(connect.reload());
-  var manifest = gulp.src('src/manifest.json')
-    .pipe(gulp.dest('dist/'));
-  var favicon = gulp.src('src/favicon.ico')
-    .pipe(gulp.dest('dist'));
-  var fonts = gulp.src('src/fonts/*', { base: 'src' })
-    .pipe(gulp.dest('dist'));
+// Copy
 
-  return merge(html, manifest, favicon, fonts);
-});
+//TODO: Consider renaming this task
+//TODO: Consider consolidating this with other task groups
+function copy() {
+  const manifest = gulp.src('src/manifest.json').pipe(gulp.dest('dist/'));
+  const favicon = gulp.src('src/favicon.ico').pipe(gulp.dest('dist'));
+  return merge(manifest, favicon);
+}
 
-gulp.task('styles', function() {
-  var banner = ['/*!',
-    ' * <%= pkg.name %> - <%= pkg.description %>',
-    ' * @version v<%= pkg.version %>',
-    ' * @link <%= pkg.homepage %>',
-    '*/',
-    ''].join('\n');
+// Styles
 
-  return gulp.src('src/css/core.scss')
-    .pipe(sass())
-    .pipe(cssmin())
-    .pipe(header(banner, { pkg: pkg }))
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(connect.reload());
-});
+//TODO: Clean up formatting of banner
+const banner = [
+  '/*!',
+  ' * <%= pkg.name %> - <%= pkg.description %>',
+  ' * @version v<%= pkg.version %>',
+  ' * @link <%= pkg.homepage %>',
+  '*/',
+  '',
+].join('\n');
 
-gulp.task('compress', function() {
-  return gulp.src('src/js/*.js')
-    .pipe(uglify({
-      mangle: false
-    }))
-    .pipe(gulp.dest('dist/js'));
-});
+//TODO: Try to consolidate dev and prod style tasks
+function stylesDev() {
+  logMessage('Compiling development CSS');
+  return gulp
+    .src('src/styles/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(header(banner, {pkg: pkg}))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/styles/'));
+}
 
-gulp.task('images', function() {
-  return gulp.src('src/img/*')
-    .pipe(imagemin({
-      progressive: true
-    }))
-    .pipe(gulp.dest('dist/img'));
-});
+function stylesProd() {
+  logMessage('Compiling production CSS.');
+  const plugins = [autoprefixer()];
+  return (
+    gulp
+      .src('src/styles/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gcmq())
+      //TODO: Verify browser compatibility requirements for autoprefixing
+      .pipe(postcss(plugins))
+      //TODO: Verify minification preferences with Josh
+      .pipe(csscomb('.csscomb.min.json'))
+      .pipe(header(banner, {pkg: pkg}))
+      .pipe(gulp.dest('dist/styles/'))
+  );
+}
 
-gulp.task('app-icons', function() {
-  return gulp.src('src/img/icons/**/*')
-    .pipe(imagemin({
-      progressive: true
-    }))
-    .pipe(gulp.dest('dist/img/icons'));
-});
+// Images
 
-gulp.task('icons', function() {
-  return gulp.src('src/icons/*.svg')
-    .pipe(svgmin({
-      plugins: [
-        {
-          removePrefixedAttributes: {
-            type: 'perItem',
-            fn: (item) => {
-              item.eachAttr((attr) => {
-                if (attr.prefix && attr.local) {
-                  item.removeAttr(attr.name);
-                }
-              });
-            }
-          }
+const svgSettings = [
+  {
+    plugins: [
+      {
+        removePrefixedAttributes: {
+          type: 'perItem',
+          fn: (item) => {
+            item.eachAttr((attr) => {
+              if (attr.prefix && attr.local) {
+                item.removeAttr(attr.name);
+              }
+            });
+          },
         },
-        {
-          removeAttrs: {
-            attrs: '(xmlns)'
-          }
-        }
-      ]
-    }))
+      },
+      {
+        removeAttrs: {
+          attrs: '(xmlns)',
+        },
+      },
+    ],
+  },
+];
+
+function imagesCompress() {
+  logMessage('Compressing images');
+  return gulp
+    .src('src/images/*')
+    .pipe(
+      imagemin([
+        mozjpeg({
+          progressive: true,
+        }),
+      ])
+    )
+    .pipe(gulp.dest('dist/images'));
+}
+
+function imagesAppIcons() {
+  logMessage('Compressing app icons');
+  return gulp
+    .src('src/images/icons/**/*')
+    .pipe(
+      imagemin({
+        progressive: true,
+      })
+    )
+    .pipe(gulp.dest('dist/images/icons'));
+}
+
+function imagesIcons() {
+  logMessage('Compressing and compiling icons');
+  return gulp
+    .src('src/icons/*.svg')
+    .pipe(svgmin(svgSettings))
     .pipe(gulp.dest('dist/icons'))
     .pipe(svgstore())
-    .pipe(gulp.dest('dist/img'));
-});
+    .pipe(gulp.dest('dist/images'));
+}
 
+function imagesSvg() {
+  logMessage('Compressing SVGs');
+  return gulp
+    .src('src/images/**/*.svg')
+    .pipe(svgmin(svgSettings))
+    .pipe(gulp.dest('dist/images'));
+}
 
-gulp.task('svgs', function() {
-  return gulp.src('src/img/**/*.svg')
-    .pipe(svgmin({
-      plugins: [
-        {
-          removePrefixedAttributes: {
-            type: 'perItem',
-            fn: (item) => {
-              item.eachAttr((attr) => {
-                if (attr.prefix && attr.local) {
-                  item.removeAttr(attr.name);
-                }
-              });
-            }
-          }
-        },
-        {
-          removeAttrs: {
-            attrs: '(xmlns)'
-          }
-        }
-      ]
-    }))
-    .pipe(gulp.dest('dist/img'));
-});
+// Scripts
 
-gulp.task('connect', function() {
-  return connect.server({
-    root: 'dist',
-    port: 7777,
-    livereload: true
+function scriptsCompress() {
+  logMessage('Compressing and copying scripts to distribution directory');
+  return gulp
+    .src('src/scripts/**/*.js')
+    .pipe(
+      uglify({
+        mangle: false,
+      })
+    )
+    .pipe(gulp.dest('dist/scripts'));
+}
+
+// UI
+
+function fractalStart() {
+  const server = fractal.web.server({
+    sync: true,
   });
-});
+  server.on('error', (err) => logger.error(err.message));
+  return server.start().then(() => {
+    logger.success(`Fractal server is now running at ${server.url}`);
+  });
+}
 
-gulp.task('watch', function() {
-  return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'app-icons', 'images', 'compress']);
-});
+function fractalBuild() {
+  logMessage('Generating patterns and user interface');
+  const builder = fractal.web.builder();
+  builder.on('progress', (completed, total) =>
+    logger.update(`Exported ${completed} of ${total} items`, 'info')
+  );
+  builder.on('error', (err) => logger.error(err.message));
+  return builder.build().then(() => {
+    logger.success('Fractal build completed!');
+  });
+}
 
-gulp.task('default', ['copy', 'styles', 'icons', 'app-icons', 'svgs', 'images', 'compress']);
-gulp.task('dev', ['default', 'connect', 'watch']);
+function themeCopy() {
+  logMessage('Copying UI theme');
+  return gulp
+    .src([
+      'src/themes/custom-mandelbrot/**/*',
+      '!src/themes/custom-mandelbrot/assets/styles/**/*',
+    ])
+    .pipe(gulp.dest('dist/themes/custom-mandelbrot/'));
+}
+
+function themeSass() {
+  logMessage('Compiling UI theme');
+  return gulp
+    .src('src/themes/custom-mandelbrot/assets/styles/**/*.scss')
+    .pipe(
+      sass({
+        outputStyle: 'expanded',
+      }).on('error', sass.logError)
+    )
+    .pipe(gulp.dest('dist/themes/custom-mandelbrot/assets/styles/'));
+}
+
+// Watch
+
+function watch(done) {
+  gulp.watch(['src/*'], copy);
+  gulp.watch(['src/styles/**/*.scss'], stylesDev);
+  gulp.watch(['src/icons/*.svg'], imagesIcons);
+  gulp.watch(['src/images/icons/**/*'], imagesAppIcons);
+  gulp.watch(['src/images/**/*.svg'], imagesSvg);
+  gulp.watch(['src/images/*'], imagesCompress);
+  gulp.watch('src/scripts/**/*', scriptsCompress);
+  done();
+}
+
+// Builds
+
+function clean() {
+  logMessage('Cleaning distribution directories');
+  return del(['dist/**/*', 'build/**/*']);
+}
+
+exports.buildDev = gulp.series(
+  clean,
+  copy,
+  themeCopy,
+  themeSass,
+  stylesDev,
+  imagesIcons,
+  imagesAppIcons,
+  imagesSvg,
+  imagesCompress,
+  scriptsCompress,
+  fractalStart,
+  watch
+);
+
+exports.buildProd = gulp.series(
+  clean,
+  themeCopy,
+  themeSass,
+  stylesProd,
+  imagesIcons,
+  imagesAppIcons,
+  imagesSvg,
+  imagesCompress,
+  scriptsCompress,
+  fractalBuild
+);
+
+exports.themeSass = themeSass;
