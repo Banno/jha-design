@@ -1,5 +1,7 @@
 @import '../../../../styles/abstracts/_variables';
-@import '../../../../components/02-blocks/chip/chip';
+@import '../../../../styles/abstracts/mixins/mixins';
+@import '../../../../styles/components/badges';
+@import '../../../../styles/base/type';
 html {
   color: #272d33;
 }
