@@ -15,3 +15,8 @@
 </tr>
 {% endfor %}
 </table>
+
+<div>
+Copyright © 2020 Jack Henry & Associates, Inc. All Rights Reserved.
+Version 1.5.6. Last updated {{frctl.get('currentDate')}}.
+</div>

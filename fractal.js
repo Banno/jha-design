@@ -2,9 +2,15 @@
 
 const pkg = require('./package.json');
 const fractal = (module.exports = require('@frctl/fractal').create());
+const d = new Date();
+const currDate = d.getDate();
+const options = {month: 'long'};
+const currMonth = new Intl.DateTimeFormat('en-US', options).format();
+const currYear = d.getFullYear();
 
 fractal.set('project.title', 'Jack Henry Design System');
 fractal.set('project.version', pkg.version);
+fractal.set('currentDate', currMonth + ' ' + currDate + ', ' + currYear);
 
 fractal.components.set('path', __dirname + '/src/components');
 fractal.components.set('default.preview', '@jha-content');
