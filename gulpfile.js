@@ -233,6 +233,7 @@ function clean() {
 }
 
 exports.buildDev = gulp.series(
+  frontMatter,
   clean,
   copy,
   themeCopy,
