@@ -1,11 +1,23 @@
 {
   "name": "@banno/jha-design",
-  "description": "Web Application Design Language",
-  "homepage": "https://github.com/Banno/jha-design",
-  "author": "Josh Sadler <josh.sadler@banno.com>",
   "version": "1.5.6",
-  "main": "Gruntfile.js",
+  "description": "Web Application Design Language",
+  "author": "Jack Henry & Associates",
+  "contributors": [
+    {
+      "name": "Josh Sadler",
+      "email": "josh.sadler@banno.com"
+    },
+    {
+      "name": "Chris Austin",
+      "email": "chris.austin@banno.com"
+    }
+  ],
   "license": "UNLICENSED",
+  "homepage": "https://github.com/Banno/jha-design",
+  "browserslist": [
+    "last 2 versions"
+  ],
   "devDependencies": {
     "cheerio": "0.19.0",
     "del": "1.1.1",
