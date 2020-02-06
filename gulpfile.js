@@ -1,3 +1,4 @@
+const util = require('./config/util');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const csscomb = require('gulp-csscomb');
@@ -20,10 +21,10 @@ const uglify = require('gulp-uglify');
 
 const pkg = require('./package.json');
 
-// Utilities
-
-function logMessage(message) {
-  return log(chalk.green(message));
+function frontMatter(done) {
+  util.logIntroduction();
+  util.logMessage('Creating development environment');
+  done()
 }
 
 // Copy
