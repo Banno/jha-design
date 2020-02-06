@@ -1,0 +1,11 @@
+name: field
+label: Field
+context:
+  formControl: false
+  type: text
+  placeholder: Lorem ipsum dolor
+  required: false
+variants:
+  - name: form-control
+    context:
+      formControl: true

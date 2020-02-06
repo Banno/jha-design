@@ -1,0 +1,11 @@
+name: toast
+label: Toast
+status: wip
+context:
+  slot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cum ex labore!
+  isVisible: true
+  modifier: null
+variants:
+  - name: danger
+    context:
+      modifier: [danger]

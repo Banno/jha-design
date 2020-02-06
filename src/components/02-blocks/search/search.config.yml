@@ -1,0 +1,12 @@
+name: search
+label: Search
+status: wip
+context:
+  modifier: null
+variants:
+  - name: dark
+    context:
+      modifier: [dark]
+  - name: light
+    context:
+      modifier: [light]

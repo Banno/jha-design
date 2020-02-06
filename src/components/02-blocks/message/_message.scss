@@ -1,0 +1,57 @@
+.message {
+  @include hairline(single, $message-border-color);
+}
+.message--note {
+  background-color: $message-note-background;
+  @include hairline-color($message-note-border-color);
+  color: $message-note-color;
+  background-image: none;
+  .message_date {
+    color: $message-note-date-color;
+  }
+  .message_heading,
+  .message_title {
+    color: $message-note-heading-color;
+  }
+}
+
+.message_heading {
+  @include clearfix();
+  @include flexbox-display();
+  @include align-items(center);
+  margin-bottom: $unit-xs;
+  .thumbnail,
+  .avatar {
+    float: left;
+    margin-right: $padding-unit;
+  }
+}
+
+.message_title {
+  position: relative;
+  line-height: 1.1;
+  color: $heading-color;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: $h4-size;
+  font-weight: $h4-weight;
+}
+
+.message_inner {
+  padding-top: $message-padding-top-sm;
+  padding-bottom: $message-padding-bottom-sm;
+  @media (min-width: $viewport-md-min) {
+    padding-top: $message-padding-top-lg;
+    padding-bottom: $message-padding-bottom-lg;
+  }
+}
+
+.message_date {
+  color: $message-date-color;
+  float: right;
+  margin-top: 12px;
+  font-size: $message-date-font-size;
+  svg {
+    margin-left: 4px;
+  }
+}

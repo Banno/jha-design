@@ -1,0 +1,310 @@
+.has-dialog {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-dialog + 1;
+  visibility: hidden;
+  overflow-y: auto;
+  opacity: 0;
+  outline: 0;
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
+  -webkit-overflow-scrolling: touch;
+  will-change: visibility, opacity;
+  // this flexbox property does nothing on it's own, but a utility class depends
+  // on it and this is the most efficent way to write it
+  @include align-items(center);
+  .has-dialog & {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  &.is-visible,
+  &.in {
+    visibility: visible;
+    opacity: 1;
+    @include transition(opacity 0.3s 0s, visibility 0s 0s);
+    .dialog_inner {
+      @include transform(translateY(0));
+    }
+  }
+  @media (min-width: $viewport-sm-min) {
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+  }
+}
+
+.dialog-backdrop,
+.dialog_backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: $z-index-dialog;
+  background-color: $dialog-backdrop-color;
+  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
+  &.is-visible,
+  &.in {
+    visibility: visible;
+    opacity: $dialog-backdrop-opacity;
+    @include transition(opacity 0.3s 0s, visibility 0s 0s);
+  }
+  @media (min-width: $viewport-sm-min) {
+    display: block;
+  }
+}
+.dialog-backdrop--opaque,
+.dialog_backdrop--opaque {
+  background-color: $background-color;
+  opacity: 1;
+  &.is-visible,
+  &.in {
+    opacity: 1;
+  }
+}
+.dialog-backdrop--fill,
+.dialog_backdrop--fill {
+  opacity: 0;
+  background-image: url($dialog-backdrop-fill-image);
+  background-repeat: $dialog-backdrop-fill-repeat;
+  background-size: $dialog-backdrop-fill-size;
+  &.is-visible,
+  &.in {
+    opacity: 1;
+  }
+}
+
+.dialog_inner {
+  position: relative;
+  @include flexbox-display();
+  @include flex-direction(column);
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  background-color: $dialog-background;
+  cursor: auto;
+  outline: 0;
+  will-change: transform;
+  @include transform(translateY(100%));
+  @include transition-property(transform);
+  @include transition-duration(0.3s);
+  @media (min-width: $viewport-sm-min) {
+    @include transform(translateY(-100%));
+    width: 90%;
+    min-height: 0;
+    max-height: none;
+    max-width: $dialog-width-base;
+    border-radius: $dialog-radius;
+    box-shadow: $dialog-shadow;
+  }
+}
+
+.dialog_inner--lg {
+  max-width: $dialog-width-lg;
+}
+.dialog_inner--sm {
+  width: 90%;
+  min-height: 0;
+  max-height: none;
+  max-width: $dialog-width-base;
+  border-radius: $dialog-radius;
+  box-shadow: $dialog-shadow;
+}
+// Make the dialog fill the vertical space
+.dialog_inner--fill {
+  max-height: 100%;
+}
+// by viewport
+.dialog--center\@xs {
+  @include flexbox-display();
+  // Hack for IE 10, 11 which both have quirky flexbox support
+  @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .dialog_content {
+      max-height: calc(100vh - 300px);
+    }
+  }
+}
+@media (min-width: $viewport-sm-min) {
+  .dialog--center\@sm {
+    @include flexbox-display();
+    // Hack for IE 10, 11 which both have quirky flexbox support
+    @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .dialog_content {
+        max-height: calc(100vh - 300px);
+      }
+    }
+  }
+}
+@media (min-width: $viewport-md-min) {
+  .dialog--center\@md {
+    @include flexbox-display();
+    // Hack for IE 10, 11 which both have quirky flexbox support
+    @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .dialog_content {
+        max-height: calc(100vh - 300px);
+      }
+    }
+  }
+}
+@media (min-width: $viewport-lg-min) {
+  .dialog--center\@lg {
+    @include flexbox-display();
+    // Hack for IE 10, 11 which both have quirky flexbox support
+    @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .dialog_content {
+        max-height: calc(100vh - 300px);
+      }
+    }
+  }
+}
+
+// Shared styles
+.dialog_header,
+.dialog_content,
+.dialog_footer {
+  background-color: #fff;
+  padding: $padding-unit;
+  @include clearfix();
+  .well {
+    margin-left: -$padding-unit;
+    margin-right: -$padding-unit;
+  }
+  @media (min-width: $viewport-md-min) {
+    padding: $spacing-unit;
+    .well {
+      margin-left: -$spacing-unit;
+      margin-right: -$spacing-unit;
+    }
+  }
+}
+
+.dialog .well {
+  padding-left: $padding-unit;
+  padding-right: $padding-unit;
+  @media (min-width: $viewport-md-min) {
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit;
+  }
+}
+
+// Header
+.dialog_header {
+  position: relative;
+  border-top-left-radius: $dialog-radius - 1;
+  border-top-right-radius: $dialog-radius - 1;
+  border-bottom: $border-lt;
+  text-align: center;
+  .search {
+    margin-bottom: -$padding-unit;
+  }
+  .standalone &:not(.dialog_header--profile) {
+    margin-top: 20px;
+  }
+}
+.dialog_header,
+.dialog_footer {
+  @include flex-shrink(0);
+}
+
+.dialog_header--borderless {
+  border-bottom-width: 0;
+  padding-bottom: 0;
+  .dialog_title {
+    margin-bottom: $unit-base;
+  }
+}
+
+.dialog_title {
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  color: $text-color-dark;
+  margin-top: $dialog-title-margin;
+  margin-bottom: $dialog-title-margin;
+  @media (min-width: $viewport-md-min) {
+    font-size: 18px;
+    font-weight: $font-weight-normal;
+  }
+}
+
+.dialog_close {
+  position: absolute;
+  top: 50%;
+  right: $unit-sm;
+  z-index: 1;
+  @include transform(translateY(-(floor($btn-height-base / 2))));
+  opacity: 0.6;
+  @include transition(opacity 0.3s $timing-function);
+  @media (hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Content
+.dialog_content {
+  @include flex(1 1 auto);
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  .gallery {
+    margin-bottom: 0;
+  }
+}
+.dialog_content--no-padding {
+  padding: 0;
+  @media (min-width: $viewport-md-min) {
+    padding: 0;
+  }
+}
+
+// Footer
+.dialog_footer {
+  border-top: $border-lt;
+  border-bottom-left-radius: $dialog-radius;
+  border-bottom-right-radius: $dialog-radius;
+  text-align: $dialog-footer-alignment;
+}
+
+// Profile dialog
+// special snowflake
+.dialog_header--profile {
+  background-color: $color-gray-base;
+  color: rgba(#fff, 0.6);
+  border-radius: $dialog-radius $dialog-radius 0 0;
+  border-bottom: 0;
+  .dialog_title {
+    display: block;
+    color: #fff;
+  }
+  .avatar {
+    @include box-shadow($card-shadow);
+    margin-bottom: $unit-sm;
+    background-color: #fff;
+  }
+  .btn--icon,
+  .btn--link {
+    @extend .dialog_close;
+    top: $unit-base;
+  }
+  .btn--icon {
+    right: auto;
+    left: $unit-sm;
+    .icon {
+      fill: #fff;
+    }
+  }
+  .btn--link {
+    color: #fff;
+  }
+}

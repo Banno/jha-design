@@ -1,0 +1,62 @@
+name: button
+label: Buttons
+status: wip
+context:
+  text: Sample button
+  modifier: [default]
+  isActive: false
+variants:
+  - name: neutral
+    context:
+      modifier: [neutral]
+  - name: link
+    context:
+      link:
+        url: '#'
+      modifier: [link]
+  - name: primary
+    context:
+      modifier: [primary]
+  - name: success
+    context:
+      modifier: [success]
+  - name: danger
+    context:
+      modifier: [danger]
+  - name: toggle
+    context:
+      modifier: [toggle]
+  - name: default-outline
+    context:
+      modifier: [default]
+  - name: primary-outline
+    context:
+      modifier: [primary-outline]
+  - name: success-outline
+    context:
+      modifier: [success-outline]
+  - name: danger-outline
+    context:
+      modifier: [danger-outline]
+  - name: sm
+    context:
+      modifier: [default, sm]
+  - name: lg
+    context:
+      modifier: [default, lg]
+  - name: wide
+    context:
+      modifier: [default, wide]
+  - name: block
+    context:
+      modifier: [primary, block]
+  - name: align-left
+    context:
+      modifier: [primary, align-left]
+  - name: align-right
+    context:
+      modifier: [primary, align-right]
+  - name: active
+    context:
+      modifier: [primary-outline]
+      isActive: true

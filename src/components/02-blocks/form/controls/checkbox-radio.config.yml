@@ -1,0 +1,9 @@
+name: checkbox-radio
+label: Checkbox and radio
+context:
+  type: checkbox
+  label: Lorem ipsum dolor sit amet consectetur
+variants:
+  - name: radio
+    context:
+      type: radio

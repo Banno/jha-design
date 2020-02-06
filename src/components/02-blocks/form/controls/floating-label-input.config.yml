@@ -1,0 +1,5 @@
+name: floating-label-input
+label: Floating label input
+context:
+  field:
+    placeholder: null

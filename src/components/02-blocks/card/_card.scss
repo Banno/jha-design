@@ -1,0 +1,287 @@
+.card {
+  @include clearfix();
+  background-color: $card-background-color;
+  @include box-shadow($card-shadow);
+  border-radius: $card-radius;
+  margin-bottom: $card-margin-bottom-base;
+  max-width: $card-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  .well {
+    padding-left: $card-spacing-left-base;
+  }
+}
+.card--wide {
+  max-width: none;
+}
+// optionally remove card appearance for mobile-sized devices
+@media (max-width: $viewport-sm-max) {
+  .card--reset {
+    max-width: none;
+    border-radius: 0;
+    margin-left: -$grid-gutter-width;
+    margin-right: -$grid-gutter-width;
+    @include box-shadow(none);
+    @include hairline(double, $color-gray-light);
+  }
+}
+// smaller card with a modified .card_media layout
+.card--summary {
+  margin-left: 0;
+  margin-right: 0;
+  @include flexbox-display();
+  @include flex-direction(row);
+  .card_media {
+    position: relative;
+    min-width: 120px;
+    border-radius: $card-radius 0 0 $card-radius;
+    .icon,
+    .thumbnail,
+    .avatar {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      fill: #fff;
+    }
+  }
+  .card_content {
+    @include flex(1);
+  }
+}
+
+// Header
+.card_header {
+  border-bottom: $border-lt;
+  padding: $card-header-padding-base;
+  line-height: $card-header-line-height;
+  > .btn--icon {
+    float: right;
+    margin-right: -($padding-unit / 2);
+    margin-top: -10px;
+    margin-bottom: -5px;
+  }
+  .avatar {
+    position: relative;
+    top: -$unit-xs;
+  }
+  .tabs {
+    float: left;
+    margin-top: -($padding-unit / 2);
+    margin-bottom: -$unit-sm;
+  }
+  .tab_item {
+    line-height: 55px;
+  }
+  .btn-group {
+    margin-top: -6px;
+    margin-bottom: 0;
+  }
+}
+.card_header--borderless {
+  border-bottom-width: 0;
+}
+.card_title {
+  font-size: $card-title-size;
+  font-weight: $card-title-weight;
+  color: $card-title-color;
+  margin: 0;
+  float: left;
+}
+.card_sub-title {
+  font-size: $card-sub-title-size;
+  float: right;
+  color: $card-sub-title-color;
+}
+
+.card_header,
+.card_content,
+.card_footer {
+  margin-left: $card-spacing-left-base;
+  @include clearfix();
+}
+
+// Content
+.card_content {
+  padding: $card-content-padding-base;
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .list_item {
+    border-bottom: 0;
+    margin-left: -$card-spacing-left-base;
+    padding-left: $card-spacing-left-base;
+    @include hairline-offset($card-spacing-left-base);
+  }
+  .well--escape-list {
+    margin-left: -$card-spacing-left-base;
+    padding-left: $card-spacing-left-base;
+  }
+  .list_item--inset {
+    @include hairline-offset(
+      $card-spacing-left-base + $thumbnail-size-sm + $padding-unit
+    );
+  }
+  .list_item--sortable {
+    @if $sortable-handle-width +
+      $sortable-handle-spacing >=
+      $sortable-handle-min-width
+    {
+      @include hairline-offset(
+        $card-spacing-left-base + $sortable-handle-width +
+          $sortable-handle-spacing
+      );
+    } @else {
+      @include hairline-offset(
+        $card-spacing-left-base + $sortable-handle-min-width
+      );
+    }
+  }
+  .list--borderless {
+    .list_item {
+      border-width: 0;
+      background-image: none;
+    }
+  }
+}
+.card_content--sm {
+  padding: $card-content-padding-sm;
+}
+.card_content--no-spacing {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.card_content--border {
+  border-top: $border-lt;
+}
+
+.card_empty {
+  text-align: center;
+  color: $card-empty-color;
+  line-height: 20px;
+  padding: $card-empty-padding;
+}
+
+// Footer
+.card_footer {
+  border-top: $border-lt;
+  padding: $card-footer-padding-base;
+  text-align: $card-footer-alignment;
+}
+.card_footer--borderless {
+  border-top-width: 0;
+}
+.card_footer--no-spacing {
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
+
+// Media
+.card_media {
+  background-color: $color-gray-medium;
+  overflow: hidden;
+  &:first-child {
+    border-radius: $card-radius $card-radius 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 $card-radius $card-radius;
+  }
+  .card--summary &:first-child {
+    border-radius: $card-radius 0 0 $card-radius;
+  }
+  .card--summary &:last-child {
+    border-radius: 0 $card-radius $card-radius 0;
+  }
+  img {
+    vertical-align: top;
+  }
+}
+
+// Card overrides
+.card .list {
+  margin-right: $card-hr-right-offset-base;
+}
+.card hr {
+  margin-right: $card-hr-right-offset-base;
+  background: none;
+  border-bottom: $border-lt;
+}
+
+@media (min-width: $viewport-lg-min) {
+  .card .well {
+    padding-left: $card-spacing-left-lg;
+  }
+  .card_header {
+    padding: $card-header-padding-lg;
+    .tabs {
+      margin-top: -($unit-base / 2);
+      margin-bottom: -$padding-unit;
+    }
+    .tab_item {
+      line-height: 62px;
+    }
+  }
+  .card_header,
+  .card_content,
+  .card_footer {
+    margin-left: $card-spacing-left-lg;
+  }
+  .card_content:not(.card_content--sm) {
+    padding: $card-content-padding-lg;
+    .list_item {
+      margin-left: -$card-spacing-left-lg;
+      padding-left: $card-spacing-left-lg;
+      @include hairline-offset($card-spacing-left-lg);
+    }
+    .well--escape-list {
+      margin-left: -$card-spacing-left-lg;
+      padding-left: $card-spacing-left-lg;
+    }
+    .list_item--inset {
+      @include hairline-offset(
+        $card-spacing-left-lg + $thumbnail-size-sm + $padding-unit
+      );
+    }
+    .list_item--sortable {
+      @if $sortable-handle-width +
+        $sortable-handle-spacing >=
+        $sortable-handle-min-width
+      {
+        @include hairline-offset(
+          $card-spacing-left-lg + $sortable-handle-width +
+            $sortable-handle-spacing
+        );
+      } @else {
+        @include hairline-offset(
+          $card-spacing-left-lg + $sortable-handle-min-width
+        );
+      }
+    }
+  }
+  .card_footer {
+    padding: $card-footer-padding-lg;
+  }
+  .card_content hr,
+  .card_content .list {
+    margin-right: $card-hr-right-offset-lg;
+  }
+}
+
+// Card columns
+
+@media (min-width: $viewport-md-min) {
+  .card-columns {
+    -webkit-perspective: 1;
+    @include column-count(2);
+    @include column-gap(16px);
+    .card {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+@media (min-width: $viewport-lg-min) {
+  .card-columns--3 {
+    @include column-count(3);
+  }
+}

@@ -1,0 +1,19 @@
+name: message
+label: Message
+status: wip
+context:
+  modifier: null
+  date: Jan. 28, 2020
+  heading:
+    avatar: null
+    title: Lorem ipsum dolor sit amet consectetur
+  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quibusdam ducimus sunt!
+variants:
+  - name: note
+    context:
+      modifier: [note]
+  - name: avatar
+    context:
+      modifier: [note]
+      heading:
+        avatar: true

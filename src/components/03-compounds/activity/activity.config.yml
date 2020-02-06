@@ -1,0 +1,14 @@
+name: activity
+label: Activity
+context:
+  card:
+    header:
+      title: Activity
+    list:
+      item:
+        - slot: Transfer from DDA ACCT NO. XXXX8908
+    footer:
+      button:
+        text: View all
+        link:
+          url: '#'

@@ -1,0 +1,29 @@
+name: dropdown
+label: Dropdown
+status: wip
+context:
+  isOpen: true
+  toggle:
+    modifier: null
+  menu:
+    modifier: null
+    title: Lorem ipsum dolor
+    item:
+      - text: Option 1
+        url: '#'
+      - text: Option 2
+        url: '#'
+      - text: Option 3
+        url: '#'
+        divider: true
+      - text: Option 1
+        url: '#'
+      - text: Option 2
+        url: '#'
+      - text: Option 3
+        url: '#'
+variants:
+  - name: toggle-indicator
+    context:
+      toggle:
+        modifier: [indicator]

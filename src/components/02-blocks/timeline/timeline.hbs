@@ -1,0 +1,26 @@
+<div class="timeline">
+  {{#each item}}
+    <div class="timeline_item">
+      <div class="timeline_item_date">{{date}}</div>
+      {{#each activity}}
+        <div class="timeline_group">
+          <div class="timeline_item_dot"></div>
+          <div class="timeline_item_group">
+            <div class="activity_item">
+              <div class="activity_item_time">{{time}}</div>
+              <div class="activity_item_desc">
+                {{render '@avatar--xs'}}
+                {{description}}</div>
+              {{#if action}}
+                <div class="activity_item_action">
+                  <a href="{{action.url}}" target="_blank">{{action.text}}</a>
+                </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/each}}
+</div>
+<!--TODO: Integrate item type -->

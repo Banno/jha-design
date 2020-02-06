@@ -1,0 +1,19 @@
+name: progress
+label: Progress
+status: wip
+context:
+  circular: null
+  value: null
+  helper: null
+variants:
+  - name: circular
+    context:
+      circular: true
+  - name: linear
+    context:
+      value: 60
+  - name: linear-helper
+    context:
+      value: 60
+      helper: true
+  - name: ie9

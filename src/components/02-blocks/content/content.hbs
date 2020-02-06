@@ -1,0 +1,16 @@
+<div class="content">
+  {{#if contentHeading}}
+    <header class="content_heading">
+  {{/if}}
+  <!--TODO: Replace with thumbnail component -->
+  <div class="thumbnail thumbnail--lg u-float-left">
+    <img src='http://unsplash.it/900/900?random' alt='' />
+  </div>
+  {{#if contentHeading}}
+    </header>
+  {{/if}}
+  <div class="content_push{{#each contentPush.modifier}} content_push--{{.}}{{/each}}">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga necessitatibus nobis veniam neque! Aliquid cumque velit libero blanditiis cum eligendi.</p>
+  </div>
+</div>
+<!--TODO: Need to figure out content_pull -->

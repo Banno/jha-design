@@ -1,0 +1,20 @@
+name: chip
+label: Chip
+tags: [JHA Design]
+status: review
+context:
+  label: Lorem ipsum
+  modifier: null
+variants:
+  - name: primary
+    context:
+      modifier: [primary]
+  - name: success
+    context:
+      modifier: [success]
+  - name: danger
+    context:
+      modifier: [danger]
+  - name: warning
+    context:
+      modifier: [warning]

@@ -1,0 +1,18 @@
+name: gallery
+label: Gallery
+status: wip
+context:
+  image: true
+  item:
+    - url: http://unsplash.it/1920/1080?random=1
+    - url: http://unsplash.it/1920/1080?random=2
+    - url: http://unsplash.it/1920/1080?random=3
+    - url: http://unsplash.it/1920/1080?random=4
+      isSelected: true
+      title: Lorem ipsum dolor sit amet consectetur
+      size: 252.6kb
+    - url: http://unsplash.it/1920/1080?random=5
+    - url: http://unsplash.it/1920/1080?random=6
+    - url: http://unsplash.it/1920/1080?random=7
+    - url: http://unsplash.it/1920/1080?random=8
+    - url: http://unsplash.it/1920/1080?random=9

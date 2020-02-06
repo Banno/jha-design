@@ -1,0 +1,10 @@
+name: textarea
+label: Textarea
+context:
+  formControl: false
+  rows: 3
+  placeholder: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab illum explicabo impedit.
+variants:
+  - name: form-control
+    context:
+      formControl: true

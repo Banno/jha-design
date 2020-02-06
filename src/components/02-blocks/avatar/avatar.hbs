@@ -1,0 +1,13 @@
+<div class="avatar{{#each modifier}} avatar--{{.}}{{/each}}{{#if option.tooltip}} tooltip{{#each option.tooltip.modifier}} tooltip--{{.}}{{/each}}{{/if}}"{{#if type.bgImg}} style="background-image: url({{property.img.src}})"{{/if}}{{#if option.tooltip}} aria-label="{{property.img.alt}}"{{/if}}>
+  {{#if type.bgImg}}
+    <div class="u-sr-only">{{property.img.alt}}</div>
+  {{else}}
+    <img src="{{property.img.src}}" alt="{{property.img.alt}}">
+  {{/if}}
+  {{#if option.badge}}
+  <div class="avatar_badge">
+    <img src="{{option.badge.property.img.src}}" alt="{{option.badge.property.img.alt}}">
+  </div>
+  {{/if}}
+</div>
+{{!--TODO: Will badge get confused with the actual badge component? --}}

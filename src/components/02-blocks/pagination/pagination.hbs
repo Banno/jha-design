@@ -1,0 +1,6 @@
+<div class="pagination" role="menubar" aria-label="Pagination">
+  {{#each item}}
+    <button type="button" class="pagination_item{{#if isActive}} is-active{{/if}}" {{#if disabled}} disabled{{/if}}>{{number}}</button>
+  {{/each}}
+</div>
+<!--TODO: Add left and right arrows -->

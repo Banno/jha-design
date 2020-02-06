@@ -1,0 +1,60 @@
+name: list
+label: List
+status: wip
+context:
+  modifier: null
+  item:
+    - modifier: null
+      slot: Item one
+    - modifier: null
+      slot: Item two
+    - modifier: null
+      slot: Item three
+variants:
+  - name: borderless
+    context:
+      modifier: [borderless]
+  - name: sm
+    context:
+      modifier: [sm]
+  - name: xs
+    context:
+      modifier: [xs]
+  - name: inset
+    context:
+      modifier: [inset]
+  - name: item-hover
+    context:
+      item:
+        - modifier: [hover]
+          slot: Item one
+        - modifier: [hover]
+          slot: Item two
+        - modifier: [hover]
+          slot: Item three
+  - name: item-muted
+    context:
+      item:
+        - modifier: null
+          slot: Item one
+        - modifier: [muted]
+          slot: Item two
+        - modifier: null
+          slot: Item three
+  - name: divider
+    context:
+      modifier: [borderless]
+      item:
+        - modifier: null
+          slot: Item one
+        - modifier: null
+          slot: Item two
+        - modifier: null
+          slot: Item three
+          divider: true
+        - modifier: null
+          slot: Item one
+        - modifier: null
+          slot: Item two
+        - modifier: null
+          slot: Item three

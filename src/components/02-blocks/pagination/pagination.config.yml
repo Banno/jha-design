@@ -1,0 +1,12 @@
+name: pagination
+label: Pagination
+status: wip
+context:
+  item:
+    - number: 1
+      disabled: true
+    - number: 2
+      isActive: true
+    - number: 3
+    - number: 4
+    - number: 5

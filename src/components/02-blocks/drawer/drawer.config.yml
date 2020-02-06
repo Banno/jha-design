@@ -1,0 +1,13 @@
+name: drawer
+label: Drawer
+status: wip
+context:
+  isVisible: true
+  inner:
+    modifier: [left, sm]
+  header:
+    title: Lorem ipsum dolor
+  content:
+    slot: null
+  footer:
+    slot: Lorem ipsum dolor sit amet consectetur

@@ -1,0 +1,64 @@
+.toast {
+  background-color: $toast-background-color;
+  contain: content;
+  color: #fff;
+  padding: $unit-sm $unit-base;
+  position: fixed;
+  z-index: $z-index-toast;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  @include transform(translateY(105%));
+  @include transition-property(transform, opacity);
+  @include transition-duration(0.4s);
+  will-change: opacity, transform;
+  &.is-visible {
+    @include transform(translateY(0));
+    opacity: 1;
+  }
+  @media (min-width: 415px) {
+    min-width: 288px;
+    max-width: 568px;
+    border-radius: 2px;
+    bottom: $padding-unit;
+    left: $padding-unit;
+    width: auto;
+  }
+  @media (min-width: $viewport-md-min) {
+    bottom: $spacing-unit;
+    left: $spacing-unit;
+    width: auto;
+  }
+  .title,
+  .sub-title {
+    color: #fff;
+  }
+  .title {
+    font-weight: $toast-title-weight;
+  }
+  .icon {
+    background-color: #fff;
+    fill: $toast-background-color;
+    @include square(36px);
+    padding: 6px;
+    border-radius: 50%;
+  }
+}
+
+.toast--danger {
+  background-color: $color-danger;
+  .icon {
+    fill: $color-danger;
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .toast {
+    background-color: rgba($toast-background-color, 0.9);
+    @include backdrop-filter(blur(5px));
+  }
+  .toast--danger {
+    background-color: rgba($color-danger, 0.9);
+  }
+}

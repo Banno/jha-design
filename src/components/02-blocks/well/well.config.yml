@@ -1,0 +1,22 @@
+name: well
+label: Well
+status: wip
+variants:
+  - name: lg
+    context:
+      modifier: [lg]
+  - name: primary
+    context:
+      modifier: [primary]
+  - name: success
+    context:
+      modifier: [success]
+  - name: danger
+    context:
+      modifier: [danger]
+  - name: bordered-top
+    context:
+      modifier: [bordered-top]
+  - name: bordered-bottom
+    context:
+      modifier: [bordered-bottom]

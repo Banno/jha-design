@@ -1,0 +1,14 @@
+<div class="dropdown{{#if isOpen}} is-open{{/if}}">
+  <button type="button" class="btn btn--default dropdown_toggle{{#each toggle.modifier}} dropdown_toggle--{{.}}{{/each}}">Action</button>
+  <div class="dropdown_menu{{#each menu.modifier}} dropdown_menu--{{.}}{{/each}}">
+    {{#if menu.title}}
+      <div class="dropdown_menu_title">{{menu.title}}</div>
+    {{/if}}
+    {{#each menu.item}}
+      <a href="{{url}}" class="dropdown_menu_item">{{text}}</a>
+      {{#if divider}}
+        <div class="dropdown_menu_divider"></div>
+      {{/if}}
+    {{/each}}
+  </div>
+</div>

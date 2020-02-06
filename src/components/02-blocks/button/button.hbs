@@ -1,0 +1,11 @@
+{{#if link}}
+  <a href="{{link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
+{{else}}
+  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
+{{/if}}
+{{text}}
+{{#if link}}
+  </a>
+{{else}}
+  </button>
+{{/if}}

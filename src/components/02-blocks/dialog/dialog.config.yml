@@ -1,0 +1,17 @@
+name: dialog
+label: Dialog
+status: wip
+context:
+  modifier: null
+  isVisible: true
+  backdrop:
+    modifier: [fill]
+  inner:
+    modifier: null
+  header:
+    modifier: null
+    text: Lorem ipsum dolor
+  content:
+    modifier: null
+    slot: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore neque quia laboriosam voluptatibus, impedit accusantium exercitationem earum hic, aliquid rem excepturi suscipit praesentium dolor. In maiores delectus esse quo.
+  footer: true

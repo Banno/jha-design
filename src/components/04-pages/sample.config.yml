@@ -1,0 +1,108 @@
+name: sample
+preview: null
+context:
+  theme:
+    color: '#8d99a0'
+  rightNow:
+    modifier: [wide]
+    header:
+      title: Right now
+      subTitle: Last 5 minutes
+  userLookup:
+    modifier: [wide]
+    header:
+      title: User lookup
+  moneyMovement:
+    modifier: [wide]
+    header:
+      title: Money movement
+      subTitle: Last 30 days
+    content:
+      error:
+        loadingImg: ":'("
+        text: Failed to get money movement stats.
+        retry:
+          url: '#'
+          text: Try again
+    footer:
+      button:
+        text: More
+        modifier: [toggle, align-left]
+  usage:
+    modifier: [wide]
+    header:
+      title: Usage
+      subTitle: Last 30 days
+    footer:
+      button:
+        text: More
+        modifier: [toggle, align-left]
+  rdcRequests:
+    modifier: [wide]
+    header:
+      title: RDC requests
+    content:
+      modifier: [no-spacing]
+    list:
+      item:
+        - avatar:
+            img:
+              src: http://unsplash.it/900/900?random=1
+          title: Chris Austin
+          subTitle: Individual
+          time: 2h ago
+          modifier: [inset, hover]
+        - avatar:
+            img:
+              src: http://unsplash.it/900/900?random=2
+          title: Anon Anonymous
+          subTitle: Individual
+          time: 3h ago
+          modifier: [inset, hover]
+  lockedOutUsers:
+    modifier: [wide]
+    header:
+      title: Locked-out users
+    content:
+      empty:
+        text: There are no locked-out users.
+  releaseNotes:
+    modifier: [wide]
+    header:
+      title: Release notes
+    content:
+      loading: true
+  messages:
+    modifier: [wide]
+    media:
+      src: http://unsplash.it/1920/1080?random
+    header:
+      title: Messages
+    content:
+      empty:
+        text: There are no scheduled messages.
+    footer:
+      button:
+        text: More
+        modifier: [toggle, align-left]
+variants:
+  - name: blue
+    context:
+      theme:
+        color: '#3aaeda'
+  - name: green
+    context:
+      theme:
+        color: '#4caf50'
+  - name: yellow
+    context:
+      theme:
+        color: '#fca902'
+  - name: red
+    context:
+      theme:
+        color: '#f44336'
+  - name: purple
+    context:
+      theme:
+        color: '#7d57c1'

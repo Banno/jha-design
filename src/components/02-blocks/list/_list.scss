@@ -1,0 +1,161 @@
+// List that contains elements like text, buttons and form fields
+.list {
+  margin-bottom: $list-margin-bottom-base;
+  @media (min-width: $viewport-md-min) {
+    margin-bottom: $list-margin-bottom-lg;
+  }
+}
+
+.list--borderless {
+  .list_item {
+    @include reset-hairline();
+  }
+}
+.list--sm {
+  .list_item {
+    padding-top: $list-item-padding-top-sm;
+    padding-bottom: $list-item-padding-bottom-sm;
+  }
+}
+.list--xs {
+  .list_item {
+    padding-top: $list-item-padding-top-xs;
+    padding-bottom: $list-item-padding-bottom-xs;
+  }
+}
+.list--inset {
+  padding-left: $padding-unit;
+  @media (min-width: $viewport-lg-min) {
+    padding-left: $unit-base;
+    .list_item--hover {
+      margin-left: -$unit-base;
+      padding-left: $unit-base;
+    }
+  }
+}
+
+.list_item {
+  display: block;
+  padding-top: $list-item-padding-top-base;
+  padding-bottom: $list-item-padding-bottom-base;
+  padding-right: $list-item-padding-right-base;
+  @include hairline(single, $color-gray-light, 0);
+  color: $list-item-color;
+  font-size: $list-item-font-size;
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+  &:hover {
+    color: $list-item-color;
+  }
+  &:last-of-type {
+    @include reset-hairline();
+  }
+  a:not(.btn):not(.title) {
+    color: $list-item-color;
+  }
+  @media (min-width: $viewport-lg-min) {
+    padding-right: $list-item-padding-right-lg;
+  }
+  &.is-active,
+  &.active {
+    color: $list-item-active-color;
+    color: var(--primaryAppColor, $list-item-active-color);
+    font-weight: $list-item-active-weight;
+  }
+}
+.list_item--hover {
+  margin-left: -$padding-unit;
+  padding-left: $padding-unit;
+  &:hover,
+  &:after {
+    background-color: $list-item-hover-background;
+  }
+}
+.list_item--inset {
+  @include hairline-offset($thumbnail-size-sm + $padding-unit);
+  &:last-of-type {
+    @include reset-hairline();
+  }
+}
+.list_item--inset.list_item--hover {
+  @include hairline-offset($thumbnail-size-sm + $padding-unit + $padding-unit);
+  &:last-of-type {
+    @include reset-hairline();
+  }
+}
+.list_item--sortable {
+  .card & {
+    background-color: $card-background-color;
+  }
+  @if $sortable-handle-width +
+    $sortable-handle-spacing >=
+    $sortable-handle-min-width
+  {
+    @include hairline-offset($sortable-handle-width + $sortable-handle-spacing);
+  } @else {
+    @include hairline-offset($sortable-handle-min-width);
+  }
+  .sortable_handle {
+    float: left;
+    width: $sortable-handle-width + $sortable-handle-spacing;
+  }
+}
+.list_item--muted {
+  font-style: $list-item-muted-font-style;
+  & > * {
+    opacity: $list-item-muted-opacity;
+    @include transition(opacity 0.2s $timing-function);
+  }
+  &:hover {
+    & > * {
+      opacity: $list-item-muted-opacity-hover;
+    }
+  }
+}
+
+.list_item_action {
+  float: left;
+  min-width: $list-item-action-width;
+  margin-right: $padding-unit;
+  min-height: 1px;
+  .list_item--inset & {
+    min-width: $thumbnail-size-sm;
+  }
+}
+.list_item_content {
+  overflow: hidden;
+  position: relative;
+  outline: 0;
+}
+
+.list_heading {
+  color: $list-heading-color;
+  text-transform: $list-heading-transform;
+  padding-top: $list-heading-padding-top;
+  padding-bottom: $list-heading-padding-bottom;
+  font-size: $list-heading-font-size;
+  font-weight: $list-heading-weight;
+  margin-bottom: $list-heading-margin-bottom;
+  @include hairline(single, $list-heading-border-color);
+  &.section-heading {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: $card-spacing-left-base;
+    margin-left: -$card-spacing-left-base;
+    margin-bottom: 0;
+    @include reset-hairline();
+    @media (min-width: $viewport-lg-min) {
+      margin-left: -$card-spacing-left-lg;
+      padding-left: $card-spacing-left-lg;
+    }
+  }
+}
+
+.list_divider {
+  @include hairline(single, $list-heading-border-color);
+  height: 1px;
+  margin-top: $list-divider-margin-top;
+  margin-bottom: $list-divider-margin-bottom;
+}

@@ -1,0 +1,36 @@
+name: badge
+label: Badge
+tags: [JHA Design]
+status: review
+context:
+  label: 12
+  modifier: null
+variants:
+  - name: primary
+    context:
+      modifier: [primary]
+  - name: success
+    context:
+      modifier: [success]
+  - name: danger
+    context:
+      modifier: [danger]
+  - name: warning
+    context:
+      modifier: [warning]
+  - name: list
+    context:
+      list:
+        item:
+          - text: Lorem ipsum dolor
+            isActive: true
+            badge:
+              label: 5
+              modifier: [primary]
+              class: [u-float-right]
+          - text: Lorem ipsum dolor
+          - text: Lorem ipsum dolor
+            badge:
+              label: 1
+              modifier: [danger]
+              class: [u-float-right]

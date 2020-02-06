@@ -1,0 +1,28 @@
+.chip {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: $chip-background-color;
+  border: 1px solid currentColor;
+  color: $chip-color;
+  font-size: $chip-font-size;
+  text-transform: uppercase;
+  padding: $chip-padding;
+  font-weight: $chip-font-weight;
+  border-radius: $chip-radius;
+  line-height: 1.2;
+}
+
+.chip--primary {
+  color: $badge-color-primary;
+}
+.chip--success {
+  color: $badge-color-success;
+}
+.chip--danger {
+  color: $badge-color-danger;
+}
+.chip--warning {
+  color: $badge-color-warning;
+}

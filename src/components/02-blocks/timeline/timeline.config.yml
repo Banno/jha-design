@@ -1,0 +1,21 @@
+name: timeline
+label: Timeline
+status: wip
+context:
+  item:
+    - date: Today
+      activity:
+        - time: 2:01 pm
+          description: Lorem ipsum dolor sit amet consectetur.
+          action:
+            text: View
+            url: '#'
+        - time: 1:32 pm
+          description: created a new untitled ad.
+    - date: Yesterday
+      activity:
+        - time: 8:36 am
+          description: Some additional information
+          action:
+            text: View
+            url: '#'

@@ -1,0 +1,8 @@
+name: date
+label: Date
+tags: [JHA Design]
+status: review
+context:
+  property:
+    dateHeader: Jan
+    dateContent: 4

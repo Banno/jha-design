@@ -1,0 +1,135 @@
+<header class="nav nav--header will-shift">
+  <div class=" container">
+    <div class="nav_inner">
+      <div class="nav_item">
+        <a href="#" class="nav_item_link brand">
+          <svg class="icon" role="presentation">
+            <use xlink:href="#devices"></use>
+          </svg>
+          App <span class="brand_product">title</span>
+        </a>
+      </div>
+      <div class="nav_item nav_item--center">
+        <a href="#" class="nav_item_link dropdown_toggle" id="switchInstitution">
+          Your FI
+          <svg class="icon icon--sm" role="presentation">
+            <use xlink:href="#arrow-drop-down"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="nav_group">
+        <div class="nav_item dropdown">
+          <a href="#" class="nav_item_link nav_item_link--light dropdown_toggle dropdown_toggle--indicator">
+            <span class="u-sr-only">Apps</span>
+            <svg class="icon" role="presentation">
+              <use xlink:href="#apps"></use>
+            </svg>
+          </a>
+          <div class="dropdown_menu dropdown_menu--lg dropdown_menu--no-spacing dropdown_menu--right">
+            <div class="app-list u-m-b">
+              <div class="app-list_item">
+                <a href="#" class="app-list_link">
+                  <svg class="icon app-list_icon" role="presentation" style="fill: #fb6b5b;">
+                    <use xlink:href="#target"></use>
+                  </svg>
+                  Marketing
+                </a>
+              </div>
+              <div class="app-list_item">
+                <a href="#" class="app-list_link">
+                  <svg class="icon app-list_icon" role="presentation" style="fill: #7b75cb;">
+                    <use xlink:href="#group"></use>
+                  </svg>
+                  People
+                </a>
+              </div>
+              <div class="app-list_item">
+                <a href="#" class="app-list_link">
+                  <svg class="icon app-list_icon" role="presentation" style="fill: #257AB0;">
+                    <use xlink:href="#web"></use>
+                  </svg>
+                  Content
+                </a>
+              </div>
+              <div class="app-list_item">
+                <a href="#" class="app-list_link">
+                  <svg class="icon app-list_icon" role="presentation" style="fill: #67bd48;">
+                    <use xlink:href="#conversation"></use>
+                  </svg>
+                  Support
+                </a>
+              </div>
+              <div class="app-list_item">
+                <a href="#" class="app-list_link">
+                  <svg class="icon app-list_icon" role="presentation" style="fill: #ffac52;">
+                    <use xlink:href="#reports"></use>
+                  </svg>
+                  Reports
+                </a>
+              </div>
+              <div class="app-list_item">
+                <a href="#" class="app-list_link">
+                  <svg class="icon app-list_icon" role="presentation" style="fill: #8d99a0;">
+                    <use xlink:href="#settings"></use>
+                  </svg>
+                  Settings
+                </a>
+              </div>
+            </div>
+            <div class="dropdown_menu_heading">Your FI</div>
+            <a href="#" class="dropdown_menu_item">Activity</a>
+            <a href="#" class="dropdown_menu_item">Assets</a>
+            <a href="#" class="dropdown_menu_item">Locations</a>
+            <a href="#" class="dropdown_menu_item">Monitor</a>
+            <div class="dropdown_menu_divider"></div>
+            <a href="#" class="dropdown_menu_item u-m-b">Help</a>
+          </div>
+        </div>
+        <div class="nav_item dropdown">
+          <a href="#" class="nav_item_link dropdown_toggle dropdown_toggle--indicator">
+            {{render '@avatar--sm' avatar merge=true}}
+          </a>
+          <div class="dropdown_menu dropdown_menu--padding dropdown_menu--lg dropdown_menu--right">
+            <div class="u-overflow-hidden u-m-b">
+              <div class="avatar avatar--lg avatar--you avatar--left">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/visionarty/128.jpg" alt="Sarah Flanders" width="72" height="72">
+              </div>
+              <div class="u-overflow-hidden">
+                <div class="title">Sarah Flanders</div>
+                <div class="sub-title">sarah.flanders@your-fi.com</div>
+              </div>
+            </div>
+            <button type="button" class="btn btn--primary btn--sm">View Profile</button>
+            <button id="signoutBtnLg" type="button" class="btn btn--default btn--sm u-float-right">Sign Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<header class="nav nav--tab-bar will-shift">
+  <div class="container">
+    <div class="nav_inner">
+      <div class="nav_group">
+        <a href="#" class="nav_item_link is-active">
+          <svg class="icon tab_icon">
+            <use xlink:href="#dashboard"></use>
+          </svg>
+          <span class="tab_label">Dashboard</span>
+        </a>
+        <a href="#" class="nav_item_link">
+          <svg class="icon tab_icon">
+            <use xlink:href="#conversation"></use>
+          </svg>
+          <span class="tab_label">Messages</span>
+        </a>
+        <a href="#" class="nav_item_link">
+          <svg class="icon tab_icon">
+            <use xlink:href="#settings"></use>
+          </svg>
+          <span class="tab_label">Settings</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

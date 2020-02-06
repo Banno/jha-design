@@ -1,0 +1,12 @@
+<div class="list{{#each modifier}} list--{{.}}{{/each}}">
+  {{#each item}}
+    <div class="list_item{{#each modifier}} list_item--{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
+      {{#>item-slot}}{{slot}}{{/item-slot}}
+    </div>
+    {{#if divider}}
+      <div class="list_divider"></div>
+    {{/if}}
+  {{/each}}
+</div>
+<!--TODO: Determine templates for inset and sortable -->
+<!--TODO: Allow for linked list items (<a> instead of <div>) -->

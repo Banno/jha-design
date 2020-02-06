@@ -1,0 +1,48 @@
+.thumbnail {
+  display: inline-block;
+  @include square($thumbnail-size-base);
+  border-radius: $thumbnail-radius;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $thumbnail-radius;
+    vertical-align: middle;
+  }
+  svg {
+    fill: #fff;
+  }
+}
+
+.thumbnail + .thumbnail {
+  margin-left: 2px;
+}
+
+.thumbnail--xs {
+  @include square($thumbnail-size-xs);
+  svg {
+    @include square($thumbnail-size-xs * 0.75);
+  }
+}
+.thumbnail--sm {
+  @include square($thumbnail-size-sm);
+  svg {
+    @include square($thumbnail-size-sm * 0.75);
+  }
+}
+.thumbnail--lg {
+  @include square($thumbnail-size-lg);
+  svg {
+    @include square($thumbnail-size-lg * 0.75);
+  }
+}
+.thumbnail--xl {
+  @include square($thumbnail-size-xl);
+  svg {
+    @include square($thumbnail-size-xl * 0.75);
+  }
+}

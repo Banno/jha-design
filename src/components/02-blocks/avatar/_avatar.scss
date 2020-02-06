@@ -1,0 +1,65 @@
+.avatar {
+  display: inline-block;
+  @include square($avatar-size-base);
+  border-radius: $avatar-radius;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: $avatar-background-color;
+  vertical-align: middle;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $avatar-radius;
+  }
+}
+
+.avatar--left {
+  float: left;
+  margin-right: $padding-unit;
+}
+
+.avatar--right {
+  float: right;
+  margin-left: $padding-unit;
+}
+
+.avatar--xs {
+  @include square($avatar-size-xs);
+}
+.avatar--sm {
+  @include square($avatar-size-sm);
+}
+.avatar--md {
+  @include square($avatar-size-base);
+}
+.avatar--lg {
+  @include square($avatar-size-lg);
+}
+.avatar--xl {
+  @include square($avatar-size-xl);
+}
+
+// Special snowflake, logged in user's avatar
+
+.avatar--you {
+  border-radius: $border-radius-base;
+  img {
+    border-radius: $border-radius-base;
+  }
+}
+
+.avatar_badge {
+  position: absolute;
+  @include square($avatar-badge-size);
+  border-radius: 50%;
+  background-color: $avatar-badge-background-color;
+  padding: 2px;
+  bottom: -6px;
+  right: -6px;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,32 @@
+name: tooltip
+label: Tooltip
+status: wip
+context:
+  label: Lorem ipsum dolor
+  text: Lorem ipsum dolor sit amet consectetur
+  modifier: null
+variants:
+  - name: 'n'
+    context:
+      modifier: ['n']
+  - name: ne
+    context:
+      modifier: [ne]
+  - name: nw
+    context:
+      modifier: [nw]
+  - name: s
+    context:
+      modifier: [s]
+  - name: se
+    context:
+      modifier: [se]
+  - name: sw
+    context:
+      modifier: [sw]
+  - name: e
+    context:
+      modifier: [e]
+  - name: w
+    context:
+      modifier: [w]

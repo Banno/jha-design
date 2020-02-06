@@ -1,0 +1,21 @@
+<!--TODO: Figure out how to templatize backdrop -->
+<div class="dialog_backdrop{{#each backdrop.modifier}} dialog_backdrop--{{.}}{{/each}} is-visible"></div>
+<div class="dialog{{#each modifier}} dialog--{{.}}{{/each}}{{#if isVisible}} is-visible{{/if}}">
+  <div class="dialog_inner{{#each inner.modifier}} dialog_inner--{{.}}{{/each}}">
+    <header class="dialog_header{{#each header.modifier}} dialog_header--{{.}}{{/each}}">
+      <button type="button" class="btn btn--icon dialog_close">
+        <svg class="icon icon--sm" role="image" title="Close">
+          <use xlink:href="#close"></use>
+        </svg>
+      </button>
+      <div class="dialog_title">{{header.text}}</div>
+    </header>
+    <div class="dialog_content{{#each content.modifier}} dialog_content--{{.}}{{/each}}">
+      {{#>slot}}{{content.slot}}{{/slot}}
+    </div>
+    <div class="dialog_footer">
+      <!--TODO: Replace with button component -->
+      <button type="button" class="btn btn--success">Looks good</button>
+    </div>
+  </div>
+</div>

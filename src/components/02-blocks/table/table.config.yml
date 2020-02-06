@@ -1,0 +1,114 @@
+name: table
+label: Table
+status: wip
+context:
+  responsive: false
+  modifier: null
+  head:
+    - row:
+        - cell: Column 1
+        - cell: Column 2
+        - cell: Column 3
+        - cell: Column 4
+        - cell: Column 5
+  body:
+    - row:
+        - col:
+            - cell: Cell 1A
+            - cell: Cell 2A
+            - cell: Cell 3A
+            - cell: Cell 4A
+            - cell: Cell 5A
+        - col:
+            - cell: Cell 1B
+            - cell: Cell 2B
+            - cell: Cell 3B
+            - cell: Cell 4B
+            - cell: Cell 5B
+        - col:
+            - cell: Cell 1C
+            - cell: Cell 2C
+            - cell: Cell 3C
+            - cell: Cell 4C
+            - cell: Cell 5C
+variants:
+  - name: sm
+    context:
+      modifier: [sm]
+  - name: bordered
+    context:
+      modifier: [bordered]
+  - name: align-left
+    context:
+      modifier: [align-left]
+  - name: stacked
+    context:
+      modifier: [stacked]
+  - name: stacked-horizontal
+    context:
+      modifier: [stacked-horizontal]
+  - name: responsive
+    context:
+      responsive: true
+  - name: muted
+    context:
+      head:
+        - row:
+            - cell: Column 1
+            - cell: Column 2
+            - cell: Column 3
+            - cell: Column 4
+            - cell: Column 5
+      body:
+        - row:
+            - col:
+                - cell: Cell 1A
+                - cell: Cell 2A
+                - cell: Cell 3A
+                - cell: Cell 4A
+                - cell: Cell 5A
+            - col:
+                - cell: Cell 1B
+                - cell: Cell 2B
+                - cell: Cell 3B
+                - cell: Cell 4B
+                - cell: Cell 5B
+              modifier: [muted]
+            - col:
+                - cell: Cell 1C
+                - cell: Cell 2C
+                - cell: Cell 3C
+                - cell: Cell 4C
+                - cell: Cell 5C
+              modifier: [muted]
+  - name: standout
+    context:
+      head:
+        - row:
+            - cell: Column 1
+            - cell: Column 2
+            - cell: Column 3
+            - cell: Column 4
+            - cell: Column 5
+      body:
+        - row:
+            - col:
+                - cell: Cell 1A
+                - cell: Cell 2A
+                - cell: Cell 3A
+                - cell: Cell 4A
+                - cell: Cell 5A
+            - col:
+                - cell: Cell 1B
+                - cell: Cell 2B
+                - cell: Cell 3B
+                - cell: Cell 4B
+                - cell: Cell 5B
+              modifier: [standout]
+            - col:
+                - cell: Cell 1C
+                - cell: Cell 2C
+                - cell: Cell 3C
+                - cell: Cell 4C
+                - cell: Cell 5C
+              modifier: [standout]

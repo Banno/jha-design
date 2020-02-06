@@ -1,0 +1,10 @@
+{{#>@list list}}
+  {{#*inline 'item-slot'}}
+    {{text}}
+    {{#if badge}}
+      {{render '@badge' badge merge=true}}
+    {{/if}}
+  {{/inline}}
+{{/@list}}
+{{!--TODO: Ensure active list item is pulling the correct color --}}
+{{!--TODO: Consider showcasing this in the list variants --}}

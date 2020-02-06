@@ -1,0 +1,20 @@
+<section class="message{{#each modifier}} message--{{.}}{{/each}} fluid-container">
+  <div class="message_inner">
+    <div class="message_date">
+      {{date}}
+    </div>
+    <header class="message_heading">
+      {{#if heading.avatar}}
+        {{render '@avatar'}}
+      {{/if}}
+      <div class="message_title">{{heading.title}}</div>
+    </header>
+    {{#if heading.avatar}}
+      <div class="content_push content-push--sm">
+    {{/if}}
+    <p>{{content}}</p>
+    {{#if heading.avatar}}
+  </div>
+  {{/if}}
+  </div>
+</section>

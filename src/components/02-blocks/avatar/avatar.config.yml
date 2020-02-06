@@ -1,0 +1,65 @@
+name: avatar
+label: Avatar
+status: review
+tags: [JHA Design]
+context:
+  property:
+    img:
+      src: https://i.pravatar.cc/300
+      alt: Anon Anonymous
+  type: null
+  modifier: null
+  option:
+    tooltip: false
+    badge: false
+variants:
+  - name: xs
+    label: Extra small
+    context:
+      modifier: [xs]
+  - name: sm
+    label: Small
+    context:
+      modifier: [sm]
+  - name: md
+    label: Medium
+    context:
+      modifier: [md]
+  - name: lg
+    label: Large
+    context:
+      modifier: [lg]
+  - name: xl
+    label: Extra large
+    context:
+      modifier: [xl]
+  - name: left
+    label: Align left
+    context:
+      modifier: [left]
+  - name: right
+    label: Align right
+    context:
+      modifier: [right]
+  - name: you
+    label: You
+    context:
+      modifier: [you]
+  - name: badge
+    label: Badge
+    context:
+      option:
+        badge:
+          property:
+            img:
+              src: https://i.pravatar.cc/300
+              alt: Badge image
+  - name: background-image
+    context:
+      type:
+        bgImg: true
+  - name: tooltip
+    context:
+      option:
+        tooltip:
+          modifier: [e]
