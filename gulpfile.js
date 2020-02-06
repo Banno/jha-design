@@ -51,7 +51,7 @@ const banner = [
 
 //TODO: Try to consolidate dev and prod style tasks
 function stylesDev() {
-  logMessage('Compiling development CSS');
+  util.logMessage('Compiling development CSS');
   return gulp
     .src('src/styles/**/*.scss')
     .pipe(sourcemaps.init())
@@ -62,7 +62,7 @@ function stylesDev() {
 }
 
 function stylesProd() {
-  logMessage('Compiling production CSS.');
+  util.logMessage('Compiling production CSS.');
   const plugins = [autoprefixer()];
   return (
     gulp
@@ -105,7 +105,7 @@ const svgSettings = [
 ];
 
 function imagesCompress() {
-  logMessage('Compressing images');
+  util.logMessage('Compressing images');
   return gulp
     .src('src/images/*')
     .pipe(
@@ -119,7 +119,7 @@ function imagesCompress() {
 }
 
 function imagesAppIcons() {
-  logMessage('Compressing app icons');
+  util.logMessage('Compressing app icons');
   return gulp
     .src('src/images/icons/**/*')
     .pipe(
@@ -131,7 +131,7 @@ function imagesAppIcons() {
 }
 
 function imagesIcons() {
-  logMessage('Compressing and compiling icons');
+  util.logMessage('Compressing and compiling icons');
   return gulp
     .src('src/icons/*.svg')
     .pipe(svgmin(svgSettings))
@@ -141,7 +141,7 @@ function imagesIcons() {
 }
 
 function imagesSvg() {
-  logMessage('Compressing SVGs');
+  util.logMessage('Compressing SVGs');
   return gulp
     .src('src/images/**/*.svg')
     .pipe(svgmin(svgSettings))
@@ -151,7 +151,7 @@ function imagesSvg() {
 // Scripts
 
 function scriptsCompress() {
-  logMessage('Compressing and copying scripts to distribution directory');
+  util.logMessage('Compressing and copying scripts to distribution directory');
   return gulp
     .src('src/scripts/**/*.js')
     .pipe(
@@ -175,7 +175,7 @@ function fractalStart() {
 }
 
 function fractalBuild() {
-  logMessage('Generating patterns and user interface');
+  util.logMessage('Generating patterns and user interface');
   const builder = fractal.web.builder();
   builder.on('progress', (completed, total) =>
     logger.update(`Exported ${completed} of ${total} items`, 'info')
@@ -187,7 +187,7 @@ function fractalBuild() {
 }
 
 function themeCopy() {
-  logMessage('Copying UI theme');
+  util.logMessage('Copying UI theme');
   return gulp
     .src([
       'src/themes/custom-mandelbrot/**/*',
@@ -197,7 +197,7 @@ function themeCopy() {
 }
 
 function themeSass() {
-  logMessage('Compiling UI theme');
+  util.logMessage('Compiling UI theme');
   return gulp
     .src('src/themes/custom-mandelbrot/assets/styles/**/*.scss')
     .pipe(
@@ -224,7 +224,7 @@ function watch(done) {
 // Builds
 
 function clean() {
-  logMessage('Cleaning distribution directories');
+  util.logMessage('Cleaning distribution directories');
   return del(['dist/**/*', 'build/**/*']);
 }
 
