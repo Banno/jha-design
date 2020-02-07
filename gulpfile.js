@@ -258,5 +258,3 @@ exports.buildProd = gulp.series(
   scriptsCompress,
   fractalBuild
 );
-
-exports.themeSass = themeSass;
