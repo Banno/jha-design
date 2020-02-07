@@ -1,22 +1,32 @@
 name: well
 label: Well
 status: wip
+context:
+  property:
+    slot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur ducimus vel!
+  modifier: null
 variants:
   - name: lg
+    label: Large
     context:
       modifier: [lg]
   - name: primary
+    label: Primary
     context:
       modifier: [primary]
   - name: success
+    label: Success
     context:
       modifier: [success]
   - name: danger
+    label: Danger
     context:
       modifier: [danger]
-  - name: bordered-top
+  - name: bordered
+    label: Bordered
     context:
-      modifier: [bordered-top]
-  - name: bordered-bottom
+      modifier: [bordered]
+  - name: rounded
+    label: Rounded
     context:
-      modifier: [bordered-bottom]
+      modifier: [rounded]

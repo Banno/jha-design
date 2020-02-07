@@ -1,8 +1,9 @@
-{{#if circular}}
+<!--TODO: Consider a better way to typify the circular and linear versions -->
+{{#if property.isCircular}}
   <div class="progress-circular{{#each modifier}} progress-circular--{{.}}{{/each}}"></div>
 {{else}}
-  <progress class="progress-linear" value="{{value}}" max="100"></progress>
-  {{#if helper}}
-    <span class="progress-helper">{{value}}%</span>
+  <progress class="progress-linear" value="{{property.value}}" max="100"></progress>
+  {{#if property.helper}}
+    <span class="progress-helper">{{property.value}}%</span>
   {{/if}}
 {{/if}}

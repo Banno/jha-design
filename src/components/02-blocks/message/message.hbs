@@ -1,19 +1,19 @@
-<section class="message{{#each modifier}} message--{{.}}{{/each}} fluid-container">
+<section class="message{{#each modifier}} message--{{.}}{{/each}}{{#if property.isFluidContainer}} fluid-container{{else}} container{{/if}}">
   <div class="message_inner">
     <div class="message_date">
-      {{date}}
+      {{property.date}}
     </div>
     <header class="message_heading">
-      {{#if heading.avatar}}
-        {{render '@avatar'}}
+      {{#if property.heading.avatar}}
+        {{render '@avatar' property.heading.avatar merge=true}}
       {{/if}}
-      <div class="message_title">{{heading.title}}</div>
+      <div class="message_title">{{property.heading.title}}</div>
     </header>
-    {{#if heading.avatar}}
+    {{#if property.heading.avatar}}
       <div class="content_push content-push--sm">
     {{/if}}
-    <p>{{content}}</p>
-    {{#if heading.avatar}}
+    <p>{{property.content}}</p>
+    {{#if property.heading.avatar}}
   </div>
   {{/if}}
   </div>

@@ -1,0 +1,7 @@
+{{#>@dialog}}
+  {{#*inline 'footerSlot'}}
+    {{#each element.footer.button}}
+      {{render '@button' this merge=true}}
+    {{/each}}
+  {{/inline}}
+{{/@dialog}}

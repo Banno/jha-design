@@ -2,31 +2,40 @@ name: tooltip
 label: Tooltip
 status: wip
 context:
-  label: Lorem ipsum dolor
-  text: Lorem ipsum dolor sit amet consectetur
-  modifier: null
+  property:
+    label: Lorem ipsum dolor
+    text: Lorem ipsum dolor sit amet consectetur
+  modifier: ['n']
 variants:
   - name: 'n'
+    label: North
     context:
       modifier: ['n']
   - name: ne
+    label: Northeast
     context:
       modifier: [ne]
   - name: nw
+    label: Northwest
     context:
       modifier: [nw]
   - name: s
+    label: South
     context:
       modifier: [s]
   - name: se
+    label: Southeast
     context:
       modifier: [se]
   - name: sw
+    label: Southwest
     context:
       modifier: [sw]
   - name: e
+    label: East
     context:
       modifier: [e]
   - name: w
+    label: West
     context:
       modifier: [w]

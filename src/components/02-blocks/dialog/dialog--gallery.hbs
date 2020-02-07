@@ -1,0 +1,6 @@
+<!--TODO: Rework this example to show better use of content -->
+{{#>@dialog}}
+  {{#*inline 'contentSlot'}}
+    {{render '@gallery' element.content.gallery merge=true}}
+  {{/inline}}
+{{/@dialog}}

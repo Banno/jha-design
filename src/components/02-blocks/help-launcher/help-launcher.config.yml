@@ -2,6 +2,6 @@ name: help-launcher
 label: Help launcher
 status: wip
 context:
-  url: '#'
-  a11y:
+  property:
+    url: '#'
     text: Help

@@ -2,16 +2,56 @@ name: dialog
 label: Dialog
 status: wip
 context:
-  modifier: null
-  isVisible: true
-  backdrop:
-    modifier: [fill]
-  inner:
-    modifier: null
-  header:
-    modifier: null
-    text: Lorem ipsum dolor
-  content:
-    modifier: null
-    slot: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore neque quia laboriosam voluptatibus, impedit accusantium exercitationem earum hic, aliquid rem excepturi suscipit praesentium dolor. In maiores delectus esse quo.
-  footer: true
+  modifier: [center@xs]
+  state:
+    isVisible: true
+  element:
+    backdrop:
+      modifier: [fill]
+      state:
+        isVisible: true
+    inner:
+      modifier: [sm]
+    header:
+      modifier: null
+      text: Lorem ipsum dolor
+    content:
+      modifier: null
+      slot: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore neque quia laboriosam voluptatibus, impedit accusantium exercitationem earum hic, aliquid rem excepturi suscipit praesentium dolor. In maiores delectus esse quo.
+    footer:
+      slot: Lorem ipsum dolor sit amet consectetur.
+variants:
+  - name: wide
+    label: Wide
+    context:
+      element:
+        inner:
+          modifier: [lg]
+  - name: profile
+    label: Profile
+    context:
+      element:
+        header:
+          modifier: [profile]
+        footer: false
+  - name: gallery
+    label: Gallery content
+    context:
+      element:
+        content:
+          gallery:
+            item:
+              - url: http://unsplash.it/1920/1080?random=1
+              - url: http://unsplash.it/1920/1080?random=2
+        footer: false
+  - name: footer
+    label: Footer
+    context:
+      element:
+        footer:
+          button:
+            - modifier: [success]
+              text: Okay
+            - modifier: [danger]
+              text: Nevermind
+

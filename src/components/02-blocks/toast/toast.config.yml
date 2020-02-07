@@ -2,10 +2,17 @@ name: toast
 label: Toast
 status: wip
 context:
-  slot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cum ex labore!
-  isVisible: true
+  property:
+    toastSlot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cum ex labore!
+  state:
+    isVisible: true
   modifier: null
 variants:
   - name: danger
+    label: Danger
+    context:
+      modifier: [danger]
+  - name: content
+    label: Sample Content
     context:
       modifier: [danger]
