@@ -1,10 +1,15 @@
-{{#if link}}
-  <a href="{{link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
+{{#if property.link}}
+  <a href="{{property.link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#each state}} {{.}}{{/each}}">
 {{else}}
-  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
+  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#each state}} {{.}}{{/each}}">
 {{/if}}
-{{text}}
-{{#if link}}
+{{#if property.icon}}
+  <!--TODO: Consider renaming this so there isn't a redundant icon -->
+  {{render '@icon' property.icon merge=true}}
+{{else}}
+  {{property.text}}
+{{/if}}
+{{#if property.link}}
   </a>
 {{else}}
   </button>

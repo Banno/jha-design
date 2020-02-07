@@ -2,61 +2,78 @@ name: button
 label: Buttons
 status: wip
 context:
-  text: Sample button
+  property:
+    link: null
+    icon: null
+    text: Lorem ipsum
   modifier: [default]
-  isActive: false
+  state:
+    isActive: false
 variants:
-  - name: neutral
-    context:
-      modifier: [neutral]
-  - name: link
-    context:
-      link:
-        url: '#'
-      modifier: [link]
-  - name: primary
-    context:
-      modifier: [primary]
-  - name: success
-    context:
-      modifier: [success]
-  - name: danger
-    context:
-      modifier: [danger]
-  - name: toggle
-    context:
-      modifier: [toggle]
-  - name: default-outline
-    context:
-      modifier: [default]
-  - name: primary-outline
-    context:
-      modifier: [primary-outline]
-  - name: success-outline
-    context:
-      modifier: [success-outline]
-  - name: danger-outline
-    context:
-      modifier: [danger-outline]
-  - name: sm
-    context:
-      modifier: [default, sm]
-  - name: lg
-    context:
-      modifier: [default, lg]
-  - name: wide
-    context:
-      modifier: [default, wide]
   - name: block
+    label: Block
     context:
       modifier: [primary, block]
-  - name: align-left
+  - name: link
+    label: Link
     context:
-      modifier: [primary, align-left]
-  - name: align-right
+      property:
+        link:
+        url: '#'
+      modifier: [link]
+  - name: toggle
+    label: Toggle
     context:
-      modifier: [primary, align-right]
-  - name: active
+      modifier: [toggle]
+  - name: icon
+    label: Icon
     context:
-      modifier: [primary-outline]
-      isActive: true
+      button:
+        - property:
+            icon:
+              icon: apple
+          modifier: [default, icon]
+        - property:
+            icon:
+              icon: apple
+          modifier: [link, icon]
+        - property:
+            icon:
+              icon: apple
+          modifier: [primary, icon]
+  - name: fill
+    label: Fill
+    context:
+      button:
+        - modifier: [neutral]
+        - modifier: [primary]
+        - modifier: [success]
+        - modifier: [danger]
+      state:
+        - modifier: [default]
+        - modifier: [default]
+        - modifier: [default]
+
+  - name: outline
+    label: Outline
+    context:
+      button:
+        - modifier: [default]
+        - modifier: [primary-outline]
+        - modifier: [success-outline]
+        - modifier: [danger-outline]
+  - name: size
+    context:
+      button:
+        - modifier: [default, sm]
+        - modifier: [default]
+        - modifier: [default, lg]
+        - modifier: [default, wide]
+  - name: align
+    label: Alignment
+    context:
+      button:
+        - align: left
+          modifier: [primary, align-left]
+        - align: right
+          modifier: [primary, align-right]
