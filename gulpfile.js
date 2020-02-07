@@ -22,7 +22,7 @@ const pkg = require('./package.json');
 function frontMatter(done) {
   util.logIntroduction();
   util.logMessage('Creating development environment');
-  done()
+  done();
 }
 
 // Copy
