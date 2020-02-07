@@ -27,13 +27,6 @@
 @import "base/normalize";
 @import "base/type";
 @import "base/animation";
-@import "base/utilities/accessibility";
-@import "base/utilities/floats";
-@import "base/utilities/overflow";
-@import "base/utilities/spacing";
-@import "base/utilities/color";
-@import "base/utilities/responsive-visibility";
-@import "base/utilities/motion";
 
 // Components
 @import "components/accordion";
@@ -88,3 +81,12 @@
 
 // Shame
 @import "hacks";
+
+// Utilities
+@import "base/utilities/color";
+@import "base/utilities/accessibility";
+@import "base/utilities/floats";
+@import "base/utilities/overflow";
+@import "base/utilities/spacing";
+@import "base/utilities/responsive-visibility";
+@import "base/utilities/motion";
