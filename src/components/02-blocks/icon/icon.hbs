@@ -1,0 +1,3 @@
+<svg class="icon{{#each modifier}} icon--{{.}}{{/each}}{{#each utility}} u-{{.}}{{/each}}" role="{{#unless property.isPresentation}}image{{else}}presentation{{/unless}}"{{#unless property.isPresentation}} title="{{property.title}}"{{/unless}}>
+  <use xlink:href="#{{property.icon}}"></use>
+</svg>

@@ -1,0 +1,36 @@
+name: icon
+label: Icon
+status: wip
+context:
+  property:
+    isPresentation: false
+    icon: apple
+    title: Lorem ipsum
+  modifier: null
+  utility: null
+variants:
+  - name: presentation
+    label: Presentation
+    context:
+      property:
+        isPresentation: true
+  - name: xs
+    label: Extra Small
+    context:
+      modifier: [xs]
+  - name: sm
+    label: Small
+    context:
+      modifier: [sm]
+  - name: lg
+    label: Large
+    context:
+      modifier: [lg]
+  - name: xl
+    label: Extra Large
+    context:
+      modifier: [xl]
+  - name: fill
+    label: Fill Color
+    context:
+      utility: [fill-danger]
