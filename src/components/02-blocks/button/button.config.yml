@@ -76,4 +76,13 @@ variants:
         - align: left
           modifier: [primary, align-left]
         - align: right
-          modifier: [primary, align-right]
+          modifier: [primary, align-right]  - name: state
+    label: State
+    context:
+      button:
+        - state:
+            isActive: true
+        - state:
+            isDisabled: true
+        - state:
+            isLoading: true
