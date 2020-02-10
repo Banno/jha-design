@@ -1,10 +1,10 @@
 <form class="search{{#each modifier}} search--{{.}}{{/each}}">
   <label class="search_bar">
     <span class="search_icon">
-      <svg class="icon">
-        <use xlink:href="#search"></use>
-      </svg>
+      {{render '@icon' element.icon merge=true}}
     </span>
     <input type="search" class="form-control search_input" placeholder="Search">
   </label>
 </form>
+<!--TODO: Put light version on dark background -->
+<!--TODO: Determine better structure for nested icon -->

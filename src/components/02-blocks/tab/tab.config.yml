@@ -3,10 +3,14 @@ label: Tab
 status: wip
 context:
   item:
-    - text: First
-      url: '#'
-    - text: First
-      url: '#'
-      isActive: true
-    - text: First
-      url: '#'
+    - property:
+        text: First
+        url: '#'
+    - property:
+        text: First
+        url: '#'
+      state:
+        isActive: true
+    - property:
+        text: First
+        url: '#'

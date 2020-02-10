@@ -1,5 +1,5 @@
-<div class="btn-group">
-  {{#each item}}
-    {{render '@button' button merge=true}}
+<div class="btn-group{{#each modifier}} btn-group--{{.}}{{/each}}">
+  {{#each button}}
+    {{render '@button' this merge=true}}
   {{/each}}
 </div>

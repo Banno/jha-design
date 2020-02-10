@@ -3,10 +3,25 @@ label: Pagination
 status: wip
 context:
   item:
-    - number: 1
-      disabled: true
-    - number: 2
-      isActive: true
-    - number: 3
-    - number: 4
-    - number: 5
+    - element:
+        icon:
+          property:
+            icon: chevron-left
+      state:
+        disabled: true
+    - property:
+        number: 1
+    - property:
+        number: 2
+      state:
+        isActive: true
+    - property:
+        number: 3
+    - property:
+        number: 4
+    - property:
+        number: 5
+    - element:
+        icon:
+          property:
+            icon: chevron-right

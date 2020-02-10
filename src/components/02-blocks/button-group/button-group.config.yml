@@ -2,15 +2,22 @@ name: button-group
 label: Button group
 status: wip
 context:
-  item: [true, true, true]
+  button: [true, true, true]
+  modifier: null
 variants:
   - name: primary-outline
     context:
-      item:
-        - button:
-            modifier: [primary-outline]
-        - button:
-            modifier: [primary-outline]
+      button:
+        - modifier: [primary-outline]
+        - modifier: [primary-outline]
+          state:
             isActive: true
-        - button:
-            modifier: [primary-outline]
+        - modifier: [primary-outline]
+  - name: flex
+    context:
+      button:
+        - true
+        - state:
+            isActive: true
+        - true
+      modifier: [flex]

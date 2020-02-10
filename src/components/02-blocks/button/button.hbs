@@ -1,7 +1,10 @@
 {{#if property.link}}
-  <a href="{{property.link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#each state}} {{.}}{{/each}}">
+  <a href="{{property.link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if state.isLoading}} is-loading{{/if}}{{#if state.isActive}} is-active{{/if}}"{{#if state.isDisabled}} disabled{{/if}}>
 {{else}}
-  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#each state}} {{.}}{{/each}}">
+  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if state.isLoading}} is-loading{{/if}}{{#if state.isActive}} is-active{{/if}}"{{#if state.isDisabled}} disabled{{/if}}>
+{{/if}}
+{{#if state.isLoading}}
+  <span class="btn_content">
 {{/if}}
 {{#if property.icon}}
   <!--TODO: Consider renaming this so there isn't a redundant icon -->
@@ -9,8 +12,16 @@
 {{else}}
   {{property.text}}
 {{/if}}
+{{#if state.isLoading}}
+  </span>
+  <div class="btn_progress">
+    {{render '@progress--circular-small'}}
+  </div>
+{{/if}}
 {{#if property.link}}
   </a>
 {{else}}
   </button>
 {{/if}}
+<!--TODO: Add variants to include focus states -->
+<!--TODO: Consolidate the button templates -->

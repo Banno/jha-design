@@ -1,10 +1,14 @@
 <div class="timeline">
   {{#each item}}
     <div class="timeline_item">
-      <div class="timeline_item_date">{{date}}</div>
-      {{#each activity}}
+      <div class="timeline_item_date">{{property.date}}</div>
+      {{#each element.activity}}
         <div class="timeline_group">
-          <div class="timeline_item_dot"></div>
+          <div class="{{#if element.type}}timeline_item_type{{else}}timeline_item_dot{{/if}}">
+          {{#if type}}
+            {{render '@icon--sm' type.icon merge=true}}
+          {{/if}}
+          </div>
           <div class="timeline_item_group">
             <div class="activity_item">
               <div class="activity_item_time">{{time}}</div>
@@ -23,4 +27,3 @@
     </div>
   {{/each}}
 </div>
-<!--TODO: Integrate item type -->

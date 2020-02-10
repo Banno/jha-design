@@ -8,7 +8,9 @@ context:
     text: Lorem ipsum
   modifier: [default]
   state:
+    isLoading: false
     isActive: false
+    isDisabled: false
 variants:
   - name: block
     label: Block
@@ -19,7 +21,7 @@ variants:
     context:
       property:
         link:
-        url: '#'
+          url: '#'
       modifier: [link]
   - name: toggle
     label: Toggle
@@ -49,11 +51,6 @@ variants:
         - modifier: [primary]
         - modifier: [success]
         - modifier: [danger]
-      state:
-        - modifier: [default]
-        - modifier: [default]
-        - modifier: [default]
-
   - name: outline
     label: Outline
     context:
@@ -76,7 +73,8 @@ variants:
         - align: left
           modifier: [primary, align-left]
         - align: right
-          modifier: [primary, align-right]  - name: state
+          modifier: [primary, align-right]
+  - name: state
     label: State
     context:
       button:

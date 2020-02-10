@@ -1,5 +1,7 @@
-<div class="thumbnail{{#each modifier}} thumbnail--{{.}}{{/each}}" style="background-image: url({{url}});" {{#if inline}}role="image" aria-label="{{url}}" {{/if}}>
-  {{#unless inline}}
-    <img src="{{url}}" alt="{{alt}}">
+<div class="thumbnail{{#each modifier}} thumbnail--{{.}}{{/each}}" style="background-image: url({{url}});" {{#if type.bgImg}}role="image" aria-label="{{property.url}}" {{/if}}>
+  {{#unless bgImg}}
+    <img src="{{property.url}}" alt="{{property.alt}}">
   {{/unless}}
 </div>
+
+<!--TODO: Consider creating sample pages similar to button -->
