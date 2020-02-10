@@ -1,8 +1,8 @@
 # Date
 
-## Properties
+## Elements
 
-| Name                   | Type   | Description         |
-| ---------------------- | ------ | ------------------- |
-| `dateHeader`  | string | Short form of month |
-| `dateContent` | number | Numeric date        |
+| Class          | Requirement | Description         |
+| -------------- | ----------- | ------------------- |
+| `date_header`  | Required    | Short form of month |
+| `date_content` | Required    | Numeric date        |

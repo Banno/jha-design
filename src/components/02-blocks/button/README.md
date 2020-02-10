@@ -33,8 +33,8 @@
 
 ## States
 
-| Name          | Description |
-| ------------- | ----------- |
-| `is-active`   |             |
-| `is-disabled` |             |
-| `is-loading`  |             |
+| Name          | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| `is-active`   |                                                              |
+| `is-disabled` |                                                              |
+| `is-loading`  | The `is-loading` state for buttons gives feedback to the user that their button press is doing *something*. |

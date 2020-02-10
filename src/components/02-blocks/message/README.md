@@ -2,12 +2,12 @@
 
 ## Elements
 
-| Element           | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| `message_inner`   | Contains the guts of your message                            |
-| `message_date`    |                                                              |
-| `message_heading` | The header should include an avatar and the sender’s name at a `message_title`. |
-| `message_title`   |                                                              |
+| Class             | Requirement | Description                                                  |
+| ----------------- | ----------- | ------------------------------------------------------------ |
+| `message_inner`   |             | Contains the guts of your message                            |
+| `message_date`    |             |                                                              |
+| `message_heading` |             | The header should include an avatar and the sender’s name at a `message_title`. |
+| `message_title`   |             |                                                              |
 
 ## Modifiers
 

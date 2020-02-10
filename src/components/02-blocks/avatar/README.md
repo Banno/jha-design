@@ -1,15 +1,14 @@
 # Avatar
 
-## Properties
+## Block
 
-| Name      | Type   | Description                                                               |
-| --------- | ------ | ------------------------------------------------------------------------- |
-| `img.src` | string | URL of the avatar image                                                   |
-| `img.alt` | string | Alternative text that contains the name of the person in the avatar image |
+`avatar`
 
-## Types
+## Elements
 
-- Background image
+| Class          | Requirement | Description |
+| -------------- | ----------- | ----------- |
+| `avatar_badge` | Optional    |             |
 
 ## Modifiers
 
@@ -24,18 +23,12 @@
 | `avatar--right` | Aligns avatar to the right of succeeding content |
 | `avatar--you`   | Styles avatar with rounded corners               |
 
-## Options
+## Customizations
 
-### Tooltip
+| Class     | Requirement | Description                     |
+| --------- | ----------- | ------------------------------- |
+| `tooltip` | Optional    | Enables or disables the tooltip |
 
-| Name      | Type    | Description                     |
-| --------- | ------- | ------------------------------- |
-| `tooltip` | boolean | Enables or disables the tooltip |
+## Variants
 
-### Badge
-
-| Name                     | Type    | Description                                                              |
-| ------------------------ | ------- | ------------------------------------------------------------------------ |
-| `badge`                  | boolean | Enables or disables the badge                                            |
-| `badge.property.img.src` | string  | URL of the badge image                                                   |
-| `badge.property.img.alt` | string  | Alternative text that contains the name of the person in the badge image |
+- Background image
