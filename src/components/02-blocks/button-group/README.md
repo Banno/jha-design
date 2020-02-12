@@ -1,16 +1,12 @@
 # Button group
 
-## Elements
+## Block
 
-| Name        | Description |
-| ----------- | ----------- |
-| `btn-group` |             |
-
-
+`.btn-group`
 
 ## Modifiers
 
-| Name              | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| `btn-group--flex` | The `--flex` modifier will make the contained buttons span the entire available area. |
+| Class              | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
+| `.btn-group--flex` | Makes the contained buttons span the entire available area |
 

@@ -1,9 +1,12 @@
-# Help launcher
+# Help Launcher
 
-## Properties
+## # Block
 
-| Name            | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| `property.url`  | URL to documentation                                         |
-| `property.text` | Non-visible descriptive title that is used by screen readers |
+`.help-launcher`
+
+## Utilities
+
+| Class        | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| `.u-sr-only` | Apply to a `<span>` within `.help-launcher` to provide a descriptive title that is accessible to screen readers, but non-visible to users |
 
