@@ -5,9 +5,7 @@
       <div class="gallery_item{{#if isSelected}} is-selected{{/if}}" {{#if ../image}} style="background-image: url({{url}});{{/if}}">
         <div class="gallery_item_details">
           <div class="gallery_item_selected">
-            <svg class="icon" role="presentation">
-              <use xlink:href="#check"></use>
-            </svg>
+            {{render '@icon' icon merge=true}}
           </div>
           <div class="gallery_item_title">{{title}}</div>
           <div class="gallery_item_size">{{size}}</div>
