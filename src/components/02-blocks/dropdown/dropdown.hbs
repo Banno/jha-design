@@ -1,9 +1,11 @@
 <div class="dropdown{{#if isOpen}} is-open{{/if}}">
+  <!--TODO: Replace with button pattern -->
   <button type="button" class="btn btn--default dropdown_toggle{{#each toggle.modifier}} dropdown_toggle--{{.}}{{/each}}">Action</button>
   <div class="dropdown_menu{{#each menu.modifier}} dropdown_menu--{{.}}{{/each}}">
     {{#if menu.title}}
       <div class="dropdown_menu_title">{{menu.title}}</div>
     {{/if}}
+    <!--TODO: Add content slot -->
     {{#each menu.item}}
       <a href="{{url}}" class="dropdown_menu_item">{{text}}</a>
       {{#if divider}}
