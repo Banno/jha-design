@@ -3,26 +3,22 @@ label: Timeline
 status: wip
 context:
   item:
-    - property:
-        date: Today
-      element:
-        activity:
-          - time: 2:01 pm
-            description: Lorem ipsum dolor sit amet consectetur.
-            action:
-              text: View
-              url: '#'
-          - time: 1:32 pm
-            description: created a new untitled ad.
-    - property:
-        date: Yesterday
-      element:
-        activity:
-          - time: 8:36 am
-            description: Some additional information
-            action:
-              text: View
-              url: '#'
+    - date: Today
+      activity:
+        - time: 2:01 pm
+          description: Lorem ipsum dolor sit amet consectetur.
+          action:
+            text: View
+            url: '#'
+        - time: 1:32 pm
+          description: created a new untitled ad.
+    - date: Yesterday
+      activity:
+        - time: 8:36 am
+          description: Some additional information
+          action:
+            text: View
+            url: '#'
 variants:
   - name: type
     label: Type
@@ -32,8 +28,7 @@ variants:
           activity:
             - type:
                 icon:
-                  property:
-                    icon: message
+                  icon: message
               time: 2:01 pm
               description: Lorem ipsum dolor sit amet consectetur.
               action:
@@ -41,16 +36,14 @@ variants:
                 url: '#'
             - type:
                 icon:
-                  property:
-                    icon: message
+                  icon: message
               time: 1:32 pm
               description: created a new untitled ad.
         - date: Yesterday
           activity:
             - type:
                 icon:
-                  property:
-                    icon: person
+                  icon: person
               time: 8:36 am
               description: Some additional information
               action:

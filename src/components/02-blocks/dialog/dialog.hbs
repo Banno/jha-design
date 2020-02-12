@@ -1,23 +1,23 @@
 <!--TODO: Should the backdrop be its own pattern? -->
 <!-- The backdrop should be a child of the body element -->
-<div class="dialog_backdrop{{#each element.backdrop.modifier}} dialog_backdrop--{{.}}{{/each}}{{#if element.backdrop.state.isVisible}} is-visible{{/if}}"></div>
-<div class="dialog{{#each modifier}} dialog--{{.}}{{/each}}{{#if state.isVisible}} is-visible{{/if}}">
-  <div class="dialog_inner{{#each element.inner.modifier}} dialog_inner--{{.}}{{/each}}">
-    <header class="dialog_header{{#each element.header.modifier}} dialog_header--{{.}}{{/each}}">
+<div class="dialog_backdrop{{#each backdrop.modifier}} dialog_backdrop--{{.}}{{/each}}{{#if backdrop.isVisible}} is-visible{{/if}}"></div>
+<div class="dialog{{#each modifier}} dialog--{{.}}{{/each}}{{#if isVisible}} is-visible{{/if}}">
+  <div class="dialog_inner{{#each inner.modifier}} dialog_inner--{{.}}{{/each}}">
+    <header class="dialog_header{{#each header.modifier}} dialog_header--{{.}}{{/each}}">
       <!--TODO: Replace with button pattern -->
       <button type="button" class="btn btn--icon dialog_close">
         <svg class="icon icon--sm" role="image" title="Close">
           <use xlink:href="#close"></use>
         </svg>
       </button>
-      <div class="dialog_title">{{element.header.text}}</div>
+      <div class="dialog_title">{{header.text}}</div>
     </header>
-    <div class="dialog_content{{#each element.content.modifier}} dialog_content--{{.}}{{/each}}">
-      {{#>contentSlot}}{{element.content.slot}}{{/contentSlot}}
+    <div class="dialog_content{{#each content.modifier}} dialog_content--{{.}}{{/each}}">
+      {{#>contentSlot}}{{content.slot}}{{/contentSlot}}
     </div>
-    {{#if element.footer}}
+    {{#if footer}}
       <div class="dialog_footer">
-        {{#>footerSlot}}{{element.footer.slot}}{{/footerSlot}}
+        {{#>footerSlot}}{{footer.slot}}{{/footerSlot}}
       </div>
     {{/if}}
   </div>

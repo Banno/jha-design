@@ -3,6 +3,5 @@ label: Date
 tags: [JHA Design]
 status: review
 context:
-  property:
-    dateHeader: Jan
-    dateContent: 4
+  header: Jan
+  content: 4

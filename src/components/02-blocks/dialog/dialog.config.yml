@@ -3,55 +3,51 @@ label: Dialog
 status: wip
 context:
   modifier: [center@xs]
-  state:
+  isVisible: true
+  backdrop:
+    modifier: [fill]
     isVisible: true
-  element:
-    backdrop:
-      modifier: [fill]
-      state:
-        isVisible: true
-    inner:
-      modifier: [sm]
-    header:
-      modifier: null
-      text: Lorem ipsum dolor
-    content:
-      modifier: null
-      slot: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore neque quia laboriosam voluptatibus, impedit accusantium exercitationem earum hic, aliquid rem excepturi suscipit praesentium dolor. In maiores delectus esse quo.
-    footer:
-      slot: Lorem ipsum dolor sit amet consectetur.
+  inner:
+    modifier: [sm]
+  header:
+    modifier: null
+    text: Lorem ipsum dolor
+  button:
+    property:
+      icon: close
+    modifier: [icon]
+  content:
+    modifier: null
+    slot: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore neque quia laboriosam voluptatibus, impedit accusantium exercitationem earum hic, aliquid rem excepturi suscipit praesentium dolor. In maiores delectus esse quo.
+  footer:
+    slot: Lorem ipsum dolor sit amet consectetur.
 variants:
   - name: wide
     label: Wide
     context:
-      element:
-        inner:
-          modifier: [lg]
+      inner:
+        modifier: [lg]
   - name: profile
     label: Profile
     context:
-      element:
-        header:
-          modifier: [profile]
-        footer: false
+      header:
+        modifier: [profile]
+      footer: false
   - name: gallery
     label: Gallery content
     context:
-      element:
-        content:
-          gallery:
-            item:
-              - url: http://unsplash.it/1920/1080?random=1
-              - url: http://unsplash.it/1920/1080?random=2
-        footer: false
+      content:
+        gallery:
+          item:
+            - url: http://unsplash.it/1920/1080?random=1
+            - url: http://unsplash.it/1920/1080?random=2
+      footer: false
   - name: footer
     label: Footer
     context:
-      element:
-        footer:
-          button:
-            - modifier: [success]
-              text: Okay
-            - modifier: [danger]
-              text: Nevermind
-
+      footer:
+        button:
+          - modifier: [success]
+            text: Okay
+          - modifier: [danger]
+            text: Nevermind

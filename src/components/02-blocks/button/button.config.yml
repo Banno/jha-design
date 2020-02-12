@@ -1,16 +1,15 @@
 name: button
 label: Buttons
 status: wip
+tags: [JHA Design]
 context:
-  property:
-    link: null
-    icon: null
-    text: Lorem ipsum
+  link: null
+  icon: null
+  text: Lorem ipsum
   modifier: [default]
-  state:
-    isLoading: false
-    isActive: false
-    isDisabled: false
+  isLoading: false
+  isActive: false
+  isDisabled: false
 variants:
   - name: block
     label: Block
@@ -19,9 +18,8 @@ variants:
   - name: link
     label: Link
     context:
-      property:
-        link:
-          url: '#'
+      link:
+        url: '#'
       modifier: [link]
   - name: toggle
     label: Toggle
@@ -31,17 +29,14 @@ variants:
     label: Icon
     context:
       button:
-        - property:
-            icon:
-              icon: apple
+        - icon:
+            icon: apple
           modifier: [default, icon]
-        - property:
-            icon:
-              icon: apple
+        - icon:
+            icon: apple
           modifier: [link, icon]
-        - property:
-            icon:
-              icon: apple
+        - icon:
+            icon: apple
           modifier: [primary, icon]
   - name: fill
     label: Fill
@@ -78,9 +73,6 @@ variants:
     label: State
     context:
       button:
-        - state:
-            isActive: true
-        - state:
-            isDisabled: true
-        - state:
-            isLoading: true
+        - isActive: true
+        - isDisabled: true
+        - isLoading: true

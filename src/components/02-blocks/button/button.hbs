@@ -1,27 +1,28 @@
-{{#if property.link}}
-  <a href="{{property.link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if state.isLoading}} is-loading{{/if}}{{#if state.isActive}} is-active{{/if}}"{{#if state.isDisabled}} disabled{{/if}}>
+{{#if link}}
+  <a href="{{link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isLoading}} is-loading{{/if}}{{#if isActive}} is-active{{/if}}"{{#if isDisabled}} disabled{{/if}}>
 {{else}}
-  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if state.isLoading}} is-loading{{/if}}{{#if state.isActive}} is-active{{/if}}"{{#if state.isDisabled}} disabled{{/if}}>
+  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isLoading}} is-loading{{/if}}{{#if isActive}} is-active{{/if}}"{{#if isDisabled}} disabled{{/if}}>
 {{/if}}
-{{#if state.isLoading}}
+{{#if isLoading}}
   <span class="btn_content">
 {{/if}}
-{{#if property.icon}}
+{{#if icon}}
   <!--TODO: Consider renaming this so there isn't a redundant icon -->
-  {{render '@icon' property.icon merge=true}}
+  {{render '@icon' icon merge=true}}
 {{else}}
-  {{property.text}}
+  {{text}}
 {{/if}}
-{{#if state.isLoading}}
+{{#if isLoading}}
   </span>
   <div class="btn_progress">
     {{render '@progress--circular-small'}}
   </div>
 {{/if}}
-{{#if property.link}}
+{{#if link}}
   </a>
 {{else}}
   </button>
 {{/if}}
 <!--TODO: Add variants to include focus states -->
 <!--TODO: Consolidate the button templates -->
+<!--TODO: Add hooks for adding classes specific to other patterns -->

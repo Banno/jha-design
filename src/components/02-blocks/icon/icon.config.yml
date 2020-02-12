@@ -2,18 +2,16 @@ name: icon
 label: Icon
 status: wip
 context:
-  property:
-    isPresentation: false
-    icon: apple
-    title: Lorem ipsum
+  isPresentation: false
+  icon: apple
+  title: Lorem ipsum
   modifier: null
   utility: null
 variants:
   - name: presentation
     label: Presentation
     context:
-      property:
-        isPresentation: true
+      isPresentation: true
   - name: xs
     label: Extra Small
     context:

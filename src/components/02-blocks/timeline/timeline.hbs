@@ -1,10 +1,10 @@
 <div class="timeline">
   {{#each item}}
     <div class="timeline_item">
-      <div class="timeline_item_date">{{property.date}}</div>
-      {{#each element.activity}}
+      <div class="timeline_item_date">{{date}}</div>
+      {{#each activity}}
         <div class="timeline_group">
-          <div class="{{#if element.type}}timeline_item_type{{else}}timeline_item_dot{{/if}}">
+          <div class="{{#if type}}timeline_item_type{{else}}timeline_item_dot{{/if}}">
           {{#if type}}
             {{render '@icon--sm' type.icon merge=true}}
           {{/if}}
