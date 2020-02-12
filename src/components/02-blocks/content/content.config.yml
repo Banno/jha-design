@@ -3,4 +3,11 @@ label: Content
 status: wip
 context:
   contentHeading: null
-  contentPush: null
+  contentPush: nullvariants:
+  - name: heading
+    label: Heading
+    context:
+      element:
+        heading:
+          slot: true
+      
