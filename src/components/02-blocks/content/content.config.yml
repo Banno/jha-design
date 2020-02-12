@@ -2,8 +2,14 @@ name: content
 label: Content
 status: wip
 context:
-  contentHeading: null
-  contentPush: nullvariants:
+  element:
+    push:
+      modifier: [lg]
+    pull: lg
+  thumbnail:
+    modifier: [lg]
+    utility: [float-left]
+variants:
   - name: heading
     label: Heading
     context:
