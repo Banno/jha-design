@@ -1,4 +1,4 @@
-<div class="thumbnail{{#each modifier}} thumbnail--{{.}}{{/each}}" style="background-image: url({{url}});" {{#if type.bgImg}}role="image" aria-label="{{property.url}}" {{/if}}>
+<div class="thumbnail{{#each modifier}} thumbnail--{{.}}{{/each}}{{#each utility}} u-{{.}}{{/each}}" style="background-image: url({{url}});" {{#if type.bgImg}}role="image" aria-label="{{property.url}}" {{/if}}>
   {{#unless bgImg}}
     <img src="{{property.url}}" alt="{{property.alt}}">
   {{/unless}}
