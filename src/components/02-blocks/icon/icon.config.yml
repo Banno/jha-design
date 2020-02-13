@@ -3,7 +3,7 @@ label: Icon
 status: wip
 context:
   isPresentation: false
-  icon: apple
+  source: apple
   title: Lorem ipsum
   modifier: null
   utility: null

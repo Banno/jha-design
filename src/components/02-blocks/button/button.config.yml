@@ -30,13 +30,13 @@ variants:
     context:
       button:
         - icon:
-            icon: apple
+            source: apple
           modifier: [default, icon]
         - icon:
-            icon: apple
+            source: apple
           modifier: [link, icon]
         - icon:
-            icon: apple
+            source: apple
           modifier: [primary, icon]
   - name: fill
     label: Fill

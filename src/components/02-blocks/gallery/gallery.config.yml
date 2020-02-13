@@ -12,7 +12,7 @@ context:
       title: Lorem ipsum dolor sit amet consectetur
       size: 252.6kb
       icon: 
-        icon: check
+        source: check
     - url: http://unsplash.it/1920/1080?random=5
     - url: http://unsplash.it/1920/1080?random=6
     - url: http://unsplash.it/1920/1080?random=7

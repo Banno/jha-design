@@ -13,8 +13,8 @@ context:
     modifier: null
     text: Lorem ipsum dolor
   button:
-    property:
-      icon: close
+    icon:
+      source: close
     modifier: [icon]
   content:
     modifier: null

@@ -2,10 +2,8 @@ name: search
 label: Search
 status: wip
 context:
-  element:
-    icon:
-      property:
-        icon: search
+  icon:
+    source: search
   modifier: null
 variants:
   - name: dark

@@ -28,7 +28,7 @@ variants:
           activity:
             - type:
                 icon:
-                  icon: message
+                  source: message
               time: 2:01 pm
               description: Lorem ipsum dolor sit amet consectetur.
               action:
@@ -36,14 +36,14 @@ variants:
                 url: '#'
             - type:
                 icon:
-                  icon: message
+                  source: message
               time: 1:32 pm
               description: created a new untitled ad.
         - date: Yesterday
           activity:
             - type:
                 icon:
-                  icon: person
+                  source: person
               time: 8:36 am
               description: Some additional information
               action:
