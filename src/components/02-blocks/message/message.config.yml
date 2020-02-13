@@ -3,13 +3,12 @@ label: Message
 status: wip
 context:
   modifier: null
-  property:
-    isFluidContainer: true
-    date: Jan. 28, 2020
-    heading:
-      avatar: null
-      title: Lorem ipsum dolor sit amet consectetur
-    content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quibusdam ducimus sunt!
+  isFluid: true
+  date: Jan. 28, 2020
+  heading:
+    avatar: null
+    title: Lorem ipsum dolor sit amet consectetur
+  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quibusdam ducimus sunt!
 variants:
   - name: note
     label: Note
@@ -19,27 +18,22 @@ variants:
     label: Avatar
     context:
       modifier: [note]
-      property:
-        heading:
-          avatar: true
+      heading:
+        avatar: true
   - name: non-fluid
     label: Non-fluid Container
     context:
-      property:
-        isFluidContainer: false
+      isFluid: false
   - name: conversation
     label: Conversation
     context:
       message:
-        - property:
-            heading:
-              avatar: true
-              title: Anon Anonymous
-        - property:
-            heading:
-              avatar: true
-              title: Anon Anonymous
-        - property:
-            heading:
-              avatar: true
-              title: Anon Anonymous
+        - heading:
+            avatar: true
+            title: Anon Anonymous
+        - heading:
+            avatar: true
+            title: Anon Anonymous
+        - heading:
+            avatar: true
+            title: Anon Anonymous

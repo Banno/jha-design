@@ -1,12 +1,27 @@
 <div class="list{{#each modifier}} list--{{.}}{{/each}}">
   {{#each item}}
-    <div class="list_item{{#each modifier}} list_item--{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
-      {{#>item-slot}}{{slot}}{{/item-slot}}
+    {{#if ../isLinks}}
+    <a href="{{url}}" class="list_item{{#each modifier}} list_item--{{.}}{{/each}}{{#if ../isSortable}} sortable{{/if}}{{#if isActive}} is-active{{/if}}">
+    {{else}}
+    <div class="list_item{{#each modifier}} list_item{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
+    {{/if}}
+    
+
+      {{#>itemSlot}}{{slot}}{{/itemSlot}}
+    
+    
+    {{#if ../isLinks}}
+    </a>
+    {{else}}
     </div>
+    {{/if}}
+    
+    
     {{#if divider}}
       <div class="list_divider"></div>
     {{/if}}
+  
+  
   {{/each}}
 </div>
-<!--TODO: Determine templates for inset and sortable -->
-<!--TODO: Allow for linked list items (<a> instead of <div>) -->
+<!--TODO: Consider refactoring templates -->

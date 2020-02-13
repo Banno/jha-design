@@ -2,42 +2,35 @@ name: progress
 label: Progress
 status: wip
 context:
-  property:
-    isCircular: true
-    value: null
-    helper: null
+  isCircular: true
+  value: null
+  helper: null
   modifier: null
 variants:
   - name: circular-inline
     label: Circular, Inline
     context:
-      property:
-        isCircular: true
+      isCircular: true
       modifier: [inline]
   - name: circular-center
     label: Circular, Center
     context:
-      property:
-        isCircular: true
+      isCircular: true
       modifier: [center]
   - name: circular-small
     label: Circular, Small
     context:
-      property:
-        isCircular: true
+      isCircular: true
       modifier: [sm]
   - name: linear
     context:
-      property:
-        isCircular: false
-        value: 60
+      isCircular: false
+      value: 60
   - name: linear-helper
     context:
-      property:
-        isCircular: false
-        value: 60
-        helper: true
+      isCircular: false
+      value: 60
+      helper: true
   - name: ie9
     context:
-      property:
-        value: 60
+      value: 60

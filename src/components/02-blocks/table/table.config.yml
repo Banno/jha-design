@@ -2,35 +2,48 @@ name: table
 label: Table
 status: wip
 context:
-  responsive: false
+  isResponsive: false
   modifier: null
   head:
-    - row:
-        - cell: Column 1
-        - cell: Column 2
-        - cell: Column 3
-        - cell: Column 4
-        - cell: Column 5
+    row:
+      col:
+        - cell: Column A
+        - cell: Column B
+        - cell: Column C
+        - cell: Column D
+        - cell: Column E
   body:
-    - row:
-        - col:
-            - cell: Cell 1A
-            - cell: Cell 2A
-            - cell: Cell 3A
-            - cell: Cell 4A
-            - cell: Cell 5A
-        - col:
-            - cell: Cell 1B
-            - cell: Cell 2B
-            - cell: Cell 3B
-            - cell: Cell 4B
-            - cell: Cell 5B
-        - col:
-            - cell: Cell 1C
-            - cell: Cell 2C
-            - cell: Cell 3C
-            - cell: Cell 4C
-            - cell: Cell 5C
+    row:
+      - col:
+          - cell: Cell A1
+          - cell: Cell B1
+          - cell: Cell C1
+          - cell: Cell D1
+          - cell: Cell E1
+      - col:
+          - cell: Cell A2
+          - cell: Cell B2
+          - cell: Cell C2
+          - cell: Cell D2
+          - cell: Cell E2
+      - col:
+          - cell: Cell A3
+          - cell: Cell B3
+          - cell: Cell C3
+          - cell: Cell D3
+          - cell: Cell E3
+      - col:
+          - cell: Cell A4
+          - cell: Cell B4
+          - cell: Cell C4
+          - cell: Cell D4
+          - cell: Cell E4
+      - col:
+          - cell: Cell A5
+          - cell: Cell B5
+          - cell: Cell C5
+          - cell: Cell D5
+          - cell: Cell E5
 variants:
   - name: sm
     label: Small
@@ -55,68 +68,78 @@ variants:
   - name: responsive
     label: Responsive
     context:
-      responsive: true
+      isResponsive: true
   - name: muted
     label: Muted
     context:
-      head:
-        - row:
-            - cell: Column 1
-            - cell: Column 2
-            - cell: Column 3
-            - cell: Column 4
-            - cell: Column 5
       body:
-        - row:
-            - col:
-                - cell: Cell 1A
-                - cell: Cell 2A
-                - cell: Cell 3A
-                - cell: Cell 4A
-                - cell: Cell 5A
-            - col:
-                - cell: Cell 1B
-                - cell: Cell 2B
-                - cell: Cell 3B
-                - cell: Cell 4B
-                - cell: Cell 5B
-              modifier: [muted]
-            - col:
-                - cell: Cell 1C
-                - cell: Cell 2C
-                - cell: Cell 3C
-                - cell: Cell 4C
-                - cell: Cell 5C
-              modifier: [muted]
+        row:
+          - col:
+              - cell: Cell A1
+              - cell: Cell B1
+              - cell: Cell C1
+              - cell: Cell D1
+              - cell: Cell E1
+          - col:
+              - cell: Cell A2
+              - cell: Cell B2
+              - cell: Cell C2
+              - cell: Cell D2
+              - cell: Cell E2
+          - col:
+              - cell: Cell A3
+              - cell: Cell B3
+              - cell: Cell C3
+              - cell: Cell D3
+              - cell: Cell E3
+            modifier: [muted]
+          - col:
+              - cell: Cell A4
+              - cell: Cell B4
+              - cell: Cell C4
+              - cell: Cell D4
+              - cell: Cell E4
+            modifier: [muted]
+          - col:
+              - cell: Cell A5
+              - cell: Cell B5
+              - cell: Cell C5
+              - cell: Cell D5
+              - cell: Cell E5
+            modifier: [muted]
   - name: standout
     label: Standout
     context:
-      head:
-        - row:
-            - cell: Column 1
-            - cell: Column 2
-            - cell: Column 3
-            - cell: Column 4
-            - cell: Column 5
       body:
-        - row:
-            - col:
-                - cell: Cell 1A
-                - cell: Cell 2A
-                - cell: Cell 3A
-                - cell: Cell 4A
-                - cell: Cell 5A
-            - col:
-                - cell: Cell 1B
-                - cell: Cell 2B
-                - cell: Cell 3B
-                - cell: Cell 4B
-                - cell: Cell 5B
-              modifier: [standout]
-            - col:
-                - cell: Cell 1C
-                - cell: Cell 2C
-                - cell: Cell 3C
-                - cell: Cell 4C
-                - cell: Cell 5C
-              modifier: [standout]
+        row:
+          - col:
+              - cell: Cell A1
+              - cell: Cell B1
+              - cell: Cell C1
+              - cell: Cell D1
+              - cell: Cell E1
+          - col:
+              - cell: Cell A2
+              - cell: Cell B2
+              - cell: Cell C2
+              - cell: Cell D2
+              - cell: Cell E2
+            modifier: [standout]
+          - col:
+              - cell: Cell A3
+              - cell: Cell B3
+              - cell: Cell C3
+              - cell: Cell D3
+              - cell: Cell E3
+          - col:
+              - cell: Cell A4
+              - cell: Cell B4
+              - cell: Cell C4
+              - cell: Cell D4
+              - cell: Cell E4
+          - col:
+              - cell: Cell A5
+              - cell: Cell B5
+              - cell: Cell C5
+              - cell: Cell D5
+              - cell: Cell E5

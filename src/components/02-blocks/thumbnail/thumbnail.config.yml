@@ -2,12 +2,10 @@ name: thumbnail
 label: Thumbnail
 status: wip
 context:
-  property:
-    url: http://unsplash.it/900/900?random
-    alt: Alternative text
+  url: http://unsplash.it/900/900?random
+  alt: Alternative text
+  isBackground: false
   modifier: null
-  type:
-    bgImg: false
 variants:
   - name: xs
     label: Extra Small
@@ -29,8 +27,7 @@ variants:
     label: Extra Large
     context:
       modifier: [xl]
-  - name: inline
+  - name: bg-img
     label: Background Image
     context:
-      type:
-        bgImg: true
+      bgImg: true

@@ -3,14 +3,23 @@ label: List
 status: wip
 context:
   modifier: null
+  isLinks: true
+  isSortable: false
   item:
     - modifier: null
+      url: '#'
       slot: Item one
     - modifier: null
+      url: '#'
       slot: Item two
     - modifier: null
+      url: '#'
       slot: Item three
 variants:
+  - name: non-link
+    label: Non-Linked
+    context:
+      isLinks: false
   - name: borderless
     label: Borderless
     context:
@@ -46,6 +55,35 @@ variants:
           slot: Item two
         - modifier: null
           slot: Item three
+  - name: item-inset
+    label: List Item, Inset
+    context:
+      item:
+        - modifier: [inset]
+          icon:
+            source: dashboard
+          content: Dashboard
+        - modifier: [inset]
+          icon:
+            source: wallet
+          content: Accounts
+  - name: item-sortable
+    label: List Item, Sortable
+    context:
+      isSortable: true
+      item:
+        - modifier: [sortable]
+          icon:
+            source: grip
+          content: 1
+        - modifier: [sortable]
+          icon:
+            source: grip
+          content: 2
+        - modifier: [sortable]
+          icon:
+            source: grip
+          content: 3
   - name: divider
     label: Divider
     context:

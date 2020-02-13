@@ -1,29 +1,25 @@
-{{#if responsive}}
+{{#if isResponsive}}
   <div class="table-responsive">
 {{/if}}
 <table class="table{{#each modifier}} table--{{.}}{{/each}}">
   <thead>
     <tr>
-      {{#each head}}
-        {{#each row}}
-          <th>{{cell}}</th>
-        {{/each}}
+      {{#each head.row.col}}
+        <th>
+          {{cell}}</th>
       {{/each}}
     </tr>
   </thead>
   <tbody>
-    {{#each body}}
-      {{#each row}}
-        <tr class="table-row{{#each modifier}} table-row--{{.}}{{/each}}">
-          {{#each col}}
-            <td data-label="">{{cell}}</td>
-          {{/each}}
-        </tr>
-      {{/each}}
+    {{#each body.row}}
+      <tr class="table-row{{#each modifier}} table-row--{{.}}{{/each}}">
+        {{#each col}}
+          <td data-label="{{#with (lookup @root.head.row.col @index)}}{{cell}}{{/with}}">{{cell}}</td>
+        {{/each}}
+      </tr>
     {{/each}}
   </tbody>
 </table>
-{{#if responsive}}
+{{#if isResponsive}}
   </div>
 {{/if}}
-<!--TODO: Need to figure out stacked horizontal table templating -->

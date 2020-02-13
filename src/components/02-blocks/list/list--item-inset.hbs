@@ -1,0 +1,8 @@
+{{#>@list}}
+  {{#*inline 'itemSlot'}}
+    <div class="list_item_action">
+      {{render '@icon' icon merge=true}}
+    </div>
+    <div class="list_item_content">{{content}}</div>
+  {{/inline}}
+{{/@list}}

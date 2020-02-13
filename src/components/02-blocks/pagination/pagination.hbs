@@ -1,10 +1,10 @@
 <div class="pagination" role="menubar" aria-label="Pagination">
   {{#each item}}
-    <button type="button" class="pagination_item{{#if state.isActive}} is-active{{/if}}" {{#if state.disabled}} disabled{{/if}}>
-      {{#if element.icon}}
-        {{render '@icon' element.icon merge=true}}
+    <button type="button" class="pagination_item{{#if isActive}} is-active{{/if}}" {{#if disabled}} disabled{{/if}}>
+      {{#if icon}}
+        {{render '@icon' icon merge=true}}
       {{else}}  
-        {{property.number}}
+        {{number}}
       {{/if}}
     </button>
   {{/each}}
