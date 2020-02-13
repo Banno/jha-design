@@ -1,3 +1,5 @@
 name: jha-content
 context:
   styles: '/styles/jha.css'
+variants:
+  - name: dark
