@@ -12,18 +12,22 @@ context:
       slot: Item three
 variants:
   - name: borderless
+    label: Borderless
     context:
       modifier: [borderless]
   - name: sm
+    label: Small
     context:
       modifier: [sm]
   - name: xs
+    label: Extra Small
     context:
       modifier: [xs]
   - name: inset
     context:
       modifier: [inset]
   - name: item-hover
+    label: List Item, Hover
     context:
       item:
         - modifier: [hover]
@@ -33,6 +37,7 @@ variants:
         - modifier: [hover]
           slot: Item three
   - name: item-muted
+    label: List Item, Muted
     context:
       item:
         - modifier: null
@@ -42,6 +47,7 @@ variants:
         - modifier: null
           slot: Item three
   - name: divider
+    label: Divider
     context:
       modifier: [borderless]
       item:

@@ -33,24 +33,31 @@ context:
             - cell: Cell 5C
 variants:
   - name: sm
+    label: Small
     context:
       modifier: [sm]
   - name: bordered
+    label: Bordered
     context:
       modifier: [bordered]
   - name: align-left
+    label: Left-Aligned
     context:
       modifier: [align-left]
   - name: stacked
+    label: Stacked
     context:
       modifier: [stacked]
   - name: stacked-horizontal
+    label: Stacked, Horizontal
     context:
       modifier: [stacked-horizontal]
   - name: responsive
+    label: Responsive
     context:
       responsive: true
   - name: muted
+    label: Muted
     context:
       head:
         - row:
@@ -82,6 +89,7 @@ variants:
                 - cell: Cell 5C
               modifier: [muted]
   - name: standout
+    label: Standout
     context:
       head:
         - row:

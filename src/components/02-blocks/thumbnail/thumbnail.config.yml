@@ -10,21 +10,27 @@ context:
     bgImg: false
 variants:
   - name: xs
+    label: Extra Small
     context:
       modifier: [xs]
   - name: sm
+    label: Small
     context:
       modifier: [sm]
   - name: md
+    label: Medium
     context:
       modifier: [md]
   - name: lg
+    label: Large
     context:
       modifier: [lg]
   - name: xl
+    label: Extra Large
     context:
       modifier: [xl]
   - name: inline
+    label: Background Image
     context:
       type:
         bgImg: true

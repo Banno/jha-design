@@ -13,19 +13,19 @@ variants:
     context:
       isPresentation: true
   - name: xs
-    label: Extra Small
+    label: Size, Extra Small
     context:
       modifier: [xs]
   - name: sm
-    label: Small
+    label: Size, Small
     context:
       modifier: [sm]
   - name: lg
-    label: Large
+    label: Size, Large
     context:
       modifier: [lg]
   - name: xl
-    label: Extra Large
+    label: Size, Extra Large
     context:
       modifier: [xl]
   - name: fill
