@@ -10,5 +10,6 @@ variants:
     context:
       modifier: [dark]
   - name: light
+    preview: '@jha-content--dark'
     context:
       modifier: [light]
