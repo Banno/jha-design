@@ -28,7 +28,31 @@ variants:
     label: Size, Extra Large
     context:
       modifier: [xl]
-  - name: fill
-    label: Fill Color
+  - name: primary
+    label: Color, Primary
+    context:
+      utility: [fill-primary]
+  - name: success
+    label: Color, Success
+    context:
+      utility: [fill-success]
+  - name: Danger
+    label: Color, Danger
     context:
       utility: [fill-danger]
+  - name: Base
+    label: Color, Base
+    context:
+      utility: [fill-base]
+  - name: Light
+    label: Color, Light
+    context:
+      utility: [fill-light]
+  - name: Muted
+    label: Color, Muted
+    context:
+      utility: [fill-muted]
+  - name: Neutral
+    label: Color, Neutral
+    context:
+      utility: [fill-neutral]
