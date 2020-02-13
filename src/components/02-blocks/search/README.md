@@ -1,19 +1,21 @@
 # Search
 
+## Block
+
+`.search`
+
 ## Elements
 
-| Name           | Description |
-| -------------- | ----------- |
-| `search_bar`   |             |
-| `search_icon`  |             |
-| `search_input` |             |
-
-
+| Class           | Requirement | Description                                                 |
+| --------------- | ----------- | ----------------------------------------------------------- |
+| `.search_bar`   | Required    | Groups the `.search_icon` and `.search_input` into one unit |
+| `.search_icon`  | Required    | Adds an icon                                                |
+| `.search_input` | Required    | Adds the `.search` input field                              |
 
 ## Modifiers
 
-| Name            | Description                                            |
-| --------------- | ------------------------------------------------------ |
-| `search--dark`  | `search--dark` can be used against the body background |
-| `search--light` | `search--light` should be used in `nav--tab-bar`  |
+| Name             | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| `.search--dark`  | Styles the `.search_bar` for use on lighter-colored backgrounds |
+| `.search--light` | Styles the `.search_bar` for use on darker-colored backgrounds |
 

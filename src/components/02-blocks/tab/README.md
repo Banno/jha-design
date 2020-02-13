@@ -1,14 +1,18 @@
 # Tab
 
+## Block
+
+`.tabs`
+
 ## Elements
 
-| Name       | Description |
-| ---------- | ----------- |
-| `tab_item` |             |
+| Class       | Requirement | Description       |
+| ----------- | ----------- | ----------------- |
+| `.tab_item` | Required    | Creates a new tab |
 
 ## States
 
-| Name        | Description |
-| ----------- | ----------- |
-| `is-active` |             |
+| Class                 | Description                                                  |
+| --------------------- | ------------------------------------------------------------ |
+| `.tab_item.is-active` | Styles a .`tab_item` to indicate which one is currently active |
 

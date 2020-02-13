@@ -1,27 +1,27 @@
 # Message
 
+## Block
+
+`.message`
+
 ## Elements
 
-| Class             | Requirement | Description                                                  |
-| ----------------- | ----------- | ------------------------------------------------------------ |
-| `message_inner`   |             | Contains the guts of your message                            |
-| `message_date`    |             |                                                              |
-| `message_heading` |             | The header should include an avatar and the sender’s name at a `message_title`. |
-| `message_title`   |             |                                                              |
+| Class              | Requirement | Description                                |
+| ------------------ | ----------- | ------------------------------------------ |
+| `.message_inner`   | Required    | Contains the content of the message        |
+| `.message_heading` | Required    | Contains an `.avatar` and `.message_title` |
+| `.message_title`   | Required    | Contains the sender's name                 |
+| `.message_date`    | Required    | Contains the post date of the `.message`   |
 
 ## Modifiers
 
-| Class           | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| `message--note` | The note modifier changes the appearance of the message to differentiate it from others. |
+| Class            | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| `.message--note` | Changes the appearance of the `.message` to differentiate it from others |
 
-## Properties
+## Helpers
 
-| Property                  | Type    | Description                                                  |
-| ------------------------- | ------- | ------------------------------------------------------------ |
-| `isFluidContainer`        | boolean | The `fluid-container` is used to provide consistent spacing. In some instances you may use `.container` instead. |
-| `property.heading.avatar` | object  |                                                              |
-| `property.date`           | string  |                                                              |
-| `property.heading.title`  | string  |                                                              |
-| `property.content`        | string  |                                                              |
+| Class                      | Description                 |
+| -------------------------- | --------------------------- |
+| `.message.fluid-container` | Provides consistent spacing |
 
