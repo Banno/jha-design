@@ -1,6 +1,6 @@
 name: progress
 label: Progress
-status: wip
+status: review
 context:
   isCircular: true
   value: null

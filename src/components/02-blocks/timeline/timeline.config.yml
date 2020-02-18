@@ -1,6 +1,6 @@
 name: timeline
 label: Timeline
-status: wip
+status: review
 context:
   item:
     - date: Today

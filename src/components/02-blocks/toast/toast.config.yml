@@ -1,6 +1,6 @@
 name: toast
 label: Toast
-status: wip
+status: review
 context:
   property:
     toastSlot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cum ex labore!

@@ -1,6 +1,6 @@
 name: tooltip
 label: Tooltip
-status: wip
+status: review
 context:
   property:
     label: Lorem ipsum dolor

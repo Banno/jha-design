@@ -1,6 +1,6 @@
 name: table
 label: Table
-status: wip
+status: review
 context:
   isResponsive: false
   modifier: null

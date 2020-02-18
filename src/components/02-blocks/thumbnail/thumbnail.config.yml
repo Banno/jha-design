@@ -1,6 +1,6 @@
 name: thumbnail
 label: Thumbnail
-status: wip
+status: review
 context:
   url: http://unsplash.it/900/900?random
   alt: Alternative text

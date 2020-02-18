@@ -1,6 +1,6 @@
 name: tab
 label: Tab
-status: wip
+status: review
 context:
   item:
     - text: First

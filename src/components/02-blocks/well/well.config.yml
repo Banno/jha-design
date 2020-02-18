@@ -1,6 +1,6 @@
 name: well
 label: Well
-status: wip
+status: review
 context:
   property:
     slot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur ducimus vel!

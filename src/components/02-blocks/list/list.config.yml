@@ -1,6 +1,6 @@
 name: list
 label: List
-status: wip
+status: review
 context:
   modifier: null
   isLinks: true

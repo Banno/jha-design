@@ -1,6 +1,6 @@
 name: icon
 label: Icon
-status: wip
+status: review
 context:
   isPresentation: false
   source: apple

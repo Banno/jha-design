@@ -1,6 +1,6 @@
 name: message
 label: Message
-status: wip
+status: review
 context:
   modifier: null
   isFluid: true

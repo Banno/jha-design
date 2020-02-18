@@ -1,6 +1,6 @@
 name: search
 label: Search
-status: wip
+status: review
 context:
   icon:
     source: search

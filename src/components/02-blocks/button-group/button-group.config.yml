@@ -1,6 +1,6 @@
 name: button-group
 label: Button group
-status: wip
+status: review
 context:
   button: [true, true, true]
   modifier: null

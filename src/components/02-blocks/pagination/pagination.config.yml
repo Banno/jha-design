@@ -1,6 +1,6 @@
 name: pagination
 label: Pagination
-status: wip
+status: review
 context:
   item:
     - icon:

@@ -1,6 +1,6 @@
 name: help-launcher
 label: Help launcher
-status: wip
+status: review
 context:
   property:
     url: '#'
