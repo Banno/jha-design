@@ -4,7 +4,9 @@ status: wip
 context:
   isOpen: true
   toggle:
-    modifier: null
+    modifier: [default]
+    class: [dropdown_toggle, dropdown_toggle--indicator]
+    text: Action
   menu:
     modifier: null
     title: Lorem ipsum dolor
@@ -22,8 +24,3 @@ context:
         url: '#'
       - text: Option 3
         url: '#'
-variants:
-  - name: toggle-indicator
-    context:
-      toggle:
-        modifier: [indicator]
