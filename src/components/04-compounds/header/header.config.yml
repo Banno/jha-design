@@ -1,0 +1,10 @@
+name: header
+layout: Header
+context:
+  brand:
+    source: devices
+  dropdownToggle:
+    source: arrow-drop-down
+    modifier: [sm]
+  appSwitcher:
+    source: apps

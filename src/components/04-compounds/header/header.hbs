@@ -3,27 +3,21 @@
     <div class="nav_inner">
       <div class="nav_item">
         <a href="#" class="nav_item_link brand">
-          <svg class="icon" role="presentation">
-            <use xlink:href="#devices"></use>
-          </svg>
+          {{render '@icon' brand}}
           App <span class="brand_product">title</span>
         </a>
       </div>
       <div class="nav_item nav_item--center">
         <a href="#" class="nav_item_link dropdown_toggle" id="switchInstitution">
           Your FI
-          <svg class="icon icon--sm" role="presentation">
-            <use xlink:href="#arrow-drop-down"></use>
-          </svg>
+          {{render '@icon' dropdownToggle}}
         </a>
       </div>
       <div class="nav_group">
         <div class="nav_item dropdown">
           <a href="#" class="nav_item_link nav_item_link--light dropdown_toggle dropdown_toggle--indicator">
             <span class="u-sr-only">Apps</span>
-            <svg class="icon" role="presentation">
-              <use xlink:href="#apps"></use>
-            </svg>
+            {{render '@icon' appSwitcher}}
           </a>
           <div class="dropdown_menu dropdown_menu--lg dropdown_menu--no-spacing dropdown_menu--right">
             <div class="app-list u-m-b">

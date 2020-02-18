@@ -1,13 +1,49 @@
 name: sample
+status: wip
 preview: null
 context:
   theme:
     color: '#8d99a0'
+  apps:
+    modifier: [link, icon]
+    utility: [visible@mobile]
+    icon:
+      source: apps
+    link:
+      url: '#'
   rightNow:
     modifier: [wide]
     header:
       title: Right now
       subTitle: Last 5 minutes
+    loggedInUsers:
+      modifier: [center]
+      icon:
+        source: person
+        utility: [fill-neutral]
+      subtitle: Logged in users
+      value: 5
+    signUps:
+      modifier: [center]
+      icon:
+        source: person-add
+        utility: [fill-neutral]
+      subtitle: Sign ups today
+      value: 0
+    userLogins:
+      modifier: [center]
+      icon:
+        source: today
+        utility: [fill-neutral]
+      subtitle: User logins today
+      value: 322
+    averageSession:
+      modifier: [center]
+      icon:
+        source: schedule
+        utility: [fill-neutral]
+      subtitle: Average session
+      value: 2m
   userLookup:
     modifier: [wide]
     header:
@@ -33,6 +69,57 @@ context:
     header:
       title: Usage
       subTitle: Last 30 days
+    activeUsers:
+      value: 638
+      comparison:
+        value: 671
+        icon:
+          modifier: [sm]
+          source: arrow-drop-up
+          utility: [fill-success]
+    retention:
+      value: 93.3%
+      comparison:
+        value: 93.1%
+        icon:
+          modifier: [sm]
+          source: arrow-drop-up
+          utility: [fill-success]
+    signUps:
+      value: 24
+      comparison:
+        value: 27
+        icon:
+          modifier: [sm]
+          source: arrow-drop-down
+          utility: [fill-danger]
+    platformUsage:
+      modifier: [borderless]
+      item:
+        - modifier: [inset]
+          icon:
+            source: android
+            utility: [fill-neutral]
+          progress:
+            type: linear
+            value: 64
+            helper: true
+        - modifier: [inset]
+          icon:
+            source: apple
+            utility: [fill-neutral]
+          progress:
+            type: linear
+            value: 33
+            helper: true
+        - modifier: [inset]
+          icon:
+            source: windows
+            utility: [fill-neutral]
+          progress:
+            type: linear
+            value: 2
+            helper: true
     footer:
       button:
         text: More
@@ -85,6 +172,13 @@ context:
       button:
         text: More
         modifier: [toggle, align-left]
+  sampleGrid:
+    item:
+      - breakpoint:
+          col: 6
+          viewport: xs
+        
+
 variants:
   - name: blue
     context:
