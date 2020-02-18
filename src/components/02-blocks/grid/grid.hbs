@@ -1,0 +1,6 @@
+<div class="grid{{#each modifier}} grid--{{.}}{{/each}}">
+  <div class="{{#each breakpoint}}grid_{{col}}@{{viewport}} {{/each}}">
+    {{#>gridContent}}{{/gridContent}}
+  </div>
+</div>
+<!--TODO: Need to figure out how to add multiple column definitions -->

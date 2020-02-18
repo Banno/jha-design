@@ -1,0 +1,14 @@
+name: grid-base
+label: Grid
+status: wip
+context:
+  modifier: null
+  item:
+    - breakpoint:
+        - col: 6
+          viewport: xs
+    - breakpoint:
+        - col: 6
+          viewport: xs
+variants:
+  - name: test
