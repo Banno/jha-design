@@ -1,0 +1,13 @@
+<div class="stat{{#each modifier}} stat--{{.}}{{/each}}">
+  {{#if icon}}{{render '@icon' icon merge=true}}{{/if}}
+  {{#if subtitle}}
+    <div class="sub-title">{{subtitle}}</div>
+  {{/if}}
+  <span class="stat_value">{{value}}</span>
+  {{#if comparison}}
+    <span class="stat_comparison">
+      {{comparison.value}}
+      {{render '@icon' comparison.icon merge=true}}
+    </span>
+  {{/if}}
+</div>

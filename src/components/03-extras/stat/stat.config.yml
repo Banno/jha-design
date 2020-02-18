@@ -1,0 +1,10 @@
+name: stat
+label: Stat
+status: wip
+context:
+  modifier: null
+  icon:
+    source: person
+  subtitle: Lorem ipsum dolor
+  value: 10
+  comparison: null
