@@ -1,6 +1,5 @@
 name: date
 label: Date
-tags: [JHA Design]
 status: review
 context:
   header: Jan

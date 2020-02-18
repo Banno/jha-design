@@ -1,7 +1,6 @@
 name: avatar
 label: Avatar
 status: review
-tags: [JHA Design]
 context:
   property:
     img:

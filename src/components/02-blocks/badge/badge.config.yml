@@ -1,6 +1,5 @@
 name: badge
 label: Badge
-tags: [JHA Design]
 status: review
 context:
   label: 12

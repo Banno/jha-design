@@ -1,7 +1,6 @@
 name: button
 label: Buttons
 status: wip
-tags: [JHA Design]
 context:
   link: null
   icon: null
