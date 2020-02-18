@@ -1,4 +1,7 @@
+<!--TODO: Determine better property to turn on/off outer div -->
+{{#if block}}
 <div class="content">
+{{/if}}
   <!--TODO: Need to figure out conditional header markup -->
   {{#if heading}}
   <header class="content_heading">
@@ -11,5 +14,6 @@
   <div class="content_push{{#each push.modifier}} content_push--{{.}}{{/each}}{{#if pull}} content_pull@{{pull}}{{/if}}">
       {{#>pushSlot}}{{/pushSlot}}
   </div>
-
+{{#if block}}
 </div>
+{{/if}}
