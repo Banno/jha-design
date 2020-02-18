@@ -7,6 +7,13 @@ context:
     modifier: [left, sm]
   header:
     title: Lorem ipsum dolor
+    action:
+      modifier: [icon]
+      class: [drawer_close]
+      icon:
+        modifier: [sm]
+        source: close
+        utility: [fill-muted]
   content:
     slot: null
   footer: null
