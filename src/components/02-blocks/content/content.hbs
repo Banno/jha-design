@@ -1,10 +1,10 @@
 <div class="content">
   <!--TODO: Need to figure out conditional header markup -->
-  {{#unless test}}
+  {{#if heading}}
   <header class="content_heading">
-      {{#>headingSlot}}{{test}}{{/headingSlot}}
+      {{#>headingSlot}}{{/headingSlot}}
   </header>
-  {{/unless}}
+  {{/if}}
 
   {{#>mediaSlot}}{{/mediaSlot}}
   
