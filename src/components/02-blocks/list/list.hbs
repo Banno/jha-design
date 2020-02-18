@@ -3,7 +3,7 @@
     {{#if ../isLinks}}
     <a href="{{url}}" class="list_item{{#each modifier}} list_item--{{.}}{{/each}}{{#if ../isSortable}} sortable{{/if}}{{#if isActive}} is-active{{/if}}">
     {{else}}
-    <div class="list_item{{#each modifier}} list_item{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
+    <div class="list_item{{#each modifier}} list_item--{{.}}{{/each}}{{#if isActive}} is-active{{/if}}">
     {{/if}}
     
 
