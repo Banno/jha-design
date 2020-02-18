@@ -2,15 +2,13 @@ name: avatar
 label: Avatar
 status: review
 context:
-  property:
-    img:
-      src: https://i.pravatar.cc/300
-      alt: Anon Anonymous
-  type: null
+  img:
+    src: https://i.pravatar.cc/300
+    alt: Anon Anonymous
+  isBgImg: false
   modifier: null
-  option:
-    tooltip: false
-    badge: false
+  tooltip: false
+  badge: false
 variants:
   - name: xs
     label: Extra small
@@ -47,18 +45,14 @@ variants:
   - name: badge
     label: Badge
     context:
-      option:
-        badge:
-          property:
-            img:
-              src: https://i.pravatar.cc/300
-              alt: Badge image
+      badge:
+        img:
+          src: https://i.pravatar.cc/300
+          alt: Badge image
   - name: background-image
     context:
-      type:
-        bgImg: true
+      isBgImg: true
   - name: tooltip
     context:
-      option:
-        tooltip:
-          modifier: [e]
+      tooltip:
+        modifier: [e]

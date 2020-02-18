@@ -8,7 +8,7 @@
 
   {{#>mediaSlot}}{{/mediaSlot}}
   
-  <div class="content_push{{#each element.push.modifier}} content_push--{{.}}{{/each}}{{#if element.pull}} content_pull@{{element.pull}}{{/if}}">
+  <div class="content_push{{#each push.modifier}} content_push--{{.}}{{/each}}{{#if pull}} content_pull@{{pull}}{{/if}}">
       {{#>pushSlot}}{{/pushSlot}}
   </div>
 

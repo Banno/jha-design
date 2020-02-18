@@ -2,9 +2,8 @@ name: tooltip
 label: Tooltip
 status: review
 context:
-  property:
-    label: Lorem ipsum dolor
-    text: Lorem ipsum dolor sit amet consectetur
+  label: Lorem ipsum dolor
+  text: Lorem ipsum dolor sit amet consectetur
   modifier: ['n']
 variants:
   - name: 'n'

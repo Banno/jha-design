@@ -10,14 +10,12 @@ variants:
       button:
         - modifier: [primary-outline]
         - modifier: [primary-outline]
-          state:
-            isActive: true
+          isActive: true
         - modifier: [primary-outline]
   - name: flex
     context:
       button:
         - true
-        - state:
-            isActive: true
+        - isActive: true
         - true
       modifier: [flex]

@@ -2,10 +2,11 @@ name: content
 label: Content
 status: wip
 context:
-  element:
-    push:
-      modifier: [lg]
-    pull: lg
+  block: true
+  push:
+    modifier: [lg]
+  pull: lg
+  heading: false
   thumbnail:
     modifier: [lg]
     utility: [float-left]
@@ -13,7 +14,4 @@ variants:
   - name: heading
     label: Heading
     context:
-      element:
-        heading:
-          slot: true
-      
+      heading: true

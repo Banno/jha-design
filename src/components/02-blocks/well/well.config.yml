@@ -2,8 +2,7 @@ name: well
 label: Well
 status: review
 context:
-  property:
-    slot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur ducimus vel!
+  slot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur ducimus vel!
   modifier: null
 variants:
   - name: lg

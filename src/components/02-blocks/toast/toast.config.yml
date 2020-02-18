@@ -2,10 +2,8 @@ name: toast
 label: Toast
 status: review
 context:
-  property:
-    toastSlot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cum ex labore!
-  state:
-    isVisible: true
+  toastSlot: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cum ex labore!
+  isVisible: true
   modifier: null
 variants:
   - name: danger
