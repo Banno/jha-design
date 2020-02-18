@@ -9,5 +9,63 @@ context:
     title: Lorem ipsum dolor
   content:
     slot: null
-  footer:
-    slot: Lorem ipsum dolor sit amet consectetur
+  footer: null
+variants:
+  - name: right
+    label: Right-Anchored
+    context:
+      inner:
+        modifier: [right, sm]
+  - name: large
+    label: Large
+    context:
+      inner:
+        modifier: [left, lg]
+  - name: header
+    label: Header
+    context:
+      header:
+        title: Contextual header
+        action:
+          modifier: [icon, link]
+          class: null
+          icon:
+            modifier: null
+            source: arrow-back
+            utility: null
+  - name: footer
+    label: Footer
+    context:
+      footer: true
+      list:
+        item:
+          - modifier: null
+            url: '#'
+            slot: Item one
+          - modifier: null
+            url: '#'
+            slot: Item two
+          - modifier: null
+            url: '#'
+            slot: Item three
+          - modifier: null
+            url: '#'
+            slot: Item four
+          - modifier: null
+            url: '#'
+            slot: Item five
+          - modifier: null
+            url: '#'
+            slot: Item six
+          - modifier: null
+            url: '#'
+            slot: Item seven
+          - modifier: null
+            url: '#'
+            slot: Item eight
+          - modifier: null
+            url: '#'
+            slot: Item nine
+          - modifier: null
+            url: '#'
+            slot: Item ten

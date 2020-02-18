@@ -1,0 +1,10 @@
+{{#>@drawer}}
+  {{#*inline 'contentSlot'}}
+    {{render '@list' list}}
+  {{/inline}}
+  {{#*inline 'footerSlot'}}
+  <div class="fluid-container">
+    {{render '@avatar'}}
+  </div>
+  {{/inline}}
+{{/@drawer}}
