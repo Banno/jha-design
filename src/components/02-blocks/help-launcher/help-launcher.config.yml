@@ -2,6 +2,5 @@ name: help-launcher
 label: Help launcher
 status: review
 context:
-  property:
-    url: '#'
-    text: Help
+  url: '#'
+  text: Help
