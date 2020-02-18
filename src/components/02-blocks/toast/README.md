@@ -1,21 +1,19 @@
 # Toast
 
+## Block
+
+`.toast`
+
 ## Modifiers
 
-| Name            | Description |
-| --------------- | ----------- |
-| `toast--danger` |             |
+| Class            | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| `.toast--danger` | Styles a `.toast` with the danger color to inform the user of system errors |
 
 ## States
 
 
-| Name         | Description |
-| ------------ | ----------- |
-| `is-visible` |             |
-
-## Slots
-
-| Name        | Description |
-| ----------- | ----------- |
-| `toastSlot` |             |
+| Class               | Description                                        |
+| ------------------- | -------------------------------------------------- |
+| `.toast.is-visible` | Styles the `.toast` to fade in and move into place |
 
