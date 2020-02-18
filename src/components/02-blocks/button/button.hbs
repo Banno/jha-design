@@ -1,7 +1,7 @@
 {{#if link}}
-  <a href="{{link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isLoading}} is-loading{{/if}}{{#if isActive}} is-active{{/if}}"{{#if isDisabled}} disabled{{/if}}>
+  <a href="{{link.url}}" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isLoading}} is-loading{{/if}}{{#if isActive}} is-active{{/if}}{{#each class}} {{.}}{{/each}}"{{#if isDisabled}} disabled{{/if}}>
 {{else}}
-  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isLoading}} is-loading{{/if}}{{#if isActive}} is-active{{/if}}"{{#if isDisabled}} disabled{{/if}}>
+  <button type="button" class="btn{{#each modifier}} btn--{{.}}{{/each}}{{#if isLoading}} is-loading{{/if}}{{#if isActive}} is-active{{/if}}{{#each class}} {{.}}{{/each}}"{{#if isDisabled}} disabled{{/if}}>
 {{/if}}
 {{#if isLoading}}
   <span class="btn_content">
@@ -24,4 +24,4 @@
 {{/if}}
 <!--TODO: Add variants to include focus states -->
 <!--TODO: Consolidate the button templates -->
-<!--TODO: Add hooks for adding classes specific to other patterns -->
+<!--TODO: Consider better name for class for setting new component classes -->
