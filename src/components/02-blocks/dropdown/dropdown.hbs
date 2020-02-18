@@ -1,6 +1,5 @@
 <div class="dropdown{{#if isOpen}} is-open{{/if}}">
-  <!--TODO: Replace with button pattern -->
-  <button type="button" class="btn btn--default dropdown_toggle{{#each toggle.modifier}} dropdown_toggle--{{.}}{{/each}}">Action</button>
+  {{render '@button' toggle}}
   <div class="dropdown_menu{{#each menu.modifier}} dropdown_menu--{{.}}{{/each}}">
     {{#if menu.title}}
       <div class="dropdown_menu_title">{{menu.title}}</div>

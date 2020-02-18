@@ -1,12 +1,12 @@
 {{#>@toast}}
   {{#*inline 'toastSlot'}}
     <!--TODO: Replace with components -->
-    <svg class="icon u-float-left" role="presentation">
-      <use xlink:href="#battery-alert"></use>
-    </svg>
-    <div class="content_push content_push--sm">
-      <div class="title">Low Battery</div>
-      <div class="sub-title">Charge your device to keep using this app.</div>
-    </div>
+    {{render '@icon' icon merge=true}}
+    {{#>@content content}}
+      {{#*inline 'pushSlot'}}
+        <div class="title">Low Battery</div>
+        <div class="sub-title">Charge your device to keep using this app.</div>
+      {{/inline}}
+    {{/@content}}
   {{/inline}}
 {{/@toast}}
