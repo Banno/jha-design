@@ -5,9 +5,9 @@
       {{#each activity}}
         <div class="timeline_group">
           <div class="{{#if type}}timeline_item_type{{else}}timeline_item_dot{{/if}}">
-          {{#if type}}
-            {{render '@icon--sm' type.icon merge=true}}
-          {{/if}}
+            {{#if type}}
+              {{render '@icon--sm' type.icon merge=true}}
+            {{/if}}
           </div>
           <div class="timeline_item_group">
             <div class="activity_item">
