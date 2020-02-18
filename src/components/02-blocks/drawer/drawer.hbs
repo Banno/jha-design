@@ -13,14 +13,14 @@
     </header>
     <div class="drawer_content">
       <div class="fluid-container">
-        {{#>content-slot}}
+        {{#>contentSlot}}
           {{render '@list'}}
-        {{/content-slot}}
+          {{/contentSlot}}
       </div>
     </div>
     {{#if footer}}
       <div class="drawer_footer">
-        {{#>footer-slot}}{{footer.slot}}{{/footer-slot}}
+        {{#>footerSlot}}{{/footerSlot}}
       </div>
     {{/if}}
   </div>
