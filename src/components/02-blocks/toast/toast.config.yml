@@ -14,3 +14,10 @@ variants:
     label: Sample Content
     context:
       modifier: [danger]
+      icon:
+        source: battery-alert
+        utility: [float-left]
+      content:
+        heading: false
+        push:
+          modifier: [sm]
