@@ -1,7 +1,6 @@
 <div class="gallery grid grid--no-gutter">
   {{#each item}}
-    <!--TODO: Determine how to patternize grid structure -->
-    <div class="grid_6@xs grid_4@sm grid_3@md">
+    <div class="{{#each grid}}grid_{{col}}@{{breakpoint}} {{/each}}">
       <div class="gallery_item{{#if isSelected}} is-selected{{/if}}" {{#if ../image}} style="background-image: url({{url}});{{/if}}">
         <div class="gallery_item_details">
           <div class="gallery_item_selected">
