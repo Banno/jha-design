@@ -19,36 +19,36 @@ fractal.components.set('statuses', {
   wip: {
     label: 'Work in progress',
     description:
-      'The pattern is in an experimental, active development phase. The pattern should not be implemented into production code.',
+      'The component is in an experimental, active development phase. The component should not be implemented into production code.',
     color: '#eb002b',
   },
   review: {
     label: 'Under review',
     description:
-      "The pattern's design, code or usage is being re-examined or further tested. The pattern is likely to either have changes or be deprecated in the near future.",
+      "The component's design, code or usage is being re-examined or further tested. The component is likely to either have changes or be deprecated in the near future.",
     color: '#cfb500',
   },
   ready: {
     label: 'Ready',
-    description: 'The pattern is ready to be implemented into production code.',
+    description: 'The component is ready to be implemented into production code.',
     color: '#a4d65e',
   },
   new: {
-    label: 'Ready, new',
+    label: 'New',
     description:
-      'The pattern is brand new to the library and ready to be implemented.',
+      'The component is brand new to the library and ready to be implemented.',
     color: '#0093b2',
   },
   updated: {
-    label: 'Ready, updated',
+    label: 'Updated',
     description:
-      'The existing pattern has undergone review, refinement and re-release and is ready to be implemented.',
+      'The existing component has undergone review, refinement and re-release and is ready to be implemented.',
     color: '#af1685',
   },
   deprecated: {
     label: 'Deprecated',
     description:
-      'The pattern has either been replaced by a new pattern or is no longer supported.',
+      'The component has either been replaced by a new component or is no longer supported.',
     color: '#666666',
   },
 });
