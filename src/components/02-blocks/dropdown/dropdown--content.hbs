@@ -1,0 +1,12 @@
+{{#>@dropdown}}
+  {{#*inline 'menuSlot'}}
+    <div class="current-user">
+      {{render '@avatar' avatar merge=true}}
+      <div class="u-overflow-hidden">
+        <div class="title">Sarah Flanders</div>
+        <div class="sub-title">sarah.flanders@your-fi.com</div>
+      </div>
+    </div>
+    {{render '@button' button merge=true}}
+  {{/inline}}
+{{/@dropdown}}

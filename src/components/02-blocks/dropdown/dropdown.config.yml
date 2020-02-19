@@ -23,4 +23,46 @@ context:
       - text: Option 2
         url: '#'
       - text: Option 3
-        url: '#'
+        url: '#'variants:
+  - name: content
+    label: Content
+    context:
+      menu:
+        modifier: [padding]
+      avatar:
+        modifier: [you, left]
+        img:
+          src: https://i.pravatar.cc/128
+          alt: Sarah Flanders
+      button:
+        modifier: [default, sm]
+        text: Sign Out
+  - name: divider
+    label: Divider
+    context:
+      menu:
+        title: Lorem ipsum
+        item:
+          - text: Option 1
+            url: '#'
+          - text: Option 2
+            url: '#'
+          - text: Option 3
+            url: '#'
+            divider: true
+          - text: Option 1
+            url: '#'
+          - text: Option 2
+            url: '#'
+          - text: Option 3
+            url: '#'
+  - name: title
+    label: Title
+    context:
+      menu:
+        title: Lorem ipsum
+        item:
+          - text: Item one
+            url: '#'
+          - text: Item two
+            url: '#'
