@@ -1,6 +1,6 @@
 name: dialog
 label: Dialog
-status: wip
+status: review
 context:
   modifier: [center@xs]
   isVisible: true
@@ -12,10 +12,13 @@ context:
   header:
     modifier: null
     text: Lorem ipsum dolor
-  button:
+  action:
     icon:
       source: close
+      modifier: [sm]
+      utility: [fill-muted]
     modifier: [icon]
+    class: [dialog_close]
   content:
     modifier: null
     slot: Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolore neque quia laboriosam voluptatibus, impedit accusantium exercitationem earum hic, aliquid rem excepturi suscipit praesentium dolor. In maiores delectus esse quo.
@@ -27,6 +30,7 @@ variants:
     context:
       inner:
         modifier: [lg]
+      footer: false
   - name: profile
     label: Profile
     context:
@@ -34,13 +38,21 @@ variants:
         modifier: [profile]
       footer: false
   - name: gallery
-    label: Gallery content
+    label: Gallery Content
     context:
       content:
+        modifier: [no-padding]
         gallery:
+          image: true
           item:
             - url: http://unsplash.it/1920/1080?random=1
+              grid:
+                - col: 6
+                  breakpoint: xs
             - url: http://unsplash.it/1920/1080?random=2
+              grid:
+                - col: 6
+                  breakpoint: xs
       footer: false
   - name: footer
     label: Footer

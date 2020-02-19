@@ -8,7 +8,7 @@
     <header class="card_header{{#each header.modifier}} card_header--{{.}}{{/each}}">
       {{#>headerSlot}}
         <div class="card_title">{{header.title}}</div>
-        {{#if action}}
+        {{#if header.action}}
           {{render '@button' header.action merge=true}}
         {{else}}
           <div class="card_sub-title">{{header.subTitle}}</div>
@@ -37,7 +37,7 @@
   </div>
   {{#if footer}}
     <footer class="card_footer">
-      {{render '@button' footer.button merge=true}}
+      {{render '@button' footer.action merge=true}}
     </footer>
   {{/if}}
 </section>

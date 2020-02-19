@@ -9,7 +9,7 @@ context:
     text: Action
   menu:
     modifier: null
-    title: Lorem ipsum dolor
+    title: null
     item:
       - text: Option 1
         url: '#'
@@ -17,13 +17,7 @@ context:
         url: '#'
       - text: Option 3
         url: '#'
-        divider: true
-      - text: Option 1
-        url: '#'
-      - text: Option 2
-        url: '#'
-      - text: Option 3
-        url: '#'variants:
+variants:
   - name: content
     label: Content
     context:

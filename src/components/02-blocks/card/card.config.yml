@@ -3,23 +3,14 @@ label: Card
 status: wip
 context:
   modifier: null
-  header:
-    title: Sample title
-    subTitle: Sample subtitle
-    modifier: null
-  action: null
+  header: false
   media: null
   content:
     modifier: null
-    #empty:
-    #  text: There are no scheduled messages.
-    #loading: true
-    error:
-      loadingImg: ":'("
-      text: Failed to get money movement stats.
-      retry:
-        text: Try again
-        url: '#'
+    empty:
+      text: There are no scheduled messages.
+    loading: false
+    
     container: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptates ex dolores praesentium fuga odio quis cumque laudantium, soluta reiciendis facere perferendis aut dolor alias, est dolore minima. Molestiae, voluptatem?
     footer: null
 variants:
@@ -33,23 +24,22 @@ variants:
   - name: reset
     context:
       modifier: [reset]
-  - name: summary
-    context:
-      modifier: [summary]
   - name: footer
     context:
       footer:
-        text: More
-        url: '#'
+        action:
+          modifier: [toggle, align-left]
+          text: More
+          url: '#'
   - name: media
     context:
       media:
         src: http://unsplash.it/1920/1080?random
-  - name: summary-media
+  - name: summary
     context:
       modifier: [summary]
-      media:
-        src: http://unsplash.it/1920/1080?random
+      media: true
+      header: false
   - name: content
   - name: error
     context:

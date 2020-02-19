@@ -4,6 +4,11 @@ status: review
 context:
   icon:
     source: search
+  field:
+    type: search
+    formControl: true
+    placeholder: Search
+    class: [search_input]
   modifier: null
 variants:
   - name: dark
