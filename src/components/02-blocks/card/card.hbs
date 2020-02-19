@@ -1,7 +1,7 @@
 <section class="card{{#each modifier}} card--{{.}}{{/each}}">
   {{#if media}}
     <div class="card_media">
-      <img src="{{media.src}}">
+      {{#>mediaSlot media}}{{/mediaSlot}}
     </div>
   {{/if}}
   {{#if header}}
@@ -17,22 +17,12 @@
     </header>
   {{/if}}
   <div class="card_content{{#each content.modifier}} card_content--{{.}}{{/each}}">
-    {{#if content.empty}}
-      <div class="card_empty">{{content.empty.text}}</div>
-    {{else if content.loading}}
+    {{#if content.loading}}
       <div class="card_content">
-      </div>
-    {{else if content.error}}
-      <!--TODO: Fix color of error link -->
-      <div class="error-loading">
-        <div class="error-loading_image">{{content.error.loadingImg}}</div>
-        <div>{{content.error.text}}</div>
-        <a href="{{content.error.retry.url}}" class="error-loading_retry">{{content.error.retry.text}}</a>
-      </div>
         {{render '@progress' progress merge=true}}
+      </div>      
     {{else}}
-    <!--TODO: Fix order of priority -->
-      {{#>container}}{{content.container}}{{/container}}
+      {{#>contentSlot content}}<div class="card_empty">{{empty.text}}</div>{{/contentSlot}}
     {{/if}}
   </div>
   {{#if footer}}
