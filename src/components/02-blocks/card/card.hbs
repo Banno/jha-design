@@ -9,9 +9,7 @@
       {{#>headerSlot}}
         <div class="card_title">{{header.title}}</div>
         {{#if action}}
-          <button type="button" class="btn btn--icon">
-            <svg class="icon icon--sm">...</svg>
-          </button>
+          {{render '@button' header.action merge=true}}
         {{else}}
           <div class="card_sub-title">{{header.subTitle}}</div>
         {{/if}}
@@ -23,7 +21,6 @@
       <div class="card_empty">{{content.empty.text}}</div>
     {{else if content.loading}}
       <div class="card_content">
-        <div class="progress-circular"></div>
       </div>
     {{else if content.error}}
       <!--TODO: Fix color of error link -->
@@ -32,6 +29,7 @@
         <div>{{content.error.text}}</div>
         <a href="{{content.error.retry.url}}" class="error-loading_retry">{{content.error.retry.text}}</a>
       </div>
+        {{render '@progress' progress merge=true}}
     {{else}}
     <!--TODO: Fix order of priority -->
       {{#>container}}{{content.container}}{{/container}}

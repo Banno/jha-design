@@ -4,12 +4,7 @@
 <div class="dialog{{#each modifier}} dialog--{{.}}{{/each}}{{#if isVisible}} is-visible{{/if}}">
   <div class="dialog_inner{{#each inner.modifier}} dialog_inner--{{.}}{{/each}}">
     <header class="dialog_header{{#each header.modifier}} dialog_header--{{.}}{{/each}}">
-      <!--TODO: Replace with button pattern -->
-      <button type="button" class="btn btn--icon dialog_close">
-        <svg class="icon icon--sm" role="image" title="Close">
-          <use xlink:href="#close"></use>
-        </svg>
-      </button>
+      {{render '@button' action merge=true}}
       <div class="dialog_title">{{header.text}}</div>
     </header>
     <div class="dialog_content{{#each content.modifier}} dialog_content--{{.}}{{/each}}">
