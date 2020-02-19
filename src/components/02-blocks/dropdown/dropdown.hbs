@@ -1,15 +1,17 @@
 <div class="dropdown{{#if isOpen}} is-open{{/if}}">
   {{render '@button' toggle}}
   <div class="dropdown_menu{{#each menu.modifier}} dropdown_menu--{{.}}{{/each}}">
-    {{#if menu.title}}
-      <div class="dropdown_menu_title">{{menu.title}}</div>
-    {{/if}}
-    <!--TODO: Add content slot -->
-    {{#each menu.item}}
-      <a href="{{url}}" class="dropdown_menu_item">{{text}}</a>
-      {{#if divider}}
-        <div class="dropdown_menu_divider"></div>
+    <!--TODO: Standardize content slot -->
+    {{#>menuSlot}}
+      {{#if menu.title}}
+        <div class="dropdown_menu_title">{{menu.title}}</div>
       {{/if}}
-    {{/each}}
+      {{#each menu.item}}
+        <a href="{{url}}" class="dropdown_menu_item">{{text}}</a>
+        {{#if divider}}
+          <div class="dropdown_menu_divider"></div>
+        {{/if}}
+      {{/each}}
+    {{/menuSlot}}
   </div>
 </div>
