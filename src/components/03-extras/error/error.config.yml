@@ -1,0 +1,9 @@
+name: error
+label: Error
+status: wip
+context:
+  loadingImg: ":'("
+  text: Failed to get money movement stats.
+  retry:
+    text: Try again
+    url: '#'
