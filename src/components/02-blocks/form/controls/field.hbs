@@ -1,1 +1,2 @@
-<input type="{{type}}" class="{{#if formControl}} form-control{{else}} field{{/if}}" placeholder="{{placeholder}}"{{#if required}} required{{/if}}>
+<input type="{{type}}" class="{{#if formControl}} form-control{{else}} field{{/if}}{{#each class}} {{.}}{{/each}}" placeholder="{{placeholder}}"{{#if required}} required{{/if}}>
+<!--TODO: Figure out better way for custom classes -->
