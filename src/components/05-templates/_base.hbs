@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="cleartype" content="on">
+  <title>{{page.title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="{{app.title}}">
+  <meta name="application-name" content="{{app.title}}">
+  <meta name="theme-color" content="{{theme.color}}">
+  <link rel="stylesheet" href="{{path styles}}">
+  <style>
+    :root {
+      --primaryAppColor: {{theme.color}};
+    }
+  </style>
+</head>
+
+<body>
+  {{#>body}}{{/body}}
+  <script src="{{path '/scripts/standalone.js'}}" async defer></script>
+  <!--TODO: What does standalone.js do? -->
+  <script src="{{path '/scripts/icons.js'}}" data-load-icons="{{path '/images/icons.svg'}}"></script>
+</body>
+
+</html>

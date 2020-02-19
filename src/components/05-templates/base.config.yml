@@ -1,0 +1,10 @@
+name: base
+status: wip
+context:
+  app:
+    title: JHA Design
+  page:
+    title: Sample Page
+  styles: '/styles/jha.css'
+  theme:
+    color: '#8d99a0'
