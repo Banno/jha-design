@@ -4,8 +4,8 @@
 */
 
 :root {
-  --primaryAppColor: $color-primary;
-  --primaryAppColorR: red($color-primary);
-  --primaryAppColorG: green($color-primary);
-  --primaryAppColorB: blue($color-primary);
+  --primaryAppColor: #{$color-primary};
+  --primaryAppColorR: #{red($color-primary)};
+  --primaryAppColorG: #{green($color-primary)};
+  --primaryAppColorB: #{blue($color-primary)};
 }
