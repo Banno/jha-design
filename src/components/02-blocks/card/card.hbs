@@ -6,7 +6,7 @@
   {{/if}}
   {{#if header}}
     <header class="card_header{{#each header.modifier}} card_header--{{.}}{{/each}}">
-      {{#>header-slot}}
+      {{#>headerSlot}}
         <div class="card_title">{{header.title}}</div>
         {{#if action}}
           <button type="button" class="btn btn--icon">
@@ -15,7 +15,7 @@
         {{else}}
           <div class="card_sub-title">{{header.subTitle}}</div>
         {{/if}}
-        {{/header-slot}}
+      {{/headerSlot}}
     </header>
   {{/if}}
   <div class="card_content{{#each content.modifier}} card_content--{{.}}{{/each}}">
