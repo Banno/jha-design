@@ -1,6 +1,6 @@
 name: gallery
 label: Gallery
-status: wip
+status: review
 context:
   image: true
   item:

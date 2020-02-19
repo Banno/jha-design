@@ -1,6 +1,6 @@
 name: dropdown
 label: Dropdown
-status: wip
+status: review
 context:
   isOpen: true
   toggle:
