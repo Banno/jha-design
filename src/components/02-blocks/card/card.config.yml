@@ -23,6 +23,10 @@ context:
     container: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptates ex dolores praesentium fuga odio quis cumque laudantium, soluta reiciendis facere perferendis aut dolor alias, est dolore minima. Molestiae, voluptatem?
     footer: null
 variants:
+  - name: loading
+    context:
+      content:
+        loading: true
   - name: wide
     context:
       modifier: [wide]
@@ -46,3 +50,15 @@ variants:
       modifier: [summary]
       media:
         src: http://unsplash.it/1920/1080?random
+  - name: content
+  - name: error
+    context:
+      header:
+        title: Lorem ipsum dolor
+        subTitle: Lorem ipsum dolor sit amet
+      error:
+        loadingImg: ":'("
+        text: Failed to get money movement stats.
+        retry:
+          text: Try later
+          url: '#'
