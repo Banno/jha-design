@@ -49,7 +49,7 @@
   height: auto;
   border-radius: 0;
   border: 0;
-  border-bottom: $border-base;
+  border-bottom: $form-input-border;
   padding-left: $unit-sm;
   padding-right: $unit-sm;
   text-transform: uppercase;
@@ -58,7 +58,7 @@
   &:active,
   &:focus,
   &.is-active {
-    border-bottom: $border-base;
+    border-bottom: $form-input-border;
   }
 }
 
@@ -90,7 +90,7 @@
   background-color: transparent;
   border-radius: 0;
   color: $text-color-dark;
-  border-bottom: $border-base;
+  border-bottom: $form-input-border;
   @include transition(border-bottom .2s $timing-function);
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -157,7 +157,7 @@ textarea.form-control {
   @include square(18px);
   line-height: 18px;
   text-align: center;
-  border: $border-base;
+  border: $form-input-border;
   background-color: #fff;
   background-size: 18px;
   background-position: center center;
@@ -177,7 +177,7 @@ textarea.form-control {
 
 .control--checkbox {
   .control_indicator {
-    border-radius: 2px;
+    border-radius: 4px;
   }
   input:checked ~ .control_indicator,
   input:indeterminate ~ .control_indicator {
@@ -262,7 +262,7 @@ textarea.form-control {
     bottom: 1px;
     left: 1px;
     right: 1px;
-    background-color: $color-gray-lighter;
+    background-color: $color-gray-light;
     border-radius: 13px;
     @include transition(background-color 0.3s $timing-function);
   }
@@ -274,7 +274,7 @@ textarea.form-control {
     height: 18px;
     background-color: #fff;
     border: none;
-    box-shadow: 0 1px 1px 0px rgba(0,0,0,.2);
+    box-shadow: 0 1px 1px 0px rgba(0,0,0,.1);
     border-radius: 100%;
     @include transition(all 0.3s $timing-function);
   }
@@ -289,10 +289,10 @@ textarea.form-control {
     @include translateX(30px);
   }
   .switch_checkbox:focus + &::after {
-    box-shadow: 0 0 0px 1px $color-gray-medium;
+    box-shadow: 0 0 0 8px rgba($color-gray-light, .5), 0 0 0 1px $color-primary;
   }
   .switch_checkbox:checked:focus + &::after {
-    box-shadow: 0 0 0px 1px lighten($color-green, 12%);
+    box-shadow: 0 0 0 8px rgba($color-green, .3);
   }
 }
 
@@ -334,7 +334,7 @@ textarea.form-control {
   line-height: $line-height-base;
   padding: 8px;
   background-color: #fff;
-  border-radius: $border-radius-base;
+  border-radius: $form-input-radius;
   @include transition(all .2s $timing-function);
   &:focus {
     outline: 0;
@@ -342,7 +342,8 @@ textarea.form-control {
     box-shadow: 0 0 0 2px rgba($color-primary, .2);
   }
   &.disabled,
-  &:disabled {
+  &:disabled,
+  &[disabled] {
     background-color: rgba($color-gray-lighter, .7);
     border-color: $color-gray-light;
     opacity: $btn-disabled-opacity;
@@ -393,7 +394,7 @@ textarea.form-control {
   font-weight: $btn-font-weight;
   font-size: $btn-font-size-base;
   line-height: $btn-line-height-base;
-  border-radius: $btn-border-radius-base;
+  border-radius: $form-input-radius;
   padding: $btn-padding-vertical 8px;
   padding-right: 12px + 18px; // margin + icon background size
   -webkit-padding-end: 12px + 18px;

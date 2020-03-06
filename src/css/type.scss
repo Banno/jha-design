@@ -53,6 +53,7 @@ h6, .h6 {
 .display-3,
 .display-4 {
   color: $display-color;
+  line-height: 1.1;
 }
 .display-1 {
   font-size: $display1-size;
@@ -105,7 +106,7 @@ ul, .ul {
   font-size: $font-size-base - 2;
   padding-top: 20px;
   padding-bottom: 8px;
-  background-color: #f5f6f8;
+  background-color: $color-gray-lighter;
   padding-left: $padding-unit;
 }
 .section-heading--sticky {
@@ -180,7 +181,6 @@ ul, .ul {
 }
 .text--primary {
   color: $color-primary;
-  color: var(--primaryAppColor, $color-primary);
 }
 .text--success {
   color: $color-success;
@@ -271,19 +271,29 @@ ul, .ul {
 }
 
 .stat_value {
-  font-size: 30px;
+  font-size: 34px;
   color: $text-color-dark;
   font-weight: 300;
+  letter-spacing: -2px;
   &:empty::before {
     content: '--';
   }
 }
+.stat_value--primary {
+  color: $color-primary;
+}
 .stat_comparison {
   font-size: $font-size-base + 1;
-  color: $text-color-muted;
+  color: $text-color-light;
   margin-left: 2px;
   white-space: nowrap;
   svg {
     margin-left: -5px;
   }
+}
+.stat_value,
+.amount,
+.stat_comparison,
+.progress-helper {
+  font-feature-settings: "dlig" 0, "numr" 0, "dnom" 0, "tnum" 0, "case" 0, "zero", "sups" 0, "subs" 0, "cpsp" 0, "salt" 0, "ss01" 0, "ss02" 0, "ss03" 0, "cv01", "cv02", "cv03" 0, "cv04", "cv05" 0, "cv06" 0, "cv07" 0, "cv08" 0, "cv09" 0, "cv10" 0, "cv11" 0, "calt", "liga", "kern";
 }

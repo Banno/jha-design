@@ -31,6 +31,8 @@
     background-color: $tooltip-background;
     border-radius: $border-radius-base;
     -webkit-font-rendering: subpixel-antialised;
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    backdrop-filter: blur(10px) saturate(150%);
   }
   &::before,
   &::after {

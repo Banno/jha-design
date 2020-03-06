@@ -74,7 +74,6 @@
 .dialog-backdrop--fill,
 .dialog_backdrop--fill {
   opacity: 0;
-  background-image: url($dialog-backdrop-fill-image);
   background-repeat: $dialog-backdrop-fill-repeat;
   background-size: $dialog-backdrop-fill-size;
   &.is-visible,
@@ -201,8 +200,8 @@
 // Header
 .dialog_header {
   position: relative;
-  border-top-left-radius: $dialog-radius - 1;
-  border-top-right-radius: $dialog-radius - 1;
+  border-top-left-radius: $dialog-radius;
+  border-top-right-radius: $dialog-radius;
   border-bottom: $border-lt;
   text-align: center;
   .search {
@@ -243,13 +242,7 @@
   right: $unit-sm;
   z-index: 1;
   @include transform(translateY(-(floor($btn-height-base / 2))));
-  opacity: 0.6;
   @include transition(opacity 0.3s $timing-function);
-  @media (hover) {
-    &:hover {
-      opacity: 1;
-    }
-  }
 }
 
 // Content

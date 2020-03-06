@@ -32,7 +32,7 @@
     opacity: $btn-disabled-opacity;
     cursor: default;
   }
-  &:not(.icon--btn) > .icon {
+  &:not(.btn--icon) > .icon {
     position: relative;
     top: -1px;
   }
@@ -40,7 +40,6 @@
 
 // Icon buttons - perfectly round and wide enough for just an icon
 .btn--icon {
-  border-radius: 50%;
   min-width: $btn-height-base;
   padding-left: floor($btn-padding-horizontal / 4);
   padding-right: floor($btn-padding-horizontal / 4);
@@ -59,17 +58,12 @@
 .btn--danger {
   @include button-color($btn-danger-background, $btn-danger-background, #fff, $btn-danger-background);
 }
-.btn--primary {
+.btn--primary,
+.btn--success {
   @include button-color($btn-primary-background, $btn-primary-background, #fff, $btn-primary-background);
 }
-.btn--success {
-  @include button-color($btn-success-background, $btn-success-background, #fff, $btn-success-background);
-}
-.btn--link {
-  @include button-color(transparent, transparent, $color-gray-medium);
-}
 .btn--neutral {
-  @include button-color($btn-neutral-background, $btn-neutral-border, $btn-text-color-base, $btn-neutral-background);
+  @include button-color($btn-neutral-background, $btn-neutral-border, $btn-link-color, $btn-neutral-background);
 }
 
 .btn--default-outline {
@@ -105,32 +99,57 @@
   padding-right: ceil($btn-padding-horizontal * 1.5);
 }
 
-.btn--toggle,
-.btn--toggle-danger {
+.btn--link {
+  color: $btn-link-color;
+  transition: all .2s ease;
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active {
+    color: $btn-link-active-color;
+    background-color: $btn-link-active-background;
+    box-shadow: none;
+  }
+  &:disabled,
+  &.is-disabled {
+    color: rgba($text-color-light, .7);
+    background-color: transparent;
+  }
+}
+
+
+.btn--toggle {
   color: $btn-toggle-color;
-  font-weight: $btn-toggle-weight;
-  text-transform: $btn-toggle-transform;
-  font-size: $btn-toggle-font-size;
+  transition: all .2s ease;
   &:hover,
   &:active,
   &:focus,
   &.is-active {
     color: $btn-toggle-active-color;
-    color: var(--primaryAppColor, $btn-toggle-active-color);
+    background-color: $btn-toggle-active-background;
     box-shadow: none;
   }
   &:disabled,
   &.is-disabled {
-    color: rgba($btn-toggle-color, .7);
+    color: rgba($text-color-light, .7);
+    background-color: transparent;
   }
 }
 
 .btn--toggle-danger {
+  color: $btn-toggle-danger-color;
+  transition: all .2s ease;
   &:hover,
   &:active,
   &:focus,
   &.is-active {
-    color: $btn-danger-background;
+    color: $btn-toggle-danger-active-color;
+    background-color: $btn-toggle-danger-active-background;
+  }
+  &:disabled,
+  &.is-disabled {
+    color: rgba($text-color-light, .7);
+    background-color: transparent;
   }
 }
 
@@ -197,7 +216,7 @@
 }
 
 .btn--block + .btn--block {
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 // Specificity overrides
@@ -224,4 +243,32 @@ input[type="button"] {
 
 .btn.u-float-right + .btn.u-float-right {
   margin-right: $padding-unit;
+}
+
+
+// Stylized icon in buttons
+.btn_icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px 6px 5px -4px;
+  padding: 2px;
+  border-radius: $btn-border-radius-base;
+  background-color: $color-primary;
+  color: #fff;
+  line-height: 1;
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.btn--lg {
+  .btn_icon {
+    padding: 4px;
+    margin-left: -6px;
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }

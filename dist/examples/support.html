@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta http-equiv="cleartype" content="on">
+
+    <title>JHA Design Prototype</title>
+
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <meta rel="manifest" href="/manifest.json">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-cabaple" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Banno">
+    <meta name="application-name" content="Banno">
+    <meta name="theme-color" content="#f8f8f8">
+
+    <link href="/css/style.min.css" rel="stylesheet">
+
+    <link rel="icon" sizes="192x192" href="/img/icon-192x192.png">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="apple-touch-icon" href="img/icon-192x192.png" sizes="180x180">
+    <link rel="apple-touch-icon" href="img/icon-192x192.png" sizes="167x167">
+    <link rel="apple-touch-icon" href="img/icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="img/icon-128x128.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="img/icon-96x96.png" sizes="76x76">
+  </head>
+  <body class="app-body">
+    <div class="app-wrapper">
+      <header class="app-global-nav">
+        <div class="app-global-nav_group">
+          <div class="app-global-icon">
+            <img src="/img/default-fi-icon.png">
+          </div>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
+            <path d="M17.2,14a11.42,11.42,0,0,1-1.86-.63.92.92,0,0,1-.55-.76,6.94,6.94,0,0,0,2-4.57c0-5-3-5.75-4.75-5.75S7.25,3,7.25,8a7,7,0,0,0,1.9,4.5,1.31,1.31,0,0,1-.49.83A11.42,11.42,0,0,1,6.8,14c-1.92.54-4.55,1.29-4.55,4v2a.75.75,0,0,0,1.5,0V18c0-1.47,1.31-1.94,3.46-2.55a12.42,12.42,0,0,0,2.12-.74,3.05,3.05,0,0,0,1.38-2.32l.06-.42-.32-.27A5.41,5.41,0,0,1,8.75,8c0-2.86,1.06-4.25,3.25-4.25S15.25,5.14,15.25,8a5.39,5.39,0,0,1-1.72,3.68l-.29.24,0,.37a2.54,2.54,0,0,0,1.41,2.38,12.42,12.42,0,0,0,2.12.74c2.15.61,3.46,1.09,3.46,2.55v2a.75.75,0,0,0,1.5,0V18C21.75,15.25,19.12,14.51,17.2,14Z"/>
+            </svg>
+            People
+          </a>
+          <a href="#" class="is-active">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
+            <path d="M16,14.75A1.75,1.75,0,0,0,17.75,13V4A1.75,1.75,0,0,0,16,2.25H4A1.75,1.75,0,0,0,2.25,4V18.5l5-3.75ZM3.75,15.5V4A.25.25,0,0,1,4,3.75H16a.25.25,0,0,1,.25.25v9a.25.25,0,0,1-.25.25H6.75Z"/>
+            <path d="M20,5.25H19v1.5h1a.25.25,0,0,1,.25.25V19.58l-3.08-2.33H9A.25.25,0,0,1,8.75,17V16H7.25v1A1.75,1.75,0,0,0,9,18.75h7.66l5.09,3.84V7A1.75,1.75,0,0,0,20,5.25Z"/>
+            </svg>
+            Support
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="2.5"/>
+            <path d="M21,11.25H19.71a7.76,7.76,0,0,0-7-7V3a.75.75,0,0,0-1.5,0V4.29a7.76,7.76,0,0,0-7,7H3a.75.75,0,0,0,0,1.5H4.29a7.76,7.76,0,0,0,7,7V21a.75.75,0,0,0,1.5,0V19.71a7.76,7.76,0,0,0,7-7H21a.75.75,0,0,0,0-1.5Zm-8.25,7V18a.75.75,0,0,0-1.5,0v.2A6.26,6.26,0,0,1,5.8,12.75H6a.75.75,0,0,0,0-1.5H5.8A6.26,6.26,0,0,1,11.25,5.8V6a.75.75,0,0,0,1.5,0V5.8a6.26,6.26,0,0,1,5.45,5.45H18a.75.75,0,0,0,0,1.5h.2A6.26,6.26,0,0,1,12.75,18.2Z"/>
+            </svg>
+            Marketing
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20,5.25H4A.75.75,0,0,0,3.25,6V19a.75.75,0,0,0,.75.75H20a.75.75,0,0,0,.75-.75V6A.75.75,0,0,0,20,5.25Zm-.75,1.5v2.5H4.75V6.75ZM4.75,18.25v-7.5h14.5v7.5Z"/>
+            <rect x="6" y="7.5" width="2" height="1"/>
+            <rect x="9" y="7.5" width="2" height="1"/>
+            </svg>
+            Content
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16.9,4.4C16.9,4.4,16.9,4.4,16.9,4.4l-1.5,1.5V4.8H3.9v14.5h11.5v-2.4c0.1-0.1,0.2-0.1,0.3-0.2l1.2-1.2V20
+            	c0,0.4-0.3,0.8-0.8,0.8h-13c-0.4,0-0.8-0.3-0.8-0.8V4c0-0.4,0.3-0.8,0.8-0.8h13c0.4,0,0.8,0.3,0.8,0.8V4.4z M6.2,8.8
+            	C5.8,8.8,5.4,8.4,5.4,8c0-0.4,0.3-0.8,0.8-0.8h6c0.4,0,0.8,0.3,0.8,0.8c0,0.4-0.3,0.8-0.8,0.8H6.2z M6.2,12.8
+            	c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8h2.5c0.4,0,0.8,0.3,0.8,0.8s-0.3,0.8-0.8,0.8H6.2z M13.7,14.4l6-6l-1.3-1.3l-6,6l-0.3,1.6
+            	L13.7,14.4z M10.4,15.5l0.6-2.9c0-0.1,0.1-0.3,0.2-0.4L18,5.5c0.3-0.3,0.8-0.3,1.1,0l2.3,2.3c0.3,0.3,0.3,0.8,0,1.1l-6.7,6.7
+            	c-0.1,0.1-0.2,0.2-0.4,0.2l-2.9,0.6C10.8,16.5,10.3,16,10.4,15.5z M6.2,16.8c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8h2
+            	c0.4,0,0.8,0.3,0.8,0.8s-0.3,0.8-0.8,0.8H6.2z"/>
+            </svg>
+            Open<br>Anywhere
+          </a>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12,18.7V12H6.72C7.89,17.17,11,18.43,12,18.7Z"/>
+            <path d="M12,12h5.28a18.64,18.64,0,0,0,.43-3.2L12,5.58Z"/>
+            <path d="M20.37,6.85l-8-4.5a.75.75,0,0,0-.74,0l-8,4.5a.75.75,0,0,0-.38.65,23.93,23.93,0,0,0,.4,4.5A13.07,13.07,0,0,0,7.5,19.49a8.81,8.81,0,0,0,4.41,2.25h.19a8.81,8.81,0,0,0,4.41-2.25A13.07,13.07,0,0,0,20.35,12a23.93,23.93,0,0,0,.4-4.5A.75.75,0,0,0,20.37,6.85ZM18.82,12c-1.43,7-6.07,8.11-6.82,8.24h0C11.24,20.1,6.62,19,5.18,12a21.67,21.67,0,0,1-.43-4.06L12,3.86l7.25,4.08A21.67,21.67,0,0,1,18.82,12Z"/>
+            </svg>
+            Monitor
+          </a>
+        </div>
+        <div class="app-global-nav_group">
+          <a href="#">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M12,21.75A9.75,9.75,0,1,1,21.75,12,9.76,9.76,0,0,1,12,21.75Zm0-18A8.25,8.25,0,1,0,20.25,12,8.26,8.26,0,0,0,12,3.75Z"/>
+              <path d="M12,14.75a.75.75,0,0,1-.75-.75V13c0-.78.6-1.3,1.19-1.81a2.85,2.85,0,0,0,1.31-2c0-1.07-1.1-1.35-1.75-1.35a1.61,1.61,0,0,0-1.75,1.58.75.75,0,0,1-1.5,0A3.07,3.07,0,0,1,12,6.25,3,3,0,0,1,15.25,9.1a4.18,4.18,0,0,1-1.83,3.17,3.1,3.1,0,0,0-.68.7v1A.75.75,0,0,1,12,14.75Z"/>
+              <circle cx="12" cy="16.5" r="1"/>
+            </svg>
+          </a>
+          <a href="#" class="u-m-b-0">
+            <div class="avatar">
+              <img src="/img/default-avatar.png">
+            </div>
+          </a>
+        </div>
+      </header>
+      <nav class="app-nav app-nav--wide app-nav--bordered app-nav--no-padding">
+        <header class="app-nav_header app-nav_header--bordered">
+          <div class="dropdown">
+            <button class="btn btn--toggle btn--align-left dropdown_toggle dropdown_toggle--indicator">
+              <span class="app-nav_title">My cases</span>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M15.9,9.4c-0.2,0-0.4,0.1-0.5,0.2l-3.5,3.3L8.4,9.7C8.1,9.5,7.8,9.6,7.6,9.8c-0.2,0.2-0.3,0.5-0.1,0.8
+              	l4,3.8c0.3,0.2,0.7,0.2,1,0l4-3.8c0.2-0.2,0.3-0.5,0.2-0.8S16.2,9.4,15.9,9.4L15.9,9.4z"></path>
+              </svg>
+            </button>
+            <div class="dropdown_menu dropdown_menu--padding">
+              <label class="control control--radio">
+                <input type="radio" name="caseType" checked>
+                <span class="control_indicator"></span>
+                My cases
+              </label>
+              <label class="control control--radio">
+                <input type="radio" name="caseType">
+                <span class="control_indicator"></span>
+                Unassigned
+              </label>
+              <label class="control control--radio">
+                <input type="radio" name="caseType">
+                <span class="control_indicator"></span>
+                All cases
+              </label>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn--icon btn--toggle">
+            <svg class="icon" role="image" title="search" viewBox="0 0 24 24">
+              <path d="M20.78,19.72l-4.65-4.65a7.26,7.26,0,1,0-1.06,1.06l4.65,4.65a.75.75,0,0,0,1.06-1.06Zm-16-9.22a5.75,5.75,0,1,1,5.75,5.75A5.76,5.76,0,0,1,4.75,10.5Z"/>
+            </svg>
+          </button>
+        </header>
+
+        <div class="app-nav_content">
+          <div class="list">
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--success">
+                      <span class="chip_indicator"></span>
+                      New
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item is-active">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="avatar avatar--sm u-float-right tooltip tooltip--sw" aria-label="Assigned to Josh">
+                    <img src="/img/default-avatar.png" width="36" height="36" loading="lazy">
+                  </div>
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--warning">
+                      <span class="chip_indicator"></span>
+                      Pending
+                    </span>
+                    <span class="chip chip--default">
+                      Form
+                    </span>
+                    <span class="chip chip--default">
+                      <svg class="icon icon--xs" viewBox="0 0 24 24">
+                        <path d="M20,5H7.93a2.37,2.37,0,0,0-1.79.84L2.59,10.45a2.31,2.31,0,0,0,0,3l3.65,4.72A2.34,2.34,0,0,0,7.93,19H20a2,2,0,0,0,2-2V7A2,2,0,0,0,20,5Zm-9,7a2,2,0,1,1-2-2A2,2,0,0,1,11,12Z"></path>
+                      </svg>
+                      Help wanted
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="avatar avatar--sm u-float-right tooltip tooltip--sw" aria-label="Assigned to Josh">
+                    <img src="/img/default-avatar.png" width="36" height="36" loading="lazy">
+                  </div>
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--success">
+                      <span class="chip_indicator"></span>
+                      New
+                    </span>
+                    <span class="chip chip--default">
+                      Form
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--warning">
+                      <span class="chip_indicator"></span>
+                      Pending
+                    </span>
+                    <span class="chip chip--default">
+                      <svg class="icon icon--xs" viewBox="0 0 24 24">
+                        <path d="M20,5H7.93a2.37,2.37,0,0,0-1.79.84L2.59,10.45a2.31,2.31,0,0,0,0,3l3.65,4.72A2.34,2.34,0,0,0,7.93,19H20a2,2,0,0,0,2-2V7A2,2,0,0,0,20,5Zm-9,7a2,2,0,1,1-2-2A2,2,0,0,1,11,12Z"></path>
+                      </svg>
+                      Help wanted
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--success">
+                      <span class="chip_indicator"></span>
+                      New
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--warning">
+                      <span class="chip_indicator"></span>
+                      Pending
+                    </span>
+                    <span class="chip chip--default">
+                      <svg class="icon icon--xs" viewBox="0 0 24 24">
+                        <path d="M20,5H7.93a2.37,2.37,0,0,0-1.79.84L2.59,10.45a2.31,2.31,0,0,0,0,3l3.65,4.72A2.34,2.34,0,0,0,7.93,19H20a2,2,0,0,0,2-2V7A2,2,0,0,0,20,5Zm-9,7a2,2,0,1,1-2-2A2,2,0,0,1,11,12Z"></path>
+                      </svg>
+                      Help wanted
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="avatar avatar--sm u-float-right tooltip tooltip--sw" aria-label="Assigned to Josh">
+                    <img src="/img/default-avatar.png" width="36" height="36" loading="lazy">
+                  </div>
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--success">
+                      <span class="chip_indicator"></span>
+                      New
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--warning">
+                      <span class="chip_indicator"></span>
+                      Pending
+                    </span>
+                    <span class="chip chip--default">
+                      <svg class="icon icon--xs" viewBox="0 0 24 24">
+                        <path d="M20,5H7.93a2.37,2.37,0,0,0-1.79.84L2.59,10.45a2.31,2.31,0,0,0,0,3l3.65,4.72A2.34,2.34,0,0,0,7.93,19H20a2,2,0,0,0,2-2V7A2,2,0,0,0,20,5Zm-9,7a2,2,0,1,1-2-2A2,2,0,0,1,11,12Z"></path>
+                      </svg>
+                      Help wanted
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--success">
+                      <span class="chip_indicator"></span>
+                      New
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="avatar avatar--sm u-float-right tooltip tooltip--sw" aria-label="Assigned to Josh">
+                    <img src="/img/default-avatar.png" width="36" height="36" loading="lazy">
+                  </div>
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--warning">
+                      <span class="chip_indicator"></span>
+                      Pending
+                    </span>
+                    <span class="chip chip--default">
+                      <svg class="icon icon--xs" viewBox="0 0 24 24">
+                        <path d="M20,5H7.93a2.37,2.37,0,0,0-1.79.84L2.59,10.45a2.31,2.31,0,0,0,0,3l3.65,4.72A2.34,2.34,0,0,0,7.93,19H20a2,2,0,0,0,2-2V7A2,2,0,0,0,20,5Zm-9,7a2,2,0,1,1-2-2A2,2,0,0,1,11,12Z"></path>
+                      </svg>
+                      Help wanted
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--success">
+                      <span class="chip_indicator"></span>
+                      New
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--warning">
+                      <span class="chip_indicator"></span>
+                      Pending
+                    </span>
+                    <span class="chip chip--default">
+                      <svg class="icon icon--xs" viewBox="0 0 24 24">
+                        <path d="M20,5H7.93a2.37,2.37,0,0,0-1.79.84L2.59,10.45a2.31,2.31,0,0,0,0,3l3.65,4.72A2.34,2.34,0,0,0,7.93,19H20a2,2,0,0,0,2-2V7A2,2,0,0,0,20,5Zm-9,7a2,2,0,1,1-2-2A2,2,0,0,1,11,12Z"></path>
+                      </svg>
+                      Help wanted
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--success">
+                      <span class="chip_indicator"></span>
+                      New
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="list_item">
+              <label class="control control--checkbox u-float-left">
+                <input type="checkbox">
+                <span class="control_indicator"></span>
+              </label>
+              <div href="#" class="content_push content_push--xs">
+                <a href="#">
+                  <div class="title">
+                    Dion Adbo
+                  </div>
+                  <div class="text--md u-m-b-sm">
+                    Transaction: $7.50 on Jan 2 &bull; Jan 13
+                  </div>
+                  <div>
+                    <span class="chip chip--warning">
+                      <span class="chip_indicator"></span>
+                      Pending
+                    </span>
+                    <span class="chip chip--default">
+                      <svg class="icon icon--xs" viewBox="0 0 24 24">
+                        <path d="M20,5H7.93a2.37,2.37,0,0,0-1.79.84L2.59,10.45a2.31,2.31,0,0,0,0,3l3.65,4.72A2.34,2.34,0,0,0,7.93,19H20a2,2,0,0,0,2-2V7A2,2,0,0,0,20,5Zm-9,7a2,2,0,1,1-2-2A2,2,0,0,1,11,12Z"></path>
+                      </svg>
+                      Help wanted
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <footer class="app-nav_footer app-nav_footer--bordered">
+          <div class="btn-group btn-group--flex btn-group--spaced u-m-b-0">
+            <button type="button" class="btn btn--toggle">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M16,14.75A1.76,1.76,0,0,0,17.75,13V4A1.76,1.76,0,0,0,16,2.25H4A1.76,1.76,0,0,0,2.25,4V18.5l5-3.75ZM3.75,15.5V4A.25.25,0,0,1,4,3.75H16a.25.25,0,0,1,.25.25v9a.25.25,0,0,1-.25.25H6.75Z"/>
+              <path d="M20,5.25H19v1.5h1a.25.25,0,0,1,.25.25V19.58l-3.08-2.33H9A.25.25,0,0,1,8.75,17V16H7.25v1A1.76,1.76,0,0,0,9,18.75h7.66l5.09,3.84V7A1.76,1.76,0,0,0,20,5.25Z"/>
+              <path d="M12.5,7.25H10.75V5.5a.75.75,0,0,0-1.5,0V7.25H7.5a.75.75,0,0,0,0,1.5H9.25V10.5a.75.75,0,0,0,1.5,0V8.75H12.5a.75.75,0,0,0,0-1.5Z"/>
+              </svg>
+            </button>
+            <button type="button" class="btn btn--toggle">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24">
+              <path d="M19.71,12.71a6.42,6.42,0,0,0,0-1.41L22,9.6a.75.75,0,0,0,.25-.86l-.13-.35a10.2,10.2,0,0,0-1.24-2.32l-.22-.31a.75.75,0,0,0-.86-.27l-2.64.94a7.19,7.19,0,0,0-1.84-1.11L14.8,2.5a.75.75,0,0,0-.65-.62l-.37,0a9.21,9.21,0,0,0-2.58,0l-.37,0a.75.75,0,0,0-.65.62L9.71,5.31A7.19,7.19,0,0,0,7.88,6.42L5.23,5.49a.75.75,0,0,0-.86.27l-.22.31A10.23,10.23,0,0,0,2.92,8.39l-.13.35A.75.75,0,0,0,3,9.6l2.25,1.69a6.42,6.42,0,0,0,0,1.41L3,14.4a.75.75,0,0,0-.25.86l.13.35a10.2,10.2,0,0,0,1.24,2.32l.22.31a.75.75,0,0,0,.86.27l2.64-.94a7.19,7.19,0,0,0,1.84,1.11l.48,2.81a.75.75,0,0,0,.65.62l.37,0a9.41,9.41,0,0,0,2.58,0l.37,0a.75.75,0,0,0,.65-.62l.48-2.81a7.19,7.19,0,0,0,1.84-1.11l2.64.94a.75.75,0,0,0,.86-.27l.22-.31a10.23,10.23,0,0,0,1.24-2.32l.13-.35A.75.75,0,0,0,22,14.4Zm0,4.2L17.21,16a.76.76,0,0,0-.77.16,5.69,5.69,0,0,1-2.07,1.25.75.75,0,0,0-.49.58l-.46,2.68a7.52,7.52,0,0,1-1.84,0L11.12,18a.75.75,0,0,0-.49-.58,5.69,5.69,0,0,1-2.07-1.25A.75.75,0,0,0,7.79,16l-2.53.89a8.67,8.67,0,0,1-.88-1.65l2.15-1.62a.75.75,0,0,0,.29-.72,5.26,5.26,0,0,1,0-1.84.75.75,0,0,0-.29-.72L4.39,8.74a8.7,8.7,0,0,1,.88-1.65L7.79,8a.75.75,0,0,0,.77-.16,5.69,5.69,0,0,1,2.07-1.25A.75.75,0,0,0,11.12,6l.46-2.68a7.47,7.47,0,0,1,1.84,0L13.88,6a.75.75,0,0,0,.49.58,5.69,5.69,0,0,1,2.07,1.25.75.75,0,0,0,.77.16l2.53-.89a8.67,8.67,0,0,1,.88,1.65l-2.15,1.62a.75.75,0,0,0-.29.72,5.26,5.26,0,0,1,0,1.84.75.75,0,0,0,.29.72l2.15,1.62A8.7,8.7,0,0,1,19.73,16.91Z"/>
+              <path d="M12.5,8.75A3.25,3.25,0,1,0,15.75,12,3.25,3.25,0,0,0,12.5,8.75Zm0,5A1.75,1.75,0,1,1,14.25,12,1.75,1.75,0,0,1,12.5,13.75Z"/>
+              </svg>
+            </button>
+          </div>
+        </footer>
+
+
+      </nav>
+      <div class="app-content">
+        <div style="display: flex; flex-direction: row; height: 100vh;">
+          <div class="conversation-panel" style="flex: 1 1 0; display: flex;">
+            <div id="convoScroll" style="overflow-y: auto;flex: 1 1 0;min-height: 100%;display: flex;flex-direction: column;">
+              <header class="page-header page-header--sticky">
+                <div class="container" style="justify-content: flex-end;display: flex;flex-direction: column;flex: 1 1 0;">
+                  <div class="title text--center">
+                    Conversation with Dion Adbo
+                  </div>
+                </div>
+              </header>
+              <div style="flex: 1 1 0;align-items: flex-end;display: flex;">
+                <div class="container">
+                  <style>
+                    .a-message {
+                      margin-bottom: 24px;
+                    }
+                    .a-message--right {
+                      align-items: flex-end;
+                    }
+                    .bubble {
+                      margin-bottom: 6px;
+                      max-width: 75%;
+                      min-width: 200px;
+                      width: fit-content;
+                      background-color: #fff;
+                      border-radius: 6px;
+                      box-shadow: 0 2px 6px 0 rgba(51,51,51,0.16);
+                      padding: 12px;
+                    }
+                    .bubble--alt {
+                      box-shadow: none;
+                      color: #fff;
+                      background-color: #016fe6;
+                    }
+                    .convo-box {
+                      position: sticky;
+                      bottom: 0;
+                      padding: 24px 0 0;
+                      border-top: 1px solid rgba(34,34,34,0.08);
+                      background-color: rgba(248,248,248,0.9);
+                      backdrop-filter: blur(20px) saturate(150%);
+                      padding-bottom: max(0px, env(safe-area-inset-bottom));
+                      transition: background-color .3s ease;
+                    }
+                    .convo-box:focus-within {
+                      background-color: rgba(255,255,255,.9);
+                    }
+                    .convo-box textarea {
+                      width: 100%;
+                      border: 0;
+                      background-color: transparent;
+                      padding: 0;
+                      max-height: 200px;
+                      min-height: 42px;
+                      height: fit-content;
+                    }
+                    .convo-box textarea:focus {
+                      outline: 0;
+                    }
+                    @media (min-width: 1440px) {
+                      .bubble {
+                        max-width: 60%;
+                      }
+                    }
+                  </style>
+                  <div class="text--center text--sm text--medium u-m-b">Yesterday</div>
+                  <section class="a-message">
+                    <div class="avatar avatar--sm u-float-left">
+                      <img src="/img/default-avatar.png">
+                    </div>
+                    <div class="content_push content_push--sm">
+                      <div class="bubble">
+                        Hello! <br> My card has been getting some use and it’s pretty tarnished. Is there any chance I could have a shiny new card sent to me? Thanks! 😘
+                      </div>
+                      <div class="sub-title">iOS, 1 day ago</div>
+                    </div>
+                  </section>
+                  <div class="text--center text--sm text--medium u-m-b">Josh S. joined the conversation</div>
+                  <section class="a-message" style="display: flex; flex-direction: row; justify-content: flex-end;">
+                    <div class="avatar avatar--sm u-m-l" style="order: 2;">
+                      <img src="/img/default-avatar.png">
+                    </div>
+                    <div style="flex: 1 1 0; order: 1; max-width: 60%; display: flex; flex-direction: column;">
+                      <div class="bubble bubble--alt" style="max-width: none; align-self: flex-end;">
+                        Hi Dion! I can help with that, no problem.
+                      </div>
+                      <div class="sub-title" style="text-align: right;">iOS, 1 day ago</div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <footer class="convo-box">
+                <div class="container">
+                  <div>
+                    <label for="messageBox" class="title title--sm text--primary">Reply to Dion</label>
+                  </div>
+                  <textarea id="messageBox" placeholder="Type your message to Dion..."></textarea>
+                  <button type="button" class="btn btn--icon btn--primary u-float-right" style="width: 40px; height: 40px; border-radius: 50%; padding-left: 0; padding-right: 0;">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3.45,21.28,22,12,3.44,2.72A1,1,0,0,0,2,3.61V10l14,2L2,14v6.38A1,1,0,0,0,3.45,21.28Z"/>
+                    </svg>
+                  </button>
+                  <div class="btn-group btn-group--spaced">
+                    <div class="dropdown dropup">
+                      <button type="button" class="btn btn--toggle btn--icon dropdown_toggle">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4.5,11H13v3.5H11V13H7.5V11H11V7.5h2V11h3.5Z"/>
+                        </svg>
+                      </button>
+                      <div class="dropdown_menu">
+                        <div class="dropdown_menu_title">
+                          Attach
+                        </div>
+                        <a href="#" class="dropdown_menu_item">
+                          Form...
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          Which account
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          Which transaction
+                        </a>
+                      </div>
+                    </div>
+                    <div class="dropdown dropup">
+                      <button type="button" class="btn btn--toggle btn--icon dropdown_toggle">
+                        <svg class="icon icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M18,2H6A1,1,0,0,0,5,3V21a1,1,0,0,0,.62.92,1,1,0,0,0,1.09-.21L12,16.41l5.29,5.3A1,1,0,0,0,18,22a.84.84,0,0,0,.38-.08A1,1,0,0,0,19,21V3A1,1,0,0,0,18,2ZM17,18.59l-4.29-4.3a1,1,0,0,0-1.42,0L7,18.59V10H17Z"/>
+                        </svg>
+                      </button>
+                      <div class="dropdown_menu dropdown_menu--lg" style="max-height: 400px; width: 400px; overflow-y: auto;">
+                        <div class="dropdown_menu_search">
+                          <form class="search">
+                            <label class="search_bar">
+                              <span class="search_icon">
+                                <svg class="icon" role="presentation" viewBox="0 0 24 24">
+                                  <path d="M20.78,19.72l-4.65-4.65a7.26,7.26,0,1,0-1.06,1.06l4.65,4.65a.75.75,0,0,0,1.06-1.06Zm-16-9.22a5.75,5.75,0,1,1,5.75,5.75A5.76,5.76,0,0,1,4.75,10.5Z"/>
+                                </svg>
+                              </span>
+                              <input type="search" class="form-control search_input" placeholder="Search for titles or keywords">
+                            </label>
+                          </form>
+                        </div>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Vacation
+                          </div>
+                          <div class="sub-title">
+                            We have enabled your debit card. Enjoy your travels!
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Answer
+                          </div>
+                          <div class="sub-title">
+                            Hello. We are here to help. We are listening 👂
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Vacation
+                          </div>
+                          <div class="sub-title">
+                            We have enabled your debit card. Enjoy your travels!
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Answer
+                          </div>
+                          <div class="sub-title">
+                            Hello. We are here to help. We are listening 👂
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Vacation
+                          </div>
+                          <div class="sub-title">
+                            We have enabled your debit card. Enjoy your travels!
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Answer
+                          </div>
+                          <div class="sub-title">
+                            Hello. We are here to help. We are listening 👂
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Vacation
+                          </div>
+                          <div class="sub-title">
+                            We have enabled your debit card. Enjoy your travels!
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Answer
+                          </div>
+                          <div class="sub-title">
+                            Hello. We are here to help. We are listening 👂
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Vacation
+                          </div>
+                          <div class="sub-title">
+                            We have enabled your debit card. Enjoy your travels!
+                          </div>
+                        </a>
+                        <a href="#" class="dropdown_menu_item">
+                          <div class="title title--sm">
+                            Answer
+                          </div>
+                          <div class="sub-title">
+                            Hello. We are here to help. We are listening 👂
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn--toggle btn--icon">
+                      <svg class="icon icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M15,8.82,13.56,7.4l-6,6a2.42,2.42,0,0,0-.68,2.37,2.64,2.64,0,0,0,1.84,1.84,2.41,2.41,0,0,0,2.37-.68l7.42-7.42a3.87,3.87,0,0,0,0-5.66,3.87,3.87,0,0,0-5.66,0L5.43,11.29a5.33,5.33,0,0,0-1.68,4.15,5.63,5.63,0,0,0,1.68,3.63,5.63,5.63,0,0,0,3.63,1.68h.3a5.38,5.38,0,0,0,3.84-1.69l6-6L17.8,11.65l-6,6a3.39,3.39,0,0,1-2.62,1.1,3.82,3.82,0,0,1-3.44-3.44,3.39,3.39,0,0,1,1.1-2.62l7.42-7.42a2,2,0,0,1,1.49-.64,2.21,2.21,0,0,1,2,2,1.91,1.91,0,0,1-.64,1.49L9.67,15.54a.42.42,0,0,1-.44.16.65.65,0,0,1-.42-.42A.43.43,0,0,1,9,14.83Z"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </footer>
+            </div>
+
+          </div>
+          <div class="conversation-profile u-hidden@mobile" style="width: 270px; border-left: 1px solid rgba(34,34,34,0.1); overflow-y: auto;">
+            <!-- <img src="https://dummyimage.com/600x500/e6e6e6/cccccc.png" height="224"> -->
+            <div class="u-m-l u-m-r u-m-t">
+              <div class="u-clearfix u-m-b">
+                <picture class="avatar avatar--xl avatar--shadow u-float-left">
+                  <img src="/img/default-avatar.png">
+                </picture>
+                <!-- <a href="#" class="btn btn--toggle btn--icon u-float-right">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
+                  <path d="M17,14.25a.75.75,0,0,0-.75.75v4.25H4.75V7.75H10a.75.75,0,0,0,0-1.5H4A.75.75,0,0,0,3.25,7V20a.75.75,0,0,0,.75.75H17a.75.75,0,0,0,.75-.75V15A.75.75,0,0,0,17,14.25Z"/>
+                  <path d="M13.67,3.92a.75.75,0,0,0,0,1.5h3.85L11,12A.75.75,0,1,0,12,13l6.55-6.55v3.85a.75.75,0,0,0,1.5,0V3.92Z"/>
+                  </svg>
+                </a> -->
+              </div>
+              <div class="title title--lg">
+                Dion Adbo
+              </div>
+              <div class="sub-title">
+                Legal name: Dion
+              </div>
+              <div class="sub-title">
+                dion3
+              </div>
+              <div class="list list--sm list--borderless">
+                <div class="list_item">
+                  <div class="list_item_action">
+                    <svg class="icon icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3,8v8a1,1,0,0,0,1,1H9V15H5V9H9V7H4A1,1,0,0,0,3,8Z"/>
+                    <rect x="11" y="7" width="2" height="10"/>
+                    <path d="M21,9V7H16a1,1,0,0,0-1,1v9h2V13h3V11H17V9Z"/>
+                    </svg>
+                  </div>
+                  <div class="list_item_content">
+                    A000000
+                  </div>
+                </div>
+                <div class="list_item">
+                  <div class="list_item_action">
+                    <svg class="icon icon--sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M9,13,4.8,7.4A1,1,0,0,0,3,8v9H5V11l4.2,5.6a1,1,0,0,0,.8.4,1,1,0,0,0,.32-.05A1,1,0,0,0,11,16V7H9Z"/>
+                    <polygon points="13 7 13 9 16 9 16 17 18 17 18 9 21 9 21 7 13 7"/>
+                    </svg>
+                  </div>
+                  <div class="list_item_content">
+                    1234567654321
+                  </div>
+                </div>
+              </div>
+
+              <a href="#" class="btn btn--neutral">
+                <div class="btn_icon">
+                  <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="icon">
+                  <path d="M17.2,14a11.42,11.42,0,0,1-1.86-.63.92.92,0,0,1-.55-.76,6.94,6.94,0,0,0,2-4.57c0-5-3-5.75-4.75-5.75S7.25,3,7.25,8a7,7,0,0,0,1.9,4.5,1.31,1.31,0,0,1-.49.83A11.42,11.42,0,0,1,6.8,14c-1.92.54-4.55,1.29-4.55,4v2a.75.75,0,0,0,1.5,0V18c0-1.47,1.31-1.94,3.46-2.55a12.42,12.42,0,0,0,2.12-.74,3.05,3.05,0,0,0,1.38-2.32l.06-.42-.32-.27A5.41,5.41,0,0,1,8.75,8c0-2.86,1.06-4.25,3.25-4.25S15.25,5.14,15.25,8a5.39,5.39,0,0,1-1.72,3.68l-.29.24,0,.37a2.54,2.54,0,0,0,1.41,2.38,12.42,12.42,0,0,0,2.12.74c2.15.61,3.46,1.09,3.46,2.55v2a.75.75,0,0,0,1.5,0V18C21.75,15.25,19.12,14.51,17.2,14Z"/>
+                  </svg>
+                </div>
+                View profile
+              </a>
+            </div>
+            <hr class="u-m-t-lg u-m-b-lg">
+            <div class="u-m-l u-m-r u-m-t">
+              <div class="title">
+                Assignment
+              </div>
+              <div class="u-m-b">
+                <picture class="avatar avatar--xs">
+                  <img src="/img/default-avatar.png">
+                </picture>
+                Josh Sadler
+              </div>
+
+              <div class="title">
+                Status
+              </div>
+              <div class="u-m-b">
+                <div class="chip chip--warning">
+                  <span class="chip_indicator"></span>
+                  Pending
+                </div>
+              </div>
+
+              <div class="title">
+                Tags
+              </div>
+              <div class="u-m-b">
+                <div class="chip chip--default">
+                  Form
+                </div>
+                <div class="chip chip--default">
+                  Help wanted
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="dialog_backdrop" style="display: none;"></div>
+
+    <div class="toast">Your image was uploaded.</div>
+
+    <div id="mainMenuBackdrop" class="drawer_backdrop"></div>
+
+    <div id="mainMenu" class="drawer">
+      <div class="drawer_inner drawer_inner--left drawer_inner--sm">
+        <header class="drawer_header">
+          <div class="container">
+            <div class="u-clearfix">
+              <div class="app-global-icon u-float-left">
+                <img src="/img/default-fi-icon.png">
+              </div>
+              <div class="content_push">
+                <div class="title">
+                  Ovation Financial
+                </div>
+                <div class="sub-title">
+                  <a href="#">
+                    <svg viewBox="0 0 24 24" class="icon icon--sm">
+                      <path d="M21.53,14.47a.75.75,0,0,0-1.06,0l-2.72,2.72V9C17.75,4.3,14,4.25,14,4.25a.75.75,0,0,0,0,1.5c.09,0,2.25,0,2.25,3.25v8.19l-2.72-2.72a.75.75,0,0,0-1.06,1.06L17,20.06l4.53-4.53A.75.75,0,0,0,21.53,14.47Z"></path>
+                      <path d="M7,3.94,2.47,8.47A.75.75,0,0,0,3.53,9.53L6.25,6.81V15c0,4.7,3.71,4.75,3.75,4.75a.75.75,0,0,0,0-1.5c-.09,0-2.25,0-2.25-3.25V6.81l2.72,2.72a.75.75,0,0,0,1.06-1.06Z"></path>
+                    </svg>
+                    Switch
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <button id="closeMenuBtn" type="button" class="btn btn--toggle btn--icon drawer_close">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M13.06,12l5.47-5.47a.75.75,0,0,0-1.06-1.06L12,10.94,6.53,5.47A.75.75,0,0,0,5.47,6.53L10.94,12,5.47,17.47a.75.75,0,1,0,1.06,1.06L12,13.06l5.47,5.47a.75.75,0,0,0,1.06-1.06Z"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="drawer_content">
+          <div class="container">
+            <div class="list list--borderless">
+              <a href="#" class="list_item is-active">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="icon u-float-left">
+                <path d="M17.2,14a11.42,11.42,0,0,1-1.86-.63.92.92,0,0,1-.55-.76,6.94,6.94,0,0,0,2-4.57c0-5-3-5.75-4.75-5.75S7.25,3,7.25,8a7,7,0,0,0,1.9,4.5,1.31,1.31,0,0,1-.49.83A11.42,11.42,0,0,1,6.8,14c-1.92.54-4.55,1.29-4.55,4v2a.75.75,0,0,0,1.5,0V18c0-1.47,1.31-1.94,3.46-2.55a12.42,12.42,0,0,0,2.12-.74,3.05,3.05,0,0,0,1.38-2.32l.06-.42-.32-.27A5.41,5.41,0,0,1,8.75,8c0-2.86,1.06-4.25,3.25-4.25S15.25,5.14,15.25,8a5.39,5.39,0,0,1-1.72,3.68l-.29.24,0,.37a2.54,2.54,0,0,0,1.41,2.38,12.42,12.42,0,0,0,2.12.74c2.15.61,3.46,1.09,3.46,2.55v2a.75.75,0,0,0,1.5,0V18C21.75,15.25,19.12,14.51,17.2,14Z"/>
+                </svg>
+                <div class="content_push content_push--xs text--lg">
+                  People
+                </div>
+              </a>
+              <div class="content_push content_push--xs list list--borderless list--sm" style="display: none;">
+                <a href="#" class="list_item is-active">Overview</a>
+                <a href="#" class="list_item">All users</a>
+                <a href="#" class="list_item">Messages</a>
+
+                <div class="list_heading">Settings</div>
+                <a href="#" class="list_item">Contact info</a>
+                <a href="#" class="list_item">Integrations</a>
+                <a href="#" class="list_item">EULA</a>
+                <a href="#" class="list_item">Stop payments</a>
+                <a href="#" class="list_item">Transfers</a>
+              </div>
+              <a href="#" class="list_item">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="icon u-float-left">
+                <path d="M16,14.75A1.75,1.75,0,0,0,17.75,13V4A1.75,1.75,0,0,0,16,2.25H4A1.75,1.75,0,0,0,2.25,4V18.5l5-3.75ZM3.75,15.5V4A.25.25,0,0,1,4,3.75H16a.25.25,0,0,1,.25.25v9a.25.25,0,0,1-.25.25H6.75Z"/>
+                <path d="M20,5.25H19v1.5h1a.25.25,0,0,1,.25.25V19.58l-3.08-2.33H9A.25.25,0,0,1,8.75,17V16H7.25v1A1.75,1.75,0,0,0,9,18.75h7.66l5.09,3.84V7A1.75,1.75,0,0,0,20,5.25Z"/>
+                </svg>
+                <div class="content_push content_push--xs text--lg">
+                  Support
+                </div>
+              </a>
+              <a href="#" class="list_item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon u-float-left">
+                <circle cx="12" cy="12" r="2.5"/>
+                <path d="M21,11.25H19.71a7.76,7.76,0,0,0-7-7V3a.75.75,0,0,0-1.5,0V4.29a7.76,7.76,0,0,0-7,7H3a.75.75,0,0,0,0,1.5H4.29a7.76,7.76,0,0,0,7,7V21a.75.75,0,0,0,1.5,0V19.71a7.76,7.76,0,0,0,7-7H21a.75.75,0,0,0,0-1.5Zm-8.25,7V18a.75.75,0,0,0-1.5,0v.2A6.26,6.26,0,0,1,5.8,12.75H6a.75.75,0,0,0,0-1.5H5.8A6.26,6.26,0,0,1,11.25,5.8V6a.75.75,0,0,0,1.5,0V5.8a6.26,6.26,0,0,1,5.45,5.45H18a.75.75,0,0,0,0,1.5h.2A6.26,6.26,0,0,1,12.75,18.2Z"/>
+                </svg>
+                <div class="content_push content_push--xs text--lg">
+                  Marketing
+                </div>
+              </a>
+              <a href="#" class="list_item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon u-float-left">
+                <path d="M20,5.25H4A.75.75,0,0,0,3.25,6V19a.75.75,0,0,0,.75.75H20a.75.75,0,0,0,.75-.75V6A.75.75,0,0,0,20,5.25Zm-.75,1.5v2.5H4.75V6.75ZM4.75,18.25v-7.5h14.5v7.5Z"/>
+                <rect x="6" y="7.5" width="2" height="1"/>
+                <rect x="9" y="7.5" width="2" height="1"/>
+                </svg>
+                <div class="content_push content_push--xs text--lg">
+                  Content
+                </div>
+              </a>
+              <a href="#" class="list_item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon u-float-left">
+                <path d="M16.9,4.4C16.9,4.4,16.9,4.4,16.9,4.4l-1.5,1.5V4.8H3.9v14.5h11.5v-2.4c0.1-0.1,0.2-0.1,0.3-0.2l1.2-1.2V20
+                	c0,0.4-0.3,0.8-0.8,0.8h-13c-0.4,0-0.8-0.3-0.8-0.8V4c0-0.4,0.3-0.8,0.8-0.8h13c0.4,0,0.8,0.3,0.8,0.8V4.4z M6.2,8.8
+                	C5.8,8.8,5.4,8.4,5.4,8c0-0.4,0.3-0.8,0.8-0.8h6c0.4,0,0.8,0.3,0.8,0.8c0,0.4-0.3,0.8-0.8,0.8H6.2z M6.2,12.8
+                	c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8h2.5c0.4,0,0.8,0.3,0.8,0.8s-0.3,0.8-0.8,0.8H6.2z M13.7,14.4l6-6l-1.3-1.3l-6,6l-0.3,1.6
+                	L13.7,14.4z M10.4,15.5l0.6-2.9c0-0.1,0.1-0.3,0.2-0.4L18,5.5c0.3-0.3,0.8-0.3,1.1,0l2.3,2.3c0.3,0.3,0.3,0.8,0,1.1l-6.7,6.7
+                	c-0.1,0.1-0.2,0.2-0.4,0.2l-2.9,0.6C10.8,16.5,10.3,16,10.4,15.5z M6.2,16.8c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8h2
+                	c0.4,0,0.8,0.3,0.8,0.8s-0.3,0.8-0.8,0.8H6.2z"/>
+                </svg>
+                <div class="content_push content_push--xs text--lg">
+                  OpenAnywhere
+                </div>
+              </a>
+              <a href="#" class="list_item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon u-float-left">
+                <path d="M12,18.7V12H6.72C7.89,17.17,11,18.43,12,18.7Z"/>
+                <path d="M12,12h5.28a18.64,18.64,0,0,0,.43-3.2L12,5.58Z"/>
+                <path d="M20.37,6.85l-8-4.5a.75.75,0,0,0-.74,0l-8,4.5a.75.75,0,0,0-.38.65,23.93,23.93,0,0,0,.4,4.5A13.07,13.07,0,0,0,7.5,19.49a8.81,8.81,0,0,0,4.41,2.25h.19a8.81,8.81,0,0,0,4.41-2.25A13.07,13.07,0,0,0,20.35,12a23.93,23.93,0,0,0,.4-4.5A.75.75,0,0,0,20.37,6.85ZM18.82,12c-1.43,7-6.07,8.11-6.82,8.24h0C11.24,20.1,6.62,19,5.18,12a21.67,21.67,0,0,1-.43-4.06L12,3.86l7.25,4.08A21.67,21.67,0,0,1,18.82,12Z"/>
+                </svg>
+                <div class="content_push content_push--xs text--lg">
+                  Monitor
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="list_divider"></div>
+          <div class="container">
+            <div class="list list--sm list--borderless">
+              <a href="#" class="list_item">Activity</a>
+              <a href="#" class="list_item">Reports</a>
+              <a href="#" class="list_item">Users & groups</a>
+            </div>
+          </div>
+        </div>
+        <footer class="drawer_footer drawer_footer--no-padding">
+          <a href="#" class="list_item">
+            <div class="container">
+              <div class="app-nav_flex">
+                <div class="app-nav_flex">
+                  <div class="avatar avatar--sm u-float-left u-m-r-sm">
+                    <img src="/img/default-avatar.png">
+                  </div>
+                  <div>
+                    Josh Sadler
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon u-float-right">
+                  <path d="M15.9,14.6c-0.2,0-0.4-0.1-0.5-0.2l-3.5-3.3l-3.5,3.3c-0.3,0.1-0.6,0.1-0.9-0.1s-0.3-0.5-0.1-0.8l4-3.8
+                	c0.3-0.2,0.7-0.2,1,0l4,3.8c0.2,0.2,0.3,0.5,0.2,0.8C16.5,14.4,16.2,14.6,15.9,14.6L15.9,14.6z"></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <a href="#" class="help-launcher">
+      <span class="u-sr-only">Help</span>
+    </a>
+
+    <script>
+      // const menuBtn = document.getElementById('mainMenuBtn');
+      // const mainMenu = document.getElementById('mainMenu');
+      // const mainMenuBackdrop = document.getElementById('mainMenuBackdrop');
+      // const closeMenuBtn = document.getElementById('closeMenuBtn')
+      //
+      // menuBtn.addEventListener('click', () => {
+      //   mainMenu.classList.add('is-visible');
+      //   mainMenuBackdrop.classList.add('is-visible');
+      // })
+      //
+      // closeMenuBtn.addEventListener('click', () => {
+      //   mainMenu.classList.remove('is-visible');
+      //   mainMenuBackdrop.classList.remove('is-visible');
+      // })
+
+
+      // dropdowns
+      const dropdownToggles = document.getElementsByClassName('dropdown_toggle');
+      document.addEventListener('click', clearMenus, false);
+
+      for(var i=0; i < dropdownToggles.length; i++) {
+        dropdownToggles[i].addEventListener('click', openDropdown, true);
+      }
+
+      function openDropdown (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        clearMenus()
+        if (this.parentNode && this.parentNode.classList.contains('dropdown')) {
+          this.parentNode.classList.add('is-open');
+        }
+      }
+
+      function clearMenus () {
+        var openDropdowns = document.getElementsByClassName('dropdown is-open');
+        for(var i=0; i < openDropdowns.length; i++) {
+          openDropdowns[i].classList.remove('is-open');
+        }
+      }
+    </script>
+
+    <script>
+      const convoScroll = document.getElementById("convoScroll");
+      convoScroll.scrollTop = convoScroll.scrollHeight;
+    </script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 // Color
-$color-blue:                #3aaeda !default;
+$color-blue:                #016fe6 !default;
 $color-green:               #4caf50 !default;
 $color-red:                 #f44336 !default;
 $color-yellow:              #fca902 !default;
@@ -11,37 +11,35 @@ $color-success:             $color-green !default;
 $color-danger:              $color-red !default;
 $color-warning:             $color-yellow !default;
 
-$color-gray-lighter:        #eef1f4 !default;
-$color-gray-light:          #e4e7ea !default;
-$color-gray-medium:         #8d99a0 !default;
-$color-gray-base:           #455564 !default;
-$color-gray-dark:           #272d33 !default;
+$color-gray-lighter:        #f2f2f2 !default;
+$color-gray-light:          #e6e6e6 !default;
+$color-gray-medium:         #777 !default;
+$color-gray-base:           #333 !default;
+$color-gray-dark:           #222 !default;
 
 $color-neutral:             $color-gray-medium !default;
 
-$background-color:          darken(desaturate(#f1f3f5, 10%), 2%) !default;
+$background-color:          #f8f8f8 !default;
 
-$highlight-color:           #faffbd !default;
+$highlight-color:           rgba($color-primary,0.2) !default;
 
-$text-color-light:          #8c989f !default;
-$text-color-base:           #6b757b !default;
-$text-color-dark:           $color-gray-base !default;
-$text-color-muted:          #b3bfc9 !default;
+$text-color-light:          #777 !default;
+$text-color-base:           #444 !default;
+$text-color-dark:           #222 !default;
+$text-color-muted:          #b0b0b0 !default;
 
 $font-weight-light:         300 !default;
 $font-weight-normal:        400 !default;
 $font-weight-medium:        500 !default;
 $font-weight-semibold:      600 !default;
-$font-weight-bold:          600 !default;
+$font-weight-bold:          700 !default;
 
 $link-color-base:           $color-primary !default;
 
 
 // Typography
 $font-path:                 "../fonts" !default;
-// by default, lets use San Francisco by Apple for iOS and Safari on OS X El Capitan and iOS 9+
-// this typeface provides a reasonable fallback and prevents web font loading to make for a faster app
-$font-family-base:          -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !default;
+$font-family-base:          "Inter var", Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !default;
 
 $font-size-base:            14px !default;
 $font-size-sm:              floor(($font-size-base * 0.875)) !default;
@@ -51,7 +49,7 @@ $font-size-lg:              $font-size-base + 2 !default;
 $line-height-base:          1.5 !default;
 $line-height-computed:      floor(($font-size-base * $line-height-base)) !default;
 
-$heading-color:             $color-gray-base !default;
+$heading-color:             $text-color-dark !default;
 $h1-size:                   24px !default;
 $h2-size:                   21px !default;
 $h3-size:                   18px !default;
@@ -64,22 +62,22 @@ $h2-weight:                 500 !default;
 $h3-weight:                 500 !default;
 $h4-weight:                 500 !default;
 $h5-weight:                 500 !default;
-$h6-weight:                 500 !default;
+$h6-weight:                 600 !default;
 
-$display-color:             $color-gray-base !default;
+$display-color:             $color-gray-dark !default;
 $display1-size:             36px !default;
 $display2-size:             32px !default;
 $display3-size:             28px !default;
 $display4-size:             20px !default;
 
-$display1-weight:           300 !default;
-$display2-weight:           300 !default;
-$display3-weight:           300 !default;
-$display4-weight:           400 !default;
+$display1-weight:           600 !default;
+$display2-weight:           500 !default;
+$display3-weight:           700 !default;
+$display4-weight:           700 !default;
 
 
 $title-color:               $text-color-dark !default;
-$title-weight-base:         400 !default;
+$title-weight-base:         500 !default;
 $title-weight-lg:           400 !default;
 $title-size:                $font-size-lg !default;
 $title-size-xs:             $font-size-base !default;
@@ -118,7 +116,9 @@ $spacing-x-xl:              $spacing-xl !default;
 // Grid system
 $grid-columns:              12 !default;
 $grid-gutter-width:         16px !default;
-$grid-gutter-width-tight:   8px !default;
+$grid-gutter-width-lg:      24px !default;
+$grid-gutter-width-xl:      32px !default;
+$grid-gutter-width-tight:   12px !default;
 $column-width-max:          940px !default;
 $column-width-lg:           1170px !default;
 $column-width-xl:           1286px !default;
@@ -127,7 +127,7 @@ $column-width-xl:           1286px !default;
 // Normalized media queries
 $viewport-xs-min:           360px !default;
 $viewport-sm-min:           480px !default;
-$viewport-md-min:           740px !default;
+$viewport-md-min:           832px !default;
 $viewport-lg-min:           992px !default;
 $viewport-xl-min:           1200px !default;
 
@@ -144,7 +144,7 @@ $timing-function:           cubic-bezier(.1,.5,.1,1) !default;
 // Borders
 $border-base:               1px solid rgba($color-gray-dark, 0.1) !default;
 $border-lt:                 1px solid rgba($color-gray-dark, 0.08) !default;
-$border-radius-base:        3px !default;
+$border-radius-base:        4px !default;
 $faux-border-color:         rgba($color-gray-dark, 0.1) !default;;
 
 
@@ -169,15 +169,16 @@ $shadow-key-light:          0 19px 19px rgba(#000, 0.3), 0 15px 6px rgba(#000, 0
 $topbar-fixed:              true !default;
 $topbar-height-base:        66px !default;
 $topbar-height-sm:          56px !default;
-$topbar-background:         #282e33 !default;
-$topbar-color:              rgba(255,255,255,0.7) !default;
-$topbar-link-color:         #fff !default;
-$topbar-link-color-focus:   #fff !default;
-$topbar-link-color-light:   rgba(#fff, 0.7) !default;
-$topbar-link-color-light-focus: #fff !default;
+$topbar-background:         rgba(248, 248, 248, 1) !default;
+$topbar-background-translucent: rgba($topbar-background, .8) !default;
+$topbar-color:              $text-color-base !default;
+$topbar-link-color:         $text-color-base !default;
+$topbar-link-color-focus:   $color-primary !default;
+$topbar-link-color-light:   $text-color-light !default;
+$topbar-link-color-light-focus: $color-primary !default;
 $topbar-item-padding-h:     $padding-unit !default;
 
-$brand-color:               #fff !default;
+$brand-color:               #222 !default;
 $brand-font-size:           18px !default;
 $brand-font-weight:         600 !default;
 $brand-font-weight-modifier: 400 !default;
@@ -193,10 +194,10 @@ $tabbar-height-sm:          50px !default;
 $toolbar-height-base:       60px !default;
 $toolbar-height-sm:         56px !default;
 $toolbar-background:        #fff !default;
-$toolbar-color:             $text-color-light !default;
-$toolbar-color-hover:       $text-color-base !default;
+$toolbar-color:             $text-color-base !default;
+$toolbar-color-hover:       $text-color-dark !default;
 $toolbar-border:            1px solid rgba(0,0,0,0.05) !default;
-$toolbar-shadow:            0 1px 3px rgba($color-gray-dark, 0.24) !default;
+$toolbar-shadow:            0 0 6px rgba($color-gray-dark, 0.24) !default;
 $toolbar-padding-base:      20px !default;
 $toolbar-padding-sm:        12px !default;
 
@@ -206,24 +207,25 @@ $toolbar-button-top-sm:     8px !default;
 
 // Build mode
 $build-mode-background:       $color-gray-light !default;
+$build-mode-toolbar-backgorund: #fff !default;
 $build-mode-panel-background: #fff !default;
 $build-mode-panel-width:      375px !default;
 $build-mode-panel-width-min:  250px !default;
-$build-mode-panel-shadow:     0 -5px 6px rgba(0,0,0,.16),0 0 1px 0 rgba(0,0,0,.08) !default;
+$build-mode-panel-shadow:     0 2px 6px 0 rgba(51,51,51,0.16) !default;
 $build-mode-title-font-size:  20px !default;
 
 
 // Buttons
 $btn-padding-vertical:      0 !default;
-$btn-padding-horizontal:    18px !default;
-$btn-border-radius-base:    $border-radius-base !default;
+$btn-padding-horizontal:    14px !default;
+$btn-border-radius-base:    6px !default;
 
 $btn-text-transform:        none !default;
 $btn-text-color-base:       $text-color-base !default;
 $btn-icon-fill-color:       inherit !default;
 $btn-font-size-base:        $font-size-base !default;
 $btn-font-size-sm:          $font-size-base - 1 !default;
-$btn-font-weight:           400 !default;
+$btn-font-weight:           500 !default;
 
 $btn-line-height-base:      34px !default;
 $btn-height-base:           36px !default;
@@ -236,17 +238,24 @@ $btn-default-background:    #fff !default;
 $btn-primary-background:    $color-primary !default;
 $btn-success-background:    $color-success !default;
 $btn-danger-background:     $color-danger !default;
-$btn-neutral-background:    darken($background-color, 5%) !default;
-$btn-neutral-border:        darken($background-color, 7%) !default;
+$btn-neutral-background:    rgba($color-primary, 0.08) !default;
+$btn-neutral-border:        transparent !default;
 
 $btn-focus-shadow:          inset 0 1px 2px rgba(0,0,0,0.08) !default;
 $btn-disabled-opacity:      0.7 !default;
 
-$btn-toggle-color:          $text-color-light !default;
-$btn-toggle-transform:      uppercase !default;
-$btn-toggle-font-size:      13px !default;
-$btn-toggle-weight:         600 !default;
+$btn-toggle-color:          $text-color-base !default;
 $btn-toggle-active-color:   $color-primary !default;
+$btn-toggle-active-background: rgba($color-primary, 0.08) !default;
+
+$btn-toggle-danger-color:          $text-color-base !default;
+$btn-toggle-danger-active-color:   $color-danger !default;
+$btn-toggle-danger-active-background: rgba($color-danger, 0.08) !default;
+
+
+$btn-link-color:          $color-primary !default;
+$btn-link-active-color:   darken($color-primary, 0.1) !default;
+$btn-link-active-background: rgba($color-primary, 0.08) !default;
 
 
 // Avatars
@@ -258,6 +267,7 @@ $avatar-size-base:          48px !default;
 $avatar-size-lg:            72px !default;
 $avatar-size-xl:            96px !default;
 
+$avatar-badge-radius:       4px !default;
 $avatar-badge-size:         20px !default;
 $avatar-badge-background-color: #fff !default;
 
@@ -266,22 +276,32 @@ $avatar-badge-background-color: #fff !default;
 $badge-background-color:    $text-color-muted !default;
 $badge-font-size:           $font-size-sm !default;
 $badge-text-color:          #fff !default;
-
-$chip-background-color:     transparent !default;
-$chip-font-size:            $font-size-base - 2 !default;
-$chip-font-weight:          600 !default;
-$chip-color:                $text-color-light !default;
-$chip-radius:               $border-radius-base !default;
-$chip-padding:              4px 8px !default;
-
 $badge-color-primary:       $color-primary !default;
 $badge-color-success:       $color-success !default;
 $badge-color-warning:       $color-warning !default;
 $badge-color-danger:        $color-danger !default;
 
+$chip-background-color:     #fff !default;
+$chip-font-size:            12px !default;
+$chip-font-weight:          500 !default;
+$chip-color:                $text-color-base !default;
+$chip-radius:               4px !default;
+$chip-padding:              5px 8px !default;
+
+$chip-color-primary:        scale-color($color-primary, $lightness: 76%) !default;
+$chip-color-success:        scale-color($color-success, $lightness: 76%) !default;
+$chip-color-warning:        scale-color($color-warning, $lightness: 76%) !default;
+$chip-color-danger:         scale-color($color-danger, $lightness: 76%) !default;
+
+$chip-indicator-primary:    $color-primary !default;
+$chip-indicator-success:    $color-success !default;
+$chip-indicator-warning:    $color-warning !default;
+$chip-indicator-danger:     $color-danger !default;
+
+
 
 // Thumbnails
-$thumbnail-radius:          2px !default;
+$thumbnail-radius:          4px !default;
 $thumbnail-size-xs:         24px !default;
 $thumbnail-size-sm:         36px !default;
 $thumbnail-size-base:       48px !default;
@@ -296,21 +316,21 @@ $page-header-weight:        400 !default;
 
 // Cards
 $card-background-color:     #fff !default;
-$card-shadow:               0 1px 1px 0 rgba($color-gray-dark, 0.24), 0 1px 2px rgba($color-gray-dark, 0.12) !default;
-$card-radius:               2px !default;
-$card-max-width:            550px !default;
-$card-margin-bottom-base:   $padding-unit !default;
+$card-shadow:               0 2px 6px 0 rgba(51,51,51,0.16) !default;
+$card-radius:               6px !default;
+$card-max-width:            600px !default;
+$card-margin-bottom-base:   $grid-gutter-width !default;
 $card-spacing-left-base:    $padding-unit !default;
 $card-spacing-left-lg:      $unit-base !default;
 $card-item-margin-bottom:   $spacing-unit * 1.5 !default;
 
 $card-header-padding-base:  $padding-unit $padding-unit $unit-sm 0 !default;
-$card-header-padding-lg:    $unit-base $unit-base $padding-unit 0 !default;
+$card-header-padding-lg:    20px $unit-base $padding-unit 0 !default;
 $card-header-line-height:   $h2-size !default;
 
 $card-title-color:          $text-color-dark !default;
-$card-title-size:           20px !default;
-$card-title-weight:         400 !default;
+$card-title-size:           16px !default;
+$card-title-weight:         500 !default;
 
 $card-sub-title-color:      $text-color-light !default;
 $card-sub-title-size:       $font-size-base - 1 !default;
@@ -335,10 +355,11 @@ $card-hr-right-offset-lg:   -$unit-base !default;
 // Date badge
 $date-background:           #fff !default;
 $date-width:                32px !default;
-$date-border:               1px solid #eef1f4 !default;
+$date-border:               1px solid $color-gray-lighter !default;
 $date-radius:               5px !default;
-$date-color:                $color-gray-medium !default;
+$date-color:                $text-color-light !default;
 $date-header-size:          9px !default;
+$date-header-weight:        500 !default;
 $date-content-size:         18px !default;
 
 
@@ -346,7 +367,7 @@ $date-content-size:         18px !default;
 $drawer-background:         #fff !default;
 $drawer-backdrop-color:     $color-gray-dark !default;
 $drawer-backdrop-opacity:   0.6 !default;
-$drawer-shadow:             0 0 24px rgba($color-gray-dark, 0.24), 0 0 12px rgba($color-gray-dark, 0.12) !default;
+$drawer-shadow:             $card-shadow !default;
 
 $drawer-edge-offset:        56px !default;
 $drawer-max-width-sm:       360px !default;
@@ -358,38 +379,38 @@ $drawer-max-width-lg:       calc(76vw - ((100vw - #{$column-width-max}) / 2)) !d
 $dialog-width-base:         550px !default;
 $dialog-width-lg:           900px !default;
 $dialog-background:         #fff !default;
-$dialog-radius:             2px !default;
+$dialog-radius:             6px !default;
 $dialog-shadow:             0 3px 12px 0 rgba($color-gray-dark, 0.24), 0 3px 24px rgba($color-gray-dark, 0.12) !default;
 $dialog-footer-alignment:   center !default;
-$dialog-title-margin:       12px !default;
+$dialog-title-margin:       0 !default;
 
-$dialog-backdrop-color:     $color-gray-dark !default;
+$dialog-backdrop-color:     #444 !default;
 $dialog-backdrop-opacity:   0.32 !default;
-$dialog-backdrop-fill-image:    '../img/brand-background@2x.png' !default;
 $dialog-backdrop-fill-repeat:   repeat !default;
 $dialog-backdrop-fill-size:     308px auto !default;
 
 
 // Dropdowns
 $dropdown-background-color: #fff !default;
-$dropdown-shadow-color:     rgba($color-gray-dark, 0.12) !default;
+$dropdown-shadow-color:     rgba(0,0,0,0.16) !default;
 $dropdown-width-min:        240px !default;
 $dropdown-width-max:        300px !default;
 $dropdown-width-min-lg:     320px !default;
 $dropdown-width-max-lg:     400px !default;
-$dropdown-box-shadow:       0 1px 4px 0 rgba($color-gray-dark, 0.24), 0 1px 3px rgba($color-gray-dark, 0.12) !default;
-$dropdown-radius:           2px !default;
+$dropdown-box-shadow:       0 2px 6px 0 $dropdown-shadow-color !default;
+$dropdown-radius:           6px !default;
 $dropdown-menu-distance:    5px !default;
 
-$dropdown-title-color:      $color-gray-dark !default;
-$dropdown-title-font-size:  $font-size-lg !default;
+$dropdown-title-color:      $text-color-dark !default;
+$dropdown-title-font-size:  15px !default;
+$dropdown-title-font-weight: 600 !default;
 $dropdown-title-line-height: 1 !default;
 
 $dropdown-divider-color:    $color-gray-lighter !default;
 $dropdown-item-font-size:   $font-size-base - 1 !default;
 $dropdown-item-color:       $text-color-base !default;
 $dropdown-item-hover-color: $text-color-dark !default;
-$dropdown-item-hover-background: rgba(#f1f3f5, .5) !default;
+$dropdown-item-hover-background: rgba(#f2f2f2, .5) !default;
 
 
 // Filters
@@ -403,6 +424,8 @@ $fieldset-color:            $color-gray-base !default;
 $field-invalid-color:       rgba($color-danger, .6) !default;
 $field-invalid-focus-color: $color-danger !default;
 
+$form-input-radius:         6px !default;
+$form-input-border:         1px solid rgba($color-gray-dark, 0.16) !default;
 
 // Progress indicators
 // Circular
@@ -417,7 +440,7 @@ $progress-circular-color:   $text-color-muted !default;
 $progress-linear-color:     $color-green !default;
 $progress-linear-height:    8px !default;
 $progress-linear-height-sm: 4px !default;
-$progress-linear-radius:    2px !default;
+$progress-linear-radius:    3px !default;
 $progress-linear-width:     180px !default;
 
 
@@ -467,9 +490,9 @@ $list-item-padding-right-lg: $unit-base !default;
 $list-item-color:           $text-color-base !default;
 $list-item-focus-outline:   1px solid $color-primary !default;
 $list-item-hover-color:     $list-item-color !default;
-$list-item-hover-background: rgba(#f1f3f5, .5) !default;
+$list-item-hover-background: rgba(#f2f2f2, .5) !default;
 $list-item-active-color:    $color-primary !default;
-$list-item-active-weight:   600 !default;
+$list-item-active-weight:   500 !default;
 
 $list-item-font-size:       $font-size-base !default;
 $list-item-action-width:    $icon-size-sm !default;
@@ -552,7 +575,7 @@ $tooltip-line-height:       $line-height-base !default;
 
 
 // Wells
-$well-background:           lighten($background-color, 3%) !default;
+$well-background:           $color-gray-lighter !default;
 $well-radius:               $border-radius-base !default;
 $well-padding-x-base:       24px !default;
 $well-padding-y-base:       16px !default;

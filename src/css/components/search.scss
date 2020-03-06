@@ -6,13 +6,13 @@
   & > :first-child,
   // specificity with input-group
   & > :first-child .search_input {
-    border-top-left-radius: $border-radius-base;
-    border-bottom-left-radius: $border-radius-base;
+    border-top-left-radius: $form-input-radius;
+    border-bottom-left-radius: $form-input-radius;
   }
   .is-last,
   & > :last-child {
-    border-top-right-radius: $border-radius-base;
-    border-bottom-right-radius: $border-radius-base;
+    border-top-right-radius: $form-input-radius;
+    border-bottom-right-radius: $form-input-radius;
   }
 }
 .search--dark {
@@ -31,9 +31,10 @@
     background-color: rgba(255,255,255,0.16);
     border-color: transparent;
     color: #fff;
-    @include placeholder(rgba(255,255,255,0.6));
+    @include placeholder(rgba(255,255,255,0.7));
     &:focus {
-      box-shadow: none;
+      background-color: rgba(255,255,255,0.24);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
       border-color: transparent;
       color: #fff;
     }
@@ -43,7 +44,7 @@
   }
   .search_icon {
     .icon {
-      fill: rgba(255,255,255,0.6);
+      fill: rgba(255,255,255,0.8);
     }
   }
 }
@@ -59,6 +60,11 @@
       width: 100%;
     }
   }
+  &:focus-within {
+    .search_icon {
+      color: $color-primary;
+    }
+  }
 }
 .search_input {
   padding-left: 36px;
@@ -67,6 +73,7 @@
 .search_select {
   background-color: $background-color;
   border-color: darken($background-color, 2%);
+  transition: background-color .2s ease, border-color .2s ease;
 }
 .search_icon {
   position: absolute;
@@ -77,6 +84,6 @@
   @include translateY(-50%);
   .icon {
     @include square(18px);
-    fill: $text-color-light;
+    fill: currentColor;
   }
 }

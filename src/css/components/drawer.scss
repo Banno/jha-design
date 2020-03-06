@@ -16,7 +16,7 @@
   visibility: hidden;
   z-index: $z-index-drawer;
   background-color: $dialog-backdrop-color;
-  @include transition(opacity 0.3s 0s, visibility 0s 0.3s);
+  @include transition(opacity 0.3s 0s);
   &.is-visible,
   &.in {
     visibility: visible;
@@ -114,9 +114,6 @@
   }
 }
 
-
-
-
 .drawer_content {
   @include flex(1 1 auto);
   overflow-y: auto;
@@ -134,6 +131,7 @@
 
 .drawer_header {
   border-bottom: $border-lt;
+  padding-top: unquote('max(24px, env(safe-area-inset-top))');
 }
 
 .drawer_title {
@@ -152,4 +150,9 @@
 
 .drawer_footer {
   border-top: $border-lt;
+  padding-bottom: unquote('max(24px, env(safe-area-inset-bottom))');
+}
+.drawer_footer--no-padding {
+  padding-top: 0;
+  padding-bottom: unquote('max(0px, env(safe-area-inset-bottom))');
 }

@@ -1,9 +1,9 @@
 .container,
 .fluid-container {
-  @include make-container;
+  @include make-container($grid-gutter-width);
   @media (min-width: $viewport-md-min) {
-    padding-left: $unit-base;
-    padding-right: $unit-base;
+    padding-left: $grid-gutter-width-lg;
+    padding-right: $grid-gutter-width-lg;
   }
   @include clearfix();
 }
@@ -14,24 +14,6 @@
 
 .grid {
   @include make-row;
-}
-
-.grid--no-gutter {
-  margin-left: 0;
-  margin-right: 0;
-  & > [class^="grid_"] {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.grid--tight {
-  margin-left: -$grid-gutter-width-tight / 2;
-  margin-right: -$grid-gutter-width-tight / 2;
-  & > [class^="grid_"] {
-    padding-left: $grid-gutter-width-tight / 2;
-    padding-right: $grid-gutter-width-tight / 2;
-  }
 }
 
 @include make-grid-columns;
@@ -59,8 +41,38 @@
   }
   @include make-grid(lg);
 }
-@media (min-width: 1440px) {
+@media (min-width: $viewport-xl-min) {
+  .grid {
+    margin-left: -$grid-gutter-width-lg / 2;
+    margin-right: -$grid-gutter-width-lg / 2;
+    & > [class^="grid_"] {
+      padding-left: $grid-gutter-width-lg / 2;
+      padding-right: $grid-gutter-width-lg / 2;
+    }
+  }
   .container {
+    padding-left: $grid-gutter-width-xl;
+    padding-right: $grid-gutter-width-xl;
+  }
+  .container--wide {
     max-width: $column-width-xl;
+  }
+}
+
+.grid--no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+  & > [class^="grid_"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.grid--tight {
+  margin-left: -$grid-gutter-width-tight / 2;
+  margin-right: -$grid-gutter-width-tight / 2;
+  & > [class^="grid_"] {
+    padding-left: $grid-gutter-width-tight / 2;
+    padding-right: $grid-gutter-width-tight / 2;
   }
 }

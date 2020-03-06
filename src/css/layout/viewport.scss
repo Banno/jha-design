@@ -1,8 +1,6 @@
 .viewport {
-  $calc: "100vh - 126px";
-  padding-top: $padding-unit;
+  padding-top: 6px;
   padding-bottom: $toolbar-height-base + $unit-sm; // magic number
-  min-height: calc(#{$calc});
 }
 .invert-viewport {
   margin-top: -$padding-unit;

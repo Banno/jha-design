@@ -42,7 +42,9 @@
   @include hairline(single, $color-gray-light, 0);
   color: $list-item-color;
   font-size: $list-item-font-size;
-  &:focus,
+  &:focus {
+    outline: 3px solid rgba($color-primary, .2);
+  }
   &:active {
     outline: 0;
   }
@@ -61,7 +63,6 @@
   &.is-active,
   &.active {
     color: $list-item-active-color;
-    color: var(--primaryAppColor, $list-item-active-color);
     font-weight: $list-item-active-weight;
   }
 }

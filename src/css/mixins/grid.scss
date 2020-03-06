@@ -8,6 +8,8 @@
   margin-left: auto;
   padding-left:  $gutter;
   padding-right: $gutter;
+  padding-left: unquote('max(#{$gutter}, env(safe-area-inset-left))');
+  padding-right: unquote('max(#{$gutter}, env(safe-area-inset-right))');
   @include clearfix;
 }
 

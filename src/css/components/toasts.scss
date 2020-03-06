@@ -13,14 +13,18 @@
   @include transition-property(transform, opacity);
   @include transition-duration(0.4s);
   will-change: opacity, transform;
+  pointer-events: none;
   &.is-visible {
     @include transform(translateY(0));
     opacity: 1;
   }
+  @media (max-width: $viewport-sm-max) {
+    padding-bottom: unquote('max(#{$unit-sm}, env(safe-area-inset-bottom))');
+  }
   @media (min-width: 415px) {
     min-width: 288px;
     max-width: 568px;
-    border-radius: 2px;
+    border-radius: 4px;
     bottom: $padding-unit;
     left: $padding-unit;
     width: auto;
@@ -46,19 +50,9 @@
   }
 }
 
-.toast--danger {
-  background-color: $color-danger;
-  .icon {
-    fill: $color-danger;
-  }
-}
-
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .toast {
     background-color: rgba($toast-background-color, 0.90);
     @include backdrop-filter(blur(5px));
-  }
-  .toast--danger {
-    background-color: rgba($color-danger, 0.90);
   }
 }

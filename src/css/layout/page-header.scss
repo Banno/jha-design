@@ -8,7 +8,11 @@
   height: $topbar-height-sm;
   padding-top: 9px;
   background-color: $topbar-background;
-  background-color: var(--primaryAppColor, $topbar-background);
+  @supports(backdrop-filter: blur(0px)) or (-webkit-backdrop-filter: blur(0px)) {
+    background-color: $topbar-background-translucent;
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
+  }
   text-align: center;
   .container {
     position: relative;
@@ -22,11 +26,17 @@
   &.is-hidden {
     display: none;
   }
+  // @supports(padding: unquote('max(0px)')) {
+  //   & {
+  //     padding-top: env(safe-area-inset-top);
+  //     height: calc(#{$topbar-height-sm} + env(safe-area-inset-top));
+  //   }
+  // }
 }
 .page-header_title {
   font-size: 16px;
   font-weight: $font-weight-semibold;
-  color: #fff;
+  color: $brand-color;
   position: absolute;
   margin: 0;
   top: 50%;
@@ -47,9 +57,11 @@
 // use max-width so we don't have to reset button styles again
 @media (max-width: $viewport-sm-max) {
   .page-header {
+    padding-top: unquote('max(9px, env(safe-area-inset-top))');
+    height: unquote('min(88px, calc(#{$topbar-height-sm} + env(safe-area-inset-top)))');
     .container {
-      padding-left: 4px;
-      padding-right: 4px;
+      padding-left: unquote('max(4px, env(safe-area-inset-left))');
+      padding-right: unquote('max(4px, env(safe-area-inset-right))');
       position: relative;
       z-index: 2;
     }
@@ -59,8 +71,8 @@
       font-weight: $font-weight-medium;
       border-radius: 50%;
       min-width: 35px;
-      padding-left: floor($btn-padding-horizontal / 4);
-      padding-right: floor($btn-padding-horizontal / 4);
+      padding-left: 8px;
+      padding-right: 8px;
       &:hover,
       &:active,
       &:focus {
@@ -76,23 +88,28 @@
       display: none;
     }
   }
-  .standalone {
-    .page-header {
-      height: $topbar-height-sm + 20;
-      padding-top: 29px;
-    }
-  }
 }
 
 @media (min-width: $viewport-md-min) {
   .page-header {
     position: relative;
     height: auto;
-    padding-bottom: $unit-base;
+    padding-top: $unit-base;
+    padding-bottom: 18px;
+    margin-bottom: 6px;
     text-align: left;
-    background-image: none;
-    background-color: transparent !important;
     z-index: $z-index-topbar - 1;
+    .search {
+      margin-bottom: 0;
+    }
+    &.page-header--sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+  }
+  .page-header .btn:first-child {
+    margin-right: $unit-sm;
   }
   .page-header_title {
     position: static;
@@ -103,6 +120,5 @@
     color: $text-color-dark;
     font-size: $h1-size;
     line-height: $line-height-base;
-    font-weight: $font-weight-normal;
   }
 }

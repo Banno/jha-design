@@ -34,25 +34,63 @@
 
 .chip {
   background-color: $chip-background-color;
-  border: 1px solid currentColor;
+  border: 0;
   color: $chip-color;
   font-size: $chip-font-size;
-  text-transform: uppercase;
   padding: $chip-padding;
   font-weight: $chip-font-weight;
   border-radius: $chip-radius;
   line-height: 1.2;
+  margin-bottom: 6px;
+}
+.chip_indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
+
+.chip--default {
+  background-color: $chip-background-color;
+  color: $chip-color;
+  box-shadow: 0 0 1px rgba(0,0,0,0.16);
+}
 .chip--primary {
-  color: $badge-color-primary;
+  background-color: $chip-color-primary;
+  color: scale-color($color-primary, $lightness: -60%);
+  .chip_indicator {
+    background-color: $chip-indicator-primary;
+  }
 }
 .chip--success {
-  color: $badge-color-success;
+  background-color: $chip-color-success;
+  color: scale-color($color-success, $lightness: -60%);
+  .chip_indicator {
+    background-color: $chip-indicator-success;
+  }
 }
 .chip--danger {
-  color: $badge-color-danger;
+  background-color: $chip-color-danger;
+  color: scale-color($color-danger, $lightness: -60%);
+  .chip_indicator {
+    background-color: $chip-indicator-danger;
+  }
 }
 .chip--warning {
-  color: $badge-color-warning;
+  background-color: $chip-color-warning;
+  color: scale-color($color-warning, $lightness: -60%);
+  .chip_indicator {
+    background-color: $chip-indicator-warning;
+  }
+}
+
+.is-active,
+.active {
+  .chip {
+    box-shadow: 0 0 4px rgba(0,0,0,0.12);
+  }
 }

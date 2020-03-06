@@ -7,6 +7,9 @@
 }
 .build-mode--no-toolbar {
   padding-top: $topbar-height-sm;
+  .nav--header {
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
 }
 @media (min-width: $viewport-md-min) {
   .build-mode--no-toolbar {
@@ -21,9 +24,7 @@
     float: right;
   }
   .nav_item_link {
-    text-transform: uppercase;
-    font-weight: $font-weight-semibold;
-    font-size: $btn-font-size-sm;
+    font-weight: $font-weight-medium;
     .icon--sm {
       position: relative;
       top: -2px;

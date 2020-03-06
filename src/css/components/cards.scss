@@ -34,7 +34,8 @@
   .card_media {
     position: relative;
     min-width: 120px;
-    border-radius: $card-radius 0 0 $card-radius;
+    border-top-left-radius: $card-radius;
+    border-bottom-left-radius: $card-radius;
     .icon,
     .thumbnail,
     .avatar {
@@ -47,6 +48,25 @@
   }
   .card_content {
     @include flex(1);
+  }
+}
+.card--featured {
+  background: #FFA3A3;
+  background-image: linear-gradient(135deg, #FF9393 0%, #FFA960 100%);
+  color: #fff;
+  .card_title,
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  .display-1,
+  .display-2,
+  .display-3,
+  .display-4,
+  .title,
+  .sub-title {
+    color: #fff;
+  }
+  .btn--default {
+    border-color: transparent;
   }
 }
 
@@ -69,9 +89,6 @@
     float: left;
     margin-top: -($padding-unit / 2);
     margin-bottom: -$unit-sm;
-  }
-  .tab_item {
-    line-height: 55px;
   }
   .btn-group {
     margin-top: -6px;
@@ -168,22 +185,28 @@
 
 // Media
 .card_media {
-  background-color: $color-gray-medium;
+  background-color: $color-gray-light;
   overflow: hidden;
   &:first-child {
-    border-radius: $card-radius $card-radius 0 0;
+    border-top-right-radius: $card-radius;
+    border-top-left-radius: $card-radius;
   }
   &:last-child {
-    border-radius: 0 0 $card-radius $card-radius;
+    border-bottom-right-radius: $card-radius;
+    border-bottom-left-radius: $card-radius;
   }
   .card--summary &:first-child {
-    border-radius: $card-radius 0 0 $card-radius;
+    border-top-left-radius: $card-radius;
+    border-bottom-left-radius: $card-radius;
+    border-top-right-radius: 0;
   }
   .card--summary &:last-child {
-    border-radius: 0 $card-radius $card-radius 0;
+    border-top-right-radius: $card-radius;
+    border-bottom-right-radius: $card-radius;
   }
   img {
     vertical-align: top;
+    width: 100%;
   }
 }
 
@@ -264,5 +287,11 @@
 @media (min-width: $viewport-lg-min) {
   .card-columns--3 {
     @include column-count(3);
+  }
+}
+
+@media (min-width: $viewport-xl-min) {
+  .card {
+    margin-bottom: $grid-gutter-width-lg;
   }
 }

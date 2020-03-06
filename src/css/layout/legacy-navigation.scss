@@ -1,0 +1,304 @@
+// Base nav
+.nav {
+  display: block;
+  contain: layout;
+  z-index: $z-index-topbar;
+}
+.nav,
+.nav_inner {
+  height: $tabbar-height-base;
+}
+
+// Modifiers
+.nav--header {
+  display: none;
+  z-index: $z-index-topbar + 1;
+  .nav_inner {
+    position: relative;
+    z-index: 2;
+  }
+  .nav_item_link,
+  .nav_item_content {
+    line-height: $topbar-height-base;
+  }
+}
+.nav--header,
+.nav--header .nav_inner {
+  height: $topbar-height-base;
+}
+.nav--header,
+.nav--tab-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $topbar-background;
+  color: $topbar-color;
+  @include transition(background-color .2s ease);
+  .nav_item_content {
+    color: $topbar-color;
+  }
+  .nav_item_link {
+    color: $topbar-link-color;
+  }
+  .nav_item_link:hover,
+  .nav_item_link.is-active,
+  .is-open .nav_item_link,
+  .open .nav_item_link {
+    color: $topbar-link-color-focus;
+  }
+}
+.standalone {
+  .nav--header {
+    padding-top: 20px;
+    height: $topbar-height-base + 20;
+  }
+  .nav--toolbar {
+    top: $topbar-height-base + 20;
+  }
+  @media (min-width: $viewport-md-min) {
+    .nav--tab-bar {
+      top: $topbar-height-base + 20;
+    }
+  }
+}
+.nav--toolbar,
+.nav--actions {
+  z-index: $z-index-topbar;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: $toolbar-background;
+  box-shadow: $toolbar-shadow;
+  color: $toolbar-color;
+}
+
+.nav--toolbar {
+  top: $topbar-height-base;
+}
+
+.nav--actions {
+  bottom: 0;
+  padding-bottom: unquote('max(0px, env(safe-area-inset-bottom))');
+  height: unquote('max(#{$toolbar-height-base}, calc(#{$toolbar-height-base} + env(safe-area-inset-bottom)))');
+  z-index: $z-index-action-toolbar;
+  @include transition-transform(.3s ease);
+  @include translateY(200%);
+  background-clip: padding-box;
+  &.is-visible {
+    @include translateY(0);
+  }
+  .control {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+  .control_indicator {
+    top: 50%;
+    @include translateY(-50%);
+  }
+}
+
+.nav--tab-bar {
+  bottom: 0;
+  top: auto;
+  @media (max-width: $viewport-sm-max) {
+    box-shadow: none;
+    background-color: #fff !important;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      border-top: 1px solid rgba($color-gray-dark, 0.12);
+      @include scaleY(0.5);
+      @include transform-origin(0 100%);
+    }
+    &,
+    .nav_inner {
+      height: $tabbar-height-sm;
+      height: unquote('max(#{$tabbar-height-sm}, calc(#{$tabbar-height-sm} + env(safe-area-inset-bottom)))');
+    }
+    .nav_group {
+      width: 100%;
+      @include justify-content(center);
+    }
+    .nav_inner {
+      @include flexbox-display();
+      @include justify-content(center);
+      @include align-items(stretch);
+    }
+    .nav_item_link {
+      @include flex(1);
+      // max-width: 100px;
+      padding: 6px 0;
+      line-height: 1;
+      text-align: center;
+      color: $toolbar-color;
+      @include faux-border(left, $color-gray-light);
+      &:first-child {
+        @include reset-faux-border(left);
+      }
+      &:hover,
+      &:active,
+      &:focus,
+      &.is-active {
+        color: $color-primary;
+      }
+    }
+    .tab_label {
+      display: block;
+      font-size: 11px;
+    }
+    .nav_search {
+      display: none;
+    }
+  }
+  @media (min-width: $viewport-md-min) {
+    bottom: auto;
+    top: $topbar-height-base;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .tab_icon {
+      display: none;
+    }
+    .nav_item_link,
+    .nav_item_content {
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+.tab_icon {
+  display: block;
+  margin: 1px auto 0;
+}
+
+// Descendants
+.nav_inner {
+  @include flexbox-display();
+  @include justify-content(space-between);
+  @include align-items(center);
+  margin-left: -($grid-gutter-width);
+  margin-right: -($grid-gutter-width);
+}
+
+.nav_group,
+.nav_item {
+  height: 100%;
+}
+.nav_group,
+.nav_search {
+  @include flexbox-display();
+  @include align-items(center);
+}
+.nav_search {
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 320px;
+  @include flex(1 0 0);
+  .search {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+.nav_item_content,
+.nav_item_link {
+  display: block;
+  height: 100%;
+  background: none; // reset incase button
+  border: 0; // reset incase button
+  line-height: $tabbar-height-base;
+  padding-left: $topbar-item-padding-h;
+  padding-right: $topbar-item-padding-h;
+  color: $toolbar-color;
+  @include transition(color .2s ease);
+}
+.nav_item_content--no-padding,
+.nav_item_link--no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+.nav_item_link {
+  &:hover,
+  .is-open &,
+  .open & {
+    color: $toolbar-color-hover;
+  }
+}
+.nav_item--center,
+.nav_group--center {
+  position: absolute;
+  left: 50%;
+  @include translateX(-50%);
+}
+
+@media (min-width: $viewport-md-min) {
+  .nav--header,
+  .nav--tab-bar {
+    background-color: #fff;
+  }
+  .nav--tab-bar {
+    box-shadow: $card-shadow;
+  }
+  .nav--header {
+    display: block;
+    &.will-shift .nav_inner {
+      @include transition(opacity .2s ease);
+    }
+    &.is-shifted-up .nav_inner {
+      opacity: 0;
+    }
+  }
+  .will-shift,
+  .nav.will-shift + .nav {
+    @include transition-transform(.2s ease);
+  }
+  .is-shifted-up,
+  .nav.is-shifted-up + .nav {
+    @include translateY(-$topbar-height-base);
+  }
+
+  .no-navbar {
+    margin-top: -$tabbar-height-base;
+    .nav--header {
+      box-shadow: $card-shadow;
+    }
+  }
+}
+
+.brand {
+  display: block;
+  font-size: $brand-font-size;
+  font-weight: $brand-font-weight;
+  color: $brand-color !important;
+  white-space: nowrap;
+  text-transform: none;
+}
+.brand_icon-container {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.2);
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+  }
+}
+.brand_product {
+  font-weight: $brand-font-weight-modifier;
+}

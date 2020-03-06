@@ -2,11 +2,8 @@
   display: block;
   position: relative;
   margin-bottom: 24px;
-  background-color: #fff;
+  background-color: $topbar-background;
   box-shadow: $card-shadow;
-  .viewport & {
-    margin-top: -$padding-unit;
-  }
   @media (min-width: $viewport-md-min) {
     display: none;
   }

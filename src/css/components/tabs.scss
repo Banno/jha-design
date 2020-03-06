@@ -8,7 +8,7 @@
   }
 }
 .tabs {
-  margin: 0;
+  margin-bottom: $padding-unit;
   padding: 0;
   list-style-type: none;
   -webkit-overflow-scrolling: touch;
@@ -16,6 +16,24 @@
   touch-action: pan-x;
   overflow: auto;
   white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (min-width: $viewport-md-min) {
+  .tabs--sticky {
+    background-color: $topbar-background;
+    @supports(backdrop-filter: blur(0px)) or (-webkit-backdrop-filter: blur(0px)) {
+      background-color: $topbar-background-translucent;
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      backdrop-filter: blur(10px) saturate(150%);
+    }
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
 }
 
 .tab_item {
@@ -23,23 +41,21 @@
   color: $color-gray-medium;
   cursor: pointer;
   z-index: 1;
-  border-bottom: 1px solid transparent;
+  border-bottom: 3px solid transparent;
   line-height: 48px;
   padding-bottom: 3px;
-  margin-right: $padding-unit;
+  margin-right: $unit-base;
+  font-size: $font-size-base;
   &:active,
   &:focus {
     outline: 0;
-    color: $topbar-color;
+    color: $color-primary;
   }
   &.is-active {
-    font-weight: $font-weight-semibold;
     color: $color-primary;
-    color: var(--primaryAppColor, $color-primary);
     border-bottom-color: currentColor;
   }
-  @media (min-width: $viewport-md-min) {
+  @media (min-width: $viewport-lg-min) {
     margin-right: $spacing-unit;
-    border-bottom: 1px solid transparent;
   }
 }

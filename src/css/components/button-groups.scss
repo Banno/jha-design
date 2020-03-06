@@ -2,11 +2,9 @@
   @include flexbox-display;
   position: relative;
   margin-bottom: $padding-unit;
-  @include clearfix();
   & > .btn {
     position: relative;
     float: left;
-    margin-left: -1px;
     z-index: 1;
     border-radius: 0;
     &:hover,
@@ -19,18 +17,68 @@
   }
   & > :first-child {
     margin-left: 0;
-    border-top-left-radius: $border-radius-base;
-    border-bottom-left-radius: $border-radius-base;
+    border-top-left-radius: $btn-border-radius-base;
+    border-bottom-left-radius: $btn-border-radius-base;
   }
   & > :last-child {
-    border-top-right-radius: $border-radius-base;
-    border-bottom-right-radius: $border-radius-base;
+    border-top-right-radius: $btn-border-radius-base;
+    border-bottom-right-radius: $btn-border-radius-base;
+  }
+}
+.btn-group:not(.btn-group--spaced) {
+  & > .btn:not(:first-child) {
+    margin-left: -1px;
+  }
+}
+
+.btn-group--spaced {
+  & > .btn:not(:first-child),
+  & > .dropdown:not(:first-child) {
+    margin-left: 6px;
+  }
+  & > .btn {
+    border-radius: $btn-border-radius-base;
   }
 }
 
 .btn-group--flex {
-  > .btn {
+  width: 100%;
+  > .btn,
+  > .dropdown,
+  > .dropdown > .btn {
     float: none;
     @include flex(1);
+  }
+  > .dropdown {
+    @include flexbox-display;
+  }
+}
+
+.btn-group--vertical {
+  flex-direction: column;
+  & > .btn {
+    float: none;
+    margin: 0;
+    border-radius: 0;
+  }
+  & > :first-child {
+    border-top-left-radius: $btn-border-radius-base;
+    border-top-right-radius: $btn-border-radius-base;
+  }
+  & > :last-child {
+    border-bottom-left-radius: $btn-border-radius-base;
+    border-bottom-right-radius: $btn-border-radius-base;
+  }
+}
+
+.btn-group--vertical.btn-group--spaced {
+  & > .btn:not(:first-child) {
+    margin-left: 0;
+  }
+  & > .btn:not(:last-child) {
+    margin-bottom: 6px;
+  }
+  & > .btn {
+    border-radius: $btn-border-radius-base;
   }
 }

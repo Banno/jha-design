@@ -165,23 +165,3 @@
 .daterangepicker th.month {
   width: auto;
 }
-
-@supports ( (--a: 0)) {
-  .daterangepicker td.available:hover,
-  .daterangepicker th.available:hover {
-    $local-color: 'rgba(var(--primaryAppColorR), var(--primaryAppColorG), var(--primaryAppColorB), 0.24)';
-    background-color: unquote($local-color);
-  }
-
-  .daterangepicker td.in-range {
-    $local-color: 'rgba(var(--primaryAppColorR), var(--primaryAppColorG), var(--primaryAppColorB), 0.14)';
-    background-color: unquote($local-color);
-  }
-
-  .daterangepicker td.active,
-  .daterangepicker td.active:hover {
-    $local-color: 'rgba(var(--primaryAppColorR), var(--primaryAppColorG), var(--primaryAppColorB), 1)';
-    background-color: unquote($local-color);
-    border-color: unquote($local-color);
-  }
-}

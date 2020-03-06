@@ -9,8 +9,10 @@
   vertical-align: middle;
   position: relative;
   img {
+    object-fit: cover;
+    object-position: center;
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: $avatar-radius;
   }
 }
@@ -41,26 +43,45 @@
   @include square($avatar-size-xl);
 }
 
-// Special snowflake, logged in user's avatar
-
-.avatar--you {
-  border-radius: $border-radius-base;
-  img {
-    border-radius: $border-radius-base;
-  }
+.avatar--shadow {
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.18);
 }
-
 
 .avatar_badge {
   position: absolute;
   @include square($avatar-badge-size);
-  border-radius: 50%;
+  border-radius: $avatar-badge-radius;
   background-color: $avatar-badge-background-color;
   padding: 2px;
   bottom: -6px;
   right: -6px;
   img {
+    border-radius: $avatar-badge-radius;
+    object-fit: cover;
+    object-position: center;
     max-width: 100%;
     height: auto;
   }
+}
+
+.avatar-stack {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  .avatar {
+    position: relative;
+    border: 2px solid #fff;
+  }
+  .avatar:not(:first-child) {
+    margin-left: -$unit-sm;
+  }
+  .avatar:nth-child( 1 ) { z-index: 9 ; }
+  .avatar:nth-child( 2 ) { z-index: 8 ; }
+  .avatar:nth-child( 3 ) { z-index: 7 ; }
+  .avatar:nth-child( 4 ) { z-index: 6 ; }
+  .avatar:nth-child( 5 ) { z-index: 5 ; }
+  .avatar:nth-child( 6 ) { z-index: 4 ; }
+  .avatar:nth-child( 7 ) { z-index: 3 ; }
+  .avatar:nth-child( 8 ) { z-index: 2 ; }
+  .avatar:nth-child( 9 ) { z-index: 1 ; }
 }
