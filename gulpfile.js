@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const merge = require('merge-stream');
 const header = require('gulp-header');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const cssmin = require('gulp-cssmin');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
@@ -16,8 +16,9 @@ const pkg = require('./package.json');
 
 const allSrc = ['src/**'];
 
-const clean = cb => {
-  return del(['dist/**'], cb);
+const clean = (cb) => {
+  del.sync(['dist/**']);
+  cb();
 };
 
 const copy = () => {
