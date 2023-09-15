@@ -163,14 +163,14 @@
 
 // Placeholder text
 @mixin placeholder($color: lighten($base-text-color, 30%)) {
-  &::-moz-placeholder {
+  ::-moz-placeholder {
     color: $color;
     opacity: 1;
   }
-  &:-ms-input-placeholder {
+  :-ms-input-placeholder {
     color: $color;
   }
-  &::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: $color;
   }
 }
