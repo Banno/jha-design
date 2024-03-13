@@ -10,7 +10,6 @@
     "gulp": "gulp"
   },
   "devDependencies": {
-    "cheerio": "^0.22.0",
     "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
