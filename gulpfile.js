@@ -5,7 +5,7 @@ const merge = require('merge-stream');
 const header = require('gulp-header');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
-const cssmin = require('gulp-cssmin');
+const cleanCss = require('gulp-clean-css');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
 const connect = require('gulp-connect');
@@ -45,7 +45,7 @@ const styles = () => {
 
   return gulp.src('src/css/core.scss')
     .pipe(sass())
-    .pipe(cssmin())
+    .pipe(cleanCss())
     .pipe(header(banner, { pkg: pkg }))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('dist/css'))
