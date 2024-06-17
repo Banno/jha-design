@@ -2,7 +2,7 @@
 
 const gulp = require('gulp');
 const merge = require('merge-stream');
-const header = require('gulp-header');
+const prepend = require('gulp-prepend');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCss = require('gulp-clean-css');
@@ -37,16 +37,16 @@ const copy = () => {
 
 const styles = () => {
   const banner = ['/*!',
-    ' * <%= pkg.name %> - <%= pkg.description %>',
-    ' * @version v<%= pkg.version %>',
-    ' * @link <%= pkg.homepage %>',
+    ` * ${pkg.name} - ${pkg.description}`,
+    ` * @version v${pkg.version}`,
+    ` * @link ${pkg.homepage}`,
     '*/',
     ''].join('\n');
 
   return gulp.src('src/css/core.scss')
     .pipe(sass())
     .pipe(cleanCss())
-    .pipe(header(banner, { pkg: pkg }))
+    .pipe(prepend(banner))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe(connect.reload());
