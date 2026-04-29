@@ -26,6 +26,7 @@
     "sass": "^1.66.1"
   },
   "resolutions": {
+    "braces": "^3.0.3",
     "fast-xml-parser": "^5.7.0",
     "gulp-connect/send": "^0.19.0",
     "uuid": "14.0.0"
