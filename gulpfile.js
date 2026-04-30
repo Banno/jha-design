@@ -1,18 +1,24 @@
 'use strict';
 
-const gulp = require('gulp');
-const merge = require('merge-stream');
-const prepend = require('gulp-prepend');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass')(require('sass'));
-const cleanCss = require('gulp-clean-css');
-const svgstore = require('gulp-svgstore');
-const svgmin = require('gulp-svgmin');
-const connect = require('gulp-connect');
-const imagemin = require('gulp-imagemin');
-const uglify = require('gulp-uglify');
-const del = require('del');
+import gulp from 'gulp';
+import merge from 'merge-stream';
+import prepend from 'gulp-prepend';
+import rename from 'gulp-rename';
+import gulpSass from 'gulp-sass';
+import * as sassImport from 'sass';
+import cleanCss from 'gulp-clean-css';
+import svgstore from 'gulp-svgstore';
+import svgmin from 'gulp-svgmin';
+import connect from 'gulp-connect';
+import gulpImagemin from 'gulp-imagemin';
+import uglify from 'gulp-uglify';
+import del from 'del';
+import module from 'module';
+
+const require = module.createRequire(import.meta.url);
 const pkg = require('./package.json');
+
+const sass = gulpSass(sassImport);
 
 const allSrc = ['src/**'];
 
@@ -62,7 +68,7 @@ const compress = () => {
 
 const images = () => {
   return gulp.src('src/img/*')
-    .pipe(imagemin({
+    .pipe(gulpImagemin({
       progressive: true
     }))
     .pipe(gulp.dest('dist/img'));
@@ -70,7 +76,7 @@ const images = () => {
 
 const appIcons = () => {
   return gulp.src('src/img/icons/**/*')
-    .pipe(imagemin({
+    .pipe(gulpImagemin({
       progressive: true
     }))
     .pipe(gulp.dest('dist/img/icons'));
@@ -143,8 +149,8 @@ const watch = () => {
   return gulp.watch(allSrc, ['copy', 'styles', 'icons', 'appIcons', 'images', 'compress']);
 };
 
-module.exports.dev = gulp.series(clean, copy, styles, icons, appIcons, svgs, images, compress, serverConnect, watch);
+export const dev = gulp.series(clean, copy, styles, icons, appIcons, svgs, images, compress, serverConnect, watch);
 
 const defaultTasks = gulp.series(clean, copy, styles, icons, appIcons, svgs, images, compress);
 
-module.exports.default = defaultTasks;
+export default defaultTasks;
